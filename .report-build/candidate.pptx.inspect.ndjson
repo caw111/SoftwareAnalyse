@@ -1,0 +1,325 @@
+{"kind":"deck","id":"pr/ref981","name":"Deck"}
+{"kind":"layout","layoutId":"bb2f699b-d5c4-4c4c-8c79-a699ecd3c3ce","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"0a46a668-d518-4a7b-b338-209dd3f47ca8","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/0bvc8b","slide":1,"title":"学术成果分享平台","textShapes":7}
+{"kind":"textbox","id":"sh/vutcn6pc","slide":1,"name":"学术成果分享平台","text":"学术成果分享平台","textPreview":"学术成果分享平台","textChars":8,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/wvmdwrqx","slide":1,"name":"需求调研与需求建模总体方案","text":"需求调研与需求建模总体方案","textPreview":"需求调研与需求建模总体方案","textChars":13,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/hwvupw7i","slide":1,"name":"01","text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/m5kvqh8v","slide":1,"name":"可信数据 · 公开检索 · 学者门户","text":"可信数据 · 公开检索 · 学者门户","textPreview":"可信数据 · 公开检索 · 学者门户","textChars":18,"textLines":1,"bbox":[64,282,1130,70]}
+{"kind":"textbox","id":"sh/7qtcjmp0","slide":1,"name":"论文  /  授权专利  /  科研项目  /  获奖","text":"论文  /  授权专利  /  科研项目  /  获奖","textPreview":"论文  /  授权专利  /  科研项目  /  获奖","textChars":27,"textLines":1,"bbox":[64,382,1120,65]}
+{"kind":"textbox","id":"sh/8r2dsrql","slide":1,"name":"《软件系统分析与设计》课程实践（一）","text":"《软件系统分析与设计》课程实践（一）","textPreview":"《软件系统分析与设计》课程实践（一）","textChars":18,"textLines":1,"bbox":[64,553,1100,44]}
+{"kind":"textbox","id":"sh/9sbulw76","slide":1,"name":"15分钟主讲  ·  2026年10月7日","text":"15分钟主讲  ·  2026年10月7日","textPreview":"15分钟主讲  ·  2026年10月7日","textChars":21,"textLines":1,"bbox":[64,608,1100,40]}
+{"kind":"notes","id":"nt/0bvc8b","slide":1,"text":"建议讲述 20 秒。\n\n各位老师、同学好，本次汇报聚焦需求调研与需求建模。我们把普通用户、科研人员和管理员的资料统一起来，围绕四类成果说明平台要解决的问题、核心业务规则和模型，并明确已有证据与待验证内容。\n\n来源：课程任务书；M01—M06；G01—G08"}
+{"kind":"slide","id":"sl/s5kve3","slide":2,"title":"阶段任务与现有交付","textShapes":4}
+{"kind":"textbox","id":"sh/90ba10ni","slide":2,"name":"阶段任务与现有交付","text":"阶段任务与现有交付","textPreview":"阶段任务与现有交付","textChars":9,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/mdkrq547","slide":2,"name":"已有调研与规范；本次补齐模型并统一需求口径","text":"已有调研与规范；本次补齐模型并统一需求口径","textPreview":"已有调研与规范；本次补齐模型并统一需求口径","textChars":21,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/netsza5c","slide":2,"name":"02","text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/h4bapknu","slide":2,"name":"尚需真实访谈／样例验证及评审记录；文档存在不等于评审通过","text":"尚需真实访谈／样例验证及评审记录；文档存在不等于评审通过","textPreview":"尚需真实访谈／样例验证及评审记录；文档存在不等于评审通过","textChars":28,"textLines":1,"bbox":[64,565,1140,64]}
+{"kind":"table","id":"tb/tojehof6","slide":2,"name":"","rows":4,"cols":3,"preview":"阶段 | 任务书要求 | 当前材料与本次补充","bbox":[64,195,1152,325]}
+{"kind":"notes","id":"nt/s5kve3","slide":2,"text":"建议讲述 35 秒。\n\n任务书将需求调研和需求建模列为两个评审阶段。目录中已有三份Markdown调研材料、数据源Word报告以及SRS、SPEC和八张图。我们发现分角色用例图较完整，但总用例和采集状态图没有独立成图。因此本汇报增加总用例和两类状态模型，类图与时序图作为下一阶段预研材料，不代替状态图。\n\n来源：任务书物理第5—6、10页；M01—M06；G01—G08"}
+{"kind":"slide","id":"sl/cn9s0g","slide":3,"title":"调研方法与证据边界","textShapes":9}
+{"kind":"textbox","id":"sh/ilsfuhwj","slide":3,"name":"调研方法与证据边界","text":"调研方法与证据边界","textPreview":"调研方法与证据边界","textChars":9,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/po3ypcfu","slide":3,"name":"公开资料结果用于提出需求，实地验证用于修订需求","text":"公开资料结果用于提出需求，实地验证用于修订需求","textPreview":"公开资料结果用于提出需求，实地验证用于修订需求","textChars":23,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/4nahw7e9","slide":3,"name":"03","text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/rqlgrmx0","slide":3,"name":"任务书与公开资料","text":"任务书与公开资料","textPreview":"任务书与公开资料","textChars":8,"textLines":1,"bbox":[64,200,1152,44]}
+{"kind":"textbox","id":"sh/qpczyhwf","slide":3,"name":"提取必做功能、来源限制、分类与业务规则","text":"提取必做功能、来源限制、分类与业务规则","textPreview":"提取必做功能、来源限制、分类与业务规则","textChars":19,"textLines":1,"bbox":[64,248,1152,66]}
+{"kind":"textbox","id":"sh/ds3ytwf6","slide":3,"name":"同类平台与角色场景","text":"同类平台与角色场景","textPreview":"同类平台与角色场景","textChars":9,"textLines":1,"bbox":[64,336,1152,44]}
+{"kind":"textbox","id":"sh/cruh0rel","slide":3,"name":"10个平台对比；三类角色的目标、权限和异常路径","text":"10个平台对比；三类角色的目标、权限和异常路径","textPreview":"10个平台对比；三类角色的目标、权限和异常路径","textChars":23,"textLines":1,"bbox":[64,384,1152,66]}
+{"kind":"textbox","id":"sh/zelgv6xw","slide":3,"name":"需求追踪与后续验证","text":"需求追踪与后续验证","textPreview":"需求追踪与后续验证","textChars":9,"textLines":1,"bbox":[64,472,1152,44]}
+{"kind":"textbox","id":"sh/etcz21wb","slide":3,"name":"证据 → 需求 → 用例／SPEC → 验收；补访谈、样例和评审记录","text":"证据 → 需求 → 用例／SPEC → 验收；补访谈、样例和评审记录","textPreview":"证据 → 需求 → 用例／SPEC → 验收；补访谈、样例和评审记录","textChars":34,"textLines":1,"bbox":[64,520,1152,66]}
+{"kind":"notes","id":"nt/cn9s0g","slide":3,"text":"建议讲述 40 秒。\n\n现有研究主要采用公开资料研读、数据源分析和同类平台对比。普通用户材料强调核实信息，科研人员材料强调归属与管理，数据源材料强调追踪与质量。我们把这些证据映射到需求、用例、规范和验收。目录中没有本小组实际问卷回收和访谈原始记录，所以画像只用于说明场景，后续要通过三角色访谈和接入样例验证。\n\n来源：M01第1、8章；M02引言；M03第1—3、8节"}
+{"kind":"slide","id":"sl/4vg4ij","slide":4,"title":"同类平台的借鉴方向","textShapes":3}
+{"kind":"textbox","id":"sh/sbit8na1","slide":4,"name":"同类平台的借鉴方向","text":"同类平台的借鉴方向","textPreview":"同类平台的借鉴方向","textChars":9,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/ra9szi9g","slide":4,"name":"以需求机制为依据；规模、营收与价格不作为本次论据","text":"以需求机制为依据；规模、营收与价格不作为本次论据","textPreview":"以需求机制为依据；规模、营收与价格不作为本次论据","textChars":24,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/q90b6dsb","slide":4,"name":"04","text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"table","id":"tb/o3290nyl","slide":4,"name":"","rows":5,"cols":3,"preview":"借鉴方向 | 现有调研对象 | 落到本平台的需求","bbox":[64,193,1152,425]}
+{"kind":"notes","id":"nt/4vg4ij","slide":4,"text":"建议讲述 40 秒。\n\n总体报告已比较十个平台，我们不逐一复述产品介绍，而是提炼四类机制。学者档案给出门户和身份关联的参考；书目与元数据平台支持开放接入；国内成果服务体现机构和多类型成果场景；科研整理工具提示收藏和来源核查的增强价值。平台坚持四类成果和可信归属，暂不把讨论社区、推荐或笔记全部列为必做，也不依赖原报告待核实的商业数字。\n\n来源：M01第2章；M02第4章；M03第2—3节"}
+{"kind":"slide","id":"sl/4m3ve3","slide":5,"title":"三类角色与权限边界","textShapes":4}
+{"kind":"textbox","id":"sh/0f69krap","slide":5,"name":"三类角色与权限边界","text":"三类角色与权限边界","textPreview":"三类角色与权限边界","textChars":9,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/fexsrm94","slide":5,"name":"公开查询、本人管理、后台治理分别校验权限","text":"公开查询、本人管理、后台治理分别校验权限","textPreview":"公开查询、本人管理、后台治理分别校验权限","textChars":20,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/edori1sj","slide":5,"name":"05","text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/sb69grat","slide":5,"name":"账号 ≠ 学者实体；只有“审核通过＋绑定成功”才能授予门户管理权","text":"账号 ≠ 学者实体；只有“审核通过＋绑定成功”才能授予门户管理权","textPreview":"账号 ≠ 学者实体；只有“审核通过＋绑定成功”才能授予门户管理权","textChars":32,"textLines":1,"bbox":[64,574,1148,65]}
+{"kind":"table","id":"tb/ova1wb29","slide":5,"name":"","rows":4,"cols":3,"preview":"角色 | 用户目标 | 功能与边界","bbox":[64,200,1152,330]}
+{"kind":"notes","id":"nt/4m3ve3","slide":5,"text":"建议讲述 45 秒。\n\n普通用户需要找得到并核实成果，科研人员需要维护本人门户，管理员需要让采集、审核和质量问题可控。角色按当前操作权限区分，一个人可以同时是查询者和科研人员。账号不是学者实体，门户认领通过后才建立管理绑定。管理员可以审核证明材料和公共数据，但并不因此自动获得私人笔记读取权限。\n\n来源：M01第6章；M02第1章；M03第4、7节"}
+{"kind":"slide","id":"sl/owk4lf","slide":6,"title":"四类成果的数据来源方案","textShapes":4}
+{"kind":"textbox","id":"sh/nudov694","slide":6,"name":"四类成果的数据来源方案","text":"四类成果的数据来源方案","textPreview":"四类成果的数据来源方案","textChars":11,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/ovm54bqp","slide":6,"name":"论文先支撑规模；四类成果均保留本期可用路径","text":"论文先支撑规模；四类成果均保留本期可用路径","textPreview":"论文先支撑规模；四类成果均保留本期可用路径","textChars":21,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/pwv6xgra","slide":6,"name":"06","text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/fqdor698","slide":6,"name":"候选来源不等于已完成接入；许可、凭证、访问方式与样例须登记","text":"候选来源不等于已完成接入；许可、凭证、访问方式与样例须登记","textPreview":"候选来源不等于已完成接入；许可、凭证、访问方式与样例须登记","textChars":29,"textLines":1,"bbox":[64,621,1120,42]}
+{"kind":"table","id":"tb/fu5s7ml4","slide":6,"name":"","rows":5,"cols":3,"preview":"类型 | 一期候选来源 | 关键标识／接入证据","bbox":[64,188,1152,400]}
+{"kind":"notes","id":"nt/owk4lf","slide":6,"text":"建议讲述 55 秒。\n\n论文优先用OpenAlex，DBLP补充计算机领域，Crossref校验出版标识。专利优先核查官方公开服务，奖励按授奖机构公告接入。科研项目在总体报告里有来源讨论，但数据源专项报告及SPEC缺少完整链路，本次补充资助机构加项目编号的识别规则。先用论文支撑规模，另外三类仍需小样本可演示路径。没有可用批量访问的类型可采用任务书允许的模拟样本，并明确标识来源。\n\n来源：M01第3章；M04第2、11章；任务书正文第1—2、8页；OpenAlex、DBLP与NSFC官方说明"}
+{"kind":"slide","id":"sl/6lk10u","slide":7,"title":"领域分类与来源追踪","textShapes":9}
+{"kind":"textbox","id":"sh/x8vypgny","slide":7,"name":"领域分类与来源追踪","text":"领域分类与来源追踪","textPreview":"领域分类与来源追踪","textChars":9,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/a54fe1o7","slide":7,"name":"本地分类稳定，外部分类可映射；每项成果都能回溯来源","text":"本地分类稳定，外部分类可映射；每项成果都能回溯来源","textPreview":"本地分类稳定，外部分类可映射；每项成果都能回溯来源","textChars":25,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/b6dgn65s","slide":7,"name":"07","text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/kv6xkb69","slide":7,"name":"领域—学科—方向","text":"领域—学科—方向","textPreview":"领域—学科—方向","textChars":8,"textLines":1,"bbox":[64,190,1152,44]}
+{"kind":"textbox","id":"sh/lwfytgnu","slide":7,"name":"保留原分类ID、标签和版本；跨学科多标签，未分类单列","text":"保留原分类ID、标签和版本；跨学科多标签，未分类单列","textPreview":"保留原分类ID、标签和版本；跨学科多标签，未分类单列","textChars":26,"textLines":1,"bbox":[64,238,1152,66]}
+{"kind":"textbox","id":"sh/y94fi1o3","slide":7,"name":"来源记录与字段证据","text":"来源记录与字段证据","textPreview":"来源记录与字段证据","textChars":9,"textLines":1,"bbox":[64,327,1152,44]}
+{"kind":"textbox","id":"sh/zudgr65o","slide":7,"name":"来源ID／URL、采集与更新时间、内容校验值、解析版本、字段来源","text":"来源ID／URL、采集与更新时间、内容校验值、解析版本、字段来源","textPreview":"来源ID／URL、采集与更新时间、内容校验值、解析版本、字段来源","textChars":32,"textLines":1,"bbox":[64,375,1152,66]}
+{"kind":"textbox","id":"sh/0z2x8r65","slide":7,"name":"增量更新与人工修订","text":"增量更新与人工修订","textPreview":"增量更新与人工修订","textChars":9,"textLines":1,"bbox":[64,464,1152,44]}
+{"kind":"textbox","id":"sh/10byhwnq","slide":7,"name":"按来源更新时间和公告变化更新；重复接入幂等，冲突进入复核","text":"按来源更新时间和公告变化更新；重复接入幂等，冲突进入复核","textPreview":"按来源更新时间和公告变化更新；重复接入幂等，冲突进入复核","textChars":28,"textLines":1,"bbox":[64,512,1152,66]}
+{"kind":"notes","id":"nt/6lk10u","slide":7,"text":"建议讲述 35 秒。\n\n分类采用本地稳定领域、学科和方向层级，并保存外部标签和版本。各分类体系不完全等价，所以不能直接把NSFC、国家学科目录和OpenAlex逐级拼接。跨学科成果允许多个领域，未分类单列。每项成果保存至少一个来源，主字段保留来源选择依据；自动更新遇到人工修订冲突时进入复核，不悄悄覆盖。\n\n来源：M01第4、5章；M03第6.1、7节；M04第3、7、9章"}
+{"kind":"slide","id":"sl/flhzbf","slide":8,"title":"需求范围与统一优先级","textShapes":3}
+{"kind":"textbox","id":"sh/2tc7e54z","slide":8,"name":"需求范围与统一优先级","text":"需求范围与统一优先级","textPreview":"需求范围与统一优先级","textChars":10,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/pg3q9k3q","slide":8,"name":"优先顺序可以调整，课程必做范围不能被优先级删减","text":"优先顺序可以调整，课程必做范围不能被优先级删减","textPreview":"优先顺序可以调整，课程必做范围不能被优先级删减","textChars":23,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/ofupgfm5","slide":8,"name":"08","text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"table","id":"tb/mxgf6tgf","slide":8,"name":"","rows":5,"cols":2,"preview":"等级 | 本期范围","bbox":[64,185,1152,435]}
+{"kind":"notes","id":"nt/flhzbf","slide":8,"text":"建议讲述 45 秒。\n\n当前资料使用P0、P1、P2和M、S、C两套表达。我们统一为基础必做、增强和后续可选。SRS把成果维护和基础统计列为P1、创新列为P2，容易导致遗漏任务书必做内容，需要回写修订。至少一项创新必须交付，建议在基础合作网络之上做筛选、共同成果回溯和最短共著路径；是否满足创新要求由评审确认。交易、付费和支付放在后期。\n\n来源：任务书正文第1、3、8页；M01第7章；M03第4—6节；M05 FR-13/14/16"}
+{"kind":"slide","id":"sl/4zr970","slide":9,"title":"系统总用例图：覆盖三角色与采集治理","textShapes":21}
+{"kind":"textbox","id":"sh/yts72l83","slide":9,"name":"系统总用例图：覆盖三角色与采集治理","text":"系统总用例图：覆盖三角色与采集治理","textPreview":"系统总用例图：覆盖三角色与采集治理","textChars":17,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/lw3qd07u","slide":9,"name":"新增总览；原分角色用例图在附录21—22页","text":"新增总览；原分角色用例图在附录21—22页","textPreview":"新增总览；原分角色用例图在附录21—22页","textChars":21,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/kvup4vq9","slide":9,"name":"09","text":"09","textPreview":"09","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"shape","id":"sh/bq187qps","slide":9,"bbox":[230,183,800,435]}
+{"kind":"textbox","id":"sh/a5s7yl87","slide":9,"name":"学术成果分享平台","text":"学术成果分享平台","textPreview":"学术成果分享平台","textChars":8,"textLines":1,"bbox":[430,184,430,30]}
+{"kind":"textbox","id":"sh/xsjq9g7y","slide":9,"name":"«actor»\n访客","text":"«actor»\n访客","textPreview":"«actor» | 访客","textChars":10,"textLines":2,"bbox":[64,230,145,68]}
+{"kind":"textbox","id":"sh/crap0vqd","slide":9,"name":"«actor»\n注册科研人员","text":"«actor»\n注册科研人员","textPreview":"«actor» | 注册科研人员","textChars":14,"textLines":2,"bbox":[64,414,145,68]}
+{"kind":"textbox","id":"sh/n21836pg","slide":9,"name":"«actor»\n已认领学者","text":"«actor»\n已认领学者","textPreview":"«actor» | 已认领学者","textChars":13,"textLines":2,"bbox":[64,533,145,68]}
+{"kind":"textbox","id":"sh/2187u18b","slide":9,"name":"«actor»\n管理员","text":"«actor»\n管理员","textPreview":"«actor» | 管理员","textChars":11,"textLines":2,"bbox":[1051,410,165,75]}
+{"kind":"textbox","id":"sh/wzix43e5","slide":9,"name":"«actor»\n外部数据源","text":"«actor»\n外部数据源","textPreview":"«actor» | 外部数据源","textChars":13,"textLines":2,"bbox":[1051,230,165,75]}
+{"kind":"textbox","id":"sh/h0byx8va","slide":9,"name":"检索／查看成果与学者","text":"检索／查看成果与学者","textPreview":"检索／查看成果与学者","textChars":10,"textLines":1,"bbox":[251,230,330,57]}
+{"kind":"textbox","id":"sh/ux0f2twz","slide":9,"name":"浏览学者门户","text":"浏览学者门户","textPreview":"浏览学者门户","textChars":6,"textLines":1,"bbox":[251,305,330,57]}
+{"kind":"textbox","id":"sh/vy9wvydk","slide":9,"name":"查看统计与合作网络","text":"查看统计与合作网络","textPreview":"查看统计与合作网络","textChars":9,"textLines":1,"bbox":[251,380,330,57]}
+{"kind":"textbox","id":"sh/8bix0jet","slide":9,"name":"提交门户认领","text":"提交门户认领","textPreview":"提交门户认领","textChars":6,"textLines":1,"bbox":[251,455,330,57]}
+{"kind":"textbox","id":"sh/9cretove","slide":9,"name":"维护本人门户与成果","text":"维护本人门户与成果","textPreview":"维护本人门户与成果","textChars":9,"textLines":1,"bbox":[251,530,330,57]}
+{"kind":"textbox","id":"sh/m90fy9wn","slide":9,"name":"配置来源／采集任务","text":"配置来源／采集任务","textPreview":"配置来源／采集任务","textChars":9,"textLines":1,"bbox":[666,230,343,57]}
+{"kind":"textbox","id":"sh/7a9wred8","slide":9,"name":"执行采集、清洗与入库","text":"执行采集、清洗与入库","textPreview":"执行采集、清洗与入库","textChars":10,"textLines":1,"bbox":[666,305,343,57]}
+{"kind":"textbox","id":"sh/s7mxcnex","slide":9,"name":"审核认领申请","text":"审核认领申请","textPreview":"审核认领申请","textChars":6,"textLines":1,"bbox":[666,380,343,57]}
+{"kind":"textbox","id":"sh/tsvy5svi","slide":9,"name":"质量复核与纠错","text":"质量复核与纠错","textPreview":"质量复核与纠错","textChars":7,"textLines":1,"bbox":[666,455,343,57]}
+{"kind":"textbox","id":"sh/1orep8nm","slide":9,"name":"维护领域分类","text":"维护领域分类","textPreview":"维护领域分类","textChars":6,"textLines":1,"bbox":[666,530,343,57]}
+{"kind":"shape","id":"sh/0nixwn6h","slide":9,"bbox":[209,258.5,42,5.5]}
+{"kind":"shape","id":"sh/fm9wni5w","slide":9,"bbox":[209,264,42,69.5]}
+{"kind":"shape","id":"sh/elgfudob","slide":9,"bbox":[209,264,42,144.5]}
+{"kind":"shape","id":"sh/dk7el8nq","slide":9,"bbox":[209,448,42,35.5]}
+{"kind":"shape","id":"sh/sjyxs365","slide":9,"bbox":[209,558.5,42,8.5]}
+{"kind":"shape","id":"sh/ripwjy5k","slide":9,"bbox":[1009,258.5,42,189]}
+{"kind":"shape","id":"sh/qhgfqtoz","slide":9,"bbox":[1009,333.5,42,114]}
+{"kind":"shape","id":"sh/5w7ehonu","slide":9,"bbox":[1009,408.5,42,39]}
+{"kind":"shape","id":"sh/4vyxo369","slide":9,"bbox":[1009,447.5,42,36]}
+{"kind":"shape","id":"sh/ups3250v","slide":9,"bbox":[1009,447.5,42,111]}
+{"kind":"shape","id":"sh/vqlkbah0","slide":9,"name":"状态迁移","bbox":[1009,267,42,66]}
+{"kind":"shape","id":"sh/wrul4fil","slide":9,"name":"状态迁移","bbox":[136,304,1,110]}
+{"kind":"shape","id":"sh/hc3mdkz6","slide":9,"bbox":[131,299,10,10]}
+{"kind":"shape","id":"sh/mls3yl0j","slide":9,"name":"状态迁移","bbox":[136,488,1,45]}
+{"kind":"shape","id":"sh/7m1k7qh4","slide":9,"bbox":[131,483,10,10]}
+{"kind":"textbox","id":"sh/8nal0vip","slide":9,"name":"权限泛化","text":"权限泛化","textPreview":"权限泛化","textChars":4,"textLines":1,"bbox":[73,356,128,30]}
+{"kind":"textbox","id":"sh/9oj290za","slide":9,"name":"关联线表示参与关系；维护前必须校验本人门户权限","text":"关联线表示参与关系；维护前必须校验本人门户权限","textPreview":"关联线表示参与关系；维护前必须校验本人门户权限","textChars":23,"textLines":1,"bbox":[64,630,1140,36]}
+{"kind":"notes","id":"nt/4zr970","slide":9,"text":"建议讲述 60 秒。\n\n统一总用例将公开查询、门户认领、管理采集和数据治理放在同一边界里。左侧是访客、注册科研人员和已认领学者，右侧是管理员及外部数据源。权限继承由参与者泛化表达。公开统计和网络是用户目标，管理员负责审核、任务及质量。图中关联线不表达先后顺序；详细操作顺序在活动图和状态图中说明。分角色原图在附录保留。\n\n来源：任务书二（二）1；M02/M03；M05第3章；新增汇总模型"}
+{"kind":"slide","id":"sl/pz1mkj","slide":10,"title":"检索场景：找成果，也要核实学者身份","textShapes":11}
+{"kind":"textbox","id":"sh/pkzex0fu","slide":10,"name":"检索场景：找成果，也要核实学者身份","text":"检索场景：找成果，也要核实学者身份","textPreview":"检索场景：找成果，也要核实学者身份","textChars":17,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/2xof2lw3","slide":10,"name":"同名候选由用户核查；平台不把姓名相同当作同一人","text":"同名候选由用户核查；平台不把姓名相同当作同一人","textPreview":"同名候选由用户核查；平台不把姓名相同当作同一人","textChars":23,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/3yxwvqxo","slide":10,"name":"10","text":"10","textPreview":"10","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/gv6x0bex","slide":10,"name":"输入姓名与机构","text":"输入姓名与机构","textPreview":"输入姓名与机构","textChars":7,"textLines":1,"bbox":[64,235,260,85]}
+{"kind":"textbox","id":"sh/1wfetgfi","slide":10,"name":"核对人物候选","text":"核对人物候选","textPreview":"核对人物候选","textChars":6,"textLines":1,"bbox":[358,235,260,85]}
+{"kind":"textbox","id":"sh/etofylw7","slide":10,"name":"组合筛选并查询","text":"组合筛选并查询","textPreview":"组合筛选并查询","textChars":7,"textLines":1,"bbox":[652,235,260,85]}
+{"kind":"textbox","id":"sh/fuxwr6xc","slide":10,"name":"详情与来源核查","text":"详情与来源核查","textPreview":"详情与来源核查","textChars":7,"textLines":1,"bbox":[946,235,260,85]}
+{"kind":"shape","id":"sh/srmxwbe1","slide":10,"bbox":[324,277.5,34,0]}
+{"kind":"shape","id":"sh/tsfepgfm","slide":10,"bbox":[618,277.5,34,0]}
+{"kind":"shape","id":"sh/hwfa9kje","slide":10,"bbox":[912,277.5,34,0]}
+{"kind":"textbox","id":"sh/gv6tgf29","slide":10,"name":"筛选与排序","text":"筛选与排序","textPreview":"筛选与排序","textChars":5,"textLines":1,"bbox":[64,387,1150,44]}
+{"kind":"textbox","id":"sh/vuxs7a1o","slide":10,"name":"跨维度AND／同维度OR；领域含子领域，分页排序可复现","text":"跨维度AND／同维度OR；领域含子领域，分页排序可复现","textPreview":"跨维度AND／同维度OR；领域含子领域，分页排序可复现","textChars":27,"textLines":1,"bbox":[64,435,1150,66]}
+{"kind":"textbox","id":"sh/utobe5k3","slide":10,"name":"异常与上下文","text":"异常与上下文","textPreview":"异常与上下文","textChars":6,"textLines":1,"bbox":[64,505,1150,44]}
+{"kind":"textbox","id":"sh/tsfa50ji","slide":10,"name":"空结果可放宽条件；超时可重试；返回保留查询条件与页码","text":"空结果可放宽条件；超时可重试；返回保留查询条件与页码","textPreview":"空结果可放宽条件；超时可重试；返回保留查询条件与页码","textChars":26,"textLines":1,"bbox":[64,553,1150,66]}
+{"kind":"notes","id":"nt/pz1mkj","slide":10,"text":"建议讲述 45 秒。\n\n以找某位作者近五年的成果为例，用户先输入姓名、机构或领域，系统展示人物候选。用户核对机构、代表成果和标识后，按实体ID查询，而不是把同名作者的论文全部混在一起。未确认身份时允许文本检索，但说明范围。多个筛选维度同时生效，详情展示来源与缺失字段，空结果和服务失败分开提示。返回时保留条件、排序和页码。\n\n来源：M02第6—8、12.1、13章；M03第7.2节；G04/G05/G08"}
+{"kind":"slide","id":"sl/a0w9zi","slide":11,"title":"门户认领：提交、核验、审核与绑定","textShapes":9}
+{"kind":"textbox","id":"sh/adoz6d8z","slide":11,"name":"门户认领：提交、核验、审核与绑定","text":"门户认领：提交、核验、审核与绑定","textPreview":"门户认领：提交、核验、审核与绑定","textChars":16,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/x0fyhs7q","slide":11,"name":"与原活动图一致；审核通过还必须保证唯一绑定成功","text":"与原活动图一致；审核通过还必须保证唯一绑定成功","textPreview":"与原活动图一致；审核通过还必须保证唯一绑定成功","textChars":23,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/wz6h8nq5","slide":11,"name":"11","text":"11","textPreview":"11","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/j2x0j2pg","slide":11,"name":"选择本人门户","text":"选择本人门户","textPreview":"选择本人门户","textChars":6,"textLines":1,"bbox":[64,226,214,80]}
+{"kind":"textbox","id":"sh/y1ozax8v","slide":11,"name":"提交证据","text":"提交证据","textPreview":"提交证据","textChars":4,"textLines":1,"bbox":[298,226,214,80]}
+{"kind":"textbox","id":"sh/l4zilc7m","slide":11,"name":"平台校验","text":"平台校验","textPreview":"平台校验","textChars":4,"textLines":1,"bbox":[532,226,214,80]}
+{"kind":"textbox","id":"sh/k3qhc761","slide":11,"name":"管理员核验","text":"管理员核验","textPreview":"管理员核验","textChars":5,"textLines":1,"bbox":[766,226,214,80]}
+{"kind":"textbox","id":"sh/76h0n2ps","slide":11,"name":"绑定、授权\n审计","text":"绑定、授权\n审计","textPreview":"绑定、授权 | 审计","textChars":8,"textLines":2,"bbox":[1000,226,214,80]}
+{"kind":"shape","id":"sh/658zexo7","slide":11,"bbox":[278,266,20,0]}
+{"kind":"shape","id":"sh/wvixcvu1","slide":11,"bbox":[512,266,20,0]}
+{"kind":"shape","id":"sh/xwre50vm","slide":11,"bbox":[746,266,20,0]}
+{"kind":"shape","id":"sh/atgfalcv","slide":11,"bbox":[980,266,20,0]}
+{"kind":"textbox","id":"sh/kjixgfux","slide":11,"name":"一个账号最多一个本人门户；一个门户最多一个管理账号","text":"一个账号最多一个本人门户；一个门户最多一个管理账号","textPreview":"一个账号最多一个本人门户；一个门户最多一个管理账号","textChars":25,"textLines":1,"bbox":[64,623,1140,34]}
+{"kind":"table","id":"tb/kjytcb2h","slide":11,"name":"","rows":4,"cols":2,"preview":"分支 | 处理结果","bbox":[64,362,1152,239]}
+{"kind":"notes","id":"nt/a0w9zi","slide":11,"text":"建议讲述 60 秒。\n\n原认领活动图已有科研人员、平台和管理员三条泳道。这里提炼其核心：申请人提供身份与成果证据，平台校验材料、重复申请和绑定状态，管理员核验。证据不足走补材料，不是直接驳回。通过后仍要原子检查唯一绑定，再授予权限和写审计。邮箱验证只证明邮箱控制，ORCID格式正确不证明本人；可交互绑定应使用认证流程。并发冲突时回到复核并保留原权限。\n\n来源：M03第7、10节；G03；M05 FR-11/12；https://info.orcid.org/documentation/collecting-and-sharing-orcid-ids/"}
+{"kind":"slide","id":"sl/x3f5zm","slide":12,"title":"采集任务状态机","textShapes":19}
+{"kind":"textbox","id":"sh/p87qx4f2","slide":12,"name":"采集任务状态机","text":"采集任务状态机","textPreview":"采集任务状态机","textChars":7,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/25g7m9gr","slide":12,"name":"新增六状态模型；停止后再执行创建新任务","text":"新增六状态模型；停止后再执行创建新任务","textPreview":"新增六状态模型；停止后再执行创建新任务","textChars":19,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/36p8vuxc","slide":12,"name":"12","text":"12","textPreview":"12","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/g3epkzyl","slide":12,"name":"待执行","text":"待执行","textPreview":"待执行","textChars":3,"textLines":1,"bbox":[64,219,210,70]}
+{"kind":"textbox","id":"sh/14nqt4f6","slide":12,"name":"运行中","text":"运行中","textPreview":"运行中","textChars":3,"textLines":1,"bbox":[447,219,210,70]}
+{"kind":"textbox","id":"sh/e1w7ipgf","slide":12,"name":"成功","text":"成功","textPreview":"成功","textChars":2,"textLines":1,"bbox":[1006,219,210,70]}
+{"kind":"textbox","id":"sh/f258rux0","slide":12,"name":"重试","text":"重试","textPreview":"重试","textChars":2,"textLines":1,"bbox":[64,420,210,70]}
+{"kind":"textbox","id":"sh/0zi9wjep","slide":12,"name":"失败","text":"失败","textPreview":"失败","textChars":2,"textLines":1,"bbox":[447,420,210,70]}
+{"kind":"textbox","id":"sh/l0rq5ofa","slide":12,"name":"已停止","text":"已停止","textPreview":"已停止","textChars":3,"textLines":1,"bbox":[1006,420,210,70]}
+{"kind":"shape","id":"sh/lsz2dojy","slide":12,"name":"启动／计划触发状态迁移","bbox":[274,254,173,1]}
+{"kind":"shape","id":"sh/krq14j2t","slide":12,"bbox":[442,249,10,10]}
+{"kind":"textbox","id":"sh/zqhkbe18","slide":12,"name":"启动／计划触发","text":"启动／计划触发","textPreview":"启动／计划触发","textChars":7,"textLines":1,"bbox":[280,214,168,32]}
+{"kind":"shape","id":"sh/ypoj2tkn","slide":12,"name":"采集解析完成状态迁移","bbox":[657,254,349,1]}
+{"kind":"shape","id":"sh/xof29oj2","slide":12,"bbox":[1001,249,10,10]}
+{"kind":"textbox","id":"sh/cn610j2h","slide":12,"name":"采集解析完成","text":"采集解析完成","textPreview":"采集解析完成","textChars":6,"textLines":1,"bbox":[719,213,235,32]}
+{"kind":"shape","id":"sh/bmxk7elw","slide":12,"name":"无法继续状态迁移","bbox":[552,289,1,131]}
+{"kind":"shape","id":"sh/alojy9kb","slide":12,"bbox":[547,415,10,10]}
+{"kind":"textbox","id":"sh/hkj2l8j6","slide":12,"name":"无法继续","text":"无法继续","textPreview":"无法继续","textChars":4,"textLines":1,"bbox":[663,382,170,32]}
+{"kind":"shape","id":"sh/wjalc32l","slide":12,"name":"重试获准状态迁移","bbox":[274,455,173,1]}
+{"kind":"shape","id":"sh/gni58rax","slide":12,"bbox":[269,450,10,10]}
+{"kind":"textbox","id":"sh/1ormhwri","slide":12,"name":"重试获准","text":"重试获准","textPreview":"重试获准","textChars":4,"textLines":1,"bbox":[305,415,170,32]}
+{"kind":"shape","id":"sh/el036hsr","slide":12,"name":"退避到期状态迁移","bbox":[169,289,320,131]}
+{"kind":"shape","id":"sh/fm94fm9c","slide":12,"bbox":[484,284,10,10]}
+{"kind":"textbox","id":"sh/szyl47a1","slide":12,"name":"退避到期","text":"退避到期","textPreview":"退避到期","textChars":4,"textLines":1,"bbox":[268,297,170,32]}
+{"kind":"shape","id":"sh/tk7mdcrm","slide":12,"name":"放弃任务状态迁移","bbox":[657,455,349,1]}
+{"kind":"shape","id":"sh/6xg32xsv","slide":12,"bbox":[1001,450,10,10]}
+{"kind":"textbox","id":"sh/ryp4b29g","slide":12,"name":"放弃任务","text":"放弃任务","textPreview":"放弃任务","textChars":4,"textLines":1,"bbox":[767,415,170,32]}
+{"kind":"shape","id":"sh/4vyl07ap","slide":12,"name":"停止状态迁移","bbox":[618,289,493,131]}
+{"kind":"shape","id":"sh/5w7m9cra","slide":12,"bbox":[1106,415,10,10]}
+{"kind":"textbox","id":"sh/nq54j2dc","slide":12,"name":"停止","text":"停止","textPreview":"停止","textChars":2,"textLines":1,"bbox":[843,337,170,32]}
+{"kind":"shape","id":"sh/mpwnaxcr","slide":12,"name":"取消状态迁移","bbox":[42,254,1020,282]}
+{"kind":"shape","id":"sh/9snmlsv2","slide":12,"bbox":[1057,485,10,10]}
+{"kind":"textbox","id":"sh/8re5cnuh","slide":12,"name":"取消","text":"取消","textPreview":"取消","textChars":2,"textLines":1,"bbox":[47,337,100,32]}
+{"kind":"shape","id":"sh/vupon2t8","slide":12,"name":"停止重试状态迁移","bbox":[169,490,991,63]}
+{"kind":"shape","id":"sh/atwnexcn","slide":12,"bbox":[1155,485,10,10]}
+{"kind":"textbox","id":"sh/hw76pcbe","slide":12,"name":"停止重试","text":"停止重试","textPreview":"停止重试","textChars":4,"textLines":1,"bbox":[607,550,180,32]}
+{"kind":"textbox","id":"sh/wvy5g7ut","slide":12,"name":"取消、停止与放弃均进入已停止；每次迁移保留日志、进度和原因","text":"取消、停止与放弃均进入已停止；每次迁移保留日志、进度和原因","textPreview":"取消、停止与放弃均进入已停止；每次迁移保留日志、进度和原因","textChars":29,"textLines":1,"bbox":[64,576,1152,67]}
+{"kind":"notes","id":"nt/x3f5zm","slide":12,"text":"建议讲述 50 秒。\n\n采集状态统一为待执行、运行中、成功、失败、重试和已停止。管理员启动或计划触发进入运行，失败保存错误与检查点，再按退避和次数上限重试。停止是终态，再执行建立新任务并关联旧任务。原SRS提到暂停但没有暂停及恢复状态，因此当前统一为停止。采集成功只指约定采集和解析完成，不代表数据质量、索引和整个系统都验收成功。完整事件与日志规则见配套方案。\n\n来源：任务书二（二）3；M05第8.1节；M06 SPEC-INGEST-01；本次补充模型"}
+{"kind":"slide","id":"sl/2bzw7g","slide":13,"title":"认领申请状态机","textShapes":21}
+{"kind":"textbox","id":"sh/5gr61sj6","slide":13,"name":"认领申请状态机","text":"认领申请状态机","textPreview":"认领申请状态机","textChars":7,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/id0nqdkf","slide":13,"name":"补入“待补充”，保留终态历史；驳回后重新申请建新记录","text":"补入“待补充”，保留终态历史；驳回后重新申请建新记录","textPreview":"补入“待补充”，保留终态历史；驳回后重新申请建新记录","textChars":26,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/3e9ozi10","slide":13,"name":"13","text":"13","textPreview":"13","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/sj25wn2h","slide":13,"name":"草稿","text":"草稿","textPreview":"草稿","textChars":2,"textLines":1,"bbox":[64,222,200,70]}
+{"kind":"textbox","id":"sh/dkb65sj2","slide":13,"name":"待审核","text":"待审核","textPreview":"待审核","textChars":3,"textLines":1,"bbox":[385,222,200,70]}
+{"kind":"textbox","id":"sh/qh0nuxkr","slide":13,"name":"审核中","text":"审核中","textPreview":"审核中","textChars":3,"textLines":1,"bbox":[707,222,200,70]}
+{"kind":"textbox","id":"sh/rito321w","slide":13,"name":"已通过","text":"已通过","textPreview":"已通过","textChars":3,"textLines":1,"bbox":[1016,222,200,70]}
+{"kind":"textbox","id":"sh/0725072t","slide":13,"name":"已撤回","text":"已撤回","textPreview":"已撤回","textChars":3,"textLines":1,"bbox":[64,447,200,70]}
+{"kind":"textbox","id":"sh/18b69cje","slide":13,"name":"待补充","text":"待补充","textPreview":"待补充","textChars":3,"textLines":1,"bbox":[385,447,200,70]}
+{"kind":"textbox","id":"sh/pgjal4jq","slide":13,"name":"已驳回","text":"已驳回","textPreview":"已驳回","textChars":3,"textLines":1,"bbox":[1016,447,200,70]}
+{"kind":"shape","id":"sh/4fa9cz2l","slide":13,"name":"提交状态迁移","bbox":[264,257,121,1]}
+{"kind":"shape","id":"sh/3e1sju10","slide":13,"bbox":[380,252,10,10]}
+{"kind":"textbox","id":"sh/2dsrapkf","slide":13,"name":"提交","text":"提交","textPreview":"提交","textChars":2,"textLines":1,"bbox":[292,223,89,32]}
+{"kind":"shape","id":"sh/dkjap4j2","slide":13,"name":"受理状态迁移","bbox":[585,257,122,1]}
+{"kind":"shape","id":"sh/cja9gj2h","slide":13,"bbox":[702,252,10,10]}
+{"kind":"textbox","id":"sh/bi1sne1w","slide":13,"name":"受理","text":"受理","textPreview":"受理","textChars":2,"textLines":1,"bbox":[617,224,87,32]}
+{"kind":"shape","id":"sh/qhsre9kb","slide":13,"name":"绑定通过状态迁移","bbox":[907,257,109,1]}
+{"kind":"shape","id":"sh/tozadkji","slide":13,"bbox":[1011,252,10,10]}
+{"kind":"textbox","id":"sh/snq94f2d","slide":13,"name":"绑定通过","text":"绑定通过","textPreview":"绑定通过","textChars":4,"textLines":1,"bbox":[915,220,120,32]}
+{"kind":"shape","id":"sh/kru90fa9","slide":13,"name":"证据不足状态迁移","bbox":[520,292,257,155]}
+{"kind":"shape","id":"sh/ls3atkre","slide":13,"bbox":[515,442,10,10]}
+{"kind":"textbox","id":"sh/y5sry5s3","slide":13,"name":"证据不足","text":"证据不足","textPreview":"证据不足","textChars":4,"textLines":1,"bbox":[596,402,170,32]}
+{"kind":"shape","id":"sh/j61srato","slide":13,"name":"补充提交状态迁移","bbox":[440,292,1,155]}
+{"kind":"shape","id":"sh/8vut4za5","slide":13,"bbox":[435,287,10,10]}
+{"kind":"textbox","id":"sh/tw3ax4rq","slide":13,"name":"补充提交","text":"补充提交","textPreview":"补充提交","textChars":4,"textLines":1,"bbox":[450,340,125,32]}
+{"kind":"shape","id":"sh/6tcr2psz","slide":13,"name":"驳回状态迁移","bbox":[846,292,270,155]}
+{"kind":"shape","id":"sh/7ulsvu9k","slide":13,"bbox":[1111,442,10,10]}
+{"kind":"textbox","id":"sh/gzet8za1","slide":13,"name":"驳回","text":"驳回","textPreview":"驳回","textChars":2,"textLines":1,"bbox":[944,353,95,32]}
+{"kind":"shape","id":"sh/h0na14rm","slide":13,"name":"绑定冲突／复核状态迁移","bbox":[485,201,321,21]}
+{"kind":"shape","id":"sh/rupcryt4","slide":13,"bbox":[480,217,10,10]}
+{"kind":"textbox","id":"sh/qtgvytcj","slide":13,"name":"绑定冲突／复核","text":"绑定冲突／复核","textPreview":"绑定冲突／复核","textChars":7,"textLines":1,"bbox":[536,172,247,32]}
+{"kind":"shape","id":"sh/dw7ut8bu","slide":13,"name":"放弃状态迁移","bbox":[164,292,1,155]}
+{"kind":"shape","id":"sh/cvyd03u9","slide":13,"bbox":[159,442,10,10]}
+{"kind":"textbox","id":"sh/3qpcnyts","slide":13,"name":"放弃","text":"放弃","textPreview":"放弃","textChars":2,"textLines":1,"bbox":[179,355,90,32]}
+{"kind":"shape","id":"sh/ipwvutc7","slide":13,"name":"撤回状态迁移","bbox":[264,280,121,202]}
+{"kind":"shape","id":"sh/ps7up8by","slide":13,"bbox":[259,477,10,10]}
+{"kind":"textbox","id":"sh/4rydw3ud","slide":13,"name":"撤回","text":"撤回","textPreview":"撤回","textChars":2,"textLines":1,"bbox":[310,352,87,32]}
+{"kind":"shape","id":"sh/nm9wzitw","slide":13,"name":"撤回状态迁移","bbox":[264,482,121,1]}
+{"kind":"shape","id":"sh/ml0v6dcr","slide":13,"bbox":[259,477,10,10]}
+{"kind":"textbox","id":"sh/a9gzuh8v","slide":13,"name":"撤回","text":"撤回","textPreview":"撤回","textChars":2,"textLines":1,"bbox":[295,485,86,32]}
+{"kind":"textbox","id":"sh/vupgnm9g","slide":13,"name":"未通过或发生冲突时不授予权限；申请状态变更必须记录操作者和理由","text":"未通过或发生冲突时不授予权限；申请状态变更必须记录操作者和理由","textPreview":"未通过或发生冲突时不授予权限；申请状态变更必须记录操作者和理由","textChars":31,"textLines":1,"bbox":[64,580,1152,68]}
+{"kind":"notes","id":"nt/2bzw7g","slide":13,"text":"建议讲述 55 秒。\n\n认领模型补入SRS缺少的待补充状态，与已有活动图一致。申请从草稿提交为待审核，再由管理员开始审核，审核可退回补充、驳回或绑定通过。待补充重新提交回到待审核；绑定竞争也回到待审核。草稿、待审核和待补充可撤回；终态历史不改写。已驳回后需要再次申请时建立新记录，避免重用旧申请破坏审核证据。\n\n来源：M03第7、10、13节；G03；M05第8.2节；本次统一模型"}
+{"kind":"slide","id":"sl/x547eq","slide":14,"title":"SRS与SPEC：把业务规则写成可实现约束","textShapes":3}
+{"kind":"textbox","id":"sh/u943qlkf","slide":14,"name":"SRS与SPEC：把业务规则写成可实现约束","text":"SRS与SPEC：把业务规则写成可实现约束","textPreview":"SRS与SPEC：把业务规则写成可实现约束","textChars":21,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/hcvm10j6","slide":14,"name":"6项已有核心规范；项目、认领与统计仍需回写正式文件","text":"6项已有核心规范；项目、认领与统计仍需回写正式文件","textPreview":"6项已有核心规范；项目、认领与统计仍需回写正式文件","textChars":25,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/gbmlsv2l","slide":14,"name":"14","text":"14","textPreview":"14","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"table","id":"tb/udorqpsv","slide":14,"name":"","rows":5,"cols":3,"preview":"已有模块规范 | 规则重点 | 建议补齐","bbox":[64,187,1152,426]}
+{"kind":"notes","id":"nt/x547eq","slide":14,"text":"建议讲述 40 秒。\n\n已有SRS给出了十六项功能需求，SPEC提供采集、清洗、去重、消歧、检索和质量六项规范。我们建议在原规范中补齐科研项目，而不是另造一套体系；认领与统计已有散落的规则，需要整理为独立模块规范。每份规范要明确做什么、输入输出、规则边界、异常、接口和验收，并与需求编号对应。后续代码履约从已评审规范开始。\n\n来源：M05第3—9章；M06第1—8章；M03第7节"}
+{"kind":"slide","id":"sl/6ezhzy","slide":15,"title":"去重与消歧：标识优先，证据不足人工复核","textShapes":4}
+{"kind":"textbox","id":"sh/kbylc7qh","slide":15,"name":"去重与消歧：标识优先，证据不足人工复核","text":"去重与消歧：标识优先，证据不足人工复核","textPreview":"去重与消歧：标识优先，证据不足人工复核","textChars":19,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/japkj2pw","slide":15,"name":"阈值沿用现有SPEC；必须定义有效证据、缺失处理和版本","text":"阈值沿用现有SPEC；必须定义有效证据、缺失处理和版本","textPreview":"阈值沿用现有SPEC；必须定义有效证据、缺失处理和版本","textChars":27,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/i9gjax8b","slide":15,"name":"15","text":"15","textPreview":"15","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/w7y18nq5","slide":15,"name":"不同强标识不能被高相似分数覆盖；缺失证据不默认满分","text":"不同强标识不能被高相似分数覆盖；缺失证据不默认满分","textPreview":"不同强标识不能被高相似分数覆盖；缺失证据不默认满分","textChars":25,"textLines":1,"bbox":[64,637,1115,29]}
+{"kind":"table","id":"tb/8z6hk3ed","slide":15,"name":"","rows":6,"cols":3,"preview":"对象 | 优先依据 | 自动／人工复核区间","bbox":[64,178,1152,448]}
+{"kind":"notes","id":"nt/6ezhzy","slide":15,"text":"建议讲述 55 秒。\n\n清洗保留原值和比较值，规范DOI、日期精度及作者顺序。论文先用DOI去重，无DOI再做候选评分；专利区分公开文献、申请和家族；奖励用复合键。项目补充资助机构和项目编号，编号缺失只召回候选并人工确认。作者同名不能直接合并，身份和机构历史需要多项证据。表中阈值来自现有SPEC，是待标注样本验证的参数，不是已经达到的效果。\n\n来源：M04第4—6章；M06 SPEC-DATA-01/02/03；项目为本次补充"}
+{"kind":"slide","id":"sl/5nqyb2","slide":16,"title":"检索、统计与创新的统一规则","textShapes":9}
+{"kind":"textbox","id":"sh/xcjidkni","slide":16,"name":"检索、统计与创新的统一规则","text":"检索、统计与创新的统一规则","textPreview":"检索、统计与创新的统一规则","textChars":13,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/apszi54r","slide":16,"name":"列表与统计使用同一范围与版本，结果可解释、可回溯","text":"列表与统计使用同一范围与版本，结果可解释、可回溯","textPreview":"列表与统计使用同一范围与版本，结果可解释、可回溯","textChars":24,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/bq10ba5c","slide":16,"name":"16","text":"16","textPreview":"16","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/kfuhofm9","slide":16,"name":"检索：精确命中与稳定顺序","text":"检索：精确命中与稳定顺序","textPreview":"检索：精确命中与稳定顺序","textChars":12,"textLines":1,"bbox":[64,185,1152,44]}
+{"kind":"textbox","id":"sh/lg3ihkne","slide":16,"name":"标题优先；并列按年份↓、成果ID↑；跨类型分值须校准","text":"标题优先；并列按年份↓、成果ID↑；跨类型分值须校准","textPreview":"标题优先；并列按年份↓、成果ID↑；跨类型分值须校准","textChars":26,"textLines":1,"bbox":[64,233,1152,66]}
+{"kind":"textbox","id":"sh/ydczmp43","slide":16,"name":"统计：类型口径与明细一致","text":"统计：类型口径与明细一致","textPreview":"统计：类型口径与明细一致","textChars":12,"textLines":1,"bbox":[64,325,1152,44]}
+{"kind":"textbox","id":"sh/jel0fa5o","slide":16,"name":"机构全计数、多领域可重叠；未分类与缺失年份单列","text":"机构全计数、多领域可重叠；未分类与缺失年份单列","textPreview":"机构全计数、多领域可重叠；未分类与缺失年份单列","textChars":23,"textLines":1,"bbox":[64,373,1152,66]}
+{"kind":"textbox","id":"sh/0jqhcvmp","slide":16,"name":"创新：最短共著路径与证据","text":"创新：最短共著路径与证据","textPreview":"创新：最短共著路径与证据","textChars":12,"textLines":1,"bbox":[64,465,1152,44]}
+{"kind":"textbox","id":"sh/1kzi50na","slide":16,"name":"在基础网络上筛选、查共同论文；路径不代表合作意愿","text":"在基础网络上筛选、查共同论文；路径不代表合作意愿","textPreview":"在基础网络上筛选、查共同论文；路径不代表合作意愿","textChars":24,"textLines":1,"bbox":[64,513,1152,66]}
+{"kind":"notes","id":"nt/5nqyb2","slide":16,"text":"建议讲述 55 秒。\n\n检索首先保证精确标识命中和标题优先，并列结果采用年份和成果ID形成稳定顺序。现有复合分包含文本、引用、时效和质量，实施前需要统一归一化与缺失值处理。统计使用与列表一致的数据版本，机构采用全计数，故机构数量合计可能大于总成果数。合作网络边必须能追踪共同论文，最短路径仅代表共著连接。基础统计和网络是必做，高级筛选及路径分析是拟选创新增量。\n\n来源：M03第7.2/7.3节；M02第9章；M06 SPEC-SEARCH-01；G01"}
+{"kind":"slide","id":"sl/7m7ar1","slide":17,"title":"可验收的质量目标","textShapes":3}
+{"kind":"textbox","id":"sh/9krixo7q","slide":17,"name":"可验收的质量目标","text":"可验收的质量目标","textPreview":"可验收的质量目标","textChars":8,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/mh0jmtoz","slide":17,"name":"以下是验收目标，当前资料未提供实测达标证据","text":"以下是验收目标，当前资料未提供实测达标证据","textPreview":"以下是验收目标，当前资料未提供实测达标证据","textChars":21,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/ni90vypk","slide":17,"name":"17","text":"17","textPreview":"17","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"table","id":"tb/hc32xkb6","slide":17,"name":"","rows":5,"cols":3,"preview":"维度 | 建议验收条件 | 验证方式","bbox":[64,192,1152,413]}
+{"kind":"notes","id":"nt/7m7ar1","slide":17,"text":"建议讲述 50 秒。\n\n任务书要求最终入库至少一万条成果，我们将它转化为可测试环境，建议在二十并发、预热五分钟下检索P95不超过两秒，统计五秒以内。数据质量目标沿用已有规范：核心完整率至少百分之九十五，来源追踪百分之百，清洗和自动合并通过抽样验证。认领并发、幂等采集和非本人修改也要有失败场景。当前没有实测报告，这些数字均是目标，评审应确认测试设备、分母和抽样方法。\n\n来源：任务书四（二）；M03第8节；M05第7/9章；M06第3/5/6/7章"}
+{"kind":"slide","id":"sl/oevp8p","slide":18,"title":"需求追踪：每项要求都有模型与验收","textShapes":3}
+{"kind":"textbox","id":"sh/gb6tgved","slide":18,"name":"需求追踪：每项要求都有模型与验收","text":"需求追踪：每项要求都有模型与验收","textPreview":"需求追踪：每项要求都有模型与验收","textChars":16,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/faxsnqxs","slide":18,"name":"完整追踪矩阵见配套方案；局部需求编号加角色前缀","text":"完整追踪矩阵见配套方案；局部需求编号加角色前缀","textPreview":"完整追踪矩阵见配套方案；局部需求编号加角色前缀","textChars":23,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/u9obelw7","slide":18,"name":"18","text":"18","textPreview":"18","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"table","id":"tb/gretkfyt","slide":18,"name":"","rows":5,"cols":4,"preview":"统一需求 | 模型／用例 | 规范 | 代表验收场景","bbox":[64,188,1152,414]}
+{"kind":"notes","id":"nt/oevp8p","slide":18,"text":"建议讲述 40 秒。\n\n这张矩阵让评审能从任务书找到需求，再找到模型和SPEC，最后找到可执行的验收场景。例如门户认领对应提交与审核用例、活动图和认领状态图，验收要覆盖补材料、驳回、重复申请和并发绑定。采集对应六状态图和INGEST规范，统计对应统一口径及合作网络证据。原各角色报告局部编号要加前缀，统一以SRS的FR编号维护，防止同号异义。\n\n来源：M05 FR-01—16；M06第1、8章；配套方案第12节"}
+{"kind":"slide","id":"sl/c6jcoh","slide":19,"title":"评审前的重点修订与验证","textShapes":3}
+{"kind":"textbox","id":"sh/lkz658vi","slide":19,"name":"评审前的重点修订与验证","text":"评审前的重点修订与验证","textPreview":"评审前的重点修订与验证","textChars":11,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/yh8nutcr","slide":19,"name":"本次已提供补充模型与方案；正式SRS／SPEC修订及评审尚待完成","text":"本次已提供补充模型与方案；正式SRS／SPEC修订及评审尚待完成","textPreview":"本次已提供补充模型与方案；正式SRS／SPEC修订及评审尚待完成","textChars":32,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/ziho3ydc","slide":19,"name":"19","text":"19","textPreview":"19","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"table","id":"tb/xk7ehwvu","slide":19,"name":"","rows":5,"cols":3,"preview":"工作 | 应形成的证据 | 建议责任方向","bbox":[64,192,1152,415]}
+{"kind":"notes","id":"nt/c6jcoh","slide":19,"text":"建议讲述 45 秒。\n\n评审前优先做四件事：修订SRS，把四类、维护、基础统计和一个创新的范围写清；同步模型，把待补充和停止语义写入正式状态表；补齐项目采集、编号、去重和检索的样例规范；保存真实访谈、接入实验和评审记录。这不是重新扩建系统，而是消除已有文件之间的冲突，使团队在后续分析、设计和实现时遵循同一份需求。\n\n来源：M01—M06差异核对；任务书需求调研／建模评审要求"}
+{"kind":"slide","id":"sl/ogi1y9","slide":20,"title":"总体方案与后续交付","textShapes":5}
+{"kind":"textbox","id":"sh/obi10vih","slide":20,"name":"总体方案与后续交付","text":"总体方案与后续交付","textPreview":"总体方案与后续交付","textChars":9,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/na90rqhw","slide":20,"name":"四类成果共享闭环；三角色分工；统一规范与验收","text":"四类成果共享闭环；三角色分工；统一规范与验收","textPreview":"四类成果共享闭环；三角色分工；统一规范与验收","textChars":22,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/290jyl0b","slide":20,"name":"20","text":"20","textPreview":"20","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/187ipgzq","slide":20,"name":"可追踪的数据\n可信的门户\n可解释的检索与统计","text":"可追踪的数据\n可信的门户\n可解释的检索与统计","textPreview":"可追踪的数据 | 可信的门户 | 可解释的检索与统计","textChars":22,"textLines":3,"bbox":[64,230,1152,236]}
+{"kind":"textbox","id":"sh/07y1wbi5","slide":20,"name":"调研报告 ＋ SRS／SPEC ＋ 业务模型 ＋ 汇报与验证证据","text":"调研报告 ＋ SRS／SPEC ＋ 业务模型 ＋ 汇报与验证证据","textPreview":"调研报告 ＋ SRS／SPEC ＋ 业务模型 ＋ 汇报与验证证据","textChars":32,"textLines":1,"bbox":[64,532,1120,90]}
+{"kind":"notes","id":"nt/ogi1y9","slide":20,"text":"建议讲述 30 秒。\n\n我们的总体方案是以可追踪的数据为底座，以公开检索和学者门户为入口，以审核和数据治理保证可信，以可解释统计支持共享。现有材料已经提供较多调研和规则，但需要统一范围、补足项目与状态模型，并完成真实验证和评审。本阶段交付应包括调研报告、SRS、SPEC、模型、汇报和证据，再由已评审需求进入系统分析、架构和构件设计。附录完整保留八张原图，供老师提问时展开。\n\n来源：任务书第二部分与里程碑；本次整合方案"}
+{"kind":"slide","id":"sl/r96b2s","slide":21,"title":"附录 · 普通用户用例图","textShapes":4}
+{"kind":"textbox","id":"sh/8zihcvad","slide":21,"name":"附录 · 普通用户用例图","text":"附录 · 普通用户用例图","textPreview":"附录 · 普通用户用例图","textChars":12,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/7yp0jq9s","slide":21,"name":"原图保留，答疑时放大查看","text":"原图保留，答疑时放大查看","textPreview":"原图保留，答疑时放大查看","textChars":12,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/6xgzals7","slide":21,"name":"21","text":"21","textPreview":"21","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/g3ihgva9","slide":21,"name":"公开检索与统计；注册账户扩展个人功能","text":"公开检索与统计；注册账户扩展个人功能","textPreview":"公开检索与统计；注册账户扩展个人功能","textChars":18,"textLines":1,"bbox":[64,647,1070,40]}
+{"kind":"image","id":"im/0b29kzah","slide":21,"name":"","alt":"普通用户用例图","bbox":[64,175,1148,465]}
+{"kind":"notes","id":"nt/r96b2s","slide":21,"text":"答疑附录，不计入15分钟主讲。\n\n此页完整保留小组原图。公开检索与统计；注册账户扩展个人功能。原图用于对应现有资料，主讲中的统一模型及优先级以配套方案为准。类图和时序图属于后续需求分析的预研材料。\n\n来源：M02；G01"}
+{"kind":"slide","id":"sl/ig54lh","slide":22,"title":"附录 · 科研人员用例图","textShapes":4}
+{"kind":"textbox","id":"sh/xc3elo36","slide":22,"name":"附录 · 科研人员用例图","text":"附录 · 科研人员用例图","textPreview":"附录 · 科研人员用例图","textChars":12,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/apsfqt4f","slide":22,"name":"原图保留，答疑时放大查看","text":"原图保留，答疑时放大查看","textPreview":"原图保留，答疑时放大查看","textChars":12,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/vq1wjel0","slide":22,"name":"22","text":"22","textPreview":"22","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/9ojeho3u","slide":22,"name":"认领前后权限分离；审核管理员参与","text":"认领前后权限分离；审核管理员参与","textPreview":"认领前后权限分离；审核管理员参与","textChars":16,"textLines":1,"bbox":[64,647,1070,40]}
+{"kind":"image","id":"im/5cfup0by","slide":22,"name":"","alt":"科研人员用例图","bbox":[64,175,1148,465]}
+{"kind":"notes","id":"nt/ig54lh","slide":22,"text":"答疑附录，不计入15分钟主讲。\n\n此页完整保留小组原图。认领前后权限分离；审核管理员参与。原图用于对应现有资料，主讲中的统一模型及优先级以配套方案为准。类图和时序图属于后续需求分析的预研材料。\n\n来源：M03第9节；G02"}
+{"kind":"slide","id":"sl/oeq6l9","slide":23,"title":"附录 · 普通用户活动图","textShapes":4}
+{"kind":"textbox","id":"sh/6por2pkn","slide":23,"name":"附录 · 普通用户活动图","text":"附录 · 普通用户活动图","textPreview":"附录 · 普通用户活动图","textChars":12,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/tsfax4je","slide":23,"name":"原图保留，答疑时放大查看","text":"原图保留，答疑时放大查看","textPreview":"原图保留，答疑时放大查看","textChars":12,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/8r6t4z2t","slide":23,"name":"23","text":"23","textPreview":"23","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/utob69kj","slide":23,"name":"成果、学者和统计三条查询路径","text":"成果、学者和统计三条查询路径","textPreview":"成果、学者和统计三条查询路径","textChars":14,"textLines":1,"bbox":[64,647,1070,40]}
+{"kind":"image","id":"im/up07q9kb","slide":23,"name":"","alt":"普通用户活动图","bbox":[64,175,1148,465]}
+{"kind":"notes","id":"nt/oeq6l9","slide":23,"text":"答疑附录，不计入15分钟主讲。\n\n此页完整保留小组原图。成果、学者和统计三条查询路径。原图用于对应现有资料，主讲中的统一模型及优先级以配套方案为准。类图和时序图属于后续需求分析的预研材料。\n\n来源：M02；G04"}
+{"kind":"slide","id":"sl/dsfb7y","slide":24,"title":"附录 · 作者检索活动图","textShapes":4}
+{"kind":"textbox","id":"sh/hczepgf6","slide":24,"name":"附录 · 作者检索活动图","text":"附录 · 作者检索活动图","textPreview":"附录 · 作者检索活动图","textChars":12,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/u9ofulgv","slide":24,"name":"原图保留，答疑时放大查看","text":"原图保留，答疑时放大查看","textPreview":"原图保留，答疑时放大查看","textChars":12,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/fahwnqxg","slide":24,"name":"24","text":"24","textPreview":"24","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/t8felgza","slide":24,"name":"同名候选、条件校验、空结果与返回上下文","text":"同名候选、条件校验、空结果与返回上下文","textPreview":"同名候选、条件校验、空结果与返回上下文","textChars":19,"textLines":1,"bbox":[64,647,1070,40]}
+{"kind":"image","id":"im/dczi9kny","slide":24,"name":"","alt":"作者检索活动图","bbox":[64,175,1148,465]}
+{"kind":"notes","id":"nt/dsfb7y","slide":24,"text":"答疑附录，不计入15分钟主讲。\n\n此页完整保留小组原图。同名候选、条件校验、空结果与返回上下文。原图用于对应现有资料，主讲中的统一模型及优先级以配套方案为准。类图和时序图属于后续需求分析的预研材料。\n\n来源：M02 UC-01；G05"}
+{"kind":"slide","id":"sl/5qww9a","slide":25,"title":"附录 · 门户认领活动图","textShapes":4}
+{"kind":"textbox","id":"sh/076lg7ut","slide":25,"name":"附录 · 门户认领活动图","text":"附录 · 门户认领活动图","textPreview":"附录 · 门户认领活动图","textChars":12,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/z6xkn2t8","slide":25,"name":"原图保留，答疑时放大查看","text":"原图保留，答疑时放大查看","textPreview":"原图保留，答疑时放大查看","textChars":12,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/y5o3ehcn","slide":25,"name":"25","text":"25","textPreview":"25","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/8vqlkrup","slide":25,"name":"三泳道：核验、补充、绑定竞争与审计","text":"三泳道：核验、补充、绑定竞争与审计","textPreview":"三泳道：核验、补充、绑定竞争与审计","textChars":17,"textLines":1,"bbox":[64,647,1070,40]}
+{"kind":"image","id":"im/s3i94bu5","slide":25,"name":"","alt":"门户认领活动图","bbox":[64,175,1148,465]}
+{"kind":"notes","id":"nt/5qww9a","slide":25,"text":"答疑附录，不计入15分钟主讲。\n\n此页完整保留小组原图。三泳道：核验、补充、绑定竞争与审计。原图用于对应现有资料，主讲中的统一模型及优先级以配套方案为准。类图和时序图属于后续需求分析的预研材料。\n\n来源：M03第10节；G03"}
+{"kind":"slide","id":"sl/h125k5","slide":26,"title":"附录 · 科研现状调研活动图","textShapes":4}
+{"kind":"textbox","id":"sh/ofytsnmt","slide":26,"name":"附录 · 科研现状调研活动图","text":"附录 · 科研现状调研活动图","textPreview":"附录 · 科研现状调研活动图","textChars":14,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/nepszi58","slide":26,"name":"原图保留，答疑时放大查看","text":"原图保留，答疑时放大查看","textPreview":"原图保留，答疑时放大查看","textChars":12,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/mtgbqd4n","slide":26,"name":"26","text":"26","textPreview":"26","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/0rytonmh","slide":26,"name":"资料核查、资源条件、笔记与统计辅助","text":"资料核查、资源条件、笔记与统计辅助","textPreview":"资料核查、资源条件、笔记与统计辅助","textChars":17,"textLines":1,"bbox":[64,647,1070,40]}
+{"kind":"image","id":"im/srmdsr69","slide":26,"name":"","alt":"科研现状调研活动图","bbox":[64,175,1148,465]}
+{"kind":"notes","id":"nt/h125k5","slide":26,"text":"答疑附录，不计入15分钟主讲。\n\n此页完整保留小组原图。资料核查、资源条件、笔记与统计辅助。原图用于对应现有资料，主讲中的统一模型及优先级以配套方案为准。类图和时序图属于后续需求分析的预研材料。\n\n来源：M03；G06"}
+{"kind":"slide","id":"sl/itmwvl","slide":27,"title":"附录 · 核心业务类图（预研）","textShapes":4}
+{"kind":"textbox","id":"sh/zyd0fuhg","slide":27,"name":"附录 · 核心业务类图（预研）","text":"附录 · 核心业务类图（预研）","textPreview":"附录 · 核心业务类图（预研）","textChars":15,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/0zmhozi1","slide":27,"name":"原图保留，答疑时放大查看","text":"原图保留，答疑时放大查看","textPreview":"原图保留，答疑时放大查看","textChars":12,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/1kvih4z6","slide":27,"name":"27","text":"27","textPreview":"27","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/nmx0juhc","slide":27,"name":"四类成果与贡献关系；采集任务等对象需后续补齐","text":"四类成果与贡献关系；采集任务等对象需后续补齐","textPreview":"四类成果与贡献关系；采集任务等对象需后续补齐","textChars":22,"textLines":1,"bbox":[64,647,1070,40]}
+{"kind":"image","id":"im/3ml4nypg","slide":27,"name":"","alt":"核心业务类图（预研）","bbox":[64,175,1148,465]}
+{"kind":"notes","id":"nt/itmwvl","slide":27,"text":"答疑附录，不计入15分钟主讲。\n\n此页完整保留小组原图。四类成果与贡献关系；采集任务等对象需后续补齐。原图用于对应现有资料，主讲中的统一模型及优先级以配套方案为准。类图和时序图属于后续需求分析的预研材料。\n\n来源：M03；G07"}
+{"kind":"slide","id":"sl/ed07ej","slide":28,"title":"附录 · 检索请求时序图（预研）","textShapes":4}
+{"kind":"textbox","id":"sh/jmd4bedo","slide":28,"name":"附录 · 检索请求时序图（预研）","text":"附录 · 检索请求时序图（预研）","textPreview":"附录 · 检索请求时序图（预研）","textChars":16,"textLines":1,"bbox":[64,42,1152,74]}
+{"kind":"textbox","id":"sh/4nm54zu9","slide":28,"name":"原图保留，答疑时放大查看","text":"原图保留，答疑时放大查看","textPreview":"原图保留，答疑时放大查看","textChars":12,"textLines":1,"bbox":[64,123,1152,45]}
+{"kind":"textbox","id":"sh/58vmd4vu","slide":28,"name":"28","text":"28","textPreview":"28","textChars":2,"textLines":1,"bbox":[1160,666,56,28]}
+{"kind":"textbox","id":"sh/vit47uds","slide":28,"name":"参数校验、索引查询、权限过滤与结果返回","text":"参数校验、索引查询、权限过滤与结果返回","textPreview":"参数校验、索引查询、权限过滤与结果返回","textChars":19,"textLines":1,"bbox":[64,647,1070,40]}
+{"kind":"image","id":"im/7qlkb690","slide":28,"name":"","alt":"检索请求时序图（预研）","bbox":[64,175,1148,465]}
+{"kind":"notes","id":"nt/ed07ej","slide":28,"text":"答疑附录，不计入15分钟主讲。\n\n此页完整保留小组原图。参数校验、索引查询、权限过滤与结果返回。原图用于对应现有资料，主讲中的统一模型及优先级以配套方案为准。类图和时序图属于后续需求分析的预研材料。\n\n来源：M03；G08"}
