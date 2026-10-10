@@ -1,0 +1,181 @@
+<mxfile host="Electron">
+  <diagram name="第 1 页" id="vi7vdIVu_DzAYL1cuSZZ">
+    <mxGraphModel dx="1716" dy="1183" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <UserObject label="" mermaidData="{&#xa;  &quot;data&quot;: &quot;stateDiagram-v2\n    [*] --&gt; Pending: 创建采集任务 / 校验任务参数\n\n    Pending --&gt; Running: 调度触发 [worker可用且未停止] / 启动任务\n    Pending --&gt; Stopped: 管理员取消 / 标记停止\n\n    Running --&gt; Succeeded: 采集完成 [校验通过] / 更新增量水位，触发ETL与索引\n    Running --&gt; Failed: 异常/超时/校验失败 / 记录错误码与日志\n    Running --&gt; Stopped: 管理员强制停止 / 中断任务，释放资源\n\n    Failed --&gt; Retrying: 自动重试 [retryCount 小于 maxRetry 且 未人工停止] / retryCount++\n    Failed --&gt; Stopped: 重试耗尽 [retryCount 大于等于 maxRetry] 或 人工终止 / 标记停止\n\n    Retrying --&gt; Running: 退避结束 [未停止] / 重新调度\n    Retrying --&gt; Stopped: 管理员停止 / 标记停止\n\n    Succeeded --&gt; [*]\n    Stopped --&gt; [*]\n\n    state \&quot;待执行(PENDING)\&quot; as Pending\n    Pending: entry / 写入任务记录\n    Pending: do / 等待调度\n\n    state \&quot;运行中(RUNNING)\&quot; as Running\n    Running: entry / 记录开始时间，启动心跳\n    Running: do / 执行爬取链路：连接→请求/翻页→解析→清洗→去重→入库→校验\n    Running: exit / 记录结束时间，释放资源\n\n    state \&quot;成功(SUCCEEDED)\&quot; as Succeeded\n    Succeeded: entry / 更新任务成功，写增量游标，触发ETL/索引\n\n    state \&quot;失败(FAILED)\&quot; as Failed\n    Failed: entry / 记录错误码、错误信息、堆栈\n\n    state \&quot;重试(RETRYING)\&quot; as Retrying\n    Retrying: entry / 计算指数退避时间\n    Retrying: do / 等待退避\n\n    state \&quot;已停止(STOPPED)\&quot; as Stopped\n    Stopped: entry / 标记停止原因，写审计日志，释放资源&quot;,&#xa;  &quot;config&quot;: null&#xa;}" id="LRlrLUbhrNiiWLiWKsMA-1">
+          <mxCell connectable="0" parent="1" style="group;transparentBounds=1;editIcon=1;lockedGroup=0;groupPadding=10;" vertex="1">
+            <mxGeometry as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:root_start" mermaidBaseStyle="ellipse;html=1;fillColor=light-dark(#333333,#cccccc);strokeColor=light-dark(#333333,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="" id="LRlrLUbhrNiiWLiWKsMA-2">
+          <mxCell parent="LRlrLUbhrNiiWLiWKsMA-1" style="ellipse;html=1;fillColor=light-dark(#333333,#cccccc);strokeColor=light-dark(#333333,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="14" width="14" x="860" y="30" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="待执行(PENDING)&#xa;entry / 写入任务记录&#xa;do / 等待调度" mermaidId="n:Pending" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="待执行(PENDING)&#xa;entry / 写入任务记录&#xa;do / 等待调度" id="LRlrLUbhrNiiWLiWKsMA-3">
+          <mxCell parent="LRlrLUbhrNiiWLiWKsMA-1" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="74" width="168" x="783" y="113" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="运行中(RUNNING)&#xa;entry / 记录开始时间，启动心跳&#xa;do / 执行爬取链路：连接→请求/翻页→解析→清洗→去重→入库→校验&#xa;exit / 记录结束时间，释放资源" mermaidId="n:Running" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="运行中(RUNNING)&#xa;entry / 记录开始时间，启动心跳&#xa;do / 执行爬取链路：连接→请求/翻页→解析→清洗→去重→入库→校验&#xa;exit / 记录结束时间，释放资源" id="LRlrLUbhrNiiWLiWKsMA-4">
+          <mxCell parent="LRlrLUbhrNiiWLiWKsMA-1" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="93" width="524" x="753" y="256" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="已停止(STOPPED)&#xa;entry / 标记停止原因，写审计日志，释放资源" mermaidId="n:Stopped" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="已停止(STOPPED)&#xa;entry / 标记停止原因，写审计日志，释放资源" id="LRlrLUbhrNiiWLiWKsMA-5">
+          <mxCell parent="LRlrLUbhrNiiWLiWKsMA-1" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="344" x="612" y="684" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="成功(SUCCEEDED)&#xa;entry / 更新任务成功，写增量游标，触发ETL/索引" mermaidId="n:Succeeded" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="成功(SUCCEEDED)&#xa;entry / 更新任务成功，写增量游标，触发ETL/索引" id="LRlrLUbhrNiiWLiWKsMA-6">
+          <mxCell parent="LRlrLUbhrNiiWLiWKsMA-1" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="378" x="30" y="684" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="失败(FAILED)&#xa;entry / 记录错误码、错误信息、堆栈" mermaidId="n:Failed" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="失败(FAILED)&#xa;entry / 记录错误码、错误信息、堆栈" id="LRlrLUbhrNiiWLiWKsMA-7">
+          <mxCell parent="LRlrLUbhrNiiWLiWKsMA-1" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="54" width="280" x="970" y="410" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="重试(RETRYING)&#xa;entry / 计算指数退避时间&#xa;do / 等待退避" mermaidId="n:Retrying" mermaidBaseStyle="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="重试(RETRYING)&#xa;entry / 计算指数退避时间&#xa;do / 等待退避" id="LRlrLUbhrNiiWLiWKsMA-8">
+          <mxCell parent="LRlrLUbhrNiiWLiWKsMA-1" style="rounded=1;absoluteArcSize=1;arcSize=10;html=1;whiteSpace=wrap;strokeWidth=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="74" width="200" x="1285" y="541" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="n:root_end" mermaidBaseStyle="ellipse;html=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#333333,#cccccc);strokeWidth=2;centerRadius=4;centerColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" mermaidBaseValue="" id="LRlrLUbhrNiiWLiWKsMA-9">
+          <mxCell parent="LRlrLUbhrNiiWLiWKsMA-1" style="ellipse;html=1;fillColor=light-dark(#ECECFF,#1f2020);strokeColor=light-dark(#333333,#cccccc);strokeWidth=2;centerRadius=4;centerColor=light-dark(#9370DB,#cccccc);fontColor=light-dark(#333333,#cccccc);fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontSize=16;" vertex="1">
+            <mxGeometry height="14" width="14" x="523" y="788" as="geometry" />
+          </mxCell>
+        </UserObject>
+        <UserObject label="创建采集任务 / 校验任务参数" mermaidId="e:root_start-&gt;Pending#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="创建采集任务 / 校验任务参数" id="LRlrLUbhrNiiWLiWKsMA-10">
+          <mxCell edge="1" parent="LRlrLUbhrNiiWLiWKsMA-1" source="LRlrLUbhrNiiWLiWKsMA-2" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="LRlrLUbhrNiiWLiWKsMA-3">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points" />
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="调度触发 [worker可用且未停止] / 启动任务" mermaidId="e:Pending-&gt;Running#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.96;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="调度触发 [worker可用且未停止] / 启动任务" id="LRlrLUbhrNiiWLiWKsMA-11">
+          <mxCell edge="1" parent="LRlrLUbhrNiiWLiWKsMA-1" source="LRlrLUbhrNiiWLiWKsMA-3" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.96;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="LRlrLUbhrNiiWLiWKsMA-4">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="1015" y="222" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="管理员取消 / 标记停止" mermaidId="e:Pending-&gt;Stopped#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.69;entryX=0.05;entryY=0;" mermaidBaseValue="管理员取消 / 标记停止" id="LRlrLUbhrNiiWLiWKsMA-12">
+          <mxCell edge="1" parent="LRlrLUbhrNiiWLiWKsMA-1" source="LRlrLUbhrNiiWLiWKsMA-3" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.69;entryX=0.05;entryY=0;rounded=0;" target="LRlrLUbhrNiiWLiWKsMA-5">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="429" y="222" />
+                <mxPoint x="429" y="303" />
+                <mxPoint x="429" y="384" />
+                <mxPoint x="429" y="445" />
+                <mxPoint x="429" y="507" />
+                <mxPoint x="429" y="578" />
+                <mxPoint x="429" y="650" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="采集完成 [校验通过] / 更新增量水位，触发ETL与索引" mermaidId="e:Running-&gt;Succeeded#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.78;entryX=0.5;entryY=0;" mermaidBaseValue="采集完成 [校验通过] / 更新增量水位，触发ETL与索引" id="LRlrLUbhrNiiWLiWKsMA-13">
+          <mxCell edge="1" parent="LRlrLUbhrNiiWLiWKsMA-1" source="LRlrLUbhrNiiWLiWKsMA-4" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0;exitY=0.78;entryX=0.5;entryY=0;rounded=0;" target="LRlrLUbhrNiiWLiWKsMA-6">
+            <mxGeometry relative="1" x="0.5603" y="1" as="geometry">
+              <mxPoint as="offset" />
+              <Array as="points">
+                <mxPoint x="219" y="384" />
+                <mxPoint x="219" y="445" />
+                <mxPoint x="219" y="507" />
+                <mxPoint x="219" y="578" />
+                <mxPoint x="219" y="650" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="异常/超时/校验失败 / 记录错误码与日志" mermaidId="e:Running-&gt;Failed#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.6;exitY=1;entryX=0.5;entryY=0;" mermaidBaseValue="异常/超时/校验失败 / 记录错误码与日志" id="LRlrLUbhrNiiWLiWKsMA-14">
+          <mxCell edge="1" parent="LRlrLUbhrNiiWLiWKsMA-1" source="LRlrLUbhrNiiWLiWKsMA-4" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.6;exitY=1;entryX=0.5;entryY=0;rounded=0;" target="LRlrLUbhrNiiWLiWKsMA-7">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="1104" y="384" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="管理员强制停止 / 中断任务，释放资源" mermaidId="e:Running-&gt;Stopped#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.11;exitY=1;entryX=0.34;entryY=0;" mermaidBaseValue="管理员强制停止 / 中断任务，释放资源" id="LRlrLUbhrNiiWLiWKsMA-15">
+          <mxCell edge="1" parent="LRlrLUbhrNiiWLiWKsMA-1" source="LRlrLUbhrNiiWLiWKsMA-4" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.11;exitY=1;entryX=0.34;entryY=0;rounded=0;" target="LRlrLUbhrNiiWLiWKsMA-5">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="656" y="384" />
+                <mxPoint x="656" y="445" />
+                <mxPoint x="656" y="507" />
+                <mxPoint x="656" y="578" />
+                <mxPoint x="656" y="650" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="自动重试 [retryCount 小于 maxRetry 且 未人工停止] / retryCount++" mermaidId="e:Failed-&gt;Retrying#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.69;exitY=1;entryX=0.1;entryY=0;" mermaidBaseValue="自动重试 [retryCount 小于 maxRetry 且 未人工停止] / retryCount++" id="LRlrLUbhrNiiWLiWKsMA-16">
+          <mxCell edge="1" parent="LRlrLUbhrNiiWLiWKsMA-1" source="LRlrLUbhrNiiWLiWKsMA-7" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.69;exitY=1;entryX=0.1;entryY=0;rounded=0;" target="LRlrLUbhrNiiWLiWKsMA-8">
+            <mxGeometry relative="1" x="0.7067" as="geometry">
+              <mxPoint as="offset" />
+              <Array as="points">
+                <mxPoint x="1305" y="493" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="重试耗尽 [retryCount 大于等于 maxRetry] 或 人工终止 / 标记停止" mermaidId="e:Failed-&gt;Stopped#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.2;exitY=1;entryX=0.66;entryY=0;" mermaidBaseValue="重试耗尽 [retryCount 大于等于 maxRetry] 或 人工终止 / 标记停止" id="LRlrLUbhrNiiWLiWKsMA-17">
+          <mxCell edge="1" parent="LRlrLUbhrNiiWLiWKsMA-1" source="LRlrLUbhrNiiWLiWKsMA-7" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.2;exitY=1;entryX=0.66;entryY=0;rounded=0;" target="LRlrLUbhrNiiWLiWKsMA-5">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="912" y="507" />
+                <mxPoint x="912" y="578" />
+                <mxPoint x="912" y="650" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="退避结束 [未停止] / 重新调度" mermaidId="e:Retrying-&gt;Running#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.8;exitY=0;entryX=1;entryY=0.97;" mermaidBaseValue="退避结束 [未停止] / 重新调度" id="LRlrLUbhrNiiWLiWKsMA-18">
+          <mxCell edge="1" parent="LRlrLUbhrNiiWLiWKsMA-1" source="LRlrLUbhrNiiWLiWKsMA-8" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.8;exitY=0;entryX=1;entryY=0.97;rounded=0;" target="LRlrLUbhrNiiWLiWKsMA-4">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="1500" y="507" />
+                <mxPoint x="1500" y="445" />
+                <mxPoint x="1500" y="384" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="管理员停止 / 标记停止" mermaidId="e:Retrying-&gt;Stopped#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=1;entryY=0.17;" mermaidBaseValue="管理员停止 / 标记停止" id="LRlrLUbhrNiiWLiWKsMA-19">
+          <mxCell edge="1" parent="LRlrLUbhrNiiWLiWKsMA-1" source="LRlrLUbhrNiiWLiWKsMA-8" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);html=1;fontSize=16;labelBackgroundColor=#E8E8E88D;fontFamily=Trebuchet MS,Verdana,Arial,sans-serif;fontColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=1;entryY=0.17;rounded=0;" target="LRlrLUbhrNiiWLiWKsMA-5">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="1385" y="650" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Succeeded-&gt;root_end#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0;entryY=0.43;" mermaidBaseValue="" id="LRlrLUbhrNiiWLiWKsMA-20">
+          <mxCell edge="1" parent="LRlrLUbhrNiiWLiWKsMA-1" source="LRlrLUbhrNiiWLiWKsMA-6" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=0;entryY=0.43;rounded=0;" target="LRlrLUbhrNiiWLiWKsMA-9">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="219" y="763" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+        <UserObject label="" mermaidId="e:Stopped-&gt;root_end#0" mermaidBaseStyle="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=1;entryY=0.43;" mermaidBaseValue="" id="LRlrLUbhrNiiWLiWKsMA-21">
+          <mxCell edge="1" parent="LRlrLUbhrNiiWLiWKsMA-1" source="LRlrLUbhrNiiWLiWKsMA-5" style="curved=1;startArrow=none;endArrow=classic;endSize=9;fillColor=none;strokeColor=light-dark(#333333,#cccccc);exitX=0.5;exitY=1;entryX=1;entryY=0.43;rounded=0;" target="LRlrLUbhrNiiWLiWKsMA-9">
+            <mxGeometry relative="1" as="geometry">
+              <Array as="points">
+                <mxPoint x="784" y="763" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </UserObject>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
