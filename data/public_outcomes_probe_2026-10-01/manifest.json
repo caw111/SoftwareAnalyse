@@ -1,0 +1,59 @@
+{
+  "processed_at_utc": "2026-10-01T13:51:48.147341+00:00",
+  "count_per_group": 10,
+  "sources": {
+    "patent_notice": "https://www.cnipa.gov.cn/art/2025/6/5/art_552_199973.html",
+    "project_list": "https://www.nsfc.gov.cn/p1/2853/3102/72645.html",
+    "award_list": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "patent_search": "https://pss-system.cponline.cnipa.gov.cn/conventionalSearch",
+    "project_search": "https://kd.nsfc.cn/",
+    "patent_supplement": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm"
+  },
+  "groups": {
+    "patents_cnipa": {
+      "count": 10,
+      "with_title": 10,
+      "with_authors": 10,
+      "with_outcome_date": 0,
+      "with_source_date": 10
+    },
+    "projects": {
+      "count": 10,
+      "with_title": 10,
+      "with_authors": 10,
+      "with_outcome_date": 10,
+      "with_source_date": 10
+    },
+    "awards": {
+      "count": 10,
+      "with_title": 10,
+      "with_authors": 10,
+      "with_outcome_date": 10,
+      "with_source_date": 10
+    },
+    "patents_supplement": {
+      "count": 10,
+      "with_title": 10,
+      "with_authors": 10,
+      "with_outcome_date": 10,
+      "with_source_date": 10
+    }
+  },
+  "unified_count": 30,
+  "unified_patent_source": "supplementary_university_list",
+  "validation": "passed: counts, identifiers, required fields, evidence hashes",
+  "search_entry_probes": {
+    "patent_search": {
+      "url": "https://pss-system.cponline.cnipa.gov.cn/conventionalSearch",
+      "http_status": 412,
+      "file": "raw/patent_search.html",
+      "error": null
+    },
+    "project_search": {
+      "url": "https://kd.nsfc.cn/",
+      "http_status": 200,
+      "file": "raw/project_search.html",
+      "error": null
+    }
+  }
+}

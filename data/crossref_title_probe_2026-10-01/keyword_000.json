@@ -1,0 +1,2740 @@
+{
+  "request_url": "https://api.crossref.org/works?filter=type%3Ajournal-article%2Cfrom-pub-date%3A2024-01-01%2Cuntil-pub-date%3A2026-10-01&query.title=software+engineering&sort=score&order=desc&rows=5&offset=0",
+  "request_params": {
+    "filter": "type:journal-article,from-pub-date:2024-01-01,until-pub-date:2026-10-01",
+    "query.title": "software engineering",
+    "sort": "score",
+    "order": "desc",
+    "rows": 5,
+    "offset": 0
+  },
+  "access_pool_requested": "public",
+  "fetched_at_utc": "2026-10-01T12:58:53.018246+00:00",
+  "elapsed_seconds": 2.806,
+  "http_status": 200,
+  "attempt": 1,
+  "response_headers": {
+    "x-rate-limit-limit": "1",
+    "x-rate-limit-interval": "1s"
+  },
+  "response": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 104582,
+      "items": [
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2024,
+                4,
+                16
+              ]
+            ],
+            "date-time": "2024-04-16T05:46:42Z",
+            "timestamp": 1713246402791
+          },
+          "reference-count": 0,
+          "publisher": "Erich Schmidt Verlag GmbH & Co. KG",
+          "issue": "3",
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "ful"
+          ],
+          "DOI": "10.37307/j.0945-5604.2024.03.12",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2024,
+                3,
+                5
+              ]
+            ],
+            "date-time": "2024-03-05T00:15:06Z",
+            "timestamp": 1709597706000
+          },
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "Research Software Engineering"
+          ],
+          "prefix": "10.37307",
+          "author": [
+            {
+              "given": "Lars",
+              "family": "Grunske",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Anna-Lena",
+              "family": "Lamprecht",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Wilhelm",
+              "family": "Hasselbring",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "given": "Bernhard",
+              "family": "Rumpe",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "23521",
+          "published-online": {
+            "date-parts": [
+              [
+                2024,
+                3,
+                4
+              ]
+            ]
+          },
+          "container-title": [
+            "Forschung &amp; Lehre"
+          ],
+          "language": "de",
+          "deposited": {
+            "date-parts": [
+              [
+                2024,
+                4,
+                16
+              ]
+            ],
+            "date-time": "2024-04-16T00:16:38Z",
+            "timestamp": 1713226598000
+          },
+          "score": 17.503485,
+          "resource": {
+            "primary": {
+              "URL": "https://esv-campus.de/ce/research-software-engineering/detail.html"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2024,
+                3,
+                4
+              ]
+            ]
+          },
+          "references-count": 0,
+          "journal-issue": {
+            "issue": "3",
+            "published-online": {
+              "date-parts": [
+                [
+                  2024,
+                  3,
+                  4
+                ]
+              ]
+            }
+          },
+          "URL": "https://doi.org/10.37307/j.0945-5604.2024.03.12",
+          "ISSN": [
+            "0945-5604"
+          ],
+          "issn-type": [
+            {
+              "value": "0945-5604",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                3,
+                4
+              ]
+            ]
+          },
+          "article-number": "12"
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2025,
+                11,
+                4
+              ]
+            ],
+            "date-time": "2025-11-04T12:55:18Z",
+            "timestamp": 1762260918871,
+            "version": "build-2065373602"
+          },
+          "reference-count": 50,
+          "publisher": "AIP Publishing",
+          "issue": "17",
+          "funder": [
+            {
+              "DOI": "10.13039/100018693",
+              "name": "HORIZON EUROPE Framework Program",
+              "doi-asserted-by": "publisher",
+              "award": [
+                "HORIZON-EIC-2023-PATHFINDEROPEN-01",
+                "proposal 101130615"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "HORIZON-EIC-2023-PATHFINDEROPEN-01",
+                    "proposal 101130615"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/100018693",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "pubs.aip.org"
+            ],
+            "crossmark-restriction": true
+          },
+          "published-print": {
+            "date-parts": [
+              [
+                2025,
+                11,
+                7
+              ]
+            ]
+          },
+          "abstract": "<jats:p>Scientists have long developed software as an integral part of their research, creating tools to simulate models or analyze data. As these projects grow in scope and longevity, they often encounter challenges related to complexity, maintainability, and reproducibility. This Tutorial introduces a set of practical software engineering techniques (such as version control, testing, documentation, continuous integration, and packaging) that can help address these challenges. Drawing on well-established principles from the field of software evolution, the discussion is tailored for scientists who write software but may not have formal training in software engineering. Some example projects are drawn from the chemical physics community, showcasing how following these principles benefits them and the community. It also reflects on the evolving role of large language models in scientific software development, considering both their potential and their limitations. The goal is to present approachable, widely adopted practices that support sustainable, transparent, and collaborative scientific software.</jats:p>",
+          "DOI": "10.1063/5.0293841",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2025,
+                11,
+                4
+              ]
+            ],
+            "date-time": "2025-11-04T12:26:27Z",
+            "timestamp": 1762259187000
+          },
+          "update-policy": "https://doi.org/10.1063/aip-crossmark-policy-page",
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "Practical software engineering for software-writing scientists"
+          ],
+          "prefix": "10.1063",
+          "volume": "163",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0000-0003-3393-7329",
+              "authenticated-orcid": false,
+              "given": "Raúl P.",
+              "family": "Peláez",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "Departamento de Física de la Materia Condensada, Universidad Autónoma de Madrid, Campus de Cantoblanco , Madrid 28049,",
+                  "place": [
+                    "Spain"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "317",
+          "published-online": {
+            "date-parts": [
+              [
+                2025,
+                11,
+                4
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "2025110407254619200_c1",
+              "first-page": "42",
+              "article-title": "Programs, cities, students-limits to growth?",
+              "volume-title": "Programming Methodology: A Collection of Articles by Members of IFIP WG2.3",
+              "author": "Gries",
+              "year": "1978"
+            },
+            {
+              "issue": "9",
+              "key": "2025110407254619200_c2",
+              "doi-asserted-by": "publisher",
+              "first-page": "1060",
+              "DOI": "10.1109/proc.1980.11805",
+              "article-title": "Programs, life cycles, and laws of software evolution",
+              "volume": "68",
+              "year": "1980",
+              "journal-title": "Proc. IEEE"
+            },
+            {
+              "key": "2025110407254619200_c3",
+              "volume-title": "The Characteristics of Large Systems",
+              "year": "1977"
+            },
+            {
+              "key": "2025110407254619200_c4",
+              "unstructured": "The R Development Core Team, R: The R project for statistical computing, https://www.r-project.org/."
+            },
+            {
+              "key": "2025110407254619200_c5",
+              "volume-title": "Python 3 Reference Manual",
+              "year": "2009"
+            },
+            {
+              "key": "2025110407254619200_c6",
+              "volume-title": "Programming: Principles and Practice Using C++",
+              "year": "2024",
+              "edition": "3"
+            },
+            {
+              "key": "2025110407254619200_c7",
+              "unstructured": "The MathWorks Inc., “Matlab version: 9.13.0 (r2022b),” (2022); https://www.mathworks.com."
+            },
+            {
+              "key": "2025110407254619200_c8",
+              "volume-title": "Just for Fun: The Story of an Accidental Revolutionary",
+              "year": "2002"
+            },
+            {
+              "key": "2025110407254619200_c9",
+              "volume-title": "The Pragmatic Programmer: Your Journey to Mastery",
+              "year": "2019",
+              "edition": "20"
+            },
+            {
+              "key": "2025110407254619200_c10",
+              "volume-title": "A Philosophy of Software Design",
+              "year": "2018"
+            },
+            {
+              "key": "2025110407254619200_c11",
+              "volume-title": "The Architecture of Open Source Applications: Elegance, Evolution, and a Few Fearless Hacks",
+              "year": "2011"
+            },
+            {
+              "issue": "6",
+              "key": "2025110407254619200_c12",
+              "doi-asserted-by": "publisher",
+              "first-page": "e1005510",
+              "DOI": "10.1371/journal.pcbi.1005510",
+              "article-title": "Good enough practices in scientific computing",
+              "volume": "13",
+              "year": "2017",
+              "journal-title": "PLoS Comput. Biol."
+            },
+            {
+              "key": "2025110407254619200_c13",
+              "volume-title": "The Architecture of Open Source Applications: Elegance, Evolution, and a Few Fearless Hacks",
+              "author": "Brown",
+              "year": "2011"
+            },
+            {
+              "key": "2025110407254619200_c14",
+              "volume-title": "The Mythical Man-Month: Essays on Software Engineering",
+              "year": "1995"
+            },
+            {
+              "key": "2025110407254619200_c15",
+              "unstructured": "The conda-forge Community, “conda-forge: A community-led collection of recipes, build infrastructure and distributions for the conda package manager,” (2024); https://conda-forge.org (Accessed 20 July 2025)."
+            },
+            {
+              "key": "2025110407254619200_c16",
+              "unstructured": "Donna Tam, “Flickr founder plans to kill company e-mails with slack,” https://www.cnet.com/tech/tech-industry/flickr-founder-plans-to-kill-company-e-mails-with-slack/."
+            },
+            {
+              "key": "2025110407254619200_c17",
+              "unstructured": "The Zoom Team, “Zoom,” https://zoom.us/."
+            },
+            {
+              "key": "2025110407254619200_c18",
+              "article-title": "Big ball of mud",
+              "volume-title": "Pattern Languages of Program Design 4",
+              "author": "Harrison",
+              "year": "2000"
+            },
+            {
+              "key": "2025110407254619200_c19",
+              "year": "2025"
+            },
+            {
+              "key": "2025110407254619200_c20",
+              "article-title": "Author guidelines",
+              "year": "2025"
+            },
+            {
+              "key": "2025110407254619200_c21",
+              "unstructured": "L.\n            Torvalds\n           and C.Junio Hamano, “The git version control system,” https://git-scm.com."
+            },
+            {
+              "key": "2025110407254619200_c22",
+              "unstructured": "S.\n            Chacon\n           and B.Straub, “Pro git,” https://git-scm.com/book/en/v2."
+            },
+            {
+              "key": "2025110407254619200_c23",
+              "unstructured": "Microsoft Corporation, “Visual studio code,” https://code.visualstudio.com/."
+            },
+            {
+              "key": "2025110407254619200_c24",
+              "unstructured": "The Python Packaging Authority, “pip: The python package installer,” version 23.0.1 (2023), https://pip.pypa.io/ accessed 20 July 2025."
+            },
+            {
+              "key": "2025110407254619200_c25",
+              "unstructured": "R. P. Pelaez (2025). “superpunto: v5.2.1,” Zenodo. https://doi.org/10.5281/zenodo.16206804"
+            },
+            {
+              "key": "2025110407254619200_c26",
+              "unstructured": "R. P. Pelaez (2025). “spreadinterp: v1.0.0,” Zenodo. https://doi.org/10.5281/zenodo.16206301"
+            },
+            {
+              "key": "2025110407254619200_c27",
+              "volume-title": "Test-Driven Development: By Example",
+              "year": "2003"
+            },
+            {
+              "key": "2025110407254619200_c28",
+              "unstructured": "N.\n            Huynh\n           and B.Lin, “Large language models for code generation: A comprehensive survey of challenges, techniques, evaluation, and applications,” arXiv:2503.01245 (2025)."
+            },
+            {
+              "key": "2025110407254619200_c29",
+              "unstructured": "R. P. Pelaez (2025). “Meansquaredisplacement: 3.0.2,” Zenodo. https://doi.org/10.5281/zenodo.16206359"
+            },
+            {
+              "key": "2025110407254619200_c30",
+              "unstructured": "Conda contributors, “conda: A system-level, binary package and environment manager running on all major operating systems and platforms,” https://github.com/conda/conda, https://docs.conda.io/projects/conda/."
+            },
+            {
+              "key": "2025110407254619200_c31",
+              "unstructured": "Microsoft Corporation, “vcpkg: A C++ package manager,” (2024); https://github.com/microsoft/vcpkg (accessed 20 July 2025)."
+            },
+            {
+              "key": "2025110407254619200_c32",
+              "unstructured": "JFrog Ltd., “Conan: The C/C++ package manager,” (2024); https://conan.io (accessed 20 July 2025)."
+            },
+            {
+              "key": "2025110407254619200_c33",
+              "article-title": "CMake: Build System Generator",
+              "author": "Kitware, Inc.",
+              "year": "2024"
+            },
+            {
+              "issue": "10",
+              "key": "2025110407254619200_c34",
+              "doi-asserted-by": "publisher",
+              "first-page": "4076",
+              "DOI": "10.1021/acs.jctc.4c00253",
+              "article-title": "TorchMD-net 2.0: Fast neural network potentials for molecular simulations",
+              "volume": "20",
+              "year": "2024",
+              "journal-title": "J. Chem. Theory Comput."
+            },
+            {
+              "issue": "1",
+              "key": "2025110407254619200_c35",
+              "doi-asserted-by": "publisher",
+              "first-page": "109",
+              "DOI": "10.1021/acs.jpcb.3c06662",
+              "article-title": "OpenMM 8: Molecular dynamics simulation with machine learning potentials",
+              "volume": "128",
+              "year": "2024",
+              "journal-title": "J. Phys. Chem. B"
+            },
+            {
+              "key": "2025110407254619200_c36",
+              "doi-asserted-by": "publisher",
+              "first-page": "108171",
+              "DOI": "10.1016/j.cpc.2021.108171",
+              "article-title": "LAMMPS—A flexible simulation tool for particle-based materials modeling at the atomic, meso, and continuum scales",
+              "volume": "271",
+              "year": "2022",
+              "journal-title": "Comput. Phys. Commun."
+            },
+            {
+              "key": "2025110407254619200_c37",
+              "doi-asserted-by": "publisher",
+              "first-page": "109363",
+              "DOI": "10.1016/j.cpc.2024.109363",
+              "article-title": "Universally adaptable multiscale molecular dynamics (UAMMD). A native-GPU software ecosystem for complex fluids, soft matter, and beyond",
+              "volume": "306",
+              "year": "2025",
+              "journal-title": "Comput. Phys. Commun."
+            },
+            {
+              "key": "2025110407254619200_c38",
+              "doi-asserted-by": "publisher",
+              "first-page": "19",
+              "DOI": "10.1016/j.softx.2015.06.001",
+              "article-title": "GROMACS: High performance molecular simulations through multi-level parallelism from laptops to supercomputers",
+              "volume": "1–2",
+              "year": "2015",
+              "journal-title": "SoftwareX"
+            },
+            {
+              "key": "2025110407254619200_c39",
+              "first-page": "8024",
+              "article-title": "PyTorch: An imperative style, high-performance deep learning library",
+              "year": "2019"
+            },
+            {
+              "key": "2025110407254619200_c40",
+              "unstructured": "J.\n            Bradbury\n          , R.Frostig, P.Hawkins, M. J.Johnson, C.Leary, D.Maclaurin, G.Necula, A.Paszke, J.VanderPlas, S.Wanderman-Milne, and Q.Zhang, “JAX: Composable transformations of Python + NumPy programs,” (2018); http://github.com/jax-ml/jax."
+            },
+            {
+              "issue": "14",
+              "key": "2025110407254619200_c41",
+              "doi-asserted-by": "publisher",
+              "first-page": "144801",
+              "DOI": "10.1063/5.0138367",
+              "article-title": "SchNetPack 2.0: A neural network toolbox for atomistic machine learning",
+              "volume": "158",
+              "year": "2023",
+              "journal-title": "J. Chem. Phys."
+            },
+            {
+              "issue": "1",
+              "key": "2025110407254619200_c42",
+              "doi-asserted-by": "publisher",
+              "first-page": "2453",
+              "DOI": "10.1038/s41467-022-29939-5",
+              "article-title": "E(3)-equivariant graph neural networks for data-efficient and accurate interatomic potentials",
+              "volume": "13",
+              "year": "2022",
+              "journal-title": "Nat. Commun."
+            },
+            {
+              "issue": "4",
+              "key": "2025110407254619200_c43",
+              "doi-asserted-by": "publisher",
+              "first-page": "042502",
+              "DOI": "10.1063/5.0217688",
+              "article-title": "FeNNol: An efficient and flexible library for building force-field-enhanced neural network potentials",
+              "volume": "161",
+              "year": "2024",
+              "journal-title": "J. Chem. Phys."
+            },
+            {
+              "issue": "3",
+              "key": "2025110407254619200_c44",
+              "doi-asserted-by": "publisher",
+              "first-page": "232",
+              "DOI": "10.1021/acsphyschemau.4c00004",
+              "article-title": "The potential of neural network potentials",
+              "volume": "4",
+              "year": "2024",
+              "journal-title": "ACS Phys. Chem. Au"
+            },
+            {
+              "issue": "2",
+              "key": "2025110407254619200_c45",
+              "doi-asserted-by": "publisher",
+              "first-page": "50",
+              "DOI": "10.1007/s10664-024-10602-0",
+              "article-title": "Towards an understanding of large language models in software engineering tasks",
+              "volume": "30",
+              "year": "2024",
+              "journal-title": "Empirical Software Eng."
+            },
+            {
+              "key": "2025110407254619200_c46",
+              "unstructured": "B.\n            Li\n          , W.Wu, Z.Tang, L.Shi, J.Yang, J.Li, S.Yao, C.Qian, B.Hui, Q.Zhang, Z.Yu, H.Du, P.Yang, D.Lin, C.Peng, and K.Chen, “Prompting large language models to tackle the full software development lifecycle: A case study,” arXiv:2403.08604 (2024)."
+            },
+            {
+              "key": "2025110407254619200_c47",
+              "doi-asserted-by": "publisher",
+              "article-title": "Leveraging large language models for code translation and software development in scientific computing",
+              "volume-title": "Proceedings of the Platform for Advanced Scientific Computing Conference (PASC '25)",
+              "DOI": "10.1145/3732775.3733572"
+            },
+            {
+              "issue": "1",
+              "key": "2025110407254619200_c48",
+              "doi-asserted-by": "publisher",
+              "first-page": "e2723",
+              "DOI": "10.1002/smr.2723",
+              "article-title": "LLMs for science: Usage for code generation and data analysis",
+              "volume": "37",
+              "year": "2025",
+              "journal-title": "J. Software: Evol. Process"
+            },
+            {
+              "key": "2025110407254619200_c49",
+              "unstructured": "J.\n            Becker\n          , N.Rush, E.Barnes, and D.Rein, “Measuring the impact of early-2025 AI on experienced open-source developer productivity,” arXiv:2507.09089 (2025)."
+            },
+            {
+              "key": "2025110407254619200_c50",
+              "first-page": "102",
+              "article-title": "Breaking the silence: The threats of using LLMs in software engineering",
+              "year": "2024"
+            }
+          ],
+          "container-title": [
+            "The Journal of Chemical Physics"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://pubs.aip.org/aip/jcp/article-pdf/doi/10.1063/5.0293841/20786519/171502_1_5.0293841.pdf",
+              "content-type": "application/pdf",
+              "content-version": "vor",
+              "intended-application": "syndication"
+            },
+            {
+              "URL": "https://pubs.aip.org/aip/jcp/article-pdf/doi/10.1063/5.0293841/20786519/171502_1_5.0293841.pdf",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                11,
+                4
+              ]
+            ],
+            "date-time": "2025-11-04T12:26:35Z",
+            "timestamp": 1762259195000
+          },
+          "score": 16.832851,
+          "resource": {
+            "primary": {
+              "URL": "https://pubs.aip.org/jcp/article/163/17/171502/3370674/Practical-software-engineering-for-software"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2025,
+                11,
+                4
+              ]
+            ]
+          },
+          "references-count": 50,
+          "journal-issue": {
+            "issue": "17",
+            "published-print": {
+              "date-parts": [
+                [
+                  2025,
+                  11,
+                  7
+                ]
+              ]
+            }
+          },
+          "URL": "https://doi.org/10.1063/5.0293841",
+          "ISSN": [
+            "0021-9606",
+            "1089-7690"
+          ],
+          "issn-type": [
+            {
+              "value": "0021-9606",
+              "type": "print"
+            },
+            {
+              "value": "1089-7690",
+              "type": "electronic"
+            }
+          ],
+          "published-other": {
+            "date-parts": [
+              [
+                2025,
+                11,
+                7
+              ]
+            ]
+          },
+          "published": {
+            "date-parts": [
+              [
+                2025,
+                11,
+                4
+              ]
+            ]
+          },
+          "article-number": "171502"
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                4,
+                17
+              ]
+            ],
+            "date-time": "2026-04-17T16:41:22Z",
+            "timestamp": 1776444082107,
+            "version": "3.51.2"
+          },
+          "reference-count": 60,
+          "publisher": "Association for Computing Machinery (ACM)",
+          "issue": "2",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2025,
+                    1,
+                    20
+                  ]
+                ],
+                "date-time": "2025-01-20T00:00:00Z",
+                "timestamp": 1737331200000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by/4.0/"
+            }
+          ],
+          "funder": [
+            {
+              "name": "UKRI EPSRC",
+              "award": [
+                "EP/P023991/1"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "EP/P023991/1"
+                  ]
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100007257",
+              "name": "INES",
+              "doi-asserted-by": "crossref",
+              "id": [
+                {
+                  "id": "10.13039/501100007257",
+                  "id-type": "DOI",
+                  "asserted-by": "crossref"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100003593",
+              "name": "CNPq",
+              "doi-asserted-by": "crossref",
+              "award": [
+                "465614/2014-0"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "465614/2014-0"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100003593",
+                  "id-type": "DOI",
+                  "asserted-by": "crossref"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100002322",
+              "name": "CAPES",
+              "doi-asserted-by": "crossref",
+              "award": [
+                "88887.136410/2017-00"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "88887.136410/2017-00"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100002322",
+                  "id-type": "DOI",
+                  "asserted-by": "crossref"
+                }
+              ]
+            },
+            {
+              "DOI": "10.13039/501100006162",
+              "name": "FACEPE",
+              "doi-asserted-by": "crossref",
+              "award": [
+                "APQ-0399-1.03/17"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "APQ-0399-1.03/17"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "10.13039/501100006162",
+                  "id-type": "DOI",
+                  "asserted-by": "crossref"
+                }
+              ]
+            },
+            {
+              "name": "PRONEX",
+              "award": [
+                "APQ/0388-1.03/14"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "APQ/0388-1.03/14"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "FAPESB INCITE",
+              "award": [
+                "PIE0002/2022"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "PIE0002/2022"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Federal Institute of Bahia"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "dl.acm.org"
+            ],
+            "crossmark-restriction": true
+          },
+          "short-container-title": [
+            "ACM Trans. Softw. Eng. Methodol."
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2025,
+                2,
+                28
+              ]
+            ]
+          },
+          "abstract": "<jats:p>\n            Software Product Lines (SPLs) improve time-to-market, enhance software quality, and reduce maintenance costs. Current SPL reengineering practices are largely manual and require domain knowledge. Thus, adopting and, to a lesser extent, maintaining SPLs are expensive tasks, preventing many companies from enjoying their benefits. To address these challenges, we introduce\n            <jats:sc>Foundry</jats:sc>\n            , an approach utilising software transplantation to reduce the manual effort of SPL adoption and maintenance.\n            <jats:sc>Foundry</jats:sc>\n            enables integrating features across different codebases, even codebases that are unaware that they are contributing features to a software product line. Each product produced by\n            <jats:sc>Foundry</jats:sc>\n            is pure code, without variability annotation, unlike feature flags, which eases variability management and reduces code bloat.\n          </jats:p>\n          <jats:p>\n            We realise\n            <jats:sc>Foundry</jats:sc>\n            in\n            <jats:sc>prodScalpel</jats:sc>\n            , a tool that transplants multiple organs (i.e., a set of interesting features) from donor systems into an emergent product line for codebases written in C. Given tests and lightweight annotations identifying features and implantation points,\n            <jats:sc>prodScalpel</jats:sc>\n            automates feature extraction and integration. To evaluate its effectiveness, our evaluation compares feature transplantation using\n            <jats:sc>prodScalpel</jats:sc>\n            to the current state of practice: on our dataset,\n            <jats:sc>prodScalpel</jats:sc>\n            ’s use speeds up feature migration by an average of 4.8 times when compared to current practice.\n          </jats:p>",
+          "DOI": "10.1145/3695987",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2024,
+                9,
+                20
+              ]
+            ],
+            "date-time": "2024-09-20T15:30:17Z",
+            "timestamp": 1726846217000
+          },
+          "page": "1-27",
+          "update-policy": "https://doi.org/10.1145/crossmark-policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 2,
+          "title": [
+            "Software Product Line Engineering via Software Transplantation"
+          ],
+          "prefix": "10.1145",
+          "volume": "34",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0009-0001-6264-2573",
+              "authenticated-orcid": false,
+              "given": "Leandro",
+              "family": "Oliveria de Souza",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "Federal Institute of Bahia, Salvador, Brazil"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-9312-6715",
+              "authenticated-orcid": false,
+              "given": "Eduardo",
+              "family": "Santana de Almeida",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Institute of Computing (IC), Federal University of Bahia, Salvador, Brazil"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0003-0197-8249",
+              "authenticated-orcid": false,
+              "given": "Paulo Anselmo da Mota",
+              "family": "Silveira Neto",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Federal Rural University of Pernambuco, Recife, Brazil"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0003-0771-7891",
+              "authenticated-orcid": false,
+              "given": "Earl T.",
+              "family": "Barr",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "University College London, London, UK"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-7833-6044",
+              "authenticated-orcid": false,
+              "given": "Justyna",
+              "family": "Petke",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "University College London, London, UK"
+                }
+              ],
+              "role": [
+                {
+                  "role": "author",
+                  "vocabulary": "crossref"
+                }
+              ]
+            }
+          ],
+          "member": "320",
+          "published-online": {
+            "date-parts": [
+              [
+                2025,
+                1,
+                20
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "e_1_3_2_2_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.5555/2541773"
+            },
+            {
+              "key": "e_1_3_2_3_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10664-017-9499-z"
+            },
+            {
+              "key": "e_1_3_2_4_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.21236/ADA450337"
+            },
+            {
+              "key": "e_1_3_2_5_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2771783.2771796"
+            },
+            {
+              "key": "e_1_3_2_6_2",
+              "first-page": "35",
+              "volume-title": "Proceedings of the 3rd International Workshop on Conducting Empirical Studies in Industry (CESI ’15)",
+              "author": "Bastos Jonatas Ferreira",
+              "year": "2015",
+              "unstructured": "Jonatas Ferreira Bastos, Paulo Anselmo da Mota Silveira Neto, Eduardo Santana de Almeida, and Silvio Romero de Lemos Meira. 2015. Software product lines adoption: An industrial case study (keynote). In Proceedings of the 3rd International Workshop on Conducting Empirical Studies in Industry (CESI ’15). IEEE Press, 35–42."
+            },
+            {
+              "key": "e_1_3_2_7_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.jss.2017.05.052"
+            },
+            {
+              "key": "e_1_3_2_8_2",
+              "first-page": "8",
+              "volume-title": "Proceedings of the 7th International Workshop on Variability Modelling of Software-intensive Systems (VaMoS ’13)",
+              "author": "Berger Thorsten",
+              "year": "2013",
+              "unstructured": "Thorsten Berger, Ralf Rublack, Divya Nair, Joanne M. Atlee, Martin Becker, Krzysztof Czarnecki, and Andrzej kasowski. 2013. A survey of variability modeling in industrial practice. In Proceedings of the 7th International Workshop on Variability Modelling of Software-intensive Systems (VaMoS ’13). ACM, New York, NY, Article 7, 8 pages."
+            },
+            {
+              "key": "e_1_3_2_9_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1858996.1859010"
+            },
+            {
+              "key": "e_1_3_2_10_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1646353.1646374"
+            },
+            {
+              "key": "e_1_3_2_11_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/MS.2004.1293069"
+            },
+            {
+              "key": "e_1_3_2_12_2",
+              "volume-title": "Proceedings of the 2008 34th Euromicro Conference Software Engineering and Advanced Applications",
+              "author": "Breivold H. P.",
+              "year": "2008",
+              "unstructured": "H. P. Breivold, S. Larsson, and R. Land. 2008. Migrating industrial systems towards software product lines: Experiences and observations through case studies. In Proceedings of the 2008 34th Euromicro Conference Software Engineering and Advanced Applications."
+            },
+            {
+              "key": "e_1_3_2_13_2",
+              "volume-title": "Software Product Lines: Practices and Patterns",
+              "author": "Clements Paul",
+              "year": "2001",
+              "unstructured": "Paul Clements and Linda Northrop. 2001. Software Product Lines: Practices and Patterns. Addison-Wesley."
+            },
+            {
+              "key": "e_1_3_2_14_2",
+              "volume-title": "Software Product Lines - Practices and Patterns",
+              "author": "Clements Paul",
+              "year": "2002",
+              "unstructured": "Paul Clements and Linda M. Northrop. 2002. Software Product Lines - Practices and Patterns. Addison-Wesley."
+            },
+            {
+              "key": "e_1_3_2_15_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.scico.2006.04.002"
+            },
+            {
+              "key": "e_1_3_2_16_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2009.28"
+            },
+            {
+              "key": "e_1_3_2_17_2",
+              "unstructured": "Adekola Olubukola Daniel. 2020. Economic impact of software product line engineering method– A survey. International Journal of Advanced Research in Computer Science (2020). Retrieved from https://api.semanticscholar.org/CorpusID:212553721"
+            },
+            {
+              "key": "e_1_3_2_18_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICSME.2014.61"
+            },
+            {
+              "key": "e_1_3_2_19_2",
+              "doi-asserted-by": "crossref",
+              "first-page": "665",
+              "DOI": "10.1109/ICSE.2015.218",
+              "volume-title": "Proceedings of the 2015 IEEE/ACM 37th IEEE International Conference on Software Engineering",
+              "volume": "2",
+              "author": "Fischer S.",
+              "year": "2015",
+              "unstructured": "S. Fischer, L. Linsbauer, R. E. Lopez-Herrejon, and A. Egyed. 2015. The ECCO tool: Extraction and composition for clone-and-own. In Proceedings of the 2015 IEEE/ACM 37th IEEE International Conference on Software Engineering, Vol. 2, 665–668."
+            },
+            {
+              "key": "e_1_3_2_20_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/379377.375269"
+            },
+            {
+              "key": "e_1_3_2_21_2",
+              "first-page": "295",
+              "article-title": "Analysis of variance: Why it is more important than ever?",
+              "volume": "51",
+              "author": "Gelman Andrew",
+              "year": "2005",
+              "unstructured": "Andrew Gelman. 2005. Analysis of variance: Why it is more important than ever? Quality Engineering 51 (2005), 295–300.",
+              "journal-title": "Quality Engineering"
+            },
+            {
+              "key": "e_1_3_2_22_2",
+              "first-page": "1",
+              "volume-title": "Proceedings of the 20th Working Conference on Reverse Engineering (WCRE ’13)",
+              "author": "Harman Mark",
+              "year": "2013",
+              "unstructured": "Mark Harman, William B. Langdon, and Westley Weimer. 2013. Genetic programming for reverse engineering. In Proceedings of the 20th Working Conference on Reverse Engineering (WCRE ’13), 1–10."
+            },
+            {
+              "key": "e_1_3_2_23_2",
+              "unstructured": "Nicolas Hlad Seriai Abdelhak-Djamel and Dony Christophe. 2021. IsiSPL: Toward an automated reactive approach to build software product lines. arXiv:2107.00552. Retrieved from https://doi.org/10.48550/arXiv.2107.00552"
+            },
+            {
+              "key": "e_1_3_2_24_2",
+              "volume-title": "Static Code Analysis: A Systematic Literature Review and an Industrial Survey",
+              "author": "Ilyas Bilal",
+              "year": "2016",
+              "unstructured": "Bilal Ilyas and Islam Elkhalifa. 2016. Static Code Analysis: A Systematic Literature Review and an Industrial Survey. Dissertation, Blekinge Institute of Technology, Faculty of Computing, Department of Software Engineering."
+            },
+            {
+              "key": "e_1_3_2_25_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3546932.3547009"
+            },
+            {
+              "key": "e_1_3_2_26_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.21236/ADA235785"
+            },
+            {
+              "key": "e_1_3_2_27_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1368088.1368131"
+            },
+            {
+              "key": "e_1_3_2_28_2",
+              "doi-asserted-by": "crossref",
+              "first-page": "282",
+              "DOI": "10.1007/3-540-47833-7_25",
+              "volume-title": "Revised Papers from the 4th International Workshop on Software Product-Family Engineering (PFE ’01)",
+              "author": "Krueger Charles W.",
+              "year": "2002",
+              "unstructured": "Charles W. Krueger. 2002. Easing the transition to software mass customization. In Revised Papers from the 4th International Workshop on Software Product-Family Engineering (PFE ’01). Springer-Verlag, 282–293."
+            },
+            {
+              "key": "e_1_3_2_29_2",
+              "first-page": "153",
+              "article-title": "Features and how to find them: A survey of manual feature location feature location; systematic literature review; reverse variability engineering; feature identification; feature mapping",
+              "author": "Krüger Jacob",
+              "year": "2018",
+              "unstructured": "Jacob Krüger, Thorsten Berger, Thomas Leich, and Features. 2018. Features and how to find them: A survey of manual feature location feature location; systematic literature review; reverse variability engineering; feature identification; feature mapping. In Software Engineering for Variability Intensive Systems: Foundations and Applications, 153–172.",
+              "journal-title": "Software Engineering for Variability Intensive Systems: Foundations and Applications"
+            },
+            {
+              "key": "e_1_3_2_30_2",
+              "first-page": "2",
+              "volume-title": "Proceedings of the 14th International Working Conference on Variability Modelling of Software-Intensive System (VAMOS ’20)",
+              "author": "Krüger Jacob",
+              "year": "2020",
+              "unstructured": "Jacob Krüger, Sebastian Krieter, Gunter Saake, and Thomas Leich. 2020. EXtracting product lines from vAriaNTs (EXPLANT) In Proceedings of the 14th International Working Conference on Variability Modelling of Software-Intensive System (VAMOS ’20). ACM, New York, NY, Article 13, 2 pages."
+            },
+            {
+              "key": "e_1_3_2_31_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2013.45"
+            },
+            {
+              "key": "e_1_3_2_32_2",
+              "first-page": "303",
+              "volume-title": "Proceedings of the SPLC Workshop on Visualization in Software Product Line Engineering (ViSPLE)",
+              "author": "Kästner Christian",
+              "year": "2008",
+              "unstructured": "Christian Kästner, Salvador Trujillo, and Sven Apel. 2008. Visualizing software product line variabilities in source code. In Proceedings of the SPLC Workshop on Visualization in Software Product Line Engineering (ViSPLE), 303–312."
+            },
+            {
+              "key": "e_1_3_2_33_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.scico.2012.05.003"
+            },
+            {
+              "key": "e_1_3_2_34_2",
+              "first-page": "105",
+              "volume-title": "Proceedings of the 2010 ACM/IEEE 32nd International Conference on Software Engineering",
+              "volume": "1",
+              "author": "Liebig Jorg",
+              "year": "2010",
+              "unstructured": "Jorg Liebig, Sven Apel, Christian Lengauer, Christian Kästner, and Michael Schulze. 2010. An analysis of the variability in forty preprocessor-based software product lines. In Proceedings of the 2010 ACM/IEEE 32nd International Conference on Software Engineering, Vol. 1, 105–114."
+            },
+            {
+              "key": "e_1_3_2_35_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.5555/1296141"
+            },
+            {
+              "key": "e_1_3_2_36_2",
+              "first-page": "294",
+              "volume-title": "Proceedings of the International Conference on Transportation & Logistics, Information & Communication, Smart City (TLICSC ’18)",
+              "volume": "161",
+              "author": "Liu Lupeng",
+              "year": "2018",
+              "unstructured": "Lupeng Liu and Xiaoguang Mao. 2018. A study on code transplantation technique based on program slicing. In Proceedings of the International Conference on Transportation & Logistics, Information & Communication, Smart City (TLICSC ’18), Vol. 161, 294–298."
+            },
+            {
+              "key": "e_1_3_2_37_2",
+              "doi-asserted-by": "crossref",
+              "first-page": "136",
+              "DOI": "10.1007/978-3-642-15579-6_10",
+              "volume-title": "Proceedings of the Software Product Lines: Going Beyond (SPLC’10)",
+              "author": "Lotufo Rafael",
+              "year": "2010",
+              "unstructured": "Rafael Lotufo, Steven She, Thorsten Berger, Krzysztof Czarnecki, and Andrzej Wasowski. 2010. Evolution of the Linux kernel variability model. In Proceedings of the Software Product Lines: Going Beyond (SPLC’10). Springer-Verlag, Berlin, 136–150."
+            },
+            {
+              "key": "e_1_3_2_38_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICSE43902.2021.00147"
+            },
+            {
+              "key": "e_1_3_2_39_2",
+              "doi-asserted-by": "crossref",
+              "first-page": "101",
+              "DOI": "10.1145/2791060.2791086",
+              "volume-title": "Proceedings of the 19th International Conference on Software Product Line (SPLC ’15)",
+              "author": "Martinez Jabier",
+              "year": "2015",
+              "unstructured": "Jabier Martinez, Tewfik Ziadi, Tegawendé F. Bissyandé, Jacques Klein, and Yves Le Traon. 2015. Bottom-up adoption of software product lines: A generic and extensible approach. In Proceedings of the 19th International Conference on Software Product Line (SPLC ’15). ACM, New York, NY, 101–110."
+            },
+            {
+              "key": "e_1_3_2_40_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2017.2688333"
+            },
+            {
+              "key": "e_1_3_2_41_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3377813.3381366"
+            },
+            {
+              "key": "e_1_3_2_42_2",
+              "unstructured": "Linda M. Northrop and Paul C. Clements. 2012. A Framework for Software Product Line Practice Version 5.0. Technical Report. Software Engineering Institute 258. Retrieved from http://www.sei.cmu.edu/productlines/frame_report/index.html"
+            },
+            {
+              "key": "e_1_3_2_43_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TEVC.2017.2693219"
+            },
+            {
+              "key": "e_1_3_2_44_2",
+              "first-page": "137",
+              "volume-title": "Genetic Programming",
+              "author": "Petke Justyna",
+              "year": "2014",
+              "unstructured": "Justyna Petke, Mark Harman, William B. Langdon, and Westley Weimer. 2014. Using genetic improvement and code transplants to specialise a C++ program to a problem class. In Genetic Programming. Miguel Nicolau, Krzysztof Krawiec, Malcolm I. Heywood, Mauro Castelli, Pablo García-Sánchez, Juan J. Merelo, Victor M. Rivas Santos, and Kevin Sim (Eds.), Springer, Berlin, 137–149."
+            },
+            {
+              "key": "e_1_3_2_45_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2017.2702606"
+            },
+            {
+              "key": "e_1_3_2_46_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/3-540-28901-1"
+            },
+            {
+              "key": "e_1_3_2_47_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.15439/2023F9829"
+            },
+            {
+              "key": "e_1_3_2_48_2",
+              "doi-asserted-by": "crossref",
+              "first-page": "201",
+              "DOI": "10.1145/2901739.2901745",
+              "volume-title": "Proceedings of the 13th International Conference on Mining Software Repositories (MSR ’16)",
+              "author": "Rahman Md Tajmilur",
+              "year": "2016",
+              "unstructured": "Md Tajmilur Rahman, Louis-Philippe Querel, Peter C. Rigby, and Bram Adams. 2016. Feature toggles: Practitioner practices and a case study. In Proceedings of the 13th International Conference on Mining Software Repositories (MSR ’16). ACM, New York, NY, 201–211."
+            },
+            {
+              "issue": "3",
+              "key": "e_1_3_2_49_2",
+              "doi-asserted-by": "crossref",
+              "first-page": "23",
+              "DOI": "10.1145/2189751.2047868",
+              "article-title": "On the impact of feature dependencies when maintaining preprocessor-based software product lines",
+              "volume": "47",
+              "author": "Ribeiro Márcio",
+              "year": "2011",
+              "unstructured": "Márcio Ribeiro, Felipe Queiroz, Paulo Borba, Társis Tolêdo, Claus Brabrand, and Sérgio Soares. 2011. On the impact of feature dependencies when maintaining preprocessor-based software product lines. SIGPLAN Notices 47, 3 (Oct. 2011), 23–32.",
+              "journal-title": "SIGPLAN Notices"
+            },
+            {
+              "key": "e_1_3_2_50_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.5555/2019854"
+            },
+            {
+              "key": "e_1_3_2_51_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-642-36654-3_2"
+            },
+            {
+              "key": "e_1_3_2_52_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1093/biomet/52.3-4.591"
+            },
+            {
+              "key": "e_1_3_2_53_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1985793.1985856"
+            },
+            {
+              "key": "e_1_3_2_54_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3106237.3106269"
+            },
+            {
+              "key": "e_1_3_2_55_2",
+              "unstructured": "Leandro Souza Earl Barr Justyna Petke Eduardo Almeida and Paulo Neto. 2023. The Project: Software Product line Engineering via Automated Software Transplantation. Retrieved April 1 2024 from https://autotransplantation-spl.github.io/foundry.github.io/"
+            },
+            {
+              "key": "e_1_3_2_56_2",
+              "doi-asserted-by": "crossref",
+              "first-page": "47",
+              "DOI": "10.1145/1966445.1966451",
+              "volume-title": "Proceedings of the 6th Conference on Computer Systems (EuroSys ’11)",
+              "author": "Tartler Reinhard",
+              "year": "2011",
+              "unstructured": "Reinhard Tartler, Daniel Lohmann, Julio Sincero, and Wolfgang Schröder-Preikschat. 2011. Feature consistency in compile-time-configurable system software: Facing the Linux 10,000 feature problem. In Proceedings of the 6th Conference on Computer Systems (EuroSys ’11). ACM, New York, NY, 47–60."
+            },
+            {
+              "key": "e_1_3_2_57_2",
+              "unstructured": "D. van Heesch. 2018. Doxygen: Source Code Documentation Generator Tool. Retrieved from http://www.stack.nl/dimitri/doxygen/"
+            },
+            {
+              "key": "e_1_3_2_58_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ACCESS.2018.2872669"
+            },
+            {
+              "key": "e_1_3_2_59_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.5555/1753235.1753265"
+            },
+            {
+              "key": "e_1_3_2_60_2",
+              "first-page": "307",
+              "volume-title": "Proceedings of the 10th Joint Meeting on Foundations of Software Engineering (ESEC/FSE ’15)",
+              "author": "Xu Tianyin",
+              "year": "2015",
+              "unstructured": "Tianyin Xu, Long Jin, Xuepeng Fan, Yuanyuan Zhou, Shankar Pasupathy, and Rukma Talwadker. 2015. Hey, you have given me too many knobs!: Understanding and dealing with over-designed configuration in system software. In Proceedings of the 10th Joint Meeting on Foundations of Software Engineering (ESEC/FSE ’15). ACM, New York, NY, 307–319."
+            },
+            {
+              "key": "e_1_3_2_61_2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1176887.1176897"
+            }
+          ],
+          "container-title": [
+            "ACM Transactions on Software Engineering and Methodology"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://dl.acm.org/doi/10.1145/3695987",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://dl.acm.org/doi/pdf/10.1145/3695987",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                6,
+                19
+              ]
+            ],
+            "date-time": "2025-06-19T00:04:30Z",
+            "timestamp": 1750291470000
+          },
+          "score": 16.830956,
+          "resource": {
+            "primary": {
+              "URL": "https://dl.acm.org/doi/10.1145/3695987"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2025,
+                1,
+                20
+              ]
+            ]
+          },
+          "references-count": 60,
+          "journal-issue": {
+            "issue": "2",
+            "published-print": {
+              "date-parts": [
+                [
+                  2025,
+                  2,
+                  28
+                ]
+              ]
+            }
+          },
+          "alternative-id": [
+            "10.1145/3695987"
+          ],
+          "URL": "https://doi.org/10.1145/3695987",
+          "ISSN": [
+            "1049-331X",
+            "1557-7392"
+          ],
+          "issn-type": [
+            {
+              "value": "1049-331X",
+              "type": "print"
+            },
+            {
+              "value": "1557-7392",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2025,
+                1,
+                20
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "2023-05-01",
+              "order": 0,
+              "name": "received",
+              "label": "Received",
+              "group": {
+                "name": "publication_history",
+                "label": "Publication History"
+              }
+            },
+            {
+              "value": "2024-08-02",
+              "order": 2,
+              "name": "accepted",
+              "label": "Accepted",
+              "group": {
+                "name": "publication_history",
+                "label": "Publication History"
+              }
+            },
+            {
+              "value": "2025-01-20",
+              "order": 3,
+              "name": "published",
+              "label": "Published",
+              "group": {
+                "name": "publication_history",
+                "label": "Publication History"
+              }
+            }
+          ]
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                8,
+                28
+              ]
+            ],
+            "date-time": "2026-08-28T17:29:07Z",
+            "timestamp": 1787938147297,
+            "version": "build-2784847793"
+          },
+          "reference-count": 79,
+          "publisher": "Springer Science and Business Media LLC",
+          "issue": "1",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    4,
+                    12
+                  ]
+                ],
+                "date-time": "2024-04-12T00:00:00Z",
+                "timestamp": 1712880000000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by/4.0"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    4,
+                    12
+                  ]
+                ],
+                "date-time": "2024-04-12T00:00:00Z",
+                "timestamp": 1712880000000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by/4.0"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "link.springer.com"
+            ],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "Autom Softw Eng"
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2024,
+                5
+              ]
+            ]
+          },
+          "abstract": "<jats:title>Abstract</jats:title>\n                  <jats:p>As bigger quantum processors with hundreds of qubits become increasingly available, the potential for quantum computing to solve problems intractable for classical computers is becoming more tangible. Designing efficient quantum algorithms and software in tandem is key to achieving quantum advantage. Quantum software engineering is challenging due to the unique counterintuitive nature of quantum logic. Moreover, with larger quantum systems, traditional programming using quantum assembly language and qubit-level reasoning is becoming infeasible. Automated Quantum Software Engineering (AQSE) can help to reduce the barrier to entry, speed up development, reduce errors, and improve the efficiency of quantum software. This article elucidates the motivation to research AQSE (why), a precise description of such a framework (what), and reflections on components that are required for implementing it (how).</jats:p>",
+          "DOI": "10.1007/s10515-024-00436-x",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2024,
+                4,
+                11
+              ]
+            ],
+            "date-time": "2024-04-11T23:19:23Z",
+            "timestamp": 1712877563000
+          },
+          "update-policy": "https://doi.org/10.1007/springer_crossmark_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 12,
+          "title": [
+            "Automated quantum software engineering"
+          ],
+          "prefix": "10.1007",
+          "volume": "31",
+          "author": [
+            {
+              "given": "Aritra",
+              "family": "Sarkar",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "297",
+          "published-online": {
+            "date-parts": [
+              [
+                2024,
+                4,
+                12
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "issue": "3",
+              "key": "436_CR1",
+              "doi-asserted-by": "publisher",
+              "first-page": "030501",
+              "DOI": "10.1088/2058-9565/abfa64",
+              "volume": "6",
+              "author": "CD Aiello",
+              "year": "2021",
+              "unstructured": "Aiello, C.D., Awschalom, D.D., Bernien, H., Brower, T., Brown, K.R., Brun, T.A., Caram, J.R., Chitambar, E., Di Felice, R., Edmonds, K.M.: Achieving a quantum smart workforce. Quantum Sci. Technol. 6(3), 030501 (2021)",
+              "journal-title": "Quantum Sci. Technol."
+            },
+            {
+              "key": "436_CR2",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Alvarez, G., Bennink, R., Irle, S., Jakowski, J.: Gene expression programming for quantum computing. arXiv preprint arXiv:2303.08203 (2023)",
+              "DOI": "10.1145/3617691"
+            },
+            {
+              "key": "436_CR3",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Andriushchenko, R., Češka, M., Junges, S., Katoen, J.-P., Stupinskỳ, Š.: Paynt: a tool for inductive synthesis of probabilistic programs. In: International Conference on Computer Aided Verification, 856–869. Springer, Cham (2021)",
+              "DOI": "10.1007/978-3-030-81685-8_40"
+            },
+            {
+              "key": "436_CR4",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Arawjo, I., DeArmas, A., Roberts, M., Basu, S., Parikh, T.: Notational programming for notebook environments: A case study with quantum circuits. In: Proceedings of the 35th Annual ACM Symposium on User Interface Software and Technology, 1–20 (2022)",
+              "DOI": "10.1145/3526113.3545619"
+            },
+            {
+              "issue": "2",
+              "key": "436_CR5",
+              "doi-asserted-by": "publisher",
+              "first-page": "41",
+              "DOI": "10.1145/3106700.3106710",
+              "volume": "48",
+              "author": "S Arunachalam",
+              "year": "2017",
+              "unstructured": "Arunachalam, S., Wolf, R.: Guest column: a survey of quantum learning theory. ACM SIGACT News 48(2), 41–67 (2017)",
+              "journal-title": "ACM SIGACT News"
+            },
+            {
+              "key": "436_CR6",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Atzemoglou, P.: The dagger lambda calculus. arXiv preprint arXiv:1406.1633 (2014)",
+              "DOI": "10.4204/EPTCS.172.15"
+            },
+            {
+              "key": "436_CR7",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Baez, J., Stay, M.: Physics, topology, logic and computation: a rosetta stone. In: New Structures for Physics, 95–172. Springer, Heidelberg (2010)",
+              "DOI": "10.1007/978-3-642-12821-9_2"
+            },
+            {
+              "key": "436_CR8",
+              "unstructured": "Bakó, B., Glos, A., Salehi, Ö., Zimborás, Z.: Near-optimal circuit design for variational quantum optimization. arXiv preprint arXiv:2209.03386 (2022)"
+            },
+            {
+              "key": "436_CR9",
+              "unstructured": "Bedford, A.: Coqatoo: generating natural language versions of coq proofs. arXiv preprint arXiv:1712.03894 (2017)"
+            },
+            {
+              "key": "436_CR10",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Bernstein, E., Vazirani, U.: Quantum complexity theory. In: Proceedings of the Twenty-fifth Annual ACM Symposium on Theory of Computing, 11–20 (1993)",
+              "DOI": "10.1145/167088.167097"
+            },
+            {
+              "key": "436_CR11",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Bertels, K., Sarkar, A., Hubregtsen, T., Serrao, M., Mouedenne, A.A., Yadav, A., Krol, A., Ashraf, I.: Quantum computer architecture: Towards full-stack quantum accelerators. In: 2020 Design, Automation & Test in Europe Conference & Exhibition (DATE), 1–6 (2020). IEEE",
+              "DOI": "10.23919/DATE48585.2020.9116502"
+            },
+            {
+              "issue": "5",
+              "key": "436_CR12",
+              "doi-asserted-by": "publisher",
+              "first-page": "24",
+              "DOI": "10.1109/MM.2021.3099195",
+              "volume": "41",
+              "author": "K Bertels",
+              "year": "2021",
+              "unstructured": "Bertels, K., Sarkar, A., Ashraf, I.: Quantum computing: from NISQ to PISQ. IEEE Micro 41(5), 24–32 (2021)",
+              "journal-title": "IEEE Micro"
+            },
+            {
+              "key": "436_CR13",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Bichsel, B., Baader, M., Gehr, T., Vechev, M.: Silq: A high-level quantum language with safe uncomputation and intuitive semantics. In: Proceedings of the 41st ACM SIGPLAN Conference on Programming Language Design and Implementation, 286–300 (2020)",
+              "DOI": "10.1145/3385412.3386007"
+            },
+            {
+              "key": "436_CR14",
+              "unstructured": "Bornholt, J., Torlak, E., Ceze, L., Grossman, D.: Approximate program synthesis. In: Workshop on Approximate Computing Across the Stack (2015)"
+            },
+            {
+              "key": "436_CR15",
+              "unstructured": "Brown, A.R., Freedman, M.H., Lin, H.W., Susskind, L.: Effective geometry, complexity, and universality. arXiv preprint arXiv:2111.12700 (2021)"
+            },
+            {
+              "key": "436_CR16",
+              "unstructured": "Brown, K., Hanks, T., Fairbanks, J.: Compositional exploration of combinatorial scientific models. arXiv preprint arXiv:2206.08755 (2022)"
+            },
+            {
+              "key": "436_CR17",
+              "unstructured": "Cai, Y., Mao, S., Wu, W., Wang, Z., Liang, Y., Ge, T., Wu, C., You, W., Song, T., Xia, Y., et al.: Low-code llm: Visual programming over llms. arXiv preprint arXiv:2304.08103 (2023)"
+            },
+            {
+              "key": "436_CR18",
+              "doi-asserted-by": "publisher",
+              "first-page": "85",
+              "DOI": "10.1007/978-3-031-05324-5_5",
+              "volume-title": "Quantum Softw. Eng.",
+              "author": "CR Cartiere",
+              "year": "2022",
+              "unstructured": "Cartiere, C.R.: Formal methods for quantum software engineering. In: Quantum Softw. Eng., pp. 85–101. Springer, Cham (2022)"
+            },
+            {
+              "key": "436_CR19",
+              "doi-asserted-by": "publisher",
+              "first-page": "836",
+              "DOI": "10.22331/q-2022-10-13-836",
+              "volume": "6",
+              "author": "A Cervera-Lierta",
+              "year": "2022",
+              "unstructured": "Cervera-Lierta, A., Krenn, M., Aspuru-Guzik, A.: Design of quantum optical experiments with logic artificial intelligence. Quantum 6, 836 (2022)",
+              "journal-title": "Quantum"
+            },
+            {
+              "issue": "1",
+              "key": "436_CR20",
+              "doi-asserted-by": "publisher",
+              "first-page": "014024",
+              "DOI": "10.1103/PhysRevApplied.20.014024",
+              "volume": "20",
+              "author": "P Chandarana",
+              "year": "2023",
+              "unstructured": "Chandarana, P., Hegade, N.N., Montalban, I., Solano, E., Chen, X.: Digitized counterdiabatic quantum algorithm for protein folding. Phys. Rev. Appl. 20(1), 014024 (2023)",
+              "journal-title": "Phys. Rev. Appl."
+            },
+            {
+              "key": "436_CR21",
+              "unstructured": "Chen, M., Tworek, J., Jun, H., Yuan, Q., Pinto, H.P.d.O., Kaplan, J., Edwards, H., Burda, Y., Joseph, N., Brockman, G., et al.: Evaluating large language models trained on code. arXiv preprint arXiv:2107.03374 (2021)"
+            },
+            {
+              "key": "436_CR22",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Coecke, B.: The mathematics of text structure. In: J. Lambek (eds) The Interplay of Mathematics. Logic, and Linguistics, pp. 181–217. Springer, Cham (2021)",
+              "DOI": "10.1007/978-3-030-66545-6_6"
+            },
+            {
+              "key": "436_CR23",
+              "doi-asserted-by": "publisher",
+              "first-page": "1159",
+              "DOI": "10.1613/jair.1.13554",
+              "volume": "74",
+              "author": "C Colas",
+              "year": "2022",
+              "unstructured": "Colas, C., Karch, T., Sigaud, O., Oudeyer, P.-Y.: Autotelic agents with intrinsically motivated goal-conditioned reinforcement learning: a short survey. J. Artif. Intell. Res. 74, 1159–1199 (2022)",
+              "journal-title": "J. Artif. Intell. Res."
+            },
+            {
+              "key": "436_CR24",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Cruz-Lemus, J.A., Marcelo, L.A., Piattini, M.: Towards a set of metrics for quantum circuits understandability. In: International Conference on the Quality of Information and Communications Technology, 239–249. Springer, Cham (2021)",
+              "DOI": "10.1007/978-3-030-85347-1_18"
+            },
+            {
+              "key": "436_CR25",
+              "unstructured": "De Raedt, L., Dries, A., Thon, I., Broeck, G., Verbeke, M.: Inducing probabilistic relational rules from probabilistic examples. In: Twenty-fourth International Joint Conference on Artificial Intelligence (2015)"
+            },
+            {
+              "key": "436_CR26",
+              "unstructured": "Ezratty, O.: Where are we heading with nisq? arXiv preprint arXiv:2305.09518 (2023)"
+            },
+            {
+              "key": "436_CR27",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Fawzi, A., Balog, M., Huang, A., Hubert, T., Romera-Paredes, B., Barekatain, M., Novikov, A., Ruiz, R., F.J., Schrittwieser, J., Swirszcz, G.: Discovering faster matrix multiplication algorithms with reinforcement learning. Nature 610(7930), 47–53 (2022)",
+              "DOI": "10.1038/s41586-022-05172-4"
+            },
+            {
+              "key": "436_CR28",
+              "unstructured": "Fitzsimons, J.F., Tan, S.-H.: Systems and methods for unified computing on digital and quantum computers. Google Patents. US Patent App. 17/337,873 (2021)"
+            },
+            {
+              "issue": "1",
+              "key": "436_CR29",
+              "doi-asserted-by": "publisher",
+              "first-page": "1",
+              "DOI": "10.1016/0304-3975(87)90045-4",
+              "volume": "50",
+              "author": "J-Y Girard",
+              "year": "1987",
+              "unstructured": "Girard, J.-Y.: Linear logic. Theor. Comput. Sci. 50(1), 1–101 (1987)",
+              "journal-title": "Theor. Comput. Sci."
+            },
+            {
+              "key": "436_CR30",
+              "volume-title": "Proofs and Types",
+              "author": "J-Y Girard",
+              "year": "1989",
+              "unstructured": "Girard, J.-Y., Taylor, P., Lafont, Y.: Proofs and Types, vol. 7. Cambridge University Press, Cambridge, UK (1989)"
+            },
+            {
+              "key": "436_CR31",
+              "unstructured": "Goertzel, B.: Paraconsistent foundations for quantum probability. arXiv preprint arXiv:2101.07498 (2021)"
+            },
+            {
+              "key": "436_CR32",
+              "unstructured": "Goertzel, B.: Reflective metagraph rewriting as a foundation for an agi\" language of thought\". arXiv preprint arXiv:2112.08272 (2021)"
+            },
+            {
+              "key": "436_CR33",
+              "volume-title": "Probabilistic Logic Networks: A Comprehensive Framework for Uncertain Inference",
+              "author": "B Goertzel",
+              "year": "2008",
+              "unstructured": "Goertzel, B., Iklé, M., Goertzel, I.F., Heljakka, A.: Probabilistic Logic Networks: A Comprehensive Framework for Uncertain Inference. Springer, New York (2008)"
+            },
+            {
+              "key": "436_CR34",
+              "unstructured": "Gorard, J., Namuduri, M., Arsiwalla, X.D.: Zx-calculus and extended hypergraph rewriting systems i: A multiway approach to categorical quantum information theory. arXiv preprint arXiv:2010.02752 (2020)"
+            },
+            {
+              "key": "436_CR35",
+              "unstructured": "Gorard, J., Namuduri, M., Arsiwalla, X.D.: Zx-calculus and extended wolfram model systems ii: fast diagrammatic reasoning with an application to quantum circuit simplification. arXiv preprint arXiv:2103.15820 (2021)"
+            },
+            {
+              "key": "436_CR36",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Gulwani, S., Polozov, O., Singh, R., : Program synthesis. Found. Trends® Programm. Lang. 4(1-2), 1–119 (2017)",
+              "DOI": "10.1561/2500000010"
+            },
+            {
+              "key": "436_CR37",
+              "unstructured": "Heese, R., Gerlach, T.T., Mücke, S., Müller, S., Jakobs, M., Piatkowski, N.: Explaining quantum circuits with shapley values: Towards explainable quantum machine learning (2023)"
+            },
+            {
+              "key": "436_CR38",
+              "unstructured": "Hietala, K., Rand, R., Hung, S.-H., Li, L., Hicks, M.: Proving quantum programs correct. arXiv preprint arXiv:2010.01240 (2020)"
+            },
+            {
+              "issue": "OOPSLA1",
+              "key": "436_CR39",
+              "doi-asserted-by": "publisher",
+              "first-page": "348",
+              "DOI": "10.1145/3586039",
+              "volume": "7",
+              "author": "CG Kang",
+              "year": "2023",
+              "unstructured": "Kang, C.G., Oh, H.: Modular component-based quantum circuit synthesis. Proc. ACM Programm. Lang. 7(OOPSLA1), 348–375 (2023)",
+              "journal-title": "Proc. ACM Programm. Lang."
+            },
+            {
+              "key": "436_CR40",
+              "doi-asserted-by": "publisher",
+              "first-page": "1",
+              "DOI": "10.1007/s00037-006-0204-7",
+              "volume": "15",
+              "author": "KS Kedlaya",
+              "year": "2006",
+              "unstructured": "Kedlaya, K.S.: Quantum computation of zeta functions of curves. Comput. Complex. 15, 1–19 (2006)",
+              "journal-title": "Comput. Complex."
+            },
+            {
+              "issue": "9",
+              "key": "436_CR41",
+              "doi-asserted-by": "publisher",
+              "first-page": "090405",
+              "DOI": "10.1103/PhysRevLett.116.090405",
+              "volume": "116",
+              "author": "M Krenn",
+              "year": "2016",
+              "unstructured": "Krenn, M., Malik, M., Fickler, R., Lapkiewicz, R., Zeilinger, A.: Automated search for new quantum experiments. Phys. Rev. Lett. 116(9), 090405 (2016)",
+              "journal-title": "Phys. Rev. Lett."
+            },
+            {
+              "key": "436_CR42",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Lehman, J., Stanley, K.O.: Novelty search and the problem with objectives. In: Genetic Programming Theory and Practice IX, 37–56. Springer, Cham (2011)",
+              "DOI": "10.1007/978-1-4614-1770-5_3"
+            },
+            {
+              "issue": "4",
+              "key": "436_CR43",
+              "doi-asserted-by": "publisher",
+              "first-page": "044007",
+              "DOI": "10.1088/2058-9565/abae7d",
+              "volume": "5",
+              "author": "F Leymann",
+              "year": "2020",
+              "unstructured": "Leymann, F., Barzen, J.: The bitter truth about gate-based quantum algorithms in the NISQ era. Quant. Sci. Technol. 5(4), 044007 (2020)",
+              "journal-title": "Quant. Sci. Technol."
+            },
+            {
+              "key": "436_CR44",
+              "unstructured": "Liang, Z., Cheng, J., Yang, R., Ren, H., Song, Z., Wu, D., Qian, X., Li, T., Shi, Y.: Unleashing the potential of llms for quantum computing: A study in quantum architecture design. arXiv preprint arXiv:2307.08191 (2023)"
+            },
+            {
+              "issue": "7964",
+              "key": "436_CR45",
+              "doi-asserted-by": "publisher",
+              "first-page": "257",
+              "DOI": "10.1038/s41586-023-06004-9",
+              "volume": "618",
+              "author": "DJ Mankowitz",
+              "year": "2023",
+              "unstructured": "Mankowitz, D.J., Michi, A., Zhernov, A., Gelmi, M., Selvi, M., Paduraru, C., Leurent, E., Iqbal, S., Lespiau, J.-B., Ahern, A.: Faster sorting algorithms discovered using deep reinforcement learning. Nature 618(7964), 257–263 (2023)",
+              "journal-title": "Nature"
+            },
+            {
+              "key": "436_CR46",
+              "unstructured": "Martyniuk, D., Falkenthal, M., Karam, N., Paschke, A., Wild, K.: An analysis of ontological entities to represent knowledge on quantum computing algorithms and implementations. In: Qurator (2021)"
+            },
+            {
+              "key": "436_CR47",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Murakami, K., Zhao, J.: Autoqc: Automated synthesis of quantum circuits using neural network. arXiv preprint arXiv:2210.02766 (2022)",
+              "DOI": "10.1109/QRS57517.2022.00075"
+            },
+            {
+              "key": "436_CR48",
+              "unstructured": "Naveh, Y., Naveh, A., Minerbi, N., Kirzner, O., Goldfeld, A., Ur, S.: Quantum circuit modeling. Google Patents. US Patent App. 17/149,326 (2021)"
+            },
+            {
+              "key": "436_CR49",
+              "unstructured": "Naveh, A., Ur, S., Naveh, Y., Kirzner, O., Alon, R., Goren, T., Goldfeld, A., Minerbi, N.: CSP-based synthesis of a quantum circuit. Google Patents. US Patent App. 17/499,046 (2021)"
+            },
+            {
+              "key": "436_CR50",
+              "unstructured": "Naveh, A., Ur, S., Naveh, Y., Kirzner, O., Alon, R., Goren, T., Minerbi, N.: Re-generation of a gate-level quantum circuit based on gate-level analysis. Google Patents. US Patent App. 17/499,063 (2021)"
+            },
+            {
+              "issue": "4",
+              "key": "436_CR51",
+              "doi-asserted-by": "publisher",
+              "first-page": "045012",
+              "DOI": "10.1088/2058-9565/ab4d89",
+              "volume": "4",
+              "author": "R Nichols",
+              "year": "2019",
+              "unstructured": "Nichols, R., Mineh, L., Rubio, J., Matthews, J.C., Knott, P.A.: Designing quantum experiments with a genetic algorithm. Quantum Sci Technol 4(4), 045012 (2019)",
+              "journal-title": "Quantum Sci Technol"
+            },
+            {
+              "issue": "5764",
+              "key": "436_CR52",
+              "doi-asserted-by": "publisher",
+              "first-page": "1133",
+              "DOI": "10.1126/science.1121541",
+              "volume": "311",
+              "author": "MA Nielsen",
+              "year": "2006",
+              "unstructured": "Nielsen, M.A., Dowling, M.R., Gu, M., Doherty, A.C.: Quantum computation as geometry. Science 311(5764), 1133–1135 (2006)",
+              "journal-title": "Science"
+            },
+            {
+              "issue": "6",
+              "key": "436_CR53",
+              "doi-asserted-by": "publisher",
+              "first-page": "208",
+              "DOI": "10.1145/2813885.2737982",
+              "volume": "50",
+              "author": "AV Nori",
+              "year": "2015",
+              "unstructured": "Nori, A.V., Ozair, S., Rajamani, S.K., Vijaykeerthy, D.: Efficient synthesis of probabilistic programs. ACM SIGPLAN Notices 50(6), 208–217 (2015)",
+              "journal-title": "ACM SIGPLAN Notices"
+            },
+            {
+              "issue": "1",
+              "key": "436_CR54",
+              "doi-asserted-by": "publisher",
+              "first-page": "846",
+              "DOI": "10.1145/3093333.3009894",
+              "volume": "52",
+              "author": "J Paykin",
+              "year": "2017",
+              "unstructured": "Paykin, J., Rand, R., Zdancewic, S.: Qwire: a core language for quantum circuits. ACM SIGPLAN Notices 52(1), 846–858 (2017)",
+              "journal-title": "ACM SIGPLAN Notices"
+            },
+            {
+              "key": "436_CR55",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Pérez-Castillo, R., Jiménez-Navajas, L., Piattini, M.: Modelling quantum circuits with uml. In: 2021 IEEE/ACM 2nd International Workshop on Quantum Software Engineering (Q-SE), 7–12 (2021). IEEE",
+              "DOI": "10.1109/Q-SE52541.2021.00009"
+            },
+            {
+              "key": "436_CR56",
+              "doi-asserted-by": "publisher",
+              "first-page": "79",
+              "DOI": "10.22331/q-2018-08-06-79",
+              "volume": "2",
+              "author": "J Preskill",
+              "year": "2018",
+              "unstructured": "Preskill, J.: Quantum computing in the NISQ era and beyond. Quantum 2, 79 (2018)",
+              "journal-title": "Quantum"
+            },
+            {
+              "key": "436_CR57",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Quetschlich, N., Burgholzer, L., Wille, R.: Towards an automated framework for realizing quantum computing solutions. arXiv preprint arXiv:2210.14928 (2022)",
+              "DOI": "10.1109/ISMVL57333.2023.00035"
+            },
+            {
+              "issue": "1",
+              "key": "436_CR58",
+              "doi-asserted-by": "publisher",
+              "first-page": "107",
+              "DOI": "10.1007/s10994-006-5833-1",
+              "volume": "62",
+              "author": "M Richardson",
+              "year": "2006",
+              "unstructured": "Richardson, M., Domingos, P.: Markov logic networks. Mach. Learn. 62(1), 107–136 (2006)",
+              "journal-title": "Mach. Learn."
+            },
+            {
+              "key": "436_CR59",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Romera-Paredes, B., Barekatain, M., Novikov, A., Balog, M., Kumar, M.P., Dupont, E., Ruiz, F.J.R., Ellenberg, J.S., Wang, P., Fawzi, O., Kohli, P., Fawzi, A.: Mathematical discoveries from program search with large language models. Nature (2023)",
+              "DOI": "10.1038/s41586-023-06924-6"
+            },
+            {
+              "issue": "7849",
+              "key": "436_CR60",
+              "doi-asserted-by": "publisher",
+              "first-page": "229",
+              "DOI": "10.1038/s41586-021-03242-7",
+              "volume": "591",
+              "author": "V Saggio",
+              "year": "2021",
+              "unstructured": "Saggio, V., Asenbeck, B.E., Hamann, A., Strömberg, T., Schiansky, P., Dunjko, V., Friis, N., Harris, N.C., Hochberg, M., Englund, D.: Experimental quantum speed-up in reinforcement learning agents. Nature 591(7849), 229–233 (2021)",
+              "journal-title": "Nature"
+            },
+            {
+              "key": "436_CR61",
+              "unstructured": "Sarkar, A.: Applications of quantum computation and algorithmic information: for causal modeling in genomics and reinforcement learning (2022)"
+            },
+            {
+              "key": "436_CR62",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Sarra, L., Ellis, K., Marquardt, F.: Discovering quantum circuit components with program synthesis. arXiv preprint arXiv:2305.01707 (2023)",
+              "DOI": "10.1088/2632-2153/ad4252"
+            },
+            {
+              "issue": "4",
+              "key": "436_CR63",
+              "doi-asserted-by": "publisher",
+              "first-page": "040504",
+              "DOI": "10.1103/PhysRevLett.122.040504",
+              "volume": "122",
+              "author": "M Schuld",
+              "year": "2019",
+              "unstructured": "Schuld, M., Killoran, N.: Quantum machine learning in feature hilbert spaces. Phys. Rev. Lett. 122(4), 040504 (2019)",
+              "journal-title": "Phys. Rev. Lett."
+            },
+            {
+              "key": "436_CR64",
+              "doi-asserted-by": "publisher",
+              "first-page": "565",
+              "DOI": "10.1109/JSTARS.2021.3134785",
+              "volume": "15",
+              "author": "A Sebastianelli",
+              "year": "2021",
+              "unstructured": "Sebastianelli, A., Zaidenberg, D.A., Spiller, D., Le Saux, B., Ullo, S.L.: On circuit-based hybrid quantum neural networks for remote sensing imagery classification. IEEE J. Select. Topics Appl. Earth Observ. Remote Sens. 15, 565–580 (2021)",
+              "journal-title": "IEEE J. Select. Topics Appl. Earth Observ. Remote Sens."
+            },
+            {
+              "key": "436_CR65",
+              "unstructured": "Seidel, R., Bock, S., Tcholtchev, N., Hauswirth, M.: Qrisp: a framework for compliable high-level programming of gate-based quantum computers. PlanQC-Programm. Lang. Quantum Comput. (2022)"
+            },
+            {
+              "key": "436_CR66",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-031-05324-5",
+              "volume-title": "Quantum Software Engineering",
+              "author": "MA Serrano",
+              "year": "2022",
+              "unstructured": "Serrano, M.A., Pérez-Castillo, R., Piattini, M.: Quantum Software Engineering. Springer, Cham (2022)"
+            },
+            {
+              "issue": "8",
+              "key": "436_CR67",
+              "doi-asserted-by": "publisher",
+              "first-page": "1353",
+              "DOI": "10.1109/JPROC.2020.2994765",
+              "volume": "108",
+              "author": "Y Shi",
+              "year": "2020",
+              "unstructured": "Shi, Y., Gokhale, P., Murali, P., Baker, J.M., Duckering, C., Ding, Y., Brown, N.C., Chamberland, C., Javadi-Abhari, A., Cross, A.W.: Resource-efficient quantum computing by breaking abstractions. Proc. IEEE 108(8), 1353–1370 (2020)",
+              "journal-title": "Proc. IEEE"
+            },
+            {
+              "key": "436_CR68",
+              "unstructured": "Shor, P.W.: The early days of quantum computation. arXiv preprint arXiv:2208.09964 (2022)"
+            },
+            {
+              "key": "436_CR69",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Simonyi, C., Christerson, M., Clifford, S.: Intentional software. In: Proceedings of the 21st Annual ACM SIGPLAN Conference on Object-oriented Programming Systems, Languages, and Applications, 451–464 (2006)",
+              "DOI": "10.1145/1167473.1167511"
+            },
+            {
+              "key": "436_CR70",
+              "volume-title": "Automatic Quantum Computer Programming: A Genetic Programming Approach",
+              "author": "L Spector",
+              "year": "2004",
+              "unstructured": "Spector, L.: Automatic Quantum Computer Programming: A Genetic Programming Approach, vol. 7. Springer, New York (2004)"
+            },
+            {
+              "issue": "2",
+              "key": "436_CR71",
+              "doi-asserted-by": "publisher",
+              "first-page": "99",
+              "DOI": "10.1162/106365602320169811",
+              "volume": "10",
+              "author": "KO Stanley",
+              "year": "2002",
+              "unstructured": "Stanley, K.O., Miikkulainen, R.: Evolving neural networks through augmenting topologies. Evol. Comput. 10(2), 99–127 (2002)",
+              "journal-title": "Evol. Comput."
+            },
+            {
+              "key": "436_CR72",
+              "unstructured": "Ventura, D., Martinez, T.: Quantum associative memory with exponential capacity. In: 1998 IEEE International Joint Conference on Neural Networks Proceedings. IEEE World Congress on Computational Intelligence (Cat. No. 98CH36227), 1, 509–513 (1998). IEEE"
+            },
+            {
+              "key": "436_CR73",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Wang, X., Arcaini, P., Yue, T., Ali, S.: Quito: a coverage-guided test generator for quantum programs. In: 2021 36th IEEE/ACM International Conference on Automated Software Engineering (ASE), 1237–1241 (2021). IEEE",
+              "DOI": "10.1109/ASE51524.2021.9678798"
+            },
+            {
+              "key": "436_CR74",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Wang, R., Lehman, J., Rawal, A., Zhi, J., Li, Y., Clune, J., Stanley, K.: Enhanced poet: Open-ended reinforcement learning through unbounded invention of learning challenges and their solutions. In: International Conference on Machine Learning, 9940–9951 (2020). PMLR",
+              "DOI": "10.1145/3321707.3321799"
+            },
+            {
+              "key": "436_CR75",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Weiden, M., Younis, E., Kalloor, J., Kubiatowicz, J., Iancu, C.: Improving quantum circuit synthesis with machine learning. arXiv preprint arXiv:2306.05622 (2023)",
+              "DOI": "10.1109/QCE57702.2023.00093"
+            },
+            {
+              "key": "436_CR76",
+              "unstructured": "Yakaryilmaz, A., Delgado, A.: QWorld: Inviting everyone to be part of the second quantum revolution. APS March Meet. Abstracts 2021, A29-011 (2021)"
+            },
+            {
+              "key": "436_CR77",
+              "unstructured": "Zhao, J.: Quantum software engineering: Landscapes and horizons. arXiv preprint arXiv:2007.07047 (2020)"
+            },
+            {
+              "key": "436_CR78",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Zhou, L., Barthe, G., Strub, P.-Y., Liu, J., Ying, M.: Coqq: Foundational verification of quantum programs. arXiv preprint arXiv:2207.11350 (2022)",
+              "DOI": "10.1145/3571222"
+            },
+            {
+              "key": "436_CR79",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-030-41753-6",
+              "volume-title": "Introducing Design Automation for Quantum Computing",
+              "author": "A Zulehner",
+              "year": "2020",
+              "unstructured": "Zulehner, A., Wille, R.: Introducing Design Automation for Quantum Computing, vol. 11. Springer, Cham (2020)"
+            }
+          ],
+          "container-title": [
+            "Automated Software Engineering"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://link.springer.com/content/pdf/10.1007/s10515-024-00436-x.pdf",
+              "content-type": "application/pdf",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://link.springer.com/article/10.1007/s10515-024-00436-x/fulltext.html",
+              "content-type": "text/html",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://link.springer.com/content/pdf/10.1007/s10515-024-00436-x.pdf",
+              "content-type": "application/pdf",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2024,
+                4,
+                29
+              ]
+            ],
+            "date-time": "2024-04-29T09:27:18Z",
+            "timestamp": 1714382838000
+          },
+          "score": 16.716831,
+          "resource": {
+            "primary": {
+              "URL": "https://link.springer.com/10.1007/s10515-024-00436-x"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2024,
+                4,
+                12
+              ]
+            ]
+          },
+          "references-count": 79,
+          "journal-issue": {
+            "issue": "1",
+            "published-print": {
+              "date-parts": [
+                [
+                  2024,
+                  5
+                ]
+              ]
+            }
+          },
+          "alternative-id": [
+            "436"
+          ],
+          "URL": "https://doi.org/10.1007/s10515-024-00436-x",
+          "ISSN": [
+            "0928-8910",
+            "1573-7535"
+          ],
+          "issn-type": [
+            {
+              "value": "0928-8910",
+              "type": "print"
+            },
+            {
+              "value": "1573-7535",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                4,
+                12
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "10 August 2023",
+              "order": 1,
+              "name": "received",
+              "label": "Received",
+              "group": {
+                "name": "ArticleHistory",
+                "label": "Article History"
+              }
+            },
+            {
+              "value": "19 March 2024",
+              "order": 2,
+              "name": "accepted",
+              "label": "Accepted",
+              "group": {
+                "name": "ArticleHistory",
+                "label": "Article History"
+              }
+            },
+            {
+              "value": "12 April 2024",
+              "order": 3,
+              "name": "first_online",
+              "label": "First Online",
+              "group": {
+                "name": "ArticleHistory",
+                "label": "Article History"
+              }
+            },
+            {
+              "order": 1,
+              "name": "Ethics",
+              "group": {
+                "name": "EthicsHeading",
+                "label": "Declarations"
+              }
+            },
+            {
+              "value": "Not applicable.",
+              "order": 2,
+              "name": "Ethics",
+              "group": {
+                "name": "EthicsHeading",
+                "label": "Conflict of interest"
+              }
+            },
+            {
+              "value": "All authors consent to the publication.",
+              "order": 3,
+              "name": "Ethics",
+              "group": {
+                "name": "EthicsHeading",
+                "label": "Consent for publication"
+              }
+            }
+          ],
+          "article-number": "36"
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                6,
+                17
+              ]
+            ],
+            "date-time": "2026-06-17T04:24:51Z",
+            "timestamp": 1781670291668,
+            "version": "3.54.5"
+          },
+          "reference-count": 30,
+          "publisher": "Association for Computing Machinery (ACM)",
+          "issue": "2",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    4,
+                    3
+                  ]
+                ],
+                "date-time": "2024-04-03T00:00:00Z",
+                "timestamp": 1712102400000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://www.acm.org/publications/policies/copyright_policy#Background"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "dl.acm.org"
+            ],
+            "crossmark-restriction": true
+          },
+          "short-container-title": [
+            "SIGSOFT Softw. Eng. Notes"
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2024,
+                4,
+                3
+              ]
+            ]
+          },
+          "abstract": "<jats:p>My goal with this text is to provide some concepts and questions that can help the reader to reflect on and elevate the discussion about Women and Software Engineering by providing historical data and some reflection points for the future. Feminism constitutes both a theoretical perspective and a social movement aiming to diminish and ultimately eliminate gender-based inequality and oppression. Data feminism merges data science with feminist principles to examine and address biases and power dynamics in data and technology. Studies at the intersection between gender and software engineering cover gender representation, barriers, and experiences. The main questions I propose for future reflections in the community are: What are the benefits that women bring to software engineering? How does the career and the life of female software engineers unfold? How should software engineering research change so that feminist principles are incorporated? How can feminist knowledge and processes help to examine power structure in software engineering?</jats:p>",
+          "DOI": "10.1145/3650142.3650147",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2024,
+                4,
+                3
+              ]
+            ],
+            "date-time": "2024-04-03T22:19:58Z",
+            "timestamp": 1712182798000
+          },
+          "page": "16-18",
+          "update-policy": "https://doi.org/10.1145/crossmark-policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 3,
+          "title": [
+            "Women and Software Engineering"
+          ],
+          "prefix": "10.1145",
+          "volume": "49",
+          "author": [
+            {
+              "given": "Letizia",
+              "family": "Jaccheri",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "Norwegian University of Science and Technology, Trondheim, Norway"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "320",
+          "published-online": {
+            "date-parts": [
+              [
+                2024,
+                4,
+                3
+              ]
+            ]
+          },
+          "reference": [
+            {
+              "key": "e_1_2_1_1_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1753326.1753521"
+            },
+            {
+              "key": "e_1_2_1_2_1",
+              "first-page": "177",
+              "volume-title": "International Journal of Management Reviews",
+              "author": "Bell E.",
+              "year": "2020",
+              "unstructured": "E. Bell, S. Meril¨ainen, S. Taylor, and J. Tienari. Dangerous Knowledge: The Political, Personal, and Epistemological Promise of Feminist Research in Management and Organization Studies. International Journal of Management Reviews, pages 177--192, 2020."
+            },
+            {
+              "key": "e_1_2_1_3_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1093/iwc/iwv046"
+            },
+            {
+              "key": "e_1_2_1_4_1",
+              "volume-title": "First software engineer",
+              "author": "Cameron Lori",
+              "year": "2018",
+              "unstructured": "Lori Cameron. First software engineer. IEEE Computer Society, 2018."
+            },
+            {
+              "key": "e_1_2_1_5_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICSE-SEIS.2019.00010"
+            },
+            {
+              "key": "e_1_2_1_6_1",
+              "volume-title": "Mapping the margins: Intersectionality, identity politics, and violence against women of color. The legal response to violence against women, 5:91",
+              "author": "Crenshaw Kimberle",
+              "year": "1997",
+              "unstructured": "Kimberle Crenshaw. Mapping the margins: Intersectionality, identity politics, and violence against women of color. The legal response to violence against women, 5:91, 1997."
+            },
+            {
+              "key": "e_1_2_1_7_1",
+              "first-page": "37",
+              "volume-title": "2023 IEEE/ACM 45th International Conference on Software Engineering: Software Engineering in Society (ICSE-SEIS)",
+              "author": "Cutrupi Claudia Maria",
+              "year": "2023",
+              "unstructured": "Claudia Maria Cutrupi, Irene Zanardi, Letizia Jaccheri, and Monica Landoni. Draw a software engineer test-an investigation into children's perceptions of software engineering profession. In 2023 IEEE/ACM 45th International Conference on Software Engineering: Software Engineering in Society (ICSE-SEIS), pages 37--47. IEEE, 2023."
+            },
+            {
+              "key": "e_1_2_1_8_1",
+              "volume-title": "Data feminism",
+              "author": "D'ignazio Catherine",
+              "year": "2023",
+              "unstructured": "Catherine D'ignazio and Lauren F Klein. Data feminism. MIT press, 2023."
+            },
+            {
+              "key": "e_1_2_1_9_1",
+              "volume-title": "2023 report on gender equality in the EU",
+              "author": "European Commission",
+              "year": "2023",
+              "unstructured": "European Commission. 2023 report on gender equality in the EU, 2023."
+            },
+            {
+              "key": "e_1_2_1_10_1",
+              "volume-title": "Worldwide developer gender",
+              "year": "2023",
+              "unstructured": "Eurostat. Worldwide developer gender, 2023."
+            },
+            {
+              "key": "e_1_2_1_11_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/268085.268127"
+            },
+            {
+              "key": "e_1_2_1_12_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2466627.2466634"
+            },
+            {
+              "key": "e_1_2_1_13_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.ijcci.2018.06.002"
+            },
+            {
+              "key": "e_1_2_1_14_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1093/sf/sot092"
+            },
+            {
+              "key": "e_1_2_1_15_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3195836.3195837"
+            },
+            {
+              "key": "e_1_2_1_16_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICSE.2019.00079"
+            },
+            {
+              "key": "e_1_2_1_17_1",
+              "doi-asserted-by": "crossref",
+              "first-page": "9",
+              "DOI": "10.1109/SYNASC51798.2020.00014",
+              "volume-title": "2020 22nd International Symposium on Symbolic and Numeric Algorithms for Scientific Computing (SYNASC)",
+              "author": "Jaccheri Letizia",
+              "year": "2020",
+              "unstructured": "Letizia Jaccheri, Cristina Pereira, and Swetlana Fast. Gender issues in computer science: lessons learnt and reflections for the future. In 2020 22nd International Symposium on Symbolic and Numeric Algorithms for Scientific Computing (SYNASC), pages 9--16. IEEE, 2020."
+            },
+            {
+              "key": "e_1_2_1_18_1",
+              "first-page": "39",
+              "volume-title": "International Conference on Sustainability in Software Engineering & Business Information Management",
+              "author": "Nguyen-Duc Anh",
+              "year": "2022",
+              "unstructured": "Anh Nguyen-Duc and Letizia Jaccheri. Gender equality in software engineering education--a study of female participation in customer-driven projects. In International Conference on Sustainability in Software Engineering & Business Information Management, pages 39--49. Springer, 2022."
+            },
+            {
+              "key": "e_1_2_1_19_1",
+              "first-page": "07",
+              "article-title": "How diverse is your team? investigating gender and nationality diversity in github teams",
+              "author": "Ortu Marco",
+              "year": "2016",
+              "unstructured": "Marco Ortu, Giuseppe Destefanis, Steve Counsell, Stephen Swift, Roberto Tonelli, and Michele Marchesi. How diverse is your team? investigating gender and nationality diversity in github teams. PeerJ, 07 2016.",
+              "journal-title": "PeerJ"
+            },
+            {
+              "key": "e_1_2_1_20_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.chb.2019.01.008"
+            },
+            {
+              "key": "e_1_2_1_21_1",
+              "first-page": "310",
+              "volume-title": "Future of Information and Communication Conference",
+              "author": "Pat´on-Romero J David",
+              "year": "2023",
+              "unstructured": "J David Pat´on-Romero, Sunniva Block, Claudia Ayala, and Letizia Jaccheri. Gender equality in information technology processes: A systematic mapping study. In Future of Information and Communication Conference, pages 310--327. Springer, 2023."
+            },
+            {
+              "key": "e_1_2_1_22_1",
+              "first-page": "1",
+              "volume-title": "Gender in AI and Robotics: The Gender Challenges from an Interdisciplinary Perspective",
+              "author": "Rubegni Elisa",
+              "year": "2023",
+              "unstructured": "Elisa Rubegni, Birgit Penzenstadler, Monica Landoni, Letizia Jaccheri, and Gordana Dodig-Crnkovic. Owning your career paths: Storytelling to engage women in computer science. In Gender in AI and Robotics: The Gender Challenges from an Interdisciplinary Perspective, pages 1--25. Springer, 2023."
+            },
+            {
+              "key": "e_1_2_1_23_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2020.3003413"
+            },
+            {
+              "key": "e_1_2_1_24_1",
+              "first-page": "68",
+              "volume-title": "OSS 2019, Montreal, QC, Canada, May 26--27, 2019, Proceedings 15",
+              "author": "Singh Vandana",
+              "year": "2019",
+              "unstructured": "Vandana Singh and William Brandon. Open source software community inclusion initiatives to support women participation. In Open Source Systems: 15th IFIP WG 2.13 International Conference, OSS 2019, Montreal, QC, Canada, May 26--27, 2019, Proceedings 15, pages 68--79. Springer, 2019."
+            },
+            {
+              "key": "e_1_2_1_25_1",
+              "volume-title": "Statistics",
+              "year": "2023",
+              "unstructured": "Statista. Statistics, 2023. [https://www.statista.com/]."
+            },
+            {
+              "key": "e_1_2_1_26_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3510458.3513018"
+            },
+            {
+              "key": "e_1_2_1_27_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2702123.2702549"
+            },
+            {
+              "key": "e_1_2_1_28_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s11192-012-0774-x"
+            },
+            {
+              "key": "e_1_2_1_29_1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICSE-SEIS.2019.00009"
+            },
+            {
+              "key": "e_1_2_1_30_1",
+              "first-page": "276",
+              "volume-title": "International Conference on Human-Computer Interaction",
+              "author": "Wilson Takaoka Alicia Julia",
+              "year": "2023",
+              "unstructured": "Alicia Julia Wilson Takaoka. Reality pregnancy and the online recolonization of the female body. In International Conference on Human-Computer Interaction, pages 276--291. Springer, 2023."
+            }
+          ],
+          "container-title": [
+            "ACM SIGSOFT Software Engineering Notes"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://dl.acm.org/doi/10.1145/3650142.3650147",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://dl.acm.org/doi/pdf/10.1145/3650142.3650147",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                6,
+                19
+              ]
+            ],
+            "date-time": "2025-06-19T00:03:31Z",
+            "timestamp": 1750291411000
+          },
+          "score": 16.681536,
+          "resource": {
+            "primary": {
+              "URL": "https://dl.acm.org/doi/10.1145/3650142.3650147"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2024,
+                4,
+                3
+              ]
+            ]
+          },
+          "references-count": 30,
+          "journal-issue": {
+            "issue": "2",
+            "published-print": {
+              "date-parts": [
+                [
+                  2024,
+                  4,
+                  3
+                ]
+              ]
+            }
+          },
+          "alternative-id": [
+            "10.1145/3650142.3650147"
+          ],
+          "URL": "https://doi.org/10.1145/3650142.3650147",
+          "ISSN": [
+            "0163-5948"
+          ],
+          "issn-type": [
+            {
+              "value": "0163-5948",
+              "type": "print"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                4,
+                3
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "2024-04-03",
+              "order": 2,
+              "name": "published",
+              "label": "Published",
+              "group": {
+                "name": "publication_history",
+                "label": "Publication History"
+              }
+            }
+          ]
+        }
+      ],
+      "items-per-page": 5,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

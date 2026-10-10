@@ -1,0 +1,2184 @@
+[
+  {
+    "id": "patent:CN202420753596.1",
+    "type": "patent",
+    "title": "一种杠铃杆导向用运动组件",
+    "authors": [
+      "李丽艳",
+      "赵涛",
+      "任塘珂",
+      "董顺波",
+      "别鹏"
+    ],
+    "contributors": [
+      {
+        "name": "李丽艳",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "赵涛",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "任塘珂",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "董顺波",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "别鹏",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-01-03",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202420753596.1",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 1
+      },
+      "raw_cells": [
+        "1",
+        "CN202420753596.1",
+        "实用新型",
+        "一种杠铃杆导向用运动组件",
+        "20240412",
+        "20250103",
+        "李丽艳;赵涛;任塘珂;董顺波;别鹏"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202420753596.1",
+      "patent_subtype": "实用新型",
+      "application_date": "2024-04-12",
+      "grant_date": "2025-01-03",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN202111410309.4",
+    "type": "patent",
+    "title": "基于复合左右手传输线的多端口宽带相消型传感器",
+    "authors": [
+      "刘伟娜",
+      "张俊杰"
+    ],
+    "contributors": [
+      {
+        "name": "刘伟娜",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张俊杰",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-01-28",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202111410309.4",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 2
+      },
+      "raw_cells": [
+        "2",
+        "CN202111410309.4",
+        "发明",
+        "基于复合左右手传输线的多端口宽带相消型传感器",
+        "20211122",
+        "20250128",
+        "刘伟娜;张俊杰"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202111410309.4",
+      "patent_subtype": "发明",
+      "application_date": "2021-11-22",
+      "grant_date": "2025-01-28",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN202210545276.2",
+    "type": "patent",
+    "title": "基于轻量级的航拍车辆目标检测方法、系统及存储介质",
+    "authors": [
+      "沈家全",
+      "张永新",
+      "李德光",
+      "张斌斌",
+      "郭晨睿",
+      "陈梦垚",
+      "汪璐瑶",
+      "徐庚辰",
+      "杨佳曦"
+    ],
+    "contributors": [
+      {
+        "name": "沈家全",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张永新",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "李德光",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张斌斌",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "郭晨睿",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "陈梦垚",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "汪璐瑶",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "徐庚辰",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "杨佳曦",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-03-07",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202210545276.2",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 3
+      },
+      "raw_cells": [
+        "3",
+        "CN202210545276.2",
+        "发明",
+        "基于轻量级的航拍车辆目标检测方法、系统及存储介质",
+        "20220519",
+        "20250307",
+        "沈家全;张永新;李德光;张斌斌;郭晨睿;陈梦垚;汪璐瑶;徐庚辰;杨佳曦"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202210545276.2",
+      "patent_subtype": "发明",
+      "application_date": "2022-05-19",
+      "grant_date": "2025-03-07",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN202421032841.6",
+    "type": "patent",
+    "title": "一种简易组合式大气干湿沉降物被动采集装置",
+    "authors": [
+      "孙泽航",
+      "刘怀鹏",
+      "张晓萍",
+      "艳燕",
+      "李勇永",
+      "杨华夏",
+      "翟晓沛"
+    ],
+    "contributors": [
+      {
+        "name": "孙泽航",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "刘怀鹏",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张晓萍",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "艳燕",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "李勇永",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "杨华夏",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "翟晓沛",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-03-18",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202421032841.6",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 4
+      },
+      "raw_cells": [
+        "4",
+        "CN202421032841.6",
+        "实用新型",
+        "一种简易组合式大气干湿沉降物被动采集装置",
+        "20240513",
+        "20250318",
+        "孙泽航;刘怀鹏;张晓萍;艳燕;李勇永;杨华夏;翟晓沛"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202421032841.6",
+      "patent_subtype": "实用新型",
+      "application_date": "2024-05-13",
+      "grant_date": "2025-03-18",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN201810577221.3",
+    "type": "patent",
+    "title": "基于距离划分树的高维数据相似性连接查询方法及装置",
+    "authors": [
+      "马友忠",
+      "张瑞玲",
+      "林春杰",
+      "李莹"
+    ],
+    "contributors": [
+      {
+        "name": "马友忠",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张瑞玲",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "林春杰",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "李莹",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-05-02",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN201810577221.3",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 5
+      },
+      "raw_cells": [
+        "5",
+        "CN201810577221.3",
+        "发明",
+        "基于距离划分树的高维数据相似性连接查询方法及装置",
+        "20180605",
+        "20250502",
+        "马友忠;张瑞玲;林春杰;李莹"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN201810577221.3",
+      "patent_subtype": "发明",
+      "application_date": "2018-06-05",
+      "grant_date": "2025-05-02",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN202410625388.8",
+    "type": "patent",
+    "title": "一种可见光二噻吩乙烯开关型抗菌剂及其制备方法和应用",
+    "authors": [
+      "李自永",
+      "宋金钊",
+      "王齐琏",
+      "杨晓刚",
+      "冯永亮",
+      "张海宁",
+      "陈洪",
+      "王明星",
+      "洪东风",
+      "郭辉"
+    ],
+    "contributors": [
+      {
+        "name": "李自永",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "宋金钊",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "王齐琏",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "杨晓刚",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "冯永亮",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张海宁",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "陈洪",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "王明星",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "洪东风",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "郭辉",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-05-02",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202410625388.8",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 6
+      },
+      "raw_cells": [
+        "6",
+        "CN202410625388.8",
+        "发明",
+        "一种可见光二噻吩乙烯开关型抗菌剂及其制备方法和应用",
+        "20240520",
+        "20250502",
+        "李自永;宋金钊;王齐琏;杨晓刚;冯永亮;张海宁;陈洪;王明星;洪东风;郭辉"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202410625388.8",
+      "patent_subtype": "发明",
+      "application_date": "2024-05-20",
+      "grant_date": "2025-05-02",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN202421859717.7",
+    "type": "patent",
+    "title": "一种烟田病虫害识别、预警与智能处理装置",
+    "authors": [
+      "张斌斌",
+      "邢艺潆",
+      "李德光",
+      "徐国梁",
+      "张梦思"
+    ],
+    "contributors": [
+      {
+        "name": "张斌斌",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "邢艺潆",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "李德光",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "徐国梁",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张梦思",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-05-13",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202421859717.7",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 7
+      },
+      "raw_cells": [
+        "7",
+        "CN202421859717.7",
+        "实用新型",
+        "一种烟田病虫害识别、预警与智能处理装置",
+        "20240802",
+        "20250513",
+        "张斌斌;邢艺潆;李德光;徐国梁;张梦思"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202421859717.7",
+      "patent_subtype": "实用新型",
+      "application_date": "2024-08-02",
+      "grant_date": "2025-05-13",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN202510063640.5",
+    "type": "patent",
+    "title": "一种用于检测Cu2+、BPO的比色荧光探针TZ6及其制备方法和应用",
+    "authors": [
+      "齐月恒",
+      "徐华鑫",
+      "陈洪",
+      "陈豪威",
+      "庞舒云",
+      "常怡柯",
+      "向锶雨"
+    ],
+    "contributors": [
+      {
+        "name": "齐月恒",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "徐华鑫",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "陈洪",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "陈豪威",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "庞舒云",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "常怡柯",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "向锶雨",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-05-13",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202510063640.5",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 8
+      },
+      "raw_cells": [
+        "8",
+        "CN202510063640.5",
+        "发明",
+        "一种用于检测Cu2+、BPO的比色荧光探针TZ6及其制备方法和应用",
+        "20250115",
+        "20250513",
+        "齐月恒;徐华鑫;陈洪;陈豪威;庞舒云;常怡柯;向锶雨"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202510063640.5",
+      "patent_subtype": "发明",
+      "application_date": "2025-01-15",
+      "grant_date": "2025-05-13",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN202210247657.2",
+    "type": "patent",
+    "title": "一种蓝光响应的二噻吩乙烯化合物及其制备方法和应用",
+    "authors": [
+      "李自永",
+      "张海宁",
+      "郭辉",
+      "高鑫雨",
+      "刘忆芳",
+      "熊春林",
+      "张甜玲",
+      "杨树人"
+    ],
+    "contributors": [
+      {
+        "name": "李自永",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张海宁",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "郭辉",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "高鑫雨",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "刘忆芳",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "熊春林",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张甜玲",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "杨树人",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-06-03",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202210247657.2",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 9
+      },
+      "raw_cells": [
+        "9",
+        "CN202210247657.2",
+        "发明",
+        "一种蓝光响应的二噻吩乙烯化合物及其制备方法和应用",
+        "20220314",
+        "20250603",
+        "李自永;张海宁;郭辉;高鑫雨;刘忆芳;熊春林;张甜玲;杨树人"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202210247657.2",
+      "patent_subtype": "发明",
+      "application_date": "2022-03-14",
+      "grant_date": "2025-06-03",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN202510292175.2",
+    "type": "patent",
+    "title": "一种烷基功能化的环三藜芦烃及其制备方法、毛细管气相色谱柱与应用",
+    "authors": [
+      "孙涛",
+      "申欣",
+      "蔡志强",
+      "齐浩龙",
+      "张媛媛",
+      "李珂",
+      "刘献明"
+    ],
+    "contributors": [
+      {
+        "name": "孙涛",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "申欣",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "蔡志强",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "齐浩龙",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张媛媛",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "李珂",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "刘献明",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-06-13",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202510292175.2",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 10
+      },
+      "raw_cells": [
+        "10",
+        "CN202510292175.2",
+        "发明",
+        "一种烷基功能化的环三藜芦烃及其制备方法、毛细管气相色谱柱与应用",
+        "20250312",
+        "20250613",
+        "孙涛;申欣;蔡志强;齐浩龙;张媛媛;李珂;刘献明"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202510292175.2",
+      "patent_subtype": "发明",
+      "application_date": "2025-03-12",
+      "grant_date": "2025-06-13",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "project:3193000529",
+    "type": "project",
+    "title": "特殊新发现病毒关键生命过程的解析及其构建",
+    "authors": [
+      "张永振"
+    ],
+    "contributors": [
+      {
+        "name": "张永振",
+        "role": "principal_investigator",
+        "role_label": "项目负责人",
+        "affiliation": "中国疾病预防控制中心传染病预防控制所"
+      }
+    ],
+    "date": "2019",
+    "date_kind": "funding_year",
+    "date_precision": "year",
+    "source_record_id": "3193000529",
+    "source_name": "国家自然科学基金委员会",
+    "source_url": "https://www.nsfc.gov.cn/p1/2853/3102/72645.html",
+    "source_published_date": "2020-04-02",
+    "fetched_at_utc": "2026-10-01T13:39:24.315921+00:00",
+    "evidence": {
+      "file": "raw/project_list.html",
+      "sha256": "fc657b7eb9df2e9a6dc3c98f7ba8ecff06742df935d2d29d5c2928d4a95de337",
+      "locator": {
+        "table_row_number": 1
+      },
+      "raw_cells": [
+        "1",
+        "3193000529",
+        "特殊新发现病毒关键生命过程的解析及其构建",
+        "张永振",
+        "中国疾病预防控制中心传染病预防控制所",
+        "297"
+      ]
+    },
+    "missing_fields": [
+      "project_start_date",
+      "project_end_date",
+      "full_team",
+      "current_project_status"
+    ],
+    "details": {
+      "division_number": "3193000529",
+      "identifier_label": "科学部编号",
+      "host_institution": "中国疾病预防控制中心传染病预防控制所",
+      "funding_year": 2019,
+      "direct_cost_10k_cny": 297.0,
+      "project_start_date": null,
+      "project_end_date": null,
+      "project_status": "not_verified"
+    }
+  },
+  {
+    "id": "project:3193000060",
+    "type": "project",
+    "title": "两类微生物源、高活性DNA烷化剂生物合成中自抗性新机制的解析",
+    "authors": [
+      "唐功利"
+    ],
+    "contributors": [
+      {
+        "name": "唐功利",
+        "role": "principal_investigator",
+        "role_label": "项目负责人",
+        "affiliation": "中国科学院上海有机化学研究所"
+      }
+    ],
+    "date": "2019",
+    "date_kind": "funding_year",
+    "date_precision": "year",
+    "source_record_id": "3193000060",
+    "source_name": "国家自然科学基金委员会",
+    "source_url": "https://www.nsfc.gov.cn/p1/2853/3102/72645.html",
+    "source_published_date": "2020-04-02",
+    "fetched_at_utc": "2026-10-01T13:39:24.315921+00:00",
+    "evidence": {
+      "file": "raw/project_list.html",
+      "sha256": "fc657b7eb9df2e9a6dc3c98f7ba8ecff06742df935d2d29d5c2928d4a95de337",
+      "locator": {
+        "table_row_number": 2
+      },
+      "raw_cells": [
+        "2",
+        "3193000060",
+        "两类微生物源、高活性DNA烷化剂生物合成中自抗性新机制的解析",
+        "唐功利",
+        "中国科学院上海有机化学研究所",
+        "311"
+      ]
+    },
+    "missing_fields": [
+      "project_start_date",
+      "project_end_date",
+      "full_team",
+      "current_project_status"
+    ],
+    "details": {
+      "division_number": "3193000060",
+      "identifier_label": "科学部编号",
+      "host_institution": "中国科学院上海有机化学研究所",
+      "funding_year": 2019,
+      "direct_cost_10k_cny": 311.0,
+      "project_start_date": null,
+      "project_end_date": null,
+      "project_status": "not_verified"
+    }
+  },
+  {
+    "id": "project:3193000164",
+    "type": "project",
+    "title": "细菌细胞色素c成熟系统的分子机制研究",
+    "authors": [
+      "高海春"
+    ],
+    "contributors": [
+      {
+        "name": "高海春",
+        "role": "principal_investigator",
+        "role_label": "项目负责人",
+        "affiliation": "浙江大学"
+      }
+    ],
+    "date": "2019",
+    "date_kind": "funding_year",
+    "date_precision": "year",
+    "source_record_id": "3193000164",
+    "source_name": "国家自然科学基金委员会",
+    "source_url": "https://www.nsfc.gov.cn/p1/2853/3102/72645.html",
+    "source_published_date": "2020-04-02",
+    "fetched_at_utc": "2026-10-01T13:39:24.315921+00:00",
+    "evidence": {
+      "file": "raw/project_list.html",
+      "sha256": "fc657b7eb9df2e9a6dc3c98f7ba8ecff06742df935d2d29d5c2928d4a95de337",
+      "locator": {
+        "table_row_number": 3
+      },
+      "raw_cells": [
+        "3",
+        "3193000164",
+        "细菌细胞色素c成熟系统的分子机制研究",
+        "高海春",
+        "浙江大学",
+        "301"
+      ]
+    },
+    "missing_fields": [
+      "project_start_date",
+      "project_end_date",
+      "full_team",
+      "current_project_status"
+    ],
+    "details": {
+      "division_number": "3193000164",
+      "identifier_label": "科学部编号",
+      "host_institution": "浙江大学",
+      "funding_year": 2019,
+      "direct_cost_10k_cny": 301.0,
+      "project_start_date": null,
+      "project_end_date": null,
+      "project_status": "not_verified"
+    }
+  },
+  {
+    "id": "project:3193000836",
+    "type": "project",
+    "title": "固氮施氏假单胞菌A1501在水稻根表定殖的调控机制研究",
+    "authors": [
+      "林敏"
+    ],
+    "contributors": [
+      {
+        "name": "林敏",
+        "role": "principal_investigator",
+        "role_label": "项目负责人",
+        "affiliation": "中国农业科学院生物技术研究所"
+      }
+    ],
+    "date": "2019",
+    "date_kind": "funding_year",
+    "date_precision": "year",
+    "source_record_id": "3193000836",
+    "source_name": "国家自然科学基金委员会",
+    "source_url": "https://www.nsfc.gov.cn/p1/2853/3102/72645.html",
+    "source_published_date": "2020-04-02",
+    "fetched_at_utc": "2026-10-01T13:39:24.315921+00:00",
+    "evidence": {
+      "file": "raw/project_list.html",
+      "sha256": "fc657b7eb9df2e9a6dc3c98f7ba8ecff06742df935d2d29d5c2928d4a95de337",
+      "locator": {
+        "table_row_number": 4
+      },
+      "raw_cells": [
+        "4",
+        "3193000836",
+        "固氮施氏假单胞菌A1501在水稻根表定殖的调控机制研究",
+        "林敏",
+        "中国农业科学院生物技术研究所",
+        "310"
+      ]
+    },
+    "missing_fields": [
+      "project_start_date",
+      "project_end_date",
+      "full_team",
+      "current_project_status"
+    ],
+    "details": {
+      "division_number": "3193000836",
+      "identifier_label": "科学部编号",
+      "host_institution": "中国农业科学院生物技术研究所",
+      "funding_year": 2019,
+      "direct_cost_10k_cny": 310.0,
+      "project_start_date": null,
+      "project_end_date": null,
+      "project_status": "not_verified"
+    }
+  },
+  {
+    "id": "project:3193000264",
+    "type": "project",
+    "title": "环境调控念珠菌准性生殖的分子机理研究",
+    "authors": [
+      "黄广华"
+    ],
+    "contributors": [
+      {
+        "name": "黄广华",
+        "role": "principal_investigator",
+        "role_label": "项目负责人",
+        "affiliation": "复旦大学"
+      }
+    ],
+    "date": "2019",
+    "date_kind": "funding_year",
+    "date_precision": "year",
+    "source_record_id": "3193000264",
+    "source_name": "国家自然科学基金委员会",
+    "source_url": "https://www.nsfc.gov.cn/p1/2853/3102/72645.html",
+    "source_published_date": "2020-04-02",
+    "fetched_at_utc": "2026-10-01T13:39:24.315921+00:00",
+    "evidence": {
+      "file": "raw/project_list.html",
+      "sha256": "fc657b7eb9df2e9a6dc3c98f7ba8ecff06742df935d2d29d5c2928d4a95de337",
+      "locator": {
+        "table_row_number": 5
+      },
+      "raw_cells": [
+        "5",
+        "3193000264",
+        "环境调控念珠菌准性生殖的分子机理研究",
+        "黄广华",
+        "复旦大学",
+        "287"
+      ]
+    },
+    "missing_fields": [
+      "project_start_date",
+      "project_end_date",
+      "full_team",
+      "current_project_status"
+    ],
+    "details": {
+      "division_number": "3193000264",
+      "identifier_label": "科学部编号",
+      "host_institution": "复旦大学",
+      "funding_year": 2019,
+      "direct_cost_10k_cny": 287.0,
+      "project_start_date": null,
+      "project_end_date": null,
+      "project_status": "not_verified"
+    }
+  },
+  {
+    "id": "project:3193000861",
+    "type": "project",
+    "title": "SP1介导营养与植物激素协同调控水稻穗分枝发育的分子机理研究",
+    "authors": [
+      "王永红"
+    ],
+    "contributors": [
+      {
+        "name": "王永红",
+        "role": "principal_investigator",
+        "role_label": "项目负责人",
+        "affiliation": "中国科学院遗传与发育生物学研究所"
+      }
+    ],
+    "date": "2019",
+    "date_kind": "funding_year",
+    "date_precision": "year",
+    "source_record_id": "3193000861",
+    "source_name": "国家自然科学基金委员会",
+    "source_url": "https://www.nsfc.gov.cn/p1/2853/3102/72645.html",
+    "source_published_date": "2020-04-02",
+    "fetched_at_utc": "2026-10-01T13:39:24.315921+00:00",
+    "evidence": {
+      "file": "raw/project_list.html",
+      "sha256": "fc657b7eb9df2e9a6dc3c98f7ba8ecff06742df935d2d29d5c2928d4a95de337",
+      "locator": {
+        "table_row_number": 6
+      },
+      "raw_cells": [
+        "6",
+        "3193000861",
+        "SP1介导营养与植物激素协同调控水稻穗分枝发育的分子机理研究",
+        "王永红",
+        "中国科学院遗传与发育生物学研究所",
+        "284"
+      ]
+    },
+    "missing_fields": [
+      "project_start_date",
+      "project_end_date",
+      "full_team",
+      "current_project_status"
+    ],
+    "details": {
+      "division_number": "3193000861",
+      "identifier_label": "科学部编号",
+      "host_institution": "中国科学院遗传与发育生物学研究所",
+      "funding_year": 2019,
+      "direct_cost_10k_cny": 284.0,
+      "project_start_date": null,
+      "project_end_date": null,
+      "project_status": "not_verified"
+    }
+  },
+  {
+    "id": "project:3193000155",
+    "type": "project",
+    "title": "植物生殖器官适应性进化和可塑性的遗传基础研究",
+    "authors": [
+      "贺超英"
+    ],
+    "contributors": [
+      {
+        "name": "贺超英",
+        "role": "principal_investigator",
+        "role_label": "项目负责人",
+        "affiliation": "中国科学院植物研究所"
+      }
+    ],
+    "date": "2019",
+    "date_kind": "funding_year",
+    "date_precision": "year",
+    "source_record_id": "3193000155",
+    "source_name": "国家自然科学基金委员会",
+    "source_url": "https://www.nsfc.gov.cn/p1/2853/3102/72645.html",
+    "source_published_date": "2020-04-02",
+    "fetched_at_utc": "2026-10-01T13:39:24.315921+00:00",
+    "evidence": {
+      "file": "raw/project_list.html",
+      "sha256": "fc657b7eb9df2e9a6dc3c98f7ba8ecff06742df935d2d29d5c2928d4a95de337",
+      "locator": {
+        "table_row_number": 7
+      },
+      "raw_cells": [
+        "7",
+        "3193000155",
+        "植物生殖器官适应性进化和可塑性的遗传基础研究",
+        "贺超英",
+        "中国科学院植物研究所",
+        "298"
+      ]
+    },
+    "missing_fields": [
+      "project_start_date",
+      "project_end_date",
+      "full_team",
+      "current_project_status"
+    ],
+    "details": {
+      "division_number": "3193000155",
+      "identifier_label": "科学部编号",
+      "host_institution": "中国科学院植物研究所",
+      "funding_year": 2019,
+      "direct_cost_10k_cny": 298.0,
+      "project_start_date": null,
+      "project_end_date": null,
+      "project_status": "not_verified"
+    }
+  },
+  {
+    "id": "project:3193000690",
+    "type": "project",
+    "title": "毛茛科植物花瓣蜜距起源和多样化的分子机制研究",
+    "authors": [
+      "孔宏智"
+    ],
+    "contributors": [
+      {
+        "name": "孔宏智",
+        "role": "principal_investigator",
+        "role_label": "项目负责人",
+        "affiliation": "中国科学院植物研究所"
+      }
+    ],
+    "date": "2019",
+    "date_kind": "funding_year",
+    "date_precision": "year",
+    "source_record_id": "3193000690",
+    "source_name": "国家自然科学基金委员会",
+    "source_url": "https://www.nsfc.gov.cn/p1/2853/3102/72645.html",
+    "source_published_date": "2020-04-02",
+    "fetched_at_utc": "2026-10-01T13:39:24.315921+00:00",
+    "evidence": {
+      "file": "raw/project_list.html",
+      "sha256": "fc657b7eb9df2e9a6dc3c98f7ba8ecff06742df935d2d29d5c2928d4a95de337",
+      "locator": {
+        "table_row_number": 8
+      },
+      "raw_cells": [
+        "8",
+        "3193000690",
+        "毛茛科植物花瓣蜜距起源和多样化的分子机制研究",
+        "孔宏智",
+        "中国科学院植物研究所",
+        "307"
+      ]
+    },
+    "missing_fields": [
+      "project_start_date",
+      "project_end_date",
+      "full_team",
+      "current_project_status"
+    ],
+    "details": {
+      "division_number": "3193000690",
+      "identifier_label": "科学部编号",
+      "host_institution": "中国科学院植物研究所",
+      "funding_year": 2019,
+      "direct_cost_10k_cny": 307.0,
+      "project_start_date": null,
+      "project_end_date": null,
+      "project_status": "not_verified"
+    }
+  },
+  {
+    "id": "project:3193000283",
+    "type": "project",
+    "title": "温度调控花粉壁发育的机理",
+    "authors": [
+      "杨仲南"
+    ],
+    "contributors": [
+      {
+        "name": "杨仲南",
+        "role": "principal_investigator",
+        "role_label": "项目负责人",
+        "affiliation": "上海师范大学"
+      }
+    ],
+    "date": "2019",
+    "date_kind": "funding_year",
+    "date_precision": "year",
+    "source_record_id": "3193000283",
+    "source_name": "国家自然科学基金委员会",
+    "source_url": "https://www.nsfc.gov.cn/p1/2853/3102/72645.html",
+    "source_published_date": "2020-04-02",
+    "fetched_at_utc": "2026-10-01T13:39:24.315921+00:00",
+    "evidence": {
+      "file": "raw/project_list.html",
+      "sha256": "fc657b7eb9df2e9a6dc3c98f7ba8ecff06742df935d2d29d5c2928d4a95de337",
+      "locator": {
+        "table_row_number": 9
+      },
+      "raw_cells": [
+        "9",
+        "3193000283",
+        "温度调控花粉壁发育的机理",
+        "杨仲南",
+        "上海师范大学",
+        "302"
+      ]
+    },
+    "missing_fields": [
+      "project_start_date",
+      "project_end_date",
+      "full_team",
+      "current_project_status"
+    ],
+    "details": {
+      "division_number": "3193000283",
+      "identifier_label": "科学部编号",
+      "host_institution": "上海师范大学",
+      "funding_year": 2019,
+      "direct_cost_10k_cny": 302.0,
+      "project_start_date": null,
+      "project_end_date": null,
+      "project_status": "not_verified"
+    }
+  },
+  {
+    "id": "project:3193000519",
+    "type": "project",
+    "title": "极性细胞自律钙波动信号编码器（CaCs-CMs）的分离、识别与功能解析",
+    "authors": [
+      "李乐攻"
+    ],
+    "contributors": [
+      {
+        "name": "李乐攻",
+        "role": "principal_investigator",
+        "role_label": "项目负责人",
+        "affiliation": "首都师范大学"
+      }
+    ],
+    "date": "2019",
+    "date_kind": "funding_year",
+    "date_precision": "year",
+    "source_record_id": "3193000519",
+    "source_name": "国家自然科学基金委员会",
+    "source_url": "https://www.nsfc.gov.cn/p1/2853/3102/72645.html",
+    "source_published_date": "2020-04-02",
+    "fetched_at_utc": "2026-10-01T13:39:24.315921+00:00",
+    "evidence": {
+      "file": "raw/project_list.html",
+      "sha256": "fc657b7eb9df2e9a6dc3c98f7ba8ecff06742df935d2d29d5c2928d4a95de337",
+      "locator": {
+        "table_row_number": 10
+      },
+      "raw_cells": [
+        "10",
+        "3193000519",
+        "极性细胞自律钙波动信号编码器（CaCs-CMs）的分离、识别与功能解析",
+        "李乐攻",
+        "首都师范大学",
+        "302"
+      ]
+    },
+    "missing_fields": [
+      "project_start_date",
+      "project_end_date",
+      "full_team",
+      "current_project_status"
+    ],
+    "details": {
+      "division_number": "3193000519",
+      "identifier_label": "科学部编号",
+      "host_institution": "首都师范大学",
+      "funding_year": 2019,
+      "direct_cost_10k_cny": 302.0,
+      "project_start_date": null,
+      "project_end_date": null,
+      "project_status": "not_verified"
+    }
+  },
+  {
+    "id": "award:2023:Z-102-1-01",
+    "type": "award",
+    "title": "拓扑电子材料计算预测",
+    "authors": [
+      "方忠",
+      "戴希",
+      "翁红明",
+      "余睿",
+      "王志俊"
+    ],
+    "contributors": [
+      {
+        "name": "方忠",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院物理研究所"
+      },
+      {
+        "name": "戴希",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院物理研究所"
+      },
+      {
+        "name": "翁红明",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院物理研究所"
+      },
+      {
+        "name": "余睿",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院物理研究所"
+      },
+      {
+        "name": "王志俊",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院物理研究所"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-102-1-01",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-102-1-01",
+        "table_row_number": 1
+      },
+      "raw_cells": [
+        "1",
+        "Z-102-1-01",
+        "拓扑电子材料计算预测",
+        "方 忠（中国科学院物理研究所） 戴 希（中国科学院物理研究所） 翁红明（中国科学院物理研究所） 余 睿（中国科学院物理研究所） 王志俊（中国科学院物理研究所）",
+        "中国科学院"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-102-1-01",
+      "award_grade": "一等奖",
+      "nominator": "中国科学院",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-101-2-01",
+    "type": "award",
+    "title": "三维流形的有限复叠",
+    "authors": [
+      "刘毅"
+    ],
+    "contributors": [
+      {
+        "name": "刘毅",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "北京大学"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-101-2-01",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-101-2-01",
+        "table_row_number": 1
+      },
+      "raw_cells": [
+        "1",
+        "Z-101-2-01",
+        "三维流形的有限复叠",
+        "刘 毅（北京大学）",
+        "田 刚"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-101-2-01",
+      "award_grade": "二等奖",
+      "nominator": "田 刚",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-101-2-02",
+    "type": "award",
+    "title": "弱观测成像反问题的L（1/2）理论与自适应正则化方法",
+    "authors": [
+      "徐宗本",
+      "孙剑",
+      "孟德宇",
+      "杨燕"
+    ],
+    "contributors": [
+      {
+        "name": "徐宗本",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "西安交通大学"
+      },
+      {
+        "name": "孙剑",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "西安交通大学"
+      },
+      {
+        "name": "孟德宇",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "西安交通大学"
+      },
+      {
+        "name": "杨燕",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "西安交通大学"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-101-2-02",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-101-2-02",
+        "table_row_number": 2
+      },
+      "raw_cells": [
+        "2",
+        "Z-101-2-02",
+        "弱观测成像反问题的L（1/2）理论与自适应正则化方法",
+        "徐宗本（西安交通大学） 孙 剑（西安交通大学） 孟德宇（西安交通大学） 杨 燕（西安交通大学）",
+        "方复全 汤 涛 郑海荣"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-101-2-02",
+      "award_grade": "二等奖",
+      "nominator": "方复全 汤 涛 郑海荣",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-101-2-03",
+    "type": "award",
+    "title": "数值几何不变量在双有理变换下的变化",
+    "authors": [
+      "胡建勋",
+      "李卫平"
+    ],
+    "contributors": [
+      {
+        "name": "胡建勋",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中山大学"
+      },
+      {
+        "name": "李卫平",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "香港科技大学"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-101-2-03",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-101-2-03",
+        "table_row_number": 3
+      },
+      "raw_cells": [
+        "3",
+        "Z-101-2-03",
+        "数值几何不变量在双有理变换下的变化",
+        "胡建勋（中山大学） 李卫平（香港科技大学）",
+        "教育部"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-101-2-03",
+      "award_grade": "二等奖",
+      "nominator": "教育部",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-102-2-01",
+    "type": "award",
+    "title": "悬链线光学",
+    "authors": [
+      "罗先刚",
+      "蒲明博",
+      "李雄",
+      "马晓亮",
+      "郭迎辉"
+    ],
+    "contributors": [
+      {
+        "name": "罗先刚",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院光电技术研究所"
+      },
+      {
+        "name": "蒲明博",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院光电技术研究所"
+      },
+      {
+        "name": "李雄",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院光电技术研究所"
+      },
+      {
+        "name": "马晓亮",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院光电技术研究所"
+      },
+      {
+        "name": "郭迎辉",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院光电技术研究所"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-102-2-01",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-102-2-01",
+        "table_row_number": 4
+      },
+      "raw_cells": [
+        "4",
+        "Z-102-2-01",
+        "悬链线光学",
+        "罗先刚（中国科学院光电技术研究所） 蒲明博（中国科学院光电技术研究所） 李 雄（中国科学院光电技术研究所） 马晓亮（中国科学院光电技术研究所） 郭迎辉（中国科学院光电技术研究所）",
+        "四川省"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-102-2-01",
+      "award_grade": "二等奖",
+      "nominator": "四川省",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-102-2-02",
+    "type": "award",
+    "title": "“四夸克物质”Zc（3900）的发现",
+    "authors": [
+      "苑长征",
+      "朱科军",
+      "刘智青",
+      "李卫东",
+      "平荣刚"
+    ],
+    "contributors": [
+      {
+        "name": "苑长征",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院高能物理研究所"
+      },
+      {
+        "name": "朱科军",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院高能物理研究所"
+      },
+      {
+        "name": "刘智青",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院高能物理研究所"
+      },
+      {
+        "name": "李卫东",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院高能物理研究所"
+      },
+      {
+        "name": "平荣刚",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院高能物理研究所"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-102-2-02",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-102-2-02",
+        "table_row_number": 5
+      },
+      "raw_cells": [
+        "5",
+        "Z-102-2-02",
+        "“四夸克物质”Zc（3900）的发现",
+        "苑长征（中国科学院高能物理研究所） 朱科军（中国科学院高能物理研究所） 刘智青（中国科学院高能物理研究所） 李卫东（中国科学院高能物理研究所） 平荣刚（中国科学院高能物理研究所）",
+        "中国科学院"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-102-2-02",
+      "award_grade": "二等奖",
+      "nominator": "中国科学院",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-102-2-03",
+    "type": "award",
+    "title": "铁基和镍基超导机理问题研究",
+    "authors": [
+      "闻海虎",
+      "杨欢",
+      "祝熙宇",
+      "王震宇",
+      "杜增义"
+    ],
+    "contributors": [
+      {
+        "name": "闻海虎",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "南京大学"
+      },
+      {
+        "name": "杨欢",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "南京大学"
+      },
+      {
+        "name": "祝熙宇",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "南京大学"
+      },
+      {
+        "name": "王震宇",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "南京大学"
+      },
+      {
+        "name": "杜增义",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "南京大学"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-102-2-03",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-102-2-03",
+        "table_row_number": 6
+      },
+      "raw_cells": [
+        "6",
+        "Z-102-2-03",
+        "铁基和镍基超导机理问题研究",
+        "闻海虎（南京大学） 杨 欢（南京大学） 祝熙宇（南京大学） 王震宇（南京大学） 杜增义（南京大学）",
+        "教育部"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-102-2-03",
+      "award_grade": "二等奖",
+      "nominator": "教育部",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-103-2-01",
+    "type": "award",
+    "title": "分子压电体的铁电化学设计",
+    "authors": [
+      "熊仁根",
+      "游雨蒙",
+      "廖伟强",
+      "汤渊源",
+      "叶恒云"
+    ],
+    "contributors": [
+      {
+        "name": "熊仁根",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "东南大学"
+      },
+      {
+        "name": "游雨蒙",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "东南大学"
+      },
+      {
+        "name": "廖伟强",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "南昌大学"
+      },
+      {
+        "name": "汤渊源",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "南昌大学"
+      },
+      {
+        "name": "叶恒云",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "东南大学"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-103-2-01",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-103-2-01",
+        "table_row_number": 7
+      },
+      "raw_cells": [
+        "7",
+        "Z-103-2-01",
+        "分子压电体的铁电化学设计",
+        "熊仁根（东南大学） 游雨蒙（东南大学） 廖伟强（南昌大学） 汤渊源（南昌大学） 叶恒云（东南大学）",
+        "教育部"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-103-2-01",
+      "award_grade": "二等奖",
+      "nominator": "教育部",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-103-2-02",
+    "type": "award",
+    "title": "氮化碳光催化",
+    "authors": [
+      "王心晨",
+      "张金水",
+      "喻志阳",
+      "张贵刚",
+      "付贤智"
+    ],
+    "contributors": [
+      {
+        "name": "王心晨",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "福州大学"
+      },
+      {
+        "name": "张金水",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "福州大学"
+      },
+      {
+        "name": "喻志阳",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "福州大学"
+      },
+      {
+        "name": "张贵刚",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "福州大学"
+      },
+      {
+        "name": "付贤智",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "福州大学"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-103-2-02",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-103-2-02",
+        "table_row_number": 8
+      },
+      "raw_cells": [
+        "8",
+        "Z-103-2-02",
+        "氮化碳光催化",
+        "王心晨（福州大学） 张金水（福州大学） 喻志阳（福州大学） 张贵刚（福州大学） 付贤智（福州大学）",
+        "福建省"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-103-2-02",
+      "award_grade": "二等奖",
+      "nominator": "福建省",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-103-2-03",
+    "type": "award",
+    "title": "碳化钼催化剂上水的低温活化和制氢过程",
+    "authors": [
+      "马丁",
+      "林丽利",
+      "石川",
+      "周武",
+      "张晓"
+    ],
+    "contributors": [
+      {
+        "name": "马丁",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "北京大学"
+      },
+      {
+        "name": "林丽利",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "北京大学"
+      },
+      {
+        "name": "石川",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "大连理工大学"
+      },
+      {
+        "name": "周武",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院大学"
+      },
+      {
+        "name": "张晓",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "大连理工大学"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-103-2-03",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-103-2-03",
+        "table_row_number": 9
+      },
+      "raw_cells": [
+        "9",
+        "Z-103-2-03",
+        "碳化钼催化剂上水的低温活化和制氢过程",
+        "马 丁（北京大学） 林丽利（北京大学） 石 川（大连理工大学） 周 武（中国科学院大学） 张 晓（大连理工大学）",
+        "教育部"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-103-2-03",
+      "award_grade": "二等奖",
+      "nominator": "教育部",
+      "award_ceremony_date": null
+    }
+  }
+]

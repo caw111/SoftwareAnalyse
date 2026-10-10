@@ -1,0 +1,222 @@
+[
+  {
+    "method": "keyword",
+    "doi": "10.1016/j.advengsoft.2026.104269",
+    "title": "Software advances in symbolic full-pivoting LU factorization for engineering applications",
+    "container_title": [
+      "Advances in Engineering Software"
+    ],
+    "issn": [
+      "0965-9978"
+    ],
+    "type": "journal-article",
+    "published": [
+      2026,
+      10
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": false,
+    "evidence_file": "keyword_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "keyword",
+    "doi": "10.1016/s0965-9978(24)00251-5",
+    "title": "Editorial Board",
+    "container_title": [
+      "Advances in Engineering Software"
+    ],
+    "issn": [
+      "0965-9978"
+    ],
+    "type": "journal-article",
+    "published": [
+      2025,
+      2
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": false,
+    "evidence_file": "keyword_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "keyword",
+    "doi": "10.1016/s0965-9978(24)00217-5",
+    "title": "Editorial Board",
+    "container_title": [
+      "Advances in Engineering Software"
+    ],
+    "issn": [
+      "0965-9978"
+    ],
+    "type": "journal-article",
+    "published": [
+      2024,
+      12
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": false,
+    "evidence_file": "keyword_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "keyword",
+    "doi": "10.1016/s0965-9978(23)00166-7",
+    "title": "Editorial Board",
+    "container_title": [
+      "Advances in Engineering Software"
+    ],
+    "issn": [
+      "0965-9978"
+    ],
+    "type": "journal-article",
+    "published": [
+      2024,
+      1
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": false,
+    "evidence_file": "keyword_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "keyword",
+    "doi": "10.1016/s0965-9978(26)00057-8",
+    "title": "Editorial Board",
+    "container_title": [
+      "Advances in Engineering Software"
+    ],
+    "issn": [
+      "0965-9978"
+    ],
+    "type": "journal-article",
+    "published": [
+      2026,
+      5
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": false,
+    "evidence_file": "keyword_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "journal_issn",
+    "doi": "10.1109/tse.2026.3700841",
+    "title": "Characterizing Tests in IoT Software: Practices, Challenges and Opportunities",
+    "container_title": [
+      "IEEE Transactions on Software Engineering"
+    ],
+    "issn": [
+      "0098-5589",
+      "1939-3520",
+      "2326-3881"
+    ],
+    "type": "journal-article",
+    "published": [
+      2026,
+      9
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": false,
+    "evidence_file": "journal_issn_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "journal_issn",
+    "doi": "10.1109/tse.2026.3703637",
+    "title": "LongTest: Test Prioritization for Long Text Files",
+    "container_title": [
+      "IEEE Transactions on Software Engineering"
+    ],
+    "issn": [
+      "0098-5589",
+      "1939-3520",
+      "2326-3881"
+    ],
+    "type": "journal-article",
+    "published": [
+      2026,
+      9
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": false,
+    "evidence_file": "journal_issn_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "journal_issn",
+    "doi": "10.1109/tse.2026.3701230",
+    "title": "MORTAR: Multi-Turn Metamorphic Testing for LLM-Based Dialogue Systems",
+    "container_title": [
+      "IEEE Transactions on Software Engineering"
+    ],
+    "issn": [
+      "0098-5589",
+      "1939-3520",
+      "2326-3881"
+    ],
+    "type": "journal-article",
+    "published": [
+      2026,
+      9
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": false,
+    "evidence_file": "journal_issn_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "journal_issn",
+    "doi": "10.1109/tse.2026.3704180",
+    "title": "Boosting High-Review-Value Warning Line Identification With Unsupervised Line-Level Defect Prediction",
+    "container_title": [
+      "IEEE Transactions on Software Engineering"
+    ],
+    "issn": [
+      "0098-5589",
+      "1939-3520",
+      "2326-3881"
+    ],
+    "type": "journal-article",
+    "published": [
+      2026,
+      9
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": false,
+    "evidence_file": "journal_issn_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "journal_issn",
+    "doi": "10.1109/tse.2026.3703553",
+    "title": "No Resource, No Benchmarks, No Problem? Evaluating and Improving LLMs for Code Generation in No-Resource Languages",
+    "container_title": [
+      "IEEE Transactions on Software Engineering"
+    ],
+    "issn": [
+      "0098-5589",
+      "1939-3520",
+      "2326-3881"
+    ],
+    "type": "journal-article",
+    "published": [
+      2026,
+      9
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": false,
+    "evidence_file": "journal_issn_000.json",
+    "classification_status": "not_classified"
+  }
+]

@@ -1,0 +1,1423 @@
+{
+  "request_url": "https://api.crossref.org/works?filter=type%3Ajournal-article%2Cfrom-pub-date%3A2024-01-01%2Cuntil-pub-date%3A2026-10-01&query.bibliographic=software+engineering&sort=score&order=desc&rows=5&offset=0",
+  "request_params": {
+    "filter": "type:journal-article,from-pub-date:2024-01-01,until-pub-date:2026-10-01",
+    "query.bibliographic": "software engineering",
+    "sort": "score",
+    "order": "desc",
+    "rows": 5,
+    "offset": 0
+  },
+  "access_pool_requested": "public",
+  "fetched_at_utc": "2026-10-01T12:54:35.695409+00:00",
+  "elapsed_seconds": 1.747,
+  "http_status": 200,
+  "attempt": 1,
+  "response_headers": {
+    "x-rate-limit-limit": "1",
+    "x-rate-limit-interval": "1s"
+  },
+  "response": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 803497,
+      "items": [
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                8,
+                11
+              ]
+            ],
+            "date-time": "2026-08-11T03:29:12Z",
+            "timestamp": 1786418952626,
+            "version": "build-2736575974"
+          },
+          "reference-count": 45,
+          "publisher": "Elsevier BV",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    10,
+                    1
+                  ]
+                ],
+                "date-time": "2026-10-01T00:00:00Z",
+                "timestamp": 1790812800000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    10,
+                    1
+                  ]
+                ],
+                "date-time": "2026-10-01T00:00:00Z",
+                "timestamp": 1790812800000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/legal/tdmrep-license"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    7,
+                    21
+                  ]
+                ],
+                "date-time": "2026-07-21T00:00:00Z",
+                "timestamp": 1784592000000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "http://creativecommons.org/licenses/by-nc-nd/4.0/"
+            }
+          ],
+          "funder": [
+            {
+              "DOI": "10.13039/501100003981",
+              "name": "ASI",
+              "doi-asserted-by": "publisher",
+              "id": [
+                {
+                  "id": "10.13039/501100003981",
+                  "id-type": "DOI",
+                  "asserted-by": "publisher"
+                }
+              ]
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "elsevier.com",
+              "sciencedirect.com"
+            ],
+            "crossmark-restriction": true
+          },
+          "short-container-title": [
+            "Advances in Engineering Software"
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2026,
+                10
+              ]
+            ]
+          },
+          "DOI": "10.1016/j.advengsoft.2026.104269",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2026,
+                7,
+                22
+              ]
+            ],
+            "date-time": "2026-07-22T17:49:40Z",
+            "timestamp": 1784742580000
+          },
+          "page": "104269",
+          "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "special_numbering": "C",
+          "title": [
+            "Software advances in symbolic full-pivoting LU factorization for engineering applications"
+          ],
+          "prefix": "10.1016",
+          "volume": "221",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0000-0001-5902-4048",
+              "authenticated-orcid": false,
+              "given": "Davide",
+              "family": "Stocco",
+              "sequence": "first",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "given": "Enrico",
+              "family": "Bertolazzi",
+              "sequence": "additional",
+              "affiliation": [],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "78",
+          "reference": [
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b1",
+              "series-title": "Computer algebra and symbolic computation: Elementary algorithms",
+              "author": "Cohen",
+              "year": "2002"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b2",
+              "series-title": "Computer algebra and symbolic computation: Mathematical methods",
+              "author": "Cohen",
+              "year": "2003"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b3",
+              "series-title": "Symbolic computation techniques for solving large expression problems from mathematics and engineering",
+              "author": "Zhou",
+              "year": "2007"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b4",
+              "series-title": "EUROCAL ’85",
+              "first-page": "19",
+              "article-title": "MACSYMA: Capabilities and applications to problems in engineering and the sciences",
+              "author": "Pavelle",
+              "year": "1985"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b5",
+              "series-title": "Numerical computations: theory and algorithms international conference, NUMTA 2023, Pizzo Calabro, Italy, June 14–20, 2023, revised selected papers",
+              "first-page": "149",
+              "article-title": "A symbolic-numerical approach to index reduction and solution of differential–algebraic equations",
+              "author": "Stocco",
+              "year": "2025"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b6",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1016/j.cam.2024.115898",
+              "article-title": "Symbolic matrix factorization for differential–algebraic equations index reduction",
+              "volume": "448",
+              "author": "Stocco",
+              "year": "2024",
+              "journal-title": "J Comput Appl Math"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b7",
+              "series-title": "Volume 5: Dynamics, vibration, and control, ASME international mechanical engineering congress and exposition",
+              "article-title": "Solution of differential–algebraic equations through symbolic index reduction",
+              "author": "Stocco",
+              "year": "2024"
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.advengsoft.2026.104269_b8",
+              "doi-asserted-by": "crossref",
+              "first-page": "147",
+              "DOI": "10.1023/B:MUBO.0000044319.63215.22",
+              "article-title": "A symbolic approach for automatic generation of the equations of motion of multibody systems",
+              "volume": "12",
+              "author": "Lot",
+              "year": "2004",
+              "journal-title": "Multibody Syst Dyn"
+            },
+            {
+              "issue": "05",
+              "key": "10.1016/j.advengsoft.2026.104269_b9",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1142/S1758825117500685",
+              "article-title": "A symbolic approach to the multibody modeling of road vehicles",
+              "volume": "9",
+              "author": "Lot",
+              "year": "2017",
+              "journal-title": "Int J Appl Mech"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b10",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.1016/j.cpc.2024.109476",
+              "article-title": "TrussMe-Fem: A toolbox for symbolic-numerical analysis and solution of structures",
+              "volume": "309",
+              "author": "Stocco",
+              "year": "2025",
+              "journal-title": "Comput Phys Comm"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b11",
+              "doi-asserted-by": "crossref",
+              "first-page": "654",
+              "DOI": "10.1016/j.matcom.2024.04.020",
+              "article-title": "A physical tire model for real-time simulations",
+              "volume": "223",
+              "author": "Stocco",
+              "year": "2024",
+              "journal-title": "Math Comput Simulation"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b12",
+              "unstructured": "Carette J, Zhou W, Jeffrey DJ, Monagan MB. Linear algebra using Maple’s LargeExpressions package. In: Proceedings of Maple conference. 2006, p. 14–25."
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b13",
+              "series-title": "Proceedings artificial intelligence and symbolic computation",
+              "first-page": "254",
+              "article-title": "Hierarchical representations with signatures for large expression management",
+              "volume": "vol. 4120",
+              "author": "Zhou",
+              "year": "2006"
+            },
+            {
+              "issue": "1–2",
+              "key": "10.1016/j.advengsoft.2026.104269_b14",
+              "doi-asserted-by": "crossref",
+              "first-page": "95",
+              "DOI": "10.1016/0045-7949(79)90077-4",
+              "article-title": "Computerized symbolic manipulation in structural mechanics—progress and potential",
+              "volume": "10",
+              "author": "Noor",
+              "year": "1979",
+              "journal-title": "Comput Struct"
+            },
+            {
+              "issue": "1–2",
+              "key": "10.1016/j.advengsoft.2026.104269_b15",
+              "doi-asserted-by": "crossref",
+              "first-page": "119",
+              "DOI": "10.1016/0045-7949(79)90078-6",
+              "article-title": "Symbolic generation of finite element stiffness matrices",
+              "volume": "10",
+              "author": "Korncoff",
+              "year": "1979",
+              "journal-title": "Comput Struct"
+            },
+            {
+              "issue": "7",
+              "key": "10.1016/j.advengsoft.2026.104269_b16",
+              "doi-asserted-by": "crossref",
+              "first-page": "15",
+              "DOI": "10.1145/988216.988218",
+              "article-title": "Pascal as host language of computer algebra systems",
+              "volume": "18",
+              "author": "Calmet",
+              "year": "1983",
+              "journal-title": "ACM SIGPLAN Not"
+            },
+            {
+              "issue": "8",
+              "key": "10.1016/j.advengsoft.2026.104269_b17",
+              "doi-asserted-by": "crossref",
+              "first-page": "3",
+              "DOI": "10.1145/368892.368907",
+              "article-title": "On programming of arithmetic operations",
+              "volume": "1",
+              "author": "Ershov",
+              "year": "1958",
+              "journal-title": "Commun ACM"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b18",
+              "doi-asserted-by": "crossref",
+              "first-page": "67",
+              "DOI": "10.1007/s11704-008-0005-z",
+              "article-title": "Fraction-free matrix factors: new forms for LU and QR factors",
+              "volume": "2",
+              "author": "Zhou",
+              "year": "2008",
+              "journal-title": "Front Comput Sci China"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b19",
+              "series-title": "Volume 5: Dynamics, vibration, and control, ASME international mechanical engineering congress and exposition",
+              "article-title": "A symbolic-numerical approach to suspension kinematics and compliance analysis",
+              "author": "Larcher",
+              "year": "2024"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b20",
+              "series-title": "Computer algebra and geometric algebra with applications",
+              "first-page": "31",
+              "article-title": "Implicit reduced involutive forms and their application to engineering multibody systems",
+              "volume": "vol. 3519",
+              "author": "Zhou",
+              "year": "2005"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b21",
+              "unstructured": "Zhou W, Carette J, Corless RM, Stocco D, Larcher M, Bertolazzi E. LU factorization with Large Expression Management (LULEM), url: http://github.com/StoccoDavide/LULEM (2024 – Online October 4 2024)."
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b22",
+              "unstructured": "MapleSoft. Maple programming guide, url: http://www.maplesoft.com/support/help/Maple/view.aspx?path=ProgrammingGuide/Contents (2024 – Online October 4, 2024)."
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b23",
+              "series-title": "Proceedings of the seventeenth annual ACM symposium on theory of computing - STOC ’85",
+              "first-page": "131",
+              "article-title": "Computing with polynomials given by straight-line programs i: greatest common divisors",
+              "author": "Kaltofen",
+              "year": "1985"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b24",
+              "series-title": "Partial evaluation and automatic program generation",
+              "author": "Jones",
+              "year": "1993"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b25",
+              "series-title": "Proceedings of the 2004 international symposium on symbolic and algebraic computation",
+              "first-page": "72",
+              "article-title": "Understanding expression simplification",
+              "author": "Carette",
+              "year": "2004"
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.advengsoft.2026.104269_b26",
+              "doi-asserted-by": "crossref",
+              "first-page": "427",
+              "DOI": "10.1006/jsco.1996.0097",
+              "article-title": "Two perturbation calculations in fluid mechanics using large-expression management",
+              "volume": "23",
+              "author": "Corless",
+              "year": "1997",
+              "journal-title": "J Symbolic Comput"
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.advengsoft.2026.104269_b27",
+              "doi-asserted-by": "crossref",
+              "first-page": "193",
+              "DOI": "10.1016/0020-0190(78)90067-4",
+              "article-title": "A probabilistic remark on algebraic program testing",
+              "volume": "7",
+              "author": "Demillo",
+              "year": "1978",
+              "journal-title": "Inform Process Lett"
+            },
+            {
+              "issue": "4",
+              "key": "10.1016/j.advengsoft.2026.104269_b28",
+              "doi-asserted-by": "crossref",
+              "first-page": "701",
+              "DOI": "10.1145/322217.322225",
+              "article-title": "Fast probabilistic algorithms for verification of polynomial identities",
+              "volume": "27",
+              "author": "Schwartz",
+              "year": "1980",
+              "journal-title": "J ACM (JACM)"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b29",
+              "series-title": "Symbolic and algebraic computation: EUROSM’79, an international symposium on symbolic and algebraic manipulation",
+              "first-page": "216",
+              "article-title": "Probabilistic algorithms for sparse polynomials",
+              "author": "Zippel",
+              "year": "1979"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b30",
+              "series-title": "On the design and performance of the Maple system",
+              "author": "Char",
+              "year": "1984"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b31",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Gonnet GH. Determining equivalence of expressions in random polynomial time. In: Proceedings of the 16th ACM symposium on theory of computing. 1984, p. 334–41.",
+              "DOI": "10.1145/800057.808698"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b32",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Gonnet GH. New results for random determination of equivalence of expressions. In: Proceedings of the fifth ACM symposium on symbolic and algebraic computation. 1986, p. 127–31.",
+              "DOI": "10.1145/32439.32465"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b33",
+              "doi-asserted-by": "crossref",
+              "unstructured": "Monagan MB, Gonnet GH. Signature functions for algebraic numbers. In: Proceedings of the international symposium on symbolic and algebraic computation. 1994, p. 291–6.",
+              "DOI": "10.1145/190347.190430"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b34",
+              "series-title": "Ideals, varieties, and algorithms: An introduction to computational algebraic geometry and commutative algebra",
+              "author": "Cox",
+              "year": "2015"
+            },
+            {
+              "issue": "3",
+              "key": "10.1016/j.advengsoft.2026.104269_b35",
+              "doi-asserted-by": "crossref",
+              "first-page": "255",
+              "DOI": "10.1287/mnsc.3.3.255",
+              "article-title": "The elimination form of the inverse and its application to linear programming",
+              "volume": "3",
+              "author": "Markowitz",
+              "year": "1957",
+              "journal-title": "Manag Sci"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b36",
+              "series-title": "Symmetric elimination on sparse positive definite systems and the potential flow network problem",
+              "author": "Rose",
+              "year": "1970"
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.advengsoft.2026.104269_b37",
+              "doi-asserted-by": "crossref",
+              "first-page": "345",
+              "DOI": "10.1137/0710032",
+              "article-title": "Nested dissection of a regular finite element mesh",
+              "volume": "10",
+              "author": "George",
+              "year": "1973",
+              "journal-title": "SIAM J Numer Anal"
+            },
+            {
+              "issue": "2",
+              "key": "10.1016/j.advengsoft.2026.104269_b38",
+              "doi-asserted-by": "crossref",
+              "first-page": "346",
+              "DOI": "10.1137/0716027",
+              "article-title": "Generalized nested dissection",
+              "volume": "16",
+              "author": "Lipton",
+              "year": "1979",
+              "journal-title": "SIAM J Numer Anal"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b39",
+              "series-title": "Differential-algebraic equations: Analysis and numerical solution",
+              "author": "Kunkel",
+              "year": "2006"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b40",
+              "series-title": "Computer methods for ordinary differential equations and differential-algebraic equations",
+              "author": "Ascher",
+              "year": "1998"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b41",
+              "series-title": "Numerical solution of initial-value problems in differential-algebraic equations",
+              "author": "Brenan",
+              "year": "1995"
+            },
+            {
+              "issue": "3",
+              "key": "10.1016/j.advengsoft.2026.104269_b42",
+              "doi-asserted-by": "crossref",
+              "first-page": "266",
+              "DOI": "10.1109/TAC.1986.1104236",
+              "article-title": "Numerical simulation of trajectory prescribed path control problems by the backward differentiation formulas",
+              "volume": "31",
+              "author": "Brenan",
+              "year": "1986",
+              "journal-title": "IEEE Trans Autom Control"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b43",
+              "series-title": "Test set for initial value problem solvers",
+              "author": "Lioen",
+              "year": "1998"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b44",
+              "series-title": "Test set for initial value problem solvers",
+              "author": "Mazzia",
+              "year": "2008"
+            },
+            {
+              "key": "10.1016/j.advengsoft.2026.104269_b45",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.7717/peerj-cs.103",
+              "article-title": "Sympy: symbolic computing in python",
+              "volume": "3",
+              "author": "Meurer",
+              "year": "2017",
+              "journal-title": "PeerJ Comput Sci"
+            }
+          ],
+          "container-title": [
+            "Advances in Engineering Software"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S0965997826001742?httpAccept=text/xml",
+              "content-type": "text/xml",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S0965997826001742?httpAccept=text/plain",
+              "content-type": "text/plain",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                8,
+                11
+              ]
+            ],
+            "date-time": "2026-08-11T02:52:37Z",
+            "timestamp": 1786416757000
+          },
+          "score": 14.902151,
+          "resource": {
+            "primary": {
+              "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0965997826001742"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2026,
+                10
+              ]
+            ]
+          },
+          "references-count": 45,
+          "alternative-id": [
+            "S0965997826001742"
+          ],
+          "URL": "https://doi.org/10.1016/j.advengsoft.2026.104269",
+          "ISSN": [
+            "0965-9978"
+          ],
+          "issn-type": [
+            {
+              "value": "0965-9978",
+              "type": "print"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                10
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "Elsevier",
+              "name": "publisher",
+              "label": "This article is maintained by"
+            },
+            {
+              "value": "Software advances in symbolic full-pivoting LU factorization for engineering applications",
+              "name": "articletitle",
+              "label": "Article Title"
+            },
+            {
+              "value": "Advances in Engineering Software",
+              "name": "journaltitle",
+              "label": "Journal Title"
+            },
+            {
+              "value": "https://doi.org/10.1016/j.advengsoft.2026.104269",
+              "name": "articlelink",
+              "label": "CrossRef DOI link to publisher maintained version"
+            },
+            {
+              "value": "article",
+              "name": "content_type",
+              "label": "Content Type"
+            },
+            {
+              "value": "© 2026 The Authors. Published by Elsevier Ltd.",
+              "name": "copyright",
+              "label": "Copyright"
+            }
+          ],
+          "article-number": "104269"
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2024,
+                12,
+                10
+              ]
+            ],
+            "date-time": "2024-12-10T05:23:08Z",
+            "timestamp": 1733808188857,
+            "version": "3.30.1"
+          },
+          "reference-count": 0,
+          "publisher": "Elsevier BV",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2025,
+                    2,
+                    1
+                  ]
+                ],
+                "date-time": "2025-02-01T00:00:00Z",
+                "timestamp": 1738368000000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2025,
+                    2,
+                    1
+                  ]
+                ],
+                "date-time": "2025-02-01T00:00:00Z",
+                "timestamp": 1738368000000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/legal/tdmrep-license"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "elsevier.com",
+              "sciencedirect.com"
+            ],
+            "crossmark-restriction": true
+          },
+          "short-container-title": [
+            "Advances in Engineering Software"
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2025,
+                2
+              ]
+            ]
+          },
+          "DOI": "10.1016/s0965-9978(24)00251-5",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2024,
+                12,
+                9
+              ]
+            ],
+            "date-time": "2024-12-09T19:28:26Z",
+            "timestamp": 1733772506000
+          },
+          "page": "103844",
+          "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "special_numbering": "C",
+          "title": [
+            "Editorial Board"
+          ],
+          "prefix": "10.1016",
+          "volume": "200",
+          "member": "78",
+          "container-title": [
+            "Advances in Engineering Software"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S0965997824002515?httpAccept=text/xml",
+              "content-type": "text/xml",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S0965997824002515?httpAccept=text/plain",
+              "content-type": "text/plain",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2024,
+                12,
+                9
+              ]
+            ],
+            "date-time": "2024-12-09T19:54:00Z",
+            "timestamp": 1733774040000
+          },
+          "score": 14.875528,
+          "resource": {
+            "primary": {
+              "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0965997824002515"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2025,
+                2
+              ]
+            ]
+          },
+          "references-count": 0,
+          "alternative-id": [
+            "S0965997824002515"
+          ],
+          "URL": "https://doi.org/10.1016/s0965-9978(24)00251-5",
+          "ISSN": [
+            "0965-9978"
+          ],
+          "issn-type": [
+            {
+              "value": "0965-9978",
+              "type": "print"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2025,
+                2
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "Elsevier",
+              "name": "publisher",
+              "label": "This article is maintained by"
+            },
+            {
+              "value": "Editorial Board",
+              "name": "articletitle",
+              "label": "Article Title"
+            },
+            {
+              "value": "Advances in Engineering Software",
+              "name": "journaltitle",
+              "label": "Journal Title"
+            },
+            {
+              "value": "https://doi.org/10.1016/S0965-9978(24)00251-5",
+              "name": "articlelink",
+              "label": "CrossRef DOI link to publisher maintained version"
+            },
+            {
+              "value": "simple-article",
+              "name": "content_type",
+              "label": "Content Type"
+            },
+            {
+              "name": "copyright",
+              "label": "Copyright"
+            }
+          ],
+          "article-number": "103844"
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2024,
+                11,
+                9
+              ]
+            ],
+            "date-time": "2024-11-09T05:21:57Z",
+            "timestamp": 1731129717694,
+            "version": "3.28.0"
+          },
+          "reference-count": 0,
+          "publisher": "Elsevier BV",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    12,
+                    1
+                  ]
+                ],
+                "date-time": "2024-12-01T00:00:00Z",
+                "timestamp": 1733011200000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    12,
+                    1
+                  ]
+                ],
+                "date-time": "2024-12-01T00:00:00Z",
+                "timestamp": 1733011200000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/legal/tdmrep-license"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "elsevier.com",
+              "sciencedirect.com"
+            ],
+            "crossmark-restriction": true
+          },
+          "short-container-title": [
+            "Advances in Engineering Software"
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2024,
+                12
+              ]
+            ]
+          },
+          "DOI": "10.1016/s0965-9978(24)00217-5",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2024,
+                11,
+                8
+              ]
+            ],
+            "date-time": "2024-11-08T20:15:28Z",
+            "timestamp": 1731096928000
+          },
+          "page": "103810",
+          "update-policy": "http://dx.doi.org/10.1016/elsevier_cm_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "special_numbering": "C",
+          "title": [
+            "Editorial Board"
+          ],
+          "prefix": "10.1016",
+          "volume": "198",
+          "member": "78",
+          "container-title": [
+            "Advances in Engineering Software"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S0965997824002175?httpAccept=text/xml",
+              "content-type": "text/xml",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S0965997824002175?httpAccept=text/plain",
+              "content-type": "text/plain",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2024,
+                11,
+                8
+              ]
+            ],
+            "date-time": "2024-11-08T20:34:45Z",
+            "timestamp": 1731098085000
+          },
+          "score": 14.87467,
+          "resource": {
+            "primary": {
+              "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0965997824002175"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2024,
+                12
+              ]
+            ]
+          },
+          "references-count": 0,
+          "alternative-id": [
+            "S0965997824002175"
+          ],
+          "URL": "https://doi.org/10.1016/s0965-9978(24)00217-5",
+          "ISSN": [
+            "0965-9978"
+          ],
+          "issn-type": [
+            {
+              "value": "0965-9978",
+              "type": "print"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                12
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "Elsevier",
+              "name": "publisher",
+              "label": "This article is maintained by"
+            },
+            {
+              "value": "Editorial Board",
+              "name": "articletitle",
+              "label": "Article Title"
+            },
+            {
+              "value": "Advances in Engineering Software",
+              "name": "journaltitle",
+              "label": "Journal Title"
+            },
+            {
+              "value": "https://doi.org/10.1016/S0965-9978(24)00217-5",
+              "name": "articlelink",
+              "label": "CrossRef DOI link to publisher maintained version"
+            },
+            {
+              "value": "simple-article",
+              "name": "content_type",
+              "label": "Content Type"
+            },
+            {
+              "name": "copyright",
+              "label": "Copyright"
+            }
+          ],
+          "article-number": "103810"
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2025,
+                10,
+                18
+              ]
+            ],
+            "date-time": "2025-10-18T18:10:54Z",
+            "timestamp": 1760811054242,
+            "version": "build-2065373602"
+          },
+          "reference-count": 0,
+          "publisher": "Elsevier BV",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2024-01-01T00:00:00Z",
+                "timestamp": 1704067200000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2024,
+                    1,
+                    1
+                  ]
+                ],
+                "date-time": "2024-01-01T00:00:00Z",
+                "timestamp": 1704067200000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/legal/tdmrep-license"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "elsevier.com",
+              "sciencedirect.com"
+            ],
+            "crossmark-restriction": true
+          },
+          "short-container-title": [
+            "Advances in Engineering Software"
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2024,
+                1
+              ]
+            ]
+          },
+          "DOI": "10.1016/s0965-9978(23)00166-7",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2023,
+                12,
+                8
+              ]
+            ],
+            "date-time": "2023-12-08T07:44:11Z",
+            "timestamp": 1702021451000
+          },
+          "page": "103575",
+          "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "special_numbering": "C",
+          "title": [
+            "Editorial Board"
+          ],
+          "prefix": "10.1016",
+          "volume": "187",
+          "member": "78",
+          "container-title": [
+            "Advances in Engineering Software"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S0965997823001667?httpAccept=text/xml",
+              "content-type": "text/xml",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S0965997823001667?httpAccept=text/plain",
+              "content-type": "text/plain",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2025,
+                10,
+                18
+              ]
+            ],
+            "date-time": "2025-10-18T17:57:01Z",
+            "timestamp": 1760810221000
+          },
+          "score": 14.87467,
+          "resource": {
+            "primary": {
+              "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0965997823001667"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2024,
+                1
+              ]
+            ]
+          },
+          "references-count": 0,
+          "alternative-id": [
+            "S0965997823001667"
+          ],
+          "URL": "https://doi.org/10.1016/s0965-9978(23)00166-7",
+          "ISSN": [
+            "0965-9978"
+          ],
+          "issn-type": [
+            {
+              "type": "print",
+              "value": "0965-9978"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2024,
+                1
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "Elsevier",
+              "name": "publisher",
+              "label": "This article is maintained by"
+            },
+            {
+              "value": "Editorial Board",
+              "name": "articletitle",
+              "label": "Article Title"
+            },
+            {
+              "value": "Advances in Engineering Software",
+              "name": "journaltitle",
+              "label": "Journal Title"
+            },
+            {
+              "value": "https://doi.org/10.1016/S0965-9978(23)00166-7",
+              "name": "articlelink",
+              "label": "CrossRef DOI link to publisher maintained version"
+            },
+            {
+              "value": "simple-article",
+              "name": "content_type",
+              "label": "Content Type"
+            },
+            {
+              "name": "copyright",
+              "label": "Copyright"
+            }
+          ],
+          "article-number": "103575"
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                3,
+                12
+              ]
+            ],
+            "date-time": "2026-03-12T05:58:54Z",
+            "timestamp": 1773295134598,
+            "version": "3.50.1"
+          },
+          "reference-count": 0,
+          "publisher": "Elsevier BV",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    5,
+                    1
+                  ]
+                ],
+                "date-time": "2026-05-01T00:00:00Z",
+                "timestamp": 1777593600000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/tdm/userlicense/1.0/"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    5,
+                    1
+                  ]
+                ],
+                "date-time": "2026-05-01T00:00:00Z",
+                "timestamp": 1777593600000
+              },
+              "content-version": "tdm",
+              "delay-in-days": 0,
+              "URL": "https://www.elsevier.com/legal/tdmrep-license"
+            }
+          ],
+          "content-domain": {
+            "domain": [
+              "elsevier.com",
+              "sciencedirect.com"
+            ],
+            "crossmark-restriction": true
+          },
+          "short-container-title": [
+            "Advances in Engineering Software"
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2026,
+                5
+              ]
+            ]
+          },
+          "DOI": "10.1016/s0965-9978(26)00057-8",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2026,
+                3,
+                11
+              ]
+            ],
+            "date-time": "2026-03-11T12:51:33Z",
+            "timestamp": 1773233493000
+          },
+          "page": "104151",
+          "update-policy": "https://doi.org/10.1016/elsevier_cm_policy",
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "special_numbering": "C",
+          "title": [
+            "Editorial Board"
+          ],
+          "prefix": "10.1016",
+          "volume": "216",
+          "member": "78",
+          "container-title": [
+            "Advances in Engineering Software"
+          ],
+          "language": "en",
+          "link": [
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S0965997826000578?httpAccept=text/xml",
+              "content-type": "text/xml",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            },
+            {
+              "URL": "https://api.elsevier.com/content/article/PII:S0965997826000578?httpAccept=text/plain",
+              "content-type": "text/plain",
+              "content-version": "vor",
+              "intended-application": "text-mining"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                3,
+                11
+              ]
+            ],
+            "date-time": "2026-03-11T12:52:38Z",
+            "timestamp": 1773233558000
+          },
+          "score": 14.867239,
+          "resource": {
+            "primary": {
+              "URL": "https://linkinghub.elsevier.com/retrieve/pii/S0965997826000578"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2026,
+                5
+              ]
+            ]
+          },
+          "references-count": 0,
+          "alternative-id": [
+            "S0965997826000578"
+          ],
+          "URL": "https://doi.org/10.1016/s0965-9978(26)00057-8",
+          "ISSN": [
+            "0965-9978"
+          ],
+          "issn-type": [
+            {
+              "value": "0965-9978",
+              "type": "print"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                5
+              ]
+            ]
+          },
+          "assertion": [
+            {
+              "value": "Elsevier",
+              "name": "publisher",
+              "label": "This article is maintained by"
+            },
+            {
+              "value": "Editorial Board",
+              "name": "articletitle",
+              "label": "Article Title"
+            },
+            {
+              "value": "Advances in Engineering Software",
+              "name": "journaltitle",
+              "label": "Journal Title"
+            },
+            {
+              "value": "https://doi.org/10.1016/S0965-9978(26)00057-8",
+              "name": "articlelink",
+              "label": "CrossRef DOI link to publisher maintained version"
+            },
+            {
+              "value": "simple-article",
+              "name": "content_type",
+              "label": "Content Type"
+            },
+            {
+              "name": "copyright",
+              "label": "Copyright"
+            }
+          ],
+          "article-number": "104151"
+        }
+      ],
+      "items-per-page": 5,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

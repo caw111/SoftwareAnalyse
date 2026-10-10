@@ -1,0 +1,10 @@
+{
+  "url": "https://pss-system.cponline.cnipa.gov.cn/conventionalSearch",
+  "fetched_at_utc": "2026-10-01T13:39:28.270813+00:00",
+  "http_status": 412,
+  "final_url": "https://pss-system.cponline.cnipa.gov.cn/conventionalSearch",
+  "content_type": "text/html; charset=utf-8",
+  "file": "raw/patent_search.html",
+  "bytes": 2487,
+  "sha256": "e59db3f0cc97db9b553c67e2ee82afa1096b6cd9cae639d4b2ebae7077d3b243"
+}

@@ -1,0 +1,910 @@
+[
+  {
+    "id": "patent:CN202420753596.1",
+    "type": "patent",
+    "title": "一种杠铃杆导向用运动组件",
+    "authors": [
+      "李丽艳",
+      "赵涛",
+      "任塘珂",
+      "董顺波",
+      "别鹏"
+    ],
+    "contributors": [
+      {
+        "name": "李丽艳",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "赵涛",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "任塘珂",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "董顺波",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "别鹏",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-01-03",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202420753596.1",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 1
+      },
+      "raw_cells": [
+        "1",
+        "CN202420753596.1",
+        "实用新型",
+        "一种杠铃杆导向用运动组件",
+        "20240412",
+        "20250103",
+        "李丽艳;赵涛;任塘珂;董顺波;别鹏"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202420753596.1",
+      "patent_subtype": "实用新型",
+      "application_date": "2024-04-12",
+      "grant_date": "2025-01-03",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN202111410309.4",
+    "type": "patent",
+    "title": "基于复合左右手传输线的多端口宽带相消型传感器",
+    "authors": [
+      "刘伟娜",
+      "张俊杰"
+    ],
+    "contributors": [
+      {
+        "name": "刘伟娜",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张俊杰",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-01-28",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202111410309.4",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 2
+      },
+      "raw_cells": [
+        "2",
+        "CN202111410309.4",
+        "发明",
+        "基于复合左右手传输线的多端口宽带相消型传感器",
+        "20211122",
+        "20250128",
+        "刘伟娜;张俊杰"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202111410309.4",
+      "patent_subtype": "发明",
+      "application_date": "2021-11-22",
+      "grant_date": "2025-01-28",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN202210545276.2",
+    "type": "patent",
+    "title": "基于轻量级的航拍车辆目标检测方法、系统及存储介质",
+    "authors": [
+      "沈家全",
+      "张永新",
+      "李德光",
+      "张斌斌",
+      "郭晨睿",
+      "陈梦垚",
+      "汪璐瑶",
+      "徐庚辰",
+      "杨佳曦"
+    ],
+    "contributors": [
+      {
+        "name": "沈家全",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张永新",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "李德光",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张斌斌",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "郭晨睿",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "陈梦垚",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "汪璐瑶",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "徐庚辰",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "杨佳曦",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-03-07",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202210545276.2",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 3
+      },
+      "raw_cells": [
+        "3",
+        "CN202210545276.2",
+        "发明",
+        "基于轻量级的航拍车辆目标检测方法、系统及存储介质",
+        "20220519",
+        "20250307",
+        "沈家全;张永新;李德光;张斌斌;郭晨睿;陈梦垚;汪璐瑶;徐庚辰;杨佳曦"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202210545276.2",
+      "patent_subtype": "发明",
+      "application_date": "2022-05-19",
+      "grant_date": "2025-03-07",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN202421032841.6",
+    "type": "patent",
+    "title": "一种简易组合式大气干湿沉降物被动采集装置",
+    "authors": [
+      "孙泽航",
+      "刘怀鹏",
+      "张晓萍",
+      "艳燕",
+      "李勇永",
+      "杨华夏",
+      "翟晓沛"
+    ],
+    "contributors": [
+      {
+        "name": "孙泽航",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "刘怀鹏",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张晓萍",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "艳燕",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "李勇永",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "杨华夏",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "翟晓沛",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-03-18",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202421032841.6",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 4
+      },
+      "raw_cells": [
+        "4",
+        "CN202421032841.6",
+        "实用新型",
+        "一种简易组合式大气干湿沉降物被动采集装置",
+        "20240513",
+        "20250318",
+        "孙泽航;刘怀鹏;张晓萍;艳燕;李勇永;杨华夏;翟晓沛"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202421032841.6",
+      "patent_subtype": "实用新型",
+      "application_date": "2024-05-13",
+      "grant_date": "2025-03-18",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN201810577221.3",
+    "type": "patent",
+    "title": "基于距离划分树的高维数据相似性连接查询方法及装置",
+    "authors": [
+      "马友忠",
+      "张瑞玲",
+      "林春杰",
+      "李莹"
+    ],
+    "contributors": [
+      {
+        "name": "马友忠",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张瑞玲",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "林春杰",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "李莹",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-05-02",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN201810577221.3",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 5
+      },
+      "raw_cells": [
+        "5",
+        "CN201810577221.3",
+        "发明",
+        "基于距离划分树的高维数据相似性连接查询方法及装置",
+        "20180605",
+        "20250502",
+        "马友忠;张瑞玲;林春杰;李莹"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN201810577221.3",
+      "patent_subtype": "发明",
+      "application_date": "2018-06-05",
+      "grant_date": "2025-05-02",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN202410625388.8",
+    "type": "patent",
+    "title": "一种可见光二噻吩乙烯开关型抗菌剂及其制备方法和应用",
+    "authors": [
+      "李自永",
+      "宋金钊",
+      "王齐琏",
+      "杨晓刚",
+      "冯永亮",
+      "张海宁",
+      "陈洪",
+      "王明星",
+      "洪东风",
+      "郭辉"
+    ],
+    "contributors": [
+      {
+        "name": "李自永",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "宋金钊",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "王齐琏",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "杨晓刚",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "冯永亮",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张海宁",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "陈洪",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "王明星",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "洪东风",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "郭辉",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-05-02",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202410625388.8",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 6
+      },
+      "raw_cells": [
+        "6",
+        "CN202410625388.8",
+        "发明",
+        "一种可见光二噻吩乙烯开关型抗菌剂及其制备方法和应用",
+        "20240520",
+        "20250502",
+        "李自永;宋金钊;王齐琏;杨晓刚;冯永亮;张海宁;陈洪;王明星;洪东风;郭辉"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202410625388.8",
+      "patent_subtype": "发明",
+      "application_date": "2024-05-20",
+      "grant_date": "2025-05-02",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN202421859717.7",
+    "type": "patent",
+    "title": "一种烟田病虫害识别、预警与智能处理装置",
+    "authors": [
+      "张斌斌",
+      "邢艺潆",
+      "李德光",
+      "徐国梁",
+      "张梦思"
+    ],
+    "contributors": [
+      {
+        "name": "张斌斌",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "邢艺潆",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "李德光",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "徐国梁",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张梦思",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-05-13",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202421859717.7",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 7
+      },
+      "raw_cells": [
+        "7",
+        "CN202421859717.7",
+        "实用新型",
+        "一种烟田病虫害识别、预警与智能处理装置",
+        "20240802",
+        "20250513",
+        "张斌斌;邢艺潆;李德光;徐国梁;张梦思"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202421859717.7",
+      "patent_subtype": "实用新型",
+      "application_date": "2024-08-02",
+      "grant_date": "2025-05-13",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN202510063640.5",
+    "type": "patent",
+    "title": "一种用于检测Cu2+、BPO的比色荧光探针TZ6及其制备方法和应用",
+    "authors": [
+      "齐月恒",
+      "徐华鑫",
+      "陈洪",
+      "陈豪威",
+      "庞舒云",
+      "常怡柯",
+      "向锶雨"
+    ],
+    "contributors": [
+      {
+        "name": "齐月恒",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "徐华鑫",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "陈洪",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "陈豪威",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "庞舒云",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "常怡柯",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "向锶雨",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-05-13",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202510063640.5",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 8
+      },
+      "raw_cells": [
+        "8",
+        "CN202510063640.5",
+        "发明",
+        "一种用于检测Cu2+、BPO的比色荧光探针TZ6及其制备方法和应用",
+        "20250115",
+        "20250513",
+        "齐月恒;徐华鑫;陈洪;陈豪威;庞舒云;常怡柯;向锶雨"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202510063640.5",
+      "patent_subtype": "发明",
+      "application_date": "2025-01-15",
+      "grant_date": "2025-05-13",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN202210247657.2",
+    "type": "patent",
+    "title": "一种蓝光响应的二噻吩乙烯化合物及其制备方法和应用",
+    "authors": [
+      "李自永",
+      "张海宁",
+      "郭辉",
+      "高鑫雨",
+      "刘忆芳",
+      "熊春林",
+      "张甜玲",
+      "杨树人"
+    ],
+    "contributors": [
+      {
+        "name": "李自永",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张海宁",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "郭辉",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "高鑫雨",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "刘忆芳",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "熊春林",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张甜玲",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "杨树人",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-06-03",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202210247657.2",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 9
+      },
+      "raw_cells": [
+        "9",
+        "CN202210247657.2",
+        "发明",
+        "一种蓝光响应的二噻吩乙烯化合物及其制备方法和应用",
+        "20220314",
+        "20250603",
+        "李自永;张海宁;郭辉;高鑫雨;刘忆芳;熊春林;张甜玲;杨树人"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202210247657.2",
+      "patent_subtype": "发明",
+      "application_date": "2022-03-14",
+      "grant_date": "2025-06-03",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  },
+  {
+    "id": "patent:CN202510292175.2",
+    "type": "patent",
+    "title": "一种烷基功能化的环三藜芦烃及其制备方法、毛细管气相色谱柱与应用",
+    "authors": [
+      "孙涛",
+      "申欣",
+      "蔡志强",
+      "齐浩龙",
+      "张媛媛",
+      "李珂",
+      "刘献明"
+    ],
+    "contributors": [
+      {
+        "name": "孙涛",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "申欣",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "蔡志强",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "齐浩龙",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "张媛媛",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "李珂",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      },
+      {
+        "name": "刘献明",
+        "role": "inventor",
+        "role_label": "发明人",
+        "affiliation": null
+      }
+    ],
+    "date": "2025-06-13",
+    "date_kind": "grant_date",
+    "date_precision": "day",
+    "source_record_id": "CN202510292175.2",
+    "source_name": "洛阳师范学院科研处（补充来源）",
+    "source_url": "https://sites.lynu.edu.cn/kycx/info/1221/5141.htm",
+    "source_published_date": "2026-06-10",
+    "fetched_at_utc": "2026-10-01T13:47:36.492016+00:00",
+    "evidence": {
+      "file": "raw/patent_supplement.html",
+      "sha256": "c2aaa105bab480f1d31a862fe0fd76fbf82f85a39b9188f57b25f8354f16560e",
+      "locator": {
+        "table_row_number": 10
+      },
+      "raw_cells": [
+        "10",
+        "CN202510292175.2",
+        "发明",
+        "一种烷基功能化的环三藜芦烃及其制备方法、毛细管气相色谱柱与应用",
+        "20250312",
+        "20250613",
+        "孙涛;申欣;蔡志强;齐浩龙;张媛媛;李珂;刘献明"
+      ]
+    },
+    "missing_fields": [
+      "current_legal_status",
+      "patent_owners"
+    ],
+    "details": {
+      "application_number": "CN202510292175.2",
+      "patent_subtype": "发明",
+      "application_date": "2025-03-12",
+      "grant_date": "2025-06-13",
+      "current_legal_status": "not_verified",
+      "patent_owners": null
+    },
+    "supplementary_source": true
+  }
+]

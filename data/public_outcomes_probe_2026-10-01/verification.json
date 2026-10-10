@@ -1,0 +1,18 @@
+{
+  "result": "passed",
+  "original_source_records": 30,
+  "supplementary_patents": 10,
+  "unified_records": 30,
+  "checks": [
+    "syntax",
+    "unique identifiers",
+    "required display fields",
+    "source hashes",
+    "contributor roles",
+    "date precision",
+    "publication vs outcome dates",
+    "patent chronology",
+    "PDF wrapped names",
+    "award grades"
+  ]
+}

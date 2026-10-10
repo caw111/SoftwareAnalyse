@@ -1,0 +1,2 @@
+# Only needed for the CNIPA PDF attachment; HTML fetching/parsing uses stdlib.
+pypdf==6.19.0

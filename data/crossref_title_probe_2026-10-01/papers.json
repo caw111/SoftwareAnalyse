@@ -1,0 +1,230 @@
+[
+  {
+    "method": "keyword",
+    "doi": "10.37307/j.0945-5604.2024.03.12",
+    "title": "Research Software Engineering",
+    "container_title": [
+      "Forschung &amp; Lehre"
+    ],
+    "issn": [
+      "0945-5604"
+    ],
+    "type": "journal-article",
+    "published": [
+      2024,
+      3,
+      4
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": false,
+    "evidence_file": "keyword_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "keyword",
+    "doi": "10.1063/5.0293841",
+    "title": "Practical software engineering for software-writing scientists",
+    "container_title": [
+      "The Journal of Chemical Physics"
+    ],
+    "issn": [
+      "0021-9606",
+      "1089-7690"
+    ],
+    "type": "journal-article",
+    "published": [
+      2025,
+      11,
+      4
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": true,
+    "evidence_file": "keyword_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "keyword",
+    "doi": "10.1145/3695987",
+    "title": "Software Product Line Engineering via Software Transplantation",
+    "container_title": [
+      "ACM Transactions on Software Engineering and Methodology"
+    ],
+    "issn": [
+      "1049-331X",
+      "1557-7392"
+    ],
+    "type": "journal-article",
+    "published": [
+      2025,
+      1,
+      20
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": true,
+    "evidence_file": "keyword_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "keyword",
+    "doi": "10.1007/s10515-024-00436-x",
+    "title": "Automated quantum software engineering",
+    "container_title": [
+      "Automated Software Engineering"
+    ],
+    "issn": [
+      "0928-8910",
+      "1573-7535"
+    ],
+    "type": "journal-article",
+    "published": [
+      2024,
+      4,
+      12
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": true,
+    "evidence_file": "keyword_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "keyword",
+    "doi": "10.1145/3650142.3650147",
+    "title": "Women and Software Engineering",
+    "container_title": [
+      "ACM SIGSOFT Software Engineering Notes"
+    ],
+    "issn": [
+      "0163-5948"
+    ],
+    "type": "journal-article",
+    "published": [
+      2024,
+      4,
+      3
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": true,
+    "evidence_file": "keyword_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "journal_issn",
+    "doi": "10.1109/tse.2026.3700841",
+    "title": "Characterizing Tests in IoT Software: Practices, Challenges and Opportunities",
+    "container_title": [
+      "IEEE Transactions on Software Engineering"
+    ],
+    "issn": [
+      "0098-5589",
+      "1939-3520",
+      "2326-3881"
+    ],
+    "type": "journal-article",
+    "published": [
+      2026,
+      9
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": false,
+    "evidence_file": "journal_issn_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "journal_issn",
+    "doi": "10.1109/tse.2026.3703637",
+    "title": "LongTest: Test Prioritization for Long Text Files",
+    "container_title": [
+      "IEEE Transactions on Software Engineering"
+    ],
+    "issn": [
+      "0098-5589",
+      "1939-3520",
+      "2326-3881"
+    ],
+    "type": "journal-article",
+    "published": [
+      2026,
+      9
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": false,
+    "evidence_file": "journal_issn_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "journal_issn",
+    "doi": "10.1109/tse.2026.3701230",
+    "title": "MORTAR: Multi-Turn Metamorphic Testing for LLM-Based Dialogue Systems",
+    "container_title": [
+      "IEEE Transactions on Software Engineering"
+    ],
+    "issn": [
+      "0098-5589",
+      "1939-3520",
+      "2326-3881"
+    ],
+    "type": "journal-article",
+    "published": [
+      2026,
+      9
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": false,
+    "evidence_file": "journal_issn_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "journal_issn",
+    "doi": "10.1109/tse.2026.3704180",
+    "title": "Boosting High-Review-Value Warning Line Identification With Unsupervised Line-Level Defect Prediction",
+    "container_title": [
+      "IEEE Transactions on Software Engineering"
+    ],
+    "issn": [
+      "0098-5589",
+      "1939-3520",
+      "2326-3881"
+    ],
+    "type": "journal-article",
+    "published": [
+      2026,
+      9
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": false,
+    "evidence_file": "journal_issn_000.json",
+    "classification_status": "not_classified"
+  },
+  {
+    "method": "journal_issn",
+    "doi": "10.1109/tse.2026.3703553",
+    "title": "No Resource, No Benchmarks, No Problem? Evaluating and Improving LLMs for Code Generation in No-Resource Languages",
+    "container_title": [
+      "IEEE Transactions on Software Engineering"
+    ],
+    "issn": [
+      "0098-5589",
+      "1939-3520",
+      "2326-3881"
+    ],
+    "type": "journal-article",
+    "published": [
+      2026,
+      9
+    ],
+    "subject_field_state": "missing",
+    "crossref_subject": null,
+    "has_abstract": false,
+    "evidence_file": "journal_issn_000.json",
+    "classification_status": "not_classified"
+  }
+]

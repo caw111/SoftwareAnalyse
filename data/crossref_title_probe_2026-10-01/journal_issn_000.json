@@ -1,0 +1,3739 @@
+{
+  "request_url": "https://api.crossref.org/journals/0098-5589/works?filter=type%3Ajournal-article%2Cfrom-pub-date%3A2024-01-01%2Cuntil-pub-date%3A2026-10-01&sort=published&order=desc&rows=5&offset=0",
+  "request_params": {
+    "filter": "type:journal-article,from-pub-date:2024-01-01,until-pub-date:2026-10-01",
+    "sort": "published",
+    "order": "desc",
+    "rows": 5,
+    "offset": 0
+  },
+  "access_pool_requested": "public",
+  "fetched_at_utc": "2026-10-01T12:58:56.609159+00:00",
+  "elapsed_seconds": 2.588,
+  "http_status": 200,
+  "attempt": 1,
+  "response_headers": {
+    "x-rate-limit-limit": "5",
+    "x-rate-limit-interval": "1s"
+  },
+  "response": {
+    "status": "ok",
+    "message-type": "work-list",
+    "message-version": "1.0.0",
+    "message": {
+      "facets": {},
+      "total-results": 638,
+      "items": [
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                24
+              ]
+            ],
+            "date-time": "2026-09-24T17:59:36Z",
+            "timestamp": 1790272776522,
+            "version": "4.1.0"
+          },
+          "reference-count": 85,
+          "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+          "issue": "9",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2026-09-01T00:00:00Z",
+                "timestamp": 1788220800000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2026-09-01T00:00:00Z",
+                "timestamp": 1788220800000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-029"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2026-09-01T00:00:00Z",
+                "timestamp": 1788220800000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-037"
+            }
+          ],
+          "funder": [
+            {
+              "name": "Fonds de recherche du Québec",
+              "award": [
+                "2024-NOVA-346499 [86]"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "2024-NOVA-346499 [86]"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "https://ror.org/00w3qhf76",
+                  "id-type": "ROR",
+                  "asserted-by": "crossref"
+                }
+              ]
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "IIEEE Trans. Software Eng."
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2026,
+                9
+              ]
+            ]
+          },
+          "DOI": "10.1109/tse.2026.3700841",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2026,
+                6,
+                5
+              ]
+            ],
+            "date-time": "2026-06-05T19:38:50Z",
+            "timestamp": 1780688330000
+          },
+          "page": "2587-2602",
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "Characterizing Tests in IoT Software: Practices, Challenges and Opportunities"
+          ],
+          "prefix": "10.1109",
+          "volume": "52",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0009-0001-2983-5699",
+              "authenticated-orcid": false,
+              "given": "Rufeng",
+              "family": "Chen",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "McGill University",
+                  "place": [
+                    "Montreal, QC, Canada"
+                  ],
+                  "department": [
+                    "Department of Electrical and Computer Engineering"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-3082-5957",
+              "authenticated-orcid": false,
+              "given": "Hengcheng",
+              "family": "Zhu",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "The Hong Kong University of Science and Technology"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-8039-0528",
+              "authenticated-orcid": false,
+              "given": "Wuqi",
+              "family": "Zhang",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "The Hong Kong University of Science and Technology"
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0009-0006-7536-9824",
+              "authenticated-orcid": false,
+              "given": "Zixu",
+              "family": "Zhou",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "McGill University",
+                  "place": [
+                    "Montreal, QC, Canada"
+                  ],
+                  "department": [
+                    "Department of Electrical and Computer Engineering"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-2428-4111",
+              "authenticated-orcid": false,
+              "given": "Lili",
+              "family": "Wei",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "McGill University",
+                  "place": [
+                    "Montreal, QC, Canada"
+                  ],
+                  "department": [
+                    "Department of Electrical and Computer Engineering"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "263",
+          "reference": [
+            {
+              "key": "ref1",
+              "article-title": "IoT market with COVID-19 analysis by component, organization size, focus area and region - global forecast to 2026"
+            },
+            {
+              "key": "ref2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10664-021-10021-5"
+            },
+            {
+              "key": "ref3",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3510455.3512785"
+            },
+            {
+              "key": "ref4",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2024.3363611"
+            },
+            {
+              "key": "ref5",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICSE43902.2021.00051"
+            },
+            {
+              "key": "ref6",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/COMST.2019.2910750"
+            },
+            {
+              "key": "ref7",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3243734.3243865"
+            },
+            {
+              "key": "ref8",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICST62969.2025.10988986"
+            },
+            {
+              "key": "ref9",
+              "article-title": "Anonymous characterizing-tests-in-IoT-software-practices-challenges-and-opportunities"
+            },
+            {
+              "key": "ref10",
+              "first-page": "667",
+              "article-title": "Study of IoT architecture and application invariant functionalities",
+              "volume-title": "Proc. IFIP/IEEE Int. Symp. Integr. Netw. Manage. (IM)",
+              "author": "Pawar",
+              "year": "2021"
+            },
+            {
+              "key": "ref11",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.3390/s24165320"
+            },
+            {
+              "key": "ref12",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.3389/fenrg.2022.850252"
+            },
+            {
+              "key": "ref13",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/MS.2018.2801541"
+            },
+            {
+              "key": "ref14",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3625094"
+            },
+            {
+              "key": "ref15",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3001878.3001882"
+            },
+            {
+              "key": "ref16",
+              "article-title": "Home assistant"
+            },
+            {
+              "key": "ref17",
+              "article-title": "ThingsBoard"
+            },
+            {
+              "key": "ref18",
+              "article-title": "paho.mqtt.python"
+            },
+            {
+              "key": "ref19",
+              "article-title": "kuzzle"
+            },
+            {
+              "key": "ref20",
+              "article-title": "keylime"
+            },
+            {
+              "key": "ref21",
+              "article-title": "Getting started"
+            },
+            {
+              "key": "ref22",
+              "article-title": "The fun, simple, flexible JavaScript test framework"
+            },
+            {
+              "key": "ref23",
+              "article-title": "Jasmine documentation home"
+            },
+            {
+              "key": "ref24",
+              "article-title": "pytest: Helps you write better programs"
+            },
+            {
+              "key": "ref25",
+              "article-title": "unittest: Unit testing framework",
+              "year": "2024"
+            },
+            {
+              "key": "ref26",
+              "article-title": "JUnit 5.9.1 API",
+              "year": "2024"
+            },
+            {
+              "key": "ref27",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/MSR.2017.8"
+            },
+            {
+              "key": "ref28",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICST.2015.7102609"
+            },
+            {
+              "key": "ref29",
+              "volume-title": "Unit Testing Principles, Practices, and Patterns.",
+              "author": "Khorikov",
+              "year": "2020"
+            },
+            {
+              "key": "ref30",
+              "article-title": "istsos2"
+            },
+            {
+              "key": "ref31",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3387904.3389256"
+            },
+            {
+              "key": "ref32",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TR.2017.2727062"
+            },
+            {
+              "key": "ref33",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/APSEC.2014.42"
+            },
+            {
+              "key": "ref34",
+              "article-title": "vandium-node"
+            },
+            {
+              "key": "ref35",
+              "article-title": "smart-socket"
+            },
+            {
+              "key": "ref36",
+              "article-title": "Usbserial"
+            },
+            {
+              "key": "ref37",
+              "article-title": "Adafruit_io_python"
+            },
+            {
+              "key": "ref38",
+              "article-title": "MQTT: The standard for IoT messaging"
+            },
+            {
+              "key": "ref39",
+              "article-title": "Lightweight m2m (LwM2M)",
+              "year": "2024"
+            },
+            {
+              "key": "ref40",
+              "article-title": "IoTedgedev"
+            },
+            {
+              "key": "ref41",
+              "article-title": "azure-IoT-SDK-Python"
+            },
+            {
+              "key": "ref42",
+              "article-title": "ignite-3"
+            },
+            {
+              "key": "ref43",
+              "article-title": "adaptive-lighting"
+            },
+            {
+              "key": "ref44",
+              "first-page": "163",
+              "article-title": "State of mutation testing at Google",
+              "volume-title": "Proc. ICSE-SEIP",
+              "author": "Petrovic",
+              "year": "2018"
+            },
+            {
+              "key": "ref45",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3510003.3510175"
+            },
+            {
+              "key": "ref46",
+              "first-page": "436",
+              "article-title": "MockSniffer: characterizing and recommending mocking decisions for unit tests",
+              "volume-title": "Proc. 35th IEEE/ACM Int. Conf. Autom. Softw. Eng. (ASE)",
+              "author": "Zhu",
+              "year": "2021"
+            },
+            {
+              "key": "ref47",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3617171"
+            },
+            {
+              "key": "ref48",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10664-023-10410-y"
+            },
+            {
+              "key": "ref49",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3715741"
+            },
+            {
+              "key": "ref50",
+              "article-title": "Tasty mocking framework for unit tests in Java",
+              "year": "2024"
+            },
+            {
+              "key": "ref51",
+              "article-title": "Standalone test spies, stubs and mocks for JavaScript",
+              "year": "2024"
+            },
+            {
+              "key": "ref52",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2024.3458448"
+            },
+            {
+              "key": "ref54",
+              "article-title": "openhab"
+            },
+            {
+              "key": "ref55",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2950290.2950311"
+            },
+            {
+              "key": "ref56",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TR.2021.3087781"
+            },
+            {
+              "key": "ref57",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3635713"
+            },
+            {
+              "key": "ref58",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-319-47169-3_55"
+            },
+            {
+              "key": "ref59",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/SP40000.2020.00062"
+            },
+            {
+              "key": "ref60",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3611643.3613095"
+            },
+            {
+              "key": "ref61",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICSTW.2018.00035"
+            },
+            {
+              "key": "ref62",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s11219-021-09565-y"
+            },
+            {
+              "key": "ref63",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10664-021-10017-1"
+            },
+            {
+              "key": "ref64",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICST49551.2021.00059"
+            },
+            {
+              "key": "ref65",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ACCESS.2020.2976718"
+            },
+            {
+              "key": "ref66",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ACCESS.2018.2802489"
+            },
+            {
+              "key": "ref67",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/JIOT.2015.2462030"
+            },
+            {
+              "key": "ref68",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/UCC-Companion.2018.00064"
+            },
+            {
+              "key": "ref69",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3137003.3137007"
+            },
+            {
+              "key": "ref70",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/JIOT.2022.3182589"
+            },
+            {
+              "key": "ref71",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/SERP4IoT52556.2021.00015"
+            },
+            {
+              "key": "ref72",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSC.2021.3074956"
+            },
+            {
+              "key": "ref73",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s11219-021-09558-x"
+            },
+            {
+              "key": "ref74",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/JIOT.2017.2707465"
+            },
+            {
+              "key": "ref75",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/SP.2017.14"
+            },
+            {
+              "key": "ref76",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3395363.3397347"
+            },
+            {
+              "key": "ref77",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.22152/programming-journal.org/2023/7/5"
+            },
+            {
+              "key": "ref78",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/SEC50012.2020.00033"
+            },
+            {
+              "key": "ref79",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3532194"
+            },
+            {
+              "key": "ref80",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/JIOT.2022.3163606"
+            },
+            {
+              "key": "ref81",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/JIOT.2024.3435496"
+            },
+            {
+              "key": "ref82",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/IOTSMS62296.2024.10710185"
+            },
+            {
+              "key": "ref83",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/JIOT.2023.3291233"
+            },
+            {
+              "key": "ref84",
+              "first-page": "1078",
+              "article-title": "Test automation in open-source Android apps: A large-scale empirical study",
+              "volume-title": "Proc. ASE",
+              "author": "Lin",
+              "year": "2020"
+            },
+            {
+              "key": "ref85",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10664-019-09722-9"
+            },
+            {
+              "key": "ref86",
+              "article-title": "Towards reliable smart home ecosystems",
+              "year": "2024"
+            }
+          ],
+          "container-title": [
+            "IEEE Transactions on Software Engineering"
+          ],
+          "link": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx8/32/11698849/11552357.pdf?arnumber=11552357",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                24
+              ]
+            ],
+            "date-time": "2026-09-24T17:01:27Z",
+            "timestamp": 1790269287000
+          },
+          "score": 0.0,
+          "resource": {
+            "primary": {
+              "URL": "https://ieeexplore.ieee.org/document/11552357/"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2026,
+                9
+              ]
+            ]
+          },
+          "references-count": 85,
+          "journal-issue": {
+            "issue": "9"
+          },
+          "URL": "https://doi.org/10.1109/tse.2026.3700841",
+          "ISSN": [
+            "0098-5589",
+            "1939-3520",
+            "2326-3881"
+          ],
+          "issn-type": [
+            {
+              "value": "0098-5589",
+              "type": "print"
+            },
+            {
+              "value": "1939-3520",
+              "type": "electronic"
+            },
+            {
+              "value": "2326-3881",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                9
+              ]
+            ]
+          }
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                24
+              ]
+            ],
+            "date-time": "2026-09-24T18:00:30Z",
+            "timestamp": 1790272830291,
+            "version": "4.1.0"
+          },
+          "reference-count": 136,
+          "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+          "issue": "9",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2026-09-01T00:00:00Z",
+                "timestamp": 1788220800000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2026-09-01T00:00:00Z",
+                "timestamp": 1788220800000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-029"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2026-09-01T00:00:00Z",
+                "timestamp": 1788220800000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-037"
+            }
+          ],
+          "funder": [
+            {
+              "name": "Luxembourg National Research Fund",
+              "award": [
+                "C22/IS/17426831/MeMoRIA"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "C22/IS/17426831/MeMoRIA"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "European Research Council (ERC) under the European Union’s Horizon 2020 Research and Innovation Program",
+              "award": [
+                "949014"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "949014"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "https://ror.org/0472cxd90",
+                  "id-type": "ROR",
+                  "asserted-by": "crossref"
+                }
+              ]
+            },
+            {
+              "name": "Fundamental Research Funds for the Central Universities",
+              "award": [
+                "AE89991/478"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "AE89991/478"
+                  ]
+                }
+              ]
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "IIEEE Trans. Software Eng."
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2026,
+                9
+              ]
+            ]
+          },
+          "DOI": "10.1109/tse.2026.3703637",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2026,
+                6,
+                15
+              ]
+            ],
+            "date-time": "2026-06-15T19:46:54Z",
+            "timestamp": 1781552814000
+          },
+          "page": "2789-2820",
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "LongTest: Test Prioritization for Long Text Files"
+          ],
+          "prefix": "10.1109",
+          "volume": "52",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0000-0003-4097-9543",
+              "authenticated-orcid": false,
+              "given": "Xueqi",
+              "family": "Dang",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "University of Luxembourg",
+                  "place": [
+                    "Esch-sur-Alzette, Luxembourg"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0003-1390-0393",
+              "authenticated-orcid": false,
+              "given": "Yinghua",
+              "family": "Li",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Nanjing University of Science and Technology",
+                  "place": [
+                    "Nanjing, China"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0009-0009-7312-6273",
+              "authenticated-orcid": false,
+              "given": "Wendkuuni C.",
+              "family": "Ouedraogo",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "University of Luxembourg",
+                  "place": [
+                    "Esch-sur-Alzette, Luxembourg"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-8312-1358",
+              "authenticated-orcid": false,
+              "given": "Maxime",
+              "family": "Cordy",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "University of Luxembourg",
+                  "place": [
+                    "Esch-sur-Alzette, Luxembourg"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0003-1852-2547",
+              "authenticated-orcid": false,
+              "given": "Mike",
+              "family": "Papadakis",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "University of Luxembourg",
+                  "place": [
+                    "Esch-sur-Alzette, Luxembourg"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0003-4052-475X",
+              "authenticated-orcid": false,
+              "given": "Jacques",
+              "family": "Klein",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "University of Luxembourg",
+                  "place": [
+                    "Esch-sur-Alzette, Luxembourg"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-7270-9869",
+              "authenticated-orcid": false,
+              "given": "Tegawende F.",
+              "family": "Bissyande",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "University of Luxembourg",
+                  "place": [
+                    "Esch-sur-Alzette, Luxembourg"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-1045-4861",
+              "authenticated-orcid": false,
+              "given": "Yves",
+              "family": "Le Traon",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "University of Luxembourg",
+                  "place": [
+                    "Esch-sur-Alzette, Luxembourg"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "263",
+          "reference": [
+            {
+              "key": "ref1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3439726"
+            },
+            {
+              "key": "ref2",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3495162"
+            },
+            {
+              "key": "ref3",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ACCESS.2022.3162614"
+            },
+            {
+              "key": "ref4",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/JBHI.2021.3062322"
+            },
+            {
+              "key": "ref5",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/BigData.2018.8622157"
+            },
+            {
+              "key": "ref6",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3580305.3599544"
+            },
+            {
+              "key": "ref7",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.54097/ajst.v8i1.14333"
+            },
+            {
+              "key": "ref8",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1186/s12911-021-01615-6"
+            },
+            {
+              "key": "ref9",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3395363.3397357"
+            },
+            {
+              "key": "ref10",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3533767.3534375"
+            },
+            {
+              "key": "ref11",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICSE43902.2021.00046"
+            },
+            {
+              "key": "ref12",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3132747.3132785"
+            },
+            {
+              "key": "ref13",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3238147.3238202"
+            },
+            {
+              "key": "ref14",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.29172/7c2a6982-6d72-4cd8-bba6-2fccb06a7011"
+            },
+            {
+              "key": "ref15",
+              "article-title": "Logistic regression",
+              "author": "Wright",
+              "year": "1995"
+            },
+            {
+              "key": "ref16",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2939672.2939785"
+            },
+            {
+              "key": "ref17",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.procs.2019.12.111"
+            },
+            {
+              "key": "ref18",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/JPROC.2021.3060483"
+            },
+            {
+              "key": "ref19",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.3390/info10040150"
+            },
+            {
+              "key": "ref20",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.procs.2013.05.005"
+            },
+            {
+              "key": "ref21",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/SITIS.2017.32"
+            },
+            {
+              "key": "ref22",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1242572.1242759"
+            },
+            {
+              "key": "ref23",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/NYSDS.2016.7747810"
+            },
+            {
+              "key": "ref24",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-031-70239-6_5"
+            },
+            {
+              "key": "ref25",
+              "first-page": "6827",
+              "article-title": "What makes for good views for contrastive learning?",
+              "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+              "volume": "33",
+              "author": "Tian",
+              "year": "2020"
+            },
+            {
+              "key": "ref26",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.neucom.2024.128645"
+            },
+            {
+              "key": "ref27",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2024.3350019"
+            },
+            {
+              "key": "ref28",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3643676"
+            },
+            {
+              "key": "ref29",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10664-024-10520-1"
+            },
+            {
+              "key": "ref30",
+              "article-title": "Test prioritization based on change sensitivity: An industrial case study",
+              "author": "Nguyen",
+              "year": "2014"
+            },
+            {
+              "key": "ref31",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3607191"
+            },
+            {
+              "key": "ref32",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3730435"
+            },
+            {
+              "key": "ref33",
+              "first-page": "895",
+              "article-title": "FAST: Boosting uncertainty-based test prioritization methods for neural networks via feature selection",
+              "volume-title": "Proc. 39th IEEE/ACM Int. Conf. Autom. Softw. Eng.",
+              "author": "Chen",
+              "year": "2024"
+            },
+            {
+              "key": "ref34",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10664-024-10515-y"
+            },
+            {
+              "key": "ref35",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2024.3385538"
+            },
+            {
+              "key": "ref36",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3368089.3417065"
+            },
+            {
+              "key": "ref37",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.24818/ida-ql/2019.5"
+            },
+            {
+              "key": "ref38",
+              "first-page": "5776",
+              "article-title": "MiniLM: Deep self-attention distillation for task-agnostic compression of pre-trained transformers",
+              "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+              "volume": "33",
+              "author": "Wang",
+              "year": "2020"
+            },
+            {
+              "key": "ref39",
+              "article-title": "Distilling the knowledge in a neural network",
+              "author": "Hinton",
+              "year": "2015"
+            },
+            {
+              "key": "ref40",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/D19-1410"
+            },
+            {
+              "key": "ref41",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/n16-1174"
+            },
+            {
+              "key": "ref42",
+              "article-title": "LongFormer: The long-document transformer",
+              "author": "Beltagy",
+              "year": "2020"
+            },
+            {
+              "key": "ref43",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1098/rsta.2015.0202"
+            },
+            {
+              "key": "ref44",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2006.100"
+            },
+            {
+              "key": "ref45",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.5555/3524938.3525087"
+            },
+            {
+              "key": "ref46",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-1-4419-9326-7_5"
+            },
+            {
+              "key": "ref47",
+              "first-page": "3149",
+              "article-title": "LightGBM: A highly efficient gradient boosting decision tree",
+              "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+              "volume": "30",
+              "author": "Ke",
+              "year": "2017"
+            },
+            {
+              "key": "ref48",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.inffus.2021.11.011"
+            },
+            {
+              "key": "ref49",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.52202/068431-0037"
+            },
+            {
+              "key": "ref50",
+              "article-title": "AutoGluon-tabular: Robust and accurate AutoML for structured data",
+              "author": "Erickson",
+              "year": "2020"
+            },
+            {
+              "key": "ref51",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.4097/kjae.2015.68.6.540"
+            },
+            {
+              "key": "ref52",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1037/a0028086"
+            },
+            {
+              "key": "ref53",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR.2005.202"
+            },
+            {
+              "key": "ref54",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1609/aaai.v30i1.10350"
+            },
+            {
+              "key": "ref55",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/P19-1636"
+            },
+            {
+              "key": "ref56",
+              "article-title": "Fake news detection",
+              "author": "Jikadara",
+              "year": "2024"
+            },
+            {
+              "key": "ref57",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3545176"
+            },
+            {
+              "key": "ref58",
+              "article-title": "DistilBERT, a distilled version of BERT: Smaller, faster, cheaper and lighter",
+              "author": "Sanh",
+              "year": "2019"
+            },
+            {
+              "key": "ref59",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/JPROC.2017.2761740"
+            },
+            {
+              "key": "ref60",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1002/wics.1278"
+            },
+            {
+              "key": "ref61",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-642-04898-2_344"
+            },
+            {
+              "key": "ref62",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1609/aaai.v35i8.16826"
+            },
+            {
+              "key": "ref63",
+              "first-page": "16857",
+              "article-title": "MPNet: Masked and permuted pre-training for language understanding",
+              "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+              "volume": "33",
+              "author": "Song",
+              "year": "2020"
+            },
+            {
+              "issue": "1",
+              "key": "ref64",
+              "first-page": "3133",
+              "article-title": "Do we need hundreds of classifiers to solve real world classification problems?",
+              "volume": "15",
+              "author": "Fernández-Delgado",
+              "year": "2014",
+              "journal-title": "J. Mach. Learn. Res."
+            },
+            {
+              "key": "ref65",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/SANER64311.2025.00013"
+            },
+            {
+              "key": "ref66",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.3390/bdcc9030067"
+            },
+            {
+              "key": "ref67",
+              "article-title": "A comprehensive benchmark of machine and deep learning across diverse tabular datasets",
+              "author": "Shmuel",
+              "year": "2024"
+            },
+            {
+              "key": "ref68",
+              "article-title": "Comparative efficiency analysis of lightweight transformer models: A multi-domain empirical benchmark for enterprise NLP deployment",
+              "author": "Khan",
+              "year": "2026"
+            },
+            {
+              "key": "ref69",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1002/stvr.430"
+            },
+            {
+              "key": "ref70",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3092703.3092709"
+            },
+            {
+              "key": "ref71",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3650212.3652125"
+            },
+            {
+              "key": "ref72",
+              "doi-asserted-by": "crossref",
+              "first-page": "727",
+              "DOI": "10.1145/3377811.3380379",
+              "article-title": "Dissector: Input validation for deep learning applications by crossing-layer dissection",
+              "volume-title": "Proc. ACM/IEEE 42nd Int. Conf. Softw. Eng.",
+              "author": "Wang",
+              "year": "2020"
+            },
+            {
+              "key": "ref73",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICSE43902.2021.00044"
+            },
+            {
+              "key": "ref74",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/32.988497"
+            },
+            {
+              "key": "ref75",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2951913.2976746"
+            },
+            {
+              "key": "ref76",
+              "first-page": "8026",
+              "article-title": "PyTorch: An imperative style, high-performance deep learning library",
+              "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+              "volume": "32",
+              "author": "Paszke",
+              "year": "2019"
+            },
+            {
+              "key": "ref77",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.5555/1953048.2078195"
+            },
+            {
+              "key": "ref78",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/2020.emnlp-main.365"
+            },
+            {
+              "key": "ref79",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s13748-016-0094-0"
+            },
+            {
+              "key": "ref80",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TKDE.2008.239"
+            },
+            {
+              "key": "ref81",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3417330"
+            },
+            {
+              "key": "ref82",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1143844.1143892"
+            },
+            {
+              "key": "ref83",
+              "first-page": "17283",
+              "article-title": "Big bird: Transformers for longer sequences",
+              "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+              "volume": "33",
+              "author": "Zaheer",
+              "year": "2020"
+            },
+            {
+              "key": "ref84",
+              "article-title": "Text embeddings by weakly-supervised contrastive pre-training",
+              "author": "Wang",
+              "year": "2022"
+            },
+            {
+              "key": "ref85",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/2022.acl-long.62"
+            },
+            {
+              "key": "ref86",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/2022.emnlp-main.669"
+            },
+            {
+              "key": "ref87",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/n19-1423"
+            },
+            {
+              "key": "ref88",
+              "article-title": "XLNet: Generalized autoregressive pretraining for language understanding",
+              "author": "Yang",
+              "year": "2019"
+            },
+            {
+              "key": "ref89",
+              "article-title": "RoBERTa: A robustly optimized BERT pretraining approach",
+              "author": "Liu",
+              "year": "2019"
+            },
+            {
+              "key": "ref90",
+              "article-title": "Attention is all you need",
+              "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+              "author": "Vaswani",
+              "year": "2017"
+            },
+            {
+              "key": "ref91",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/wacv45572.2020.9093537"
+            },
+            {
+              "key": "ref92",
+              "article-title": "Dimensionality reduction for bag-of-words models: PCA vs LSA",
+              "author": "Ljungberg",
+              "year": "2019"
+            },
+            {
+              "key": "ref93",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.5120/21790-5104"
+            },
+            {
+              "key": "ref94",
+              "doi-asserted-by": "crossref",
+              "DOI": "10.32388/M7YKDZ",
+              "article-title": "Is semantic chunking worth the computational cost?",
+              "author": "Qu",
+              "year": "2024"
+            },
+            {
+              "key": "ref95",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1587/transinf.2022EDP7083"
+            },
+            {
+              "key": "ref96",
+              "article-title": "Meta-chunking: Learning efficient text segmentation via logical perception",
+              "author": "Zhao",
+              "year": "2024"
+            },
+            {
+              "key": "ref97",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/2021.emnlp-main.552"
+            },
+            {
+              "key": "ref98",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.58496/BJML/2024/007"
+            },
+            {
+              "key": "ref99",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1161/circulationaha.106.682658"
+            },
+            {
+              "key": "ref100",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.21037/atm.2016.03.37"
+            },
+            {
+              "key": "ref101",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ASE56229.2023.00126"
+            },
+            {
+              "key": "ref102",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3644388"
+            },
+            {
+              "key": "ref103",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3597926.3598073"
+            },
+            {
+              "key": "ref104",
+              "article-title": "Very deep convolutional networks for large-scale image recognition",
+              "author": "Simonyan",
+              "year": "2014"
+            },
+            {
+              "key": "ref105",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3672454"
+            },
+            {
+              "key": "ref106",
+              "first-page": "1219",
+              "article-title": "Prioritizing test inputs for DNNs using training dynamics",
+              "volume-title": "Proc. 39th IEEE/ACM Int. Conf. Autom. Softw. Eng.",
+              "author": "Shen",
+              "year": "2024"
+            },
+            {
+              "key": "ref107",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/bs.adcom.2018.10.001"
+            },
+            {
+              "key": "ref108",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10664-012-9219-7"
+            },
+            {
+              "key": "ref109",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1572272.1572296"
+            },
+            {
+              "key": "ref110",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICSM.1999.792604"
+            },
+            {
+              "key": "ref111",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICSM.2006.74"
+            },
+            {
+              "key": "ref112",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1002/stvr.1572"
+            },
+            {
+              "key": "ref113",
+              "volume-title": "Software Testing and Analysis: process, Principles, and Techniques",
+              "author": "Pezze",
+              "year": "2008"
+            },
+            {
+              "key": "ref114",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICST.2012.88"
+            },
+            {
+              "key": "ref115",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.jss.2021.110933"
+            },
+            {
+              "key": "ref116",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10664-021-10066-6"
+            },
+            {
+              "key": "ref117",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ASE.2009.77"
+            },
+            {
+              "key": "ref118",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ISSRE.2015.7381798"
+            },
+            {
+              "key": "ref119",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3236024.3236053"
+            },
+            {
+              "key": "ref120",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3569932"
+            },
+            {
+              "key": "ref121",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/978-3-030-93842-0_1"
+            },
+            {
+              "key": "ref122",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/D18-1318"
+            },
+            {
+              "key": "ref123",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/2020.emnlp-main.638"
+            },
+            {
+              "key": "ref124",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3368089.3409730"
+            },
+            {
+              "key": "ref125",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3460319.3464825"
+            },
+            {
+              "key": "ref126",
+              "first-page": "954",
+              "article-title": "DeepAtash: Focused test generation for deep learning systems",
+              "volume-title": "Proc. ACM SIGSOFT Int. Symp. Softw. Testing Anal.",
+              "author": "Tahereh",
+              "year": "2023"
+            },
+            {
+              "key": "ref127",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICSE48619.2023.00104"
+            },
+            {
+              "key": "ref128",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3544792"
+            },
+            {
+              "key": "ref129",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2024.3420816"
+            },
+            {
+              "key": "ref130",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3597926.3598109"
+            },
+            {
+              "key": "ref131",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3338906.3338930"
+            },
+            {
+              "key": "ref132",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3394112"
+            },
+            {
+              "key": "ref133",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CVPR52733.2024.01526"
+            },
+            {
+              "key": "ref134",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICSE.2019.00108"
+            },
+            {
+              "key": "ref135",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3576040"
+            },
+            {
+              "key": "ref136",
+              "first-page": "2288",
+              "article-title": "Examples are not enough, learn to criticize! criticism for interpretability",
+              "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+              "volume": "29",
+              "author": "Kim",
+              "year": "2016"
+            }
+          ],
+          "container-title": [
+            "IEEE Transactions on Software Engineering"
+          ],
+          "link": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx8/32/11698849/11563737.pdf?arnumber=11563737",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                24
+              ]
+            ],
+            "date-time": "2026-09-24T17:06:47Z",
+            "timestamp": 1790269607000
+          },
+          "score": 0.0,
+          "resource": {
+            "primary": {
+              "URL": "https://ieeexplore.ieee.org/document/11563737/"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2026,
+                9
+              ]
+            ]
+          },
+          "references-count": 136,
+          "journal-issue": {
+            "issue": "9"
+          },
+          "URL": "https://doi.org/10.1109/tse.2026.3703637",
+          "ISSN": [
+            "0098-5589",
+            "1939-3520",
+            "2326-3881"
+          ],
+          "issn-type": [
+            {
+              "value": "0098-5589",
+              "type": "print"
+            },
+            {
+              "value": "1939-3520",
+              "type": "electronic"
+            },
+            {
+              "value": "2326-3881",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                9
+              ]
+            ]
+          }
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                24
+              ]
+            ],
+            "date-time": "2026-09-24T19:59:35Z",
+            "timestamp": 1790279975476,
+            "version": "4.1.0"
+          },
+          "reference-count": 75,
+          "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+          "issue": "9",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2026-09-01T00:00:00Z",
+                "timestamp": 1788220800000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2026-09-01T00:00:00Z",
+                "timestamp": 1788220800000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-029"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2026-09-01T00:00:00Z",
+                "timestamp": 1788220800000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-037"
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "IIEEE Trans. Software Eng."
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2026,
+                9
+              ]
+            ]
+          },
+          "DOI": "10.1109/tse.2026.3701230",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2026,
+                6,
+                8
+              ]
+            ],
+            "date-time": "2026-06-08T19:51:24Z",
+            "timestamp": 1780948284000
+          },
+          "page": "2620-2637",
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "MORTAR: Multi-Turn Metamorphic Testing for LLM-Based Dialogue Systems"
+          ],
+          "prefix": "10.1109",
+          "volume": "52",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0000-0003-0413-640X",
+              "authenticated-orcid": false,
+              "given": "Guoxiang",
+              "family": "Guo",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "Monash University",
+                  "place": [
+                    "Clayton, VIC, Australia"
+                  ],
+                  "department": [
+                    "Faculty of Information Technology"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-1716-690X",
+              "authenticated-orcid": false,
+              "given": "Aldeida",
+              "family": "Aleti",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Monash University",
+                  "place": [
+                    "Clayton, VIC, Australia"
+                  ],
+                  "department": [
+                    "Faculty of Information Technology"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0003-2572-0250",
+              "authenticated-orcid": false,
+              "given": "Neelofar",
+              "family": "Neelofar",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "RMIT University",
+                  "place": [
+                    "Melbourne, VIC, Australia"
+                  ],
+                  "department": [
+                    "School of Computing Technologies"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-5516-9984",
+              "authenticated-orcid": false,
+              "given": "Chakkrit",
+              "family": "Tantithamthavorn",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Monash University",
+                  "place": [
+                    "Clayton, VIC, Australia"
+                  ],
+                  "department": [
+                    "Faculty of Information Technology"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-6264-8548",
+              "authenticated-orcid": false,
+              "given": "Yuanyuan",
+              "family": "Qi",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Monash University",
+                  "place": [
+                    "Clayton, VIC, Australia"
+                  ],
+                  "department": [
+                    "Faculty of Information Technology"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0003-3578-0994",
+              "authenticated-orcid": false,
+              "given": "Tsong Yueh",
+              "family": "Chen",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Swinburne University of Technology",
+                  "place": [
+                    "Hawthorn, VIC, Australia"
+                  ],
+                  "department": [
+                    "School of Science, Computing and Emerging Technologies"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "263",
+          "reference": [
+            {
+              "key": "ref1",
+              "article-title": "ChatGPT"
+            },
+            {
+              "key": "ref2",
+              "article-title": "Ollama documentation"
+            },
+            {
+              "key": "ref3",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3641289"
+            },
+            {
+              "key": "ref4",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICSE-FoSE59343.2023.00009"
+            },
+            {
+              "key": "ref5",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/D18-1259"
+            },
+            {
+              "key": "ref6",
+              "article-title": "Measuring massive multitask language understanding",
+              "author": "Hendrycks",
+              "year": "2020"
+            },
+            {
+              "key": "ref7",
+              "article-title": "ShareGPT Data",
+              "year": "2023"
+            },
+            {
+              "key": "ref8",
+              "article-title": "LLM defenses are not robust to multi-turn human jailbreaks yet",
+              "author": "Li",
+              "year": "2024"
+            },
+            {
+              "key": "ref9",
+              "doi-asserted-by": "crossref",
+              "first-page": "7421",
+              "DOI": "10.18653/v1/2024.acl-long.401",
+              "article-title": "MT-bench-101: A fine-grained benchmark for evaluating large language models in multi-turn dialogues",
+              "volume-title": "Proc. 62nd Annu. Meeting Assoc. Comput. Linguistics (Volume 1: Long Papers)",
+              "author": "Bai",
+              "year": "2024"
+            },
+            {
+              "key": "ref10",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.52202/075280-2020"
+            },
+            {
+              "key": "ref11",
+              "article-title": "On the limitations of fine-tuned judge models for LLM evaluation",
+              "author": "Huang",
+              "year": "2024"
+            },
+            {
+              "key": "ref12",
+              "first-page": "191",
+              "article-title": "Application of metamorphic testing in numerical analysis",
+              "volume-title": "Proc. IASTED Int. Conf. Softw. Eng. (SE)",
+              "author": "Chan",
+              "year": "1998"
+            },
+            {
+              "key": "ref13",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ASE51524.2021.9678670"
+            },
+            {
+              "key": "ref14",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3551349.3556953"
+            },
+            {
+              "key": "ref15",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICST60714.2024.00019"
+            },
+            {
+              "key": "ref16",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1162/tacl_a_00266"
+            },
+            {
+              "key": "ref17",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3597503.3639109"
+            },
+            {
+              "key": "ref18",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICTAI50040.2020.00182"
+            },
+            {
+              "key": "ref19",
+              "article-title": "Evaluating large language models: A comprehensive survey",
+              "author": "Guo",
+              "year": "2023"
+            },
+            {
+              "key": "ref20",
+              "article-title": "DialoGLUE: A natural language understanding benchmark for task-oriented dialogue",
+              "author": "Mehri",
+              "year": "2020"
+            },
+            {
+              "key": "ref21",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3689776"
+            },
+            {
+              "key": "ref22",
+              "first-page": "16028",
+              "article-title": "Leveraging large language models for nlg evaluation: Advances and challenges",
+              "volume-title": "Proc. Conf. Empirical Methods Natural Lang. Process.",
+              "author": "Li",
+              "year": "2024"
+            },
+            {
+              "key": "ref23",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/2024.naacl-long.341"
+            },
+            {
+              "key": "ref24",
+              "article-title": "GSM-Symbolic: Understanding the limitations of mathematical reasoning in large language models",
+              "author": "Mirzadeh",
+              "year": "2024"
+            },
+            {
+              "key": "ref25",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/2024.acl-long.525"
+            },
+            {
+              "key": "ref26",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/2024.emnlp-main.1124"
+            },
+            {
+              "key": "ref27",
+              "article-title": "MINT: Evaluating LLMs in multi-turn interaction with tools and language feedback",
+              "author": "Wang",
+              "year": "2023"
+            },
+            {
+              "key": "ref28",
+              "first-page": "3184",
+              "article-title": "BotChat: Evaluating LLMs’ capabilities of having multi-turn dialogues",
+              "volume-title": "Findings Assoc. Comput. Linguistics: NAACL",
+              "author": "Duan",
+              "year": "2024"
+            },
+            {
+              "key": "ref29",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2016.2532875"
+            },
+            {
+              "key": "ref30",
+              "article-title": "Metamorphic testing: A new approach for generating next test cases",
+              "author": "Chen",
+              "year": "2020"
+            },
+            {
+              "key": "ref31",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3143561"
+            },
+            {
+              "key": "ref32",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2019.2962027"
+            },
+            {
+              "key": "ref33",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3460319.3464829"
+            },
+            {
+              "key": "ref34",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.3390/math9070726"
+            },
+            {
+              "key": "ref35",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1609/aaai.v34i05.6505"
+            },
+            {
+              "key": "ref36",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3759453"
+            },
+            {
+              "key": "ref37",
+              "first-page": "31210",
+              "article-title": "Large language models can be easily distracted by irrelevant context",
+              "volume-title": "Proc. Int. Conf. Mach. Learn.",
+              "author": "Shi",
+              "year": "2023"
+            },
+            {
+              "key": "ref38",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.21236/ada248777"
+            },
+            {
+              "key": "ref39",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1093/jos/ffn003"
+            },
+            {
+              "key": "ref40",
+              "first-page": "17682",
+              "article-title": "MP2D: An automated topic shift dialogue generation framework leveraging knowledge graphs",
+              "volume-title": "Proc. Conf. Empirical Methods in Natural Lang. Process.",
+              "author": "Hwang",
+              "year": "2024"
+            },
+            {
+              "key": "ref41",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1037/10096-006"
+            },
+            {
+              "key": "ref42",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/D19-1191"
+            },
+            {
+              "key": "ref43",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1017/S0140525X04000056"
+            },
+            {
+              "key": "ref44",
+              "first-page": "8121",
+              "article-title": "IterCQR: Iterative conversational query reformulation with retrieval guidance",
+              "volume-title": "Proc. Conf. North Amer. Chapter Assoc. Comput. Linguistics, Human Lang. Technologies (Volume 1: Long Papers)",
+              "author": "Jang",
+              "year": "2024"
+            },
+            {
+              "key": "ref45",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/D19-1605"
+            },
+            {
+              "key": "ref46",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.inffus.2020.01.010"
+            },
+            {
+              "key": "ref47",
+              "article-title": "Qwen2 technical report",
+              "author": "Yang",
+              "year": "2024"
+            },
+            {
+              "key": "ref48",
+              "article-title": "Mistral-7b-instruct-v0.3 model",
+              "year": "2024"
+            },
+            {
+              "key": "ref49",
+              "article-title": "Llama 3 model card",
+              "year": "2024"
+            },
+            {
+              "key": "ref50",
+              "article-title": "Gemma",
+              "author": "Team",
+              "year": "2024"
+            },
+            {
+              "key": "ref51",
+              "article-title": "GPT-5 Nano (model documentation)"
+            },
+            {
+              "key": "ref52",
+              "article-title": "GPT-5 (model documentation)"
+            },
+            {
+              "key": "ref53",
+              "article-title": "The curious case of neural text degeneration",
+              "author": "Holtzman",
+              "year": "2019"
+            },
+            {
+              "key": "ref54",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3571730"
+            },
+            {
+              "key": "ref55",
+              "article-title": "Groq is fast AI interface"
+            },
+            {
+              "key": "ref56",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/2024.emnlp-industry.103"
+            },
+            {
+              "key": "ref57",
+              "article-title": "MTEB: Massive text embedding benchmark",
+              "author": "Muennighoff",
+              "year": "2022"
+            },
+            {
+              "key": "ref58",
+              "article-title": "Self-consistency improves chain of thought reasoning in language models",
+              "volume-title": "Proc. 11th Int. Conf. Learn. Representations",
+              "author": "Wang",
+              "year": "2023"
+            },
+            {
+              "key": "ref59",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1162/tacl_a_00737"
+            },
+            {
+              "key": "ref60",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3744916.3773170"
+            },
+            {
+              "key": "ref61",
+              "article-title": "SWE-bench: Can language models resolve real-world GitHub Issues?",
+              "author": "Jimenez",
+              "year": "2023"
+            },
+            {
+              "key": "ref62",
+              "first-page": "1877",
+              "article-title": "Language models are few-shot learners",
+              "volume-title": "Proc. Adv. Neural Inf. Process. Syst.",
+              "volume": "33",
+              "author": "Brown",
+              "year": "2020"
+            },
+            {
+              "key": "ref63",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.52202/068431-1800"
+            },
+            {
+              "key": "ref64",
+              "article-title": "As simple as fine-tuning: LLM alignment via bidirectional negative feedback loss",
+              "volume-title": "Proc. 13th Int. Conf. Learn. Representations",
+              "author": "Mao",
+              "year": "2025"
+            },
+            {
+              "key": "ref65",
+              "article-title": "Negative preference optimization: From catastrophic collapse to effective unlearning",
+              "volume-title": "Proc. 1st Conf. Lang. Modeling",
+              "author": "Zhang",
+              "year": "2024"
+            },
+            {
+              "key": "ref66",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/D16-1264"
+            },
+            {
+              "key": "ref67",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/P18-2124"
+            },
+            {
+              "key": "ref68",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/2020.acl-main.130"
+            },
+            {
+              "key": "ref69",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/2025.findings-acl.306"
+            },
+            {
+              "key": "ref70",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.14778/3636218.3636236"
+            },
+            {
+              "key": "ref71",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2015.2478001"
+            },
+            {
+              "key": "ref72",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.jss.2010.11.920"
+            },
+            {
+              "key": "ref73",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICSE48619.2023.00200"
+            },
+            {
+              "key": "ref74",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2666356.2594334"
+            },
+            {
+              "key": "ref75",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s11219-020-09544-9"
+            }
+          ],
+          "container-title": [
+            "IEEE Transactions on Software Engineering"
+          ],
+          "link": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx8/32/11698849/11554553.pdf?arnumber=11554553",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                24
+              ]
+            ],
+            "date-time": "2026-09-24T19:09:40Z",
+            "timestamp": 1790276980000
+          },
+          "score": 0.0,
+          "resource": {
+            "primary": {
+              "URL": "https://ieeexplore.ieee.org/document/11554553/"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2026,
+                9
+              ]
+            ]
+          },
+          "references-count": 75,
+          "journal-issue": {
+            "issue": "9"
+          },
+          "URL": "https://doi.org/10.1109/tse.2026.3701230",
+          "ISSN": [
+            "0098-5589",
+            "1939-3520",
+            "2326-3881"
+          ],
+          "issn-type": [
+            {
+              "value": "0098-5589",
+              "type": "print"
+            },
+            {
+              "value": "1939-3520",
+              "type": "electronic"
+            },
+            {
+              "value": "2326-3881",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                9
+              ]
+            ]
+          }
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                24
+              ]
+            ],
+            "date-time": "2026-09-24T18:06:32Z",
+            "timestamp": 1790273192320,
+            "version": "4.1.0"
+          },
+          "reference-count": 34,
+          "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+          "issue": "9",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2026-09-01T00:00:00Z",
+                "timestamp": 1788220800000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://ieeexplore.ieee.org/Xplorehelp/downloads/license-information/IEEE.html"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2026-09-01T00:00:00Z",
+                "timestamp": 1788220800000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-029"
+            },
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2026-09-01T00:00:00Z",
+                "timestamp": 1788220800000
+              },
+              "content-version": "stm-asf",
+              "delay-in-days": 0,
+              "URL": "https://doi.org/10.15223/policy-037"
+            }
+          ],
+          "funder": [
+            {
+              "name": "National Natural Science Foundation of China",
+              "award": [
+                "62562009"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "62562009"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "https://ror.org/01h0zpd94",
+                  "id-type": "ROR",
+                  "asserted-by": "crossref"
+                }
+              ]
+            },
+            {
+              "name": "Guangxi Natural Science Foundation of China",
+              "award": [
+                "2026GXNSFAA00640946"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "2026GXNSFAA00640946"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "Guangxi Key Lab of Multi-Source Information Mining and Security"
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "IIEEE Trans. Software Eng."
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2026,
+                9
+              ]
+            ]
+          },
+          "DOI": "10.1109/tse.2026.3704180",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2026,
+                6,
+                16
+              ]
+            ],
+            "date-time": "2026-06-16T19:43:42Z",
+            "timestamp": 1781639022000
+          },
+          "page": "2821-2837",
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "Boosting High-Review-Value Warning Line Identification With Unsupervised Line-Level Defect Prediction"
+          ],
+          "prefix": "10.1109",
+          "volume": "52",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0009-0004-3725-735X",
+              "authenticated-orcid": false,
+              "given": "Yufei",
+              "family": "Zhou",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "Guangxi Normal University",
+                  "place": [
+                    "Guilin, China"
+                  ],
+                  "department": [
+                    "Key Lab of Education Blockchain and Intelligent Technology, Ministry of Education"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-5325-9997",
+              "authenticated-orcid": false,
+              "given": "Hao",
+              "family": "Ding",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Guangxi Normal University",
+                  "place": [
+                    "Guilin, China"
+                  ],
+                  "department": [
+                    "Key Lab of Education Blockchain and Intelligent Technology, Ministry of Education"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0009-0003-3518-089X",
+              "authenticated-orcid": false,
+              "given": "Haihua",
+              "family": "Tang",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Guangxi Normal University",
+                  "place": [
+                    "Guilin, China"
+                  ],
+                  "department": [
+                    "Key Lab of Education Blockchain and Intelligent Technology, Ministry of Education"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0009-0003-5189-3304",
+              "authenticated-orcid": false,
+              "given": "Longtao",
+              "family": "Zhu",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Guangxi Normal University",
+                  "place": [
+                    "Guilin, China"
+                  ],
+                  "department": [
+                    "Key Lab of Education Blockchain and Intelligent Technology, Ministry of Education"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-6195-7605",
+              "authenticated-orcid": false,
+              "given": "Zhide",
+              "family": "Zhou",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Guangxi Normal University",
+                  "place": [
+                    "Guilin, China"
+                  ],
+                  "department": [
+                    "Key Lab of Education Blockchain and Intelligent Technology, Ministry of Education"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-1325-6975",
+              "authenticated-orcid": false,
+              "given": "Junyan",
+              "family": "Qian",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Guangxi Normal University",
+                  "place": [
+                    "Guilin, China"
+                  ],
+                  "department": [
+                    "Key Lab of Education Blockchain and Intelligent Technology, Ministry of Education"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "263",
+          "reference": [
+            {
+              "key": "ref1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2006.38"
+            },
+            {
+              "key": "ref7",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2023.3329667"
+            },
+            {
+              "key": "ref8",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2568225.2568269"
+            },
+            {
+              "key": "ref9",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2884781.2884848"
+            },
+            {
+              "key": "ref10",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2020.3023177"
+            },
+            {
+              "key": "ref11",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3582572"
+            },
+            {
+              "key": "ref12",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2022.3144348"
+            },
+            {
+              "key": "ref13",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2970276.2970341"
+            },
+            {
+              "key": "ref14",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3707456"
+            },
+            {
+              "key": "ref15",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10664-023-10439-z"
+            },
+            {
+              "key": "ref16",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2024.3503723"
+            },
+            {
+              "key": "ref17",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/2001420.2001445"
+            },
+            {
+              "key": "ref18",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICSME.2017.51"
+            },
+            {
+              "key": "ref19",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10664-009-9111-2"
+            },
+            {
+              "key": "ref20",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2016.2584050"
+            },
+            {
+              "key": "ref21",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2018.2794977"
+            },
+            {
+              "key": "ref22",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.2307/2090408"
+            },
+            {
+              "key": "ref23",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TKDE.2005.50"
+            },
+            {
+              "key": "ref24",
+              "volume-title": "Nonparametric Statistical Methods",
+              "author": "Hollaner",
+              "year": "2013"
+            },
+            {
+              "key": "ref25",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2022.3156787"
+            },
+            {
+              "key": "ref29",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1062455.1062558"
+            },
+            {
+              "key": "ref30",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICPC52881.2021.00051"
+            },
+            {
+              "key": "ref31",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1287624.1287633"
+            },
+            {
+              "key": "ref32",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/1858996.1859013"
+            },
+            {
+              "key": "ref33",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10664-021-09948-6"
+            },
+            {
+              "key": "ref34",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3510003.3510214"
+            },
+            {
+              "key": "ref35",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1049/ic.2011.0018"
+            },
+            {
+              "key": "ref36",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3238147.3238213"
+            },
+            {
+              "key": "ref37",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/s10515-014-0169-8"
+            },
+            {
+              "key": "ref38",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1016/j.jss.2022.111575"
+            },
+            {
+              "key": "ref39",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3597926.3598056"
+            },
+            {
+              "key": "ref40",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1002/spe.3181"
+            },
+            {
+              "key": "ref42",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3377811.3380380"
+            },
+            {
+              "key": "ref43",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3650212.3680313"
+            }
+          ],
+          "container-title": [
+            "IEEE Transactions on Software Engineering"
+          ],
+          "link": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx8/32/11698849/11568192.pdf?arnumber=11568192",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                24
+              ]
+            ],
+            "date-time": "2026-09-24T17:22:14Z",
+            "timestamp": 1790270534000
+          },
+          "score": 0.0,
+          "resource": {
+            "primary": {
+              "URL": "https://ieeexplore.ieee.org/document/11568192/"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2026,
+                9
+              ]
+            ]
+          },
+          "references-count": 34,
+          "journal-issue": {
+            "issue": "9"
+          },
+          "URL": "https://doi.org/10.1109/tse.2026.3704180",
+          "ISSN": [
+            "0098-5589",
+            "1939-3520",
+            "2326-3881"
+          ],
+          "issn-type": [
+            {
+              "value": "0098-5589",
+              "type": "print"
+            },
+            {
+              "value": "1939-3520",
+              "type": "electronic"
+            },
+            {
+              "value": "2326-3881",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                9
+              ]
+            ]
+          }
+        },
+        {
+          "indexed": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                24
+              ]
+            ],
+            "date-time": "2026-09-24T16:10:35Z",
+            "timestamp": 1790266235502,
+            "version": "4.1.0"
+          },
+          "reference-count": 58,
+          "publisher": "Institute of Electrical and Electronics Engineers (IEEE)",
+          "issue": "9",
+          "license": [
+            {
+              "start": {
+                "date-parts": [
+                  [
+                    2026,
+                    9,
+                    1
+                  ]
+                ],
+                "date-time": "2026-09-01T00:00:00Z",
+                "timestamp": 1788220800000
+              },
+              "content-version": "vor",
+              "delay-in-days": 0,
+              "URL": "https://creativecommons.org/licenses/by/4.0/legalcode"
+            }
+          ],
+          "funder": [
+            {
+              "name": "Swiss National Science Foundation for the PARSED",
+              "award": [
+                "SNF 219294"
+              ],
+              "award-info": [
+                {
+                  "award-number": [
+                    "SNF 219294"
+                  ]
+                }
+              ],
+              "id": [
+                {
+                  "id": "https://ror.org/00yjd3n13",
+                  "id-type": "ROR",
+                  "asserted-by": "crossref"
+                }
+              ]
+            }
+          ],
+          "content-domain": {
+            "domain": [],
+            "crossmark-restriction": false
+          },
+          "short-container-title": [
+            "IIEEE Trans. Software Eng."
+          ],
+          "published-print": {
+            "date-parts": [
+              [
+                2026,
+                9
+              ]
+            ]
+          },
+          "DOI": "10.1109/tse.2026.3703553",
+          "type": "journal-article",
+          "created": {
+            "date-parts": [
+              [
+                2026,
+                6,
+                15
+              ]
+            ],
+            "date-time": "2026-06-15T19:46:54Z",
+            "timestamp": 1781552814000
+          },
+          "page": "2774-2788",
+          "source": "Crossref",
+          "is-referenced-by-count": 0,
+          "title": [
+            "No Resource, No Benchmarks, No Problem? Evaluating and Improving LLMs for Code Generation in No-Resource Languages"
+          ],
+          "prefix": "10.1109",
+          "volume": "52",
+          "author": [
+            {
+              "ORCID": "https://orcid.org/0009-0009-3454-3349",
+              "authenticated-orcid": false,
+              "given": "Alessandro",
+              "family": "Giagnorio",
+              "sequence": "first",
+              "affiliation": [
+                {
+                  "name": "Università della Svizzera italiana",
+                  "place": [
+                    "Lugano, Switzerland"
+                  ],
+                  "department": [
+                    "SEART @ Software Institute"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0001-5501-9225",
+              "authenticated-orcid": false,
+              "given": "Alberto",
+              "family": "Martin-Lopez",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Universidad de Sevilla",
+                  "place": [
+                    "Sevilla, Spain"
+                  ],
+                  "department": [
+                    "SCORE Lab, I3US Institute"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            },
+            {
+              "ORCID": "https://orcid.org/0000-0002-2216-3148",
+              "authenticated-orcid": false,
+              "given": "Gabriele",
+              "family": "Bavota",
+              "sequence": "additional",
+              "affiliation": [
+                {
+                  "name": "Università della Svizzera italiana",
+                  "place": [
+                    "Lugano, Switzerland"
+                  ],
+                  "department": [
+                    "SEART @ Software Institute"
+                  ]
+                }
+              ],
+              "role": [
+                {
+                  "vocabulary": "crossref",
+                  "role": "author"
+                }
+              ]
+            }
+          ],
+          "member": "263",
+          "reference": [
+            {
+              "key": "ref1",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.52202/075280-0377"
+            },
+            {
+              "key": "ref2",
+              "first-page": "870",
+              "article-title": "JavaBench: A benchmark of object-oriented code generation for evaluating large language models",
+              "volume-title": "Proc. 39th IEEE/ACM Int. Conf. Automat. Softw. Eng.",
+              "author": "Cao",
+              "year": "2024"
+            },
+            {
+              "key": "ref3",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/2024.acl-long.269"
+            },
+            {
+              "key": "ref4",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3689735"
+            },
+            {
+              "key": "ref5",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2023.3267446"
+            },
+            {
+              "key": "ref6",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/ICPC66645.2025.00058"
+            },
+            {
+              "key": "ref7",
+              "article-title": "GitHub Copilot – Your AI pair programmer",
+              "year": "2024"
+            },
+            {
+              "key": "ref8",
+              "article-title": "ChatGPT",
+              "year": "2026"
+            },
+            {
+              "key": "ref9",
+              "article-title": "Gleam language",
+              "year": "2026"
+            },
+            {
+              "key": "ref10",
+              "doi-asserted-by": "crossref",
+              "first-page": "79",
+              "DOI": "10.1145/3643795.3648376",
+              "article-title": "MoonBit: Explore the design of an AI-friendly programming language",
+              "volume-title": "Proc. 1st Int. Workshop Large Lang. Models Code",
+              "author": "Fei",
+              "year": "2024"
+            },
+            {
+              "key": "ref11",
+              "article-title": "Evaluating large language models trained on code",
+              "author": "Chen",
+              "year": "2021"
+            },
+            {
+              "key": "ref12",
+              "article-title": "Program synthesis with large language models",
+              "author": "Austin",
+              "year": "2021"
+            },
+            {
+              "key": "ref13",
+              "first-page": "87704",
+              "article-title": "McEval: Massively multilingual code evaluation",
+              "volume-title": "Proc. 13th Int. Conf. Learn. Representations",
+              "author": "Chai",
+              "year": "2025"
+            },
+            {
+              "key": "ref14",
+              "article-title": "Gpt-4o",
+              "year": "2026"
+            },
+            {
+              "key": "ref15",
+              "article-title": "o3-mini",
+              "year": "2026"
+            },
+            {
+              "key": "ref16",
+              "article-title": "Qwen2.5 coder 32b instruct",
+              "year": "2026"
+            },
+            {
+              "key": "ref17",
+              "article-title": "Qwen3 32b",
+              "year": "2026"
+            },
+            {
+              "key": "ref18",
+              "article-title": "Balancing continuous pre-training and instruction fine-tuning: Optimizing instruction-following in LLMs",
+              "author": "Jindal",
+              "year": "2024"
+            },
+            {
+              "key": "ref19",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/2025.emnlp-main.131"
+            },
+            {
+              "key": "ref20",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3650105.3652289"
+            },
+            {
+              "key": "ref21",
+              "first-page": "54107",
+              "article-title": "SWE-Bench: Can language models resolve real-world GitHub issues?",
+              "volume-title": "Proc. 12th Int. Conf. Learn. Representations",
+              "author": "Jimenez",
+              "year": "2024"
+            },
+            {
+              "key": "ref22",
+              "article-title": "Qwen2.5 coder 32b",
+              "year": "2026"
+            },
+            {
+              "key": "ref23",
+              "article-title": "Qwen3 8b base",
+              "year": "2026"
+            },
+            {
+              "key": "ref24",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/2025.emnlp-main.1025"
+            },
+            {
+              "key": "ref25",
+              "article-title": "Open r1: A fully open reproduction of deepseek-r1",
+              "author": "Face",
+              "year": "2026"
+            },
+            {
+              "key": "ref26",
+              "article-title": "Replication package",
+              "year": "2026"
+            },
+            {
+              "key": "ref27",
+              "article-title": "OpenAI text embedding",
+              "year": "2026"
+            },
+            {
+              "key": "ref28",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/tbdata.2025.3618474"
+            },
+            {
+              "key": "ref29",
+              "article-title": "Gpt-4o-mini",
+              "year": "2026"
+            },
+            {
+              "key": "ref30",
+              "article-title": "LoRA: Low-rank adaptation of large language models",
+              "volume-title": "Proc. Int. Conf. Learn. Representations",
+              "author": "Hu",
+              "year": "2022"
+            },
+            {
+              "key": "ref31",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3714461"
+            },
+            {
+              "key": "ref32",
+              "article-title": "Decoupled weight decay regularization",
+              "volume-title": "Proc. 7th Int. Conf. Learn. Representations (ICLR)",
+              "author": "Loshchilov",
+              "year": "2019"
+            },
+            {
+              "key": "ref33",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1007/BF02295996"
+            },
+            {
+              "issue": "1",
+              "key": "ref34",
+              "doi-asserted-by": "crossref",
+              "first-page": "289",
+              "DOI": "10.1111/j.2517-6161.1995.tb02031.x",
+              "article-title": "Controlling the false discovery rate: A practical and powerful approach to multiple testing",
+              "volume": "57",
+              "author": "Yoav",
+              "year": "1995",
+              "journal-title": "J. Roy. Statist. Soc. Ser. B (Methodol.)"
+            },
+            {
+              "key": "ref35",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3524610.3527917"
+            },
+            {
+              "key": "ref36",
+              "article-title": "Efficient guided generation for large language models",
+              "author": "Willard",
+              "year": "2023"
+            },
+            {
+              "key": "ref37",
+              "article-title": "XGrammar: Flexible and efficient structured generation engine for large language models",
+              "volume-title": "Proc. Mach. Learn. Syst.",
+              "volume": "7",
+              "author": "Dong",
+              "year": "2025"
+            },
+            {
+              "key": "ref38",
+              "article-title": "Qwen 2.5 coder: Supported languages",
+              "year": "2026"
+            },
+            {
+              "key": "ref39",
+              "article-title": "Qwen 3: Supported languages",
+              "year": "2026"
+            },
+            {
+              "key": "ref40",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/TSE.2025.3586082"
+            },
+            {
+              "key": "ref41",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3468264.3468588"
+            },
+            {
+              "key": "ref42",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1111/j.1468-2958.2004.tb00738.x"
+            },
+            {
+              "key": "ref43",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/SCAM63643.2024.00028"
+            },
+            {
+              "key": "ref44",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3744916.3764576"
+            },
+            {
+              "key": "ref45",
+              "article-title": "MoonBit website",
+              "year": "2025"
+            },
+            {
+              "key": "ref46",
+              "article-title": "Starcoder: May the source be with you!",
+              "volume-title": "Trans. Mach. Learn. Res.",
+              "author": "Li",
+              "year": "2023"
+            },
+            {
+              "key": "ref47",
+              "first-page": "27168",
+              "article-title": "WizardCoder: Empowering code large language models with evol-instruct",
+              "volume-title": "Proc. 12th Int. Conf. Learn. Representations",
+              "author": "Luo",
+              "year": "2024"
+            },
+            {
+              "key": "ref48",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.52202/075280-0943"
+            },
+            {
+              "key": "ref49",
+              "first-page": "66602",
+              "article-title": "BigCodeBench: Benchmarking code generation with diverse function calls and complex instructions",
+              "volume-title": "Proc. 13th Int. Conf. Learn. Representations (ICLR)",
+              "author": "Zhuo",
+              "year": "2025"
+            },
+            {
+              "key": "ref50",
+              "article-title": "Multi-lingual evaluation of code generation models",
+              "volume-title": "Proc. 11th Int. Conf. Learn. Representations (ICLR)",
+              "author": "Athiwaratkun",
+              "year": "2023"
+            },
+            {
+              "key": "ref51",
+              "first-page": "26619",
+              "article-title": "Measuring the impact of programming language distribution",
+              "volume-title": "Proc. Int. Conf. Mach. Learn.",
+              "author": "Orlanski",
+              "year": "2023"
+            },
+            {
+              "key": "ref52",
+              "first-page": "10",
+              "article-title": "Code generation for niche programming languages with large language models",
+              "volume-title": "Proc. Softw. Eng.–Companion Proc.",
+              "author": "Kogler",
+              "year": "2025"
+            },
+            {
+              "key": "ref53",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3770084"
+            },
+            {
+              "key": "ref54",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3510003.3510049"
+            },
+            {
+              "key": "ref55",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/2024.acl-long.802"
+            },
+            {
+              "key": "ref56",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1109/CGO.2004.1281665"
+            },
+            {
+              "key": "ref57",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.18653/v1/2024.emnlp-main.1199"
+            },
+            {
+              "key": "ref58",
+              "doi-asserted-by": "publisher",
+              "DOI": "10.1145/3640310.3674089"
+            }
+          ],
+          "container-title": [
+            "IEEE Transactions on Software Engineering"
+          ],
+          "link": [
+            {
+              "URL": "http://xplorestaging.ieee.org/ielx8/32/11698849/11563597.pdf?arnumber=11563597",
+              "content-type": "unspecified",
+              "content-version": "vor",
+              "intended-application": "similarity-checking"
+            }
+          ],
+          "deposited": {
+            "date-parts": [
+              [
+                2026,
+                9,
+                24
+              ]
+            ],
+            "date-time": "2026-09-24T15:36:03Z",
+            "timestamp": 1790264163000
+          },
+          "score": 0.0,
+          "resource": {
+            "primary": {
+              "URL": "https://ieeexplore.ieee.org/document/11563597/"
+            }
+          },
+          "issued": {
+            "date-parts": [
+              [
+                2026,
+                9
+              ]
+            ]
+          },
+          "references-count": 58,
+          "journal-issue": {
+            "issue": "9"
+          },
+          "URL": "https://doi.org/10.1109/tse.2026.3703553",
+          "ISSN": [
+            "0098-5589",
+            "1939-3520",
+            "2326-3881"
+          ],
+          "issn-type": [
+            {
+              "value": "0098-5589",
+              "type": "print"
+            },
+            {
+              "value": "1939-3520",
+              "type": "electronic"
+            },
+            {
+              "value": "2326-3881",
+              "type": "electronic"
+            }
+          ],
+          "published": {
+            "date-parts": [
+              [
+                2026,
+                9
+              ]
+            ]
+          }
+        }
+      ],
+      "items-per-page": 5,
+      "query": {
+        "start-index": 0,
+        "search-terms": null
+      }
+    }
+  }
+}

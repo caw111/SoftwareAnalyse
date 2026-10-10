@@ -1,0 +1,726 @@
+[
+  {
+    "id": "award:2023:Z-102-1-01",
+    "type": "award",
+    "title": "拓扑电子材料计算预测",
+    "authors": [
+      "方忠",
+      "戴希",
+      "翁红明",
+      "余睿",
+      "王志俊"
+    ],
+    "contributors": [
+      {
+        "name": "方忠",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院物理研究所"
+      },
+      {
+        "name": "戴希",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院物理研究所"
+      },
+      {
+        "name": "翁红明",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院物理研究所"
+      },
+      {
+        "name": "余睿",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院物理研究所"
+      },
+      {
+        "name": "王志俊",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院物理研究所"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-102-1-01",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-102-1-01",
+        "table_row_number": 1
+      },
+      "raw_cells": [
+        "1",
+        "Z-102-1-01",
+        "拓扑电子材料计算预测",
+        "方 忠（中国科学院物理研究所） 戴 希（中国科学院物理研究所） 翁红明（中国科学院物理研究所） 余 睿（中国科学院物理研究所） 王志俊（中国科学院物理研究所）",
+        "中国科学院"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-102-1-01",
+      "award_grade": "一等奖",
+      "nominator": "中国科学院",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-101-2-01",
+    "type": "award",
+    "title": "三维流形的有限复叠",
+    "authors": [
+      "刘毅"
+    ],
+    "contributors": [
+      {
+        "name": "刘毅",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "北京大学"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-101-2-01",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-101-2-01",
+        "table_row_number": 1
+      },
+      "raw_cells": [
+        "1",
+        "Z-101-2-01",
+        "三维流形的有限复叠",
+        "刘 毅（北京大学）",
+        "田 刚"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-101-2-01",
+      "award_grade": "二等奖",
+      "nominator": "田 刚",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-101-2-02",
+    "type": "award",
+    "title": "弱观测成像反问题的L（1/2）理论与自适应正则化方法",
+    "authors": [
+      "徐宗本",
+      "孙剑",
+      "孟德宇",
+      "杨燕"
+    ],
+    "contributors": [
+      {
+        "name": "徐宗本",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "西安交通大学"
+      },
+      {
+        "name": "孙剑",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "西安交通大学"
+      },
+      {
+        "name": "孟德宇",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "西安交通大学"
+      },
+      {
+        "name": "杨燕",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "西安交通大学"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-101-2-02",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-101-2-02",
+        "table_row_number": 2
+      },
+      "raw_cells": [
+        "2",
+        "Z-101-2-02",
+        "弱观测成像反问题的L（1/2）理论与自适应正则化方法",
+        "徐宗本（西安交通大学） 孙 剑（西安交通大学） 孟德宇（西安交通大学） 杨 燕（西安交通大学）",
+        "方复全 汤 涛 郑海荣"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-101-2-02",
+      "award_grade": "二等奖",
+      "nominator": "方复全 汤 涛 郑海荣",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-101-2-03",
+    "type": "award",
+    "title": "数值几何不变量在双有理变换下的变化",
+    "authors": [
+      "胡建勋",
+      "李卫平"
+    ],
+    "contributors": [
+      {
+        "name": "胡建勋",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中山大学"
+      },
+      {
+        "name": "李卫平",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "香港科技大学"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-101-2-03",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-101-2-03",
+        "table_row_number": 3
+      },
+      "raw_cells": [
+        "3",
+        "Z-101-2-03",
+        "数值几何不变量在双有理变换下的变化",
+        "胡建勋（中山大学） 李卫平（香港科技大学）",
+        "教育部"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-101-2-03",
+      "award_grade": "二等奖",
+      "nominator": "教育部",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-102-2-01",
+    "type": "award",
+    "title": "悬链线光学",
+    "authors": [
+      "罗先刚",
+      "蒲明博",
+      "李雄",
+      "马晓亮",
+      "郭迎辉"
+    ],
+    "contributors": [
+      {
+        "name": "罗先刚",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院光电技术研究所"
+      },
+      {
+        "name": "蒲明博",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院光电技术研究所"
+      },
+      {
+        "name": "李雄",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院光电技术研究所"
+      },
+      {
+        "name": "马晓亮",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院光电技术研究所"
+      },
+      {
+        "name": "郭迎辉",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院光电技术研究所"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-102-2-01",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-102-2-01",
+        "table_row_number": 4
+      },
+      "raw_cells": [
+        "4",
+        "Z-102-2-01",
+        "悬链线光学",
+        "罗先刚（中国科学院光电技术研究所） 蒲明博（中国科学院光电技术研究所） 李 雄（中国科学院光电技术研究所） 马晓亮（中国科学院光电技术研究所） 郭迎辉（中国科学院光电技术研究所）",
+        "四川省"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-102-2-01",
+      "award_grade": "二等奖",
+      "nominator": "四川省",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-102-2-02",
+    "type": "award",
+    "title": "“四夸克物质”Zc（3900）的发现",
+    "authors": [
+      "苑长征",
+      "朱科军",
+      "刘智青",
+      "李卫东",
+      "平荣刚"
+    ],
+    "contributors": [
+      {
+        "name": "苑长征",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院高能物理研究所"
+      },
+      {
+        "name": "朱科军",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院高能物理研究所"
+      },
+      {
+        "name": "刘智青",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院高能物理研究所"
+      },
+      {
+        "name": "李卫东",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院高能物理研究所"
+      },
+      {
+        "name": "平荣刚",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院高能物理研究所"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-102-2-02",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-102-2-02",
+        "table_row_number": 5
+      },
+      "raw_cells": [
+        "5",
+        "Z-102-2-02",
+        "“四夸克物质”Zc（3900）的发现",
+        "苑长征（中国科学院高能物理研究所） 朱科军（中国科学院高能物理研究所） 刘智青（中国科学院高能物理研究所） 李卫东（中国科学院高能物理研究所） 平荣刚（中国科学院高能物理研究所）",
+        "中国科学院"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-102-2-02",
+      "award_grade": "二等奖",
+      "nominator": "中国科学院",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-102-2-03",
+    "type": "award",
+    "title": "铁基和镍基超导机理问题研究",
+    "authors": [
+      "闻海虎",
+      "杨欢",
+      "祝熙宇",
+      "王震宇",
+      "杜增义"
+    ],
+    "contributors": [
+      {
+        "name": "闻海虎",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "南京大学"
+      },
+      {
+        "name": "杨欢",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "南京大学"
+      },
+      {
+        "name": "祝熙宇",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "南京大学"
+      },
+      {
+        "name": "王震宇",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "南京大学"
+      },
+      {
+        "name": "杜增义",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "南京大学"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-102-2-03",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-102-2-03",
+        "table_row_number": 6
+      },
+      "raw_cells": [
+        "6",
+        "Z-102-2-03",
+        "铁基和镍基超导机理问题研究",
+        "闻海虎（南京大学） 杨 欢（南京大学） 祝熙宇（南京大学） 王震宇（南京大学） 杜增义（南京大学）",
+        "教育部"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-102-2-03",
+      "award_grade": "二等奖",
+      "nominator": "教育部",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-103-2-01",
+    "type": "award",
+    "title": "分子压电体的铁电化学设计",
+    "authors": [
+      "熊仁根",
+      "游雨蒙",
+      "廖伟强",
+      "汤渊源",
+      "叶恒云"
+    ],
+    "contributors": [
+      {
+        "name": "熊仁根",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "东南大学"
+      },
+      {
+        "name": "游雨蒙",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "东南大学"
+      },
+      {
+        "name": "廖伟强",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "南昌大学"
+      },
+      {
+        "name": "汤渊源",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "南昌大学"
+      },
+      {
+        "name": "叶恒云",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "东南大学"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-103-2-01",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-103-2-01",
+        "table_row_number": 7
+      },
+      "raw_cells": [
+        "7",
+        "Z-103-2-01",
+        "分子压电体的铁电化学设计",
+        "熊仁根（东南大学） 游雨蒙（东南大学） 廖伟强（南昌大学） 汤渊源（南昌大学） 叶恒云（东南大学）",
+        "教育部"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-103-2-01",
+      "award_grade": "二等奖",
+      "nominator": "教育部",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-103-2-02",
+    "type": "award",
+    "title": "氮化碳光催化",
+    "authors": [
+      "王心晨",
+      "张金水",
+      "喻志阳",
+      "张贵刚",
+      "付贤智"
+    ],
+    "contributors": [
+      {
+        "name": "王心晨",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "福州大学"
+      },
+      {
+        "name": "张金水",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "福州大学"
+      },
+      {
+        "name": "喻志阳",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "福州大学"
+      },
+      {
+        "name": "张贵刚",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "福州大学"
+      },
+      {
+        "name": "付贤智",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "福州大学"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-103-2-02",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-103-2-02",
+        "table_row_number": 8
+      },
+      "raw_cells": [
+        "8",
+        "Z-103-2-02",
+        "氮化碳光催化",
+        "王心晨（福州大学） 张金水（福州大学） 喻志阳（福州大学） 张贵刚（福州大学） 付贤智（福州大学）",
+        "福建省"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-103-2-02",
+      "award_grade": "二等奖",
+      "nominator": "福建省",
+      "award_ceremony_date": null
+    }
+  },
+  {
+    "id": "award:2023:Z-103-2-03",
+    "type": "award",
+    "title": "碳化钼催化剂上水的低温活化和制氢过程",
+    "authors": [
+      "马丁",
+      "林丽利",
+      "石川",
+      "周武",
+      "张晓"
+    ],
+    "contributors": [
+      {
+        "name": "马丁",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "北京大学"
+      },
+      {
+        "name": "林丽利",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "北京大学"
+      },
+      {
+        "name": "石川",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "大连理工大学"
+      },
+      {
+        "name": "周武",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "中国科学院大学"
+      },
+      {
+        "name": "张晓",
+        "role": "award_contributor",
+        "role_label": "主要完成人",
+        "affiliation": "大连理工大学"
+      }
+    ],
+    "date": "2023",
+    "date_kind": "award_year",
+    "date_precision": "year",
+    "source_record_id": "2023:Z-103-2-03",
+    "source_name": "中华人民共和国科学技术部",
+    "source_url": "https://www.most.gov.cn/cxfw/kjjlcx/kjjl2023/202406/t20240624_191176.html",
+    "source_published_date": "2024-06-24",
+    "fetched_at_utc": "2026-10-01T13:39:23.081960+00:00",
+    "evidence": {
+      "file": "raw/award_list.html",
+      "sha256": "31381f40170382d9982a833e34a5a35f4d0fdff211b7b6f91ac21825450567b5",
+      "locator": {
+        "project_code": "Z-103-2-03",
+        "table_row_number": 9
+      },
+      "raw_cells": [
+        "9",
+        "Z-103-2-03",
+        "碳化钼催化剂上水的低温活化和制氢过程",
+        "马 丁（北京大学） 林丽利（北京大学） 石 川（大连理工大学） 周 武（中国科学院大学） 张 晓（大连理工大学）",
+        "教育部"
+      ]
+    },
+    "missing_fields": [
+      "award_ceremony_date"
+    ],
+    "details": {
+      "award_name": "国家自然科学奖",
+      "award_year": 2023,
+      "project_code": "Z-103-2-03",
+      "award_grade": "二等奖",
+      "nominator": "教育部",
+      "award_ceremony_date": null
+    }
+  }
+]
