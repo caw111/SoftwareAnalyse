@@ -1,0 +1,20 @@
+stateDiagram-v2
+    [*] --> Processing
+    state "申请处理中" as Processing {
+        [*] --> DRAFT
+        DRAFT --> PENDING_VERIFICATION: 提交有效材料
+        PENDING_VERIFICATION --> VERIFYING: 开始检查
+        VERIFYING --> PENDING_VERIFICATION: 暂时验证失败
+        VERIFYING --> NEED_MORE_INFO: 材料可补正
+        VERIFYING --> PENDING_REVIEW: 必要检查通过
+        PENDING_REVIEW --> UNDER_REVIEW: 管理员领取
+        UNDER_REVIEW --> PENDING_REVIEW: 审核占用释放
+        UNDER_REVIEW --> NEED_MORE_INFO: 要求补充
+        NEED_MORE_INFO --> PENDING_VERIFICATION: 新材料版本重提
+    }
+    Processing --> WITHDRAWN: 本人撤回且尚未终审
+    UNDER_REVIEW --> APPROVED: 审核通过且授权无冲突
+    UNDER_REVIEW --> REJECTED: 审核驳回并说明理由
+    APPROVED --> [*]
+    REJECTED --> [*]
+    WITHDRAWN --> [*]
