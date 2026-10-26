@@ -1,0 +1,7 @@
+{"kind":"deck","id":"pr/ubax0a","name":"Deck"}
+{"kind":"layout","layoutId":"d40fce99-095d-4664-b67f-3121fab76fbe","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"c4fef891-b9f3-427c-95ce-5f0047f8aa8f","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/5snzeh","slide":1,"title":"学术成果分享平台：需求调研与建模","textShapes":1}
+{"kind":"textbox","id":"sh/dgni187a","slide":1,"text":"学术成果分享平台：需求调研与建模","textPreview":"学术成果分享平台：需求调研与建模","textChars":16,"textLines":1,"bbox":[80,60,1100,100]}
+{"kind":"table","id":"tb/z6xwz2ho","slide":1,"name":"","rows":2,"cols":2,"preview":"任务 | 目标","bbox":[80,200,1000,200]}
+{"kind":"notes","id":"nt/5snzeh","slide":1,"text":""}

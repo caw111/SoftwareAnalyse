@@ -1,0 +1,10 @@
+import {Presentation,PresentationFile} from '@oai/artifact-tool';
+import fs from 'node:fs/promises';
+const p=Presentation.create({slideSize:{width:1280,height:720}});
+const s=p.slides.add();s.background.fill='#FFFFFF';
+const t=s.shapes.add({geometry:'textbox',position:{left:80,top:60,width:1100,height:100},fill:'none',line:{fill:'none',width:0}});t.text='学术成果分享平台：需求调研与建模';t.text.style={typeface:'Microsoft YaHei',fontSize:42,color:'#243E38'};
+const table=s.tables.add({rows:2,columns:2,left:80,top:200,width:1000,height:200,values:[['任务','目标'],['门户认领','可信身份和成果归属']]});
+table.cells.block({row:0,column:0,rowCount:2,columnCount:2}).assign({textStyle:{typeface:'Microsoft YaHei',fontSize:25,color:'#243E38'},margins:{left:12,right:12,top:12,bottom:12}});
+await fs.writeFile('.report-build/probe.png',new Uint8Array(await (await p.export({slide:s,format:'png',scale:1})).arrayBuffer()));
+await (await PresentationFile.exportPptx(p)).save('.report-build/probe.pptx');
+console.log('probe complete');
