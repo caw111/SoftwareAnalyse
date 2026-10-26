@@ -149,5 +149,14 @@
       "sha256": "04633e0e722da0c792ff6df1132e1ef66a9db684a9f39fe0ec3d777ca6662b7a"
     }
   ],
-  "backup_bundle": "C:\\Users\\RoyCai\\Desktop\\2026秋季\\软件系统分析与设计\\历史版本\\20261026_Group2整理前\\Group2整理前.bundle"
+  "backup_bundle": "C:\\Users\\RoyCai\\Desktop\\2026秋季\\软件系统分析与设计\\历史版本\\20261026_Group2整理前\\Group2整理前.bundle",
+  "supplements": [
+    {
+      "original": "../《软件系统分析与设计》实践任务书（一）学术成果分享平台-v1(2).pdf",
+      "retained": "docs/参考材料/课程实践任务书.pdf",
+      "sha256": "5a9f6cf492ef4eb23741b4ee5d979f923b56396f793fc967f0414ded28e4b9c0",
+      "added": "2026-10-26",
+      "purpose": "核对需求分析阶段交付要求"
+    }
+  ]
 }
