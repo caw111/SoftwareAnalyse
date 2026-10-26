@@ -1,0 +1,153 @@
+{
+  "branch": "Group2",
+  "source_commit": "62fb8e69e949156ebea83bb47d811f60b95d121a",
+  "date": "2026-10-26",
+  "files": [
+    {
+      "original": "docs\\需求调研报告.md",
+      "retained": "docs\\需求调研报告.md",
+      "sha256": "BB09F29627EBD21941C2FF8482F9A83B4F575FF17B94C179B1FD3059BC35BC73"
+    },
+    {
+      "original": "docs\\系统需求规格说明书_SRS.md",
+      "retained": "docs\\系统需求规格说明书_SRS.md",
+      "sha256": "9E07DDE09C0D08537E7EC215479AF07E53D6A70E99556704C20F6B1B8F214240"
+    },
+    {
+      "original": "docs\\核心模块开发规范_SPEC.md",
+      "retained": "docs\\核心模块开发规范_SPEC.md",
+      "sha256": "441DDC628DE9206DAE5971C405F072BA412FDB3B94E970ECA83D113F424D2C10"
+    },
+    {
+      "original": "scripts\\学术成果检索与分享平台_核心模块开发规范_SPEC_v0.1_会前评审稿.md",
+      "retained": "docs\\参考材料\\SPEC_v0.1_会前评审稿.md",
+      "sha256": "EE80B6AE4C8962A54A2B8BB46D850F0772231BE9C6CE9E2B39A7A2156E56FBB8"
+    },
+    {
+      "original": "scripts\\学术成果分享平台_数据源调研与数据密集型逻辑规范.docx",
+      "retained": "docs\\参考材料\\数据源与数据密集型逻辑规范_原稿.docx",
+      "sha256": "56DD025328F03B9DC0F79086447EF29214380A99FB3B62F6284FEAFC66742E75"
+    },
+    {
+      "original": "Submit\\整理依据_课堂展示与提交要求.pdf",
+      "retained": "docs\\参考材料\\课堂展示与提交要求_历史通知.pdf",
+      "sha256": "6469546E5A6F8C5FD55A7F4E80364157D809055E8A08A8972C560D1A17821C56"
+    },
+    {
+      "original": "Submit\\作业2_需求建模成果\\07-AI使用声明-9组-1011101011.md",
+      "retained": "docs\\AI使用声明_前期材料.md",
+      "sha256": "E94E2C6C13D032E1473771E0D23587459AC5145A69898049F5D9D0F992085D76"
+    },
+    {
+      "original": "images\\01_科研人员用例图.drawio",
+      "retained": "image\\01_科研人员用例图.drawio",
+      "sha256": "280447E3DE76FC76653DB26D8DAB849B782CA3C14072CBBDCD4FEF90D99C399C"
+    },
+    {
+      "original": "images\\01_科研人员用例图.drawio.png",
+      "retained": "image\\01_科研人员用例图.drawio.png",
+      "sha256": "3328A928E5B849E5E93929D1FCB4E24C00DD0D56E5CB66C5305B533CBBCF7986"
+    },
+    {
+      "original": "images\\普通用户用例图.drawio",
+      "retained": "image\\普通用户用例图.drawio",
+      "sha256": "FCCFBBB44E0D34F34E474226E8E8832F1ED68392D2ECC402185C8285D007CD08"
+    },
+    {
+      "original": "images\\普通用户用例图.drawio.png",
+      "retained": "image\\普通用户用例图.drawio.png",
+      "sha256": "697D09AF2EED58F48586D4475B3C62381E9FA41B3E402CBD0009D172F98AC8AB"
+    },
+    {
+      "original": "images\\普通用户活动图.drawio",
+      "retained": "image\\普通用户活动图.drawio",
+      "sha256": "102AEE3AA4CA668251D68940FE0988A0FDB748221C7E6295A74980935662E4EF"
+    },
+    {
+      "original": "images\\普通用户活动图.drawio.png",
+      "retained": "image\\普通用户活动图.drawio.png",
+      "sha256": "67770F109B247CD0E183609178830DDD3E3F7ECD3A8A0B8094563299B0EC8A7A"
+    },
+    {
+      "original": "images\\作者检索详细活动图.drawio",
+      "retained": "image\\作者检索详细活动图.drawio",
+      "sha256": "D3948B7DC0721436A34E7273ADD2EA1E33B34BD86A70D3E69F3A722B53773197"
+    },
+    {
+      "original": "images\\作者检索详细活动图.drawio.png",
+      "retained": "image\\作者检索详细活动图.drawio.png",
+      "sha256": "63A63BD555D0FA85843C5C671B69DDB81D41ED7F46F9445F4C4D5DC605F17EDB"
+    },
+    {
+      "original": "images\\academic_platform_usecase.drawio",
+      "retained": "image\\academic_platform_usecase.drawio",
+      "sha256": "276C26A8140AF599DEA3CE1E9C10BF2B3FE88BC8448767EB1595A789E2126407"
+    },
+    {
+      "original": "images\\学术成果平台_统计分析与成果管理_UML用例图.drawio",
+      "retained": "image\\学术成果平台_统计分析与成果管理_UML用例图.drawio",
+      "sha256": "32AE3660F20F5B0622E619F90E17A10CCA73D31F49C13F5BB27E13F9AA36AA1D"
+    },
+    {
+      "original": "images\\成果管理模块_UML用例图.png",
+      "retained": "image\\成果管理模块_UML用例图.png",
+      "sha256": "CD7EF5B5CF6AE50ED5E674127A5606686C4400C46DFAF75E563097010946D2A1"
+    },
+    {
+      "original": "images\\统计分析模块_UML用例图.png",
+      "retained": "image\\统计分析模块_UML用例图.png",
+      "sha256": "3395FFE57DD564D416B747C74E2C8028C2656392EF2D095639B9220375F9B364"
+    },
+    {
+      "original": "images\\数据采集任务状态机.drawio",
+      "retained": "image\\数据采集任务状态机.drawio",
+      "sha256": "042834D31FC99E8439181344BCFA98FE67FE8AC3B104A7692D21217A37B81F1B"
+    },
+    {
+      "original": "images\\数据采集任务状态机.drawio.png",
+      "retained": "image\\数据采集任务状态机.drawio.png",
+      "sha256": "D64F52728F0016B59E99480661DB75B0C2D2B9FF931C320AE7907DD1268205DF"
+    },
+    {
+      "original": "images\\认领状态图.drawio",
+      "retained": "image\\认领状态图.drawio",
+      "sha256": "069CF57FDE8128B223DA580905C8B79DE86DD4F100C946852AFFBBA3A9CB36ED"
+    },
+    {
+      "original": "images\\认领状态图.drawio.png",
+      "retained": "image\\认领状态图.drawio.png",
+      "sha256": "1547E0E2C12A54981DD1B31E0C277C3E9ADC9E4E35C21B2A5D28419380B9D3DA"
+    },
+    {
+      "original": "images\\科研人员个人门户认领审核流程活动图.png",
+      "retained": "image\\科研人员个人门户认领审核流程活动图.png",
+      "sha256": "3AB9ADBA4FFD3826AD65CC51023688C3522AA457F4ACAA85DE6556298BFC6566"
+    },
+    {
+      "original": "images\\个人门户认领申请状态图.png",
+      "retained": "image\\个人门户认领申请状态图.png",
+      "sha256": "6B0E05E7AC935ADC78352B99488A89535ED080D185CFE12B7AAF3A2EDCECD722"
+    },
+    {
+      "original": "Submit\\作业2_需求建模成果\\03-建模图\\修订模型源文本_Mermaid\\01-系统能力总览-9组-1011101011.mmd",
+      "retained": "image\\基线状态源文本\\01-系统能力总览-9组-1011101011.mmd",
+      "sha256": "B9B7574643D464733D75695309EBCE55425C790B0BBB69A11E06D99C432BA83A"
+    },
+    {
+      "original": "Submit\\作业2_需求建模成果\\03-建模图\\修订模型源文本_Mermaid\\02-采集任务状态图-9组-1011101011.mmd",
+      "retained": "image\\基线状态源文本\\02-采集任务状态图-9组-1011101011.mmd",
+      "sha256": "F1C546541B7C06A0290E6AE4488EA0389F0102FF1ADD71C993DEB4BA2EB0FFF5"
+    },
+    {
+      "original": "Submit\\作业2_需求建模成果\\03-建模图\\修订模型源文本_Mermaid\\03-门户认领申请状态图-9组-1011101011.mmd",
+      "retained": "image\\基线状态源文本\\03-门户认领申请状态图-9组-1011101011.mmd",
+      "sha256": "FA735F4006FEDB103E5EC7B2DF930302F40B686D89F8183A0F80286F41A7FBC3"
+    },
+    {
+      "original": "scripts/学术成果分享平台需求调研报告.md",
+      "retained": "docs\\参考材料\\平台比较调研_原稿.md",
+      "sha256": "04633e0e722da0c792ff6df1132e1ef66a9db684a9f39fe0ec3d777ca6662b7a"
+    }
+  ],
+  "backup_bundle": "C:\\Users\\RoyCai\\Desktop\\2026秋季\\软件系统分析与设计\\历史版本\\20261026_Group2整理前\\Group2整理前.bundle"
+}
