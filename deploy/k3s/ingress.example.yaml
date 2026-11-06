@@ -1,0 +1,21 @@
+# Replace host and create academic-tls before applying.
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: academic-api
+  namespace: academic
+spec:
+  ingressClassName: traefik
+  tls:
+    - hosts: [academic.example.com]
+      secretName: academic-tls
+  rules:
+    - host: academic.example.com
+      http:
+        paths:
+          - path: /api
+            pathType: Prefix
+            backend:
+              service:
+                name: api
+                port: {number: 8080}

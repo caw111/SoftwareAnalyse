@@ -1,0 +1,38 @@
+{
+  "requestKey": "manual-demo-batch-v1",
+  "sourceName": "手动导入示例（模拟）",
+  "works": [
+    {
+      "type": "PAPER", "title": "低延迟学术检索系统的设计与验证（模拟）", "date": "2025-06",
+      "doi": "https://doi.org/10.99999/manual.0001", "identifier": null, "identifierType": null, "authority": null,
+      "abstractText": "用于演示规范化 DOI、多机构署名和来源追踪；非真实论文。", "venue": "模拟软件研究学报",
+      "citationCount": null, "citationSource": "DemoCitation", "oaStatus": "UNKNOWN", "simulated": true,
+      "sourceKey": "manual-paper-001", "sourceUrl": "https://example.org/manual/paper-001",
+      "contributors": [{"scholarId":"S1","name":"林知远","role":"AUTHOR","institutionId":"I1"},{"scholarId":"S3","name":"陈思宁","role":"AUTHOR","institutionId":"I3"}],
+      "institutionIds": ["I1","I3"], "fields": ["软件工程","分布式系统"], "details": {"notice":"人工构造示例"}
+    },
+    {
+      "type": "PATENT", "title": "一种成果溯源存储方法（模拟授权专利）", "date": "2024", "doi": null,
+      "identifier": "0000123456", "identifierType": "application_number", "authority": "DEMO-CN",
+      "abstractText": "仅保留授权年精度，不生成具体月日。", "venue": "模拟授权公告", "citationCount": null, "citationSource": null, "oaStatus": "UNKNOWN", "simulated": true,
+      "sourceKey": "manual-patent-001", "sourceUrl": "https://example.org/manual/patent-001",
+      "contributors": [{"scholarId":"S3","name":"陈思宁","role":"INVENTOR","institutionId":"I3"}],
+      "institutionIds": ["I3"], "fields": ["数据治理"], "details": {"grantEvidence":"模拟授权公告 DEMO-2024-001；并非真实授权"}
+    },
+    {
+      "type": "PROJECT", "title": "多源成果数据治理方法研究（模拟项目）", "date": null, "doi": null,
+      "identifier": "00123", "identifierType": "department_number", "authority": "模拟资助机构",
+      "abstractText": "只有科学部编号和来源键，不能冒充项目批准号；资助年未知。", "venue": "模拟项目清单", "citationCount": null, "citationSource": null, "oaStatus": "UNKNOWN", "simulated": true,
+      "sourceKey": "manual-project-001", "sourceUrl": "https://example.org/manual/project-001",
+      "contributors": [{"scholarId":"S1","name":"林知远","role":"PI","institutionId":"I1"}],
+      "institutionIds": ["I1"], "fields": ["数据治理"], "details": {"notice":"无批准号，保留来源键，不自动归并弱编号"}
+    },
+    {
+      "type": "AWARD", "title": "科研数据服务优秀单位奖（模拟）", "date": "2025", "doi": null,
+      "identifier": "0007", "identifierType": "award_project_number", "authority": "模拟奖励体系",
+      "abstractText": "仅公布获奖单位，不生成个人完成人名单。", "venue": "模拟奖励公告", "citationCount": null, "citationSource": null, "oaStatus": "UNKNOWN", "simulated": true,
+      "sourceKey": "manual-award-001", "sourceUrl": "https://example.org/manual/award-001",
+      "contributors": [], "institutionIds": ["I1"], "fields": ["数据治理"], "details": {"notice":"模拟单位奖"}
+    }
+  ]
+}

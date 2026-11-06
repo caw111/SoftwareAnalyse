@@ -1,0 +1,153 @@
+{
+  "date": "2026-11-06",
+  "applicationSourceCommit": "36fe161",
+  "localLoadTestExecuted": false,
+  "environment": {
+    "os": "Windows 11 amd64",
+    "java": "21.0.12.1",
+    "gradle": "9.8.0",
+    "springBoot": "4.1.2",
+    "dotnetSdk": "9.0.317",
+    "postgres": "17.11",
+    "dockerEngine": "29.7.2"
+  },
+  "tests": [
+    {
+      "database": "H2",
+      "suite": "cn.edu.group2.academic.PlatformIntegrationTest",
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestampUtc": "2026-11-06T15:23:50.743Z",
+      "cases": [
+        "samePersonInstitutionMustBelongToSameContribution()",
+        "defaultsNeverMixSimulatedWithReal()",
+        "applicantEvidenceIsPrivate()",
+        "ordinaryAccountCannotClaimPortalBeforeIdentityApproval()",
+        "expiredReviewLeaseCannotApproveButCanBeRetaken()",
+        "failedBatchRollsBackWorkAndReleaseAndSource()",
+        "concurrentApprovalAndWithdrawalHaveExactlyOneWinner()",
+        "invalidQueryIsDifferentFromEmptyResult()",
+        "replayAndCrossSourceDoiDoNotDuplicateWork()",
+        "normalizeDoiAndDoNotInventDatePrecision()",
+        "concurrentCompetingPortalClaimsCannotCreateTwoOwners()",
+        "coauthorsCanBothClaimAndRevokeOnlyOwnRelationship()",
+        "graphReturnsEvidenceAndDistinguishesSameNamePeople()",
+        "supplementPreservesHistoryAndIncreasesMaterialVersion()",
+        "organizationAwardKeepsInstitutionWithoutInventingPeople()",
+        "statisticsCountCanonicalWorksAndSeparateUnknownCitations()",
+        "previousReleaseSurvivesNewPublication()"
+      ]
+    },
+    {
+      "database": "H2",
+      "suite": "cn.edu.group2.academic.HttpContractTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestampUtc": "2026-11-06T15:23:43.684Z",
+      "cases": [
+        "logoutRevokesTokenAndRegistrationDoesNotAcceptRoleEscalation()",
+        "oversizedAndInvalidPayloadsAreRejected()",
+        "anonymousAndReaderCannotAccessAdmin()",
+        "publicCatalogAndExplicitClientErrors()"
+      ]
+    },
+    {
+      "database": "PostgreSQL 17.11",
+      "suite": "cn.edu.group2.academic.PlatformIntegrationTest",
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestampUtc": "2026-11-06T15:24:06.250Z",
+      "cases": [
+        "samePersonInstitutionMustBelongToSameContribution()",
+        "defaultsNeverMixSimulatedWithReal()",
+        "applicantEvidenceIsPrivate()",
+        "ordinaryAccountCannotClaimPortalBeforeIdentityApproval()",
+        "expiredReviewLeaseCannotApproveButCanBeRetaken()",
+        "failedBatchRollsBackWorkAndReleaseAndSource()",
+        "concurrentApprovalAndWithdrawalHaveExactlyOneWinner()",
+        "invalidQueryIsDifferentFromEmptyResult()",
+        "replayAndCrossSourceDoiDoNotDuplicateWork()",
+        "normalizeDoiAndDoNotInventDatePrecision()",
+        "concurrentCompetingPortalClaimsCannotCreateTwoOwners()",
+        "coauthorsCanBothClaimAndRevokeOnlyOwnRelationship()",
+        "graphReturnsEvidenceAndDistinguishesSameNamePeople()",
+        "supplementPreservesHistoryAndIncreasesMaterialVersion()",
+        "organizationAwardKeepsInstitutionWithoutInventingPeople()",
+        "statisticsCountCanonicalWorksAndSeparateUnknownCitations()",
+        "previousReleaseSurvivesNewPublication()"
+      ]
+    },
+    {
+      "database": "PostgreSQL 17.11",
+      "suite": "cn.edu.group2.academic.HttpContractTest",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "timestampUtc": "2026-11-06T15:24:01.407Z",
+      "cases": [
+        "logoutRevokesTokenAndRegistrationDoesNotAcceptRoleEscalation()",
+        "oversizedAndInvalidPayloadsAreRejected()",
+        "anonymousAndReaderCannotAccessAdmin()",
+        "publicCatalogAndExplicitClientErrors()"
+      ]
+    }
+  ],
+  "desktop": {
+    "ok": true,
+    "workCards": 20,
+    "scholars": 13,
+    "metricCards": 4,
+    "pathFound": true,
+    "framework": ".NET 9 WPF",
+    "api": "http://127.0.0.1:8080"
+  },
+  "crossInstance": {
+    "ok": true,
+    "primary": "http://127.0.0.1:8080",
+    "secondary": "http://127.0.0.1:18080",
+    "sharedSession": true,
+    "identityWorkflow": true,
+    "privateEvidence": true,
+    "competingRequests": 2,
+    "statuses": [
+      200,
+      409
+    ],
+    "finalState": "WITHDRAWN",
+    "note": "Functional checks only; no load test, throughput or p95 result."
+  },
+  "docker": {
+    "image": "academic-platform-api:0.1.0",
+    "imageId": "sha256:cf9121d77a1c0adbc02659591021ad44943e59e0efedc4226a74781f7e91d5df",
+    "user": "10001:10001",
+    "readonly": true,
+    "memoryLimitBytes": 536870912,
+    "readiness": "UP",
+    "tested": "startup and functional requests only"
+  },
+  "artifacts": [
+    {
+      "path": "artifacts/windows-x64/AcademicDesktop.exe",
+      "sha256": "DB6F915507E888C5FC59AC70105C31A8BF830DAFFE4C9C085F6075E19C214C1F"
+    },
+    {
+      "path": "backend/build/libs/academic-platform-api.jar",
+      "sha256": "038335159BA2DC558863D63A5E92390EADA4E9F34876C095F2D7E058B6DAFDC2"
+    }
+  ],
+  "notExecuted": [
+    "Local load test",
+    "Server p95 acceptance",
+    "k3s deployment",
+    "HPA scaling experiment",
+    "Real-source collection",
+    "Coverage target assessment"
+  ]
+}

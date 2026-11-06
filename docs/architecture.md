@@ -37,4 +37,4 @@
 
 ## 资源预算
 
-生产初始 1 个 API 副本（请求 250m CPU / 512 MiB，限制 1 CPU / 768 MiB），Hikari 8 连接；PostgreSQL 约 768 MiB；k3s 和系统预留至少 1 GB。HPA 最多 2 副本且采用延迟缩容。单机扩副本只能用剩余容量，不能增加物理容量；数据库仍是单点，应备份并监测连接数/磁盘。
+Compose 初始 1 个 API，API / PostgreSQL 分别限制 768 MiB。k3s 模板进一步限制 API 每副本 512 MiB（请求 250m CPU / 256 MiB）、PostgreSQL 512 MiB，Hikari 每副本 8 连接；两 API + 数据库上限约 1.5 GiB，给系统与 k3s 保留约 2 GiB。k3s 官方列出的 server 基线为 2 核 / 2 GB，且不包含工作负载（[官方要求](https://docs.k3s.io/installation/requirements)）；这里是待服务器验证的资源预算，不是已证明的运行余量。HPA 最多 2 副本且延迟缩容。单机扩副本不能增加物理容量；数据库仍是单点，应备份并监测连接数/磁盘。内存紧张时先保持 1 副本或使用 Compose，扩容机器后再提高上限。
