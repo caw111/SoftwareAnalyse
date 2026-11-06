@@ -1,9 +1,17 @@
-# Local build artifacts
-.report-build/
-node_modules/
+.gradle/
+.gradle-user-home/
+.dotnet-home/
+**/build/
+**/bin/
+**/obj/
+.vs/
+.idea/
+*.user
+*.log
+*.mv.db
+*.trace.db
+data/
+artifacts/
+.env
+!*.env.example
 __pycache__/
-*.pyc
-~$*
-.$*.bkp
-Thumbs.db
-.DS_Store
