@@ -73,6 +73,7 @@ public class CatalogService {
         row.put("contributors",db.rows("SELECT c.*,i.name AS institution_name FROM contributor c LEFT JOIN institution i ON c.institution_id=i.id WHERE c.work_id=? ORDER BY c.position",id));
         row.put("sources",db.rows("SELECT id,source_name,source_key,source_url,checksum,fetched_at FROM source_record WHERE work_id=? AND revision<=? ORDER BY fetched_at,id",id,v));
         row.put("fields",db.rows("SELECT field_name FROM work_field WHERE work_id=? ORDER BY field_name",id));
+        row.put("institutions",db.rows("SELECT i.id,i.name FROM work_institution wi JOIN institution i ON i.id=wi.institution_id WHERE wi.work_id=? ORDER BY i.id",id));
         return row;
     }
     public Map<String,Object> stats(Query q) {return statsCache.get(q,this::loadStats);}

@@ -136,6 +136,13 @@ class PlatformIntegrationTest {
         assertEquals(db.count("SELECT COUNT(*) FROM work WHERE simulated=TRUE"),((Number)metrics.get("total")).longValue());
         assertTrue(((Number)metrics.get("citationKnown")).longValue()<((Number)metrics.get("papers")).longValue());
     }
+    @Test void organizationAwardKeepsInstitutionWithoutInventingPeople() {
+        String id=db.one("SELECT w.id FROM work w WHERE w.type='AWARD' AND NOT EXISTS(SELECT 1 FROM contributor c WHERE c.work_id=w.id) LIMIT 1").get("id").toString();
+        var detail=catalog.detail(id,null);
+        assertTrue(((List<?>)detail.get("contributors")).isEmpty());
+        assertFalse(((List<?>)detail.get("institutions")).isEmpty());
+        assertEquals("award_year",detail.get("dateKind"));
+    }
     List<Boolean> race(Callable<?> a,Callable<?> b) throws Exception {
         var barrier=new CyclicBarrier(2);
         try(var pool=Executors.newVirtualThreadPerTaskExecutor()) {
