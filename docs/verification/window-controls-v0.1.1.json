@@ -1,0 +1,32 @@
+{
+  "ok": true,
+  "dpi": 192,
+  "workArea": {
+    "Left": 0,
+    "Top": 0,
+    "Right": 2560,
+    "Bottom": 1504
+  },
+  "startupMaximized": true,
+  "nativeStyle": "0x17CF0000",
+  "captionButtonsVisible": true,
+  "restoreBounds": {
+    "Left": 102,
+    "Top": 75,
+    "Right": 2457,
+    "Bottom": 1428
+  },
+  "dragBounds": {
+    "Left": 142,
+    "Top": 99,
+    "Right": 2497,
+    "Bottom": 1452
+  },
+  "dragPassed": true,
+  "maximizePassed": true,
+  "minimizePassed": true,
+  "closePassed": true,
+  "iconPresent": true,
+  "version": "0.1.1.0",
+  "tests": "Real titlebar mouse drag and native caption button clicks; no API load test."
+}

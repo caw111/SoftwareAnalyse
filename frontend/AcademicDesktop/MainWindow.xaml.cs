@@ -26,6 +26,11 @@ public partial class MainWindow : Window
         var address = Environment.GetEnvironmentVariable("ACADEMIC_API_URL");
         if (!string.IsNullOrWhiteSpace(address)) ServerAddress.Text = address;
     }
+    protected override void OnSourceInitialized(EventArgs e)
+    {
+        base.OnSourceInitialized(e);
+        WindowPlacement.StartMaximized(this);
+    }
     private string DataScope => ((ComboBoxItem)Dataset.SelectedItem).Tag.ToString()!;
     private static string SelectedTag(ComboBox box) => (box.SelectedItem as ComboBoxItem)?.Tag.ToString() ?? "";
     private static string SelectedId(ComboBox box) => box.SelectedValue?.ToString() ?? "";
@@ -375,7 +380,7 @@ public partial class MainWindow : Window
     });
     private string? Prompt(string title, string explanation, bool multiline = true)
     {
-        var dialog = new Window { Title = title, Width = 520, Height = multiline ? 340 : 240, ResizeMode = ResizeMode.NoResize, Owner = this, WindowStartupLocation = WindowStartupLocation.CenterOwner };
+        var dialog = new Window { Title = title, Icon = Icon, Width = 520, Height = multiline ? 340 : 240, ResizeMode = ResizeMode.NoResize, Owner = this, WindowStartupLocation = WindowStartupLocation.CenterOwner };
         var panel = new StackPanel { Margin = new Thickness(24) }; panel.Children.Add(Text(explanation, 13));
         var input = new TextBox { Height = multiline ? 140 : 40, TextWrapping = TextWrapping.Wrap, AcceptsReturn = multiline, Margin = new Thickness(0, 14, 0, 16), VerticalScrollBarVisibility = ScrollBarVisibility.Auto };
         panel.Children.Add(input); var submit = new Button { Content = "确认提交", HorizontalAlignment = HorizontalAlignment.Right, IsDefault = !multiline };
@@ -400,6 +405,7 @@ public partial class MainWindow : Window
         string output = Environment.GetEnvironmentVariable("ACADEMIC_SMOKE_OUTPUT") ?? Path.Combine(AppContext.BaseDirectory, "desktop-smoke.json");
         try
         {
+            if (Pages.SelectedIndex != 0 || !WorkList.IsVisible) throw new InvalidOperationException("启动后成果发现页面不可见");
             if (WorkList.Items.Count == 0) throw new InvalidOperationException("目录未加载");
             await LoadScholars(); await LoadStats();
             var path = await api.Get("api/graph/path?start=S1&end=S2&dataset=demo");

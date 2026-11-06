@@ -1,8 +1,8 @@
-<Window x:Class="AcademicDesktop.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="知汇 · 学术成果工作台" Width="1440" Height="920" MinWidth="1180" MinHeight="760" FontFamily="Microsoft YaHei UI" FontSize="13" Background="#F3F6F8" Foreground="#172D3A" WindowStartupLocation="CenterScreen" Loaded="WindowLoaded">
+<Window x:Class="AcademicDesktop.MainWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" Title="知汇 · 学术成果工作台" Icon="Assets/zhihui.ico" WindowStyle="SingleBorderWindow" ResizeMode="CanResize" AllowsTransparency="False" Width="1200" Height="700" MinWidth="960" MinHeight="560" FontFamily="Microsoft YaHei UI" FontSize="13" Background="#F3F6F8" Foreground="#172D3A" WindowStartupLocation="Manual" Loaded="WindowLoaded">
   <Grid Background="#F3F6F8">
     <Grid.ColumnDefinitions><ColumnDefinition Width="212"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
     <Border Background="#142F3A"><DockPanel>
-      <StackPanel DockPanel.Dock="Top" Margin="26,32,20,30"><TextBlock Text="知 汇" FontSize="30" FontWeight="Bold" Foreground="White"/><TextBlock Text="ACADEMIC WORKSPACE" FontSize="10" Foreground="#8CA9B6" Margin="0,7,0,0"/><Border Height="3" Width="30" Background="#48B8AB" HorizontalAlignment="Left" Margin="0,18,0,0"/></StackPanel>
+      <StackPanel DockPanel.Dock="Top" Margin="26,28,20,26"><StackPanel Orientation="Horizontal"><Image Source="Assets/zhihui.png" Width="40" Height="40" Margin="-4,0,9,0"/><TextBlock Text="知 汇" FontSize="28" FontWeight="Bold" Foreground="White"/></StackPanel><TextBlock Text="ACADEMIC WORKSPACE" FontSize="10" Foreground="#8CA9B6" Margin="0,7,0,0"/><Border Height="3" Width="30" Background="#48B8AB" HorizontalAlignment="Left" Margin="0,18,0,0"/></StackPanel>
       <StackPanel DockPanel.Dock="Bottom" Margin="25,20"><TextBlock Text="GROUP 02   /   DESKTOP" FontSize="10" Foreground="#88A7B3"/><TextBlock Text="Windows 原生客户端 · v0.1" FontSize="11" Foreground="#88A7B3" Margin="0,8,0,0"/><TextBlock x:Name="SidebarUser" Text="访客模式" Foreground="#D3E0E6" Margin="0,20,0,4" TextWrapping="Wrap"/><TextBlock Text="资料与证据，各有归处。" FontSize="11" Foreground="#88A7B3"/></StackPanel>
       <StackPanel x:Name="Navigation">
         <TextBlock Text="探索 / EXPLORE" Foreground="#6F929F" FontSize="10" Margin="28,0,0,12"/>
@@ -26,7 +26,7 @@
         <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center"><TextBlock Text="数据范围" Margin="0,0,10,0" Foreground="#687F89"/><ComboBox x:Name="Dataset" Width="160" SelectedIndex="0" SelectionChanged="DatasetChanged"><ComboBoxItem Content="课程模拟资料" Tag="demo"/><ComboBoxItem Content="真实资料" Tag="real"/></ComboBox></StackPanel>
       </Grid>
       <Border x:Name="Banner" Grid.Row="2" Background="#FFF2D9" CornerRadius="6" Padding="12,9" Margin="0,0,0,12" Visibility="Collapsed"><TextBlock x:Name="BannerText" TextWrapping="Wrap" Foreground="#80591B"/></Border>
-      <TabControl x:Name="Pages" Grid.Row="3" BorderThickness="0" Background="Transparent">
+      <TabControl x:Name="Pages" Grid.Row="3" SelectedIndex="0" BorderThickness="0" Background="Transparent">
         <TabControl.Template><ControlTemplate TargetType="TabControl"><ContentPresenter ContentSource="SelectedContent"/></ControlTemplate></TabControl.Template>
         <TabItem>
           <Grid><Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>

@@ -7,5 +7,13 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <AssemblyName>AcademicDesktop</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+    <ApplicationIcon>Assets\zhihui.ico</ApplicationIcon>
+    <Version>0.1.1</Version>
+    <Product>知汇 · 学术成果工作台</Product>
+    <Description>原生 Windows 学术成果检索与分享客户端</Description>
   </PropertyGroup>
+  <ItemGroup>
+    <Resource Include="Assets\zhihui.ico" />
+    <Resource Include="Assets\zhihui.png" />
+  </ItemGroup>
 </Project>
