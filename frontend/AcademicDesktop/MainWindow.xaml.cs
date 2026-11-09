@@ -11,20 +11,21 @@ namespace AcademicDesktop;
 
 public partial class MainWindow : Window
 {
-    private ApiClient api = new("http://127.0.0.1:8080");
-    private bool ready, busy;
+    private ApiClient api;
+    private bool ready, busy, changingSession;
     private int page;
     private long total;
     private long? release;
     private string? activeQuery;
     private JsonNode? account;
-    private readonly string[] titles = ["成果发现", "学者门户", "数据观察", "共著路径", "我的工作台", "管理与审核"];
-    private readonly string[] subtitles = ["从一项成果出发，发现知识与人的连接。", "让每一位学者，都有准确而独立的位置。", "用清晰的口径，理解成果的分布。", "沿着论文证据，看见协作的距离。", "身份、门户与贡献，分别确认，清晰追踪。", "让每一次授权与入库，都有依据可查。"];
-    public MainWindow()
+    private readonly string[] titles = ["成果发现", "学者门户", "数据观察", "共著路径", "个人主页", "个人成果", "我的申请", "成果数据库管理", "申请管理", "数据统计"];
+    private readonly string[] subtitles = ["从一项成果出发，发现知识与人的连接。", "让每一位学者，都有准确而独立的位置。", "用清晰的口径，理解成果的分布。", "沿着论文证据，看见协作的距离。", "记录你的研究，连接你的学术身份。", "经过审核的贡献，汇成你的成果集。", "每一份申请，都有清晰的进度与反馈。", "规范入库、追溯来源，让成果有据可查。", "查看申请材料，记录每一次审核的依据。", "掌握成果规模、认证进度与平台运行概况。"];
+    public MainWindow(ApiClient client, JsonNode? user, string address)
     {
+        api = client; account = user;
         InitializeComponent();
-        var address = Environment.GetEnvironmentVariable("ACADEMIC_API_URL");
-        if (!string.IsNullOrWhiteSpace(address)) ServerAddress.Text = address;
+        ServerAddress.Text = address;
+        ConfigureWorkspace(); UpdateAccount();
     }
     protected override void OnSourceInitialized(EventArgs e)
     {
@@ -37,32 +38,32 @@ public partial class MainWindow : Window
     private async Task Run(Func<Task> work)
     {
         if (busy) return;
-        busy = true; Pages.IsEnabled = false; Navigation.IsEnabled = false; Dataset.IsEnabled = false;
+        busy = true; SetBusyState(true);
         Banner.Visibility = Visibility.Collapsed; StatusText.Text = "正在处理…";
         try { await work(); StatusText.Text = $"就绪 · 最近一次 API 请求 {api.LastMilliseconds} ms"; }
         catch (Exception ex)
         {
-            if (api.Token == null && account != null) { account = null; UpdateAccount(); ClearPrivateViews(); }
-            ShowMessage(ex.Message); StatusText.Text = "操作未完成 · 条件已保留";
+            if (api.Token == null && account != null) { account = null; ClearPrivateViews(); ConfigureWorkspace(); UpdateAccount(); CertificationOverlay.Visibility = Visibility.Collapsed; }
+            ShowMessage(ex.Message); if (CertificationOverlay.Visibility == Visibility.Visible) CertificationError.Text = ex.Message; StatusText.Text = "操作未完成 · 条件已保留";
         }
-        finally { busy = false; Pages.IsEnabled = true; Navigation.IsEnabled = true; Dataset.IsEnabled = true; }
+        finally { busy = false; SetBusyState(false); }
     }
     private void ShowMessage(string message) { BannerText.Text = message; Banner.Visibility = Visibility.Visible; }
     private async void WindowLoaded(object sender, RoutedEventArgs e)
     {
         ready = true;
-        HighlightNavigation(0);
-        await Run(async () => { await ConnectCore(); });
+        await Run(ConnectCore);
         if (Environment.GetCommandLineArgs().Contains("--smoke")) await RunSmoke();
+        if (Environment.GetCommandLineArgs().Contains("--workspace-smoke")) await RunWorkspaceSmoke();
     }
     private async void Connect(object sender, RoutedEventArgs e) => await Run(ConnectCore);
     private async Task ConnectCore()
     {
-        var replacement = new ApiClient(ServerAddress.Text);
-        api.Dispose(); api = replacement; account = null; UpdateAccount(); ClearPrivateViews();
         try
         {
-            await LoadReference(); await Search(true);
+            await LoadReference();
+            if (account != null) { account = await api.Get("api/auth/me"); ConfigureWorkspace(); UpdateAccount(); }
+            if (Pages.SelectedIndex == 0) await Search(true); else await LoadPage();
             ConnectionDot.Fill = Brush("#2D9B82"); ConnectionText.Text = "服务已连接";
         }
         catch { ConnectionDot.Fill = Brush("#C98057"); ConnectionText.Text = "服务未连接"; throw; }
@@ -73,6 +74,7 @@ public partial class MainWindow : Window
         var institutions = new List<ReferenceItem> { new("", "全部机构") };
         institutions.AddRange(reference["institutions"]!.Items().Select(i => new ReferenceItem(i.Text("id"), i.Text("name"))));
         InstitutionFilter.ItemsSource = institutions; InstitutionFilter.SelectedIndex = 0;
+        CertificationInstitution.ItemsSource = institutions.Skip(1).ToList();
         var fields = new List<ReferenceItem> { new("", "全部领域") };
         fields.AddRange(reference["fields"]!.Items().Select(f => new ReferenceItem(f.Text("name"), f.Text("name"))));
         FieldFilter.ItemsSource = fields; FieldFilter.SelectedIndex = 0;
@@ -81,22 +83,25 @@ public partial class MainWindow : Window
         GraphStart.ItemsSource = scholars; GraphEnd.ItemsSource = scholars;
         if (scholars.Count > 0) GraphStart.SelectedIndex = 0;
         if (scholars.Count > 1) GraphEnd.SelectedIndex = 1;
-        ScopeFooter.Text = DataScope == "demo" ? "课程模拟资料 · 不用于科研评价" : "真实资料 · 与模拟资料分开统计";
+        HighlightNavigation(Pages.SelectedIndex);
     }
     private async void DatasetChanged(object sender, SelectionChangedEventArgs e)
     {
         if (!ready) return;
-        await Run(async () => { release = null; await LoadReference(); await Search(true); await LoadPage(); });
+        await Run(async () => { release = null; adminPage = 0; adminRevision = null; await LoadReference(); if (Pages.SelectedIndex == 0) await Search(true); else await LoadPage(); });
     }
     private async void Navigate(object sender, RoutedEventArgs e)
     {
         int index = int.Parse(((Button)sender).Tag.ToString()!);
+        if (!CanAccessPage(index)) return;
         Pages.SelectedIndex = index; HighlightNavigation(index);
         await Run(LoadPage);
     }
     private void HighlightNavigation(int index)
     {
         PageTitle.Text = titles[index]; PageSubtitle.Text = subtitles[index];
+        ScopeSelector.Visibility = index <= 4 || index is 6 or 7 ? Visibility.Visible : Visibility.Collapsed;
+        ScopeFooter.Text = index is 8 or 9 ? "管理员视图 · 全平台" : index is 4 or 5 or 6 ? "个人资料仅当前账号可见 · 数据范围用于检索候选成果与门户" : DataScope == "demo" ? "课程模拟资料 · 不用于科研评价" : "真实资料 · 与模拟资料分开统计";
         foreach (var button in Navigation.Children.OfType<Button>())
         {
             bool selected = button.Tag.ToString() == index.ToString();
@@ -104,7 +109,7 @@ public partial class MainWindow : Window
             button.Foreground = Brush(selected ? "#FFFFFF" : "#BDD0D7");
         }
     }
-    private Task LoadPage() => Pages.SelectedIndex switch { 1 => LoadScholars(), 2 => LoadStats(), 4 => LoadMine(), 5 => LoadAdmin(), _ => Task.CompletedTask };
+    private Task LoadPage() => Pages.SelectedIndex switch { 0 => Search(true), 1 => LoadScholars(), 2 => LoadStats(), 4 => LoadProfile(), 5 or 6 => LoadMine(), 7 => LoadAdminCatalog(), 8 => LoadAdmin(), 9 => LoadAdminStats(), _ => Task.CompletedTask };
     private string Query(bool includePage = true)
     {
         var values = new Dictionary<string, string>
@@ -177,17 +182,12 @@ public partial class MainWindow : Window
             button.Click += (_, _) => OpenLink(url); DetailPanel.Children.Add(button);
             DetailPanel.Children.Add(Text("SHA-256  " + source.Text("checksum"), 10, false, "#83959C"));
         }
-        var claimButton = SecondaryButton("申请确认本人贡献");
-        claimButton.Click += async (_, _) => await Run(async () =>
+        if (account != null && account.Text("role") != "ADMIN")
         {
-            RequireAccount("RESEARCHER");
-            string? evidence = Prompt("成果认领", "请填写本人贡献及核验依据（仅本人和审核员可见）。");
-            if (evidence == null) return;
-            var vm = new WorkVm(work);
-            await CreateAndSubmit("OUTCOME", id, evidence, vm.ContributionRole);
-            ShowMessage("成果认领申请已提交，可在我的工作台追踪进度。");
-        });
-        DetailPanel.Children.Add(claimButton);
+            var claimButton = SecondaryButton("申报此项成果");
+            claimButton.Click += async (_, _) => await Run(async () => { OpenComposer(new WorkVm(work)); await LoadMine(); });
+            DetailPanel.Children.Add(claimButton);
+        }
     }
     private void AddDetail(string label, string value) { DetailPanel.Children.Add(Text(label, 11, true, "#748A94")); DetailPanel.Children.Add(Text(value, 12)); }
     private async Task LoadScholars()
@@ -209,9 +209,7 @@ public partial class MainWindow : Window
     }
     private async void ClaimPortal(object sender, RoutedEventArgs e) => await Run(async () =>
     {
-        RequireAccount("RESEARCHER"); if (ScholarsGrid.SelectedItem is not ScholarVm s) throw new InvalidOperationException("请先选择学者。");
-        await CreateAndSubmit("PORTAL", s.Id, PortalEvidence.Text, "");
-        ShowMessage("门户申请已进入人工审核；通过后仍需分别认领成果贡献。");
+        RequireAccount(); await ShowCertification(ScholarsGrid.SelectedItem as ScholarVm);
     });
     private async void StatsClick(object sender, RoutedEventArgs e) => await Run(LoadStats);
     private async Task LoadStats()
@@ -279,57 +277,28 @@ public partial class MainWindow : Window
     });
     private void RequireAccount(string? role = null)
     {
-        if (account == null || api.Token == null) throw new InvalidOperationException("请先在「我的工作台」登录。");
+        if (account == null || api.Token == null) throw new InvalidOperationException("请先通过左下角的“登录 / 注册”进入账号。");
         if (role != null && account.Text("role") != role) throw new InvalidOperationException(role == "ADMIN" ? "此操作仅管理员可用。" : "此操作需要已审核的科研人员身份。");
     }
-    private void UpdateAccount()
-    {
-        string text = account == null ? "访客模式" : $"{account.Text("displayName")} · {Labels.Role(account.Text("role"))}";
-        SidebarUser.Text = text; AccountInfo.Text = text;
-    }
-    private void ClearPrivateViews()
-    { MyClaims.ItemsSource = null; MyWorks.ItemsSource = null; ReviewGrid.ItemsSource = null; ImportsGrid.ItemsSource = null; ReviewEvidence.Clear(); ReviewReason.Clear(); SupplementEvidence.Clear(); PortalEvidence.Clear(); MyClaimReason.Text = "登录后查看本人申请"; }
-    private async void Login(object sender, RoutedEventArgs e) => await Run(async () =>
-    {
-        var result = await api.Post("api/auth/login", new { username = Username.Text, password = Password.Password });
-        api.Token = result.Text("token"); account = result["user"]!.DeepClone(); Password.Clear(); ClearPrivateViews(); UpdateAccount(); await LoadMine();
-    });
-    private async void Register(object sender, RoutedEventArgs e) => await Run(async () =>
-    {
-        string? name = Prompt("注册账号", "请填写显示姓名。账号和密码使用工作台输入框中的内容；密码至少 12 位。", false);
-        if (name == null) return;
-        await api.Post("api/auth/register", new { username = Username.Text, password = Password.Password, displayName = name });
-        ShowMessage("账号已创建，请点击登录；科研身份需另行申请审核。");
-    });
-    private async void Logout(object sender, RoutedEventArgs e) => await Run(async () =>
-    {
-        try { if (api.Token != null) await api.Post("api/auth/logout", new { }); }
-        finally { api.Token = null; account = null; Password.Clear(); ClearPrivateViews(); UpdateAccount(); }
-    });
-    private async Task LoadMine()
-    {
-        if (api.Token == null) { ShowMessage("登录后可查看本人申请和已确认成果。公开检索无需登录。"); return; }
-        account = await api.Get("api/auth/me"); UpdateAccount();
-        MyClaims.ItemsSource = (await api.Get("api/claims")).Items().Select(c => new ClaimVm(c)).ToList();
-        MyWorks.ItemsSource = account.Text("role") == "RESEARCHER" ? (await api.Get("api/me/outcomes")).Items().Select(w => new WorkVm(w)).ToList() : null;
-    }
-    private async void RefreshMine(object sender, RoutedEventArgs e) => await Run(LoadMine);
-    private async void IdentityClaim(object sender, RoutedEventArgs e) => await Run(async () =>
-    {
-        RequireAccount("USER"); string? evidence = Prompt("科研身份申请", "请填写身份核验依据，例如机构身份说明和可核查的公开信息。材料仅本人和审核员可见。");
-        if (evidence == null) return;
-        await CreateAndSubmit("IDENTITY", account!.Text("id"), evidence, ""); await LoadMine();
-    });
     private async Task CreateAndSubmit(string kind, string target, string evidence, string role)
     {
         if (string.IsNullOrWhiteSpace(evidence)) throw new InvalidOperationException("请填写核验依据。");
         var claim = await api.Post("api/claims", new { kind, targetId = target, evidence, contributionRole = role });
-        if (claim.Text("state") == "DRAFT") await api.Post($"api/claims/{claim.Text("id")}/actions", new { version = claim.Number("version"), action = "SUBMIT", reason = "", evidence = (string?)null });
+        if (claim.Text("state") is "DRAFT" or "NEED_MORE_INFO")
+            await api.Post($"api/claims/{claim.Text("id")}/actions", new { version = claim.Number("version"), action = "SUBMIT", reason = "", evidence });
+        else throw new InvalidOperationException("已有同一目标的申请正在处理，请在“我的申请”查看进度。当前填写内容已保留。");
     }
     private void MyClaimSelected(object sender, SelectionChangedEventArgs e)
     {
+        ResubmitClaim.IsEnabled = false; WithdrawClaim.IsEnabled = false;
         if (MyClaims.SelectedItem is ClaimVm c)
-        { MyClaimReason.Text = $"{c.StateLabel} · 材料版本 {c.Data.Number("materialVersion")}\n{c.Data.Text("reason")}"; SupplementEvidence.Text = c.Data.Text("evidence"); }
+        {
+            MyClaimReason.Text = $"{c.KindLabel} · {c.StageLabel} · {c.StateLabel} · 材料版本 {c.Data.Number("materialVersion")}\n{c.Data.Text("reason")}";
+            SupplementEvidence.Text = c.Data.Text("evidence");
+            ResubmitClaim.IsEnabled = c.Data.Text("state") is "DRAFT" or "NEED_MORE_INFO";
+            WithdrawClaim.IsEnabled = c.Data.Text("state") is not ("APPROVED" or "REJECTED" or "WITHDRAWN");
+        }
+        else { SupplementEvidence.Clear(); MyClaimReason.Text = "选择申请以查看材料与审核意见。"; }
     }
     private async void MineAction(object sender, RoutedEventArgs e) => await Run(async () =>
     {
@@ -341,22 +310,25 @@ public partial class MainWindow : Window
         RequireAccount("RESEARCHER"); if (MyWorks.SelectedItem is not WorkVm work) throw new InvalidOperationException("请选择已确认成果。");
         string? evidence = Prompt("撤销本人关联", "请说明撤销原因。审核通过后只取消本人关联，公共成果和其他贡献者的关系保留。");
         if (evidence == null) return;
-        await CreateAndSubmit("REVOKE", work.Id, evidence, work.ContributionRole); await LoadMine();
+        await CreateAndSubmit("REVOKE", work.Id, evidence, work.ContributionRole); SwitchPage(6); await LoadMine();
     });
     private async Task LoadAdmin()
     {
         RequireAccount("ADMIN");
-        ReviewGrid.ItemsSource = (await api.Get("api/claims?review=true")).Items().Select(c => new ClaimVm(c)).ToList();
+        var response = await api.Get($"api/claims?review=true&page={reviewPage}&size={ApplicationPageSize}");
+        ReviewGrid.ItemsSource = response["items"]!.Items().Select(c => new ClaimVm(c)).ToList();
+        UpdatePager(response, ReviewPageInfo, ReviewPrevious, ReviewNext);
+        ReviewEvidence.Clear(); ReviewReason.Clear();
         ImportsGrid.ItemsSource = (await api.Get("api/admin/imports")).Items().Select(i => new ImportVm(i)).ToList();
     }
-    private async void RefreshAdmin(object sender, RoutedEventArgs e) => await Run(LoadAdmin);
+    private async void RefreshAdmin(object sender, RoutedEventArgs e) => await Run(LoadPage);
     private async void ReviewSelected(object sender, SelectionChangedEventArgs e)
     {
         if (busy || ReviewGrid.SelectedItem is not ClaimVm claim) return;
         await Run(async () =>
         {
             var data = await api.Get("api/claims/" + claim.Id);
-            ReviewEvidence.Text = data.Text("evidence") + "\n\n处理历史：\n" + string.Join("\n", data["history"]!.Items().Select(h => $"{Labels.State(h.Text("beforeState"))} → {Labels.State(h.Text("afterState"))} · {h.Text("reason")}"));
+            ReviewEvidence.Text = $"申请 ID：{data.Text("id")}\n提交：{data.Text("createdAt")} · 更新：{data.Text("updatedAt")}\n当前审核人：{data.Text("reviewerId", "未领取")} · 占用到期：{data.Text("leaseUntil", "—")}\n\n" + data.Text("evidence") + "\n\n处理历史：\n" + string.Join("\n", data["history"]!.Items().Select(h => $"{Labels.State(h.Text("beforeState"))} → {Labels.State(h.Text("afterState"))} · {h.Text("reason")}"));
         });
     }
     private async void ReviewAction(object sender, RoutedEventArgs e) => await Run(async () =>
@@ -376,7 +348,7 @@ public partial class MainWindow : Window
         string content = await File.ReadAllTextAsync(dialog.FileName);
         _ = JsonNode.Parse(content) ?? throw new InvalidOperationException("JSON 内容为空。");
         var result = await api.PostJson("api/admin/imports", content);
-        await LoadAdmin(); ShowMessage($"导入完成：新增 {result.Number("inserted")}，重复 {result.Number("duplicates")}，版本 {result.Number("revision")}。重新检索可看到新版本。");
+        adminRevision = null; await LoadAdminCatalog(); ShowMessage($"导入完成：新增 {result.Number("inserted")}，重复 {result.Number("duplicates")}，版本 {result.Number("revision")}。重新检索可看到新版本。");
     });
     private string? Prompt(string title, string explanation, bool multiline = true)
     {
@@ -398,7 +370,7 @@ public partial class MainWindow : Window
     private static SolidColorBrush Brush(string color) => (SolidColorBrush)new BrushConverter().ConvertFromString(color)!;
     private static TextBlock Text(string value, double size, bool bold = false, string color = "#294652") => new()
     { Text = value, FontSize = size, FontWeight = bold ? FontWeights.SemiBold : FontWeights.Normal, Foreground = Brush(color), TextWrapping = TextWrapping.Wrap, Margin = new Thickness(0, 3, 0, 6) };
-    protected override void OnClosed(EventArgs e) { api.Dispose(); base.OnClosed(e); }
+    protected override void OnClosed(EventArgs e) { api.Dispose(); base.OnClosed(e); if (!changingSession) Application.Current.Shutdown(); }
     // Runs against a real API and WPF visual tree; no mock responses. Explicit --smoke only.
     private async Task RunSmoke()
     {

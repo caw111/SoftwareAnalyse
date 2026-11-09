@@ -76,6 +76,7 @@ public sealed class WorkVm(JsonNode data)
     public string DateLabel => Data.Text("dateValue", Data.Text("year", "年份未知"));
     public string People => Data["contributors"] is JsonArray people && people.Count > 0 ? string.Join("  ·  ", people.Items().Select(p => p.Text("name"))) : "未公开个人贡献名单";
     public string Footer => Data.Text("venue") + (Type == "PAPER" ? "   ·   " + (Data["citationCount"] == null ? "引用未知" : "引用 " + Data.Text("citationCount")) : "") + (Data.Flag("simulated") ? "   ·   模拟" : "");
+    public string ConfirmedRole => Labels.Role(Data.Text("contributionRole", ContributionRole));
     public string ContributionRole => Type switch { "PAPER" => "AUTHOR", "PATENT" => "INVENTOR", "PROJECT" => "PI", _ => "AWARDEE" };
 }
 public sealed class ClaimVm(JsonNode data)
@@ -83,6 +84,7 @@ public sealed class ClaimVm(JsonNode data)
     public JsonNode Data { get; } = data;
     public string Id => Data.Text("id"); public int Version => (int)Data.Number("version");
     public string KindLabel => Labels.Kind(Data.Text("kind")); public string StateLabel => Labels.State(Data.Text("state"));
+    public string StageLabel => Data.Text("kind") switch { "IDENTITY" => "科研身份核验", "PORTAL" => "学者门户认领", "REVOKE" => "撤销关联", _ => "确认贡献" };
     public string TargetLabel => Data.Text("targetLabel"); public string ApplicantName => Data.Text("applicantName");
 }
 public sealed class ImportVm(JsonNode data)
@@ -98,7 +100,7 @@ public static class Labels
     public static string Identifier(string type) => type switch { "application_number" => "申请号", "approval_number" => "批准号", "award_project_number" => "奖励项目编号", _ => type };
     public static string Field(string field) => field switch { "grantEvidence" => "授权依据", "jurisdiction" => "司法辖区", "notice" => "资料说明", _ => field };
     public static string Type(string type) => type switch { "PAPER" => "论文", "PATENT" => "授权专利", "PROJECT" => "科研项目", "AWARD" => "获奖", _ => type };
-    public static string Kind(string kind) => kind switch { "IDENTITY" => "科研身份", "PORTAL" => "门户认领", "OUTCOME" => "成果认领", "REVOKE" => "关联撤销", _ => kind };
+    public static string Kind(string kind) => kind switch { "IDENTITY" => "门户认证申请", "PORTAL" => "门户认证申请", "OUTCOME" => "成果申领", "REVOKE" => "成果申领", _ => kind };
     public static string State(string state) => state switch
     {
         "DRAFT" => "草稿", "PENDING_VERIFICATION" => "待验证", "VERIFYING" => "验证中", "PENDING_REVIEW" => "待审核",
