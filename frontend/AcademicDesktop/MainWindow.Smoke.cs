@@ -46,6 +46,9 @@ public partial class MainWindow
             AssertSmoke(account == null && api.Token == null, "工作区验收须从访客入口启动。");
             AssertSmoke(WindowState == WindowState.Maximized, "启动窗口没有默认最大化。");
             AssertSmoke(WorkspaceNavIndices().SequenceEqual(new[] { 0, 1, 2, 3, 4 }), "访客侧栏应为四个公共页面和个人主页。");
+            AssertSmoke(Enumerable.Range(7, 3).All(i => !((TabItem)Pages.Items[i]).IsEnabled), "访客不应能通过内置标签导航进入管理员页。");
+            Pages.SelectedIndex = 9;
+            AssertSmoke(Pages.SelectedIndex == 0, "内部页面选择缺少身份守卫。");
             SwitchPage(4);
             await LoadProfile();
             AssertSmoke(ProfileName.Text == "未登录" && ProfileFields.Visibility == Visibility.Collapsed &&
@@ -53,6 +56,7 @@ public partial class MainWindow
                 "访客个人主页未正确隐藏资料或显示登录入口。");
             CheckWorkspaceIcons();
             checks.Add("guest-navigation-and-profile");
+            checks.Add("private-tab-selection-guard");
             checks.Add("all-svg-icons-render-visible-pixels");
             await CaptureWorkspace("guest", output, screenshots);
 

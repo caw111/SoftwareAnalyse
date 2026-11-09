@@ -1,0 +1,134 @@
+{
+  "date": "2026-11-09",
+  "branch": "Group2",
+  "desktopVersion": "0.2.0",
+  "loadTestRun": false,
+  "backend": {
+    "h2": {
+      "suites": [
+        {
+          "suite": "cn.edu.group2.academic.HttpContractTest",
+          "tests": 8,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "suite": "cn.edu.group2.academic.PlatformIntegrationTest",
+          "tests": 19,
+          "failures": 0,
+          "errors": 0
+        }
+      ],
+      "loadTestRun": false
+    },
+    "postgres": {
+      "suites": [
+        {
+          "suite": "cn.edu.group2.academic.HttpContractTest",
+          "tests": 8,
+          "failures": 0,
+          "errors": 0
+        },
+        {
+          "suite": "cn.edu.group2.academic.PlatformIntegrationTest",
+          "tests": 19,
+          "failures": 0,
+          "errors": 0
+        }
+      ],
+      "loadTestRun": false,
+      "migration": "Existing V1 database upgraded to V2; existing data preserved"
+    }
+  },
+  "desktop": {
+    "public": {
+      "ok": true,
+      "workCards": 20,
+      "scholars": 13,
+      "metricCards": 4,
+      "pathFound": true,
+      "framework": ".NET 9 WPF",
+      "api": "http://127.0.0.1:8080"
+    },
+    "login": {
+      "ok": true,
+      "framework": ".NET 9 WPF",
+      "api": "http://127.0.0.1:8080",
+      "guestEntry": true,
+      "passwordMismatchRejectedLocally": true,
+      "registration": true,
+      "authenticatedProfile": true,
+      "registeredUsername": "smoke_entry_20261109034402_99cae4",
+      "registeredUserId": "90e545bc-c850-4cf8-ba0e-66be417d1ee2",
+      "registeredRole": "USER",
+      "finishedAt": "2026-11-09T03:44:03.7791623+00:00"
+    },
+    "workspace": {
+      "ok": true,
+      "checks": [
+        "guest-navigation-and-profile",
+        "private-tab-selection-guard",
+        "all-svg-icons-render-visible-pixels",
+        "registered-user-navigation-and-profile-persistence",
+        "certification-overlay-resize-and-escape",
+        "private-applications-type-and-submission",
+        "identity-and-portal-review-flow",
+        "outcome-composer-review-and-personal-outcomes",
+        "administrator-three-page-workspace"
+      ],
+      "drawerInitialWidth": 323.25,
+      "drawerResizedWidth": 333.25,
+      "createdUsername": "ui_202611090344054b7374",
+      "createdUserId": "ce563a30-9979-4e13-9fcd-9e1d472259ed",
+      "claimIds": [
+        "caa96fdc-0b8e-4bdd-a3c2-cee727a00280",
+        "8148d53d-487c-4bf9-9e57-bdf2a0cfa2ca",
+        "a34ed49f-72d1-4328-80d8-59a315ecf16c"
+      ],
+      "startedAt": "2026-11-09T03:44:05.4186902+00:00",
+      "finishedAt": "2026-11-09T03:44:07.0654805+00:00"
+    },
+    "native-window": {
+      "ok": true,
+      "dpi": 192,
+      "workArea": {
+        "Left": 0,
+        "Top": 0,
+        "Right": 2560,
+        "Bottom": 1504
+      },
+      "startupMaximized": true,
+      "nativeStyle": "0x17CF0000",
+      "captionButtonsVisible": true,
+      "restoreBounds": {
+        "Left": 102,
+        "Top": 75,
+        "Right": 2457,
+        "Bottom": 1428
+      },
+      "dragBounds": {
+        "Left": 142,
+        "Top": 99,
+        "Right": 2497,
+        "Bottom": 1452
+      },
+      "dragPassed": true,
+      "maximizePassed": true,
+      "minimizePassed": true,
+      "closePassed": true,
+      "iconPresent": true,
+      "version": "0.2.0.0",
+      "tests": "Real titlebar mouse drag and native caption button clicks; no API load test."
+    }
+  },
+  "artifacts": {
+    "artifacts/windows-x64/AcademicDesktop.exe": {
+      "bytes": 134455685,
+      "sha256": "cb82f1114ae974ef4a6d1796d09e2cef56922a113b11dc32f23e2ece894d6dcd"
+    },
+    "backend/build/libs/academic-platform-api.jar": {
+      "bytes": 33660654,
+      "sha256": "1fa129812fb5fac6ef04434ed48ceb6280415887c3579ffae31c845d4a944acf"
+    }
+  }
+}

@@ -82,9 +82,12 @@ public class ClaimService {
             }
             case "SUBMIT" -> {
                 if(!owner||!Set.of("DRAFT","NEED_MORE_INFO").contains(state)) throw ApiException.forbidden();
-                if(state.equals("NEED_MORE_INFO")) {
-                    if(input.evidence()==null||input.evidence().isBlank()) throw ApiException.bad("请提供补充材料");
-                    db.update("UPDATE claim SET evidence=?,material_version=material_version+1 WHERE id=?",input.evidence(),id);
+                if(state.equals("NEED_MORE_INFO")&&(input.evidence()==null||input.evidence().isBlank()))
+                    throw ApiException.bad("请提供补充材料");
+                if(input.evidence()!=null) {
+                    if(input.evidence().isBlank()) throw ApiException.bad("申请材料不能为空");
+                    if(state.equals("NEED_MORE_INFO")||!input.evidence().equals(claim.get("evidence")))
+                        db.update("UPDATE claim SET evidence=?,material_version=material_version+1 WHERE id=?",input.evidence(),id);
                 }
                 validateTarget(kind,claim.get("targetId").toString(),claim.get("contributionRole").toString(),actor.id());
                 if(kind.equals("PORTAL")) {

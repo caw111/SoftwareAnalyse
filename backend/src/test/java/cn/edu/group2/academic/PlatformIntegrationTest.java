@@ -29,7 +29,7 @@ class PlatformIntegrationTest {
         String id="S-"+Db.id();db.update("INSERT INTO scholar VALUES(?,?,'I1','Test',TRUE)",id,"同名测试");return id;
     }
     Map<String,Object> action(Map<String,Object> c,String action,AuthService.Actor actor) {
-        return claims.action(c.get("id").toString(),new ClaimService.Action(((Number)c.get("version")).intValue(),action,"测试审核依据","补充证据"),actor);
+        return claims.action(c.get("id").toString(),new ClaimService.Action(((Number)c.get("version")).intValue(),action,"测试审核依据",action.equals("SUBMIT")&&c.get("state").equals("NEED_MORE_INFO")?"补充证据":null),actor);
     }
     Map<String,Object> pending(AuthService.Actor u,String kind,String target,String role) {
         return action(claims.create(new ClaimService.Create(kind,target,"人工测试证明",role),u),"SUBMIT",u);
@@ -90,6 +90,32 @@ class PlatformIntegrationTest {
         var identity=pending(u,"IDENTITY",u.id(),"");action(action(identity,"TAKE",admin),"APPROVE",admin);
         assertEquals("RESEARCHER",db.one("SELECT role FROM app_user WHERE id=?",u.id()).get("role"));
         assertEquals(0,db.count("SELECT COUNT(*) FROM portal_binding WHERE user_id=?",u.id()));
+    }
+    @Test void submittingEditedDraftSavesMaterialAndRejectsStaleVersion() {
+        var applicant=user("USER");
+        var draft=claims.create(new ClaimService.Create("IDENTITY",applicant.id(),"草稿原始材料",""),applicant);
+        String id=draft.get("id").toString();
+        var submitted=claims.action(id,new ClaimService.Action(0,"SUBMIT","","补全后的机构与身份证明"),applicant);
+        assertEquals("PENDING_REVIEW",submitted.get("state"));
+        assertEquals("补全后的机构与身份证明",submitted.get("evidence"));
+        assertEquals(2,((Number)submitted.get("materialVersion")).intValue());
+        var stale=assertThrows(ApiException.class,()->claims.action(id,new ClaimService.Action(0,"SUBMIT","","过期窗口的内容"),applicant));
+        assertEquals(409,stale.status);
+        assertEquals("补全后的机构与身份证明",db.one("SELECT evidence FROM claim WHERE id=?",id).get("evidence"));
+    }
+    @Test void blankDraftMaterialIsRejectedAndOmittedMaterialPreservesLegacyDraft() {
+        var applicant=user("USER");
+        var draft=claims.create(new ClaimService.Create("IDENTITY",applicant.id(),"已有的有效材料",""),applicant);
+        String id=draft.get("id").toString();
+        var invalid=assertThrows(ApiException.class,()->claims.action(id,new ClaimService.Action(0,"SUBMIT","","  "),applicant));
+        assertEquals(400,invalid.status);
+        var unchanged=db.one("SELECT * FROM claim WHERE id=?",id);
+        assertEquals("DRAFT",unchanged.get("state"));assertEquals("已有的有效材料",unchanged.get("evidence"));
+        assertEquals(0,((Number)unchanged.get("version")).intValue());
+        assertEquals(1,((Number)unchanged.get("materialVersion")).intValue());
+        var submitted=claims.action(id,new ClaimService.Action(0,"SUBMIT","",null),applicant);
+        assertEquals("PENDING_REVIEW",submitted.get("state"));assertEquals("已有的有效材料",submitted.get("evidence"));
+        assertEquals(1,((Number)submitted.get("materialVersion")).intValue());
     }
     @Test void supplementPreservesHistoryAndIncreasesMaterialVersion() {
         var u=user("RESEARCHER");var c=action(action(pending(u,"PORTAL",scholar(),""),"TAKE",admin),"NEED_MORE_INFO",admin);

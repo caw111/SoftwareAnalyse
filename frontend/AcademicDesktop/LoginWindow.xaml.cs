@@ -34,7 +34,7 @@ public partial class LoginWindow : Window
 
     private void AuthTabChanged(object sender, SelectionChangedEventArgs e)
     {
-        if (LoginButton == null || RegisterButton == null || e.Source != AuthTabs) return;
+        if (LoginButton == null || RegisterButton == null || MessagePanel == null || e.Source != AuthTabs) return;
         LoginButton.IsDefault = AuthTabs.SelectedIndex == 0;
         RegisterButton.IsDefault = AuthTabs.SelectedIndex == 1;
         MessagePanel.Visibility = Visibility.Collapsed;

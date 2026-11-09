@@ -328,7 +328,7 @@ public partial class MainWindow : Window
         await Run(async () =>
         {
             var data = await api.Get("api/claims/" + claim.Id);
-            ReviewEvidence.Text = $"申请 ID：{data.Text("id")}\n提交：{data.Text("createdAt")} · 更新：{data.Text("updatedAt")}\n当前审核人：{data.Text("reviewerId", "未领取")} · 占用到期：{data.Text("leaseUntil", "—")}\n\n" + data.Text("evidence") + "\n\n处理历史：\n" + string.Join("\n", data["history"]!.Items().Select(h => $"{Labels.State(h.Text("beforeState"))} → {Labels.State(h.Text("afterState"))} · {h.Text("reason")}"));
+            ReviewEvidence.Text = $"申请 ID：{data.Text("id")}\n提交：{DisplayTime(data, "createdAt")} · 更新：{DisplayTime(data, "updatedAt")}\n当前审核人：{data.Text("reviewerId", "未领取")} · 占用到期：{DisplayTime(data, "leaseUntil")}\n\n" + data.Text("evidence") + "\n\n处理历史：\n" + string.Join("\n", data["history"]!.Items().Select(h => $"{Labels.State(h.Text("beforeState"))} → {Labels.State(h.Text("afterState"))} · {h.Text("reason")}"));
         });
     }
     private async void ReviewAction(object sender, RoutedEventArgs e) => await Run(async () =>
@@ -366,6 +366,7 @@ public partial class MainWindow : Window
         try { Process.Start(new ProcessStartInfo(uri.AbsoluteUri) { UseShellExecute = true }); }
         catch { ShowMessage("无法启动默认浏览器。"); }
     }
+    private static string DisplayTime(JsonNode node, string key) => node.Number(key) > 0 ? DateTimeOffset.FromUnixTimeMilliseconds(node.Number(key)).LocalDateTime.ToString("yyyy-MM-dd HH:mm") : "—";
     private Button SecondaryButton(string label) => new() { Content = label, Style = (Style)FindResource("Secondary"), Margin = new Thickness(0, 8, 0, 8) };
     private static SolidColorBrush Brush(string color) => (SolidColorBrush)new BrushConverter().ConvertFromString(color)!;
     private static TextBlock Text(string value, double size, bool bold = false, string color = "#294652") => new()
