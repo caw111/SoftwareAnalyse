@@ -8,15 +8,17 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import tools.jackson.databind.ObjectMapper;
 
 @Service
 public class AuthService {
     private final Db db;
+    private final ObjectMapper json;
     private final Pbkdf2PasswordEncoder encoder = Pbkdf2PasswordEncoder.defaultsForSpringSecurity_v5_8();
     private final Semaphore passwordSlots = new Semaphore(2);
     private final SecureRandom random = new SecureRandom();
     private final String dummyHash;
-    public AuthService(Db db) { this.db=db; dummyHash=encoder.encode("unused-timing-equalizer"); }
+    public AuthService(Db db,ObjectMapper json) { this.db=db; this.json=json; dummyHash=encoder.encode("unused-timing-equalizer"); }
     record Actor(String id,String username,String displayName,String role) {
         void admin() { if (!role.equals("ADMIN")) throw ApiException.forbidden(); }
         void researcher() { if (!role.equals("RESEARCHER")) throw ApiException.forbidden(); }
@@ -30,9 +32,14 @@ public class AuthService {
         return new Actor(u.get("id").toString(),u.get("username").toString(),u.get("displayName").toString(),u.get("role").toString());
     }
     public Map<String,Object> profile(Actor actor) {
-        var value=new LinkedHashMap<>(db.one("SELECT id,username,display_name,role FROM app_user WHERE id=?",actor.id()));
-        var portal=db.rows("SELECT scholar_id FROM portal_binding WHERE user_id=?",actor.id());
-        value.put("scholarId",portal.isEmpty()?null:portal.getFirst().get("scholarId"));
+        var value=new LinkedHashMap<>(db.one("""
+            SELECT u.id,u.username,u.display_name,u.role,u.orcid,u.websites_json,u.about_me,u.profile_version,
+                   p.scholar_id,s.name AS scholar_name,s.institution_id,i.name AS institution_name
+            FROM app_user u LEFT JOIN portal_binding p ON p.user_id=u.id
+            LEFT JOIN scholar s ON s.id=p.scholar_id LEFT JOIN institution i ON i.id=s.institution_id
+            WHERE u.id=?
+            """,actor.id()));
+        value.put("websites",json.readTree(value.remove("websitesJson").toString()));
         return value;
     }
     @Transactional
@@ -62,7 +69,7 @@ public class AuthService {
     }
     String createUser(String username,String password,String displayName,String role) {
         String id=Db.id();
-        db.update("INSERT INTO app_user VALUES(?,?,?,?,?,?)",id,username,encoder.encode(password),displayName,role,Db.now());
+        db.update("INSERT INTO app_user(id,username,password_hash,display_name,role,created_at) VALUES(?,?,?,?,?,?)",id,username,encoder.encode(password),displayName,role,Db.now());
         return id;
     }
     void logout(HttpServletRequest request) {

@@ -17,6 +17,7 @@ import tools.jackson.databind.ObjectMapper;
 class HttpContractTest {
     @LocalServerPort int port;
     @Autowired ObjectMapper json;
+    @Autowired Db db;
     final HttpClient client=HttpClient.newHttpClient();
     HttpResponse<String> request(String method,String path,String body,String token) throws Exception {
         var builder=HttpRequest.newBuilder(URI.create("http://127.0.0.1:"+port+path)).header("Content-Type","application/json");
@@ -40,6 +41,9 @@ class HttpContractTest {
         String token=login("reader","DemoPass2026!");
         assertEquals(403,request("GET","/api/admin/imports",null,token).statusCode());
         assertEquals(403,request("GET","/api/claims?review=true",null,token).statusCode());
+        assertEquals(401,request("GET","/api/admin/statistics",null,null).statusCode());
+        assertEquals(403,request("GET","/api/admin/statistics",null,token).statusCode());
+        assertEquals(403,request("GET","/api/claims?review=true&page=0&size=10",null,token).statusCode());
     }
     @Test void logoutRevokesTokenAndRegistrationDoesNotAcceptRoleEscalation() throws Exception {
         String username="http-"+Db.id().substring(0,10),password="HttpTest2026Password!";
@@ -53,5 +57,95 @@ class HttpContractTest {
         assertEquals(400,request("POST","/api/auth/login","{broken",null).statusCode());
         assertEquals(400,request("POST","/api/auth/login","{\"username\":\"\",\"password\":\"\"}",null).statusCode());
         assertEquals(413,request("POST","/api/admin/imports","x".repeat(2*1024*1024+1),null).statusCode());
+    }
+
+    String newAccount() throws Exception {
+        String username="profile-"+Db.id().substring(0,10),password="ProfileTest2026!";
+        assertEquals(200,request("POST","/api/auth/register",json.writeValueAsString(Map.of(
+            "username",username,"password",password,"displayName","Original")),null).statusCode());
+        return login(username,password);
+    }
+    Map<String,Object> profileInput(int version) {
+        return new LinkedHashMap<>(Map.of("displayName","研究者甲","orcid","https://orcid.org/0000-0002-1825-0097",
+            "websites",List.of(Map.of("label","GitHub","url","https://github.com/example")),
+            "aboutMe","研究方向与公开成果介绍","version",version));
+    }
+    @Test void personalProfilePersistsWithoutEscalatingPermissionsOrChangingAnotherAccount() throws Exception {
+        String token=newAccount(),other=newAccount();
+        var input=profileInput(0);
+        input.put("role","ADMIN");input.put("scholarId","S1");
+        assertEquals(401,request("POST","/api/me/profile",json.writeValueAsString(input),null).statusCode());
+        var response=request("POST","/api/me/profile",json.writeValueAsString(input),token);
+        assertEquals(200,response.statusCode(),response.body());
+        var saved=json.readTree(response.body());
+        assertEquals("研究者甲",saved.get("displayName").asText());
+        assertEquals("0000-0002-1825-0097",saved.get("orcid").asText());
+        assertEquals(1,saved.get("profileVersion").asInt());
+        assertEquals("USER",saved.get("role").asText());assertTrue(saved.get("scholarId").isNull());
+        assertEquals("https://github.com/example",saved.get("websites").get(0).get("url").asText());
+        assertEquals("研究方向与公开成果介绍",saved.get("aboutMe").asText());
+        assertEquals(saved,json.readTree(request("GET","/api/auth/me",null,token).body()));
+        var untouched=json.readTree(request("GET","/api/auth/me",null,other).body());
+        assertEquals("Original",untouched.get("displayName").asText());
+        assertEquals(0,untouched.get("profileVersion").asInt());assertEquals(0,untouched.get("websites").size());
+        assertEquals(403,request("POST","/api/claims",json.writeValueAsString(Map.of(
+            "kind","PORTAL","targetId","S1","evidence","Not verified","contributionRole","")),token).statusCode());
+    }
+    @Test void staleProfileEditCannotOverwriteNewerValues() throws Exception {
+        String token=newAccount();
+        assertEquals(200,request("POST","/api/me/profile",json.writeValueAsString(profileInput(0)),token).statusCode());
+        var stale=profileInput(0);stale.put("displayName","Stale edit");
+        assertEquals(409,request("POST","/api/me/profile",json.writeValueAsString(stale),token).statusCode());
+        var current=json.readTree(request("GET","/api/auth/me",null,token).body());
+        assertEquals("研究者甲",current.get("displayName").asText());
+        var clear=profileInput(1);clear.put("orcid","");clear.put("websites",List.of());clear.put("aboutMe","");
+        var response=request("POST","/api/me/profile",json.writeValueAsString(clear),token);
+        assertEquals(200,response.statusCode(),response.body());
+        assertEquals(2,json.readTree(response.body()).get("profileVersion").asInt());
+        assertEquals(0,json.readTree(response.body()).get("websites").size());
+    }
+    @Test void unsafeLinksInvalidOrcidAndUnboundedProfilesAreRejectedAtomically() throws Exception {
+        String token=newAccount();
+        for(String url:List.of("javascript:alert(1)","file:///C:/Windows/system.ini","ftp://example.org/file",
+                "https://user:password@example.org/","https:///missing-host","https://example.org:70000")) {
+            var input=profileInput(0);input.put("websites",List.of(Map.of("label","Website","url",url)));
+            assertEquals(400,request("POST","/api/me/profile",json.writeValueAsString(input),token).statusCode(),url);
+        }
+        var invalid=profileInput(0);invalid.put("orcid","0000-0002-1825-0098");
+        assertEquals(400,request("POST","/api/me/profile",json.writeValueAsString(invalid),token).statusCode());
+        invalid=profileInput(0);invalid.put("websites",Collections.nCopies(9,Map.of("label","Web","url","https://example.org/")));
+        assertEquals(400,request("POST","/api/me/profile",json.writeValueAsString(invalid),token).statusCode());
+        invalid=profileInput(0);invalid.remove("version");
+        assertEquals(400,request("POST","/api/me/profile",json.writeValueAsString(invalid),token).statusCode());
+        var unchanged=json.readTree(request("GET","/api/auth/me",null,token).body());
+        assertEquals(0,unchanged.get("profileVersion").asInt());assertEquals("Original",unchanged.get("displayName").asText());
+    }
+    @Test void pagedApplicationsIncludeOnlyOwnerAndAdminSummaryRequiresAdmin() throws Exception {
+        String token=newAccount(),other=newAccount();
+        String owner=json.readTree(request("GET","/api/auth/me",null,token).body()).get("id").asText();
+        String foreign=json.readTree(request("GET","/api/auth/me",null,other).body()).get("id").asText();
+        for(int i=0;i<3;i++) {
+            String id=Db.id(),user=i<2?owner:foreign;
+            db.update("""
+                INSERT INTO claim(id,user_id,kind,target_id,target_label,evidence,contribution_role,state,version,material_version,reason,created_at,updated_at)
+                VALUES(?,?,'IDENTITY',?,'Test identity','Private evidence','','WITHDRAWN',1,1,'Test fixture',?,?)
+                """,id,user,user,Db.now(),Db.now()+i);
+        }
+        var first=json.readTree(request("GET","/api/claims?page=0&size=1",null,token).body());
+        var second=json.readTree(request("GET","/api/claims?page=1&size=1",null,token).body());
+        assertEquals(2,first.get("total").asInt());assertEquals(1,first.get("items").size());
+        assertEquals(owner,first.get("items").get(0).get("userId").asText());
+        assertEquals(owner,second.get("items").get(0).get("userId").asText());
+        assertNotEquals(first.get("items").get(0).get("id"),second.get("items").get(0).get("id"));
+        assertEquals(0,json.readTree(request("GET","/api/claims?page=2&size=1",null,token).body()).get("items").size());
+        assertEquals(2,json.readTree(request("GET","/api/claims",null,token).body()).size());
+        assertEquals(400,request("GET","/api/claims?page=-1&size=1",null,token).statusCode());
+        assertEquals(400,request("GET","/api/claims?page=0&size=101",null,token).statusCode());
+        var statistics=request("GET","/api/admin/statistics",null,login("admin","DemoPass2026!"));
+        assertEquals(200,statistics.statusCode(),statistics.body());
+        var summary=json.readTree(statistics.body());
+        assertTrue(summary.get("catalogTotal").asLong()>=64);
+        assertEquals(summary.get("catalogTotal").asLong(),summary.get("realCatalogTotal").asLong()+summary.get("demoCatalogTotal").asLong());
+        assertEquals(4,summary.get("byType").size());
     }
 }

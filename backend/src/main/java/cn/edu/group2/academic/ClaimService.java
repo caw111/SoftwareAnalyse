@@ -51,6 +51,16 @@ public class ClaimService {
         if(review) {actor.admin();return db.rows("SELECT c.*,u.display_name AS applicant_name FROM claim c JOIN app_user u ON u.id=c.user_id ORDER BY c.updated_at DESC,c.id LIMIT 200");}
         return db.rows("SELECT * FROM claim WHERE user_id=? ORDER BY updated_at DESC,id LIMIT 200",actor.id());
     }
+    public Map<String,Object> page(AuthService.Actor actor,boolean review,int page,int size) {
+        if(review) actor.admin();
+        if(page<0||size<1||size>100) throw ApiException.bad("申请页码须从 0 开始，每页 1–100 条");
+        long offset=(long)page*size;
+        long total=review?db.count("SELECT COUNT(*) FROM claim"):db.count("SELECT COUNT(*) FROM claim WHERE user_id=?",actor.id());
+        var items=review
+            ?db.rows("SELECT c.*,u.display_name AS applicant_name FROM claim c JOIN app_user u ON u.id=c.user_id ORDER BY c.updated_at DESC,c.id LIMIT ? OFFSET ?",size,offset)
+            :db.rows("SELECT * FROM claim WHERE user_id=? ORDER BY updated_at DESC,id LIMIT ? OFFSET ?",actor.id(),size,offset);
+        return Map.of("items",items,"total",total,"page",page,"size",size);
+    }
     public Object detail(String id,AuthService.Actor actor) {
         var claim=db.one("SELECT * FROM claim WHERE id=?",id);
         if(!claim.get("userId").equals(actor.id())&&!actor.role().equals("ADMIN")) throw ApiException.forbidden();

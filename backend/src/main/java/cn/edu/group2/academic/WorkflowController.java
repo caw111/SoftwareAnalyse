@@ -9,9 +9,33 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RequestMapping("/api")
 public class WorkflowController {
-    final AuthService auth;final ClaimService claims;final ImportService imports;final Db db;
-    WorkflowController(AuthService auth,ClaimService claims,ImportService imports,Db db) {this.auth=auth;this.claims=claims;this.imports=imports;this.db=db;}
-    @GetMapping("/claims") Object list(HttpServletRequest r,@RequestParam(defaultValue="false") boolean review) {return claims.list(auth.require(r),review);}
+    final AuthService auth;final ClaimService claims;final ImportService imports;final Db db;final ProfileService profiles;
+    WorkflowController(AuthService auth,ClaimService claims,ImportService imports,Db db,ProfileService profiles) {this.auth=auth;this.claims=claims;this.imports=imports;this.db=db;this.profiles=profiles;}
+    @GetMapping("/claims") Object list(HttpServletRequest r,@RequestParam(defaultValue="false") boolean review,
+        @RequestParam(required=false) Integer page,@RequestParam(defaultValue="30") int size) {
+        var actor=auth.require(r);return page==null?claims.list(actor,review):claims.page(actor,review,page,size);
+    }
+    @PostMapping("/me/profile") Object profile(HttpServletRequest r,@Valid @RequestBody ProfileService.Update input) {
+        return profiles.update(input,auth.require(r));
+    }
+    @GetMapping("/admin/statistics") Object statistics(HttpServletRequest r) {
+        auth.require(r).admin();
+        var summary=db.one("""
+            SELECT (SELECT COUNT(*) FROM work) AS catalog_total,
+                   (SELECT COUNT(*) FROM app_user) AS users,
+                   (SELECT COUNT(*) FROM app_user WHERE role='RESEARCHER') AS researchers,
+                   (SELECT COUNT(*) FROM claim WHERE state='PENDING_REVIEW') AS pending_applications,
+                   (SELECT COUNT(*) FROM claim WHERE state='UNDER_REVIEW') AS reviewing_applications,
+                   (SELECT COUNT(*) FROM claim WHERE state='APPROVED') AS approved_applications,
+                   (SELECT COUNT(*) FROM import_task) AS imports,
+                   (SELECT revision FROM catalog_release WHERE id=1) AS catalog_revision
+            """);
+        summary.put("byType",db.rows("SELECT type,COUNT(*) AS count FROM work GROUP BY type ORDER BY type"));
+        summary.put("byState",db.rows("SELECT state,COUNT(*) AS count FROM claim GROUP BY state ORDER BY state"));
+        summary.put("realCatalogTotal",db.count("SELECT COUNT(*) FROM work WHERE simulated=FALSE"));
+        summary.put("demoCatalogTotal",db.count("SELECT COUNT(*) FROM work WHERE simulated=TRUE"));
+        return summary;
+    }
     @GetMapping("/claims/{id}") Object detail(HttpServletRequest r,@PathVariable String id) {return claims.detail(id,auth.require(r));}
     @PostMapping("/claims") Object create(HttpServletRequest r,@Valid @RequestBody ClaimService.Create input) {return claims.create(input,auth.require(r));}
     @PostMapping("/claims/{id}/actions") Object action(HttpServletRequest r,@PathVariable String id,@Valid @RequestBody ClaimService.Action input) {return claims.action(id,input,auth.require(r));}
