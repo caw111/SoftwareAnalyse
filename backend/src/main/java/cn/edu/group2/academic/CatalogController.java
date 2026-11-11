@@ -12,7 +12,7 @@ public class CatalogController {
         @RequestParam(defaultValue="") String q,@RequestParam(defaultValue="") String type,
         @RequestParam(defaultValue="") String scholar,@RequestParam(defaultValue="") String institution,
         @RequestParam(defaultValue="") String field,@RequestParam(required=false) Integer from,@RequestParam(required=false) Integer to,
-        @RequestParam(defaultValue="real") String dataset,@RequestParam(defaultValue="year") String sort,
+        @RequestParam(defaultValue="real") String dataset,@RequestParam(defaultValue="relevance") String sort,
         @RequestParam(defaultValue="0") int page,@RequestParam(defaultValue="20") int size,@RequestParam(required=false) Long revision) {
         var query=catalog.query(q,type,scholar,institution,field,from,to,dataset,sort,page,size,revision);
         return request.getRequestURI().endsWith("statistics")?catalog.stats(query):catalog.search(query);

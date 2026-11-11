@@ -4,7 +4,7 @@ plugins {
 }
 
 group = 'cn.edu.group2'
-version = '0.1.0'
+version = '0.3.0'
 
 java { toolchain { languageVersion = JavaLanguageVersion.of(21) } }
 repositories { mavenCentral() }
@@ -25,5 +25,10 @@ dependencies {
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 tasks.withType(JavaCompile).configureEach { options.encoding = 'UTF-8' }
-tasks.named('test') { useJUnitPlatform(); maxHeapSize = '512m' }
+tasks.named('test') {
+    useJUnitPlatform()
+    maxHeapSize = '512m'
+    // Integration tests drive the worker explicitly against a local mock source.
+    systemProperty 'app.crawl.worker-enabled', 'false'
+}
 tasks.named('bootJar') { archiveFileName = 'academic-platform-api.jar' }

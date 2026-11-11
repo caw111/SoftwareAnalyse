@@ -13,7 +13,7 @@ import tools.jackson.databind.ObjectMapper;
 @SpringBootTest(webEnvironment=SpringBootTest.WebEnvironment.RANDOM_PORT,properties={
     "spring.datasource.url=${TEST_DB_URL:jdbc:h2:mem:httpcontracts;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE;DEFAULT_NULL_ORDERING=HIGH;NON_KEYWORDS=YEAR;DB_CLOSE_DELAY=-1}",
     "spring.datasource.username=${TEST_DB_USER:sa}","spring.datasource.password=${TEST_DB_PASSWORD:}",
-    "app.demo=true","app.demo-count=64","management.server.port=0"})
+    "app.demo=true","app.demo-count=64","management.server.port=0","app.crawl.worker-enabled=false"})
 class HttpContractTest {
     @LocalServerPort int port;
     @Autowired ObjectMapper json;
@@ -44,6 +44,13 @@ class HttpContractTest {
         assertEquals(401,request("GET","/api/admin/statistics",null,null).statusCode());
         assertEquals(403,request("GET","/api/admin/statistics",null,token).statusCode());
         assertEquals(403,request("GET","/api/claims?review=true&page=0&size=10",null,token).statusCode());
+        for(String path:List.of("/api/admin/crawl/sources","/api/admin/crawl/tasks","/api/admin/crawl/checkpoints","/api/admin/quality")) {
+            assertEquals(401,request("GET",path,null,null).statusCode(),path);
+            assertEquals(403,request("GET",path,null,token).statusCode(),path);
+        }
+        String task=json.writeValueAsString(Map.of("sourceId","crossref","doi","10.1038/nphys1170","pageSize",1,"maxPages",1,"maxRecords",1));
+        assertEquals(401,request("POST","/api/admin/crawl/tasks",task,null).statusCode());
+        assertEquals(403,request("POST","/api/admin/crawl/tasks",task,token).statusCode());
     }
     @Test void logoutRevokesTokenAndRegistrationDoesNotAcceptRoleEscalation() throws Exception {
         String username="http-"+Db.id().substring(0,10),password="HttpTest2026Password!";

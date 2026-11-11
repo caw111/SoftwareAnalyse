@@ -48,3 +48,9 @@ app:
   demo: ${APP_DEMO:true}
   admin-password: ${ADMIN_PASSWORD:}
   demo-count: ${DEMO_COUNT:64}
+  crawl:
+    # The worker executes only tasks explicitly started by an administrator.
+    # Per-source automatic schedules remain disabled in the database until configured.
+    worker-enabled: ${CRAWL_WORKER_ENABLED:true}
+    poll-ms: ${CRAWL_POLL_MS:2000}
+    contact-email: ${CRAWL_CONTACT_EMAIL:}

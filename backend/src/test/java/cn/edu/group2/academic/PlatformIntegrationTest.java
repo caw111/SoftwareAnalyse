@@ -40,7 +40,12 @@ class PlatformIntegrationTest {
 
     @Test void defaultsNeverMixSimulatedWithReal() {
         var real=catalog.query("","","","","",null,null,"real","year",0,20,null);
-        assertEquals(0L,catalog.search(real).get("total"));assertTrue((long)catalog.search(query("",null)).get("total")>=64);
+        var realResult=catalog.search(real);var demoResult=catalog.search(query("",null));
+        @SuppressWarnings("unchecked") var realItems=(List<Map<String,Object>>)realResult.get("items");
+        @SuppressWarnings("unchecked") var demoItems=(List<Map<String,Object>>)demoResult.get("items");
+        assertTrue(realItems.stream().allMatch(w->Boolean.FALSE.equals(w.get("simulated"))));
+        assertTrue(demoItems.stream().allMatch(w->Boolean.TRUE.equals(w.get("simulated"))));
+        assertTrue((long)demoResult.get("total")>=64);
     }
     @Test void invalidQueryIsDifferentFromEmptyResult() {
         assertThrows(ApiException.class,()->catalog.query("","","","","",2025,2020,"demo","year",0,20,null));

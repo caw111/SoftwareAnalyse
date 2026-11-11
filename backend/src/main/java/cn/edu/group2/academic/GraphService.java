@@ -13,9 +13,9 @@ public class GraphService {
     GraphService(Db db,CatalogService catalog) {this.db=db;this.catalog=catalog;}
     List<Map<String,Object>> load(CatalogService.Query query) {
         var f=catalog.filter(query);
-        var nodes=db.rows("SELECT DISTINCT c.scholar_id FROM work w JOIN contributor c ON c.work_id=w.id WHERE "+f.sql()+" AND c.scholar_id IS NOT NULL LIMIT 2001",f.args().toArray());
+        var nodes=db.rows("SELECT DISTINCT c.scholar_id FROM work_revision w JOIN contributor_revision c ON c.work_id=w.id AND c.revision=w.revision WHERE "+f.sql()+" AND c.scholar_id IS NOT NULL LIMIT 2001",f.args().toArray());
         if(nodes.size()>2000) throw new ApiException(422,"GRAPH_LIMIT","当前范围超过 2,000 个节点，请缩小年份或领域范围");
-        var result=db.rows("SELECT a.scholar_id AS source,b.scholar_id AS target,COUNT(DISTINCT w.id) AS weight FROM work w JOIN contributor a ON a.work_id=w.id JOIN contributor b ON b.work_id=w.id AND a.scholar_id<b.scholar_id WHERE "+f.sql()+" GROUP BY a.scholar_id,b.scholar_id ORDER BY a.scholar_id,b.scholar_id LIMIT 10001",f.args().toArray());
+        var result=db.rows("SELECT a.scholar_id AS source,b.scholar_id AS target,COUNT(DISTINCT w.id) AS weight FROM work_revision w JOIN contributor_revision a ON a.work_id=w.id AND a.revision=w.revision JOIN contributor_revision b ON b.work_id=w.id AND b.revision=w.revision AND a.scholar_id<b.scholar_id WHERE "+f.sql()+" GROUP BY a.scholar_id,b.scholar_id ORDER BY a.scholar_id,b.scholar_id LIMIT 10001",f.args().toArray());
         if(result.size()>10000) throw new ApiException(422,"GRAPH_LIMIT","当前范围超过 10,000 条边，请缩小范围");
         return result;
     }
@@ -44,7 +44,7 @@ public class GraphService {
         for(int i=0;i<ids.size()-1;i++) {
             String a=ids.get(i),b=ids.get(i+1);
             var args=new ArrayList<>(f.args());args.add(a);args.add(b);
-            var papers=db.rows("SELECT DISTINCT w.id,w.title,w.year FROM work w JOIN contributor a ON a.work_id=w.id JOIN contributor b ON b.work_id=w.id WHERE "+f.sql()+" AND a.scholar_id=? AND b.scholar_id=? ORDER BY w.year DESC NULLS LAST,w.id LIMIT 20",args.toArray());
+            var papers=db.rows("SELECT DISTINCT w.id,w.title,w.year FROM work_revision w JOIN contributor_revision a ON a.work_id=w.id AND a.revision=w.revision JOIN contributor_revision b ON b.work_id=w.id AND b.revision=w.revision WHERE "+f.sql()+" AND a.scholar_id=? AND b.scholar_id=? ORDER BY w.year DESC NULLS LAST,w.id LIMIT 20",args.toArray());
             long weight=((Number)graph.stream().filter(e->(e.get("source").equals(a)&&e.get("target").equals(b))||(e.get("source").equals(b)&&e.get("target").equals(a))).findFirst().orElseThrow().get("weight")).longValue();
             pathEdges.add(Map.of("source",a,"target",b,"weight",weight,"evidence",papers,"evidenceTruncated",weight>papers.size()));
         }
