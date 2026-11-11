@@ -19,7 +19,7 @@ services:
     cpus: 1.0
   api:
     build: ../backend
-    image: academic-platform-api:0.1.0
+    image: academic-platform-api:0.3.0
     environment:
       APP_DEMO: "false"
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set ADMIN_PASSWORD in .env}
@@ -29,6 +29,9 @@ services:
       DB_POOL_SIZE: "8"
       SERVER_ADDRESS: 0.0.0.0
       MANAGEMENT_ADDRESS: 0.0.0.0
+      CRAWL_WORKER_ENABLED: ${CRAWL_WORKER_ENABLED:-true}
+      CRAWL_POLL_MS: ${CRAWL_POLL_MS:-2000}
+      CRAWL_CONTACT_EMAIL: ${CRAWL_CONTACT_EMAIL:-}
     depends_on:
       db:
         condition: service_healthy

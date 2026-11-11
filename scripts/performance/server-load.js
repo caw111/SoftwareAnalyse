@@ -24,7 +24,7 @@ const initialProbe = new Trend('initial_probe_ms', true);
 const querySet = Array.from({ length: 50 }, (_, i) => ({
   type: ['', 'PAPER', 'PATENT', 'PROJECT', 'AWARD'][i % 5],
   from: 2019 + (Math.floor(i / 5) % 8), to: 2026,
-  sort: ['year', 'citations'][Math.floor(i / 25)],
+  sort: i >= 40 ? 'relevance' : ['year', 'citations'][i % 2],
   q: i < 40 ? '' : ['知识', '并发', '数据', '学术', '不存在的固定查询'][i % 5],
   page: 0, size: 20,
 }));
@@ -43,7 +43,7 @@ export const options = {
     measured_error_rate: ['rate<0.01'],
   },
   summaryTrendStats: ['count', 'min', 'med', 'p(95)', 'p(99)', 'max'],
-  userAgent: 'AcademicPlatform-ServerAcceptance/0.1',
+  userAgent: 'AcademicPlatform-ServerAcceptance/0.3',
 };
 export function setup() {
   const probe = http.get(`${base}/api/works?dataset=${dataset}&size=50`, { timeout: '10s', tags: { phase: 'setup', name: 'setup_catalog' } });
