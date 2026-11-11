@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="1681" viewBox="0 0 1560 1681"><rect width="100%" height="100%" fill="white"/>
+<text x="35" y="56" font-family="Microsoft YaHei, sans-serif" font-size="34" font-weight="700" fill="#26384B">检索权限计数与分页一致性</text>
+<text x="35" y="99" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">图6-2  统一允许集合约束列表、总数与分面；权限变化不能通过旧快照恢复</text>
+<line x1="130.0" y1="242" x2="130.0" y2="1661" stroke="#748497" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="563.3333333333333" y1="242" x2="563.3333333333333" y2="1661" stroke="#748497" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="996.6666666666666" y1="242" x2="996.6666666666666" y2="1661" stroke="#748497" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="1430.0" y1="242" x2="1430.0" y2="1661" stroke="#748497" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="15.0" y="142" width="230" height="100" fill="#E9F0F7" stroke="#748497" stroke-width="2"/>
+<text x="55.5" y="173" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">SearchControl</text>
+<text x="80.5" y="203" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">«control»</text>
+<rect x="448.33333333333326" y="142" width="230" height="100" fill="#E9F0F7" stroke="#748497" stroke-width="2"/>
+<text x="475.34895833333326" y="173" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">PermissionPolicy</text>
+<text x="513.8333333333333" y="203" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">«control»</text>
+<rect x="881.6666666666666" y="142" width="230" height="100" fill="#E9F0F7" stroke="#748497" stroke-width="2"/>
+<text x="933.1666666666666" y="173" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">SearchIndex</text>
+<text x="924.6666666666666" y="203" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">«read model»</text>
+<rect x="1315.0" y="142" width="230" height="100" fill="#E9F0F7" stroke="#748497" stroke-width="2"/>
+<text x="1348.0078125" y="173" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">PublicRelease／</text>
+<text x="1364.0" y="203" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">ReleaseEntry</text>
+<text x="1352.5" y="233" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">«entity group»</text>
+<text x="144.0" y="301" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">QX01  获取当前公开可见约束与 permi</text>
+<text x="144.0" y="332" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">ssionRevision</text>
+<line x1="130.0" y1="352" x2="563.3333333333333" y2="352" stroke="#748497" stroke-width="2"/>
+<polyline points="551.3333333333333,346 563.3333333333333,352 551.3333333333333,358" fill="none" stroke="#26384B" stroke-width="2"/>
+<text x="144.0" y="406" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">QX02  返回同一可见范围表达式与权限</text>
+<text x="144.0" y="437" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">修订号</text>
+<line x1="563.3333333333333" y1="457" x2="130.0" y2="457" stroke="#748497" stroke-width="2" stroke-dasharray="6 5"/>
+<polyline points="142.0,451 130.0,457 142.0,463" fill="none" stroke="#26384B" stroke-width="2"/>
+<text x="144.0" y="511" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">QX03  查询固定 release；同贡献筛选＋可见约束</text>
+<line x1="130.0" y1="531" x2="996.6666666666666" y2="531" stroke="#748497" stroke-width="2"/>
+<polyline points="984.6666666666666,525 996.6666666666666,531 984.6666666666666,537" fill="none" stroke="#26384B" stroke-width="2"/>
+<rect x="22" y="554" width="1516" height="266" fill="none" stroke="#748497" stroke-width="2"/>
+<text x="38" y="586" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">critical [一次逻辑查询使用同一候选集合与同版读视图]</text>
+<rect x="58" y="608" width="1444" height="51" fill="#F5F7FA" stroke="#D9DDE3" stroke-width="2"/>
+<text x="73" y="641" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">先身份／类型／条件匹配 → 解析规范ID → 按实时可见范围过滤</text>
+<rect x="58" y="677" width="1444" height="51" fill="#F5F7FA" stroke="#D9DDE3" stroke-width="2"/>
+<text x="73" y="710" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">再计算总数与分面 → 稳定排序 → 分页；不可先分页再剔除</text>
+<text x="144.0" y="777" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">QX04  返回规范ID页、total、facets与读视图标记</text>
+<line x1="996.6666666666666" y1="797" x2="130.0" y2="797" stroke="#748497" stroke-width="2" stroke-dasharray="6 5"/>
+<polyline points="142.0,791 130.0,797 142.0,803" fill="none" stroke="#26384B" stroke-width="2"/>
+<text x="144.0" y="871" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">QX05  按同一 release 批量读条目和来源快照</text>
+<line x1="130.0" y1="891" x2="1430.0" y2="891" stroke="#748497" stroke-width="2"/>
+<polyline points="1418.0,885 1430.0,891 1418.0,897" fill="none" stroke="#26384B" stroke-width="2"/>
+<text x="144.0" y="945" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">QX06  返回前重验 permissionRevisio</text>
+<text x="144.0" y="976" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">n 与页内对象权限</text>
+<line x1="130.0" y1="996" x2="563.3333333333333" y2="996" stroke="#748497" stroke-width="2"/>
+<polyline points="551.3333333333333,990 563.3333333333333,996 551.3333333333333,1002" fill="none" stroke="#26384B" stroke-width="2"/>
+<rect x="22" y="1019" width="1516" height="425" fill="none" stroke="#748497" stroke-width="2"/>
+<text x="38" y="1051" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">alt [权限修订未变化且所有数据同版]</text>
+<text x="144.0" y="1104" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">QX07  生成绑定条件、release、权限修订与排序位置的查</text>
+<text x="144.0" y="1135" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">询令牌</text>
+<line x1="130.0" y1="1155" x2="190.0" y2="1155" stroke="#748497" stroke-width="2"/>
+<line x1="190.0" y1="1155" x2="190.0" y2="1175" stroke="#748497" stroke-width="2"/>
+<line x1="190.0" y1="1175" x2="130.0" y2="1175" stroke="#748497" stroke-width="2"/>
+<polyline points="142.0,1169 130.0,1175 142.0,1181" fill="none" stroke="#26384B" stroke-width="2"/>
+<line x1="36" y1="1198" x2="1524" y2="1198" stroke="#748497" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="50" y="1230" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">else [权限已变化／原查询令牌权限修订过期]</text>
+<rect x="58" y="1252" width="1444" height="51" fill="#F5F7FA" stroke="#D9DDE3" stroke-width="2"/>
+<text x="73" y="1285" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">本次结果作废；同一release下重算一次，仍变化则提示刷新</text>
+<line x1="36" y1="1321" x2="1524" y2="1321" stroke="#748497" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="50" y="1353" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">else [查询超时／索引或条目缺失／同版不可满足]</text>
+<rect x="58" y="1375" width="1444" height="51" fill="#F5F7FA" stroke="#D9DDE3" stroke-width="2"/>
+<text x="73" y="1408" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">明确失败并保留条件；不将故障计为0条，不降级拼接最新数据</text>
+<text x="144.0" y="1495" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">QX08  成功回主图Q07；失败直接返回可恢复原因</text>
+<line x1="130.0" y1="1515" x2="190.0" y2="1515" stroke="#748497" stroke-width="2"/>
+<line x1="190.0" y1="1515" x2="190.0" y2="1535" stroke="#748497" stroke-width="2"/>
+<line x1="190.0" y1="1535" x2="130.0" y2="1535" stroke="#748497" stroke-width="2"/>
+<polyline points="142.0,1529 130.0,1535 142.0,1541" fill="none" stroke="#26384B" stroke-width="2"/>
+<rect x="45" y="1558" width="1470" height="61" fill="#EDF3F8" stroke="#748497" stroke-width="2"/>
+<text x="57" y="1592" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">ref</text>
+<text x="125" y="1593" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">内部一致性策略为本次设计决策；目标是列表 total facets 使用同一可见集合</text>
+</svg>

@@ -1,0 +1,33 @@
+{
+  "pages": 10,
+  "seconds": 900,
+  "fixed_appendix_pages": 0,
+  "main_diagrams": 6,
+  "all_our_pngs": 13,
+  "screen_characters": [
+    191,
+    357,
+    275,
+    221,
+    239,
+    258,
+    234,
+    251,
+    212,
+    244
+  ],
+  "speaker_chinese_characters": [
+    120,
+    305,
+    237,
+    219,
+    267,
+    207,
+    265,
+    240,
+    234,
+    160
+  ],
+  "check": "逐页有完整文案、案例讲解、配图范围、来源；图片复制字节一致；相对链接有效",
+  "boundary": "未生成PPTX，未进行实际放映排版或计时验证"
+}

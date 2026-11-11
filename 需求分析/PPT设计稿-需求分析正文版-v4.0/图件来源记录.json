@@ -1,0 +1,256 @@
+{
+  "group_names": {
+    "1组": "当前工作区A组整合v1.1所展示的模型",
+    "2组": "GitHub Group2固定提交b93110b所展示的模型"
+  },
+  "comparison_basis": "按用户明确要求：两组起始需求基准相同，不以原交付文字中的版本标签差异解释任务基准不同。现有六/九状态和耗尽终态差异作为模型结果待复核。",
+  "group1_search": "当前整合检索已参考用户补充的B5个人包，非原始独立稿；未把该个人包作为2组整组报告。",
+  "files": [
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\02-局部01-账号学者与门户授权.png",
+      "path": "图件/1组/02-局部01-账号学者与门户授权.png",
+      "sha256": "e5fcbd856157ffe67acbc05f7893ae0264eaeb00164f13a7fdb13fd5cfa05503",
+      "bytes": 373650
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\02-局部01-账号学者与门户授权.svg",
+      "path": "图件/1组/02-局部01-账号学者与门户授权.svg",
+      "sha256": "19aa03d1130e2fe65ca63c425419673f7a52fb152af2233f6a9707e4d173e871",
+      "bytes": 18162
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\02-局部02-四类成果与专利身份.png",
+      "path": "图件/1组/02-局部02-四类成果与专利身份.png",
+      "sha256": "fd13a46d8735819c33fa0af150cac8e29ff59f4212cd76fa937109696f178d19",
+      "bytes": 418721
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\02-局部02-四类成果与专利身份.svg",
+      "path": "图件/1组/02-局部02-四类成果与专利身份.svg",
+      "sha256": "1629e3c4bc149e78104d4cda6259fecc1d8ea8e50a084659d5192879506a658b",
+      "bytes": 17203
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\02-局部03-贡献机构与领域关系.png",
+      "path": "图件/1组/02-局部03-贡献机构与领域关系.png",
+      "sha256": "ed36f4b77e5cbb6f7ae661598be1e8858dfdd185ad935e33d6fc6827c5192346",
+      "bytes": 429556
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\02-局部03-贡献机构与领域关系.svg",
+      "path": "图件/1组/02-局部03-贡献机构与领域关系.svg",
+      "sha256": "186eadddef6ede1446f7f1cccd0d7c920093952358ed9b6d624f943fc21824bf",
+      "bytes": 24531
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\02-局部04-来源采集与规范映射.png",
+      "path": "图件/1组/02-局部04-来源采集与规范映射.png",
+      "sha256": "109fe8f314afcd4d5a92b3a47d5400b103bf6aec96985a60e2bb5117e0718206",
+      "bytes": 450514
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\02-局部04-来源采集与规范映射.svg",
+      "path": "图件/1组/02-局部04-来源采集与规范映射.svg",
+      "sha256": "e668b0f8c2d5194b1d7ed44792e6835f8aae0bbc9de4b34aac5c301d92f5b7b4",
+      "bytes": 19986
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\02-局部05-治理更新与公开版本.png",
+      "path": "图件/1组/02-局部05-治理更新与公开版本.png",
+      "sha256": "2c71a5ef67efb3b4ba02c35343df43e05fce35006b06b6326f830e4a469c34ee",
+      "bytes": 573751
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\02-局部05-治理更新与公开版本.svg",
+      "path": "图件/1组/02-局部05-治理更新与公开版本.svg",
+      "sha256": "75cbc336ac24eb8ad247936a04e565a378dc775cdcdd6ed45739a9f32ce80c75",
+      "bytes": 23234
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\02-核心业务类图.png",
+      "path": "图件/1组/02-核心业务类图.png",
+      "sha256": "6386ced11addddb4f5909ee660a756e811350088b70e60a6a9b6ece633d5f3b5",
+      "bytes": 1520808
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\02-核心业务类图.svg",
+      "path": "图件/1组/02-核心业务类图.svg",
+      "sha256": "1f9f18226d385f365c283eeeb728e4abfcf2e0557a70518cce7c03cc0f7a6fd8",
+      "bytes": 73066
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\03-采集入库时序图.png",
+      "path": "图件/1组/03-采集入库时序图.png",
+      "sha256": "7694e4847451928ea76bf9c9156cddcc8fa83634caa9c9150851d1c39f38b716",
+      "bytes": 557328
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\03a-清洗去重子交互.png",
+      "path": "图件/1组/03a-清洗去重子交互.png",
+      "sha256": "977b763fb3eab0663a9ee211346fc2b60141f3699ace8566d7bb4011bb2fc2cd",
+      "bytes": 296162
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\03b-停止重试子交互.png",
+      "path": "图件/1组/03b-停止重试子交互.png",
+      "sha256": "f17c73a85f9774ed039d88f30b1b154e9ef4f1668a8beeb7530cee16bdb25610",
+      "bytes": 255813
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\05-门户认领审核时序图.png",
+      "path": "图件/1组/05-门户认领审核时序图.png",
+      "sha256": "36ad8b13816d30c79e6f6fc7d44f95d4c9ac63f2e919fbde0e930a5ba2534e40",
+      "bytes": 354248
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\05-门户认领审核时序图.svg",
+      "path": "图件/1组/05-门户认领审核时序图.svg",
+      "sha256": "46c0f011644e2a40c138a331005cf2cd8a62b7c3f7bda99e9b390dbcd5a06e11",
+      "bytes": 15738
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\05a-认领原子授权与撤回子交互.png",
+      "path": "图件/1组/05a-认领原子授权与撤回子交互.png",
+      "sha256": "58d542b60a05f8ca4ba6addbb850bff281f6f31b26c0e7ca4bdb3f3c0db3d92b",
+      "bytes": 298395
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\05a-认领原子授权与撤回子交互.svg",
+      "path": "图件/1组/05a-认领原子授权与撤回子交互.svg",
+      "sha256": "897c5fc2e64aca246a3cc295f6d63d42e48d382739ab0246486361958593a826",
+      "bytes": 11954
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\06-检索请求处理时序图.png",
+      "path": "图件/1组/06-检索请求处理时序图.png",
+      "sha256": "5a7e75ac6fc4ee88afd45d8526f3f042083ee60d4286bd3b54aa57fb92504295",
+      "bytes": 373248
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\06-检索请求处理时序图.svg",
+      "path": "图件/1组/06-检索请求处理时序图.svg",
+      "sha256": "b456f56682998f5d82164ffbf7f71bcd936eba79f96efc113563b40cf8365bd2",
+      "bytes": 14847
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\06a-检索权限计数与分页子交互.png",
+      "path": "图件/1组/06a-检索权限计数与分页子交互.png",
+      "sha256": "d1638aa854d1a8e7d4bd4198d9cf4facf6576667555c556f0b17acd59fa90c8d",
+      "bytes": 388536
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\图件\\06a-检索权限计数与分页子交互.svg",
+      "path": "图件/1组/06a-检索权限计数与分页子交互.svg",
+      "sha256": "7bd156770e2c5ae061bf3a08db5c0cb747827734c5b56da9681c2cbc917c898b",
+      "bytes": 12907
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\模型源文件\\02-核心业务类图.drawio",
+      "path": "可编辑源/1组/02-核心业务类图.drawio",
+      "sha256": "29ddf56a608948a1dbf060925de692b5df5030a537ed0c6041e5cc836075b785",
+      "bytes": 433760
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\模型源文件\\03-CodeArts正式模型工程.zip",
+      "path": "可编辑源/1组/03-CodeArts正式模型工程.zip",
+      "sha256": "57f82c6f099413d5f0998142d9ff27473c1ea0de7f54a1f51749cd09534812ac",
+      "bytes": 170745
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\模型源文件\\05-门户认领审核时序图.drawio",
+      "path": "可编辑源/1组/05-门户认领审核时序图.drawio",
+      "sha256": "9d57167aab44cfc3474f9205c579e2d0c8c1540b170afbb788c5f6ece676b82a",
+      "bytes": 26836
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\模型源文件\\05a-认领原子授权与撤回子交互.drawio",
+      "path": "可编辑源/1组/05a-认领原子授权与撤回子交互.drawio",
+      "sha256": "a830e6a15eab2be1d74fa7198dde6af1d60f5ef48a6d2c87a28d31328f3c8e34",
+      "bytes": 21609
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\模型源文件\\06-检索请求处理时序图.drawio",
+      "path": "可编辑源/1组/06-检索请求处理时序图.drawio",
+      "sha256": "4842f60dddcd2dd49ce8495732c37b283919725425561b3dda74d0ddf7ee5e3a",
+      "bytes": 26030
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\模型源文件\\06a-检索权限计数与分页子交互.drawio",
+      "path": "可编辑源/1组/06a-检索权限计数与分页子交互.drawio",
+      "sha256": "aae5bad9a6e30946162789fc6ff200d4980618792da289c165cf90777acc20ae",
+      "bytes": 26616
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\支撑材料\\外部对照\\Group2-b93110b\\需求分析\\image\\01_核心业务类图.drawio",
+      "path": "可编辑源/2组/01_核心业务类图.drawio",
+      "sha256": "b728223fec5b8c9c27052df0caa8d4c9fa67307cec0743548ec932355f5358a8",
+      "bytes": 52313
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\支撑材料\\外部对照\\Group2-b93110b\\需求分析\\image\\01_核心业务类图.png",
+      "path": "图件/2组/01_核心业务类图.png",
+      "sha256": "2cbfc49ca1e0f881f4f92f91b770276cffb24cc0659d1f24fd504c9a32b5e167",
+      "bytes": 1306780
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\支撑材料\\外部对照\\Group2-b93110b\\需求分析\\image\\01_核心业务类图.svg",
+      "path": "图件/2组/01_核心业务类图.svg",
+      "sha256": "e3824290ace4ac1becd48090cb5148358911d0bfc001ce0b8c7a5523bb094619",
+      "bytes": 3019264
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\支撑材料\\外部对照\\Group2-b93110b\\需求分析\\image\\02_数据采集入库时序图.drawio",
+      "path": "可编辑源/2组/02_数据采集入库时序图.drawio",
+      "sha256": "8f205df03b6f8e5225e32e3b76fb065d64f2f767781a34e52f9477f4903d7783",
+      "bytes": 25192
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\支撑材料\\外部对照\\Group2-b93110b\\需求分析\\image\\02_数据采集入库时序图.png",
+      "path": "图件/2组/02_数据采集入库时序图.png",
+      "sha256": "ccfbc4e858ee41e6a0af53ef4ac345c664a374873d0027e3b4104c66f0d7f14b",
+      "bytes": 878515
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\支撑材料\\外部对照\\Group2-b93110b\\需求分析\\image\\02_数据采集入库时序图.svg",
+      "path": "图件/2组/02_数据采集入库时序图.svg",
+      "sha256": "100b63697ed910c976885aa6562a11239b00c642875905eb400082726cac58da",
+      "bytes": 1924737
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\支撑材料\\外部对照\\Group2-b93110b\\需求分析\\image\\03_门户认领审核时序图.drawio",
+      "path": "可编辑源/2组/03_门户认领审核时序图.drawio",
+      "sha256": "a083d00bd3ec7d5e768a85e515b80dbcf7e6a9fcea0ec097d070732e483b57b0",
+      "bytes": 28404
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\支撑材料\\外部对照\\Group2-b93110b\\需求分析\\image\\03_门户认领审核时序图.png",
+      "path": "图件/2组/03_门户认领审核时序图.png",
+      "sha256": "e5c0be8b12147530a11bbb2c4cc71095841c4e033830bf585810dc20be2de360",
+      "bytes": 919553
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\支撑材料\\外部对照\\Group2-b93110b\\需求分析\\image\\03_门户认领审核时序图.svg",
+      "path": "图件/2组/03_门户认领审核时序图.svg",
+      "sha256": "7b784f1e8edb63f5e666bbde62ecd05963e49748f7f1b82acf410fb5c448e235",
+      "bytes": 1989699
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\支撑材料\\外部对照\\Group2-b93110b\\需求分析\\image\\04_检索请求处理时序图.drawio",
+      "path": "可编辑源/2组/04_检索请求处理时序图.drawio",
+      "sha256": "1aae00963fef930efb6e4f4f267b3202d5e497e6c9eec59f54e2d1a47d0c14a2",
+      "bytes": 23919
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\支撑材料\\外部对照\\Group2-b93110b\\需求分析\\image\\04_检索请求处理时序图.png",
+      "path": "图件/2组/04_检索请求处理时序图.png",
+      "sha256": "b1385fb48cbecc7f7602514cc5acdfd3fd34abe60c4b666b38656284dbd6e690",
+      "bytes": 922371
+    },
+    {
+      "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\A组-需求分析整合版-v1.1\\支撑材料\\外部对照\\Group2-b93110b\\需求分析\\image\\04_检索请求处理时序图.svg",
+      "path": "图件/2组/04_检索请求处理时序图.svg",
+      "sha256": "423632d5b7d499337402dbd64d1be8a99c8521bf53eec6f2ccc01d50f31be129",
+      "bytes": 1920439
+    }
+  ]
+}

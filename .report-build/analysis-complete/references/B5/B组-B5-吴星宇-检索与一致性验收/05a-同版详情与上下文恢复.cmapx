@@ -1,0 +1,7 @@
+<map id="05a-同版详情与上下文恢复_map" name="05a-同版详情与上下文恢复_map">
+<area shape="rect" id="id1" href="原公开版本有效" title="原公开版本有效" alt="" coords="15,454,120,474"/>
+<area shape="rect" id="id2" href="版本失效或版本服务失败" title="版本失效或版本服务失败" alt="" coords="89,361,254,380"/>
+<area shape="rect" id="id3" href="同版记录缺失／读取服务失败" title="同版记录缺失／读取服务失败" alt="" coords="25,732,220,752"/>
+<area shape="rect" id="id4" href="同版读取及当前权限校验均通过" title="同版读取及当前权限校验均通过" alt="" coords="25,821,235,841"/>
+<area shape="rect" id="id5" href="当前不可见／非法请求私有字段" title="当前不可见／非法请求私有字段" alt="" coords="99,639,309,658"/>
+</map>

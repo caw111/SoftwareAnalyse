@@ -1,0 +1,242 @@
+[
+  {
+    "path": "README.md",
+    "sha256": "2863402ecacb4d6c6d5d135bd2de4ad2b0745e74d7209fde6680ef5d65bd754f",
+    "bytes": 1272
+  },
+  {
+    "path": "本组-需求分析报告.docx",
+    "sha256": "84703d4b9a39448631d884a8afd2b05c030626dfcecb94093cd4255b3087d5b5",
+    "bytes": 5473181
+  },
+  {
+    "path": "本组-需求分析报告.md",
+    "sha256": "d46e13a583f3bfabac714f694660757ee075f8867182dcb8c0f49a9af5a77c7e",
+    "bytes": 50620
+  },
+  {
+    "path": "模型消息索引.json",
+    "sha256": "2b23b5b79098041830e11b32958de807884ac4f98457c0a64e32e7a8f23da266",
+    "bytes": 10479
+  },
+  {
+    "path": "图件/02-局部01-账号学者与门户授权.png",
+    "sha256": "e5fcbd856157ffe67acbc05f7893ae0264eaeb00164f13a7fdb13fd5cfa05503",
+    "bytes": 373650
+  },
+  {
+    "path": "图件/02-局部01-账号学者与门户授权.svg",
+    "sha256": "19aa03d1130e2fe65ca63c425419673f7a52fb152af2233f6a9707e4d173e871",
+    "bytes": 18162
+  },
+  {
+    "path": "图件/02-局部02-四类成果与专利身份.png",
+    "sha256": "fd13a46d8735819c33fa0af150cac8e29ff59f4212cd76fa937109696f178d19",
+    "bytes": 418721
+  },
+  {
+    "path": "图件/02-局部02-四类成果与专利身份.svg",
+    "sha256": "1629e3c4bc149e78104d4cda6259fecc1d8ea8e50a084659d5192879506a658b",
+    "bytes": 17203
+  },
+  {
+    "path": "图件/02-局部03-贡献机构与领域关系.png",
+    "sha256": "ed36f4b77e5cbb6f7ae661598be1e8858dfdd185ad935e33d6fc6827c5192346",
+    "bytes": 429556
+  },
+  {
+    "path": "图件/02-局部03-贡献机构与领域关系.svg",
+    "sha256": "186eadddef6ede1446f7f1cccd0d7c920093952358ed9b6d624f943fc21824bf",
+    "bytes": 24531
+  },
+  {
+    "path": "图件/02-局部04-来源采集与规范映射.png",
+    "sha256": "109fe8f314afcd4d5a92b3a47d5400b103bf6aec96985a60e2bb5117e0718206",
+    "bytes": 450514
+  },
+  {
+    "path": "图件/02-局部04-来源采集与规范映射.svg",
+    "sha256": "e668b0f8c2d5194b1d7ed44792e6835f8aae0bbc9de4b34aac5c301d92f5b7b4",
+    "bytes": 19986
+  },
+  {
+    "path": "图件/02-局部05-治理更新与公开版本.png",
+    "sha256": "2c71a5ef67efb3b4ba02c35343df43e05fce35006b06b6326f830e4a469c34ee",
+    "bytes": 573751
+  },
+  {
+    "path": "图件/02-局部05-治理更新与公开版本.svg",
+    "sha256": "75cbc336ac24eb8ad247936a04e565a378dc775cdcdd6ed45739a9f32ce80c75",
+    "bytes": 23234
+  },
+  {
+    "path": "图件/02-核心业务类图.png",
+    "sha256": "6386ced11addddb4f5909ee660a756e811350088b70e60a6a9b6ece633d5f3b5",
+    "bytes": 1520808
+  },
+  {
+    "path": "图件/02-核心业务类图.svg",
+    "sha256": "1f9f18226d385f365c283eeeb728e4abfcf2e0557a70518cce7c03cc0f7a6fd8",
+    "bytes": 73066
+  },
+  {
+    "path": "图件/03-采集入库时序图.png",
+    "sha256": "7694e4847451928ea76bf9c9156cddcc8fa83634caa9c9150851d1c39f38b716",
+    "bytes": 557328
+  },
+  {
+    "path": "图件/03a-清洗去重子交互.png",
+    "sha256": "977b763fb3eab0663a9ee211346fc2b60141f3699ace8566d7bb4011bb2fc2cd",
+    "bytes": 296162
+  },
+  {
+    "path": "图件/03b-停止重试子交互.png",
+    "sha256": "f17c73a85f9774ed039d88f30b1b154e9ef4f1668a8beeb7530cee16bdb25610",
+    "bytes": 255813
+  },
+  {
+    "path": "图件/05-门户认领审核时序图.png",
+    "sha256": "36ad8b13816d30c79e6f6fc7d44f95d4c9ac63f2e919fbde0e930a5ba2534e40",
+    "bytes": 354248
+  },
+  {
+    "path": "图件/05-门户认领审核时序图.svg",
+    "sha256": "46c0f011644e2a40c138a331005cf2cd8a62b7c3f7bda99e9b390dbcd5a06e11",
+    "bytes": 15738
+  },
+  {
+    "path": "图件/05a-认领原子授权与撤回子交互.png",
+    "sha256": "58d542b60a05f8ca4ba6addbb850bff281f6f31b26c0e7ca4bdb3f3c0db3d92b",
+    "bytes": 298395
+  },
+  {
+    "path": "图件/05a-认领原子授权与撤回子交互.svg",
+    "sha256": "897c5fc2e64aca246a3cc295f6d63d42e48d382739ab0246486361958593a826",
+    "bytes": 11954
+  },
+  {
+    "path": "图件/06-检索请求处理时序图.png",
+    "sha256": "8121233f7b1b1371c9916c710c4bc335e64af3c867c07e3c76212650c21e88b4",
+    "bytes": 335420
+  },
+  {
+    "path": "图件/06-检索请求处理时序图.svg",
+    "sha256": "200cc416b0b9ba925965170f37c41b27f28bea565fc513ea9b8c9ce5d62f295f",
+    "bytes": 13890
+  },
+  {
+    "path": "图件/06a-检索权限计数与分页子交互.png",
+    "sha256": "f8ae4bccd5acd11a6bd601aac7d9e97d7bc4578c874196df1dec44489acbd862",
+    "bytes": 261268
+  },
+  {
+    "path": "图件/06a-检索权限计数与分页子交互.svg",
+    "sha256": "56df7a76551a9bb13e692f5a9ed6ec4b81623053c80a06f06022f5aabc8e49de",
+    "bytes": 9456
+  },
+  {
+    "path": "支撑材料/15分钟汇报讲解稿.md",
+    "sha256": "493539cb6680fb4983949c8f07e23bf8070dc5882e660d08ff2ebb1b7678c435",
+    "bytes": 5265
+  },
+  {
+    "path": "支撑材料/业务对象与关系完整字典.md",
+    "sha256": "70c3eb31313dfc2bd425114a1b43caa930e38b4c2a7ccc8f9dabe880dab91166",
+    "bytes": 37062
+  },
+  {
+    "path": "支撑材料/原始A2-02-A2赵琦-核心业务类图与领域关系设计.md",
+    "sha256": "69a1e584f1b30743b1551060834a6cf7a2ce3e05910ed2b207981b393679e618",
+    "bytes": 85737
+  },
+  {
+    "path": "支撑材料/原始A2-02-类与关系说明.md",
+    "sha256": "eec0c3bd07c3bec77d167f3f6ccac82e4433c5ab2786b11fca06e361dbdb0598",
+    "bytes": 61235
+  },
+  {
+    "path": "支撑材料/原始A3-03-异常与边界场景.md",
+    "sha256": "1df90ca84bcca98e6556e033eeb8f5d701cf6ad4fb2f0ac7b48768838d523688",
+    "bytes": 2569
+  },
+  {
+    "path": "支撑材料/原始A3-03-采集入库时序图说明.md",
+    "sha256": "708de8ca6634e02b8c513f7213aba266c0e4e245482993bebbb740a67c72982c",
+    "bytes": 11789
+  },
+  {
+    "path": "支撑材料/原始A3-03-采集六状态对照表.md",
+    "sha256": "7549da58b8416fdae0846cc5561044fbaad16a2b22adc4a7c21dab4c8dbba599",
+    "bytes": 1514
+  },
+  {
+    "path": "支撑材料/新增交互消息表.md",
+    "sha256": "0bd16e402ffcf74fbd808ebd7b6a30d32d6265e5fdde28a5a60bb1b39b4cd36a",
+    "bytes": 8918
+  },
+  {
+    "path": "支撑材料/来源与修订记录.md",
+    "sha256": "8376a7af1ca059ef269d277488db40f4bb1bf72491896ec562a5c8d5ad71c3e7",
+    "bytes": 2383
+  },
+  {
+    "path": "支撑材料/输入文件校验清单.json",
+    "sha256": "20356b1bd0c53683ce097895f8c6503d3aeed0033ff66d849b5e82771c0a2a7c",
+    "bytes": 4566
+  },
+  {
+    "path": "模型源文件/02-核心业务类图.drawio",
+    "sha256": "29ddf56a608948a1dbf060925de692b5df5030a537ed0c6041e5cc836075b785",
+    "bytes": 433760
+  },
+  {
+    "path": "模型源文件/03-CodeArts正式模型工程.zip",
+    "sha256": "57f82c6f099413d5f0998142d9ff27473c1ea0de7f54a1f51749cd09534812ac",
+    "bytes": 170745
+  },
+  {
+    "path": "模型源文件/05-门户认领审核时序图.drawio",
+    "sha256": "9d57167aab44cfc3474f9205c579e2d0c8c1540b170afbb788c5f6ece676b82a",
+    "bytes": 26836
+  },
+  {
+    "path": "模型源文件/05a-认领原子授权与撤回子交互.drawio",
+    "sha256": "a830e6a15eab2be1d74fa7198dde6af1d60f5ef48a6d2c87a28d31328f3c8e34",
+    "bytes": 21609
+  },
+  {
+    "path": "模型源文件/06-检索请求处理时序图.drawio",
+    "sha256": "4f31c06fb4b1c07fe0ea3408a3971b7cb7f33ab3b722f6fb29f28d1b9e787c73",
+    "bytes": 24040
+  },
+  {
+    "path": "模型源文件/06a-检索权限计数与分页子交互.drawio",
+    "sha256": "6f7c85e014fba4482c21cade738d5db712740721338b64479d4f84ed29793c25",
+    "bytes": 18751
+  },
+  {
+    "path": "模型源文件/A2-核心业务模型.json",
+    "sha256": "0a837f18842439161e2ef88c77cfe88927500464ebd8ceff5099c728e5a083d6",
+    "bytes": 49212
+  },
+  {
+    "path": "模型源文件/build.py",
+    "sha256": "56da16d81bf6a87d27780f6c4925a42cd5c389799bf4fc443123bf811b9d1a9f",
+    "bytes": 13501
+  },
+  {
+    "path": "模型源文件/content.py",
+    "sha256": "b38f1a993850593105f02d8e0f085bface5e849dc16ec6b7395368d314ba58c6",
+    "bytes": 53514
+  },
+  {
+    "path": "模型源文件/diagrams.py",
+    "sha256": "255206eae2ba08fd0697d068db416df56db006909fd55cdbddd1256a87182a05",
+    "bytes": 17574
+  },
+  {
+    "path": "模型源文件/新增交互模型.json",
+    "sha256": "9308fe1461c2c714b107839d8e4e29caba7098d4fa9b533567ab77cfd3de11e8",
+    "bytes": 18631
+  }
+]

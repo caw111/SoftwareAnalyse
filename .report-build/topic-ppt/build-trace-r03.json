@@ -1,0 +1,110 @@
+{
+  "revision": "r03",
+  "mainSlides": 10,
+  "atlasSlides": 17,
+  "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\PPT逐页内容.md",
+  "figures": [
+    {
+      "group": "1组",
+      "name": "02-核心业务类图",
+      "file": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\图件\\1组\\02-核心业务类图.png",
+      "sha256": "6386ced11addddb4f5909ee660a756e811350088b70e60a6a9b6ece633d5f3b5"
+    },
+    {
+      "group": "1组",
+      "name": "02-局部01-账号学者与门户授权",
+      "file": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\图件\\1组\\02-局部01-账号学者与门户授权.png",
+      "sha256": "e5fcbd856157ffe67acbc05f7893ae0264eaeb00164f13a7fdb13fd5cfa05503"
+    },
+    {
+      "group": "1组",
+      "name": "02-局部02-四类成果与专利身份",
+      "file": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\图件\\1组\\02-局部02-四类成果与专利身份.png",
+      "sha256": "fd13a46d8735819c33fa0af150cac8e29ff59f4212cd76fa937109696f178d19"
+    },
+    {
+      "group": "1组",
+      "name": "02-局部03-贡献机构与领域关系",
+      "file": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\图件\\1组\\02-局部03-贡献机构与领域关系.png",
+      "sha256": "ed36f4b77e5cbb6f7ae661598be1e8858dfdd185ad935e33d6fc6827c5192346"
+    },
+    {
+      "group": "1组",
+      "name": "02-局部04-来源采集与规范映射",
+      "file": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\图件\\1组\\02-局部04-来源采集与规范映射.png",
+      "sha256": "109fe8f314afcd4d5a92b3a47d5400b103bf6aec96985a60e2bb5117e0718206"
+    },
+    {
+      "group": "1组",
+      "name": "02-局部05-治理更新与公开版本",
+      "file": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\图件\\1组\\02-局部05-治理更新与公开版本.png",
+      "sha256": "2c71a5ef67efb3b4ba02c35343df43e05fce35006b06b6326f830e4a469c34ee"
+    },
+    {
+      "group": "1组",
+      "name": "03-采集入库时序图",
+      "file": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\图件\\1组\\03-采集入库时序图.png",
+      "sha256": "7694e4847451928ea76bf9c9156cddcc8fa83634caa9c9150851d1c39f38b716"
+    },
+    {
+      "group": "1组",
+      "name": "03a-清洗去重子交互",
+      "file": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\图件\\1组\\03a-清洗去重子交互.png",
+      "sha256": "977b763fb3eab0663a9ee211346fc2b60141f3699ace8566d7bb4011bb2fc2cd"
+    },
+    {
+      "group": "1组",
+      "name": "03b-停止重试子交互",
+      "file": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\图件\\1组\\03b-停止重试子交互.png",
+      "sha256": "f17c73a85f9774ed039d88f30b1b154e9ef4f1668a8beeb7530cee16bdb25610"
+    },
+    {
+      "group": "1组",
+      "name": "05-门户认领审核时序图",
+      "file": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\图件\\1组\\05-门户认领审核时序图.png",
+      "sha256": "36ad8b13816d30c79e6f6fc7d44f95d4c9ac63f2e919fbde0e930a5ba2534e40"
+    },
+    {
+      "group": "1组",
+      "name": "05a-认领原子授权与撤回子交互",
+      "file": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\图件\\1组\\05a-认领原子授权与撤回子交互.png",
+      "sha256": "58d542b60a05f8ca4ba6addbb850bff281f6f31b26c0e7ca4bdb3f3c0db3d92b"
+    },
+    {
+      "group": "1组",
+      "name": "06-检索请求处理时序图",
+      "file": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\图件\\1组\\06-检索请求处理时序图.png",
+      "sha256": "5a7e75ac6fc4ee88afd45d8526f3f042083ee60d4286bd3b54aa57fb92504295"
+    },
+    {
+      "group": "1组",
+      "name": "06a-检索权限计数与分页子交互",
+      "file": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\图件\\1组\\06a-检索权限计数与分页子交互.png",
+      "sha256": "d1638aa854d1a8e7d4bd4198d9cf4facf6576667555c556f0b17acd59fa90c8d"
+    },
+    {
+      "group": "2组",
+      "name": "01_核心业务类图",
+      "file": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\图件\\2组\\01_核心业务类图.png",
+      "sha256": "2cbfc49ca1e0f881f4f92f91b770276cffb24cc0659d1f24fd504c9a32b5e167"
+    },
+    {
+      "group": "2组",
+      "name": "02_数据采集入库时序图",
+      "file": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\图件\\2组\\02_数据采集入库时序图.png",
+      "sha256": "ccfbc4e858ee41e6a0af53ef4ac345c664a374873d0027e3b4104c66f0d7f14b"
+    },
+    {
+      "group": "2组",
+      "name": "03_门户认领审核时序图",
+      "file": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\图件\\2组\\03_门户认领审核时序图.png",
+      "sha256": "e5c0be8b12147530a11bbb2c4cc71095841c4e033830bf585810dc20be2de360"
+    },
+    {
+      "group": "2组",
+      "name": "04_检索请求处理时序图",
+      "file": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\图件\\2组\\04_检索请求处理时序图.png",
+      "sha256": "b1385fb48cbecc7f7602514cc5acdfd3fd34abe60c4b666b38656284dbd6e690"
+    }
+  ]
+}

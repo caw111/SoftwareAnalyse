@@ -1,0 +1,25 @@
+{
+  "pages": 10,
+  "group1_pages": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "group2_pages": [
+    6,
+    7,
+    8,
+    9
+  ],
+  "comparison_page": 10,
+  "basis": "共同需求基准",
+  "primary_content": "仅页标题、正文、配图；无汇报计时或制作备注",
+  "images": {
+    "1组": 13,
+    "2组": 4
+  },
+  "image_copies": "字节一致",
+  "local_links": "全部有效",
+  "format": "Markdown逐页内容，未生成PPTX"
+}

@@ -1,0 +1,30 @@
+待执行(PENDING)
+entry / 写入任务记录
+do / 等待调度
+运行中(RUNNING)
+entry / 记录开始时间，启动心跳
+do / 执行爬取链路：连接→请求/翻页→解析→清洗→去重→入库→校验
+exit / 记录结束时间，释放资源
+已停止(STOPPED)
+entry / 标记停止原因，写审计日志，释放资源
+成功(SUCCEEDED)
+entry / 更新任务成功，写增量游标，触发ETL/索引
+失败(FAILED)
+entry / 记录错误码、错误信息、堆栈
+重试(RETRYING)
+entry / 计算指数退避时间
+do / 等待退避
+创建采集任务 / 校验任务参数
+调度触发 [worker可用且未停止] / 启动任务
+管理员取消 / 标记停止
+采集完成 [校验通过] / 更新增量水位，触发ETL与索引
+异常/超时/校验失败 / 记录错误码与日志
+管理员强制停止 / 中断任务，释放资源
+自动重试 [retryCount 小于 maxRetry 且 未人工停止] / retryCount++
+重试耗尽 [retryCount 大于等于 maxRetry] 或 人工终止 / 标记停止
+退避结束 [未停止] / 重新调度
+管理员停止 / 标记停止
+{
+  "data": "stateDiagram-v2\n    [*] --> Pending: 创建采集任务 / 校验任务参数\n\n    Pending --> Running: 调度触发 [worker可用且未停止] / 启动任务\n    Pending --> Stopped: 管理员取消 / 标记停止\n\n    Running --> Succeeded: 采集完成 [校验通过] / 更新增量水位，触发ETL与索引\n    Running --> Failed: 异常/超时/校验失败 / 记录错误码与日志\n    Running --> Stopped: 管理员强制停止 / 中断任务，释放资源\n\n    Failed --> Retrying: 自动重试 [retryCount 小于 maxRetry 且 未人工停止] / retryCount++\n    Failed --> Stopped: 重试耗尽 [retryCount 大于等于 maxRetry] 或 人工终止 / 标记停止\n\n    Retrying --> Running: 退避结束 [未停止] / 重新调度\n    Retrying --> Stopped: 管理员停止 / 标记停止\n\n    Succeeded --> [*]\n    Stopped --> [*]\n\n    state \"待执行(PENDING)\" as Pending\n    Pending: entry / 写入任务记录\n    Pending: do / 等待调度\n\n    state \"运行中(RUNNING)\" as Running\n    Running: entry / 记录开始时间，启动心跳\n    Running: do / 执行爬取链路：连接→请求/翻页→解析→清洗→去重→入库→校验\n    Running: exit / 记录结束时间，释放资源\n\n    state \"成功(SUCCEEDED)\" as Succeeded\n    Succeeded: entry / 更新任务成功，写增量游标，触发ETL/索引\n\n    state \"失败(FAILED)\" as Failed\n    Failed: entry / 记录错误码、错误信息、堆栈\n\n    state \"重试(RETRYING)\" as Retrying\n    Retrying: entry / 计算指数退避时间\n    Retrying: do / 等待退避\n\n    state \"已停止(STOPPED)\" as Stopped\n    Stopped: entry / 标记停止原因，写审计日志，释放资源",
+  "config": null
+}

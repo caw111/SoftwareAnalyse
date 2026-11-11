@@ -1,0 +1,111 @@
+{
+  "version": "v2.0",
+  "groups": [
+    [
+      "1",
+      "用户与认证服务"
+    ],
+    [
+      "2",
+      "学术信息服务"
+    ],
+    [
+      "3",
+      "学术门户管理"
+    ],
+    [
+      "4",
+      "科研态势分析"
+    ],
+    [
+      "5",
+      "平台运营与数据维护"
+    ]
+  ],
+  "usecase_count": 22,
+  "FR_count": 104,
+  "packages": [
+    "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业1_需求调研成果_v2.0",
+    "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业2_需求建模成果_v2.0"
+  ],
+  "image_inventory": {
+    "01_科研人员用例图.drawio": "280447e3de76fc76653db26d8dab849b782ca3c14072cbbdcd4fef90d99c399c",
+    "01_科研人员用例图.drawio.png": "3328a928e5b849e5e93929d1fcb4e24c00dd0d56e5cb66c5305b533cbbcf7986",
+    "02_现状调研活动图.drawio": "b074e01121c212c6494f3ba9ed8f06b2e541d33f496cae21c6bab42cef1ebb7b",
+    "02_现状调研活动图.drawio.png": "51f5c4cade3b4e2a9283e9ee64c3e348f62451420e890f105193dd549ad706ea",
+    "03_门户认领活动图.drawio": "5854e68a1881e0bea18e803718b286da4efa779ba8b8bd69f7a2fb16d496d2f6",
+    "03_门户认领活动图.drawio.png": "39b3085fffd3964632b9a3acca34438ca2ea54b81cf8b836950a7c6dd8ddeced",
+    "04_认领申请状态图.drawio": "0bb259ac32e0376a171b5426568c9c2a749004183644de20ecab782b38e89372",
+    "04_认领申请状态图.drawio.png": "d5a4c07c756d1b3af0f21f476b9beb54148eb179ce95ea24f295f97fcfd43670",
+    "05_核心业务类图.drawio": "f89ef4a9d7ec7a1c23d36c395dc91031d7a74ae5864b3dddb3467d69b20d07c6",
+    "05_核心业务类图.drawio.png": "ec4d23aa36343a717efbc2170d17b8547626c1577a6bc0e79ce0da20ebe81380",
+    "06_检索请求时序图.drawio": "ae1aea938c7e7ad79ee9d4358aefd8dc8e964e6a73421aafd5e2d04772727fec",
+    "06_检索请求时序图.drawio.png": "89d83272c7ef4103e3675b38fa90ace4b7e3cc0c06c5f0371644d79360c037fb",
+    "academic_platform_usecase.drawio": "276c26a8140af599dea3ce1e9c10bf2b3fe88bc8448767eb1595a789e2126407",
+    "个人门户认领申请状态图.png": "6b0e05e7ac935adc78352b99488a89535ed080d185cfe12b7aaf3a2edcecd722",
+    "作者检索详细活动图.drawio": "d3948b7dc0721436a34e7273add2ea1e33b34bd86a70d3e69f3a722b53773197",
+    "作者检索详细活动图.drawio.png": "63a63bd555d0fa85843c5c671b69ddb81d41ed7f46f9445f4c4d5dc605f17edb",
+    "学术成果分享平台_数据采集任务状态图.drawio": "427e7375138481303616bfd1bc7b04c888cb214554f0f0170b85d8cc86bccd09",
+    "学术成果分享平台_数据采集任务状态图.drawio.png": "2fd7f86ebea9941d0d9448049a14197598eeb4ab01606d5831ebf7ba69eb0d5f",
+    "学术成果分享平台_认领申请状态图.drawio": "3d53f84ecf5124c47aa8cfbfcb24208a80eb1a94ff3c29b68f19ac5326cba422",
+    "学术成果分享平台_认领申请状态图.drawio.png": "386862ca28832b5d8f379e565a11a940852318548fcb110fec5a62399b759b8f",
+    "学术成果分享平台_门户认领审核流程活动图.drawio": "462cf73aeb440e2b008e23175d37ed4a75ba848830153de01400a28a1ef1b7b6",
+    "学术成果分享平台_门户认领审核流程活动图.drawio.png": "84e48bb2801fa14b77e3a971f24ae926c07f39f333d22c9676163804fa5e6577",
+    "成果管理模块_UML用例图.png": "cd7ef5b5cf6ae50ed5e674127a5606686c4400c46dfaf75e563097010946d2a1",
+    "数据采集任务状态机.drawio": "042834d31fc99e8439181344bcfa98fe67fe8ac3b104a7692d21217a37b81f1b",
+    "数据采集任务状态机.drawio.png": "d64f52728f0016b59e99480661db75b0c2d2b9ff931c320ae7907dd1268205df",
+    "普通用户活动图.drawio": "102aee3aa4ca668251d68940fe0988a0fdb748221c7e6295a74980935662e4ef",
+    "普通用户活动图.drawio.png": "67770f109b247cd0e183609178830ddd3e3f7ecd3a8a0b8094563299b0ec8a7a",
+    "普通用户用例图.drawio": "fccfbbb44e0d34f34e474226e8e8832f1ed68392d2ecc402185c8285d007cd08",
+    "普通用户用例图.drawio.png": "697d09af2eed58f48586d4475b3c62381e9fa41b3e402cbd0009d172f98ac8ab",
+    "科研人员个人门户认领审核流程活动图.png": "3ab9adba4ffd3826ad65cc51023688c3522aa457f4acaa85de6556298bfc6566",
+    "认领状态图.drawio": "069cf57fde8128b223da580905c8b79de86dd4f100c946852affbba3a9cb36ed",
+    "认领状态图.drawio.png": "1547e0e2c12a54981dd1b31e0c277c3e9adc9e4e35c21b2a5d28419380b9d3da"
+  },
+  "formal_sources": [
+    "F:\\homework\\软分\\SoftwareAnalyse\\docs\\01.需求调研\\需求调研报告.md",
+    "F:\\homework\\软分\\SoftwareAnalyse\\docs\\01.需求调研\\调研方案与执行记录.md",
+    "F:\\homework\\软分\\SoftwareAnalyse\\docs\\01.需求调研\\数据源与竞品调研记录.md",
+    "F:\\homework\\软分\\SoftwareAnalyse\\docs\\02.需求建模\\系统需求规格说明书_SRS.md",
+    "F:\\homework\\软分\\SoftwareAnalyse\\docs\\02.需求建模\\核心模块开发规范_SPEC.md",
+    "F:\\homework\\软分\\SoftwareAnalyse\\docs\\02.需求建模\\需求条目与验收场景.md"
+  ],
+  "word_sources": [
+    [
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业1_需求调研成果_v2.0\\01-需求调研报告_v2.0-9组-1011101011.md",
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业1_需求调研成果_v2.0\\01-需求调研报告_v2.0-9组-1011101011.docx"
+    ],
+    [
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业1_需求调研成果_v2.0\\03-调研材料\\01-调研方案与执行记录_v2.0-9组-1011101011.md",
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业1_需求调研成果_v2.0\\03-调研材料\\01-调研方案与执行记录_v2.0-9组-1011101011.docx"
+    ],
+    [
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业1_需求调研成果_v2.0\\03-调研材料\\02-数据源与竞品调研记录_v2.0-9组-1011101011.md",
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业1_需求调研成果_v2.0\\03-调研材料\\02-数据源与竞品调研记录_v2.0-9组-1011101011.docx"
+    ],
+    [
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业2_需求建模成果_v2.0\\01-SRS_v2.0-9组-1011101011.md",
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业2_需求建模成果_v2.0\\01-SRS_v2.0-9组-1011101011.docx"
+    ],
+    [
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业2_需求建模成果_v2.0\\02-SPEC_v2.0-9组-1011101011.md",
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业2_需求建模成果_v2.0\\02-SPEC_v2.0-9组-1011101011.docx"
+    ],
+    [
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业2_需求建模成果_v2.0\\05-支撑材料\\01-需求条目与验收场景_v2.0-9组-1011101011.md",
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业2_需求建模成果_v2.0\\05-支撑材料\\01-需求条目与验收场景_v2.0-9组-1011101011.docx"
+    ],
+    [
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业1_需求调研成果_v2.0\\04-修改说明与版本记录_v2.0-9组-1011101011.md",
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业1_需求调研成果_v2.0\\04-修改说明与版本记录_v2.0-9组-1011101011.docx"
+    ],
+    [
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业1_需求调研成果_v2.0\\05-AI使用声明_v2.0-9组-1011101011.md",
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业1_需求调研成果_v2.0\\05-AI使用声明_v2.0-9组-1011101011.docx"
+    ],
+    [
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业1_需求调研成果_v2.0\\06-提交材料自查清单_v2.0-9组-1011101011.md",
+      "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业1_需求调研成果_v2.0\\06-提交材料自查清单_v2.0-9组-1011101011.docx"
+    ]
+  ]
+}

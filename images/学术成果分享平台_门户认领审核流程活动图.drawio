@@ -1,0 +1,144 @@
+<mxfile host="app.diagrams.net" agent="final" version="31.7.0">
+  <diagram name="门户认领审核流程活动图" id="act1">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1200" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- 标题 -->
+        <mxCell id="title" value="门户认领审核流程活动图" style="text;html=1;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#223344;" vertex="1" parent="1">
+          <mxGeometry x="30" y="25" width="600" height="44" as="geometry"/>
+        </mxCell>
+
+        <!-- 泳道 -->
+        <mxCell id="lane_u" value="申请人" style="swimlane;horizontal=0;startSize=30;fillColor=#ffffff;strokeColor=#445566;fontColor=#223344;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="400" height="1000" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_s" value="系统" style="swimlane;horizontal=0;startSize=30;fillColor=#ffffff;strokeColor=#445566;fontColor=#223344;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="80" width="480" height="1000" as="geometry"/>
+        </mxCell>
+        <mxCell id="lane_a" value="管理员" style="swimlane;horizontal=0;startSize=30;fillColor=#ffffff;strokeColor=#445566;fontColor=#223344;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="920" y="80" width="440" height="1000" as="geometry"/>
+        </mxCell>
+
+        <!-- 起始黑点 -->
+        <mxCell id="start" value="" style="ellipse;fillColor=#223344;strokeColor=#223344;" vertex="1" parent="1">
+          <mxGeometry x="235" y="125" width="18" height="18" as="geometry"/>
+        </mxCell>
+
+        <!-- 申请人活动 -->
+        <mxCell id="a1" value="填写认领信息、上传证明材料" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="120" y="185" width="240" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="a2" value="提交认领申请" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="140" y="285" width="200" height="48" as="geometry"/>
+        </mxCell>
+        <mxCell id="a3" value="修改补充材料后重新提交" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="120" y="555" width="240" height="56" as="geometry"/>
+        </mxCell>
+
+        <!-- 系统活动 -->
+        <mxCell id="s1" value="资料完整性与格式校验" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="550" y="285" width="260" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="d1" value="资料是否完整？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#445566;fontColor=#223344;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="600" y="395" width="160" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="s2" value="自动核验：机构邮箱、ORCID、同名冲突" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="540" y="525" width="280" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="d2" value="自动核验是否通过？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#445566;fontColor=#223344;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="590" y="625" width="180" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="s3" value="门户激活、成果绑定并通知" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="550" y="895" width="260" height="56" as="geometry"/>
+        </mxCell>
+
+        <!-- 管理员活动 -->
+        <mxCell id="m1" value="人工审核与规则审核" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="725" width="260" height="56" as="geometry"/>
+        </mxCell>
+        <mxCell id="d3" value="是否通过？" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#445566;fontColor=#223344;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="825" width="180" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="m2" value="通知申请人驳回原因" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=14;" vertex="1" parent="1">
+          <mxGeometry x="1010" y="965" width="260" height="48" as="geometry"/>
+        </mxCell>
+
+        <!-- 终止黑点 -->
+        <mxCell id="end" value="" style="ellipse;fillColor=#223344;strokeColor=#223344;" vertex="1" parent="1">
+          <mxGeometry x="680" y="1000" width="18" height="18" as="geometry"/>
+        </mxCell>
+
+        <!-- 边 -->
+        <mxCell id="e1" value="" style="endArrow=classic;html=1;strokeColor=#445566;" edge="1" parent="1" source="start" target="a1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="" style="endArrow=classic;html=1;strokeColor=#445566;" edge="1" parent="1" source="a1" target="a2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="" style="endArrow=classic;html=1;strokeColor=#445566;" edge="1" parent="1" source="a2" target="s1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="" style="endArrow=classic;html=1;strokeColor=#445566;" edge="1" parent="1" source="s1" target="d1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="否" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="d1" target="a3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="460" y="435"/>
+              <mxPoint x="460" y="583"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" value="是" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="d1" target="s2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="" style="endArrow=classic;html=1;strokeColor=#445566;edgeStyle=orthogonalEdgeStyle;exitX=0;exitY=0.5;entryX=0;entryY=0.35;" edge="1" parent="1" source="a3" target="a1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="85" y="583"/>
+              <mxPoint x="85" y="205"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" value="" style="endArrow=classic;html=1;strokeColor=#445566;" edge="1" parent="1" source="s2" target="d2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" value="是" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;exitX=1;exitY=0.3;entryX=0;entryY=0.3;" edge="1" parent="1" source="d2" target="m1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9n" value="否，转人工复核" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;exitX=1;exitY=0.7;entryX=0;entryY=0.7;" edge="1" parent="1" source="d2" target="m1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e10" value="" style="endArrow=classic;html=1;strokeColor=#445566;" edge="1" parent="1" source="m1" target="d3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e11" value="通过" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="d3" target="s3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e12" value="驳回" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="d3" target="m2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e13" value="" style="endArrow=classic;html=1;strokeColor=#445566;" edge="1" parent="1" source="s3" target="end">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e14" value="申请人修改后重新提交" style="endArrow=classic;html=1;dashed=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;exitX=0.5;exitY=1;entryX=0;entryY=0.85;" edge="1" parent="1" source="m2" target="a1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1140" y="1040"/>
+              <mxPoint x="60" y="1040"/>
+              <mxPoint x="60" y="232"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 备注 -->
+        <mxCell id="note" value="认证防冒领组合：机构邮箱验证、ORCID 机构可信推送与人工复核三道闸门串联执行。&#10;申请人可在提交后主动撤回申请，驳回后可修改材料再次提交。" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff8dc;strokeColor=#d4b86a;align=left;verticalAlign=middle;size=15;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="60" y="1090" width="640" height="80" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

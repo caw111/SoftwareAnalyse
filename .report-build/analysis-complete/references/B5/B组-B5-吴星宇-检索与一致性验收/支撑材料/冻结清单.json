@@ -1,0 +1,118 @@
+{
+  "date": "2026-10-26",
+  "version": "v0.9",
+  "scope": "B5个人交接快照；不等于B组或A/B独立冻结签署",
+  "exclusions": "运行工具jar、生成/打包中间脚本及检查用裁图不入交接ZIP；冻结清单不自我哈希",
+  "files": [
+    {
+      "path": "00-阅读与交接说明.md",
+      "sha256": "95f71974b7bf4be7f0dbf5257ca0a0ef4f61b5d68de43ec90726e3091988fc20",
+      "bytes": 1762
+    },
+    {
+      "path": "05-AI使用与人工修订.md",
+      "sha256": "b1b815eaf849fafe417d14eb47798fa904aa5ed0c45540b8e77c0bc886ef139d",
+      "bytes": 3795
+    },
+    {
+      "path": "05-交付物总验收.md",
+      "sha256": "2b23e4cf2b6d91f50ee5c5d03edf9785375e5fd7d98c409225f66a4b1dce2251",
+      "bytes": 5094
+    },
+    {
+      "path": "05-典型场景走查.md",
+      "sha256": "e5dfcfa12cec8d301be3ebfec9b8953543120ee515de39780e211be799ef6369",
+      "bytes": 8445
+    },
+    {
+      "path": "05-检索模型说明.md",
+      "sha256": "033aab29e8a5fd8a826082ad45bf20f23c71919f382da715508012ed260a74a7",
+      "bytes": 13748
+    },
+    {
+      "path": "05-检索请求时序图.cmapx",
+      "sha256": "030bcfaa8ec37a46e857c18e74ac7a320546989eb41db88b8f14744a7c5975e5",
+      "bytes": 1113
+    },
+    {
+      "path": "05-检索请求时序图.png",
+      "sha256": "43e1c2266154b2d3ecbfc36b44aa142f27c17c2d8d140e190cf563f710c141e6",
+      "bytes": 352215
+    },
+    {
+      "path": "05-模型一致性检查清单.md",
+      "sha256": "8a1c1a4db2b987d8e94ddd02148730a5347c09ace54a604877af959142a63ce1",
+      "bytes": 6862
+    },
+    {
+      "path": "05a-同版详情与上下文恢复.cmapx",
+      "sha256": "00c3847b21ed507c8e207bdc92d8d456f04262d30375b6157790b6d953232095",
+      "bytes": 709
+    },
+    {
+      "path": "05a-同版详情与上下文恢复.png",
+      "sha256": "97ddd27def3c1252d4becb18aa733dc384d81cd3aefc199927341356f31cd9a6",
+      "bytes": 159100
+    },
+    {
+      "path": "07-建模源文件/05-检索请求时序图.puml",
+      "sha256": "392d7d09b258e90e8421ece2bfd2bafab43494ebfc6b9478449af296d4a3cde0",
+      "bytes": 5300
+    },
+    {
+      "path": "07-建模源文件/05a-同版详情与上下文恢复.puml",
+      "sha256": "2ccc3f02324ef22747627a95cf6dc559563b6396acc6c263942b16f820197ed7",
+      "bytes": 2792
+    },
+    {
+      "path": "支撑材料/01-SRS_v2.0-9组-1011101011.txt",
+      "sha256": "cf56ceeb691fa67ae89dbf72438be3777eec892e79eb73aee5c1d83c7428869c",
+      "bytes": 51003
+    },
+    {
+      "path": "支撑材料/02-SPEC_v2.0-9组-1011101011.txt",
+      "sha256": "43d13a1e690d80a9948278e60c5813cf2c1307edd0a33ba9f5041742d3ff8297",
+      "bytes": 31298
+    },
+    {
+      "path": "支撑材料/03_门户认领活动图.drawio.txt",
+      "sha256": "c3175e6d1705be6aca9a0670747f519463ad6219ee00b3241d523c7898e5d010",
+      "bytes": 762
+    },
+    {
+      "path": "支撑材料/04_认领申请状态图.drawio.txt",
+      "sha256": "727a5381df9617bb1393fad90a51730b1f0efd60ea25e9c5c624bbd4f4c09ea0",
+      "bytes": 293
+    },
+    {
+      "path": "支撑材料/06_检索请求时序图.drawio.txt",
+      "sha256": "9c1f550ea26be8096dbea7152e10a181977ddc6a19db88a5838891d55b6920f3",
+      "bytes": 797
+    },
+    {
+      "path": "支撑材料/render-models.ps1",
+      "sha256": "c21fdb4aa2b2591191c02d9520e1ed802637176603bb44e67a4e81c675768309",
+      "bytes": 441
+    },
+    {
+      "path": "支撑材料/基线文件清单.json",
+      "sha256": "3837b32b4d00c275b7415f4b1f1805b6af3dd4ffb29f9aea273f10ff7772a5f1",
+      "bytes": 1995
+    },
+    {
+      "path": "支撑材料/数据采集任务状态机.drawio.txt",
+      "sha256": "2acc394b1152fd82b87c901e3efec4db1b0b3ed26aee4c121bc3bc5033375f1a",
+      "bytes": 2867
+    },
+    {
+      "path": "支撑材料/需求调研基线摘取.txt",
+      "sha256": "ad035f9c3eb1a70e8a13517615b3bc2110d50afa4aa525dbdda256376855d271",
+      "bytes": 17488
+    },
+    {
+      "path": "支撑材料/验证记录.json",
+      "sha256": "29e129b158b5db390db3a344ba16207059525db3b33f31443ef99862caff981b",
+      "bytes": 2082
+    }
+  ]
+}

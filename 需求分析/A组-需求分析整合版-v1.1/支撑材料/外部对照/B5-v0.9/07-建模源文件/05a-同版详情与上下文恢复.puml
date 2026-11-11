@@ -1,0 +1,59 @@
+@startuml
+skinparam defaultFontName Microsoft YaHei
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam backgroundColor #FFFFFF
+skinparam sequence {
+ ArrowColor #24486A
+ LifeLineBorderColor #8A9AA8
+ ParticipantBorderColor #24486A
+ ParticipantBackgroundColor #EAF2FA
+ ActorBorderColor #24486A
+ GroupBorderColor #687D91
+ GroupBackgroundColor #F5F8FB
+ GroupHeaderFontColor #24486A
+ DividerBackgroundColor #DCEAF5
+ BoxPadding 8
+ MessageAlign center
+}
+hide footbox
+title B5 · 同版详情与查询上下文恢复（主图F08子交互）\nB组 / 吴星宇 / v0.9 / 2026-10-26 / 待人工复审
+actor "访客／检索用户" as U
+boundary "检索页面\nSearchPage" as P
+control "检索控制对象\nSearchControl" as C
+entity "公开版本契约\nPublicRelease" as R
+control "公开成果读取对象\nPublicWorkReader" as W
+control "当前权限策略\nVisibilityPolicy" as A
+U -> P : D01 打开选定成果详情
+P -> P : D02 保存查询上下文\n条件、排序、页码、page_size、releaseId
+P -> C : D03 detail(workId, releaseId)
+C -> R : D04 requireAvailable(releaseId)
+R --> C : D05 版本有效／已失效／服务失败
+alt D-F01 [版本失效或版本服务失败]
+ C --> P : D06 对应版本或服务错误（不读取当前版代替）
+ P --> U : D07 保留上下文，提示显式刷新或重试
+else 原公开版本有效
+ C -> W : D08 readPublic(workId, releaseId)
+ W --> C : D09 同版公开字段、来源、贡献关系及缺失状态\n或不存在／读取失败
+ C -> A : D10 检查当前对象、字段可见性；管理动作另校验当前有效授权
+ A --> C : D11 当前权限结论，不复活已撤销授权
+ alt D-F02 [当前不可见／非法请求私有字段]
+  C --> P : D12 拒绝或不返回受限内容（不透露私有申请是否存在）
+  P --> U : D13 显示适当访问提示
+ else 同版记录缺失／读取或权限校验服务失败
+  C --> P : D14 明确不存在／一致性／服务错误
+  P --> U : D15 显示原因，不伪造空详情
+ else 同版读取及当前权限校验均通过
+  C --> P : D16 公开详情、来源、日期含义/精度、releaseId、更新时间
+  P --> U : D17 展示详情；未知引用不补0，外部OA失败不判非开放
+ end
+end
+U -> P : D18 返回列表
+P -> P : D19 恢复原查询上下文；缓存展示仍须校验版本与当前权限
+ref over P,A : D20 重新取数时复用主图M02–M34并携带原releaseId；失效明确提示
+note over U,A
+打开同版统计明细也传递相同releaseId与范围；本子图不展开统计用例。
+P1推荐未纳入核心交互；若后续启用，超时不得阻塞公开详情。
+依据：SRS UC2.1步骤6、UC2.3、BR-04、USA-01、REL-02；SPEC §6.3、§8.4。
+end note
+@enduml

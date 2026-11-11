@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1388.0" height="1227.0" viewBox="0 0 1388.0 1227.0">
+<rect width="1388.0" height="1227.0" fill="white"/>
+<g font-family="Microsoft YaHei,SimHei,Arial" fill="#172B4D">
+<polyline points="839.94,415.11 891.51,419.69000000000005 948.71,424.77 1001.33,429.45000000000005" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<polygon points="1001.52,424.20000000000005 1016.0,430.75 1000.59,434.65999999999997" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<polyline points="804.72,814.22 825.04,798.61 839.5,787.5 946.27,680.88 1040.5900000000001,586.7" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<polygon points="1036.63,583.24 1050.95,576.35 1044.05,590.67" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<polyline points="838.54,237.33000000000004 891.22,269.25 949.88,304.80999999999995 1003.61,337.38" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<polygon points="1006.12,332.76 1016.22,345.02 1000.67,341.74" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<polyline points="839.94,592.05 891.84,569.81 949.45,545.13 1002.35,522.47" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<polygon points="1000.26,517.65 1016.12,516.57 1004.4,527.3" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<polyline points="370.49,308.96000000000004 415.46,283.65999999999997 464.19,256.25 509.16,230.95000000000005" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="422.75" y="252.20000000000005" width="34" height="20" fill="white" opacity="0.94"/>
+<text x="439.75" y="266.75000000000006" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">资助</text>
+<rect x="388.2576595917444" y="297.43243211123286" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="401.7576595917444" y="311.98243211123287" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="459.89234040825556" y="222.4775678887671" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="477.89234040825556" y="237.02756788876712" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="370.49,493.34000000000003 415.46,518.44 464.19,545.65 509.16,570.75" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="422.75" y="514.2" width="34" height="20" fill="white" opacity="0.94"/>
+<text x="439.75" y="528.75" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">授奖</text>
+<rect x="388.26265067518267" y="484.76173125027134" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="401.76265067518267" y="499.31173125027135" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="473.53379459510745" y="534.8788407096911" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="491.53379459510745" y="549.428840709691" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="839.94,892.0699999999999 896.85,884.6600000000001 960.6,876.35 1017.51,868.9300000000001" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="885.75" y="860.72" width="86" height="20" fill="white" opacity="0.94"/>
+<text x="928.75" y="875.27" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">申请对应文献</text>
+<rect x="851.513246865376" y="892.3375737075285" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="869.513246865376" y="906.8875737075284" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..1</text>
+<rect x="974.847887075596" y="886.3486102146688" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="992.847887075596" y="900.8986102146688" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="839.94,973.5699999999999 896.85,994.35 960.6,1017.64 1017.51,1038.42" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="892.25" y="982.65" width="73" height="20" fill="white" opacity="0.94"/>
+<text x="928.75" y="997.1999999999999" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">按口径归入</text>
+<rect x="856.4732331708262" y="950.6295283405374" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="874.4732331708262" y="965.1795283405373" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<rect x="968.4066520470774" y="1031.9670757137992" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="986.4066520470774" y="1046.5170757137992" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<rect x="1018.0011999999999" y="316.0008" width="329.99760000000003" height="258.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1018.0011999999999" y="316.0008" width="329.99760000000003" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="1183.0" y="334.60080000000005" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">规范学术成果 «abstract»</text>
+<text x="1183.0" y="355.9008" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">Work</text>
+<text x="1028.0012" y="385.55080000000004" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- workId: ID</text>
+<text x="1028.0012" y="405.55080000000004" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- title: FieldValue&lt;String&gt;</text>
+<text x="1028.0012" y="425.55080000000004" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- dataVersion: Integer</text>
+<text x="1028.0012" y="445.55080000000004" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- visibility: Visibility</text>
+<text x="1028.0012" y="465.55080000000004" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- mergedInto: WorkRef[0..1]</text>
+<text x="1028.0012" y="485.55080000000004" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- fieldEvidence: FieldEvidence[0..*]</text>
+<line x1="1018.0011999999999" y1="493.0008" x2="1347.9987999999998" y2="493.0008" stroke="#53657C"/>
+<text x="1028.0012" y="514.5508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ applyVerifiedUpdate()</text>
+<text x="1028.0012" y="535.5508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ markForReview()</text>
+<text x="1028.0012" y="556.5508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ resolveCanonicalId(): ID</text>
+<rect x="509.5012" y="291.4992" width="329.99760000000003" height="218.0016" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="509.5012" y="291.4992" width="329.99760000000003" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="674.5" y="310.0992" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">论文</text>
+<text x="674.5" y="331.39919999999995" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">Paper</text>
+<text x="519.5011999999999" y="361.0492" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- doi: ExternalIdentity[0..1]</text>
+<text x="519.5011999999999" y="381.0492" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- venue: FieldValue&lt;String&gt;</text>
+<text x="519.5011999999999" y="401.0492" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- publicationDates: BusinessDate[0..*]</text>
+<text x="519.5011999999999" y="421.0492" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- oaStatus: FieldValue&lt;OAStatus&gt;</text>
+<text x="519.5011999999999" y="441.0492" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- citations: CitationObservation[0..*]</text>
+<line x1="509.5012" y1="448.4992" x2="839.4988000000001" y2="448.4992" stroke="#53657C"/>
+<text x="519.5011999999999" y="470.0492" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ checkDoiIdentity(): IdentityResult</text>
+<text x="519.5011999999999" y="491.0492" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ selectPublicationDate(): BusinessDate</text>
+<rect x="509.5012" y="814.5" width="329.99760000000003" height="198.0" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="509.5012" y="814.5" width="329.99760000000003" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="674.5" y="833.1" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">专利申请</text>
+<text x="674.5" y="854.4" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">Patent</text>
+<text x="519.5011999999999" y="884.05" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- jurisdiction: String</text>
+<text x="519.5011999999999" y="904.05" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- applicationNo: ExternalIdentity[0..1]</text>
+<text x="519.5011999999999" y="924.05" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- grantDate: BusinessDate[0..1]</text>
+<text x="519.5011999999999" y="944.05" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- grantEvidence: EvidenceRef[0..*]</text>
+<line x1="509.5012" y1="951.5" x2="839.4988000000001" y2="951.5" stroke="#53657C"/>
+<text x="519.5011999999999" y="973.05" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ checkApplicationIdentity(): IdentityResult</text>
+<text x="519.5011999999999" y="994.05" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ hasGrantEvidence(): Boolean</text>
+<rect x="1018.0011999999999" y="738.9996" width="329.99760000000003" height="217.0008" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1018.0011999999999" y="738.9996" width="329.99760000000003" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="1183.0" y="757.5996" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">专利公开文献</text>
+<text x="1183.0" y="778.8996" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">PatentDocument</text>
+<text x="1028.0012" y="808.5495999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- documentId: ID</text>
+<text x="1028.0012" y="828.5495999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- authority: String</text>
+<text x="1028.0012" y="848.5495999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- publicationNo: ExternalIdentity</text>
+<text x="1028.0012" y="868.5495999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- kindCode: FieldValue&lt;String&gt;</text>
+<text x="1028.0012" y="888.5495999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- publicationDate: BusinessDate</text>
+<text x="1028.0012" y="908.5495999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- evidence: EvidenceRef[1..*]</text>
+<line x1="1018.0011999999999" y1="915.9996" x2="1347.9987999999998" y2="915.9996" stroke="#53657C"/>
+<text x="1028.0012" y="937.5495999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ checkDocumentIdentity(): IdentityResult</text>
+<rect x="1018.0011999999999" y="1010.0022" width="329.99760000000003" height="176.9976" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1018.0011999999999" y="1010.0022" width="329.99760000000003" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="1183.0" y="1028.6022" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">专利家族</text>
+<text x="1183.0" y="1049.9022" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">PatentFamily</text>
+<text x="1028.0012" y="1079.5521999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- familyId: ID</text>
+<text x="1028.0012" y="1099.5521999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- scheme: String</text>
+<text x="1028.0012" y="1119.5521999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- sourceFamilyKey: String</text>
+<text x="1028.0012" y="1139.5521999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- membershipEvidence: EvidenceRef[1..*]</text>
+<line x1="1018.0011999999999" y1="1147.0022" x2="1347.9987999999998" y2="1147.0022" stroke="#53657C"/>
+<text x="1028.0012" y="1168.5521999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ verifyMembership()</text>
+<rect x="509.5012" y="40.0004" width="329.99760000000003" height="196.9992" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="509.5012" y="40.0004" width="329.99760000000003" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="674.5" y="58.6004" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">科研项目</text>
+<text x="674.5" y="79.9004" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">Project</text>
+<text x="519.5011999999999" y="109.5504" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- funder: InstitutionRef</text>
+<text x="519.5011999999999" y="129.5504" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- approvalNo: ExternalIdentity[0..1]</text>
+<text x="519.5011999999999" y="149.55040000000002" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- programScope: String[0..1]</text>
+<text x="519.5011999999999" y="169.55040000000002" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- fundingYear: BusinessDate[0..1]</text>
+<text x="519.5011999999999" y="189.55040000000002" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- projectDates: BusinessDate[0..*]</text>
+<line x1="509.5012" y1="197.0004" x2="839.4988000000001" y2="197.0004" stroke="#53657C"/>
+<text x="519.5011999999999" y="218.55040000000002" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ checkFundingIdentity(): IdentityResult</text>
+<rect x="509.5012" y="564.0004" width="329.99760000000003" height="196.9992" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="509.5012" y="564.0004" width="329.99760000000003" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="674.5" y="582.6004" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">学术获奖</text>
+<text x="674.5" y="603.9004" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">Award</text>
+<text x="519.5011999999999" y="633.5504" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- awardSystem: String</text>
+<text x="519.5011999999999" y="653.5504" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- awardYear: BusinessDate</text>
+<text x="519.5011999999999" y="673.5504" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- sourceProjectNo: String[0..1]</text>
+<text x="519.5011999999999" y="693.5504" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- categoryAndGrade: FieldValue&lt;String&gt;</text>
+<text x="519.5011999999999" y="713.5504" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- awardingBody: InstitutionRef</text>
+<line x1="509.5012" y1="721.0004" x2="839.4988000000001" y2="721.0004" stroke="#53657C"/>
+<text x="519.5011999999999" y="742.5504" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ checkAwardIdentity(): IdentityResult</text>
+<rect x="40.00119999999998" y="292.4992" width="329.99760000000003" height="218.0016" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="40.00119999999998" y="292.4992" width="329.99760000000003" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="205.0" y="311.0992" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">机构</text>
+<text x="205.0" y="332.39919999999995" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">Institution</text>
+<text x="50.00119999999998" y="362.0492" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- institutionId: ID</text>
+<text x="50.00119999999998" y="382.0492" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- name: String</text>
+<text x="50.00119999999998" y="402.0492" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- ror: ExternalIdentity[0..1]</text>
+<text x="50.00119999999998" y="422.0492" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- aliases: TimedAlias[0..*]</text>
+<text x="50.00119999999998" y="442.0492" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- history: InstitutionHistory[0..*]</text>
+<line x1="40.00119999999998" y1="449.4992" x2="369.9988" y2="449.4992" stroke="#53657C"/>
+<text x="50.00119999999998" y="471.0492" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ proposeIdentityMatch()</text>
+<text x="50.00119999999998" y="492.0492" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ recordHistory()</text>
+</g></svg>

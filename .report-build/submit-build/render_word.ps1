@@ -1,6 +1,8 @@
+param([string]$Match = '')
 $ErrorActionPreference = 'Stop'
 $taskBuildDir = Split-Path -Parent $PSCommandPath
 $taskFiles = Get-Content -LiteralPath (Join-Path $taskBuildDir 'docx_outputs.json') -Raw | ConvertFrom-Json
+if ($Match) { $taskFiles = @($taskFiles | Where-Object { $_ -like "*$Match*" }) }
 $taskQaDir = Join-Path $taskBuildDir 'qa'
 New-Item -ItemType Directory -Path $taskQaDir -Force | Out-Null
 $taskWord = New-Object -ComObject Word.Application

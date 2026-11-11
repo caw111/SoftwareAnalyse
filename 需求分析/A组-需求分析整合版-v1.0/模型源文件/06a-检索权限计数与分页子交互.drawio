@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="检索权限计数与分页一致性">
+    <mxGraphModel page="1" pageWidth="1560" pageHeight="1681">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="e0" parent="1" vertex="1" value="检索权限计数与分页一致性" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=34;fontColor=#26384B;fontStyle=1;">
+          <mxGeometry as="geometry" x="35" y="22" width="1490" height="42" />
+        </mxCell>
+        <mxCell id="e1" parent="1" vertex="1" value="图6-2  统一允许集合约束列表、总数与分面；权限变化不能通过旧快照恢复" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=23;fontColor=#26384B;fontStyle=0;">
+          <mxGeometry as="geometry" x="35" y="76" width="1490" height="31" />
+        </mxCell>
+        <mxCell id="e2" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=none;strokeColor=#748497;strokeWidth=2;dashed=1;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="130.0" y="242" />
+            <mxPoint as="targetPoint" x="130.0" y="1661" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=none;strokeColor=#748497;strokeWidth=2;dashed=1;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="563.3333333333333" y="242" />
+            <mxPoint as="targetPoint" x="563.3333333333333" y="1661" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e4" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=none;strokeColor=#748497;strokeWidth=2;dashed=1;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="996.6666666666666" y="242" />
+            <mxPoint as="targetPoint" x="996.6666666666666" y="1661" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e5" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=none;strokeColor=#748497;strokeWidth=2;dashed=1;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="1430.0" y="242" />
+            <mxPoint as="targetPoint" x="1430.0" y="1661" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e6" parent="1" vertex="1" value="" style="rounded=0;fillColor=#E9F0F7;strokeColor=#748497;strokeWidth=2;">
+          <mxGeometry as="geometry" x="15.0" y="142" width="230" height="100" />
+        </mxCell>
+        <mxCell id="e7" parent="1" vertex="1" value="SearchControl&#10;«control»" style="text;html=0;align=center;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#26384B;fontStyle=1;">
+          <mxGeometry as="geometry" x="24.0" y="151" width="212" height="60" />
+        </mxCell>
+        <mxCell id="e8" parent="1" vertex="1" value="" style="rounded=0;fillColor=#E9F0F7;strokeColor=#748497;strokeWidth=2;">
+          <mxGeometry as="geometry" x="448.33333333333326" y="142" width="230" height="100" />
+        </mxCell>
+        <mxCell id="e9" parent="1" vertex="1" value="PermissionPolicy&#10;«control»" style="text;html=0;align=center;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#26384B;fontStyle=1;">
+          <mxGeometry as="geometry" x="457.33333333333326" y="151" width="212" height="60" />
+        </mxCell>
+        <mxCell id="e10" parent="1" vertex="1" value="" style="rounded=0;fillColor=#E9F0F7;strokeColor=#748497;strokeWidth=2;">
+          <mxGeometry as="geometry" x="881.6666666666666" y="142" width="230" height="100" />
+        </mxCell>
+        <mxCell id="e11" parent="1" vertex="1" value="SearchIndex&#10;«read model»" style="text;html=0;align=center;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#26384B;fontStyle=1;">
+          <mxGeometry as="geometry" x="890.6666666666666" y="151" width="212" height="60" />
+        </mxCell>
+        <mxCell id="e12" parent="1" vertex="1" value="" style="rounded=0;fillColor=#E9F0F7;strokeColor=#748497;strokeWidth=2;">
+          <mxGeometry as="geometry" x="1315.0" y="142" width="230" height="100" />
+        </mxCell>
+        <mxCell id="e13" parent="1" vertex="1" value="PublicRelease／&#10;ReleaseEntry&#10;«entity group»" style="text;html=0;align=center;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#26384B;fontStyle=1;">
+          <mxGeometry as="geometry" x="1324.0" y="151" width="212" height="90" />
+        </mxCell>
+        <mxCell id="e14" parent="1" vertex="1" value="QX01  获取当前公开可见约束与 permi&#10;ssionRevision" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=23;fontColor=#26384B;fontStyle=0;">
+          <mxGeometry as="geometry" x="144.0" y="278" width="405.33333333333326" height="62" />
+        </mxCell>
+        <mxCell id="e15" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=open;strokeColor=#748497;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="130.0" y="352" />
+            <mxPoint as="targetPoint" x="563.3333333333333" y="352" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e16" parent="1" vertex="1" value="QX02  返回同一可见范围表达式与权限&#10;修订号" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=23;fontColor=#26384B;fontStyle=0;">
+          <mxGeometry as="geometry" x="144.0" y="383" width="405.33333333333326" height="62" />
+        </mxCell>
+        <mxCell id="e17" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=open;strokeColor=#748497;strokeWidth=2;dashed=1;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="563.3333333333333" y="457" />
+            <mxPoint as="targetPoint" x="130.0" y="457" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" parent="1" vertex="1" value="QX03  查询固定 release；同贡献筛选＋可见约束" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=23;fontColor=#26384B;fontStyle=0;">
+          <mxGeometry as="geometry" x="144.0" y="488" width="838.6666666666666" height="31" />
+        </mxCell>
+        <mxCell id="e19" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=open;strokeColor=#748497;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="130.0" y="531" />
+            <mxPoint as="targetPoint" x="996.6666666666666" y="531" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e20" parent="1" vertex="1" value="" style="rounded=0;fillColor=none;strokeColor=#748497;strokeWidth=2;">
+          <mxGeometry as="geometry" x="22" y="554" width="1516" height="266" />
+        </mxCell>
+        <mxCell id="e21" parent="1" vertex="1" value="critical [一次逻辑查询使用同一候选集合与同版读视图]" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#26384B;fontStyle=1;">
+          <mxGeometry as="geometry" x="38" y="564" width="1465" height="30" />
+        </mxCell>
+        <mxCell id="e22" parent="1" vertex="1" value="" style="rounded=0;fillColor=#F5F7FA;strokeColor=#D9DDE3;strokeWidth=2;">
+          <mxGeometry as="geometry" x="58" y="608" width="1444" height="51" />
+        </mxCell>
+        <mxCell id="e23" parent="1" vertex="1" value="先身份／类型／条件匹配 → 解析规范ID → 按实时可见范围过滤" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=23;fontColor=#26384B;fontStyle=0;">
+          <mxGeometry as="geometry" x="73" y="618" width="1404" height="31" />
+        </mxCell>
+        <mxCell id="e24" parent="1" vertex="1" value="" style="rounded=0;fillColor=#F5F7FA;strokeColor=#D9DDE3;strokeWidth=2;">
+          <mxGeometry as="geometry" x="58" y="677" width="1444" height="51" />
+        </mxCell>
+        <mxCell id="e25" parent="1" vertex="1" value="再计算总数与分面 → 稳定排序 → 分页；不可先分页再剔除" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=23;fontColor=#26384B;fontStyle=0;">
+          <mxGeometry as="geometry" x="73" y="687" width="1404" height="31" />
+        </mxCell>
+        <mxCell id="e26" parent="1" vertex="1" value="QX04  返回规范ID页、total、facets与读视图标记" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=23;fontColor=#26384B;fontStyle=0;">
+          <mxGeometry as="geometry" x="144.0" y="754" width="838.6666666666666" height="31" />
+        </mxCell>
+        <mxCell id="e27" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=open;strokeColor=#748497;strokeWidth=2;dashed=1;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="996.6666666666666" y="797" />
+            <mxPoint as="targetPoint" x="130.0" y="797" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e28" parent="1" vertex="1" value="QX05  按同一 release 批量读条目和来源快照" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=23;fontColor=#26384B;fontStyle=0;">
+          <mxGeometry as="geometry" x="144.0" y="848" width="1272.0" height="31" />
+        </mxCell>
+        <mxCell id="e29" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=open;strokeColor=#748497;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="130.0" y="891" />
+            <mxPoint as="targetPoint" x="1430.0" y="891" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e30" parent="1" vertex="1" value="QX06  返回前重验 permissionRevisio&#10;n 与页内对象权限" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=23;fontColor=#26384B;fontStyle=0;">
+          <mxGeometry as="geometry" x="144.0" y="922" width="405.33333333333326" height="62" />
+        </mxCell>
+        <mxCell id="e31" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=open;strokeColor=#748497;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="130.0" y="996" />
+            <mxPoint as="targetPoint" x="563.3333333333333" y="996" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e32" parent="1" vertex="1" value="" style="rounded=0;fillColor=none;strokeColor=#748497;strokeWidth=2;">
+          <mxGeometry as="geometry" x="22" y="1019" width="1516" height="425" />
+        </mxCell>
+        <mxCell id="e33" parent="1" vertex="1" value="alt [权限修订未变化且所有数据同版]" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#26384B;fontStyle=1;">
+          <mxGeometry as="geometry" x="38" y="1029" width="1465" height="30" />
+        </mxCell>
+        <mxCell id="e34" parent="1" vertex="1" value="QX07  生成绑定条件、release、权限修订与排序位置的查&#10;询令牌" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=23;fontColor=#26384B;fontStyle=0;">
+          <mxGeometry as="geometry" x="144.0" y="1081" width="600" height="62" />
+        </mxCell>
+        <mxCell id="e35" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=none;strokeColor=#748497;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="130.0" y="1155" />
+            <mxPoint as="targetPoint" x="190.0" y="1155" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e36" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=none;strokeColor=#748497;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="190.0" y="1155" />
+            <mxPoint as="targetPoint" x="190.0" y="1175" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e37" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=open;strokeColor=#748497;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="190.0" y="1175" />
+            <mxPoint as="targetPoint" x="130.0" y="1175" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e38" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=none;strokeColor=#748497;strokeWidth=2;dashed=1;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="36" y="1198" />
+            <mxPoint as="targetPoint" x="1524" y="1198" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e39" parent="1" vertex="1" value="else [权限已变化／原查询令牌权限修订过期]" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#26384B;fontStyle=1;">
+          <mxGeometry as="geometry" x="50" y="1208" width="1444" height="30" />
+        </mxCell>
+        <mxCell id="e40" parent="1" vertex="1" value="" style="rounded=0;fillColor=#F5F7FA;strokeColor=#D9DDE3;strokeWidth=2;">
+          <mxGeometry as="geometry" x="58" y="1252" width="1444" height="51" />
+        </mxCell>
+        <mxCell id="e41" parent="1" vertex="1" value="本次结果作废；同一release下重算一次，仍变化则提示刷新" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=23;fontColor=#26384B;fontStyle=0;">
+          <mxGeometry as="geometry" x="73" y="1262" width="1404" height="31" />
+        </mxCell>
+        <mxCell id="e42" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=none;strokeColor=#748497;strokeWidth=2;dashed=1;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="36" y="1321" />
+            <mxPoint as="targetPoint" x="1524" y="1321" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e43" parent="1" vertex="1" value="else [查询超时／索引或条目缺失／同版不可满足]" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#26384B;fontStyle=1;">
+          <mxGeometry as="geometry" x="50" y="1331" width="1444" height="30" />
+        </mxCell>
+        <mxCell id="e44" parent="1" vertex="1" value="" style="rounded=0;fillColor=#F5F7FA;strokeColor=#D9DDE3;strokeWidth=2;">
+          <mxGeometry as="geometry" x="58" y="1375" width="1444" height="51" />
+        </mxCell>
+        <mxCell id="e45" parent="1" vertex="1" value="明确失败并保留条件；不将故障计为0条，不降级拼接最新数据" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=23;fontColor=#26384B;fontStyle=0;">
+          <mxGeometry as="geometry" x="73" y="1385" width="1404" height="31" />
+        </mxCell>
+        <mxCell id="e46" parent="1" vertex="1" value="QX08  成功回主图Q07；失败直接返回可恢复原因" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=23;fontColor=#26384B;fontStyle=0;">
+          <mxGeometry as="geometry" x="144.0" y="1472" width="600" height="31" />
+        </mxCell>
+        <mxCell id="e47" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=none;strokeColor=#748497;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="130.0" y="1515" />
+            <mxPoint as="targetPoint" x="190.0" y="1515" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e48" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=none;strokeColor=#748497;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="190.0" y="1515" />
+            <mxPoint as="targetPoint" x="190.0" y="1535" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e49" parent="1" edge="1" value="" style="edgeStyle=none;rounded=0;endArrow=open;strokeColor=#748497;strokeWidth=2;dashed=0;">
+          <mxGeometry as="geometry" relative="1">
+            <mxPoint as="sourcePoint" x="190.0" y="1535" />
+            <mxPoint as="targetPoint" x="130.0" y="1535" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e50" parent="1" vertex="1" value="" style="rounded=0;fillColor=#EDF3F8;strokeColor=#748497;strokeWidth=2;">
+          <mxGeometry as="geometry" x="45" y="1558" width="1470" height="61" />
+        </mxCell>
+        <mxCell id="e51" parent="1" vertex="1" value="ref" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=22;fontColor=#26384B;fontStyle=1;">
+          <mxGeometry as="geometry" x="57" y="1570" width="55" height="30" />
+        </mxCell>
+        <mxCell id="e52" parent="1" vertex="1" value="内部一致性策略为本次设计决策；目标是列表 total facets 使用同一可见集合" style="text;html=0;align=left;verticalAlign=top;whiteSpace=wrap;overflow=visible;spacing=0;fontFamily=Microsoft YaHei;fontSize=23;fontColor=#26384B;fontStyle=0;">
+          <mxGeometry as="geometry" x="125" y="1570" width="1375" height="31" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

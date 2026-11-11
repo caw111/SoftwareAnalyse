@@ -1,0 +1,18 @@
+import fs from 'node:fs/promises';
+import {Presentation,PresentationFile} from '@oai/artifact-tool';
+import {GlobalFonts} from '@napi-rs/canvas';
+import {fileURLToPath} from 'node:url';
+GlobalFonts.registerFromPath('C:/Windows/Fonts/msyh.ttc');
+console.log('Font registered',GlobalFonts.has('Microsoft YaHei'));
+const p=Presentation.create({slideSize:{width:1600,height:900}});
+const s=p.slides.add();s.background.fill='#FFFFFF';
+const t=s.shapes.add({geometry:'textbox',position:{left:60,top:50,width:1480,height:100},fill:'none',line:{fill:'none',width:0}});
+t.text='学术成果分享平台需求分析';t.text.style={typeface:'Microsoft YaHei',fontSize:52,bold:true,color:'#173B3F'};t.text.insets=0;
+const tb=s.tables.add({rows:3,columns:2,left:60,top:200,width:1100,height:300,columnWidths:[350,750],values:[['业务对象','数据与行为'],['规范成果 Work','标识、题名和数据版本，保留来源证据'],['申请 ClaimApplication','审核与授权共同提交，防止并发错授予']]});
+tb.cells.block({row:0,column:0,rowCount:3,columnCount:2}).assign({textStyle:{typeface:'Microsoft YaHei',fontSize:30,color:'#26383F'},margins:{left:15,right:15,top:10,bottom:10},anchor:'center'});
+tb.cells.block({row:0,column:0,rowCount:1,columnCount:2}).assign({fill:'#E2EFED',textStyle:{typeface:'Microsoft YaHei',fontSize:30,bold:true,color:'#173B3F'}});
+tb.borders.assign({fill:'#D4DEDC',width:1});
+s.speakerNotes.text='来源：已确认主题文稿。';
+await (await PresentationFile.exportPptx(p)).save(fileURLToPath(new URL('./smoke.pptx',import.meta.url)));
+const blob=await p.export({slide:s,format:'png',scale:1});await fs.writeFile(new URL('./smoke.png',import.meta.url),new Uint8Array(await blob.arrayBuffer()));
+console.log('rendered');

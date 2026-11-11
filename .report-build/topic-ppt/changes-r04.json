@@ -1,0 +1,55 @@
+{
+  "source": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\演示文稿\\学术成果分享平台-需求分析汇报.pptx",
+  "slides": 13,
+  "comparisonSlides": [
+    11,
+    12,
+    13
+  ],
+  "removed": [
+    {
+      "slide": 1,
+      "removed": "论文、专利、项目与获奖统一组织。1组与2组依据相同需求建立业务对象和交互模型。"
+    },
+    {
+      "slide": 2,
+      "removed": "1组：Account、Work、Contribution、ClaimApplication、CollectionTask。\n2组：User、AcademicOutcome、OutcomeContributor、PortalClaim、CrawlTask。"
+    },
+    {
+      "slide": 3,
+      "removed": "1组：授权、贡献机构、观测独立建模，公开版本组合条目。\n2组：部分信息由关联和属性承载，成果组合贡献明细。组合不直接等同于物理级联删除。"
+    },
+    {
+      "slide": 4,
+      "removed": "1组：M主交互引用N清洗子图，GovernanceReview负责治理复核。\n2组：主图读取、清洗与入库消息承载流程；两组均要求隔离有原因、错误不丢失。"
+    },
+    {
+      "slide": 5,
+      "removed": "1组：页断点与来源引用、观测及处理登记共同提交，规范入库另设事务。\n2组：页断点与规范成果及后续登记共同提交。断点之前的数据或待处理工作必须可靠存在。"
+    },
+    {
+      "slide": 5,
+      "removed": "待统一：重试耗尽后，1组进入STOPPED；2组保留FAILED，人工放弃后才STOPPED。"
+    },
+    {
+      "slide": 6,
+      "removed": "状态表达待统一：1组采用六状态，验证和审核占用为内部过程。\n2组将待验证、验证中、审核中纳入业务状态，共九状态。"
+    },
+    {
+      "slide": 7,
+      "removed": "1组：ClaimControl协调批准事务。2组：共同提交PortalClaim、管理绑定和更新记录。"
+    },
+    {
+      "slide": 8,
+      "removed": "1组：ContributionAffiliation关联类。2组：OutcomeContributor中的署名机构与证据，查询契约约束同贡献。"
+    },
+    {
+      "slide": 9,
+      "removed": "1组QX细化返回前权限复验：权限修订变化，作废结果并要求重试。\n2组主图通过固定release、实时权限和同版规范ID读取表达一致性契约。"
+    },
+    {
+      "slide": 10,
+      "removed": "两组模型按同一组业务预期核对，问题回写类图、时序和需求记录。"
+    }
+  ]
+}

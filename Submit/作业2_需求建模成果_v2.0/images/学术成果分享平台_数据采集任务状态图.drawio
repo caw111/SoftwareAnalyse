@@ -1,0 +1,100 @@
+<mxfile host="Electron" agent="final">
+  <diagram name="数据采集任务状态图" id="state1">
+    <mxGraphModel dx="2054" dy="1201" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1360" pageHeight="820" background="#ffffff" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#223344;" value="数据采集任务状态图" vertex="1">
+          <mxGeometry height="44" width="500" x="30" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="1" style="ellipse;fillColor=#223344;strokeColor=#223344;" value="" vertex="1">
+          <mxGeometry height="20" width="20" x="50" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="pending" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=15;" value="待执行" vertex="1">
+          <mxGeometry height="64" width="160" x="110" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="running" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=15;" value="运行中" vertex="1">
+          <mxGeometry height="64" width="160" x="320" y="248" as="geometry" />
+        </mxCell>
+        <mxCell id="failed" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=15;" value="失败" vertex="1">
+          <mxGeometry height="64" width="160" x="680" y="318" as="geometry" />
+        </mxCell>
+        <mxCell id="stopped" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=15;" value="已停止" vertex="1">
+          <mxGeometry height="64" width="160" x="920" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="success" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=15;" value="成功" vertex="1">
+          <mxGeometry height="64" width="160" x="470" y="69" as="geometry" />
+        </mxCell>
+        <mxCell id="retry" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=15;" value="重试" vertex="1">
+          <mxGeometry height="64" width="160" x="680" y="454" as="geometry" />
+        </mxCell>
+        <mxCell id="end" parent="1" style="ellipse;fillColor=#223344;strokeColor=#223344;" value="" vertex="1">
+          <mxGeometry height="22" width="22" x="1170" y="411" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="start" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;" target="pending" value="新建采集任务">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="pending" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;" target="running" value="调度器触发（到时或手动），&#xa;启动采集任务">
+          <mxGeometry relative="1" x="0.0345" y="19" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="running" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" target="success" value="全部页面与接口采集完成">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="running" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;" target="failed" value="源不可达、反爬拦截或解析错误">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="failed" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;exitX=0.5;exitY=1;entryX=0.5;entryY=0;textShadow=0;" target="retry" value="剩余重试次数大于零，&#xa;退避延时后重新调度">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="retry" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;" target="running" value="退避延时已到，&#xa;重新执行采集任务">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="300" y="522" />
+              <mxPoint x="300" y="372" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="failed" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;" target="end" value="重试次数已达上限">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="220" />
+              <mxPoint x="1171" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="running" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;shadow=0;flowAnimation=0;" target="stopped" value="管理员停止任务（任意运行状态），&#xa;终止任务并记录审计日志">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="490" y="250" />
+              <mxPoint x="960" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="pending" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;" target="stopped" value="管理员取消待执行任务">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="190" y="440" />
+              <mxPoint x="960" y="440" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="success" style="endArrow=classic;html=1;strokeColor=#445566;edgeStyle=orthogonalEdgeStyle;" target="end" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1185" y="142" />
+              <mxPoint x="1185" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="stopped" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;" target="end" value="任务归档">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note" parent="1" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff8dc;strokeColor=#d4b86a;align=left;verticalAlign=middle;size=15;fontSize=13;" value="失败原因按错误码归类：源不可达（域名解析失败、连接超时）、反爬拦截（状态码 429/403、验证码触发）、&#xa;解析错误（页面结构变更、数据结构不匹配）、入库异常（主键冲突、字段超长、数据库连接失败）。" vertex="1">
+          <mxGeometry height="95" width="1100" x="50" y="630" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

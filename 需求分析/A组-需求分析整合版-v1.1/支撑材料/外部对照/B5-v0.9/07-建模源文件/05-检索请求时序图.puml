@@ -1,0 +1,107 @@
+@startuml
+skinparam defaultFontName Microsoft YaHei
+skinparam defaultFontSize 15
+skinparam shadowing false
+skinparam backgroundColor #FFFFFF
+skinparam sequence {
+ ArrowColor #24486A
+ LifeLineBorderColor #8A9AA8
+ ParticipantBorderColor #24486A
+ ParticipantBackgroundColor #EAF2FA
+ ActorBorderColor #24486A
+ GroupBorderColor #687D91
+ GroupBackgroundColor #F5F8FB
+ GroupHeaderFontColor #24486A
+ DividerBackgroundColor #DCEAF5
+ BoxPadding 8
+ MessageAlign center
+}
+hide footbox
+title B5 · 检索请求处理时序图（UC2.1）\nB组 / 吴星宇 / v0.9 / 2026-10-26 / 待人工复审
+actor "访客／检索用户\n（无需登录）" as U
+boundary "检索页面\nSearchPage" as P
+control "检索控制对象\nSearchControl" as C
+entity "公开版本契约\nPublicRelease" as R
+control "检索索引服务\nSearchIndex" as I
+control "公开成果读取对象\nPublicWorkReader" as W
+control "当前权限策略\nVisibilityPolicy" as A
+
+U -> P : M01 输入关键词／标识、筛选、排序和分页
+P -> C : M02 search(criteria, releaseId?)
+C -> C : M03 校验字段、日期精度、类型、页码和page_size\n构造AND/OR、person_mode及贡献关系语义
+note over C,I
+page_size 默认10，最大100；完全空条件按最新收录顺序。
+同名先确认人物ID；人物与机构不得独立数组交叉匹配。
+any_contribution 具体含义待B1澄清；不得静默扩展匹配范围。
+精确合法标识按类型优先定位；项目编号需消除资助机构歧义。
+end note
+alt F01 [请求非法／必要的人物或范围语义尚未确认]
+ C --> P : M04 字段错误或待确认提示；保留原输入
+ P --> U : M05 提示修正／选择候选，不显示“0条成功”
+else 请求合法且查询语义已确定
+ C -> R : M06 resolve(releaseId?)：指定版／首次绑定当前可用版
+ R --> C : M07 releaseId、范围、分类/规则/索引/统计版本、更新时间\n或不可用／已失效
+ alt F02 [指定版本已失效]
+  C --> P : M08 版本失效；需显式刷新后重新绑定
+  P --> U : M09 保留条件；提示刷新，不混读新版
+ else 不存在可用公开版本
+  C --> P : M10 服务／版本不可用；允许重试
+  P --> U : M11 显示服务错误
+ else 固定版本有效
+  C -> A : M12 获取当前公开可见范围及策略标记
+  A --> C : M13 当前可见约束与策略标记
+  C -> I : M14 execute(criteria, releaseId, visibility)\n过滤→有效配置排序→稳定分页
+  note over C,I
+  默认相关度；同分业务年降序（未知置后），规范成果ID升序。
+  all类型默认分组；不直接比较各索引原始分。
+  日期排序采用声明日期；引用排序固定同源观察。
+  end note
+  I --> C : M15 查询状态；成功时返回ID、总数、排序、releaseId
+  alt F03 [超时／服务失败]
+   C --> P : M16 可重试服务错误、request_id
+   P --> U : M17 显示失败和重试入口，保留查询上下文
+  else 执行中版本失效／返回版本不一致
+   C --> P : M18 失效或一致性错误；拒绝混版结果
+   P --> U : M19 按错误类型刷新或重试
+  else 索引查询成功且版本一致
+   C -> C : M20 校验总数与页码\n总数0且page=1为合法空；越界页为参数错误
+   alt F04 [页码超出有效范围]
+    C --> P : M21 页码错误及可调整信息
+    P --> U : M22 保留筛选，提示调整页码
+   else 页码有效
+    opt F05 [存在成果ID]
+     C -> W : M23 readPublic(ids, releaseId)\n读取同版类型字段、来源、缺失及可见状态
+     W --> C : M24 同版记录／明确读取错误（不回退当前库）
+    end
+    C -> A : M25 返回前复核当前对象/字段权限与策略标记
+    A --> C : M26 当前可见结论／可见范围变化／校验失败
+    alt F06 [读取失败／同版缺项／权限校验失败]
+     C --> P : M27 明确失效、服务或一致性错误；不返回部分成功
+     P --> U : M28 保留条件并提供相应处理入口
+    else 当前可见范围发生变化
+     C --> P : M29 可见范围变化，请重试；不返回旧总数与受限内容
+     P --> U : M30 提示重试，不默删当前页后伪称总数一致
+    else 读取与权限均通过
+     alt F07 [total=0，合法空结果]
+      C --> P : M31 items=[]、total=0、条件、releaseId、更新时间
+      P --> U : M32 显示空结果及调整条件建议
+     else total>0，有结果
+      C --> P : M33 公开结果、总数、条件、排序、页码、releaseId、更新时间
+      P --> U : M34 展示四类成果、来源与缺失标记
+      opt F08 [用户打开详情再返回列表]
+       ref over U,A : D01–D20：同版详情与上下文恢复（见05a子图）
+      end
+     end
+    end
+   end
+  end
+ end
+end
+note over U,A
+不写业务数据、不改变采集或认领状态；不公开证明、私人笔记或申请材料。
+错误语义优先于HTTP映射；410/422/503等仅为SPEC §11候选映射。
+M29为保守分析设计建议，需B1/B2确认，并非新增已确认业务状态。
+依据：SRS UC2.1/UC2.2/UC2.3、BR-04、REL-02；SPEC-SEARCH-01 §6.1–6.4。
+工具：PlantUML可编辑源与导出PNG；未冒称CodeArts落模或人工签署。
+end note
+@enduml

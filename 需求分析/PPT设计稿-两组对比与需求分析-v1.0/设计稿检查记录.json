@@ -1,0 +1,12 @@
+{
+  "main_pages": 20,
+  "appendix_pages": 8,
+  "seconds": 900,
+  "our_pngs": 13,
+  "our_svgs": 10,
+  "editable_drawio": 5,
+  "group2_reference_diagram": 1,
+  "source_copy_hashes": "pass",
+  "content": "每页均有完整上屏文案、配图与版式、讲解词、来源；所有13张本组图有主讲位置",
+  "validation": "设计稿结构及来源核对；未生成PPTX，未进行实际放映排版验证"
+}

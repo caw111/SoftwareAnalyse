@@ -1,0 +1,16 @@
+{
+  "version": "v2.0",
+  "formal_usecases": 22,
+  "preserved_FR": 104,
+  "preserved_AC": 42,
+  "preserved_simulation_cases": 28,
+  "SRS_figures": 11,
+  "unchanged_assets": 32,
+  "local_links_verified": 91,
+  "Word_documents": 12,
+  "packages": [
+    "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业1_需求调研成果_v2.0",
+    "F:\\homework\\软分\\SoftwareAnalyse\\Submit\\作业2_需求建模成果_v2.0"
+  ],
+  "zip_integrity": "passed"
+}

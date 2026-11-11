@@ -1,0 +1,21 @@
+{
+  "revision": "r03",
+  "outputs": [
+    {
+      "path": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\演示文稿\\学术成果分享平台-需求分析汇报.pptx",
+      "slides": 10,
+      "sha256": "ce10a06f0df128f85a681264d09f77dffc15a0591e634c58059e69ca5b8213eb",
+      "bytes": 73754,
+      "nativeTables": 10
+    },
+    {
+      "path": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\演示文稿\\完整模型图册-备查.pptx",
+      "slides": 17,
+      "sha256": "686e99566c84ecc6a0fce71440556b7ce066638f60e83d7c2b878b8aa66f4364",
+      "bytes": 9524393,
+      "nativeTables": 0
+    }
+  ],
+  "visualReview": "All 10 main slides inspected in native PowerPoint PDF rendering; all 17 atlas slides inspected in Artifact Tool rendering. Independent visual QA completed.",
+  "layoutWarningResolution": "Slide 2 estimated native table overflow warning resolved by inspecting native PowerPoint rendering: table ends above group mapping footnote, no overlap or clipping."
+}

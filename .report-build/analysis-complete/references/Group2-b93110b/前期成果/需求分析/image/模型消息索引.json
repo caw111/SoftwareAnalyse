@@ -1,0 +1,351 @@
+{
+  "02_数据采集入库时序图": [
+    {
+      "number": "1",
+      "from": "管理员或调度器 «actor»",
+      "to": "采集任务控制 «control»",
+      "message": "创建固定范围采集任务",
+      "kind": "call"
+    },
+    {
+      "number": "2",
+      "from": "采集任务控制 «control»",
+      "to": "业务数据存储 «entity»",
+      "message": "登记任务与有效执行尝试",
+      "kind": "call"
+    },
+    {
+      "number": "3",
+      "from": "采集任务控制 «control»",
+      "to": "授权数据源 «external»",
+      "message": "按游标读取一页",
+      "kind": "call"
+    },
+    {
+      "number": "4",
+      "from": "授权数据源 «external»",
+      "to": "采集任务控制 «control»",
+      "message": "返回响应及来源标识",
+      "kind": "return"
+    },
+    {
+      "number": "5",
+      "from": "采集任务控制 «control»",
+      "to": "业务数据存储 «entity»",
+      "message": "保存原文版本、哈希与观测",
+      "kind": "call"
+    },
+    {
+      "number": "6",
+      "from": "采集任务控制 «control»",
+      "to": "清洗与归并服务 «control»",
+      "message": "提交字段映射与规则版本",
+      "kind": "call"
+    },
+    {
+      "number": "7",
+      "from": "清洗与归并服务 «control»",
+      "to": "业务数据存储 «entity»",
+      "message": "查规范标识及候选对象",
+      "kind": "call"
+    },
+    {
+      "number": "8",
+      "from": "业务数据存储 «entity»",
+      "to": "清洗与归并服务 «control»",
+      "message": "返回现有对象与证据",
+      "kind": "return"
+    },
+    {
+      "number": "9",
+      "from": "清洗与归并服务 «control»",
+      "to": "业务数据存储 «entity»",
+      "message": "事务写规范成果、来源及变更",
+      "kind": "call"
+    },
+    {
+      "number": "10",
+      "from": "清洗与归并服务 «control»",
+      "to": "业务数据存储 «entity»",
+      "message": "同事务登记后续更新与断点",
+      "kind": "call"
+    },
+    {
+      "number": "11",
+      "from": "业务数据存储 «entity»",
+      "to": "采集任务控制 «control»",
+      "message": "提交成功与分类处理计数",
+      "kind": "return"
+    },
+    {
+      "number": "12",
+      "from": "采集任务控制 «control»",
+      "to": "业务数据存储 «entity»",
+      "message": "登记 FAILED 与原因，保留断点",
+      "kind": "call"
+    },
+    {
+      "number": "13",
+      "from": "采集任务控制 «control»",
+      "to": "采集任务控制 «control»",
+      "message": "可恢复且预算内则 RETRYING，稍后重入",
+      "kind": "call"
+    },
+    {
+      "number": "14",
+      "from": "采集任务控制 «control»",
+      "to": "业务数据存储 «entity»",
+      "message": "仅全窗口完成后提交 SUCCESS 与成功水位",
+      "kind": "call"
+    },
+    {
+      "number": "15",
+      "from": "业务数据存储 «entity»",
+      "to": "公开版本服务 «control»",
+      "message": "可靠更新登记供异步处理",
+      "kind": "async"
+    },
+    {
+      "number": "16",
+      "from": "公开版本服务 «control»",
+      "to": "公开版本服务 «control»",
+      "message": "构建同版索引与统计，校验后切换公开版本",
+      "kind": "call"
+    },
+    {
+      "number": "17",
+      "from": "采集任务控制 «control»",
+      "to": "管理员或调度器 «actor»",
+      "message": "返回采集与公开处理的独立状态",
+      "kind": "return"
+    }
+  ],
+  "03_门户认领审核时序图": [
+    {
+      "number": "1",
+      "from": "科研人员 «actor»",
+      "to": "认领页面 «boundary»",
+      "message": "选择本人候选门户",
+      "kind": "call"
+    },
+    {
+      "number": "2",
+      "from": "认领页面 «boundary»",
+      "to": "认领审核控制 «control»",
+      "message": "提交材料与申请版本",
+      "kind": "call"
+    },
+    {
+      "number": "3",
+      "from": "认领审核控制 «control»",
+      "to": "申请与授权存储 «entity»",
+      "message": "核验身份、对象及重复申请",
+      "kind": "call"
+    },
+    {
+      "number": "4",
+      "from": "认领审核控制 «control»",
+      "to": "申请与授权存储 «entity»",
+      "message": "保存 PENDING_VERIFICATION",
+      "kind": "call"
+    },
+    {
+      "number": "5",
+      "from": "认领审核控制 «control»",
+      "to": "材料验证职责 «control»",
+      "message": "VERIFYING：验证当前材料版本",
+      "kind": "call"
+    },
+    {
+      "number": "6",
+      "from": "材料验证职责 «control»",
+      "to": "认领审核控制 «control»",
+      "message": "返回检查结论与证据",
+      "kind": "return"
+    },
+    {
+      "number": "7",
+      "from": "认领审核控制 «control»",
+      "to": "申请与授权存储 «entity»",
+      "message": "保存 PENDING_REVIEW",
+      "kind": "call"
+    },
+    {
+      "number": "8",
+      "from": "材料验证职责 «control»",
+      "to": "认领审核控制 «control»",
+      "message": "返回补正项或暂时失败",
+      "kind": "return"
+    },
+    {
+      "number": "9",
+      "from": "认领审核控制 «control»",
+      "to": "申请与授权存储 «entity»",
+      "message": "NEED_MORE_INFO 或待验证",
+      "kind": "call"
+    },
+    {
+      "number": "10",
+      "from": "授权审核员 «actor»",
+      "to": "认领审核控制 «control»",
+      "message": "领取当前版本审核任务",
+      "kind": "call"
+    },
+    {
+      "number": "11",
+      "from": "认领审核控制 «control»",
+      "to": "申请与授权存储 «entity»",
+      "message": "占用成功后置 UNDER_REVIEW",
+      "kind": "call"
+    },
+    {
+      "number": "12",
+      "from": "认领审核控制 «control»",
+      "to": "授权审核员 «actor»",
+      "message": "返回有权访问的材料与上下文",
+      "kind": "return"
+    },
+    {
+      "number": "13",
+      "from": "授权审核员 «actor»",
+      "to": "认领审核控制 «control»",
+      "message": "提交决定、理由及申请版本",
+      "kind": "call"
+    },
+    {
+      "number": "14",
+      "from": "认领审核控制 «control»",
+      "to": "申请与授权存储 «entity»",
+      "message": "同事务 APPROVED、授权与更新记录",
+      "kind": "call"
+    },
+    {
+      "number": "15",
+      "from": "认领审核控制 «control»",
+      "to": "申请与授权存储 «entity»",
+      "message": "REJECTED 或 NEED_MORE_INFO 与理由",
+      "kind": "call"
+    },
+    {
+      "number": "16",
+      "from": "申请与授权存储 «entity»",
+      "to": "认领审核控制 «control»",
+      "message": "拒绝过时写入，返回冲突",
+      "kind": "return"
+    },
+    {
+      "number": "17",
+      "from": "认领审核控制 «control»",
+      "to": "认领页面 «boundary»",
+      "message": "返回本人申请状态与审核意见",
+      "kind": "return"
+    },
+    {
+      "number": "18",
+      "from": "认领页面 «boundary»",
+      "to": "科研人员 «actor»",
+      "message": "展示结果及可执行操作",
+      "kind": "return"
+    }
+  ],
+  "04_检索请求处理时序图": [
+    {
+      "number": "1",
+      "from": "访客或普通用户 «actor»",
+      "to": "检索页面 «boundary»",
+      "message": "输入关键词与组合条件",
+      "kind": "call"
+    },
+    {
+      "number": "2",
+      "from": "检索页面 «boundary»",
+      "to": "检索控制 «control»",
+      "message": "提交已确认人物及筛选条件",
+      "kind": "call"
+    },
+    {
+      "number": "3",
+      "from": "检索控制 «control»",
+      "to": "检索控制 «control»",
+      "message": "检查字段、日期、分页及人物机构同贡献约束",
+      "kind": "call"
+    },
+    {
+      "number": "4",
+      "from": "检索控制 «control»",
+      "to": "检索页面 «boundary»",
+      "message": "返回字段级错误，保留输入",
+      "kind": "return"
+    },
+    {
+      "number": "5",
+      "from": "检索控制 «control»",
+      "to": "公开版本与权限 «control»",
+      "message": "固定 release，实时校验可见权限",
+      "kind": "call"
+    },
+    {
+      "number": "6",
+      "from": "公开版本与权限 «control»",
+      "to": "检索控制 «control»",
+      "message": "返回版本、范围及可用状态",
+      "kind": "return"
+    },
+    {
+      "number": "7",
+      "from": "检索控制 «control»",
+      "to": "成果索引 «entity»",
+      "message": "精确标识或文本查询、过滤与稳定排序",
+      "kind": "call"
+    },
+    {
+      "number": "8",
+      "from": "成果索引 «entity»",
+      "to": "检索控制 «control»",
+      "message": "返回规范 ID、总数及分面",
+      "kind": "return"
+    },
+    {
+      "number": "9",
+      "from": "检索控制 «control»",
+      "to": "同版详情存储 «entity»",
+      "message": "按同版规范 ID 读取展示字段",
+      "kind": "call"
+    },
+    {
+      "number": "10",
+      "from": "同版详情存储 «entity»",
+      "to": "检索控制 «control»",
+      "message": "返回同版题录、来源及缺失标记",
+      "kind": "return"
+    },
+    {
+      "number": "11",
+      "from": "检索控制 «control»",
+      "to": "检索页面 «boundary»",
+      "message": "结果、条件摘要、总数与版本",
+      "kind": "return"
+    },
+    {
+      "number": "12",
+      "from": "检索控制 «control»",
+      "to": "检索页面 «boundary»",
+      "message": "有效空结果与调整条件入口",
+      "kind": "return"
+    },
+    {
+      "number": "13",
+      "from": "检索控制 «control»",
+      "to": "检索页面 «boundary»",
+      "message": "明确服务错误或版本失效",
+      "kind": "return"
+    },
+    {
+      "number": "14",
+      "from": "检索页面 «boundary»",
+      "to": "访客或普通用户 «actor»",
+      "message": "展示状态并保留筛选与分页上下文",
+      "kind": "return"
+    }
+  ]
+}

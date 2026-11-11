@@ -1,0 +1,627 @@
+[
+  {
+    "path": "README.md",
+    "bytes": 2478,
+    "sha256": "7dd6ca71123e0fe33e95f7f143a503c81d29090e1f3fd497158080983906d80d"
+  },
+  {
+    "path": "本组-需求分析报告.docx",
+    "bytes": 5638390,
+    "sha256": "603cc91d1046eec6b2f41adbf62cc14371536215693ef22e7e0c2a56b018cee7"
+  },
+  {
+    "path": "本组-需求分析报告.md",
+    "bytes": 63507,
+    "sha256": "950248b916499e2ce8053d365bc50859cb420ca9ca1ce0e58cbf01372d2f26b1"
+  },
+  {
+    "path": "模型消息索引.json",
+    "bytes": 10887,
+    "sha256": "bd7d9228126eae4c37982e0b03858fa20849d752eb6215790c8b188a863dd3b0"
+  },
+  {
+    "path": "图件/02-局部01-账号学者与门户授权.png",
+    "bytes": 373650,
+    "sha256": "e5fcbd856157ffe67acbc05f7893ae0264eaeb00164f13a7fdb13fd5cfa05503"
+  },
+  {
+    "path": "图件/02-局部01-账号学者与门户授权.svg",
+    "bytes": 18162,
+    "sha256": "19aa03d1130e2fe65ca63c425419673f7a52fb152af2233f6a9707e4d173e871"
+  },
+  {
+    "path": "图件/02-局部02-四类成果与专利身份.png",
+    "bytes": 418721,
+    "sha256": "fd13a46d8735819c33fa0af150cac8e29ff59f4212cd76fa937109696f178d19"
+  },
+  {
+    "path": "图件/02-局部02-四类成果与专利身份.svg",
+    "bytes": 17203,
+    "sha256": "1629e3c4bc149e78104d4cda6259fecc1d8ea8e50a084659d5192879506a658b"
+  },
+  {
+    "path": "图件/02-局部03-贡献机构与领域关系.png",
+    "bytes": 429556,
+    "sha256": "ed36f4b77e5cbb6f7ae661598be1e8858dfdd185ad935e33d6fc6827c5192346"
+  },
+  {
+    "path": "图件/02-局部03-贡献机构与领域关系.svg",
+    "bytes": 24531,
+    "sha256": "186eadddef6ede1446f7f1cccd0d7c920093952358ed9b6d624f943fc21824bf"
+  },
+  {
+    "path": "图件/02-局部04-来源采集与规范映射.png",
+    "bytes": 450514,
+    "sha256": "109fe8f314afcd4d5a92b3a47d5400b103bf6aec96985a60e2bb5117e0718206"
+  },
+  {
+    "path": "图件/02-局部04-来源采集与规范映射.svg",
+    "bytes": 19986,
+    "sha256": "e668b0f8c2d5194b1d7ed44792e6835f8aae0bbc9de4b34aac5c301d92f5b7b4"
+  },
+  {
+    "path": "图件/02-局部05-治理更新与公开版本.png",
+    "bytes": 573751,
+    "sha256": "2c71a5ef67efb3b4ba02c35343df43e05fce35006b06b6326f830e4a469c34ee"
+  },
+  {
+    "path": "图件/02-局部05-治理更新与公开版本.svg",
+    "bytes": 23234,
+    "sha256": "75cbc336ac24eb8ad247936a04e565a378dc775cdcdd6ed45739a9f32ce80c75"
+  },
+  {
+    "path": "图件/02-核心业务类图.png",
+    "bytes": 1520808,
+    "sha256": "6386ced11addddb4f5909ee660a756e811350088b70e60a6a9b6ece633d5f3b5"
+  },
+  {
+    "path": "图件/02-核心业务类图.svg",
+    "bytes": 73066,
+    "sha256": "1f9f18226d385f365c283eeeb728e4abfcf2e0557a70518cce7c03cc0f7a6fd8"
+  },
+  {
+    "path": "图件/03-采集入库时序图.png",
+    "bytes": 557328,
+    "sha256": "7694e4847451928ea76bf9c9156cddcc8fa83634caa9c9150851d1c39f38b716"
+  },
+  {
+    "path": "图件/03a-清洗去重子交互.png",
+    "bytes": 296162,
+    "sha256": "977b763fb3eab0663a9ee211346fc2b60141f3699ace8566d7bb4011bb2fc2cd"
+  },
+  {
+    "path": "图件/03b-停止重试子交互.png",
+    "bytes": 255813,
+    "sha256": "f17c73a85f9774ed039d88f30b1b154e9ef4f1668a8beeb7530cee16bdb25610"
+  },
+  {
+    "path": "图件/05-门户认领审核时序图.png",
+    "bytes": 354248,
+    "sha256": "36ad8b13816d30c79e6f6fc7d44f95d4c9ac63f2e919fbde0e930a5ba2534e40"
+  },
+  {
+    "path": "图件/05-门户认领审核时序图.svg",
+    "bytes": 15738,
+    "sha256": "46c0f011644e2a40c138a331005cf2cd8a62b7c3f7bda99e9b390dbcd5a06e11"
+  },
+  {
+    "path": "图件/05a-认领原子授权与撤回子交互.png",
+    "bytes": 298395,
+    "sha256": "58d542b60a05f8ca4ba6addbb850bff281f6f31b26c0e7ca4bdb3f3c0db3d92b"
+  },
+  {
+    "path": "图件/05a-认领原子授权与撤回子交互.svg",
+    "bytes": 11954,
+    "sha256": "897c5fc2e64aca246a3cc295f6d63d42e48d382739ab0246486361958593a826"
+  },
+  {
+    "path": "图件/06-检索请求处理时序图.png",
+    "bytes": 373248,
+    "sha256": "5a7e75ac6fc4ee88afd45d8526f3f042083ee60d4286bd3b54aa57fb92504295"
+  },
+  {
+    "path": "图件/06-检索请求处理时序图.svg",
+    "bytes": 14847,
+    "sha256": "b456f56682998f5d82164ffbf7f71bcd936eba79f96efc113563b40cf8365bd2"
+  },
+  {
+    "path": "图件/06a-检索权限计数与分页子交互.png",
+    "bytes": 388536,
+    "sha256": "d1638aa854d1a8e7d4bd4198d9cf4facf6576667555c556f0b17acd59fa90c8d"
+  },
+  {
+    "path": "图件/06a-检索权限计数与分页子交互.svg",
+    "bytes": 12907,
+    "sha256": "7bd156770e2c5ae061bf3a08db5c0cb747827734c5b56da9681c2cbc917c898b"
+  },
+  {
+    "path": "支撑材料/15分钟汇报讲解稿.md",
+    "bytes": 5634,
+    "sha256": "827516fa8e029917e4b038bada8ace2e2bceb9f5acfc9f830d9b526db5982c90"
+  },
+  {
+    "path": "支撑材料/Group2与B5对照及修订.md",
+    "bytes": 11574,
+    "sha256": "3b345d3ac27948100f2fb36c670b3431c0a6840995509a65e9b75ec0fa1b4046"
+  },
+  {
+    "path": "支撑材料/v1.0修订前文件清单.json",
+    "bytes": 8395,
+    "sha256": "8609fc3df84b1e464cd6e0f757dc8fb1d273dbdb53f68935dde3bcfaf3ff11d9"
+  },
+  {
+    "path": "支撑材料/业务对象与关系完整字典.md",
+    "bytes": 37062,
+    "sha256": "70c3eb31313dfc2bd425114a1b43caa930e38b4c2a7ccc8f9dabe880dab91166"
+  },
+  {
+    "path": "支撑材料/原始A2-02-A2赵琦-核心业务类图与领域关系设计.md",
+    "bytes": 85737,
+    "sha256": "69a1e584f1b30743b1551060834a6cf7a2ce3e05910ed2b207981b393679e618"
+  },
+  {
+    "path": "支撑材料/原始A2-02-类与关系说明.md",
+    "bytes": 61235,
+    "sha256": "eec0c3bd07c3bec77d167f3f6ccac82e4433c5ab2786b11fca06e361dbdb0598"
+  },
+  {
+    "path": "支撑材料/原始A3-03-异常与边界场景.md",
+    "bytes": 2569,
+    "sha256": "1df90ca84bcca98e6556e033eeb8f5d701cf6ad4fb2f0ac7b48768838d523688"
+  },
+  {
+    "path": "支撑材料/原始A3-03-采集入库时序图说明.md",
+    "bytes": 11789,
+    "sha256": "708de8ca6634e02b8c513f7213aba266c0e4e245482993bebbb740a67c72982c"
+  },
+  {
+    "path": "支撑材料/原始A3-03-采集六状态对照表.md",
+    "bytes": 1514,
+    "sha256": "7549da58b8416fdae0846cc5561044fbaad16a2b22adc4a7c21dab4c8dbba599"
+  },
+  {
+    "path": "支撑材料/外部压缩包校验.json",
+    "bytes": 568,
+    "sha256": "8262b194c392c8f9e71ef5d6fbb13f4b763cd592601f76dd8d7c962d394b6e81"
+  },
+  {
+    "path": "支撑材料/对照来源索引.json",
+    "bytes": 14290,
+    "sha256": "d5d9bd0c3c9ceb372c013b34cab8dc92b237bd52da386a9a1bc52eb747400016"
+  },
+  {
+    "path": "支撑材料/整合版32项设计走查.csv",
+    "bytes": 4909,
+    "sha256": "86fc3f7e2b36126e400931c2812148b352c95309967775cf4e5b8c47774a181b"
+  },
+  {
+    "path": "支撑材料/新增交互消息表.md",
+    "bytes": 9338,
+    "sha256": "209c5c8bbd49de6262c3b3c03474d48d464cf0449905f0727c135c11a480825a"
+  },
+  {
+    "path": "支撑材料/本版校验记录.json",
+    "bytes": 1287,
+    "sha256": "914049d5e4dd904f4abb8b82cb8ee7c07de840ac180e483fdc2decaf10c8f88d"
+  },
+  {
+    "path": "支撑材料/本版校验说明.md",
+    "bytes": 1088,
+    "sha256": "7bc68e07e5b416b634ba1f0f186d4567a70655a4f3509fb31e9c9ff6cd9d84e9"
+  },
+  {
+    "path": "支撑材料/来源与修订记录.md",
+    "bytes": 3281,
+    "sha256": "de71452d190896f39ccbf363431d10ea0acbc94ecefc1c1c37024976f5616589"
+  },
+  {
+    "path": "支撑材料/补充需求依据校验.json",
+    "bytes": 1301,
+    "sha256": "deb5979de2edab06ce9130b9a8ad637f611832694f17ad764161f65bb12698a7"
+  },
+  {
+    "path": "支撑材料/输入文件校验清单.json",
+    "bytes": 4566,
+    "sha256": "20356b1bd0c53683ce097895f8c6503d3aeed0033ff66d849b5e82771c0a2a7c"
+  },
+  {
+    "path": "模型源文件/02-核心业务类图.drawio",
+    "bytes": 433760,
+    "sha256": "29ddf56a608948a1dbf060925de692b5df5030a537ed0c6041e5cc836075b785"
+  },
+  {
+    "path": "模型源文件/03-CodeArts正式模型工程.zip",
+    "bytes": 170745,
+    "sha256": "57f82c6f099413d5f0998142d9ff27473c1ea0de7f54a1f51749cd09534812ac"
+  },
+  {
+    "path": "模型源文件/05-门户认领审核时序图.drawio",
+    "bytes": 26836,
+    "sha256": "9d57167aab44cfc3474f9205c579e2d0c8c1540b170afbb788c5f6ece676b82a"
+  },
+  {
+    "path": "模型源文件/05a-认领原子授权与撤回子交互.drawio",
+    "bytes": 21609,
+    "sha256": "a830e6a15eab2be1d74fa7198dde6af1d60f5ef48a6d2c87a28d31328f3c8e34"
+  },
+  {
+    "path": "模型源文件/06-检索请求处理时序图.drawio",
+    "bytes": 26030,
+    "sha256": "4842f60dddcd2dd49ce8495732c37b283919725425561b3dda74d0ddf7ee5e3a"
+  },
+  {
+    "path": "模型源文件/06a-检索权限计数与分页子交互.drawio",
+    "bytes": 26616,
+    "sha256": "aae5bad9a6e30946162789fc6ff200d4980618792da289c165cf90777acc20ae"
+  },
+  {
+    "path": "模型源文件/A2-核心业务模型.json",
+    "bytes": 49212,
+    "sha256": "0a837f18842439161e2ef88c77cfe88927500464ebd8ceff5099c728e5a083d6"
+  },
+  {
+    "path": "模型源文件/build.py",
+    "bytes": 13501,
+    "sha256": "56da16d81bf6a87d27780f6c4925a42cd5c389799bf4fc443123bf811b9d1a9f"
+  },
+  {
+    "path": "模型源文件/content.py",
+    "bytes": 53514,
+    "sha256": "b38f1a993850593105f02d8e0f085bface5e849dc16ec6b7395368d314ba58c6"
+  },
+  {
+    "path": "模型源文件/diagrams.py",
+    "bytes": 17574,
+    "sha256": "255206eae2ba08fd0697d068db416df56db006909fd55cdbddd1256a87182a05"
+  },
+  {
+    "path": "模型源文件/finalize.py",
+    "bytes": 9010,
+    "sha256": "43b04339472c08eeea8721694e605091eabc38da712106f5104ff2af9e3270c1"
+  },
+  {
+    "path": "模型源文件/render-native.ps1",
+    "bytes": 883,
+    "sha256": "26df10fd5b1a7f5a3c556d785689e90e6e0274414ed8fdcc6e1e62acf71a902b"
+  },
+  {
+    "path": "模型源文件/revision.py",
+    "bytes": 24211,
+    "sha256": "a3cf5e71e8a5221acb9d85b740f1f6c3720cdc385cbf6464dd2f311ab77ce602"
+  },
+  {
+    "path": "模型源文件/新增交互模型.json",
+    "bytes": 20926,
+    "sha256": "35131c883e05e7170df40f612a3c020c21a1377cd34c23b1cad3482c3c46cbd7"
+  },
+  {
+    "path": "支撑材料/需求依据/《软件系统分析与设计》实践任务书（一）学术成果分享平台-v1.pdf",
+    "bytes": 431025,
+    "sha256": "5a9f6cf492ef4eb23741b4ee5d979f923b56396f793fc967f0414ded28e4b9c0"
+  },
+  {
+    "path": "支撑材料/需求依据/核心模块开发规范_SPEC.md",
+    "bytes": 33791,
+    "sha256": "e700903607dd7a45488eaf26914a90d63bea56e3c9c6e36395d9d489724aa891"
+  },
+  {
+    "path": "支撑材料/需求依据/系统需求规格说明书_SRS.md",
+    "bytes": 56271,
+    "sha256": "a319d2f0a6dacbf679ce76044d48a6015aaa291a06129caedefb20a8d5cf6e00"
+  },
+  {
+    "path": "支撑材料/需求依据/需求条目与验收场景.md",
+    "bytes": 77817,
+    "sha256": "44e63cb0b86f9d615c1c4c3bd14cc772b37fc1c57c90291ca028f9d05550bfa5"
+  },
+  {
+    "path": "支撑材料/外部对照/B5-v0.9/00-阅读与交接说明.md",
+    "bytes": 1762,
+    "sha256": "95f71974b7bf4be7f0dbf5257ca0a0ef4f61b5d68de43ec90726e3091988fc20"
+  },
+  {
+    "path": "支撑材料/外部对照/B5-v0.9/05-AI使用与人工修订.md",
+    "bytes": 3739,
+    "sha256": "055fee31a7258e71803cd247e2de9cd7a57d236e6b36e2cf418d96cc0a041c18"
+  },
+  {
+    "path": "支撑材料/外部对照/B5-v0.9/05-交付物总验收.md",
+    "bytes": 5017,
+    "sha256": "69c228659a773a2e2e16f0e34a103dc777beb1192226996ccbf532544d757924"
+  },
+  {
+    "path": "支撑材料/外部对照/B5-v0.9/05-典型场景走查.md",
+    "bytes": 8445,
+    "sha256": "e5dfcfa12cec8d301be3ebfec9b8953543120ee515de39780e211be799ef6369"
+  },
+  {
+    "path": "支撑材料/外部对照/B5-v0.9/05-检索模型说明.md",
+    "bytes": 13710,
+    "sha256": "58bdce19a2796638be5464901dc699278f2119d07f8e9dabc535bec2c7b21d6a"
+  },
+  {
+    "path": "支撑材料/外部对照/B5-v0.9/05-检索请求时序图.png",
+    "bytes": 352215,
+    "sha256": "43e1c2266154b2d3ecbfc36b44aa142f27c17c2d8d140e190cf563f710c141e6"
+  },
+  {
+    "path": "支撑材料/外部对照/B5-v0.9/05-模型一致性检查清单.md",
+    "bytes": 6862,
+    "sha256": "8a1c1a4db2b987d8e94ddd02148730a5347c09ace54a604877af959142a63ce1"
+  },
+  {
+    "path": "支撑材料/外部对照/B5-v0.9/05a-同版详情与上下文恢复.png",
+    "bytes": 159100,
+    "sha256": "97ddd27def3c1252d4becb18aa733dc384d81cd3aefc199927341356f31cd9a6"
+  },
+  {
+    "path": "支撑材料/外部对照/B5-v0.9/07-建模源文件/05-检索请求时序图.puml",
+    "bytes": 5300,
+    "sha256": "392d7d09b258e90e8421ece2bfd2bafab43494ebfc6b9478449af296d4a3cde0"
+  },
+  {
+    "path": "支撑材料/外部对照/B5-v0.9/07-建模源文件/05a-同版详情与上下文恢复.puml",
+    "bytes": 2792,
+    "sha256": "2ccc3f02324ef22747627a95cf6dc559563b6396acc6c263942b16f820197ed7"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/README.md",
+    "bytes": 1861,
+    "sha256": "0862cba200a54bbce43f018ebba650c24b2052b03b1723b915ecb98f65f509b7"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/README.md",
+    "bytes": 984,
+    "sha256": "835a3b65393cb574257c609ed7965c3e6d36d2a6f6261b6ba99bfe251424d525"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/保留材料来源.json",
+    "bytes": 7872,
+    "sha256": "0a528cbb9eabd83159b107a2065164ab68b7082eeb31ec40aac40a2bdcdd33a7"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/docs/PPT制作工作流.md",
+    "bytes": 11187,
+    "sha256": "f76670b8c2ce790453ba2bd0ee61e77ad4191c302a77b656c736dd55e721d31a"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/docs/学术成果分享平台_需求分析报告_v1.0.docx",
+    "bytes": 3896718,
+    "sha256": "1db6824c481830d2c9bdf83566428304ff44ba60ec22dac4c491e5243841168c"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/docs/学术成果分享平台_需求分析报告_v1.0.md",
+    "bytes": 35946,
+    "sha256": "ba1a6b2d272d2727acf168e0a545466c76498d50c5c43f4e7bc1f1a5424ae903"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/docs/需求分析验收场景.csv",
+    "bytes": 2089,
+    "sha256": "5011ae7aa7fa9bb182d517e8085ab41ee1ccca446f051d7446fec2eb90523472"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/image/01_核心业务类图.drawio",
+    "bytes": 52313,
+    "sha256": "b728223fec5b8c9c27052df0caa8d4c9fa67307cec0743548ec932355f5358a8"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/image/01_核心业务类图.png",
+    "bytes": 1306780,
+    "sha256": "2cbfc49ca1e0f881f4f92f91b770276cffb24cc0659d1f24fd504c9a32b5e167"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/image/01_核心业务类图.svg",
+    "bytes": 3019264,
+    "sha256": "e3824290ace4ac1becd48090cb5148358911d0bfc001ce0b8c7a5523bb094619"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/image/02_数据采集入库时序图.drawio",
+    "bytes": 25192,
+    "sha256": "8f205df03b6f8e5225e32e3b76fb065d64f2f767781a34e52f9477f4903d7783"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/image/02_数据采集入库时序图.png",
+    "bytes": 878515,
+    "sha256": "ccfbc4e858ee41e6a0af53ef4ac345c664a374873d0027e3b4104c66f0d7f14b"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/image/02_数据采集入库时序图.svg",
+    "bytes": 1924737,
+    "sha256": "100b63697ed910c976885aa6562a11239b00c642875905eb400082726cac58da"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/image/03_门户认领审核时序图.drawio",
+    "bytes": 28404,
+    "sha256": "a083d00bd3ec7d5e768a85e515b80dbcf7e6a9fcea0ec097d070732e483b57b0"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/image/03_门户认领审核时序图.png",
+    "bytes": 919553,
+    "sha256": "e5c0be8b12147530a11bbb2c4cc71095841c4e033830bf585810dc20be2de360"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/image/03_门户认领审核时序图.svg",
+    "bytes": 1989699,
+    "sha256": "7b784f1e8edb63f5e666bbde62ecd05963e49748f7f1b82acf410fb5c448e235"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/image/04_检索请求处理时序图.drawio",
+    "bytes": 23919,
+    "sha256": "1aae00963fef930efb6e4f4f267b3202d5e497e6c9eec59f54e2d1a47d0c14a2"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/image/04_检索请求处理时序图.png",
+    "bytes": 922371,
+    "sha256": "b1385fb48cbecc7f7602514cc5acdfd3fd34abe60c4b666b38656284dbd6e690"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/image/04_检索请求处理时序图.svg",
+    "bytes": 1920439,
+    "sha256": "423632d5b7d499337402dbd64d1be8a99c8521bf53eec6f2ccc01d50f31be129"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/image/README.md",
+    "bytes": 4099,
+    "sha256": "f8ee88c93f7b48f2d3c7f8a578b36bda32c4894543b344d1b425019a66c0a2e1"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求分析/image/模型消息索引.json",
+    "bytes": 10455,
+    "sha256": "80042d893341738284abd76e2348acf6da5d5f14fb2a479332b186eb95951bf5"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/docs/AI使用声明_前期材料.md",
+    "bytes": 1833,
+    "sha256": "e94e2c6c13d032e1473771e0d23587459ac5145a69898049f5d9d0f992085d76"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/docs/整合说明.md",
+    "bytes": 2745,
+    "sha256": "c1b14cefcd0f0ac2f27de84ceb8568492ad3ee765a5df39ea00a7f57cd74e2fc"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/docs/核心模块开发规范_SPEC.md",
+    "bytes": 32657,
+    "sha256": "441ddc628de9206dae5971c405f072ba412fdb3b94e970eca83d113f424d2c10"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/docs/系统需求规格说明书_SRS.md",
+    "bytes": 100855,
+    "sha256": "347f6762cefbcf4d493ac9a84d7f3459cbf558767d45d70f64b639e07a453ec0"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/docs/需求调研报告.md",
+    "bytes": 56894,
+    "sha256": "ac48329b7b4e34a83be18c2e33a8941a319563fae7e3e1fd380de6abc9f572b7"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/01_科研人员用例图.drawio",
+    "bytes": 16349,
+    "sha256": "280447e3de76fc76653db26d8dab849b782ca3c14072cbbdcd4fef90d99c399c"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/01_科研人员用例图.drawio.png",
+    "bytes": 319508,
+    "sha256": "3328a928e5b849e5e93929d1fcb4e24c00dd0d56e5cb66c5305b533cbbcf7986"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/academic_platform_usecase.drawio",
+    "bytes": 13320,
+    "sha256": "276c26a8140af599dea3ce1e9c10bf2b3fe88bc8448767eb1595a789e2126407"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/个人门户认领申请状态图.png",
+    "bytes": 141636,
+    "sha256": "6b0e05e7ac935adc78352b99488a89535ed080d185cfe12b7aaf3a2edcecd722"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/作者检索详细活动图.drawio",
+    "bytes": 29628,
+    "sha256": "d3948b7dc0721436a34e7273add2ea1e33b34bd86a70d3e69f3a722b53773197"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/作者检索详细活动图.drawio.png",
+    "bytes": 351162,
+    "sha256": "63a63bd555d0fa85843c5c671b69ddb81d41ed7f46f9445f4c4d5dc605f17edb"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/学术成果平台_统计分析与成果管理_UML用例图.drawio",
+    "bytes": 34594,
+    "sha256": "32ae3660f20f5b0622e619f90e17a10cca73d31f49c13f5bb27e13f9aa36aa1d"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/成果管理模块_UML用例图.png",
+    "bytes": 978902,
+    "sha256": "cd7ef5b5cf6ae50ed5e674127a5606686c4400c46dfaf75e563097010946d2a1"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/数据采集任务状态机.drawio",
+    "bytes": 24520,
+    "sha256": "042834d31fc99e8439181344bcfa98fe67fe8ac3b104a7692d21217a37b81f1b"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/数据采集任务状态机.drawio.png",
+    "bytes": 233094,
+    "sha256": "d64f52728f0016b59e99480661db75b0c2d2b9ff931c320ae7907dd1268205df"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/普通用户活动图.drawio",
+    "bytes": 22279,
+    "sha256": "102aee3aa4ca668251d68940fe0988a0fdb748221c7e6295a74980935662e4ef"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/普通用户活动图.drawio.png",
+    "bytes": 260703,
+    "sha256": "67770f109b247cd0e183609178830ddd3e3f7ecd3a8a0b8094563299b0ec8a7a"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/普通用户用例图.drawio",
+    "bytes": 22600,
+    "sha256": "fccfbbb44e0d34f34e474226e8e8832f1ed68392d2ecc402185c8285d007cd08"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/普通用户用例图.drawio.png",
+    "bytes": 409096,
+    "sha256": "697d09af2eed58f48586d4475b3c62381e9fa41b3e402cbd0009d172f98ac8ab"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/科研人员个人门户认领审核流程活动图.png",
+    "bytes": 89057,
+    "sha256": "3ab9adba4ffd3826ad65cc51023688c3522aa457f4acaa85de6556298bfc6566"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/统计分析模块_UML用例图.png",
+    "bytes": 877077,
+    "sha256": "3395ffe57dd564d416b747c74e2c8028c2656392ef2d095639b9220375f9b364"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/认领状态图.drawio",
+    "bytes": 32797,
+    "sha256": "069cf57fde8128b223da580905c8b79de86dd4f100c946852affbba3a9cb36ed"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/认领状态图.drawio.png",
+    "bytes": 316482,
+    "sha256": "1547e0e2c12a54981dd1b31e0c277c3e9adc9e4e35c21b2a5d28419380b9d3da"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/docs/参考材料/SPEC_v0.1_会前评审稿.md",
+    "bytes": 19929,
+    "sha256": "ee80b6ae4c8962a54a2b8bb46d850f0772231be9c6ce9e2b39a7a2156e56fbb8"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/docs/参考材料/平台比较调研_原稿.md",
+    "bytes": 63824,
+    "sha256": "04633e0e722da0c792ff6df1132e1ef66a9db684a9f39fe0ec3d777ca6662b7a"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/docs/参考材料/数据源与数据密集型逻辑规范_原稿.docx",
+    "bytes": 69899,
+    "sha256": "56dd025328f03b9dc0f79086447ef29214380a99fb3b62f6284feafc66742e75"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/docs/参考材料/课堂展示与提交要求_历史通知.pdf",
+    "bytes": 381372,
+    "sha256": "6469546e5a6f8c5fd55a7f4e80364157d809055e8a08a8972c560d1a17821c56"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/docs/参考材料/课程实践任务书.pdf",
+    "bytes": 431025,
+    "sha256": "5a9f6cf492ef4eb23741b4ee5d979f923b56396f793fc967f0414ded28e4b9c0"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/基线状态源文本/01-系统能力总览-9组-1011101011.mmd",
+    "bytes": 691,
+    "sha256": "b9b7574643d464733d75695309ebce55425c790b0bbb69a11e06d99c432ba83a"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/基线状态源文本/02-采集任务状态图-9组-1011101011.mmd",
+    "bytes": 570,
+    "sha256": "f1c546541b7c06a0290e6ae4488ea0389f0102ff1add71c993deb4ba2eb0fff5"
+  },
+  {
+    "path": "支撑材料/外部对照/Group2-b93110b/需求调研和建模/image/基线状态源文本/03-门户认领申请状态图-9组-1011101011.mmd",
+    "bytes": 906,
+    "sha256": "fa735f4006fedb103e5ec7b2df930302f40b686d89f8183a0f80286f41a7fbc3"
+  }
+]

@@ -1,0 +1,12 @@
+{"kind":"deck","id":"pr/nc1w0z","name":"Deck"}
+{"kind":"layout","id":"ly/gbyd87e5","editable":false,"name":"Master","type":"master"}
+{"kind":"layout","id":"ly/wzapobe9","editable":false,"name":"Title Slide","type":"title","placeholders":[{"name":"title","type":"title"},{"name":"subtitle","type":"subtitle"}]}
+{"kind":"layout","id":"ly/1gry18ni","editable":false,"name":"Section Header","type":"sectionHeader","placeholders":[{"name":"title","type":"title"}]}
+{"kind":"layout","id":"ly/d87md0bm","editable":false,"name":"Title and Body","type":"tx","placeholders":[{"name":"title","type":"title"},{"name":"body","type":"body"}]}
+{"kind":"layout","id":"ly/alsfypsn","editable":false,"name":"Title and Two Column","type":"twoColTx","placeholders":[{"name":"title","type":"title"},{"name":"Left column","type":"body"},{"name":"Right column","type":"body"}]}
+{"kind":"layout","id":"ly/upcvi5oz","editable":false,"name":"Title and One Column","type":"tx","placeholders":[{"name":"title","type":"title"},{"name":"body","type":"body"}]}
+{"kind":"layout","id":"ly/c7qdsrqt","editable":false,"name":"Blank","type":"blank"}
+{"kind":"slide","id":"sl/shk0uo","slideIndex":0,"layout":{"id":"ly/c7qdsrqt","name":"Blank"},"title":"学术成果分享平台需求分析","textShapes":1,"backgroundColor":"rgba(255,255,255,1)"}
+{"kind":"textbox","id":"sh/2lwrihob","slideIndex":0,"position":{"left":60,"top":50,"width":1480,"height":100},"text":"学术成果分享平台需求分析","geometry":"rect","lineWidth":0,"style":{"fontSize":52,"typeface":"Microsoft YaHei","color":"#173B3F","bold":true,"alignment":"left"}}
+{"kind":"table","id":"tb/8zux0ne1","slideIndex":0,"position":{"left":60,"top":200,"width":1100,"height":300},"name":"","rows":3,"cols":2,"preview":"业务对象 | 数据与行为"}
+{"kind":"notes","id":"nt/shk0uo","slideIndex":0,"text":"来源：已确认主题文稿。"}

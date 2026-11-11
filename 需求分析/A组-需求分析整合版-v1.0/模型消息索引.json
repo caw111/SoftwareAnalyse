@@ -1,0 +1,438 @@
+[
+  {
+    "file": "05-门户认领审核时序图",
+    "width": 1560,
+    "height": 2941,
+    "messages": [
+      {
+        "kind": "msg",
+        "id": "CL01",
+        "a": 0,
+        "b": 2,
+        "text": "申请人提交目标门户与证明材料",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CL02",
+        "a": 2,
+        "b": 3,
+        "text": "submitClaim(门户、材料版本、预期版本)",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CL03",
+        "a": 3,
+        "b": 4,
+        "text": "canApplyForPortal()；核对目标与有效绑定",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CL04",
+        "a": 4,
+        "b": 3,
+        "text": "返回资格、目标及占用检查结果",
+        "ret": true
+      },
+      {
+        "kind": "msg",
+        "id": "CL05",
+        "a": 3,
+        "b": 2,
+        "text": "返回具体原因；首次仍为 DRAFT，补交仍待补充",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CL06",
+        "a": 3,
+        "b": 5,
+        "text": "submit(expectedVersion)；有效提交至 PENDING_REVIEW",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CL07",
+        "a": 5,
+        "b": 3,
+        "text": "提交成功：申请编号、材料版本、对象版本",
+        "ret": true
+      },
+      {
+        "kind": "msg",
+        "id": "CL08",
+        "a": 3,
+        "b": 2,
+        "text": "显示待审核回执；未产生门户管理权",
+        "ret": true
+      },
+      {
+        "kind": "msg",
+        "id": "CL09",
+        "a": 1,
+        "b": 2,
+        "text": "审核人打开申请并提交审核动作与理由",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CL10",
+        "a": 2,
+        "b": 3,
+        "text": "reviewClaim(申请、动作、理由、预期版本)",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CL11",
+        "a": 3,
+        "b": 4,
+        "text": "checkObjectPermission(申请)；核对审核范围",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CL12",
+        "a": 3,
+        "b": 5,
+        "text": "读取当前状态和有权访问的材料版本",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CL13",
+        "a": 3,
+        "b": 2,
+        "text": "拒绝本次操作并提示刷新；保留已提交状态",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CL14",
+        "a": 3,
+        "b": 5,
+        "text": "requestMore(reason, version)＋appendDecision()",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CL15",
+        "a": 3,
+        "b": 5,
+        "text": "reject(reason, version)＋appendDecision()",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CL16",
+        "a": 3,
+        "b": 2,
+        "text": "仅提交成功后返回实际结果；失败不通知通过",
+        "ret": true
+      },
+      {
+        "kind": "msg",
+        "id": "CL17",
+        "a": 0,
+        "b": 2,
+        "text": "补交形成新材料版本；沿用原申请编号",
+        "ret": false
+      }
+    ]
+  },
+  {
+    "file": "05a-认领原子授权与撤回子交互",
+    "width": 1560,
+    "height": 2185,
+    "messages": [
+      {
+        "kind": "msg",
+        "id": "CX01",
+        "a": 0,
+        "b": 2,
+        "text": "approveClaim(申请、材料版本、expectedVersion)",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CX02",
+        "a": 2,
+        "b": 3,
+        "text": "重读申请；仅 PENDING_REVIEW 且版本匹配可继续",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CX03",
+        "a": 2,
+        "b": 4,
+        "text": "复核有效授权：账号最多一个；门户最多一个",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CX04",
+        "a": 2,
+        "b": 3,
+        "text": "approve(expectedVersion) → APPROVED",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CX05",
+        "a": 2,
+        "b": 4,
+        "text": "创建指定账号与门户的有效授权",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CX06",
+        "a": 2,
+        "b": 5,
+        "text": "appendDecision(批准, 理由)；追加审计；共同提交",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CX07",
+        "a": 1,
+        "b": 2,
+        "text": "withdrawClaim(申请、expectedVersion)",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CX08",
+        "a": 2,
+        "b": 3,
+        "text": "withdraw(expectedVersion) → WITHDRAWN",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CX09",
+        "a": 2,
+        "b": 5,
+        "text": "追加撤回审计；共同提交，不创建授权",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "CX10",
+        "a": 2,
+        "b": 1,
+        "text": "返回提交结果／版本冲突；同一版本最多一条路径成功",
+        "ret": true
+      }
+    ]
+  },
+  {
+    "file": "06-检索请求处理时序图",
+    "width": 1560,
+    "height": 2680,
+    "messages": [
+      {
+        "kind": "msg",
+        "id": "Q01",
+        "a": 0,
+        "b": 1,
+        "text": "输入关键词、类型、人物、机构、时间与排序",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "Q02",
+        "a": 1,
+        "b": 2,
+        "text": "search(条件、page_size、releaseId?、continuation?)",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "Q03",
+        "a": 2,
+        "b": 1,
+        "text": "返回字段级原因并保留输入；不执行查询",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "Q04",
+        "a": 2,
+        "b": 3,
+        "text": "首次固定可用 release；续页验证原 release 与查询令牌",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "Q05",
+        "a": 2,
+        "b": 1,
+        "text": "说明版本失效或服务不可用；不混入最新数据",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "Q06",
+        "a": 3,
+        "b": 2,
+        "text": "返回 releaseId、分类版本、规则版本、数据范围",
+        "ret": true
+      },
+      {
+        "kind": "msg",
+        "id": "Q07",
+        "a": 2,
+        "b": 1,
+        "text": "返回可见列表、总量、分面、版本与查询令牌",
+        "ret": true
+      },
+      {
+        "kind": "msg",
+        "id": "Q08",
+        "a": 1,
+        "b": 0,
+        "text": "显示0条与当前条件；提供修改筛选入口",
+        "ret": true
+      },
+      {
+        "kind": "msg",
+        "id": "Q09",
+        "a": 1,
+        "b": 0,
+        "text": "按类型分组展示；保留来源、缺失值和状态",
+        "ret": true
+      },
+      {
+        "kind": "msg",
+        "id": "Q10",
+        "a": 0,
+        "b": 1,
+        "text": "打开结果详情",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "Q11",
+        "a": 1,
+        "b": 2,
+        "text": "detail(规范成果ID、原 releaseId、查询上下文)",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "Q12",
+        "a": 2,
+        "b": 4,
+        "text": "核对当前权限与指定公开版本可用性",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "Q13",
+        "a": 2,
+        "b": 1,
+        "text": "分别提示无权访问、重新检索或稍后重试",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "Q14",
+        "a": 2,
+        "b": 3,
+        "text": "resolveEntry(workId)；readPublicView(permissionContext)",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "Q15",
+        "a": 3,
+        "b": 2,
+        "text": "同版题录、贡献、来源、类型日期；不含私有证明",
+        "ret": true
+      },
+      {
+        "kind": "msg",
+        "id": "Q16",
+        "a": 2,
+        "b": 1,
+        "text": "返回详情与原查询上下文；返回列表恢复条件",
+        "ret": true
+      }
+    ]
+  },
+  {
+    "file": "06a-检索权限计数与分页子交互",
+    "width": 1560,
+    "height": 1681,
+    "messages": [
+      {
+        "kind": "msg",
+        "id": "QX01",
+        "a": 0,
+        "b": 1,
+        "text": "获取当前公开可见约束与 permissionRevision",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "QX02",
+        "a": 1,
+        "b": 0,
+        "text": "返回同一可见范围表达式与权限修订号",
+        "ret": true
+      },
+      {
+        "kind": "msg",
+        "id": "QX03",
+        "a": 0,
+        "b": 2,
+        "text": "查询固定 release；同贡献筛选＋可见约束",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "QX04",
+        "a": 2,
+        "b": 0,
+        "text": "返回规范ID页、total、facets与读视图标记",
+        "ret": true
+      },
+      {
+        "kind": "msg",
+        "id": "QX05",
+        "a": 0,
+        "b": 3,
+        "text": "按同一 release 批量读条目和来源快照",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "QX06",
+        "a": 0,
+        "b": 1,
+        "text": "返回前重验 permissionRevision 与页内对象权限",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "QX07",
+        "a": 0,
+        "b": 0,
+        "text": "生成绑定条件、release、权限修订与排序位置的查询令牌",
+        "ret": false
+      },
+      {
+        "kind": "msg",
+        "id": "QX08",
+        "a": 0,
+        "b": 0,
+        "text": "成功回主图Q07；失败直接返回可恢复原因",
+        "ret": false
+      }
+    ]
+  }
+]

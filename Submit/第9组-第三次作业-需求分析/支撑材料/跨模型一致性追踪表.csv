@@ -1,0 +1,5 @@
+﻿业务,SRS用例,前期模型,核心对象,时序消息,状态与关键约束,场景
+门户认领,UC3.1、UC3.5、UC5.2,01_科研人员用例图；门户认领审核流程活动图,ClaimApplication、PortalAuthorization、ReviewRecord,CL02～CL17；CX01～CX10,DRAFT、PENDING_REVIEW、NEED_MORE_INFO、APPROVED、REJECTED、WITHDRAWN,T02、T08～T10、T19
+采集入库,UC5.1、UC5.3、UC5.4,数据采集任务状态机；SRS UC5.1事件流,DataSource、CollectionTask、SourceRecord、CollectionObservation、SourceMapping、UpdateRecord,M01～M21；N01～N11；X01～X10,PENDING、RUNNING、SUCCEEDED、FAILED、RETRYING、STOPPED,T03～T07、T16
+成果检索与详情,UC2.1、UC2.2、UC2.3,普通用户用例图；作者检索详细活动图,Work、Scholar、Contribution、ContributionAffiliation、PublicRelease、ReleaseEntry,Q01～Q16含Q15a；QX01～QX08含QX04a,查询不另加成果业务状态；固定公开版本并实时校验权限,T11～T13、T18、T20、V21～V32
+公共成果维护,UC3.2～3.4、UC5.3,成果管理模块用例图及SRS用例规约,Work、Contribution、GovernanceReview、UpdateRecord,三条关键时序中的写入及后续登记；非本次独立第四条时序,撤销本人关系保留公共成果,T14、T15、T17

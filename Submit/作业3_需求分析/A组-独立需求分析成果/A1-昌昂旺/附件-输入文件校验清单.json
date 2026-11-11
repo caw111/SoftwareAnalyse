@@ -1,0 +1,57 @@
+[
+  {
+    "path": "Submit/第9组-第一次作业提交/需求建模/01-SRS_v2.0-9组-1011101011.docx",
+    "bytes": 3519425,
+    "sha256": "fb787548a0cf5a8d8b219e2b3dfb3bc4860f195c942981969caadeaeddd39647"
+  },
+  {
+    "path": "Submit/第9组-第一次作业提交/需求建模/02-SPEC_v2.0-9组-1011101011.docx",
+    "bytes": 67217,
+    "sha256": "5415468ffc531077b989bbf28be7b3831e614f4e13dbfe15fc505cf4699935cd"
+  },
+  {
+    "path": "Submit/第9组-第一次作业提交/需求调研/01-需求调研报告_v2.0-9组-1011101011.docx",
+    "bytes": 56878,
+    "sha256": "ef1a7dd97e9ee63e23830d885a6354c9c9e4658e9a546fda4d17667488b366ea"
+  },
+  {
+    "path": "Submit/第9组-第一次作业提交.zip",
+    "bytes": 7006956,
+    "sha256": "1c91df70464dee4dad7543953d569d57d0bda9c152e9dcc3f61b001e584fe26a"
+  },
+  {
+    "path": "《软件系统分析与设计》实践任务书（一）学术成果分享平台-v1.pdf",
+    "bytes": 431025,
+    "sha256": "5a9f6cf492ef4eb23741b4ee5d979f923b56396f793fc967f0414ded28e4b9c0"
+  },
+  {
+    "path": "Submit/整理依据_课堂展示与提交要求.pdf",
+    "bytes": 381372,
+    "sha256": "6469546e5a6f8c5fd55a7f4e80364157d809055e8a08a8972c560d1a17821c56"
+  },
+  {
+    "path": "images/04_认领申请状态图.drawio",
+    "bytes": 11573,
+    "sha256": "0bb259ac32e0376a171b5426568c9c2a749004183644de20ecab782b38e89372"
+  },
+  {
+    "path": "images/03_门户认领活动图.drawio",
+    "bytes": 21361,
+    "sha256": "5854e68a1881e0bea18e803718b286da4efa779ba8b8bd69f7a2fb16d496d2f6"
+  },
+  {
+    "path": "images/数据采集任务状态机.drawio",
+    "bytes": 24520,
+    "sha256": "042834d31fc99e8439181344bcfa98fe67fe8ac3b104a7692d21217a37b81f1b"
+  },
+  {
+    "path": "images/05_核心业务类图.drawio",
+    "bytes": 43115,
+    "sha256": "f89ef4a9d7ec7a1c23d36c395dc91031d7a74ae5864b3dddb3467d69b20d07c6"
+  },
+  {
+    "path": "images/06_检索请求时序图.drawio",
+    "bytes": 17160,
+    "sha256": "ae1aea938c7e7ad79ee9d4358aefd8dc8e964e6a73421aafd5e2d04772727fec"
+  }
+]

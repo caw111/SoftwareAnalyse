@@ -1,0 +1,14 @@
+stateDiagram-v2
+    [*] --> PENDING
+    PENDING --> RUNNING: 调度且未停止
+    PENDING --> STOPPED: 管理员取消
+    RUNNING --> SUCCESS: 全范围提交及校验完成
+    RUNNING --> FAILED: 异常或超时
+    RUNNING --> STOPPED: 停止请求已确认
+    FAILED --> RETRYING: 可恢复且预算未耗尽
+    FAILED --> STOPPED: 管理员明确放弃
+    FAILED --> FAILED: 耗尽或不可恢复，保留原因
+    RETRYING --> RUNNING: 等待结束且未停止
+    RETRYING --> STOPPED: 管理员取消
+    SUCCESS --> [*]
+    STOPPED --> [*]

@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-26",
+  "sources": [
+    {
+      "path": "C:\\Users\\admin\\Desktop\\软分\\第9组-第一次作业提交\\需求建模\\01-SRS_v2.0-9组-1011101011.docx",
+      "sha256": "fb787548a0cf5a8d8b219e2b3dfb3bc4860f195c942981969caadeaeddd39647",
+      "bytes": 3519425
+    },
+    {
+      "path": "C:\\Users\\admin\\Desktop\\软分\\第9组-第一次作业提交\\需求建模\\02-SPEC_v2.0-9组-1011101011.docx",
+      "sha256": "5415468ffc531077b989bbf28be7b3831e614f4e13dbfe15fc505cf4699935cd",
+      "bytes": 67217
+    },
+    {
+      "path": "C:\\Users\\admin\\Desktop\\软分\\第9组-第一次作业提交\\需求调研\\01-需求调研报告_v2.0-9组-1011101011.docx",
+      "sha256": "ef1a7dd97e9ee63e23830d885a6354c9c9e4658e9a546fda4d17667488b366ea",
+      "bytes": 56878
+    },
+    {
+      "path": "C:\\Users\\admin\\Desktop\\软分\\第9组-第一次作业提交\\images\\06_检索请求时序图.drawio",
+      "sha256": "ae1aea938c7e7ad79ee9d4358aefd8dc8e964e6a73421aafd5e2d04772727fec",
+      "bytes": 17160
+    },
+    {
+      "path": "C:\\Users\\admin\\Desktop\\软分\\第9组-第一次作业提交\\images\\04_认领申请状态图.drawio",
+      "sha256": "0bb259ac32e0376a171b5426568c9c2a749004183644de20ecab782b38e89372",
+      "bytes": 11573
+    },
+    {
+      "path": "C:\\Users\\admin\\Desktop\\软分\\第9组-第一次作业提交\\images\\03_门户认领活动图.drawio",
+      "sha256": "5854e68a1881e0bea18e803718b286da4efa779ba8b8bd69f7a2fb16d496d2f6",
+      "bytes": 21361
+    },
+    {
+      "path": "C:\\Users\\admin\\Desktop\\软分\\第9组-第一次作业提交\\images\\数据采集任务状态机.drawio",
+      "sha256": "042834d31fc99e8439181344bcfa98fe67fe8ac3b104a7692d21217a37b81f1b",
+      "bytes": 24520
+    }
+  ],
+  "missing": [
+    "课程PDF",
+    "需求条目与验收场景附录",
+    "B1～B4本次成果"
+  ],
+  "note": "正文版本v2.0，历史表仅v1.0/v1.1；不补造签署"
+}

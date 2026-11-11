@@ -1,0 +1,16 @@
+{
+  "revision": "r11",
+  "output": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\演示文稿\\学术成果分享平台-图解汇报版.pptx",
+  "speech": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\逐页演讲稿-图解版-12分钟内.md",
+  "sha256": "8db452a193b6ef0455e0838447e6ccb93c888a42a64c36ddf0cc75750f4fb39d",
+  "slides": 13,
+  "nativeTables": 0,
+  "originalFigurePlacements": 29,
+  "figureSlides": 12,
+  "sourcePngBytesPreserved": true,
+  "sourcePptUnchanged": true,
+  "spokenCharacters": 2276,
+  "estimatedMinutesAt220Plus1MinPauses": 11.345454545454546,
+  "nativePowerPointOpenedAndRendered": true,
+  "visualReview": "All source diagrams inspected; independent r09 review identified readability/crop/actor issues. Root repaired and visually verified final r11 native rendering. Agent follow-up unavailable; no claim of final independent approval."
+}

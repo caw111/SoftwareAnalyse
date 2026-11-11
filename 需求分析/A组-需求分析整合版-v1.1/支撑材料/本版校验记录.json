@@ -1,0 +1,28 @@
+{
+  "version": "v1.1",
+  "date": "2026-10-26",
+  "scope": "文件结构、图文一致性、来源字节校验及排版；非业务运行测试",
+  "word_pages": 41,
+  "inline_images": 13,
+  "classes": 28,
+  "relations": 45,
+  "new_editable_drawio": 4,
+  "new_messages": 53,
+  "scenario_designs": 32,
+  "v1.0_unchanged": true,
+  "input_hashes_unchanged": true,
+  "original_A2_A3_copies_identical": true,
+  "github_commit": "b93110b8964e9061469bcfab8d0ced701f3d4526",
+  "external_reference_files": 62,
+  "render": {
+    "packaged_renderer": "失败，bundle未提供soffice.exe；未调用系统LibreOffice",
+    "fallback": "独立隐藏Word.Application COM只读打开并导出PDF，关闭本次实例；Poppler 115dpi",
+    "visual_review": "v11-page-01到41逐页查看；新检索主图和子图高清PNG另行查看",
+    "result": "未发现裁切、重叠、缺字、表格断裂或空白溢出页；大图另附高清图和全文消息表",
+    "pdf_sha256": "5d5cfe0f8b362f36b830d8c4ee4882f5a100e6d383658f7a5bd027560c9a7b77",
+    "docx_sha256": "603cc91d1046eec6b2f41adbf62cc14371536215693ef22e7e0c2a56b018cee7"
+  },
+  "runtime_tests": "未执行",
+  "human_review": "未签署",
+  "CodeArts": "保留原A3工程；新增Draw.io未迁移到CodeArts"
+}

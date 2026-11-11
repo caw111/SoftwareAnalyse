@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-26",
+  "tool": {
+    "name": "PlantUML",
+    "version": "1.2025.2",
+    "source": "https://github.com/plantuml/plantuml/releases/download/v1.2025.2/plantuml-1.2025.2.jar",
+    "sha256": "862c7d6d0d3bde3c819eac4dfc03cf549046bf1d49c04d18a779eb2d834b77c9",
+    "version_output": "PlantUML version 1.2025.2 (Wed Jan 08 01:35:36 CST 2025)\r\n(GPL source distribution)\r\nJava Runtime: Java(TM) SE Runtime Environment\r\nJVM: Java HotSpot(TM) 64-Bit Server VM\r\nDefault Encoding: GBK\r\nLanguage: zh\r\nCountry: CN\r\n \r\nPLANTUML_LIMIT_SIZE: 4096\r\n\r\nDot version: dot - graphviz version 2.44.1 (20200629.0846)\r\nInstallation seems OK. File generation OK\r\n"
+  },
+  "models": [
+    {
+      "source": "07-建模源文件\\05-检索请求时序图.puml",
+      "png": "05-检索请求时序图.png",
+      "message_ids": 34,
+      "dimensions": [
+        1860,
+        2335
+      ],
+      "source_rendered": true,
+      "png_decodable": true
+    },
+    {
+      "source": "07-建模源文件\\05a-同版详情与上下文恢复.puml",
+      "png": "05a-同版详情与上下文恢复.png",
+      "message_ids": 20,
+      "dimensions": [
+        1505,
+        1157
+      ],
+      "source_rendered": true,
+      "png_decodable": true
+    }
+  ],
+  "scenario_counts": {
+    "S": 18,
+    "C": 8,
+    "P": 9
+  },
+  "baseline_originals_unchanged": true,
+  "visual_check": {
+    "by": "AI图像检查，非成员人工签署",
+    "observed": "主图与详情图整体已查看，修订else标签后检查主图局部；文字可辨，无可见裁切。"
+  },
+  "scope": "仅源图语法渲染、PNG解码/可读性、编号/文件结构、原文件哈希和ZIP完整性；不是软件运行或性能验收。",
+  "pending": [
+    "CodeArts工程打开与正式工具规范确认",
+    "B1～B4新成果与全组跨模型验收",
+    "author_scope、分组分页、当前范围变化策略评审",
+    "责任作者及另一成员真实人工复审"
+  ],
+  "status": "个人分析草稿v0.9，不是全组验收通过"
+}

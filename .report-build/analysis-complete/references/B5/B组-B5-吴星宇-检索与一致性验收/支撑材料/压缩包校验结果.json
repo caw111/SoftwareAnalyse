@@ -1,0 +1,36 @@
+{
+  "archive": "C:\\Users\\admin\\Desktop\\软分\\B组-B5-吴星宇-检索与一致性验收-v0.9.zip",
+  "sha256": "5a50805aeaefc4f520d4a28a6c4abaa783674344abcef6761c0c7c789c73d313",
+  "bytes": 542784,
+  "members": 23,
+  "zip_crc_and_manifest_verified": true,
+  "model_checks": [
+    {
+      "source": "07-建模源文件\\05-检索请求时序图.puml",
+      "png": "05-检索请求时序图.png",
+      "message_ids": 34,
+      "dimensions": [
+        1860,
+        2335
+      ],
+      "source_rendered": true,
+      "png_decodable": true
+    },
+    {
+      "source": "07-建模源文件\\05a-同版详情与上下文恢复.puml",
+      "png": "05a-同版详情与上下文恢复.png",
+      "message_ids": 20,
+      "dimensions": [
+        1505,
+        1157
+      ],
+      "source_rendered": true,
+      "png_decodable": true
+    }
+  ],
+  "scenario_counts": {
+    "S": 18,
+    "C": 8,
+    "P": 9
+  }
+}

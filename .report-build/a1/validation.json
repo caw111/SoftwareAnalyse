@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-24",
+  "source_docx_equal_to_zip": true,
+  "objects": 29,
+  "trace_rows": 38,
+  "design_scenarios": 18,
+  "all_explicit_uc_references_in_srs": [
+    "UC1.1",
+    "UC1.2",
+    "UC1.3",
+    "UC2.1",
+    "UC2.2",
+    "UC2.3",
+    "UC3.1",
+    "UC3.2",
+    "UC3.3",
+    "UC3.4",
+    "UC3.5",
+    "UC4.1",
+    "UC4.2",
+    "UC4.3",
+    "UC4.4",
+    "UC5.1",
+    "UC5.2",
+    "UC5.3",
+    "UC5.4",
+    "UC5.5"
+  ],
+  "word_pages": 11,
+  "visual_inspection": "全部11页已检查，无截断、重叠或缺字；表格重复表头正常",
+  "rendering": "render_docx.py因无soffice.exe失败；使用独立隐藏Microsoft Word 2021 COM导出PDF，Poppler渲染PNG核对",
+  "model_status": "四张正式图未收到；人工复审未发生；不视为模型验收完成"
+}

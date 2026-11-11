@@ -1,0 +1,12 @@
+import path from 'node:path';
+import fs from 'node:fs/promises';
+import {fileURLToPath,pathToFileURL} from 'node:url';
+import {createHash} from 'node:crypto';
+const B=path.dirname(fileURLToPath(import.meta.url)),root=path.resolve(B,'../..');
+const skill='C:/Users/27872/.codex/plugins/cache/openai-primary-runtime/presentations/26.1025.11240/skills/presentations';
+process.env.RUNTIME_NODE_MODULES='C:/Users/27872/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules';
+const source=path.join(root,'需求分析/PPT主题汇报稿/演示文稿/学术成果分享平台-图解汇报版.pptx');
+await fs.mkdir(path.join(B,'validated-r12'),{recursive:true});
+const {finalizePresentation}=await import(pathToFileURL(path.join(skill,'container_tools/artifact_tool_utils.mjs')).href);
+await finalizePresentation({workspaceDir:root,candidatePath:path.join(B,'main-r12.pptx'),finalPath:path.join(B,'validated-r12/main.pptx'),pythonExecutable:'C:/Users/27872/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe',integrityValidatorPath:path.join(skill,'container_tools/inspect_presentation_package_integrity.py'),layoutValidatorPath:path.join(skill,'container_tools/inspect_presentation_layout_geometry.py'),layoutArgs:['--expected-slide-size-emu','15240000,8572500','--validate-heading-fit'],explicitTotalSlideCount:13,requiredNativeTableOwnerSlides:[],fontPolicy:{basis:'reference',families:['Microsoft YaHei'],referencePath:source,referenceSha256:createHash('sha256').update(await fs.readFile(source)).digest('hex')},verifyArtifactToolImport:true,receiptPath:path.join(B,'receipt-main-r12.json')});
+console.log('Validated notes for 13-slide diagram deck.');

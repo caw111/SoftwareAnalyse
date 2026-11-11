@@ -1,0 +1,11 @@
+<map id="05-检索请求时序图_map" name="05-检索请求时序图_map">
+<area shape="rect" id="id1" href="页码有效" title="页码有效" alt="" coords="45,1441,105,1461"/>
+<area shape="rect" id="id2" href="固定版本有效" title="固定版本有效" alt="" coords="25,805,115,825"/>
+<area shape="rect" id="id3" href="total>0，有结果" title="total>0，有结果" alt="" coords="65,1972,181,1992"/>
+<area shape="rect" id="id4" href="读取与权限均通过" title="读取与权限均通过" alt="" coords="55,1849,175,1869"/>
+<area shape="rect" id="id5" href="不存在可用公开版本" title="不存在可用公开版本" alt="" coords="25,716,160,735"/>
+<area shape="rect" id="id6" href="当前可见范围发生变化" title="当前可见范围发生变化" alt="" coords="55,1760,205,1780"/>
+<area shape="rect" id="id7" href="索引查询成功且版本一致" title="索引查询成功且版本一致" alt="" coords="35,1252,200,1272"/>
+<area shape="rect" id="id8" href="请求合法且查询语义已确定" title="请求合法且查询语义已确定" alt="" coords="15,505,195,525"/>
+<area shape="rect" id="id9" href="执行中版本失效／返回版本不一致" title="执行中版本失效／返回版本不一致" alt="" coords="35,1162,260,1182"/>
+</map>

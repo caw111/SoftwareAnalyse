@@ -1,0 +1,2451 @@
+[
+  {
+    "file": "01_科研人员用例图.drawio",
+    "pages": [
+      {
+        "name": "01_科研人员用例图",
+        "cells": [
+          {
+            "id": "v1",
+            "label": "科研人员用例图",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v2",
+            "label": "学术成果分享平台  科研人员相关范围",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v7",
+            "label": "UC01  检索与查看成果",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v9",
+            "label": "UC02  查看学者门户",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v11",
+            "label": "UC07  查看领域与机构统计",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v13",
+            "label": "UC08  追踪引用与研究资源",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v15",
+            "label": "UC12  查看专家合作网络",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v17",
+            "label": "UC03  提交门户认领",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v19",
+            "label": "UC06  提交数据纠错",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v21",
+            "label": "UC09  管理专题文献与笔记",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v23",
+            "label": "UC10  对比与导出调研材料",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v25",
+            "label": "UC11  参与学术讨论",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v27",
+            "label": "UC13  订阅研究主题",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v29",
+            "label": "UC05  维护本人门户与成果",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v31",
+            "label": "UC04  审核认领申请",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v35",
+            "label": "访客",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v36",
+            "label": "注册科研人员",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v37",
+            "label": "已认领学者",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v38",
+            "label": "审核管理员",
+            "edge": null,
+            "source": null,
+            "target": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "02_现状调研活动图.drawio",
+    "pages": [
+      {
+        "name": "02_现状调研活动图",
+        "cells": [
+          {
+            "id": "v1",
+            "label": "现状调研活动图",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v2",
+            "label": "科研人员",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v3",
+            "label": "平台",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v5",
+            "label": "确定研究问题、领域与年份",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v6",
+            "label": "输入或调整检索条件",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v7",
+            "label": "展示结果、来源和筛选条件",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v8",
+            "label": "结果范围符合调研要求？",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v9",
+            "label": "阅读成果详情与学者门户",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v10",
+            "label": "成果与研究问题相关？",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v11",
+            "label": "收藏并记录纳入原因",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v12",
+            "label": "记录排除原因",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v13",
+            "label": "显示引用关系与资源入口",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v14",
+            "label": "资源可以访问？",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v15",
+            "label": "核对版本、实验条件\n及使用说明",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v16",
+            "label": "记录缺失或受限状态",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v17",
+            "label": "记录方法、实验条件、局限\n及原文定位",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v18",
+            "label": "仍有待处理的候选成果？",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v19",
+            "label": "展示统计及文献对比",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v20",
+            "label": "标记缺失值、统计口径\n及更新时间",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v21",
+            "label": "核对原始文献并归纳研究现状",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v22",
+            "label": "导出文献清单与阅读记录",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e28",
+            "label": "是",
+            "edge": "1",
+            "source": "v8",
+            "target": "v9"
+          },
+          {
+            "id": "e40",
+            "label": "否",
+            "edge": "1",
+            "source": "v8",
+            "target": "v6"
+          },
+          {
+            "id": "e41",
+            "label": "是",
+            "edge": "1",
+            "source": "v10",
+            "target": "v11"
+          },
+          {
+            "id": "e42",
+            "label": "否",
+            "edge": "1",
+            "source": "v10",
+            "target": "v12"
+          },
+          {
+            "id": "e44",
+            "label": "是",
+            "edge": "1",
+            "source": "v14",
+            "target": "v15"
+          },
+          {
+            "id": "e45",
+            "label": "否",
+            "edge": "1",
+            "source": "v14",
+            "target": "v16"
+          },
+          {
+            "id": "e46",
+            "label": "是",
+            "edge": "1",
+            "source": "v18",
+            "target": "v9"
+          },
+          {
+            "id": "e47",
+            "label": "否",
+            "edge": "1",
+            "source": "v18",
+            "target": "v19"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "03_门户认领活动图.drawio",
+    "pages": [
+      {
+        "name": "03_门户认领活动图",
+        "cells": [
+          {
+            "id": "v1",
+            "label": "门户认领活动图",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v2",
+            "label": "科研人员",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v3",
+            "label": "平台",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v4",
+            "label": "审核管理员",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v6",
+            "label": "登录并选择待认领门户",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v7",
+            "label": "提交机构信息和身份证明",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v8",
+            "label": "检查材料、重复申请及绑定状态",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v9",
+            "label": "校验通过？",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v10",
+            "label": "生成申请编号，进入待审核",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v11",
+            "label": "说明校验失败原因\n保留原有权限",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v12",
+            "label": "核对身份及成果关联证据",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v13",
+            "label": "需要补充材料？",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v14",
+            "label": "记录补充材料要求",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v15",
+            "label": "转为待补充并通知申请人",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v16",
+            "label": "补充材料并重新提交",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v17",
+            "label": "重新校验并将有效申请转为待审核",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v18",
+            "label": "身份及归属核验通过？",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v19",
+            "label": "统一检查门户绑定条件",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v20",
+            "label": "绑定条件仍成立？",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v21",
+            "label": "统一记录审核结果\n并授予管理权限",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v22",
+            "label": "维持待审核状态\n记录冲突并提示复核",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v23",
+            "label": "记录已驳回及原因",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v24",
+            "label": "保存审核日志并通知申请人",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e41",
+            "label": "是",
+            "edge": "1",
+            "source": "v9",
+            "target": "v10"
+          },
+          {
+            "id": "e42",
+            "label": "否",
+            "edge": "1",
+            "source": "v9",
+            "target": "v11"
+          },
+          {
+            "id": "e44",
+            "label": "是",
+            "edge": "1",
+            "source": "v13",
+            "target": "v14"
+          },
+          {
+            "id": "e45",
+            "label": "否",
+            "edge": "1",
+            "source": "v13",
+            "target": "v18"
+          },
+          {
+            "id": "e47",
+            "label": "是",
+            "edge": "1",
+            "source": "v18",
+            "target": "v19"
+          },
+          {
+            "id": "e48",
+            "label": "否",
+            "edge": "1",
+            "source": "v18",
+            "target": "v23"
+          },
+          {
+            "id": "e49",
+            "label": "是",
+            "edge": "1",
+            "source": "v20",
+            "target": "v21"
+          },
+          {
+            "id": "e50",
+            "label": "否",
+            "edge": "1",
+            "source": "v20",
+            "target": "v22"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "04_认领申请状态图.drawio",
+    "pages": [
+      {
+        "name": "04_认领申请状态图",
+        "cells": [
+          {
+            "id": "v1",
+            "label": "认领申请状态图",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v3",
+            "label": "草稿",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v4",
+            "label": "待审核",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v5",
+            "label": "待补充",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v6",
+            "label": "已通过",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v7",
+            "label": "已驳回",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v8",
+            "label": "已撤回",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e12",
+            "label": "提交且校验通过",
+            "edge": "1",
+            "source": "v3",
+            "target": "v4"
+          },
+          {
+            "id": "e13",
+            "label": "校验失败",
+            "edge": "1",
+            "source": "v3",
+            "target": "v3"
+          },
+          {
+            "id": "e14",
+            "label": "要求补充",
+            "edge": "1",
+            "source": "v4",
+            "target": "v5"
+          },
+          {
+            "id": "e15",
+            "label": "补交且校验通过",
+            "edge": "1",
+            "source": "v5",
+            "target": "v4"
+          },
+          {
+            "id": "e16",
+            "label": "校验失败",
+            "edge": "1",
+            "source": "v5",
+            "target": "v5"
+          },
+          {
+            "id": "e17",
+            "label": "绑定冲突，保留原有权限",
+            "edge": "1",
+            "source": "v4",
+            "target": "v4"
+          },
+          {
+            "id": "e18",
+            "label": "审核及唯一绑定成功",
+            "edge": "1",
+            "source": "v4",
+            "target": "v6"
+          },
+          {
+            "id": "e19",
+            "label": "驳回并记录原因",
+            "edge": "1",
+            "source": "v4",
+            "target": "v7"
+          },
+          {
+            "id": "e20",
+            "label": "申请人撤回",
+            "edge": "1",
+            "source": "v4",
+            "target": "v8"
+          },
+          {
+            "id": "e21",
+            "label": "申请人撤回",
+            "edge": "1",
+            "source": "v5",
+            "target": "v8"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "05_核心业务类图.drawio",
+    "pages": [
+      {
+        "name": "05_核心业务类图",
+        "cells": [
+          {
+            "id": "v1",
+            "label": "核心业务类图",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v2",
+            "label": "账号",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v3",
+            "label": "账号ID\n登录状态\n+ 提交认领()",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v4",
+            "label": "认领申请",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v5",
+            "label": "申请ID\n状态与证据引用\n审核记录\n+ 提交()\n+ 通过并绑定()\n+ 驳回()",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v6",
+            "label": "学者门户",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v7",
+            "label": "学者ID\n姓名与外部标识\n+ 展示成果()",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v8",
+            "label": "专题文献库",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v9",
+            "label": "名称与所有者\n+ 收藏()\n+ 移除收藏()",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v10",
+            "label": "阅读笔记",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v11",
+            "label": "方法与实验条件\n局限与来源定位\n+ 保存()",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v12",
+            "label": "收藏记录",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v13",
+            "label": "标签与阅读状态\n纳入理由",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v14",
+            "label": "成果贡献关系",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v15",
+            "label": "贡献角色与排序\n归属核验状态",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v16",
+            "label": "学术成果  «abstract»",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v17",
+            "label": "成果ID\n标题与年份\n来源与更新时间\n+ 展示详情()",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v18",
+            "label": "机构",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v19",
+            "label": "机构ID与名称",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v20",
+            "label": "学术领域",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v21",
+            "label": "领域ID与层级",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v22",
+            "label": "研究资源链接",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v23",
+            "label": "URL与类型\n版本与使用说明",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v24",
+            "label": "论文",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v25",
+            "label": "专利",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v26",
+            "label": "科研项目",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v27",
+            "label": "获奖",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v47",
+            "label": "关联端附近的数字表示该端对象的数量范围，0..* 表示零个或多个。\n空心三角形指向父类，实心菱形位于组合关系的整体端。\n任职关系与成果署名关系分别记录；研究资源链接表示平台保存的链接记录。",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e1-name",
+            "label": "提交",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e1-source",
+            "label": "1",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e1-target",
+            "label": "0..*",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e2-name",
+            "label": "申请认领",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e2-source",
+            "label": "0..*",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e2-target",
+            "label": "1",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e3-name",
+            "label": "管理绑定",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e3-source",
+            "label": "0..1",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e3-target",
+            "label": "0..1",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e4-name",
+            "label": "参与",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e4-source",
+            "label": "1",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e4-target",
+            "label": "0..*",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e5-name",
+            "label": "对应成果",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e5-source",
+            "label": "0..*",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e5-target",
+            "label": "1",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e6-name",
+            "label": "创建",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e6-source",
+            "label": "1",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e6-target",
+            "label": "0..*",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e7-name",
+            "label": "记录笔记",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e7-source",
+            "label": "1",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e7-target",
+            "label": "0..*",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e8-name",
+            "label": "包含",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e8-source",
+            "label": "1",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e8-target",
+            "label": "0..*",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e9-name",
+            "label": "收藏对象",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e9-source",
+            "label": "0..*",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e9-target",
+            "label": "1",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e10-name",
+            "label": "关联成果",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e10-source",
+            "label": "0..*",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e10-target",
+            "label": "1",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e11-name",
+            "label": "任职",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e11-source",
+            "label": "0..*",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e11-target",
+            "label": "0..*",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e12-name",
+            "label": "署名或归属",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e12-source",
+            "label": "0..*",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e12-target",
+            "label": "0..*",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e13-name",
+            "label": "分类",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e13-source",
+            "label": "0..*",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e13-target",
+            "label": "0..*",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e14-name",
+            "label": "保存链接",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e14-source",
+            "label": "1",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e14-target",
+            "label": "0..*",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e20-name",
+            "label": "引用",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e20-source",
+            "label": "0..*\n引用方",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "fixed-e20-target",
+            "label": "0..*\n被引用方",
+            "edge": null,
+            "source": null,
+            "target": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "06_检索请求时序图.drawio",
+    "pages": [
+      {
+        "name": "06_检索请求时序图",
+        "cells": [
+          {
+            "id": "v1",
+            "label": "检索请求时序图",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v2",
+            "label": "科研人员",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v4",
+            "label": "«boundary»\n检索页面",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v6",
+            "label": "«control»\n检索服务",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v8",
+            "label": "«entity»\n成果索引",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v10",
+            "label": "«entity»\n成果数据",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e12",
+            "label": "输入关键词、范围与排序",
+            "edge": "1",
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e13",
+            "label": "提交查询参数",
+            "edge": "1",
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e14",
+            "label": "校验字段、年份及分页",
+            "edge": "1",
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v15",
+            "label": "alt",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v16",
+            "label": "[参数无效]",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e17",
+            "label": "返回字段错误",
+            "edge": "1",
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e18",
+            "label": "提示修改并保留输入",
+            "edge": "1",
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v20",
+            "label": "[参数有效]",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e21",
+            "label": "过滤、评分、排序与分页",
+            "edge": "1",
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e22",
+            "label": "成果ID、总数及数据版本",
+            "edge": "1",
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e23",
+            "label": "读取详情、来源及可见状态",
+            "edge": "1",
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e24",
+            "label": "可展示的成果字段",
+            "edge": "1",
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v25",
+            "label": "alt  [返回零条]",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e26",
+            "label": "空结果及可调整条件",
+            "edge": "1",
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e27",
+            "label": "显示空结果并保留查询条件",
+            "edge": "1",
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v29",
+            "label": "[返回成果]",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e30",
+            "label": "结果、条件、来源与更新时间",
+            "edge": "1",
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e31",
+            "label": "展示列表，可打开成果详情",
+            "edge": "1",
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "v32",
+            "label": "索引与数据版本存在差异时，服务按访问权限筛选并补充读取成果。\n服务超时后，平台返回错误状态并提示用户重新尝试。",
+            "edge": null,
+            "source": null,
+            "target": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "academic_platform_usecase.drawio",
+    "pages": [
+      {
+        "name": "标准系统用例图",
+        "cells": [
+          {
+            "id": "sys",
+            "label": "ScholarIndex 学术成果检索与分享平台",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "guest",
+            "label": "访客/普通用户",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "researcher",
+            "label": "科研人员",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "admin",
+            "label": "管理员",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "source",
+            "label": "Crossref / OA 数据源",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "auth",
+            "label": "注册、登录与角色权限",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "search",
+            "label": "论文检索与筛选",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "detail",
+            "label": "论文详情查看",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "filter",
+            "label": "关键词/作者/年份/OA/期刊筛选",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "publisher",
+            "label": "出版社页面 / OA 入口",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "refs",
+            "label": "引用/参考文献查看",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "recommend",
+            "label": "相关推荐",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "verify",
+            "label": "科研人员身份认证",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "portal",
+            "label": "门户认领与成果管理",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "inst",
+            "label": "机构注册申请",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "index",
+            "label": "论文索引更新申请",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "review",
+            "label": "审核中心",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "collect",
+            "label": "数据采集管理",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "etl",
+            "label": "清洗、去重与入库",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "stats",
+            "label": "统计分析与运行监控",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "task",
+            "label": "增量采集/定向补采/重试",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "audit",
+            "label": "机构/认领/索引申请审核",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "i1",
+            "label": ">",
+            "edge": "1",
+            "source": "search",
+            "target": "filter"
+          },
+          {
+            "id": "i2",
+            "label": ">",
+            "edge": "1",
+            "source": "detail",
+            "target": "publisher"
+          },
+          {
+            "id": "i3",
+            "label": ">",
+            "edge": "1",
+            "source": "detail",
+            "target": "refs"
+          },
+          {
+            "id": "i4",
+            "label": ">",
+            "edge": "1",
+            "source": "detail",
+            "target": "recommend"
+          },
+          {
+            "id": "i5",
+            "label": ">",
+            "edge": "1",
+            "source": "collect",
+            "target": "task"
+          },
+          {
+            "id": "i6",
+            "label": ">",
+            "edge": "1",
+            "source": "collect",
+            "target": "etl"
+          },
+          {
+            "id": "i7",
+            "label": ">",
+            "edge": "1",
+            "source": "review",
+            "target": "audit"
+          },
+          {
+            "id": "g1",
+            "label": ">",
+            "edge": "1",
+            "source": "researcher",
+            "target": "guest"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "作者检索详细活动图.drawio",
+    "pages": [
+      {
+        "name": "作者检索详细活动图",
+        "cells": [
+          {
+            "id": "n1",
+            "label": "作者检索详细活动图",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n4",
+            "label": "普通用户 / 访客",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n5",
+            "label": "学术成果分享平台",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n8",
+            "label": "选择论文作者 / 学者入口\n输入姓名及已有机构、领域线索",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n10",
+            "label": "查询人物候选\n保留原输入",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n11",
+            "label": "候选查询结果",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n12",
+            "label": "提示服务异常\n保留条件，允许重试",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n13",
+            "label": "提示本平台未找到人物\n允许修改条件或按作者文本查",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n14",
+            "label": "展示学者候选及身份信息",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n15",
+            "label": "核对身份信息并选择目标学者",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n16",
+            "label": "无候选时选择",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n17",
+            "label": "按原作者文本检索\n标记“未锁定人物身份”",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n18",
+            "label": "设置论文类型、主题与起止年份\n确认人物 / 文本匹配范围",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n20",
+            "label": "条件有效？",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n21",
+            "label": "显示输入错误",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n22",
+            "label": "按人物、主题和年份查询论文",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n24",
+            "label": "成果查询结果",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n25",
+            "label": "提示查询失败\n保留输入，可重试",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n26",
+            "label": "显示当前条件下未找到\n建议撤销条件或修改查询",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n27",
+            "label": "修改 / 放宽条件\n或切换检索对象",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n28",
+            "label": "展示去重结果、命中字段和总数",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n29",
+            "label": "筛选、排序、翻页并选择论文",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n31",
+            "label": "展示论文详情",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n32",
+            "label": "核对论文信息\n查看作者门户或原始来源",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n33",
+            "label": "下一步",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n34",
+            "label": "恢复原结果上下文\n保留条件、排序、页码及位置",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e41",
+            "label": "[服务失败]",
+            "edge": "1",
+            "source": "n11",
+            "target": "n12"
+          },
+          {
+            "id": "e42",
+            "label": "[重试]",
+            "edge": "1",
+            "source": "n12",
+            "target": "n9"
+          },
+          {
+            "id": "e43",
+            "label": "[成功且无候选]",
+            "edge": "1",
+            "source": "n11",
+            "target": "n13"
+          },
+          {
+            "id": "e44",
+            "label": "[成功且有候选]",
+            "edge": "1",
+            "source": "n11",
+            "target": "n14"
+          },
+          {
+            "id": "e46",
+            "label": "[修改条件]",
+            "edge": "1",
+            "source": "n16",
+            "target": "n7"
+          },
+          {
+            "id": "e47",
+            "label": "[继续文本查询]",
+            "edge": "1",
+            "source": "n16",
+            "target": "n17"
+          },
+          {
+            "id": "e53",
+            "label": "[否]",
+            "edge": "1",
+            "source": "n20",
+            "target": "n21"
+          },
+          {
+            "id": "e54",
+            "label": "修正条件",
+            "edge": "1",
+            "source": "n21",
+            "target": "n19"
+          },
+          {
+            "id": "e55",
+            "label": "[是]",
+            "edge": "1",
+            "source": "n20",
+            "target": "n23"
+          },
+          {
+            "id": "e58",
+            "label": "[服务失败]",
+            "edge": "1",
+            "source": "n24",
+            "target": "n25"
+          },
+          {
+            "id": "e59",
+            "label": "[重试]",
+            "edge": "1",
+            "source": "n25",
+            "target": "n23"
+          },
+          {
+            "id": "e60",
+            "label": "[成功且零结果]",
+            "edge": "1",
+            "source": "n24",
+            "target": "n26"
+          },
+          {
+            "id": "e62",
+            "label": "[修改查询条件]",
+            "edge": "1",
+            "source": "n27",
+            "target": "n19"
+          },
+          {
+            "id": "e63",
+            "label": "[成功且有结果]",
+            "edge": "1",
+            "source": "n24",
+            "target": "n28"
+          },
+          {
+            "id": "e69",
+            "label": "[返回原结果]",
+            "edge": "1",
+            "source": "n33",
+            "target": "n34"
+          },
+          {
+            "id": "e70",
+            "label": "继续浏览",
+            "edge": "1",
+            "source": "n34",
+            "target": "n30"
+          },
+          {
+            "id": "e71",
+            "label": "[重新查询]",
+            "edge": "1",
+            "source": "n33",
+            "target": "n7"
+          },
+          {
+            "id": "e72",
+            "label": "[结束]",
+            "edge": "1",
+            "source": "n33",
+            "target": "n35"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "数据采集任务状态机.drawio",
+    "pages": [
+      {
+        "name": "第 1 页",
+        "cells": []
+      }
+    ]
+  },
+  {
+    "file": "普通用户活动图.drawio",
+    "pages": [
+      {
+        "name": "普通用户活动图",
+        "cells": [
+          {
+            "id": "n1",
+            "label": "普通用户活动图",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n3",
+            "label": "访问平台",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n4",
+            "label": "选择任务",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n7",
+            "label": "选择成果类型 / 领域入口\n输入主题、机构或编号等条件",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n8",
+            "label": "执行成果查询并展示结果",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n9",
+            "label": "筛选、排序、翻页\n选择成果并查看类型专属详情",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e10",
+            "label": "[查成果]",
+            "edge": "1",
+            "source": "n4",
+            "target": "n7"
+          },
+          {
+            "id": "n13",
+            "label": "输入姓名、机构、领域\n查找目标学者",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n14",
+            "label": "展示学者候选及身份信息",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n15",
+            "label": "确认人物并浏览门户\n查看 / 筛选四类已收录成果",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e16",
+            "label": "[找学者]",
+            "edge": "1",
+            "source": "n4",
+            "target": "n13"
+          },
+          {
+            "id": "n19",
+            "label": "选择领域、机构、类型、年度\n或选定学者查看关系网络",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n20",
+            "label": "展示成果统计或共著网络",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n21",
+            "label": "选择统计项或共著关系\n查看相关成果",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e22",
+            "label": "[看统计 / 网络]",
+            "edge": "1",
+            "source": "n4",
+            "target": "n19"
+          },
+          {
+            "id": "n29",
+            "label": "核对成果或学者信息",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n31",
+            "label": "后续操作",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n33",
+            "label": "复制公开链接\n或复制引用 / 导出元数据",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n34",
+            "label": "选择收藏、保存检索或关注",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n35",
+            "label": "填写并提交数据问题反馈",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e36",
+            "label": "[分享 / 引用 / 导出]",
+            "edge": "1",
+            "source": "n31",
+            "target": "n33"
+          },
+          {
+            "id": "e37",
+            "label": "[个人保存]",
+            "edge": "1",
+            "source": "n31",
+            "target": "n34"
+          },
+          {
+            "id": "e38",
+            "label": "[反馈问题]",
+            "edge": "1",
+            "source": "n31",
+            "target": "n35"
+          },
+          {
+            "id": "n39",
+            "label": "生成公开链接、引用或元数据文件",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n40",
+            "label": "验证登录状态\n登录后保存个人资料",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n41",
+            "label": "受理反馈并返回受理号",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n50",
+            "label": "[无需后续操作]",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n51",
+            "label": "继续使用？",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e54",
+            "label": "[否]",
+            "edge": "1",
+            "source": "n51",
+            "target": "n53"
+          },
+          {
+            "id": "n56",
+            "label": "[是]",
+            "edge": null,
+            "source": null,
+            "target": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "普通用户用例图.drawio",
+    "pages": [
+      {
+        "name": "普通用户用例图",
+        "cells": [
+          {
+            "id": "n1",
+            "label": "普通用户用例图",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n3",
+            "label": "学术成果分享平台",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n5",
+            "label": "个人账户",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n8",
+            "label": "公开访问者",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n9",
+            "label": "已注册普通用户",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n11",
+            "label": "检索学术成果",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n13",
+            "label": "检索学者",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n15",
+            "label": "浏览学者门户",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n17",
+            "label": "查看成果详情",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n19",
+            "label": "查看统计分析",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n21",
+            "label": "浏览专家关系网络",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n23",
+            "label": "分享公开链接",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n25",
+            "label": "复制引用信息",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n27",
+            "label": "导出成果元数据",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n29",
+            "label": "提交数据问题",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n31",
+            "label": "筛选与排序",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n32",
+            "label": "确认同名学者",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n33",
+            "label": "访问原始来源",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n34",
+            "label": "查看统计口径与收录范围",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n35",
+            "label": "查看统计支撑明细",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n36",
+            "label": "查看共同成果",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n37",
+            "label": "探索最短共著路径",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "e38",
+            "label": "«extend»",
+            "edge": "1",
+            "source": "n31",
+            "target": "n11"
+          },
+          {
+            "id": "e39",
+            "label": "«extend»",
+            "edge": "1",
+            "source": "n32",
+            "target": "n13"
+          },
+          {
+            "id": "e40",
+            "label": "«extend»",
+            "edge": "1",
+            "source": "n33",
+            "target": "n17"
+          },
+          {
+            "id": "e41",
+            "label": "«include»",
+            "edge": "1",
+            "source": "n19",
+            "target": "n34"
+          },
+          {
+            "id": "e42",
+            "label": "«extend»",
+            "edge": "1",
+            "source": "n35",
+            "target": "n19"
+          },
+          {
+            "id": "e43",
+            "label": "«extend»",
+            "edge": "1",
+            "source": "n36",
+            "target": "n21"
+          },
+          {
+            "id": "e44",
+            "label": "«extend»",
+            "edge": "1",
+            "source": "n37",
+            "target": "n21"
+          },
+          {
+            "id": "n45",
+            "label": "管理私人收藏",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n46",
+            "label": "管理检索历史与保存检索式",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n47",
+            "label": "管理学者与领域关注",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n48",
+            "label": "身份认证",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n49",
+            "label": "查看本人反馈进度",
+            "edge": null,
+            "source": null,
+            "target": null
+          },
+          {
+            "id": "n50",
+            "label": "订阅更新与管理通知",
+            "edge": null,
+            "source": null,
+            "target": null
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "认领状态图.drawio",
+    "pages": [
+      {
+        "name": "第 1 页",
+        "cells": []
+      }
+    ]
+  }
+]

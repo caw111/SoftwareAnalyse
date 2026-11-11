@@ -1,0 +1,136 @@
+<mxfile host="app.diagrams.net" agent="final" version="31.7.0">
+  <diagram name="认领申请状态图" id="state2">
+    <mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1260" pageHeight="980" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- 标题 -->
+        <mxCell id="title" value="认领申请状态图" style="text;html=1;align=left;verticalAlign=middle;fontSize=22;fontStyle=1;fontColor=#223344;" vertex="1" parent="1">
+          <mxGeometry x="30" y="25" width="500" height="44" as="geometry"/>
+        </mxCell>
+
+        <!-- 起始黑点 -->
+        <mxCell id="start" value="" style="ellipse;fillColor=#223344;strokeColor=#223344;" vertex="1" parent="1">
+          <mxGeometry x="540" y="70" width="20" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- 状态节点 -->
+        <mxCell id="draft" value="草稿" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="470" y="130" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="pending" value="待审核" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="470" y="310" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="supplement" value="待补充" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="810" y="310" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="approved" value="已通过" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="100" y="540" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="rejected" value="已驳回" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="470" y="540" width="160" height="60" as="geometry"/>
+        </mxCell>
+        <mxCell id="withdrawn" value="已撤回" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#eef2f7;strokeColor=#445566;fontColor=#223344;arcSize=20;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="810" y="540" width="160" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- 终止黑点 -->
+        <mxCell id="end" value="" style="ellipse;fillColor=#223344;strokeColor=#223344;" vertex="1" parent="1">
+          <mxGeometry x="540" y="760" width="20" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- 边：start -> 草稿 -->
+        <mxCell id="e1" value="" style="endArrow=classic;html=1;strokeColor=#445566;" edge="1" parent="1" source="start" target="draft">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 草稿自环：校验失败 -->
+        <mxCell id="e2" value="校验失败" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=1;entryY=0.25;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="draft" target="draft">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="160"/>
+              <mxPoint x="700" y="145"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 草稿 -> 待审核 -->
+        <mxCell id="e3" value="提交且校验通过" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="draft" target="pending">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 待审核自环：绑定冲突 -->
+        <mxCell id="e4" value="绑定冲突，保留原有权限" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;exitX=0;exitY=0.5;entryX=0;entryY=0.25;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="pending" target="pending">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="340"/>
+              <mxPoint x="380" y="325"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 待审核 -> 待补充 -->
+        <mxCell id="e5" value="要求补充" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;exitX=1;exitY=0.25;entryX=0;entryY=0.25;" edge="1" parent="1" source="pending" target="supplement">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 待审核 -> 已通过 -->
+        <mxCell id="e6" value="审核及唯一绑定成功" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="pending" target="approved">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="190" y="355"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 待审核 -> 已驳回 -->
+        <mxCell id="e7" value="驳回并记录原因" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="pending" target="rejected">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 待审核 -> 已撤回 -->
+        <mxCell id="e8" value="申请人撤回" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;exitX=1;exitY=1;entryX=0.15;entryY=0;" edge="1" parent="1" source="pending" target="withdrawn">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 待补充自环：校验失败 -->
+        <mxCell id="e9" value="校验失败" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;exitX=1;exitY=0.5;entryX=1;entryY=0.25;edgeStyle=orthogonalEdgeStyle;" edge="1" parent="1" source="supplement" target="supplement">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1060" y="340"/>
+              <mxPoint x="1060" y="325"/>
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- 待补充 -> 待审核 -->
+        <mxCell id="e10" value="补交且校验通过" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;exitX=0;exitY=0.75;entryX=1;entryY=0.75;" edge="1" parent="1" source="supplement" target="pending">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 待补充 -> 已撤回 -->
+        <mxCell id="e11" value="申请人撤回" style="endArrow=classic;html=1;strokeColor=#445566;fontSize=13;labelBackgroundColor=#ffffff;" edge="1" parent="1" source="supplement" target="withdrawn">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 三个终态 -> end -->
+        <mxCell id="e12" value="" style="endArrow=classic;html=1;strokeColor=#445566;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="approved" target="end">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e13" value="" style="endArrow=classic;html=1;strokeColor=#445566;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="rejected" target="end">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e14" value="" style="endArrow=classic;html=1;strokeColor=#445566;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" edge="1" parent="1" source="withdrawn" target="end">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 备注 -->
+        <mxCell id="note" value="申请通过后，平台按有效绑定关系管理权限。&#10;后续权限撤销由独立流程处理。&#10;再次申请时，平台新建编号并保留历史记录。" style="shape=note;whiteSpace=wrap;html=1;fillColor=#fff8dc;strokeColor=#d4b86a;align=left;verticalAlign=middle;size=15;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="60" y="840" width="680" height="110" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

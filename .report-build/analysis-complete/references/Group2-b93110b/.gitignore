@@ -1,0 +1,9 @@
+# Local build artifacts
+.report-build/
+node_modules/
+__pycache__/
+*.pyc
+~$*
+.$*.bkp
+Thumbs.db
+.DS_Store

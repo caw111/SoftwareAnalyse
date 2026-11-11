@@ -1,0 +1,16 @@
+{
+  "revision": "r05",
+  "output": "F:\\homework\\软分\\SoftwareAnalyse\\需求分析\\PPT主题汇报稿\\演示文稿\\学术成果分享平台-需求分析汇报-差异集中版.pptx",
+  "sha256": "f10de199b28b1d7139f1bd87cae1c9e9ab9677e0f52bca55974acb223afabf82",
+  "slides": 13,
+  "comparisonSlides": [
+    11,
+    12,
+    13
+  ],
+  "originalBusinessTablesPreserved": true,
+  "firstTenSlidesHaveNoGroupComparison": true,
+  "sourceUnchanged": true,
+  "visualReview": "r04 all 13 slides reviewed independently. r05 only slide 12 changed and was reviewed independently and in native PowerPoint rendering. Original ten slides and all three comparison slides inspected after native PowerPoint export.",
+  "layoutWarningResolution": "Slide 2 table estimate warning checked against native rendering: no overlap or clipping."
+}

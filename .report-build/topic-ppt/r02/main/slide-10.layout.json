@@ -1,0 +1,8 @@
+{"schema":"openai.presentation.layout/v5","unit":"px","slide":{"id":"sl/g4593r","index":9,"layout":{"id":"ly/7mtwbi58","name":"Blank"},"backgroundColor":"rgba(255,255,255,1)","position":{"left":0,"top":0,"width":1600,"height":900}},
+"elements":[
+{"id":"sh/a9ojmdkn","kind":"textbox","name":"主题标题","position":{"left":60,"top":48,"width":1480,"height":76},"text":"用具体场景核对需求是否落实到模型","style":{"fontSize":48,"typeface":"Microsoft YaHei","color":"#175D61","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/xwz2h8je","kind":"textbox","name":"10","position":{"left":1480,"top":850,"width":60,"height":28},"text":"10","style":{"fontSize":19,"typeface":"Microsoft YaHei","color":"#657575","alignment":"right"},"geometry":"rect","lineWidth":0},
+{"id":"tb/dobahw7q","kind":"table","position":{"left":60,"top":185,"width":1480,"height":491},"text":"需求规则\t检查场景\t模型应得到的结果\n幂等与来源保留\t同一合法DOI来自两个来源，\n然后重复采集\t一个规范成果，来源和观测可追溯\n失败恢复\t第一页已提交，\n第二页解析失败\t保留有效断点，整窗水位不提前推进\n并发授权\t管理员批准与\n本人撤回同时发生\t最多一个合法提交，状态与绑定一致\n同贡献检索\t查询A01与I01，\n另有R06交叉关系\t正确返回3条，R06不混入\n版本与权限\t旧版失效，或返回前\n权限发生变化\t明确刷新或重试，不返回混版内容及旧计数","rows":6,"cols":3},
+{"id":"sh/n6xkby1c","kind":"textbox","name":"两组模型按同一组业务预期核对，问题回写类图、时序和需求记","position":{"left":60,"top":745,"width":1480,"height":66},"text":"两组模型按同一组业务预期核对，问题回写类图、时序和需求记录。","style":{"fontSize":31,"typeface":"Microsoft YaHei","color":"#175D61","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/25ojitkr","kind":"textbox","name":"当前是需求分析模型与设计走查，真实系统行为在实现后验证。","position":{"left":60,"top":824,"width":1420,"height":36},"text":"当前是需求分析模型与设计走查，真实系统行为在实现后验证。","style":{"fontSize":25,"typeface":"Microsoft YaHei","color":"#657575","alignment":"left"},"geometry":"rect","lineWidth":0}
+]}

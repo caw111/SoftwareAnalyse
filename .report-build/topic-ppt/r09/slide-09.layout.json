@@ -1,0 +1,10 @@
+{"schema":"openai.presentation.layout/v5","unit":"px","slide":{"id":"sl/udsvah03","index":8,"layout":{"id":"ly/14ra9krq","name":"Blank"},"backgroundColor":"rgba(255,255,255,1)","position":{"left":0,"top":0,"width":1600,"height":900}},
+"elements":[
+{"id":"sh/oza1gfyh","kind":"textbox","name":"主题标题","position":{"left":60,"top":48,"width":1480,"height":76},"text":"检索列表、总数与详情怎样保持一致","style":{"fontSize":48,"typeface":"Microsoft YaHei","color":"#175D61","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/1cfmhgne","kind":"textbox","name":"09","position":{"left":1480,"top":850,"width":60,"height":28},"text":"09","style":{"fontSize":19,"typeface":"Microsoft YaHei","color":"#657575","alignment":"right"},"geometry":"rect","lineWidth":0},
+{"id":"sh/p0ji9kf2","kind":"textbox","name":"同一公开版本下，先按权限得到允许集合，再统一计算列表、总","position":{"left":60,"top":150,"width":1480,"height":62},"text":"同一公开版本下，先按权限得到允许集合，再统一计算列表、总数和分面。","style":{"fontSize":29,"typeface":"Microsoft YaHei","color":"#24383B","alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"im/hcz65kbq","kind":"image","position":{"left":60,"top":220,"width":1480,"height":99.62},"crop":{"left":0,"top":0.05591054313099041,"right":0,"bottom":0.9021565495207667},"fit":"cover","alt":"检索控制、权限、索引与公开条目参与者；1组原图局部：06a-检索权限计数与分页子交互"},
+{"id":"im/gbqpwful","kind":"image","position":{"left":60,"top":345,"width":1480,"height":265.64},"crop":{"left":0,"top":0.2755591054313099,"right":0,"bottom":0.6126198083067093},"fit":"cover","alt":"QX04共同允许集合与同版读视图；1组原图局部：06a-检索权限计数与分页子交互"},
+{"id":"sh/cnu1kzyd","kind":"textbox","name":"返回前权限变化：作废结果和计数，明确要求重试","position":{"left":60,"top":660,"width":1480,"height":65},"text":"返回前权限变化：作废结果和计数，明确要求重试","style":{"fontSize":28,"typeface":"Microsoft YaHei","color":"#24383B","alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"im/6lo7qlc3","kind":"image","position":{"left":60,"top":710,"width":1480,"height":123.33},"crop":{"left":0,"top":0.7747603833865815,"right":0,"bottom":0.1733226837060703},"fit":"cover","alt":"权限变化后不返回旧total或部分列表；1组原图局部：06a-检索权限计数与分页子交互"}
+]}

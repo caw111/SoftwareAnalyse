@@ -1,0 +1,8 @@
+{"schema":"openai.presentation.layout/v5","unit":"px","slide":{"id":"sl/ofy9wn61","index":2,"layout":{"id":"ly/14ra9krq","name":"Blank"},"backgroundColor":"rgba(255,255,255,1)","position":{"left":0,"top":0,"width":1600,"height":900}},
+"elements":[
+{"id":"sh/943mhgre","kind":"textbox","name":"主题标题","position":{"left":60,"top":48,"width":1480,"height":76},"text":"类关系决定权限、贡献和统计口径","style":{"fontSize":48,"typeface":"Microsoft YaHei","color":"#175D61","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"sh/cza94vmx","kind":"textbox","name":"03","position":{"left":1480,"top":850,"width":60,"height":28},"text":"03","style":{"fontSize":19,"typeface":"Microsoft YaHei","color":"#657575","alignment":"right"},"geometry":"rect","lineWidth":0},
+{"id":"sh/83ulovat","kind":"textbox","name":"四类成果共享公共身份，类型专属信息单独保留。这里放大专利","position":{"left":60,"top":150,"width":1480,"height":62},"text":"四类成果共享公共身份，类型专属信息单独保留。这里放大专利申请与文献的关系。","style":{"fontSize":29,"typeface":"Microsoft YaHei","color":"#24383B","alignment":"left"},"geometry":"rect","lineWidth":0},
+{"id":"im/gne5cvel","kind":"image","position":{"left":60,"top":235,"width":1480,"height":484.44},"crop":{"left":0.36124490552056315,"top":0.595138306789606,"right":0.021859948128936643,"bottom":0.17644593461860855},"fit":"cover","alt":"Patent与PatentDocument关联及多重性；1组原图局部：02-局部02-四类成果与专利身份"},
+{"id":"sh/a5c3ql8z","kind":"textbox","name":"一件专利申请可以对应多份文献，申请级成果仍计为一件","position":{"left":60,"top":775,"width":1480,"height":60},"text":"一件专利申请可以对应多份文献，申请级成果仍计为一件","style":{"fontSize":29,"typeface":"Microsoft YaHei","color":"#175D61","bold":true,"alignment":"left"},"geometry":"rect","lineWidth":0}
+]}

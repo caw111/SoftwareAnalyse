@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" modified="2026-10-02T00:00:00.000Z" agent="draw.io" version="24.7.17" type="device">
+  <diagram id="page-1" name="03_门户认领活动图">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="1730" math="0" shadow="0" background="#FFFFFF">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="v1" value="门户认领活动图" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;text;strokeColor=none;fillColor=none;fontSize=26;fontStyle=1;align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="1320" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="v2" value="科研人员" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;swimlane;horizontal=1;startSize=42;rounded=0;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;strokeColor=#A9B7C7;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="90" width="370" height="1590" as="geometry" />
+        </mxCell>
+        <mxCell id="v3" value="平台" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;swimlane;horizontal=1;startSize=42;rounded=0;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;strokeColor=#A9B7C7;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="410" y="90" width="580" height="1590" as="geometry" />
+        </mxCell>
+        <mxCell id="v4" value="审核管理员" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;swimlane;horizontal=1;startSize=42;rounded=0;fillColor=#FFFFFF;swimlaneFillColor=#FFFFFF;strokeColor=#A9B7C7;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="990" y="90" width="370" height="1590" as="geometry" />
+        </mxCell>
+        <mxCell id="v5" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;ellipse;fillColor=#172B4D;strokeColor=#172B4D;" vertex="1" parent="1">
+          <mxGeometry x="205" y="150" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="v6" value="登录并选择待认领门户" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;" vertex="1" parent="1">
+          <mxGeometry x="95" y="205" width="265" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="v7" value="提交机构信息和身份证明" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;" vertex="1" parent="1">
+          <mxGeometry x="95" y="300" width="265" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="v8" value="检查材料、重复申请及绑定状态" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;" vertex="1" parent="1">
+          <mxGeometry x="560" y="300" width="310" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="v9" value="校验通过？" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;rhombus;rounded=0;fillColor=#FFFFFF;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="630" y="400" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="v10" value="生成申请编号，进入待审核" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;" vertex="1" parent="1">
+          <mxGeometry x="510" y="520" width="320" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="v11" value="说明校验失败原因&#10;保留原有权限" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;" vertex="1" parent="1">
+          <mxGeometry x="445" y="635" width="330" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="v12" value="核对身份及成果关联证据" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="520" width="280" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="v13" value="需要补充材料？" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;rhombus;rounded=0;fillColor=#FFFFFF;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1070" y="635" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="v14" value="记录补充材料要求" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;" vertex="1" parent="1">
+          <mxGeometry x="1030" y="765" width="280" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="v15" value="转为待补充并通知申请人" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;" vertex="1" parent="1">
+          <mxGeometry x="550" y="765" width="305" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="v16" value="补充材料并重新提交" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;" vertex="1" parent="1">
+          <mxGeometry x="95" y="765" width="265" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="v17" value="重新校验并将有效申请转为待审核" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;" vertex="1" parent="1">
+          <mxGeometry x="530" y="875" width="350" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="v18" value="身份及归属核验通过？" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;rhombus;rounded=0;fillColor=#FFFFFF;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="1050" y="985" width="230" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="v19" value="统一检查门户绑定条件" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;" vertex="1" parent="1">
+          <mxGeometry x="510" y="1120" width="300" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="v20" value="绑定条件仍成立？" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;rhombus;rounded=0;fillColor=#FFFFFF;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="575" y="1220" width="195" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="v21" value="统一记录审核结果&#10;并授予管理权限" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;" vertex="1" parent="1">
+          <mxGeometry x="435" y="1360" width="265" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="v22" value="维持待审核状态&#10;记录冲突并提示复核" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;" vertex="1" parent="1">
+          <mxGeometry x="740" y="1360" width="230" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="v23" value="记录已驳回及原因" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="1220" width="245" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="v24" value="保存审核日志并通知申请人" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;" vertex="1" parent="1">
+          <mxGeometry x="560" y="1500" width="320" height="54" as="geometry" />
+        </mxCell>
+        <mxCell id="v25" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;ellipse;fillColor=#FFFFFF;strokeColor=#172B4D;" vertex="1" parent="1">
+          <mxGeometry x="706" y="1595" width="28" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="v26" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;rounded=1;arcSize=14;fillColor=#F1F6FB;ellipse;fillColor=#172B4D;strokeColor=#172B4D;" vertex="1" parent="v25">
+          <mxGeometry x="6" y="6" width="16" height="16" as="geometry" />
+        </mxCell>
+        <mxCell id="e27" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v5" target="v6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e28" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v6" target="v7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e29" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v7" target="v8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e30" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v8" target="v9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e31" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v10" target="v12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e32" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v12" target="v13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e33" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v14" target="v15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e34" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v15" target="v16">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e35" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v19" target="v20">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e36" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v21" target="v24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e37" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v22" target="v24">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e38" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v24" target="v25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e39" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0;entryY=0.5;" edge="1" parent="1" source="v16" target="v17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="227" y="902" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e40" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="v23" target="v24">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1200" y="1470" />
+              <mxPoint x="720" y="1470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e41" value="是" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v9" target="v10">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e42" value="否" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=0.5;entryY=0;" edge="1" parent="1" source="v9" target="v11">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="455" y="440" />
+              <mxPoint x="455" y="610" />
+              <mxPoint x="610" y="610" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e43" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;exitX=0;exitY=0.5;entryX=0.5;entryY=1;" edge="1" parent="1" source="v11" target="v25">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="425" y="662" />
+              <mxPoint x="425" y="1650" />
+              <mxPoint x="720" y="1650" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e44" value="是" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v13" target="v14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e45" value="否" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="v13" target="v18">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1330" y="675" />
+              <mxPoint x="1330" y="1025" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e46" value="" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="v17" target="v12">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="965" y="902" />
+              <mxPoint x="965" y="547" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e47" value="是" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v18" target="v19">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e48" value="否" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v18" target="v23">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e49" value="是" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v20" target="v21">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e50" value="否" style="html=0;whiteSpace=wrap;fontFamily=Microsoft YaHei;fontSize=16;fontColor=#172B4D;strokeColor=#53677F;strokeWidth=1.4;whiteSpace=nowrap;edgeStyle=orthogonalEdgeStyle;rounded=0;endArrow=classic;endFill=1;fontSize=14;labelBackgroundColor=#FFFFFF;" edge="1" parent="1" source="v20" target="v22">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

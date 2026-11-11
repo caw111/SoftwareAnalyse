@@ -1,0 +1,571 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2753.0" height="2847.2" viewBox="0 0 2753.0 2847.2">
+<rect width="2753.0" height="2847.2" fill="white"/>
+<g font-family="Microsoft YaHei,SimHei,Arial" fill="#172B4D">
+<polyline points="799.39,347.39999999999964 833.03,330.02 859.0,316.5999999999999 915.84,291.52999999999975 977.11,264.5" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="871.25" y="273.2999999999997" width="34" height="20" fill="white" opacity="0.94"/>
+<text x="888.25" y="287.84999999999974" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">提交</text>
+<rect x="817.1922125996967" y="336.9858908798527" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="830.6922125996967" y="351.53589087985273" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="927.8413568318606" y="252.9926996239734" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="945.8413568318606" y="267.5426996239734" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="1277.88,175.78999999999996 1364.26,162.60999999999967 1456.01,148.5999999999999 1756.01,148.5999999999999 1897.47,290.27999999999975 1994.45,387.40999999999985" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1576.0" y="130.79999999999973" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1606.0" y="145.34999999999974" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">目标门户</text>
+<rect x="1289.6713494436713" y="175.40641816504845" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1307.6713494436713" y="189.95641816504846" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<rect x="1971.0734577455505" y="347.7038741486528" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="1984.5734577455505" y="362.2538741486528" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<polyline points="1277.61,847.3699999999999 1463.2,844.5899999999999 1756.01,840.1999999999998 1906.01,673.6699999999996 2002.98,566.0099999999998" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1576.0" y="822.3999999999999" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1606.0" y="836.9499999999998" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">公开展示</text>
+<rect x="1292.3165452869691" y="850.9490575142074" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="1305.8165452869691" y="865.4990575142074" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="1976.64334057146" y="586.1844943548772" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1994.64334057146" y="600.7344943548771" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..1</text>
+<polyline points="799.49,432.7399999999998 978.56,442.4899999999998 1276.76,458.73 1455.75,468.4699999999998" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1097.5" y="425.0999999999999" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1127.5" y="439.6499999999999" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">获得授权</text>
+<rect x="813.187443562625" y="438.24158261784316" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="826.687443562625" y="452.7915826178432" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="1410.552069077387" y="442.9692724838873" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1428.552069077387" y="457.51927248388733" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="1756.47,476.5999999999999 1813.1,476.5999999999999 1877.55,476.5999999999999 1934.17,476.5999999999999" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1815.3" y="458.7999999999997" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1845.3" y="473.34999999999974" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">管理目标</text>
+<rect x="1766.47" y="480.5999999999999" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1784.47" y="495.1499999999999" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<rect x="1892.67" y="452.5999999999999" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="1906.17" y="467.1499999999999" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<polyline points="1277.97,285.7999999999997 1334.6,318.8399999999997 1399.05,356.4399999999996 1455.67,389.4699999999998" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1330.3" y="303.1999999999998" width="73" height="20" fill="white" opacity="0.94"/>
+<text x="1366.8" y="317.74999999999983" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">通过后产生</text>
+<rect x="1281.5996011918621" y="302.0026098510767" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="1295.0996011918621" y="316.55260985107674" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="1420.5389605778835" y="353.2683304288085" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1438.5389605778835" y="367.8183304288085" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..1</text>
+<polyline points="1277.97,216.16999999999962 1334.6,222.8199999999997 1399.05,230.38999999999987 1455.67,237.04999999999973" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1336.8" y="205.39999999999964" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1366.8" y="219.94999999999965" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">审核历史</text>
+<rect x="1290.6461343946382" y="223.3400316876186" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="1304.1461343946382" y="237.8900316876186" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="1411.497208539591" y="209.8748730086224" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1429.497208539591" y="224.4248730086224" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="799.11,402.1699999999996 984.69,374.25 1277.51,330.1999999999998 1369.26,309.02 1455.63,289.0799999999999" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1104.0" y="312.39999999999964" width="47" height="20" fill="white" opacity="0.94"/>
+<text x="1127.5" y="326.94999999999965" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">审核人</text>
+<rect x="815.3812202382022" y="401.8485559629754" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="828.8812202382022" y="416.3985559629754" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="1407.1983303395125" y="271.737419957878" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1425.1983303395125" y="286.287419957878" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="1082.65,109.23000000000002 1082.65,79.42999999999984 1097.6,55.59999999999991 1127.51,55.59999999999991 1157.41,55.59999999999991 1172.37,79.42999999999984 1172.37,109.23000000000002" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1080.5" y="37.79999999999973" width="94" height="20" fill="white" opacity="0.94"/>
+<text x="1127.5" y="52.349999999999724" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">前次 / 再申请</text>
+<rect x="1078.65" y="71.23000000000002" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1096.65" y="85.78000000000002" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..1</text>
+<rect x="1168.37" y="71.23000000000002" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1186.37" y="85.78000000000002" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="799.46,1587.86 851.01,1606.58 909.03,1627.6399999999999 961.73,1646.7699999999998" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<polygon points="963.44,1641.8099999999997 975.74,1651.86 959.85,1651.6799999999998" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<polyline points="764.82,2099.21 784.64,2083.79 799.0,2072.6 977.5,1822.6 985.93,1816.04 998.77,1806.0499999999997" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<polygon points="995.43,1801.9899999999998 1010.49,1796.9199999999998 1001.88,1810.27" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<polyline points="790.86,1887.7499999999998 828.53,1866.6599999999999 859.0,1849.6 907.31,1823.7799999999997 962.86,1794.08" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<polygon points="960.08,1789.62 975.78,1787.1799999999998 965.03,1798.8799999999997" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<polyline points="799.46,1740.2299999999998 850.79,1734.9499999999998 908.53,1729.0199999999998 961.05,1723.61" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<polygon points="960.2,1718.4199999999998 975.66,1722.11 961.28,1728.87" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<polyline points="1277.97,1617.83 1334.6,1584.1999999999998 1399.05,1545.9199999999998 1455.67,1512.2899999999997" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1336.8" y="1530.3999999999999" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1366.8" y="1544.9499999999998" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">贡献关系</text>
+<rect x="1295.6933003307502" y="1605.5704610081293" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="1309.1933003307502" y="1620.1204610081293" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="1406.4468749576104" y="1504.5519598995777" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1424.4468749576104" y="1519.1019598995777" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="1243.32,938.9899999999998 1263.14,954.4099999999999 1277.51,965.5999999999999 1337.51,1123.1999999999998 1446.62,1245.7299999999998 1525.47,1334.2799999999997" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1336.8" y="1105.3999999999999" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1366.8" y="1119.9499999999998" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">个人主体</text>
+<rect x="1238.8171299169055" y="957.2303856609849" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1256.8171299169055" y="971.7803856609848" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..1</text>
+<rect x="1499.3050809007386" y="1294.0585821626032" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1517.3050809007386" y="1308.6085821626032" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="340.32,1369.0399999999997 611.95,1380.7599999999998 1183.9,1405.4299999999998 1455.6,1417.1499999999999" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="858.25" y="1373.8999999999999" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="888.25" y="1388.4499999999998" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">机构主体</text>
+<rect x="349.6904776313289" y="1374.2339775645785" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="367.6904776313289" y="1388.7839775645784" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..1</text>
+<rect x="1410.2293537840817" y="1391.9563261281858" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1428.2293537840817" y="1406.5063261281857" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="1277.97,805.3699999999999 1334.6,788.6199999999999 1399.05,769.5499999999997 1455.67,752.79" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1336.8" y="752.8999999999999" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1366.8" y="767.4499999999998" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">任职历史</text>
+<rect x="1295.2909824302264" y="800.8533422322215" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="1308.7909824302264" y="815.4033422322215" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="1406.8478643842957" y="737.31314359444" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1424.8478643842957" y="751.86314359444" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="302.85,1273.1499999999999 519.99,1099.4899999999998 977.5,733.5999999999999 1270.32,721.9299999999998 1455.9,714.54" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="858.25" y="767.8999999999999" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="888.25" y="782.4499999999998" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">任职机构</text>
+<rect x="302.4727468312229" y="1234.728291472826" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="315.9727468312229" y="1249.278291472826" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="1409.3651197852455" y="691.6651947148855" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1427.3651197852455" y="706.2151947148855" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="1756.47,1387.2199999999998 1813.1,1373.4299999999998 1877.55,1357.7399999999998 1934.17,1343.9599999999998" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1815.3" y="1340.8999999999999" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1845.3" y="1355.4499999999998" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">当时署名</text>
+<rect x="1773.4873765943246" y="1384.1978023617876" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="1786.9873765943246" y="1398.7478023617875" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="1885.6535037790786" y="1326.9783484476459" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1903.6535037790786" y="1341.5283484476458" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="340.32,1326.6599999999999 473.65,1294.5699999999997 648.0,1252.6 1607.01,1252.6 1794.31,1274.2199999999998 1934.05,1290.35" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1097.5" y="1234.7999999999997" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1127.5" y="1249.3499999999997" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">署名机构</text>
+<rect x="357.3186171096481" y="1323.7193451820322" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="370.8186171096481" y="1338.269345182032" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="1889.840031228746" y="1263.2316607987254" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1907.840031228746" y="1277.7816607987254" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="146.97,1273.2299999999998 146.97,1243.4299999999998 161.31,1219.6 190.0,1219.6 218.69,1219.6 233.03,1243.4299999999998 233.03,1273.2299999999998" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="149.5" y="1201.7999999999997" width="81" height="20" fill="white" opacity="0.94"/>
+<text x="190.0" y="1216.3499999999997" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">上级 / 下级</text>
+<rect x="142.97" y="1235.2299999999998" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="160.97" y="1249.7799999999997" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..1</text>
+<rect x="229.03" y="1235.2299999999998" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="247.03" y="1249.7799999999997" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="246.24,1452.1 334.88,1595.6999999999998 499.0,1861.6 514.85,1872.77 536.22,1887.83" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="402.5" y="1696.3999999999999" width="34" height="20" fill="white" opacity="0.94"/>
+<text x="419.5" y="1710.9499999999998" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">资助</text>
+<rect x="235.53412159873585" y="1473.2800077692657" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="249.03412159873585" y="1487.8300077692656" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="503.3972193085582" y="1850.256780584037" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="521.3972193085582" y="1864.806780584037" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="286.77,1451.84 377.18,1536.08 499.0,1649.6 515.24,1661.1499999999999 536.99,1676.62" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="402.5" y="1546.9999999999998" width="34" height="20" fill="white" opacity="0.94"/>
+<text x="419.5" y="1561.5499999999997" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">授奖</text>
+<rect x="284.2118511445119" y="1471.1704601656936" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="297.7118511445119" y="1485.7204601656936" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="504.2869323681484" y="1638.9821939309882" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="522.2869323681484" y="1653.5321939309881" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="799.4,2266.79 860.67,2298.8599999999997 917.5,2328.6 964.2,2361.22 1013.44,2395.62" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="845.25" y="2280.56" width="86" height="20" fill="white" opacity="0.94"/>
+<text x="888.25" y="2295.11" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">申请对应文献</text>
+<rect x="795.0775607761569" y="2291.03798287804" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="813.0775607761569" y="2305.5879828780403" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..1</text>
+<rect x="980.5044565406953" y="2358.107647472904" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="998.5044565406953" y="2372.657647472904" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="799.46,2107.0499999999997 857.74,2075.25 924.28,2038.9399999999998 982.06,2007.4199999999998" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="851.75" y="2025.2299999999998" width="73" height="20" fill="white" opacity="0.94"/>
+<text x="888.25" y="2039.7799999999997" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">按口径归入</text>
+<rect x="812.7448443702294" y="2095.928165462054" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="830.7448443702294" y="2110.478165462054" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<rect x="932.7750483585448" y="1998.5388390374899" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="950.7750483585448" y="2013.0888390374898" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="1082.74,1025.6999999999998 1081.28,996.2999999999997 1096.2,972.0999999999999 1127.51,972.0999999999999 1158.81,972.0999999999999 1173.73,996.2999999999997 1172.27,1025.6999999999998" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1074.0" y="954.2999999999997" width="107" height="20" fill="white" opacity="0.94"/>
+<text x="1127.5" y="968.8499999999997" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">父领域 / 子领域</text>
+<rect x="1077.3340043216213" y="987.0400792892409" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1095.3340043216213" y="1001.5900792892409" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..1</text>
+<rect x="1169.6415339756343" y="988.4288441162474" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1187.6415339756343" y="1002.9788441162474" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="1277.97,1097.3899999999999 1334.6,1094.6499999999999 1399.05,1091.5399999999997 1455.67,1088.8099999999997" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1336.8" y="1073.8999999999999" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1366.8" y="1088.4499999999998" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">标注领域</text>
+<rect x="1293.113870920993" y="1100.0204654966274" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="1306.613870920993" y="1114.5704654966273" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="1409.0282473508198" y="1066.1747316932647" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1427.0282473508198" y="1080.7247316932646" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="1196.52,1617.3799999999999 1287.04,1498.6599999999999 1446.17,1289.9399999999998 1536.78,1171.08" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1336.8" y="1338.8999999999999" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1366.8" y="1353.4499999999998" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">成果对象</text>
+<rect x="1184.36409035965" y="1576.6253807068229" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1202.36409035965" y="1591.1753807068228" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..1</text>
+<rect x="1512.9386497690252" y="1191.83513985465" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1530.9386497690252" y="1206.3851398546499" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="1277.97,922.3699999999999 1334.6,949.9399999999998 1399.05,981.3199999999997 1455.67,1008.8899999999999" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1336.8" y="933.8999999999999" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1366.8" y="948.4499999999998" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">学者对象</text>
+<rect x="1291.2731997065412" y="912.0388080127617" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1309.2731997065412" y="926.5888080127617" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..1</text>
+<rect x="1406.366777348848" y="999.2190161886491" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1424.366777348848" y="1013.7690161886491" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="340.32,2607.83 391.1,2620.83 447.83,2635.35 498.61,2648.35" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="389.5" y="2606.79" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="419.5" y="2621.34" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">原文版本</text>
+<rect x="350.47310860190754" y="2618.3368391876065" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="363.97310860190754" y="2632.8868391876067" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="456.95689139809247" y="2617.8431608123933" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="474.95689139809247" y="2632.3931608123935" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="340.32,2532.02 391.1,2519.25 447.83,2504.97 498.61,2492.1899999999996" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="389.5" y="2490.85" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="419.5" y="2505.4" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">固定来源</text>
+<rect x="357.3888959873747" y="2528.768525625132" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="370.8888959873747" y="2543.318525625132" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="456.87362163234997" y="2502.600397889011" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="474.87362163234997" y="2517.1503978890114" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="799.46,2527.06 856.1,2554.5099999999998 920.54,2585.75 977.17,2613.2" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="858.25" y="2538.47" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="888.25" y="2553.02" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">批次观测</text>
+<rect x="805.0511579038536" y="2541.869830509097" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="818.5511579038536" y="2556.419830509097" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="940.0805614689955" y="2578.3888465288082" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="958.0805614689955" y="2592.9388465288084" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="799.46,2686.29 856.1,2686.1699999999996 920.54,2686.0299999999997 977.17,2685.91" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="858.25" y="2668.24" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="888.25" y="2682.79" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">观察内容</text>
+<rect x="813.9895981094545" y="2690.230646678776" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="827.4895981094545" y="2704.780646678776" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="931.1403966750902" y="2661.9693638076233" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="949.1403966750902" y="2676.5193638076234" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="799.38,2741.6099999999997 885.75,2773.41 977.5,2807.2 1277.51,2807.2 1420.23,2662.25 1517.24,2563.73" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1097.5" y="2789.3999999999996" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1127.5" y="2803.95" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">映射历史</text>
+<rect x="807.3185065754004" y="2754.4220677672256" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="820.8185065754004" y="2768.972067767226" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="1489.5701429293624" y="2583.504046823256" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1507.5701429293624" y="2598.054046823256" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="1243.32,1795.9899999999998 1263.14,1811.4099999999999 1277.51,1822.6 1337.51,2098.2 1462.51,2274.0899999999997 1541.61,2385.3999999999996" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1336.8" y="2080.3999999999996" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1366.8" y="2094.95" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">成果目标</text>
+<rect x="1238.8171299169055" y="1814.2303856609851" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1256.8171299169055" y="1828.780385660985" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..1</text>
+<rect x="1518.8026363795195" y="2344.4663733936595" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1536.8026363795195" y="2359.0163733936597" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="1277.97,2474.6 1334.6,2474.6 1399.05,2474.6 1455.67,2474.6" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1336.8" y="2456.7999999999997" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1366.8" y="2471.35" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">文献目标</text>
+<rect x="1287.97" y="2478.6" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1305.97" y="2493.15" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..1</text>
+<rect x="1409.67" y="2450.6" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1427.67" y="2465.15" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="605.97,2365.2299999999996 605.97,2335.43 620.32,2311.6 649.0,2311.6 677.69,2311.6 692.04,2335.43 692.04,2365.2299999999996" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="602.0" y="2293.7999999999997" width="94" height="20" fill="white" opacity="0.94"/>
+<text x="649.0" y="2308.35" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">前次 / 新任务</text>
+<rect x="601.97" y="2327.2299999999996" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="619.97" y="2341.7799999999997" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..1</text>
+<rect x="688.04" y="2327.2299999999996" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="706.04" y="2341.7799999999997" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="799.39,2372.3999999999996 833.03,2353.89 859.0,2339.6 1277.51,2261.2 1396.01,2192.6 1459.86,2127.83 1516.98,2069.89" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1097.5" y="2243.3999999999996" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1127.5" y="2257.95" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">产生变更</text>
+<rect x="812.6706834680831" y="2361.16758701338" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="830.6706834680831" y="2375.71758701338" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..1</text>
+<rect x="1489.2924037587902" y="2089.6582797465235" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1507.2924037587902" y="2104.2082797465237" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="1277.9,1795.6599999999999 1311.53,1815.7099999999998 1337.51,1831.1999999999998 1394.34,1862.9399999999998 1455.62,1897.1599999999999" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1330.3" y="1813.3999999999999" width="73" height="20" fill="white" opacity="0.94"/>
+<text x="1366.8" y="1827.9499999999998" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">受影响成果</text>
+<rect x="1291.1193505624408" y="1787.973471516882" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1309.1193505624408" y="1802.523471516882" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<rect x="1419.9991299767175" y="1861.2852064815465" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1437.9991299767175" y="1875.8352064815465" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="1277.97,2089.7299999999996 1334.6,2070.83 1399.05,2049.33 1455.67,2030.4299999999998" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1323.8" y="2032.7799999999997" width="86" height="20" fill="white" opacity="0.94"/>
+<text x="1366.8" y="2047.3299999999997" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">决定后的修订</text>
+<rect x="1290.9619604627123" y="2084.145697756604" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1308.9619604627123" y="2098.695697756604" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..1</text>
+<rect x="1403.5115073167158" y="2006.530454050365" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1421.5115073167158" y="2021.080454050365" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="764.82,2597.21 784.64,2581.79 799.0,2570.6 977.5,2258.6 1000.24,2240.4399999999996 1027.95,2218.31" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="858.25" y="2350.62" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="888.25" y="2365.17" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">复核证据</text>
+<rect x="760.3128035764296" y="2558.971748949188" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="778.3128035764296" y="2573.5217489491883" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<rect x="996.8076252371563" y="2236.7226377795687" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1014.8076252371563" y="2251.272637779569" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="675.9,513.8399999999997 743.03,745.23 917.5,1346.6 977.5,2034.6 993.36,2045.77 1014.72,2060.83" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="851.75" y="1129.6" width="73" height="20" fill="white" opacity="0.94"/>
+<text x="888.25" y="1144.1499999999999" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">当前处理人</text>
+<rect x="652.25597851868" y="534.6319635865981" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="670.25597851868" y="549.181963586598" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..1</text>
+<rect x="981.8968206445514" y="2023.2501304987138" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="999.8968206445514" y="2037.8001304987138" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="2253.47,1919.58 2305.36,1909.9999999999998 2362.13,1899.5099999999998 2412.67,1890.1799999999998" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<polygon points="2253.56,1919.56 2243.62,1915.2999999999997 2235.86,1922.83 2245.8,1927.1" fill="#53657C" stroke="#53657C" stroke-width="1.5"/>
+<rect x="2280.8" y="1883.5299999999997" width="86" height="20" fill="white" opacity="0.94"/>
+<text x="2323.8" y="1898.0799999999997" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">拥有快照条目</text>
+<rect x="2270.0464155591444" y="1918.263848634887" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="2283.5464155591444" y="1932.8138486348869" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="2371.492185139418" y="1908.8642970680576" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="2389.492185139418" y="1923.4142970680575" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="1277.86,1722.85 1553.14,1752.8099999999997 2137.5,1816.3999999999999 2412.73,1846.35" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1802.3" y="1764.9999999999998" width="86" height="20" fill="white" opacity="0.94"/>
+<text x="1845.3" y="1779.5499999999997" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">规范成果身份</text>
+<rect x="1290.6808887365576" y="1729.7972952448981" width="27" height="20" fill="white" opacity="0.94"/>
+<text x="1304.1808887365576" y="1744.347295244898" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">1</text>
+<rect x="2368.408833876669" y="1819.403135572973" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="2386.408833876669" y="1833.953135572973" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<polyline points="1756.47,1971.1899999999998 1813.1,1967.62 1877.55,1963.5699999999997 1934.17,1959.9999999999998" fill="none" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1815.3" y="1945.9999999999998" width="60" height="20" fill="white" opacity="0.94"/>
+<text x="1845.3" y="1960.5499999999997" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">覆盖修订</text>
+<rect x="1767.2953498630245" y="1973.4006185459305" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1785.2953498630245" y="1987.9506185459304" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<rect x="1887.3445147237953" y="1937.7897011260452" width="36" height="20" fill="white" opacity="0.94"/>
+<text x="1905.3445147237953" y="1952.3397011260452" text-anchor="middle" font-size="13" font-weight="400" fill="#172B4D">0..*</text>
+<rect x="498.9988" y="335.60079999999994" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="498.9988" y="335.60079999999994" width="300.00239999999997" height="48" fill="#E5EFFA" stroke="#53657C" stroke-width="1.5"/>
+<text x="649.0" y="354.20079999999996" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">平台账号</text>
+<text x="649.0" y="375.5007999999999" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">Account</text>
+<text x="508.9988" y="405.15079999999995" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- accountId: ID</text>
+<text x="508.9988" y="425.15079999999995" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- accountStatus: AccountStatus</text>
+<text x="508.9988" y="445.15079999999995" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- researcherVerified: Boolean</text>
+<line x1="498.9988" y1="452.60079999999994" x2="799.0011999999999" y2="452.60079999999994" stroke="#53657C"/>
+<text x="508.9988" y="474.15079999999995" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ canApplyForPortal(): Boolean</text>
+<text x="508.9988" y="495.15079999999995" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ checkObjectPermission(): Boolean</text>
+<rect x="977.4988000000001" y="760.6007999999999" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="977.4988000000001" y="760.6007999999999" width="300.00239999999997" height="48" fill="#E5EFFA" stroke="#53657C" stroke-width="1.5"/>
+<text x="1127.5" y="779.2008" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">来源学者</text>
+<text x="1127.5" y="800.5007999999999" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">Scholar</text>
+<text x="987.4988000000001" y="830.1507999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- scholarId: ID</text>
+<text x="987.4988000000001" y="850.1507999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- displayName: String</text>
+<text x="987.4988000000001" y="870.1507999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- aliases: Alias[0..*]</text>
+<line x1="977.4988000000001" y1="877.6007999999999" x2="1277.5012000000002" y2="877.6007999999999" stroke="#53657C"/>
+<text x="987.4988000000001" y="899.1507999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ addEvidence()</text>
+<text x="987.4988000000001" y="920.1507999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ proposeIdentityMatch()</text>
+<rect x="1934.4988" y="387.60079999999994" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1934.4988" y="387.60079999999994" width="300.00239999999997" height="48" fill="#E5EFFA" stroke="#53657C" stroke-width="1.5"/>
+<text x="2084.5" y="406.20079999999996" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">学者门户</text>
+<text x="2084.5" y="427.5007999999999" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">ScholarPortal</text>
+<text x="1944.4988" y="457.15079999999995" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- portalId: ID</text>
+<text x="1944.4988" y="477.15079999999995" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- publicBio: String[0..1]</text>
+<text x="1944.4988" y="497.15079999999995" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- personalAnnotations: Annotation[0..*]</text>
+<line x1="1934.4988" y1="504.60079999999994" x2="2234.5012" y2="504.60079999999994" stroke="#53657C"/>
+<text x="1944.4988" y="526.1507999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ updatePersonalInfo()</text>
+<text x="1944.4988" y="547.1507999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ listPublicWorks()</text>
+<rect x="1455.9988" y="387.60079999999994" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1455.9988" y="387.60079999999994" width="300.00239999999997" height="48" fill="#E5EFFA" stroke="#53657C" stroke-width="1.5"/>
+<text x="1606.0" y="406.20079999999996" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">门户管理授权</text>
+<text x="1606.0" y="427.5007999999999" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">PortalAuthorization</text>
+<text x="1465.9988" y="457.15079999999995" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- authorizationId: ID</text>
+<text x="1465.9988" y="477.15079999999995" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- validFrom: Instant</text>
+<text x="1465.9988" y="497.15079999999995" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- validTo: Instant[0..1]</text>
+<line x1="1455.9988" y1="504.60079999999994" x2="1756.0012000000002" y2="504.60079999999994" stroke="#53657C"/>
+<text x="1465.9988" y="526.1507999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ isEffective(): Boolean</text>
+<text x="1465.9988" y="547.1507999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ revoke()</text>
+<rect x="977.4988000000001" y="109.60079999999991" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="977.4988000000001" y="109.60079999999991" width="300.00239999999997" height="48" fill="#E5EFFA" stroke="#53657C" stroke-width="1.5"/>
+<text x="1127.5" y="128.2007999999999" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">门户认领申请</text>
+<text x="1127.5" y="149.5007999999999" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">ClaimApplication</text>
+<text x="987.4988000000001" y="179.15079999999992" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- claimId: ID</text>
+<text x="987.4988000000001" y="199.15079999999992" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- state: ClaimState</text>
+<text x="987.4988000000001" y="219.15079999999992" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- materialVersion: Integer</text>
+<line x1="977.4988000000001" y1="226.6007999999999" x2="1277.5012000000002" y2="226.6007999999999" stroke="#53657C"/>
+<text x="987.4988000000001" y="248.15079999999992" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ submit()</text>
+<text x="987.4988000000001" y="269.15079999999995" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ requestMore()</text>
+<rect x="1455.9988" y="176.0983999999999" width="300.00239999999997" height="157.0032" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1455.9988" y="176.0983999999999" width="300.00239999999997" height="48" fill="#E5EFFA" stroke="#53657C" stroke-width="1.5"/>
+<text x="1606.0" y="194.6983999999999" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">门户审核记录</text>
+<text x="1606.0" y="215.99839999999992" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">ReviewRecord</text>
+<text x="1465.9988" y="245.64839999999992" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- reviewId: ID</text>
+<text x="1465.9988" y="265.6483999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- action: ReviewAction</text>
+<text x="1465.9988" y="285.6483999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- reason: String</text>
+<line x1="1455.9988" y1="293.0983999999999" x2="1756.0012000000002" y2="293.0983999999999" stroke="#53657C"/>
+<text x="1465.9988" y="314.6483999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ appendDecision()</text>
+<rect x="977.4988000000001" y="1617.6008" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="977.4988000000001" y="1617.6008" width="300.00239999999997" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="1127.5" y="1636.2007999999998" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">规范学术成果 «abstract»</text>
+<text x="1127.5" y="1657.5008" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">Work</text>
+<text x="987.4988000000001" y="1687.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- workId: ID</text>
+<text x="987.4988000000001" y="1707.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- title: FieldValue&lt;String&gt;</text>
+<text x="987.4988000000001" y="1727.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- dataVersion: Integer</text>
+<line x1="977.4988000000001" y1="1734.6008" x2="1277.5012000000002" y2="1734.6008" stroke="#53657C"/>
+<text x="987.4988000000001" y="1756.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ applyVerifiedUpdate()</text>
+<text x="987.4988000000001" y="1777.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ markForReview()</text>
+<rect x="498.9988" y="1444.6008" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="498.9988" y="1444.6008" width="300.00239999999997" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="649.0" y="1463.2007999999998" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">论文</text>
+<text x="649.0" y="1484.5008" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">Paper</text>
+<text x="508.9988" y="1514.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- doi: ExternalIdentity[0..1]</text>
+<text x="508.9988" y="1534.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- venue: FieldValue&lt;String&gt;</text>
+<text x="508.9988" y="1554.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- publicationDates: BusinessDate[0..*]</text>
+<line x1="498.9988" y1="1561.6008" x2="799.0011999999999" y2="1561.6008" stroke="#53657C"/>
+<text x="508.9988" y="1583.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ checkDoiIdentity(): IdentityResult</text>
+<text x="508.9988" y="1604.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ selectPublicationDate(): BusinessDate</text>
+<rect x="498.9988" y="2099.6007999999997" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="498.9988" y="2099.6007999999997" width="300.00239999999997" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="649.0" y="2118.2007999999996" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">专利申请</text>
+<text x="649.0" y="2139.5008" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">Patent</text>
+<text x="508.9988" y="2169.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- jurisdiction: String</text>
+<text x="508.9988" y="2189.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- applicationNo: ExternalIdentity[0..1]</text>
+<text x="508.9988" y="2209.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- grantDate: BusinessDate[0..1]</text>
+<line x1="498.9988" y1="2216.6007999999997" x2="799.0011999999999" y2="2216.6007999999997" stroke="#53657C"/>
+<text x="508.9988" y="2238.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ checkApplicationIdentity(): IdentityResult</text>
+<text x="508.9988" y="2259.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ hasGrantEvidence(): Boolean</text>
+<rect x="977.4988000000001" y="2396.0984" width="300.00239999999997" height="157.0032" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="977.4988000000001" y="2396.0984" width="300.00239999999997" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="1127.5" y="2414.6983999999998" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">专利公开文献</text>
+<text x="1127.5" y="2435.9984" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">PatentDocument</text>
+<text x="987.4988000000001" y="2465.6484" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- documentId: ID</text>
+<text x="987.4988000000001" y="2485.6484" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- authority: String</text>
+<text x="987.4988000000001" y="2505.6484" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- publicationNo: ExternalIdentity</text>
+<line x1="977.4988000000001" y1="2513.0984" x2="1277.5012000000002" y2="2513.0984" stroke="#53657C"/>
+<text x="987.4988000000001" y="2534.6484" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ checkDocumentIdentity(): IdentityResult</text>
+<rect x="977.4988000000001" y="1850.0983999999999" width="300.00239999999997" height="157.0032" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="977.4988000000001" y="1850.0983999999999" width="300.00239999999997" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="1127.5" y="1868.6983999999998" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">专利家族</text>
+<text x="1127.5" y="1889.9984" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">PatentFamily</text>
+<text x="987.4988000000001" y="1919.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- familyId: ID</text>
+<text x="987.4988000000001" y="1939.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- scheme: String</text>
+<text x="987.4988000000001" y="1959.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- sourceFamilyKey: String</text>
+<line x1="977.4988000000001" y1="1967.0983999999999" x2="1277.5012000000002" y2="1967.0983999999999" stroke="#53657C"/>
+<text x="987.4988000000001" y="1988.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ verifyMembership()</text>
+<rect x="498.9988" y="1888.0983999999999" width="300.00239999999997" height="157.0032" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="498.9988" y="1888.0983999999999" width="300.00239999999997" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="649.0" y="1906.6983999999998" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">科研项目</text>
+<text x="649.0" y="1927.9984" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">Project</text>
+<text x="508.9988" y="1957.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- funder: InstitutionRef</text>
+<text x="508.9988" y="1977.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- approvalNo: ExternalIdentity[0..1]</text>
+<text x="508.9988" y="1997.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- programScope: String[0..1]</text>
+<line x1="498.9988" y1="2005.0983999999999" x2="799.0011999999999" y2="2005.0983999999999" stroke="#53657C"/>
+<text x="508.9988" y="2026.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ checkFundingIdentity(): IdentityResult</text>
+<rect x="498.9988" y="1677.0983999999999" width="300.00239999999997" height="157.0032" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="498.9988" y="1677.0983999999999" width="300.00239999999997" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="649.0" y="1695.6983999999998" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">学术获奖</text>
+<text x="649.0" y="1716.9984" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">Award</text>
+<text x="508.9988" y="1746.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- awardSystem: String</text>
+<text x="508.9988" y="1766.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- awardYear: BusinessDate</text>
+<text x="508.9988" y="1786.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- sourceProjectNo: String[0..1]</text>
+<line x1="498.9988" y1="1794.0983999999999" x2="799.0011999999999" y2="1794.0983999999999" stroke="#53657C"/>
+<text x="508.9988" y="1815.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ checkAwardIdentity(): IdentityResult</text>
+<rect x="1455.9988" y="1334.6008" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1455.9988" y="1334.6008" width="300.00239999999997" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="1606.0" y="1353.2007999999998" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">成果贡献关系</text>
+<text x="1606.0" y="1374.5008" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">Contribution</text>
+<text x="1465.9988" y="1404.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- contributionId: ID</text>
+<text x="1465.9988" y="1424.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- roles: RoleAssignment[1..*]</text>
+<text x="1465.9988" y="1444.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- confirmation: RelationStatus</text>
+<line x1="1455.9988" y1="1451.6008" x2="1756.0012000000002" y2="1451.6008" stroke="#53657C"/>
+<text x="1465.9988" y="1473.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ confirm()</text>
+<text x="1465.9988" y="1494.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ revokeRelation()</text>
+<rect x="39.99880000000002" y="1273.6008" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="39.99880000000002" y="1273.6008" width="300.00239999999997" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="190.0" y="1292.2007999999998" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">机构</text>
+<text x="190.0" y="1313.5008" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">Institution</text>
+<text x="49.99880000000002" y="1343.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- institutionId: ID</text>
+<text x="49.99880000000002" y="1363.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- name: String</text>
+<text x="49.99880000000002" y="1383.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- ror: ExternalIdentity[0..1]</text>
+<line x1="39.99880000000002" y1="1390.6008" x2="340.0012" y2="1390.6008" stroke="#53657C"/>
+<text x="49.99880000000002" y="1412.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ proposeIdentityMatch()</text>
+<text x="49.99880000000002" y="1433.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ recordHistory()</text>
+<rect x="1455.9988" y="619.6007999999999" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1455.9988" y="619.6007999999999" width="300.00239999999997" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="1606.0" y="638.2008" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">学者任职关系</text>
+<text x="1606.0" y="659.5007999999999" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">Affiliation</text>
+<text x="1465.9988" y="689.1507999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- affiliationId: ID</text>
+<text x="1465.9988" y="709.1507999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- roleTitle: String[0..1]</text>
+<text x="1465.9988" y="729.1507999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- validPeriod: TimeInterval</text>
+<line x1="1455.9988" y1="736.6007999999999" x2="1756.0012000000002" y2="736.6007999999999" stroke="#53657C"/>
+<text x="1465.9988" y="758.1507999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ confirmPeriod()</text>
+<text x="1465.9988" y="779.1507999999999" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ closePeriod()</text>
+<rect x="1934.4988" y="1218.6008" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1934.4988" y="1218.6008" width="300.00239999999997" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="2084.5" y="1237.2007999999998" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">成果发生时的机构关系</text>
+<text x="2084.5" y="1258.5008" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">ContributionAffiliation</text>
+<text x="1944.4988" y="1288.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- relationId: ID</text>
+<text x="1944.4988" y="1308.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- validPeriod: TimeInterval</text>
+<text x="1944.4988" y="1328.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- basis: String</text>
+<line x1="1934.4988" y1="1335.6008" x2="2234.5012" y2="1335.6008" stroke="#53657C"/>
+<text x="1944.4988" y="1357.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ confirmEvidence()</text>
+<text x="1944.4988" y="1378.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ revoke()</text>
+<rect x="977.4988000000001" y="1026.0983999999999" width="300.00239999999997" height="157.0032" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="977.4988000000001" y="1026.0983999999999" width="300.00239999999997" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="1127.5" y="1044.6983999999998" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">学术领域</text>
+<text x="1127.5" y="1065.9984" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">ResearchField</text>
+<text x="987.4988000000001" y="1095.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- fieldId: ID</text>
+<text x="987.4988000000001" y="1115.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- label: String</text>
+<text x="987.4988000000001" y="1135.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- taxonomyVersion: String</text>
+<line x1="977.4988000000001" y1="1143.0983999999999" x2="1277.5012000000002" y2="1143.0983999999999" stroke="#53657C"/>
+<text x="987.4988000000001" y="1164.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ descendants(): FieldSet</text>
+<rect x="1455.9988" y="992.6007999999999" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1455.9988" y="992.6007999999999" width="300.00239999999997" height="48" fill="#E5F3EC" stroke="#53657C" stroke-width="1.5"/>
+<text x="1606.0" y="1011.2008" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">领域标注</text>
+<text x="1606.0" y="1032.5008" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">FieldAssignment</text>
+<text x="1465.9988" y="1062.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- assignmentId: ID</text>
+<text x="1465.9988" y="1082.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- basis: EvidenceRef[1..*]</text>
+<text x="1465.9988" y="1102.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- confirmation: RelationStatus</text>
+<line x1="1455.9988" y1="1109.6008" x2="1756.0012000000002" y2="1109.6008" stroke="#53657C"/>
+<text x="1465.9988" y="1131.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ confirmMapping()</text>
+<text x="1465.9988" y="1152.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ retireMapping()</text>
+<rect x="39.99880000000002" y="2480.6007999999997" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="39.99880000000002" y="2480.6007999999997" width="300.00239999999997" height="48" fill="#FFF0DA" stroke="#53657C" stroke-width="1.5"/>
+<text x="190.0" y="2499.2007999999996" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">数据源</text>
+<text x="190.0" y="2520.5008" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">DataSource</text>
+<text x="49.99880000000002" y="2550.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- sourceId: ID</text>
+<text x="49.99880000000002" y="2570.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- name: String</text>
+<text x="49.99880000000002" y="2590.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- accessPolicyRef: String</text>
+<line x1="39.99880000000002" y1="2597.6007999999997" x2="340.0012" y2="2597.6007999999997" stroke="#53657C"/>
+<text x="49.99880000000002" y="2619.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ validateAccessPolicy(): ValidationResult</text>
+<text x="49.99880000000002" y="2640.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ disable()</text>
+<rect x="498.9988" y="2597.6007999999997" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="498.9988" y="2597.6007999999997" width="300.00239999999997" height="48" fill="#FFF0DA" stroke="#53657C" stroke-width="1.5"/>
+<text x="649.0" y="2616.2007999999996" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">原始来源记录版本</text>
+<text x="649.0" y="2637.5008" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">SourceRecord</text>
+<text x="508.9988" y="2667.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- sourceRecordId: ID</text>
+<text x="508.9988" y="2687.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- sourceKey: String</text>
+<text x="508.9988" y="2707.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- rawChecksum: String</text>
+<line x1="498.9988" y1="2714.6007999999997" x2="799.0011999999999" y2="2714.6007999999997" stroke="#53657C"/>
+<text x="508.9988" y="2736.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ compareChecksum(): Boolean</text>
+<text x="508.9988" y="2757.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ retainRawVersion()</text>
+<rect x="498.9988" y="2365.6007999999997" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="498.9988" y="2365.6007999999997" width="300.00239999999997" height="48" fill="#FFF0DA" stroke="#53657C" stroke-width="1.5"/>
+<text x="649.0" y="2384.2007999999996" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">采集任务</text>
+<text x="649.0" y="2405.5008" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">CollectionTask</text>
+<text x="508.9988" y="2435.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- taskId: ID</text>
+<text x="508.9988" y="2455.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- state: CollectionState</text>
+<text x="508.9988" y="2475.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- fixedWindow: TimeWindow</text>
+<line x1="498.9988" y1="2482.6007999999997" x2="799.0011999999999" y2="2482.6007999999997" stroke="#53657C"/>
+<text x="508.9988" y="2504.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ dispatch()</text>
+<text x="508.9988" y="2525.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ commitCheckpoint()</text>
+<rect x="977.4988000000001" y="2607.0984" width="300.00239999999997" height="157.0032" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="977.4988000000001" y="2607.0984" width="300.00239999999997" height="48" fill="#FFF0DA" stroke="#53657C" stroke-width="1.5"/>
+<text x="1127.5" y="2625.6983999999998" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">采集观测</text>
+<text x="1127.5" y="2646.9984" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">CollectionObservation</text>
+<text x="987.4988000000001" y="2676.6484" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- observationId: ID</text>
+<text x="987.4988000000001" y="2696.6484" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- observedAt: Instant</text>
+<text x="987.4988000000001" y="2716.6484" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- batchKey: String</text>
+<line x1="977.4988000000001" y1="2724.0984" x2="1277.5012000000002" y2="2724.0984" stroke="#53657C"/>
+<text x="987.4988000000001" y="2745.6484" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ recordOutcome()</text>
+<rect x="1455.9988" y="2385.6007999999997" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1455.9988" y="2385.6007999999997" width="300.00239999999997" height="48" fill="#FFF0DA" stroke="#53657C" stroke-width="1.5"/>
+<text x="1606.0" y="2404.2007999999996" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">来源映射</text>
+<text x="1606.0" y="2425.5008" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">SourceMapping</text>
+<text x="1465.9988" y="2455.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- mappingId: ID</text>
+<text x="1465.9988" y="2475.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- validPeriod: TimeInterval</text>
+<text x="1465.9988" y="2495.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- ruleVersion: String</text>
+<line x1="1455.9988" y1="2502.6007999999997" x2="1756.0012000000002" y2="2502.6007999999997" stroke="#53657C"/>
+<text x="1465.9988" y="2524.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ linkVerifiedTarget()</text>
+<text x="1465.9988" y="2545.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ supersedeMapping()</text>
+<rect x="1455.9988" y="1891.6008" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1455.9988" y="1891.6008" width="300.00239999999997" height="48" fill="#EEE9F8" stroke="#53657C" stroke-width="1.5"/>
+<text x="1606.0" y="1910.2007999999998" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">更新记录</text>
+<text x="1606.0" y="1931.5008" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">UpdateRecord</text>
+<text x="1465.9988" y="1961.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- updateId: ID</text>
+<text x="1465.9988" y="1981.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- targetRefs: BusinessRef[1..*]</text>
+<text x="1465.9988" y="2001.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- beforeAfter: RevisionRef</text>
+<line x1="1455.9988" y1="2008.6008" x2="1756.0012000000002" y2="2008.6008" stroke="#53657C"/>
+<text x="1465.9988" y="2030.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ registerFollowUp()</text>
+<text x="1465.9988" y="2051.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ recordPublishOutcome()</text>
+<rect x="977.4988000000001" y="2061.0984" width="300.00239999999997" height="157.0032" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="977.4988000000001" y="2061.0984" width="300.00239999999997" height="48" fill="#EEE9F8" stroke="#53657C" stroke-width="1.5"/>
+<text x="1127.5" y="2079.6983999999998" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">数据治理复核</text>
+<text x="1127.5" y="2100.9984" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">GovernanceReview</text>
+<text x="987.4988000000001" y="2130.6484" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- reviewTaskId: ID</text>
+<text x="987.4988000000001" y="2150.6484" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- targetRefs: BusinessRef[1..*]</text>
+<text x="987.4988000000001" y="2170.6484" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- evidence: EvidenceRef[1..*]</text>
+<line x1="977.4988000000001" y1="2178.0984" x2="1277.5012000000002" y2="2178.0984" stroke="#53657C"/>
+<text x="987.4988000000001" y="2199.6484" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ recordDecision()</text>
+<rect x="1934.4988" y="1861.6008" width="300.00239999999997" height="177.9984" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="1934.4988" y="1861.6008" width="300.00239999999997" height="48" fill="#EEE9F8" stroke="#53657C" stroke-width="1.5"/>
+<text x="2084.5" y="1880.2007999999998" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">公开数据版本</text>
+<text x="2084.5" y="1901.5008" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">PublicRelease</text>
+<text x="1944.4988" y="1931.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- releaseId: ID</text>
+<text x="1944.4988" y="1951.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- snapshotRef: String</text>
+<text x="1944.4988" y="1971.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- taxonomyVersion: String</text>
+<line x1="1934.4988" y1="1978.6008" x2="2234.5012" y2="1978.6008" stroke="#53657C"/>
+<text x="1944.4988" y="2000.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ validateConsistency(): ValidationResult</text>
+<text x="1944.4988" y="2021.1508" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ markReady()</text>
+<rect x="2412.9988" y="1784.0983999999999" width="300.00239999999997" height="157.0032" fill="white" stroke="#53657C" stroke-width="1.5"/>
+<rect x="2412.9988" y="1784.0983999999999" width="300.00239999999997" height="48" fill="#EEE9F8" stroke="#53657C" stroke-width="1.5"/>
+<text x="2563.0" y="1802.6983999999998" text-anchor="middle" font-size="16" font-weight="700" fill="#172B4D">公开版本条目</text>
+<text x="2563.0" y="1823.9984" text-anchor="middle" font-size="14" font-weight="700" fill="#172B4D">ReleaseEntry</text>
+<text x="2422.9988" y="1853.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- entryKey: ReleaseWorkKey</text>
+<text x="2422.9988" y="1873.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- workVersion: Integer</text>
+<text x="2422.9988" y="1893.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">- publicSnapshotRef: String</text>
+<line x1="2412.9988" y1="1901.0983999999999" x2="2713.0011999999997" y2="1901.0983999999999" stroke="#53657C"/>
+<text x="2422.9988" y="1922.6483999999998" text-anchor="start" font-size="13" font-weight="400" fill="#172B4D">+ readPublicView()</text>
+</g></svg>

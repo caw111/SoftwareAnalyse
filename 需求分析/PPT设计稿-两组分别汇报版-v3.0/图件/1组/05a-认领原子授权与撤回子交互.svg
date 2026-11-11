@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1560" height="2185" viewBox="0 0 1560 2185"><rect width="100%" height="100%" fill="white"/>
+<text x="35" y="56" font-family="Microsoft YaHei, sans-serif" font-size="34" font-weight="700" fill="#26384B">认领原子授权与撤回竞争</text>
+<text x="35" y="99" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">图5-2  调用自图5-1批准分支；两条路径是独立并发请求，非先批准再撤回</text>
+<line x1="130.0" y1="242" x2="130.0" y2="2165" stroke="#748497" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="390.0" y1="242" x2="390.0" y2="2165" stroke="#748497" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="650.0" y1="242" x2="650.0" y2="2165" stroke="#748497" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="910.0" y1="242" x2="910.0" y2="2165" stroke="#748497" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="1170.0" y1="242" x2="1170.0" y2="2165" stroke="#748497" stroke-width="2" stroke-dasharray="6 5"/>
+<line x1="1430.0" y1="242" x2="1430.0" y2="2165" stroke="#748497" stroke-width="2" stroke-dasharray="6 5"/>
+<rect x="15.0" y="142" width="230" height="100" fill="#E9F0F7" stroke="#748497" stroke-width="2"/>
+<text x="75.0" y="173" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">有权审核人</text>
+<text x="91.5" y="203" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">«actor»</text>
+<rect x="275.0" y="142" width="230" height="100" fill="#E9F0F7" stroke="#748497" stroke-width="2"/>
+<text x="357.0" y="173" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">申请人</text>
+<text x="351.5" y="203" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">«actor»</text>
+<rect x="535.0" y="142" width="230" height="100" fill="#E9F0F7" stroke="#748497" stroke-width="2"/>
+<text x="580.5" y="173" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">ClaimControl</text>
+<text x="600.5" y="203" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">«control»</text>
+<rect x="795.0" y="142" width="230" height="100" fill="#E9F0F7" stroke="#748497" stroke-width="2"/>
+<text x="820.0" y="173" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">ClaimApplication</text>
+<text x="868.0" y="203" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">«entity»</text>
+<rect x="1055.0" y="142" width="230" height="100" fill="#E9F0F7" stroke="#748497" stroke-width="2"/>
+<text x="1067.5" y="173" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">PortalAuthorization</text>
+<text x="1128.0" y="203" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">«entity»</text>
+<rect x="1315.0" y="142" width="230" height="100" fill="#E9F0F7" stroke="#748497" stroke-width="2"/>
+<text x="1346.015625" y="173" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">ReviewRecord／</text>
+<text x="1374.4921875" y="203" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">AuditEntry</text>
+<text x="1348.5" y="233" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">«entity / value»</text>
+<rect x="50" y="270" width="1460" height="51" fill="#F5F7FA" stroke="#D9DDE3" stroke-width="2"/>
+<text x="65" y="303" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">路径A  管理员批准请求</text>
+<text x="144.0" y="370" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">CX01  approveClaim(申请、材料版本、expect</text>
+<text x="144.0" y="401" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">edVersion)</text>
+<line x1="130.0" y1="421" x2="650.0" y2="421" stroke="#748497" stroke-width="2"/>
+<polyline points="638.0,415 650.0,421 638.0,427" fill="none" stroke="#26384B" stroke-width="2"/>
+<rect x="22" y="444" width="1516" height="776" fill="none" stroke="#748497" stroke-width="2"/>
+<text x="38" y="476" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">critical [批准事务  账号资格、审核权限、目标版本与双方有效唯一性重验]</text>
+<text x="664.0" y="529" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">CX02  重读申请；仅 P</text>
+<text x="664.0" y="560" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">ENDING_REVIEW 且</text>
+<text x="664.0" y="591" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">版本匹配可继续</text>
+<line x1="650.0" y1="611" x2="910.0" y2="611" stroke="#748497" stroke-width="2"/>
+<polyline points="898.0,605 910.0,611 898.0,617" fill="none" stroke="#26384B" stroke-width="2"/>
+<text x="664.0" y="665" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">CX03  复核有效授权：账号最多一个；门户最多</text>
+<text x="664.0" y="696" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">一个</text>
+<line x1="650.0" y1="716" x2="1170.0" y2="716" stroke="#748497" stroke-width="2"/>
+<polyline points="1158.0,710 1170.0,716 1158.0,722" fill="none" stroke="#26384B" stroke-width="2"/>
+<rect x="30" y="739" width="1500" height="461" fill="none" stroke="#748497" stroke-width="2"/>
+<text x="46" y="771" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">alt [全部条件成立]</text>
+<text x="664.0" y="824" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">CX04  approve(expe</text>
+<text x="664.0" y="855" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">ctedVersion) → APP</text>
+<text x="664.0" y="886" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">ROVED</text>
+<line x1="650.0" y1="906" x2="910.0" y2="906" stroke="#748497" stroke-width="2"/>
+<polyline points="898.0,900 910.0,906 898.0,912" fill="none" stroke="#26384B" stroke-width="2"/>
+<text x="664.0" y="960" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">CX05  创建指定账号与门户的有效授权</text>
+<line x1="650.0" y1="980" x2="1170.0" y2="980" stroke="#748497" stroke-width="2"/>
+<polyline points="1158.0,974 1170.0,980 1158.0,986" fill="none" stroke="#26384B" stroke-width="2"/>
+<text x="664.0" y="1034" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">CX06  appendDecision(批准, 理由)；追加审计；共同提交</text>
+<line x1="650.0" y1="1054" x2="1430.0" y2="1054" stroke="#748497" stroke-width="2"/>
+<polyline points="1418.0,1048 1430.0,1054 1418.0,1060" fill="none" stroke="#26384B" stroke-width="2"/>
+<line x1="44" y1="1077" x2="1516" y2="1077" stroke="#748497" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="58" y="1109" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">else [状态／权限／唯一性冲突或任一步持久化失败]</text>
+<rect x="66" y="1131" width="1428" height="51" fill="#F5F7FA" stroke="#D9DDE3" stroke-width="2"/>
+<text x="81" y="1164" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">整笔回滚或拒绝；读取实际已提交状态，不重置并发胜出的撤回</text>
+<rect x="50" y="1240" width="1460" height="51" fill="#F5F7FA" stroke="#D9DDE3" stroke-width="2"/>
+<text x="65" y="1273" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">路径B  本人撤回请求  可与路径A竞争同一申请版本</text>
+<text x="404.0" y="1340" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">CX07  withdrawClai</text>
+<text x="404.0" y="1371" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">m(申请、expectedVe</text>
+<text x="404.0" y="1402" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">rsion)</text>
+<line x1="390.0" y1="1422" x2="650.0" y2="1422" stroke="#748497" stroke-width="2"/>
+<polyline points="638.0,1416 650.0,1422 638.0,1428" fill="none" stroke="#26384B" stroke-width="2"/>
+<rect x="22" y="1445" width="1516" height="461" fill="none" stroke="#748497" stroke-width="2"/>
+<text x="38" y="1477" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">critical [撤回事务  校验本人身份、当前状态和预期版本]</text>
+<rect x="30" y="1499" width="1500" height="387" fill="none" stroke="#748497" stroke-width="2"/>
+<text x="46" y="1531" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">alt [PENDING_REVIEW 或 NEED_MORE_INFO 且版本匹配]</text>
+<text x="664.0" y="1584" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">CX08  withdraw(exp</text>
+<text x="664.0" y="1615" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">ectedVersion) → WI</text>
+<text x="664.0" y="1646" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">THDRAWN</text>
+<line x1="650.0" y1="1666" x2="910.0" y2="1666" stroke="#748497" stroke-width="2"/>
+<polyline points="898.0,1660 910.0,1666 898.0,1672" fill="none" stroke="#26384B" stroke-width="2"/>
+<text x="664.0" y="1720" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">CX09  追加撤回审计；共同提交，不创建授权</text>
+<line x1="650.0" y1="1740" x2="1430.0" y2="1740" stroke="#748497" stroke-width="2"/>
+<polyline points="1418.0,1734 1430.0,1740 1418.0,1746" fill="none" stroke="#26384B" stroke-width="2"/>
+<line x1="44" y1="1763" x2="1516" y2="1763" stroke="#748497" stroke-width="2" stroke-dasharray="6 5"/>
+<text x="58" y="1795" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">else [审批已提交／版本过期／其他不允许状态]</text>
+<rect x="66" y="1817" width="1428" height="51" fill="#F5F7FA" stroke="#D9DDE3" stroke-width="2"/>
+<text x="81" y="1850" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">拒绝撤回，返回实际终态；不能撤销已经生效的授权</text>
+<text x="404.0" y="1957" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">CX10  返回提交结果／</text>
+<text x="404.0" y="1988" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">版本冲突；同一版本最</text>
+<text x="404.0" y="2019" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">多一条路径成功</text>
+<line x1="650.0" y1="2039" x2="390.0" y2="2039" stroke="#748497" stroke-width="2" stroke-dasharray="6 5"/>
+<polyline points="402.0,2033 390.0,2039 402.0,2045" fill="none" stroke="#26384B" stroke-width="2"/>
+<rect x="45" y="2062" width="1470" height="61" fill="#EDF3F8" stroke="#748497" stroke-width="2"/>
+<text x="57" y="2096" font-family="Microsoft YaHei, sans-serif" font-size="22" font-weight="700" fill="#26384B">ref</text>
+<text x="125" y="2097" font-family="Microsoft YaHei, sans-serif" font-size="23" font-weight="400" fill="#26384B">通过后解除授权使用 PortalAuthorization.revoke()；保留 APPROVED 和历史</text>
+</svg>

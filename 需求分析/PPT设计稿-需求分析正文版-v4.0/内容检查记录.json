@@ -1,0 +1,35 @@
+{
+  "pages": 10,
+  "detailed_analysis_pages": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "difference": "仅第10页一段简要对照",
+  "requirements": "相同需求基准",
+  "group1_pages": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "group2_pages": [
+    6,
+    7,
+    8,
+    9
+  ],
+  "slide_content": "对象数据与行为、关系约束、输入处理输出、事务、异常、并发；无计时或制作备注",
+  "images": {
+    "1组": 13,
+    "2组": 4
+  },
+  "local_links": "pass",
+  "image_bytes": "identical to source",
+  "artifact": "Markdown逐页内容；未生成PPTX"
+}
