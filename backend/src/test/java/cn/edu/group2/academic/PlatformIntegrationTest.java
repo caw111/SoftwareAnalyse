@@ -53,9 +53,15 @@ class PlatformIntegrationTest {
         assertThrows(ApiException.class,()->query("",Long.MAX_VALUE));
     }
     @Test void samePersonInstitutionMustBelongToSameContribution() {
-        var correct=catalog.query("","","S1","I1","",null,null,"demo","year",0,20,null);
-        var wrong=catalog.query("","","S1","I2","",null,null,"demo","year",0,20,null);
-        assertTrue((long)catalog.search(correct).get("total")>0);assertEquals(0L,catalog.search(wrong).get("total"));
+        String key=Db.id(),field="paired-contribution-"+key;
+        var work=new ImportService.WorkInput("PAPER","贡献与署名机构条件隔离","2026","10.5555/pair."+key,null,null,null,
+            "","Functional fixture",null,null,"UNKNOWN",true,key,"https://example.org/"+key,
+            List.of(new ImportService.Contributor("S1","林知远","AUTHOR","I1"),new ImportService.Contributor("S2","同名作者","AUTHOR","I2")),
+            List.of("I1","I2"),List.of(field),Map.of());
+        imports.ingest(new ImportService.Batch(key,"pair-fixture-"+key,List.of(work)),admin);
+        var correct=catalog.query("","","S1","I1",field,null,null,"demo","year",0,20,null);
+        var wrong=catalog.query("","","S1","I2",field,null,null,"demo","year",0,20,null);
+        assertEquals(1L,catalog.search(correct).get("total"));assertEquals(0L,catalog.search(wrong).get("total"));
     }
     @Test void normalizeDoiAndDoNotInventDatePrecision() {
         assertEquals("10.1234/test",ImportService.normalizeDoi(" HTTPS://DOI.ORG/10.1234/TEST "));

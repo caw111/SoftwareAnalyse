@@ -94,7 +94,7 @@ public class CrawlStore {
             UPDATE crawl_source SET enabled=?,config_version=config_version+1,min_interval_ms=?,schedule_enabled=?,schedule_every_minutes=?,schedule_issn=?,schedule_page_size=?,schedule_max_pages=?,schedule_lookback_days=?,next_schedule_at=?,schedule_user_id=? WHERE id=?
             """,input.enabled(),input.minIntervalMs(),input.scheduleEnabled(),input.scheduleEveryMinutes(),input.scheduleIssn().toUpperCase(Locale.ROOT),input.schedulePageSize(),input.scheduleMaxPages(),input.scheduleLookbackDays(),Db.now()+input.scheduleEveryMinutes()*60_000L,actor.id(),id);
         if(!input.enabled()) db.update("UPDATE crawl_task SET stop_requested=TRUE,version=version+1 WHERE source_id=? AND state IN ('PENDING','RUNNING','RETRYING')",id);
-        imports.audit(actor.id(),id,"CRAWL_SOURCE_CONFIG",null,null,"来源配置版本 "+(input.version()+1));return sources().stream().filter(s->s.get("id").equals(id)).findFirst().orElseThrow();
+        imports.audit(actor.id(),id,"CRAWL_SOURCE_CONFIG",null,null,json.writeValueAsString(Map.of("configVersion",input.version()+1,"settings",input)));return sources().stream().filter(s->s.get("id").equals(id)).findFirst().orElseThrow();
     }
     @Transactional
     public Object action(String id,Action input,AuthService.Actor actor) {
@@ -114,7 +114,7 @@ public class CrawlStore {
             }
             case "RETRY" -> {
                 if(!state.equals("FAILED")||flag(task,"stopRequested")) throw ApiException.conflict("只能重试未放弃的失败任务");
-                if(num(task,"retryCount")>=3||Set.of("PAGE_LIMIT","LIMIT_REACHED","ACCESS_RESTRICTED","ROBOTS_DENIED","NON_JSON","INVALID_RESPONSE","RESPONSE_TOO_LARGE").contains(str(task,"errorCode"))) throw ApiException.conflict("预算耗尽或需要修正访问/范围条件，请创建关联的新任务");
+                if(num(task,"retryCount")>=3||Set.of("PAGE_LIMIT","LIMIT_REACHED","ACCESS_RESTRICTED","ACCESS_CHALLENGE","ROBOTS_DENIED","NON_JSON","INVALID_RESPONSE","RESPONSE_TOO_LARGE").contains(str(task,"errorCode"))) throw ApiException.conflict("预算耗尽或需要修正访问/范围条件，请创建关联的新任务");
                 transition(task,"RETRYING","MANUAL_RETRY","管理员请求从已提交断点重试");
                 db.update("UPDATE crawl_task SET retry_count=retry_count+1,runnable=TRUE,next_run_at=? WHERE id=?",Db.now(),id);
             }
@@ -244,7 +244,16 @@ public class CrawlStore {
         failLocked(task,source,failure);
     }
     private void failLocked(Map<String,Object> task,Map<String,Object> source,CrawlFailure failure) {
+        boolean currentPolicyAttempt=str(task,"state").equals("RUNNING")&&task.get("leaseToken")!=null
+            &&task.get("leaseToken").equals(source.get("leaseToken"))&&num(task,"leaseUntil")>Db.now()
+            &&num(source,"leaseUntil")>Db.now()&&num(task,"sourceConfigVersion")==num(source,"configVersion");
         transition(task,"FAILED",failure.code,failure.getMessage());
+        if(currentPolicyAttempt&&flag(source,"scheduleEnabled")&&Set.of("ACCESS_RESTRICTED","ROBOTS_DENIED","ACCESS_CHALLENGE").contains(failure.code)) {
+            db.update("UPDATE crawl_source SET schedule_enabled=FALSE,config_version=config_version+1 WHERE id=? AND config_version=?",source.get("id"),source.get("configVersion"));
+            event(task,"SOURCE_SCHEDULE_PAUSED","FAILED","来源访问条件异常，已暂停定时计划；人工复核后在来源设置中重新启用");
+            imports.audit(str(task,"createdBy"),str(source,"id"),"CRAWL_SOURCE_PAUSED",null,null,
+                json.writeValueAsString(Map.of("configVersion",num(source,"configVersion")+1,"taskId",task.get("id"),"reason",failure.code,"scheduleEnabled",false)));
+        }
         db.update("UPDATE crawl_task SET error_code=?,error_message=? WHERE id=?",failure.code,failure.getMessage(),task.get("id"));
         if(failure.retryAt>0) db.update("UPDATE crawl_source SET next_request_at=? WHERE id=?",Math.max(failure.retryAt,num(source,"nextRequestAt")),source.get("id"));
         if(failure.retryable&&num(task,"retryCount")<3&&!flag(task,"stopRequested")) {

@@ -70,7 +70,12 @@ public class CrossrefClient {
         return response;
     }
     private void requireSuccess(CrossrefTransport.Response response,CrawlStore.Lease lease) {
-        int status=response.status();if(status==200) return;
+        int status=response.status();
+        String body=response.body().toLowerCase(Locale.ROOT);
+        boolean html=response.header("Content-Type").toLowerCase(Locale.ROOT).contains("html")||body.stripLeading().startsWith("<html")||body.stripLeading().startsWith("<!doctype html");
+        if(response.header("cf-mitigated").equalsIgnoreCase("challenge")||html&&(body.contains("captcha")||body.contains("cf-chl-")||body.contains("challenge-platform")||body.contains("verify you are human")||body.contains("验证码")||body.contains("人机验证")))
+            throw new CrawlFailure("ACCESS_CHALLENGE","来源要求验证码或人机核验，需人工复核访问条件；不会绕过挑战",false);
+        if(status==200) return;
         if(status==401||status==403||status==412||status>=300&&status<400) throw new CrawlFailure("ACCESS_RESTRICTED","来源拒绝访问或要求跳转，请管理员核查访问条件；不会绕过限制",false);
         if((status==400||status==404)&&!CrawlStore.str(lease.task(),"doi").isEmpty()) throw new CrawlFailure("DOI_NOT_FOUND","来源未返回该 DOI，请核对标识",false);
         if((status==400||status==404)&&!CrawlStore.str(lease.task(),"nextCursor").equals("*"))

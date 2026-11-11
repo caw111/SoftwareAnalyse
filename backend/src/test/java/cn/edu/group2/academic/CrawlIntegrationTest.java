@@ -194,6 +194,25 @@ class CrawlIntegrationTest {
         assertEquals(0,((Number)result.get("inserted")).intValue());
         assertTrue(db.one("SELECT exclusions_json FROM crawl_page WHERE task_id=?",task.get("id")).get("exclusionsJson").toString().contains("NON_RESEARCH_FRONT_MATTER"));
     }
+    @Test void accessChallengePausesScheduleButStalePolicyCallbackCannotDisableNewConfiguration() {
+        db.update("UPDATE crawl_source SET schedule_enabled=TRUE,schedule_user_id=?,next_schedule_at=?",admin.id(),Long.MAX_VALUE);
+        var task=start(task("BOUNDED",1,2,2));
+        replies.add(new Reply(200,"text/html","<html>Please complete CAPTCHA to verify you are human</html>",Map.of()));runPage();
+        var result=state(task);assertEquals("FAILED",result.get("state"));assertEquals("ACCESS_CHALLENGE",result.get("errorCode"));
+        var retry=assertThrows(ApiException.class,()->store.action(task.get("id").toString(),new CrawlStore.Action(((Number)result.get("version")).intValue(),"RETRY"),admin));
+        assertEquals(409,retry.status);
+        var source=db.one("SELECT * FROM crawl_source WHERE id='crossref'");
+        assertEquals(Boolean.TRUE,source.get("enabled"));assertEquals(Boolean.FALSE,source.get("scheduleEnabled"));
+        assertEquals(1,((Number)source.get("configVersion")).intValue());
+        assertEquals(1,db.count("SELECT COUNT(*) FROM crawl_task_log WHERE task_id=? AND action='SOURCE_SCHEDULE_PAUSED'",task.get("id")));
+        db.update("UPDATE crawl_source SET schedule_enabled=TRUE,config_version=2,next_request_at=0");
+        start(task("BOUNDED",1,2,2));var olderPolicy=store.claimNext();assertNotNull(olderPolicy);
+        // A subsequent explicit administrator configuration must survive the old request's callback.
+        db.update("UPDATE crawl_source SET config_version=3,schedule_enabled=TRUE");
+        store.fail(olderPolicy,new CrawlFailure("ACCESS_RESTRICTED","Old request denied",false));
+        source=db.one("SELECT * FROM crawl_source WHERE id='crossref'");
+        assertEquals(Boolean.TRUE,source.get("scheduleEnabled"));assertEquals(3,((Number)source.get("configVersion")).intValue());
+    }
     @Test void robotsRulesRespectSpecificAgentAndLongestMatchingAllow() {
         assertFalse(CrossrefClient.robotsAllows("User-agent: *\nDisallow: /works\n","/works"));
         assertTrue(CrossrefClient.robotsAllows("User-agent: *\nDisallow: /works\nAllow: /works/10.1\n","/works/10.123/example"));
