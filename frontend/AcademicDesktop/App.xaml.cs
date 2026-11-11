@@ -9,7 +9,7 @@ public partial class App : Application
         {
             string address = Environment.GetEnvironmentVariable("ACADEMIC_API_URL") ?? "http://127.0.0.1:8080";
             if (e.Args.Contains("--login-smoke")) { await LoginWindow.RunLoginSmoke(address); Shutdown(); return; }
-            if (e.Args.Contains("--smoke") || e.Args.Contains("--workspace-smoke"))
+            if (e.Args.Contains("--smoke") || e.Args.Contains("--workspace-smoke") || e.Args.Contains("--crawl-smoke"))
             {
                 var workspace = new MainWindow(new ApiClient(address), null, address);
                 MainWindow = workspace; workspace.Show();

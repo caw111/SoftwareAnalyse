@@ -92,6 +92,7 @@ public sealed class ImportVm(JsonNode data)
     public string SourceName => data.Text("sourceName"); public string State => data.Text("state");
     public long Received => data.Number("received"); public long Inserted => data.Number("inserted");
     public long Duplicates => data.Number("duplicates"); public long Revision => data.Number("revision");
+    public long Updated => data.Number("updated"); public long Unchanged => data.Number("unchanged"); public long Conflicts => data.Number("conflicts");
 }
 public static class Labels
 {
@@ -107,4 +108,56 @@ public static class Labels
         "UNDER_REVIEW" => "审核中", "NEED_MORE_INFO" => "待补充材料", "APPROVED" => "已通过", "REJECTED" => "已驳回", "WITHDRAWN" => "已撤回", _ => state
     };
     public static string Role(string role) => role switch { "USER" => "普通用户", "RESEARCHER" => "科研人员", "ADMIN" => "管理员", "AUTHOR" => "作者", "INVENTOR" => "发明人", "PI" => "负责人", "AWARDEE" => "完成人", _ => role };
+}
+
+public sealed class CrawlTaskVm(JsonNode data)
+{
+    public JsonNode Data { get; } = data;
+    public string Id => Data.Text("id");
+    public string StateLabel => Data.Flag("stopRequested") && Data.Text("state") == "RUNNING" ? "等待停止确认" : Data.Text("state") == "PENDING" && Data.Flag("runnable") ? "等待执行" : CrawlDisplay.State(Data.Text("state"));
+    public string ModeLabel => Data.Text("mode") == "INCREMENTAL" ? "窗口增量" : "限量采集";
+    public string ScopeLabel => Data.Text("doi") is { Length: > 0 } doi ? "DOI " + doi
+        : string.Join(" · ", new[] { Data.Text("issn"), Data.Text("queryText"), Data.Text("fromDate") + " → " + Data.Text("untilDate") }.Where(value => value.Length > 0));
+    public long Received => Data.Number("received"); public long Inserted => Data.Number("inserted"); public long Updated => Data.Number("updated");
+    public long Unchanged => Data.Number("unchanged"); public long Conflicts => Data.Number("conflicts"); public long Excluded => Data.Number("excluded");
+    public long Pages => Data.Number("committedPages");
+}
+public sealed class CrawlPageVm(JsonNode data)
+{
+    public JsonNode Data { get; } = data;
+    public long Number => Data.Number("pageNo");
+    public string Label => $"第 {Number} 页 · HTTP {Data.Number("httpStatus")} · 接收 {Data.Number("received")} · 可处理 {Data.Number("accepted")} · 隔离 {Data.Number("excluded")} · 版本 {Data.Number("revision")}";
+}
+public sealed class MetadataConflictVm(JsonNode data)
+{
+    public JsonNode Data { get; } = data;
+    public string Title => Data.Text("title", Data.Text("workId"));
+    public string SourceName => Data.Text("sourceName");
+    public string StateLabel => Data.Text("state") == "OPEN" ? "待复核" : Data.Text("state");
+    public string ReasonLabel => Data.Text("reason") switch
+    {
+        "SOURCE_IDENTITY_CONFLICT" => "来源强标识冲突", "CROSS_SOURCE_FIELD_CONFLICT" => "不同来源字段冲突",
+        "MANUALLY_LOCKED_METADATA" => "主值已人工锁定", "MISSING_SOURCE_UPDATE_TIME" => "缺少来源更新时间",
+        "STALE_SOURCE_OBSERVATION" => "较旧来源观测", "SAME_TIME_DIFFERENT_CONTENT" => "同一时间内容不同",
+        "PARSER_RULE_CHANGED" => "解析规则变化需复核", _ => Data.Text("reason")
+    };
+}
+public static class CrawlDisplay
+{
+    public static string State(string state) => state switch
+    {
+        "PENDING" => "待启动", "RUNNING" => "运行中", "RETRYING" => "等待重试", "SUCCESS" => "已完成", "FAILED" => "失败", "STOPPED" => "已停止", "" => "—", _ => state
+    };
+    public static string Completion(string reason) => reason switch
+    {
+        "LIMIT_REACHED" => "达到设定条数，限量任务结束", "SOURCE_EXHAUSTED" => "来源范围已扫描完成", "DOI_COMPLETED" => "单篇 DOI 已完成",
+        "" => "尚未结束", _ => reason
+    };
+    public static string Time(JsonNode node, string key)
+    {
+        long value = node.Number(key);
+        if (value <= 0) return "—";
+        try { return DateTimeOffset.FromUnixTimeMilliseconds(value).ToLocalTime().ToString("yyyy-MM-dd HH:mm:ss"); }
+        catch (ArgumentOutOfRangeException) { return "—"; }
+    }
 }

@@ -55,6 +55,7 @@ public partial class MainWindow : Window
         await Run(ConnectCore);
         if (Environment.GetCommandLineArgs().Contains("--smoke")) await RunSmoke();
         if (Environment.GetCommandLineArgs().Contains("--workspace-smoke")) await RunWorkspaceSmoke();
+        if (Environment.GetCommandLineArgs().Contains("--crawl-smoke")) await RunCrawlSmoke();
     }
     private async void Connect(object sender, RoutedEventArgs e) => await Run(ConnectCore);
     private async Task ConnectCore()
@@ -100,8 +101,8 @@ public partial class MainWindow : Window
     private void HighlightNavigation(int index)
     {
         PageTitle.Text = titles[index]; PageSubtitle.Text = subtitles[index];
-        ScopeSelector.Visibility = index <= 4 || index is 6 or 7 ? Visibility.Visible : Visibility.Collapsed;
-        ScopeFooter.Text = index is 8 or 9 ? "管理员视图 · 全平台" : index is 4 or 5 or 6 ? "个人资料仅当前账号可见 · 数据范围用于检索候选成果与门户" : DataScope == "demo" ? "课程模拟资料 · 不用于科研评价" : "真实资料 · 与模拟资料分开统计";
+        ScopeSelector.Visibility = index <= 4 || index == 6 || (index == 7 && AdminCatalogTabs.SelectedIndex == 1) ? Visibility.Visible : Visibility.Collapsed;
+        ScopeFooter.Text = index == 7 && AdminCatalogTabs.SelectedIndex != 1 ? (AdminCatalogTabs.SelectedIndex == 0 ? "真实来源采集 · 原始响应可追溯" : "管理员视图 · 全平台") : index is 8 or 9 ? "管理员视图 · 全平台" : index is 4 or 5 or 6 ? "个人资料仅当前账号可见 · 数据范围用于检索候选成果与门户" : DataScope == "demo" ? "课程模拟资料 · 不用于科研评价" : "真实资料 · 与模拟资料分开统计";
         foreach (var button in Navigation.Children.OfType<Button>())
         {
             bool selected = button.Tag.ToString() == index.ToString();
@@ -224,6 +225,7 @@ public partial class MainWindow : Window
         DrawBars(YearChart, data["years"]!.Items().Select(i => (i.Text("year", "年份未知"), i.Number("count"))));
         DrawBars(InstitutionChart, data["institutions"]!.Items().Select(i => ($"{i.Number("rank")}  {i.Text("name")}", i.Number("count"))));
         DrawBars(FieldChart, data["fields"]!.Items().Select(i => (i.Text("name"), i.Number("count"))));
+        DrawHotspotStatistics(data);
         StatsContext.Text = $"版本 {data.Number("revision")} · {(DataScope == "demo" ? "模拟资料" : "真实资料")} · 沿用成果发现中的筛选条件";
         StatisticsNotes.Text = data.Text("notes") + "\n引用来源汇总：" + string.Join("；", data["citations"]!.Items().Select(c => $"{c.Text("source")}：{c.Number("count")} 次，覆盖 {c.Number("covered")} 篇"));
     }

@@ -1,6 +1,7 @@
 .gradle/
 .gradle-user-home/
 .dotnet-home/
+.nuget-http-cache/
 **/build/
 **/bin/
 **/obj/

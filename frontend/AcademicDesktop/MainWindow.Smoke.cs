@@ -179,6 +179,8 @@ public partial class MainWindow
             Dataset.SelectedIndex = 0;
             SwitchPage(7); await LoadAdminCatalog();
             AssertSmoke(AdminWorks.Items.Count > 0, "管理员成果目录未加载。");
+            await CaptureWorkspace("admin-crawl", output, screenshots);
+            AdminCatalogTabs.SelectedIndex = 1;
             await CaptureWorkspace("admin-catalog", output, screenshots);
             SwitchPage(8); reviewPage = 0; await LoadAdmin();
             AssertSmoke(ReviewGrid.Items.OfType<ClaimVm>().Any(c => c.Id == outcome.Id), "管理员队列未包含本次申请。");

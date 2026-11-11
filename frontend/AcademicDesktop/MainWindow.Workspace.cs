@@ -94,6 +94,7 @@ public partial class MainWindow
         ApplicationEvidence.Clear(); ApplicationWork.ItemsSource = null; ProfileEditor.Visibility = Visibility.Collapsed; ApplicationComposer.Visibility = Visibility.Collapsed;
         AdminMetricCards.Children.Clear(); AdminTypeChart.Children.Clear(); AdminStateChart.Children.Clear(); AdminStatsContext.Text = "";
         AdminWorks.ItemsSource = null; AdminWorkDetail.Clear(); EditName.Clear(); EditOrcid.Clear(); EditWebsites.Clear(); EditAbout.Clear();
+        ClearCrawlViews();
         claimsPage = reviewPage = 0; MyClaimReason.Text = "登录后查看本人申请";
     }
     private async void ChangeSession(object sender, RoutedEventArgs e)
@@ -283,6 +284,8 @@ public partial class MainWindow
         AdminPrevious.IsEnabled = adminPage > 0; AdminNext.IsEnabled = (adminPage + 1) * 20 < count && (adminPage + 1) * 20 <= 10000;
         AdminWorkDetail.Text = "选择成果查看规范字段与原始来源。";
         ImportsGrid.ItemsSource = (await api.Get("api/admin/imports")).Items().Select(i => new ImportVm(i)).ToList();
+        if (AdminCatalogTabs.SelectedIndex == 0) await LoadCrawlOverview();
+        else if (AdminCatalogTabs.SelectedIndex == 3) await LoadQuality();
     }
     private async void AdminSearchClick(object sender, RoutedEventArgs e) => await Run(async () => { adminPage = 0; adminRevision = null; await LoadAdminCatalog(); });
     private async void AdminPage(object sender, RoutedEventArgs e) => await Run(async () => { adminPage = Math.Max(0, adminPage + int.Parse(((Button)sender).Tag.ToString()!)); await LoadAdminCatalog(); });
