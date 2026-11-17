@@ -10,7 +10,7 @@ if (!(Test-Path -LiteralPath $Exe)) { throw 'Publish the desktop executable firs
 $endpoint = [Uri]$ApiUrl
 if (!$endpoint.IsAbsoluteUri -or !$endpoint.IsLoopback) { throw 'This functional check creates synthetic accounts and only permits a local demo API.' }
 $null = Invoke-RestMethod "$ApiUrl/api/reference" -TimeoutSec 5
-$outputDir = Join-Path $projectRoot 'artifacts\verification-v0.3'
+$outputDir = Join-Path $projectRoot 'artifacts\verification-v0.4'
 New-Item -ItemType Directory -Force -Path $outputDir | Out-Null
 $previousApi = $env:ACADEMIC_API_URL
 $previousOutput = $env:ACADEMIC_SMOKE_OUTPUT

@@ -156,6 +156,24 @@ public partial class MainWindow : Window
     }
     private async void WorkSelected(object sender, SelectionChangedEventArgs e)
     { if (!busy && WorkList.SelectedItem is WorkVm work) await Run(() => ShowDetail(work.Id, release)); }
+    private static string ContributorAffiliation(JsonNode contributor)
+    {
+        string matched = contributor.Text("institutionName");
+        if (!string.IsNullOrWhiteSpace(matched)) return matched;
+        try
+        {
+            JsonNode? raw = contributor["rawAffiliationsJson"];
+            if (raw is JsonValue value && value.TryGetValue<string>(out string? serialized)) raw = string.IsNullOrWhiteSpace(serialized) ? null : JsonNode.Parse(serialized);
+            if (raw is JsonArray affiliations)
+            {
+                var names = affiliations.Items().Select(item => item is JsonObject ? item.Text("name") : item.ToString())
+                    .Where(name => !string.IsNullOrWhiteSpace(name)).Distinct().ToList();
+                if (names.Count > 0) return string.Join("；", names) + "（来源署名，未匹配规范机构）";
+            }
+        }
+        catch (System.Text.Json.JsonException) { }
+        return "署名机构未知";
+    }
     private async Task ShowDetail(string id, long? version)
     {
         var work = await api.Get($"api/works/{id}" + (version == null ? "" : "?revision=" + version));
@@ -167,7 +185,7 @@ public partial class MainWindow : Window
         AddDetail("发表 / 公告", work.Text("venue", "未知"));
         AddDetail("标识", work.Text("doi", work.Text("identifier", "无公开编号")) + "  " + Labels.Identifier(work.Text("identifierType")));
         if (work.Text("type") == "PAPER") AddDetail("引用与开放状态", (work["citationCount"] == null ? "引用未知" : $"引用 {work.Text("citationCount")} · {work.Text("citationSource")}") + "\n" + (work.Text("oaStatus") switch { "OPEN" => "发现开放版本", "NOT_FOUND" => "未发现开放版本", _ => "开放状态未知" }));
-        var people = work["contributors"]!.Items().Select(p => $"{p.Text("name")} · {Labels.Role(p.Text("role"))}\n{p.Text("institutionName", "署名机构未知")}  {p.Text("scholarId")}").ToList();
+        var people = work["contributors"]!.Items().Select(p => $"{p.Text("name")} · {Labels.Role(p.Text("role"))}\n{ContributorAffiliation(p)}  {p.Text("scholarId")}").ToList();
         AddDetail("贡献者与署名机构", people.Count == 0 ? "未公开个人名单；不根据单位推断个人。" : string.Join("\n\n", people));
         if (work["institutions"] is JsonArray institutions) AddDetail("成果单位", string.Join("、", institutions.Items().Select(i => i.Text("name"))));
         AddDetail("领域", string.Join("、", work["fields"]!.Items().Select(f => f.Text("fieldName"))));

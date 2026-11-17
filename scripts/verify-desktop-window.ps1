@@ -3,11 +3,32 @@ $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot
 if (!$Exe) { $Exe = Join-Path $projectRoot 'artifacts\windows-x64\AcademicDesktop.exe' }
 if (!$Output) { $Output = Join-Path $projectRoot 'artifacts\window-controls.json' }
+$Output = [IO.Path]::GetFullPath($Output)
+New-Item -ItemType Directory -Path (Split-Path $Output) -Force | Out-Null
 Add-Type -AssemblyName System.Drawing
 Add-Type @'
 using System;
 using System.Runtime.InteropServices;
 public static class DesktopWindowCheck {
+  [DllImport("kernel32.dll")] public static extern uint GetCurrentThreadId();
+  [DllImport("user32.dll")] public static extern IntPtr GetForegroundWindow();
+  [DllImport("user32.dll")] public static extern IntPtr WindowFromPoint(Point point);
+  [DllImport("user32.dll")] public static extern IntPtr GetAncestor(IntPtr hwnd,uint flags);
+  [DllImport("user32.dll")] public static extern uint GetWindowThreadProcessId(IntPtr hwnd,IntPtr process);
+  [DllImport("user32.dll")] public static extern bool AttachThreadInput(uint a,uint b,bool attach);
+  [DllImport("user32.dll")] public static extern bool BringWindowToTop(IntPtr hwnd);
+  public static bool Activate(IntPtr hwnd) {
+    uint current=GetCurrentThreadId(),foreground=GetWindowThreadProcessId(GetForegroundWindow(),IntPtr.Zero),target=GetWindowThreadProcessId(hwnd,IntPtr.Zero);
+    bool foregroundAttached=false,targetAttached=false;
+    try {
+      if(current!=foreground) foregroundAttached=AttachThreadInput(current,foreground,true);
+      if(current!=target && foreground!=target) targetAttached=AttachThreadInput(current,target,true);
+      BringWindowToTop(hwnd);return SetForegroundWindow(hwnd);
+    } finally {
+      if(targetAttached) AttachThreadInput(current,target,false);
+      if(foregroundAttached) AttachThreadInput(current,foreground,false);
+    }
+  }
   [StructLayout(LayoutKind.Sequential)] public struct Rect { public int Left,Top,Right,Bottom; }
   [StructLayout(LayoutKind.Sequential)] public struct Point { public int X,Y; }
   [StructLayout(LayoutKind.Sequential)] public struct MonitorInfo { public int Size; public Rect Monitor,Work; public uint Flags; }
@@ -54,16 +75,32 @@ function Read-Title([IntPtr]$Handle) {
     [void][DesktopWindowCheck]::ReadTitle($Handle,0x033F,[IntPtr]::Zero,[ref]$title)
     return $title
 }
-function Click-Point([int]$X,[int]$Y) {
-    [void][DesktopWindowCheck]::SetCursorPos($X,$Y)
+function Focus-TestWindow([IntPtr]$Handle) {
+    # A background PowerShell cannot assume SetForegroundWindow succeeded. Attach only
+    # during activation, then verify focus before sending real mouse input.
+    $activated=[DesktopWindowCheck]::Activate($Handle)
+    Wait-Until { [DesktopWindowCheck]::GetForegroundWindow() -eq $Handle } "Could not focus the test window (Activate returned $activated)."
+    Start-Sleep -Milliseconds 300
+}
+function Assert-PointTargetsWindow([IntPtr]$Handle,[int]$X,[int]$Y) {
+    $point=[DesktopWindowCheck+Point]::new(); $point.X=$X; $point.Y=$Y
+    $target=[DesktopWindowCheck]::GetAncestor([DesktopWindowCheck]::WindowFromPoint($point),2)
+    if ([DesktopWindowCheck]::GetForegroundWindow() -ne $Handle -or $target -ne $Handle) {
+        throw "Test window lost foreground or is covered at ($X, $Y); mouse input was not sent."
+    }
+}
+function Click-Point([IntPtr]$Handle,[int]$X,[int]$Y) {
+    Assert-PointTargetsWindow $Handle $X $Y
+    if (![DesktopWindowCheck]::SetCursorPos($X,$Y)) { throw 'Could not position the test pointer.' }
     [DesktopWindowCheck]::mouse_event(0x0002,0,0,0,[UIntPtr]::Zero)
     [DesktopWindowCheck]::mouse_event(0x0004,0,0,0,[UIntPtr]::Zero)
 }
 function Click-CaptionButton([IntPtr]$Handle,[int]$Index) {
+    Focus-TestWindow $Handle
     $title=Read-Title $Handle
     $rect=$title.Buttons[$Index]
     if (($title.States[$Index] -band 0x18001) -ne 0 -or $rect.Right -le $rect.Left) { throw "Native caption button $Index is unavailable." }
-    Click-Point (($rect.Left+$rect.Right)/2) (($rect.Top+$rect.Bottom)/2)
+    Click-Point $Handle (($rect.Left+$rect.Right)/2) (($rect.Top+$rect.Bottom)/2)
 }
 function Save-NativeWindow([IntPtr]$Handle,[string]$Path) {
     $rect=Read-Rect $Handle
@@ -85,7 +122,7 @@ try {
     Wait-Until { $windowProcess.Refresh(); $windowProcess.MainWindowHandle -ne [IntPtr]::Zero } 'No main window appeared.'
     $handle=$windowProcess.MainWindowHandle
     $windowDpi=[DesktopWindowCheck]::GetDpiForWindow($handle)
-    [void][DesktopWindowCheck]::SetForegroundWindow($handle)
+    Focus-TestWindow $handle
     Wait-Until { [DesktopWindowCheck]::IsZoomed($handle) } 'Startup did not maximize the window.'
     $monitor=[DesktopWindowCheck+MonitorInfo]::new(); $monitor.Size=[Runtime.InteropServices.Marshal]::SizeOf($monitor)
     [void][DesktopWindowCheck]::GetMonitorInfo([DesktopWindowCheck]::MonitorFromWindow($handle,2),[ref]$monitor)
@@ -101,11 +138,13 @@ try {
     $restored=Read-Rect $handle
     if ($restored.Left -lt $monitor.Work.Left -or $restored.Top -lt $monitor.Work.Top -or $restored.Right -gt $monitor.Work.Right -or $restored.Bottom -gt $monitor.Work.Bottom) { throw 'Restored window extends outside the work area.' }
 
+    Focus-TestWindow $handle
     $title=Read-Title $handle
     $captionX=$title.Title.Left+200; $captionY=[int](($title.Title.Top+$title.Title.Bottom)/2)
     $packed=[IntPtr](($captionY -shl 16) -bor ($captionX -band 0xffff))
     $hit=[DesktopWindowCheck]::Send($handle,0x0084,[IntPtr]::Zero,$packed).ToInt32()
     if ($hit -ne 2) { throw "Caption hit test returned $hit instead of HTCAPTION." }
+    Assert-PointTargetsWindow $handle $captionX $captionY
     [void][DesktopWindowCheck]::SetCursorPos($captionX,$captionY)
     [DesktopWindowCheck]::mouse_event(0x0002,0,0,0,[UIntPtr]::Zero)
     Start-Sleep -Milliseconds 120
@@ -120,7 +159,7 @@ try {
     Click-CaptionButton $handle 2
     Wait-Until { [DesktopWindowCheck]::IsIconic($handle) } 'Minimize button did not minimize the window.'
     [void][DesktopWindowCheck]::ShowWindow($handle,9)
-    [void][DesktopWindowCheck]::SetForegroundWindow($handle)
+    Focus-TestWindow $handle
     Wait-Until { ![DesktopWindowCheck]::IsIconic($handle) } 'Could not restore minimized window.'
     if (![DesktopWindowCheck]::IsZoomed($handle)) { Click-CaptionButton $handle 3 }
     Wait-Until { [DesktopWindowCheck]::IsZoomed($handle) } 'Final window is not maximized.'
@@ -133,13 +172,21 @@ try {
     $result=[ordered]@{
         ok=$true; dpi=$windowDpi; workArea=$monitor.Work;
         startupMaximized=$true; nativeStyle=('0x{0:X}' -f $style);
-        captionButtonsVisible=$true; restoreBounds=$restored; dragBounds=$moved;
+        captionButtonsVisible=$true; foregroundAndPointerTargetVerified=$true; restoreBounds=$restored; dragBounds=$moved;
         dragPassed=$true; maximizePassed=$true; minimizePassed=$true; closePassed=$true;
         iconPresent=$true; version=(Get-Item -LiteralPath $Exe).VersionInfo.FileVersion;
         tests='Real titlebar mouse drag and native caption button clicks; no API load test.'
     }
     $result | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath $Output -Encoding utf8
     $result | ConvertTo-Json -Depth 6
+} catch {
+    $failure=[ordered]@{ok=$false;error=$_.Exception.Message;foreground=[DesktopWindowCheck]::GetForegroundWindow().ToInt64();version=(Get-Item -LiteralPath $Exe).VersionInfo.FileVersion}
+    if ($windowProcess -and !$windowProcess.HasExited -and $windowProcess.MainWindowHandle -ne [IntPtr]::Zero) {
+        $failure.target=$windowProcess.MainWindowHandle.ToInt64()
+        try { Save-NativeWindow $windowProcess.MainWindowHandle ([IO.Path]::ChangeExtension($Output,'.failure.png')) } catch { }
+    }
+    $failure | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath $Output -Encoding utf8
+    throw
 } finally {
     [DesktopWindowCheck]::mouse_event(0x0004,0,0,0,[UIntPtr]::Zero)
     [void][DesktopWindowCheck]::SetCursorPos($oldCursor.X,$oldCursor.Y)

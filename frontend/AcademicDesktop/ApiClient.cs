@@ -110,13 +110,39 @@ public static class Labels
     public static string Role(string role) => role switch { "USER" => "普通用户", "RESEARCHER" => "科研人员", "ADMIN" => "管理员", "AUTHOR" => "作者", "INVENTOR" => "发明人", "PI" => "负责人", "AWARDEE" => "完成人", _ => role };
 }
 
-public sealed class CrawlTaskVm(JsonNode data)
+public sealed class CrawlSourceVm(JsonNode data)
 {
     public JsonNode Data { get; } = data;
     public string Id => Data.Text("id");
+    public string Name => Data.Text("name", Data.Text("sourceName", Id));
+    public string OutcomeType => Data.Text("outcomeType", Id == "crossref" ? "PAPER" : "");
+    public string ScopeKind => Data.Text("scopeKind", Id == "crossref" ? "CROSSREF_WINDOW" : "");
+    public bool IsBatch => ScopeKind == "REGISTERED_BATCH";
+    public bool IsCrossref => ScopeKind == "CROSSREF_WINDOW";
+    public bool SupportsIncremental => IsCrossref && (Data["supportsIncremental"] == null ? Id == "crossref" : Data.Flag("supportsIncremental"));
+    public bool SupportsSchedule => IsCrossref && (Data["supportsSchedule"] == null ? Id == "crossref" : Data.Flag("supportsSchedule"));
+    public string Label => Name + (OutcomeType.Length > 0 ? " · " + Labels.Type(OutcomeType) : "");
+    public IReadOnlyList<CrawlBatchVm> Batches => Data["batches"] is JsonArray batches ? batches.Items().Select(item => new CrawlBatchVm(item)).ToList() : [];
+}
+public sealed class CrawlBatchVm(JsonNode data)
+{
+    public JsonNode Data { get; } = data;
+    public string Id => Data.Text("id");
+    public string Label => Data.Text("label", Id);
+    public string Year => Data.Text("year");
+    public string Url => Data.Text("url");
+    public string ContentType => Data.Text("contentType");
+}
+public sealed class CrawlTaskVm(JsonNode data, CrawlSourceVm? source = null)
+{
+    public JsonNode Data { get; } = data;
+    public string Id => Data.Text("id");
+    public string SourceLabel => source?.Label ?? Data.Text("sourceId");
     public string StateLabel => Data.Flag("stopRequested") && Data.Text("state") == "RUNNING" ? "等待停止确认" : Data.Text("state") == "PENDING" && Data.Flag("runnable") ? "等待执行" : CrawlDisplay.State(Data.Text("state"));
-    public string ModeLabel => Data.Text("mode") == "INCREMENTAL" ? "窗口增量" : "限量采集";
-    public string ScopeLabel => Data.Text("doi") is { Length: > 0 } doi ? "DOI " + doi
+    public string ModeLabel => Data.Text("mode") == "INCREMENTAL" ? "窗口增量" : Data.Text("batchId").Length > 0 ? "清单限量" : "限量采集";
+    public string ScopeLabel => Data.Text("batchId") is { Length: > 0 } batchId
+        ? source?.Batches.FirstOrDefault(batch => batch.Id == batchId)?.Label ?? batchId
+        : Data.Text("doi") is { Length: > 0 } doi ? "DOI " + doi
         : string.Join(" · ", new[] { Data.Text("issn"), Data.Text("queryText"), Data.Text("fromDate") + " → " + Data.Text("untilDate") }.Where(value => value.Length > 0));
     public long Received => Data.Number("received"); public long Inserted => Data.Number("inserted"); public long Updated => Data.Number("updated");
     public long Unchanged => Data.Number("unchanged"); public long Conflicts => Data.Number("conflicts"); public long Excluded => Data.Number("excluded");
@@ -126,7 +152,7 @@ public sealed class CrawlPageVm(JsonNode data)
 {
     public JsonNode Data { get; } = data;
     public long Number => Data.Number("pageNo");
-    public string Label => $"第 {Number} 页 · HTTP {Data.Number("httpStatus")} · 接收 {Data.Number("received")} · 可处理 {Data.Number("accepted")} · 隔离 {Data.Number("excluded")} · 版本 {Data.Number("revision")}";
+    public string Label => $"提交 {Number} · HTTP {Data.Number("httpStatus")} · 接收 {Data.Number("received")} · 可处理 {Data.Number("accepted")} · 隔离 {Data.Number("excluded")} · 版本 {Data.Number("revision")}";
 }
 public sealed class MetadataConflictVm(JsonNode data)
 {

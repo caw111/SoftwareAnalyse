@@ -25,6 +25,7 @@ public partial class MainWindow
         report["screenshots"] = screenshots; report["checks"] = checks;
         JsonNode? originalSource = null;
         bool settingsTouched = false;
+        var batchSettingsToRestore = new Dictionary<string, JsonNode>();
         try
         {
             AssertSmoke(Uri.TryCreate(ServerAddress.Text, UriKind.Absolute, out var endpoint) && endpoint.IsLoopback,
@@ -50,6 +51,13 @@ public partial class MainWindow
             AssertSmoke(originalSource.Flag("enabled") && !originalSource.Flag("scheduleEnabled"),
                 "请在已启用 Crossref、未启用定时计划的本机演示 API 上运行；验收不会开启来源或真实定时计划。");
             checks.Add("administrator-navigation-and-source-entry");
+            AssertSmoke(ContributorAffiliation(new JsonObject { ["rawAffiliationsJson"] = "[\"来源署名大学\"]" }).Contains("来源署名大学（来源署名，未匹配规范机构）") &&
+                ContributorAffiliation(new JsonObject { ["institutionName"] = "规范机构", ["rawAffiliationsJson"] = "[\"原文机构\"]" }) == "规范机构",
+                "来源原署名机构未正确回显，或覆盖了已匹配的规范机构。");
+            checks.Add("source-affiliation-fallback-without-entity-match");
+            await SelectCrawlSmokeSource("crossref");
+            AssertSmoke(CrawlCrossrefScope.Visibility == Visibility.Visible && CrawlBatchScope.Visibility == Visibility.Collapsed &&
+                CrawlIncrementalMode.IsEnabled && CrawlScheduleEnabled.IsEnabled, "Crossref 范围与计划能力未正确呈现。");
 
             CrawlMode.SelectedIndex = 0; CrawlMaxRecords.Text = "2"; CrawlPageSize.Text = "2"; CrawlMaxPages.Text = "1";
             CrawlDoi.Text = "10.1038/nphys1170"; CrawlIssn.Clear(); CrawlQuery.Clear();
@@ -96,6 +104,77 @@ public partial class MainWindow
             CrawlTaskFormExpander.IsExpanded = false; CrawlTasks.BringIntoView();
             await CaptureWorkspace("tasks", output, screenshots);
 
+            var batchSourceIds = crawlSources.Where(source => source.IsBatch && source.Data.Flag("enabled") && source.Batches.Count > 0).Select(source => source.Id).ToList();
+            AssertSmoke(new[] { "PATENT", "PROJECT", "AWARD" }.All(type => crawlSources.Any(source => batchSourceIds.Contains(source.Id) && source.OutcomeType == type)),
+                "本机 API 未登记专利、项目、获奖的可用公告批次。");
+            foreach (string sourceId in batchSourceIds)
+            {
+                await SelectCrawlSmokeSource(sourceId);
+                var source = RequireCrawlSource();
+                var originalBatchSource = source.Data.DeepClone();
+                AssertSmoke(!originalBatchSource.Flag("scheduleEnabled") && !source.SupportsSchedule && !source.SupportsIncremental,
+                    "公告来源不应启用窗口增量或自动定时。");
+                AssertSmoke(CrawlBatchScope.Visibility == Visibility.Visible && CrawlCrossrefScope.Visibility == Visibility.Collapsed &&
+                    CrawlPublicationRange.Visibility == Visibility.Collapsed && !CrawlMode.IsEnabled && CrawlMode.SelectedIndex == 0 &&
+                    !CrawlIncrementalMode.IsEnabled && !CrawlScheduleEnabled.IsEnabled && CrawlScheduleEnabled.IsChecked == false &&
+                    CrawlScheduleFields.Visibility == Visibility.Collapsed, "切换公告来源后表单或能力限制不正确：" + sourceId);
+                AssertSmoke(crawlParentTaskId == null && crawlSettingsSourceId == sourceId &&
+                    crawlSettingsVersion == source.Data.Number("configVersion"), "来源切换保留了其他来源的关联任务或设置版本。");
+                var batch = CrawlBatch.SelectedItem as CrawlBatchVm ?? throw new InvalidOperationException("未选中已登记批次。");
+                AssertSmoke(CrawlBatchSummary.Text.Contains(batch.Id) && CrawlBatchSummary.Text.Contains(batch.Url) &&
+                    CrawlBatchSummary.Text.Contains("清单年度"), "登记批次证据未正确展示。");
+                CrawlTaskFormExpander.IsExpanded = true; CrawlMaxRecords.Text = "2"; CrawlPageSize.Text = "2"; CrawlMaxPages.Text = "1";
+                // A changed source must not send old Crossref scope, even if hidden fields contain stale input.
+                CrawlDoi.Text = "10.1038/nphys1170"; CrawlIssn.Text = "1234-567X"; CrawlQuery.Text = "hidden-crossref-scope";
+                CrawlPublicationFrom.Text = "2019"; CrawlPublicationTo.Text = "2025";
+                var oldIds = CrawlTasks.Items.OfType<CrawlTaskVm>().Select(task => task.Id).ToHashSet();
+                await ClickCrawlSmoke(CrawlCreateButton, "采集任务已创建");
+                var batchTask = crawlSelectedDetail ?? throw new InvalidOperationException("公告任务详情缺失。");
+                string batchTaskId = batchTask.Text("id"); createdIds.Add(batchTaskId);
+                AssertSmoke(!oldIds.Contains(batchTaskId) && batchTask.Text("sourceId") == sourceId && batchTask.Text("batchId") == batch.Id &&
+                    batchTask.Text("state") == "PENDING" && !batchTask.Flag("runnable") && batchTask.Text("mode") == "BOUNDED" &&
+                    batchTask.Number("maxRecords") == 2 && batchTask.Number("pageSize") == 2 && batchTask.Number("maxPages") == 1,
+                    "公告批次创建的范围、预算或初始状态不正确：" + sourceId);
+                AssertSmoke(new[] { "doi", "issn", "queryText", "fromDate", "untilDate", "fromPublicationYear", "toPublicationYear" }
+                    .All(field => string.IsNullOrEmpty(batchTask.Text(field))) && batchTask.Number("attempt") == 0 && batchTask.Number("received") == 0,
+                    "公告批次混入 Crossref 参数，或发生了意外执行。");
+                AssertSmoke(CrawlTaskSummary.Text.Contains(batch.Id) && CrawlTaskSummary.Text.Contains(source.Name) && !CrawlOpenCatalog.IsEnabled,
+                    "任务详情没有显示正确来源与批次，或误开放未发布目录。");
+                await ClickCrawlSmoke(CrawlStop, "停止请求已提交");
+                AssertSmoke(crawlSelectedDetail!.Text("id") == batchTaskId && crawlSelectedDetail.Text("state") == "STOPPED" &&
+                    crawlSelectedDetail.Number("attempt") == 0 && !CrawlStart.IsEnabled, "公告验收任务没有保持未执行且已停止状态。");
+                checks.Add("registered-batch-create-stop-" + sourceId);
+                CrawlContentScroll.ScrollToTop(); await CaptureWorkspace("source-" + sourceId, output, screenshots);
+
+                // Selecting a different source must not redirect a follow-up task or a settings write.
+                await SelectCrawlSmokeSource("crossref");
+                await ClickCrawlSmoke(CrawlFollowup);
+                AssertSmoke((CrawlSource.SelectedItem as CrawlSourceVm)?.Id == sourceId && (CrawlBatch.SelectedItem as CrawlBatchVm)?.Id == batch.Id &&
+                    crawlParentTaskId == batchTaskId && crawlParentSourceId == sourceId && CrawlMode.SelectedIndex == 0,
+                    "按公告范围新建没有恢复原来源、登记批次与父任务。");
+                checks.Add("registered-batch-followup-restores-source-" + sourceId);
+
+                CrawlSettingsExpander.IsExpanded = true;
+                int interval = (int)originalBatchSource.Number("minIntervalMs");
+                int alteredInterval = interval >= 60000 ? 59000 : interval + 1000;
+                var crossrefBeforeSave = (await api.Get("api/admin/crawl/sources")).Items().Single(item => item.Text("id") == "crossref");
+                batchSettingsToRestore[sourceId] = originalBatchSource;
+                CrawlMinInterval.Text = alteredInterval.ToString();
+                await ClickCrawlSmoke(CrawlSaveSettingsButton, "来源与服务器计划设置已保存");
+                var afterSave = (await api.Get("api/admin/crawl/sources")).Items().ToList();
+                var batchSaved = afterSave.Single(item => item.Text("id") == sourceId);
+                var crossrefAfterSave = afterSave.Single(item => item.Text("id") == "crossref");
+                AssertSmoke(batchSaved.Number("minIntervalMs") == alteredInterval && !batchSaved.Flag("scheduleEnabled") &&
+                    batchSaved.Number("configVersion") > originalBatchSource.Number("configVersion") &&
+                    crossrefAfterSave.Number("configVersion") == crossrefBeforeSave.Number("configVersion") &&
+                    crossrefAfterSave.Number("minIntervalMs") == crossrefBeforeSave.Number("minIntervalMs"),
+                    "来源设置没有独立保存，或误修改 Crossref 设置。");
+                CrawlMinInterval.Text = interval.ToString();
+                await ClickCrawlSmoke(CrawlSaveSettingsButton, "来源与服务器计划设置已保存");
+                batchSettingsToRestore.Remove(sourceId);
+                checks.Add("independent-source-settings-" + sourceId);
+            }
+            await SelectCrawlSmokeSource("crossref");
             CrawlSettingsExpander.IsExpanded = true;
             long originalInterval = originalSource.Number("minIntervalMs");
             int testInterval = originalInterval >= 60000 ? 59000 : (int)Math.Min(60000, originalInterval + 1000);
@@ -136,7 +215,7 @@ public partial class MainWindow
             WindowState = WindowState.Maximized;
             checks.Add("compact-window-scroll-access");
             report["createdTaskIds"] = new JsonArray(createdIds.Select(id => (JsonNode?)JsonValue.Create(id)).ToArray());
-            report["retentionNote"] = "两条未启动任务以 STOPPED 状态保留；没有调用 START，也没有启用定时计划。来源请求间隔已还原。";
+            report["retentionNote"] = $"{createdIds.Count} 条未启动任务以 STOPPED 状态保留；没有调用 START，也没有启用定时计划。各来源请求间隔已还原。";
             report["ok"] = true;
         }
         catch (Exception error)
@@ -173,6 +252,20 @@ public partial class MainWindow
                 }
                 catch (Exception error) { cleanupErrors.Add("还原来源设置失败：" + error.Message); }
             }
+            foreach (var original in batchSettingsToRestore)
+            {
+                try
+                {
+                    var latest = (await api.Get("api/admin/crawl/sources")).Items().Single(source => source.Text("id") == original.Key);
+                    await api.Post($"api/admin/crawl/sources/{Uri.EscapeDataString(original.Key)}/settings", new
+                    {
+                        version = latest.Number("configVersion"), enabled = original.Value.Flag("enabled"), minIntervalMs = original.Value.Number("minIntervalMs"),
+                        scheduleEnabled = false, scheduleEveryMinutes = original.Value.Number("scheduleEveryMinutes"), scheduleIssn = original.Value.Text("scheduleIssn"),
+                        schedulePageSize = original.Value.Number("schedulePageSize"), scheduleMaxPages = original.Value.Number("scheduleMaxPages"), scheduleLookbackDays = original.Value.Number("scheduleLookbackDays")
+                    });
+                }
+                catch (Exception error) { cleanupErrors.Add("还原来源设置失败（" + original.Key + "）：" + error.Message); }
+            }
             try { if (api.Token != null) await api.Post("api/auth/logout", new { }); }
             catch (Exception error) { cleanupErrors.Add("注销失败：" + error.Message); }
             api.Token = null;
@@ -181,6 +274,16 @@ public partial class MainWindow
             await File.WriteAllTextAsync(output, report.ToJsonString(new JsonSerializerOptions { WriteIndented = true }));
             busy = false; Close();
         }
+    }
+
+    private async Task SelectCrawlSmokeSource(string id)
+    {
+        AssertSmoke(!busy, "来源切换前仍有未完成请求。");
+        var source = CrawlSource.Items.OfType<CrawlSourceVm>().Single(item => item.Id == id);
+        CrawlSource.BringIntoView(); CrawlSource.SelectedItem = source;
+        await WaitCrawlSmokeIdle("来源切换超时：" + id);
+        AssertSmoke((CrawlSource.SelectedItem as CrawlSourceVm)?.Id == id && crawlFormSourceId == id && crawlSettingsSourceId == id && crawlSettingsLoaded,
+            "来源切换未同步表单和设置：" + id);
     }
 
     private async Task ClickCrawlSmoke(Button button, string? expectedMessage = null)
