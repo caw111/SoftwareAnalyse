@@ -142,7 +142,7 @@ public class CrawlStore {
             }
             case "RETRY" -> {
                 if(!state.equals("FAILED")||flag(task,"stopRequested")) throw ApiException.conflict("只能重试未放弃的失败任务");
-                if(num(task,"retryCount")>=3||Set.of("PAGE_LIMIT","LIMIT_REACHED","ACCESS_RESTRICTED","ACCESS_CHALLENGE","ROBOTS_DENIED","NON_JSON","NON_HTML","INVALID_RESPONSE","DOCUMENT_CHANGED","RESPONSE_TOO_LARGE").contains(str(task,"errorCode"))) throw ApiException.conflict("预算耗尽或需要修正访问/范围条件，请创建关联的新任务");
+                if(num(task,"retryCount")>=3||Set.of("PAGE_LIMIT","LIMIT_REACHED","ACCESS_RESTRICTED","ACCESS_CHALLENGE","ROBOTS_DENIED","NON_JSON","NON_HTML","INVALID_RESPONSE","DOCUMENT_CHANGED","RESPONSE_TOO_LARGE","TLS_VALIDATION_FAILED").contains(str(task,"errorCode"))) throw ApiException.conflict("预算耗尽或需要修正访问/范围条件，请创建关联的新任务");
                 transition(task,"RETRYING","MANUAL_RETRY","管理员请求从已提交断点重试");
                 db.update("UPDATE crawl_task SET retry_count=retry_count+1,runnable=TRUE,next_run_at=? WHERE id=?",Db.now(),id);
             }

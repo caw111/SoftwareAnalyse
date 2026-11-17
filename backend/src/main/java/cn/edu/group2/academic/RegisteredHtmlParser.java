@@ -48,6 +48,7 @@ public final class RegisteredHtmlParser {
             }
             if(header<0) continue;
             tables++;
+            int rowsBeforeTable=result.size();
             String grade=source.type().equals("AWARD")?awardGrade(table,document):"";
             for(int i=header+1;i<tableRows.size();i++) {
                 Element row=tableRows.get(i);var cells=cells(row);
@@ -77,8 +78,9 @@ public final class RegisteredHtmlParser {
                         "sourceId",source.id(),"rowChecksum",AuthService.hash(rawHtml),"rowNumber",rawCells.isEmpty()?"":limit(rawCells.getFirst(),80))));
                 }
             }
+            if(result.size()==rowsBeforeTable) throw invalid("登记公告的一个表格异常为空，不能报告部分成功");
         }
-        if(tables==0) throw invalid("未找到登记表头，可能为页面外壳、访问异常或来源结构变化");
+        if(tables!=(source.type().equals("AWARD")?2:1)) throw invalid("登记表格数量或表头变化，不能忽略缺失的奖项组或数据表");
         if(result.isEmpty()) throw invalid("登记公告表格异常为空，不能报告有效空结果");
         return new Result(result,publicationDate,pageTitle,VERSION);
     }

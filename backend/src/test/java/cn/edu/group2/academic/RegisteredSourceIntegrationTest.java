@@ -119,4 +119,14 @@ class RegisteredSourceIntegrationTest {
         db.update("UPDATE crawl_document SET parser_version='older-parser' WHERE task_id=?",id);run();
         assertEquals("FAILED",state(task).get("state"));assertEquals("DOCUMENT_CHANGED",state(task).get("errorCode"));assertEquals(1L,CrawlStore.num(state(task),"received"));
     }
+    @Test void tlsValidationFailureStopsTheTaskAndRejectsManualRetryWithoutPublishing() {
+        var failure=RegisteredSourceHttpTransport.requestFailure(new javax.net.ssl.SSLHandshakeException("untrusted source chain"));
+        doThrow(failure).when(transport).get(any(URI.class),anyMap());
+        var task=start("nsfc-projects",1,1,1);run();var result=state(task);
+        assertEquals("FAILED",result.get("state"));assertEquals("TLS_VALIDATION_FAILED",result.get("errorCode"));
+        assertEquals(0L,CrawlStore.num(result,"retryCount"));assertNull(store.document(task.get("id").toString()));
+        assertEquals(0L,db.count("SELECT COUNT(*) FROM crawl_page WHERE task_id=?",task.get("id")));
+        var retry=assertThrows(ApiException.class,()->store.action(task.get("id").toString(),new CrawlStore.Action(((Number)result.get("version")).intValue(),"RETRY"),admin));
+        assertEquals(409,retry.status);
+    }
 }

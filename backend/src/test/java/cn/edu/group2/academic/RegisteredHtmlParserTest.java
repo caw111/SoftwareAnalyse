@@ -74,9 +74,18 @@ class RegisteredHtmlParserTest {
     @Test void explicitlyLabeledOrganizationAwardsNeverBecomePeople() {
         String html="<title>2023年度国家自然科学奖获奖项目目录</title><p>二 等 奖</p><table><tr><td>序号</td><td>编号</td><td>项目名称</td><td>主要完成单位</td><td>提名者</td></tr>"
             +"<tr><td>1</td><td>Z-101-2-01</td><td>组织获奖样例</td><td><p>某研究所</p><p>某大学</p></td><td>某提名机构</td></tr></table>";
+        html+=html.substring(html.indexOf("<p>二 等 奖")).replace("二 等 奖","一 等 奖").replace("Z-101-2-01","Z-101-1-01");
         var work=parser.parse("most-awards",html).rows().getFirst().work();assertTrue(work.contributors().isEmpty());
         assertEquals("ORGANIZATION",work.details().get("recipientType"));assertEquals(List.of("某研究所","某大学"),work.details().get("completionUnitsRaw"));
         assertTrue(work.institutionIds().isEmpty());
+    }
+    @Test void oneMissingOrEmptyAwardGradeCannotSilentlyBecomeAPartialSuccess() throws Exception {
+        Document document=Jsoup.parse(fixture("most-2023.html"));Element last=document.select("table").last();assertNotNull(last);
+        last.select("tr").first().children().get(1).text("奖励编号");
+        assertThrows(CrawlFailure.class,()->parser.parse("most-awards",document.html()));
+        Document empty=Jsoup.parse(fixture("most-2023.html"));var rows=empty.select("table").last().select("tr");
+        for(int i=1;i<rows.size();i++) rows.get(i).remove();
+        assertThrows(CrawlFailure.class,()->parser.parse("most-awards",empty.html()));
     }
     static String fixture(String name) throws Exception {try(var input=RegisteredHtmlParserTest.class.getResourceAsStream("/crawl/"+name)) {assertNotNull(input);return new String(input.readAllBytes(),StandardCharsets.UTF_8);}}
     private static Element dataRow(Document document,String identifier) {return document.select("td").stream().filter(c->c.text().equals(identifier)).findFirst().orElseThrow().parent();}
