@@ -11,7 +11,7 @@ public class CrawlController {
     CrawlController(AuthService auth,CrawlStore store,CrossrefClient client) {this.auth=auth;this.store=store;this.client=client;}
     @GetMapping("/sources") Object sources(HttpServletRequest request) {
         auth.require(request).admin();var sources=store.sources();
-        sources.forEach(s->{s.put("endpoint",CrossrefClient.ENDPOINT+"/works");s.put("contactConfigured",client.contactConfigured());});return sources;
+        sources.forEach(s->{s.put("contactConfigured",s.get("id").equals("crossref")&&client.contactConfigured());});return sources;
     }
     @PostMapping("/sources/{id}/settings") Object settings(HttpServletRequest request,@PathVariable String id,@Valid @RequestBody CrawlStore.Settings body) {return store.settings(id,body,auth.require(request));}
     @GetMapping("/checkpoints") Object checkpoints(HttpServletRequest request) {auth.require(request).admin();return store.checkpoints();}

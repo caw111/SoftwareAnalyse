@@ -11,8 +11,8 @@ class CrawlScheduling {}
 
 @Service
 public class CrawlRunner {
-    private final CrawlStore store;private final CrossrefClient client;private final boolean enabled;
-    CrawlRunner(CrawlStore store,CrossrefClient client,@Value("${app.crawl.worker-enabled:true}") boolean enabled) {this.store=store;this.client=client;this.enabled=enabled;}
+    private final CrawlStore store;private final CrossrefClient client;private final RegisteredSourceClient registered;private final boolean enabled;
+    CrawlRunner(CrawlStore store,CrossrefClient client,RegisteredSourceClient registered,@Value("${app.crawl.worker-enabled:true}") boolean enabled) {this.store=store;this.client=client;this.registered=registered;this.enabled=enabled;}
     @Scheduled(fixedDelayString="${app.crawl.poll-ms:2000}")
     public void tick() {
         if(!enabled) return;
@@ -21,7 +21,7 @@ public class CrawlRunner {
     }
     boolean executeOne() {
         var lease=store.claimNext();if(lease==null) return false;
-        try {store.commit(lease,client.fetch(lease));}
+        try {store.commit(lease,lease.sourceId().equals("crossref")?client.fetch(lease):registered.fetch(lease));}
         catch(CrawlFailure e) {store.fail(lease,e);}
         catch(ApiException e) {store.fail(lease,new CrawlFailure("PROCESSING_REJECTED","规范处理校验失败，原页面未提交："+e.getMessage(),false));}
         catch(RuntimeException e) {store.fail(lease,new CrawlFailure("PROCESSING_FAILURE","页面处理或数据库提交失败，将从已提交断点重试",true));}

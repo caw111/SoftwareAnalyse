@@ -17,8 +17,6 @@ public class CrossrefClient {
         this.transport=transport;this.store=store;this.json=json;this.mailto=mailto.strip();
         if(!this.mailto.isEmpty()&&!this.mailto.matches("[^\\s@]+@[^\\s@]+\\.[^\\s@]+")) throw new IllegalArgumentException("CRAWL_CONTACT_EMAIL must be a valid contact address");
     }
-    record Page(String url,String raw,int status,String etag,String lastModified,int received,
-        List<ImportService.WorkInput> works,List<Map<String,Object>> exclusions,String nextCursor,boolean finished) {}
     boolean contactConfigured() {return !mailto.isEmpty();}
     static String encode(String value) {return URLEncoder.encode(value,java.nio.charset.StandardCharsets.UTF_8);}
     URI requestUri(CrawlStore.Lease lease) {
@@ -33,7 +31,7 @@ public class CrossrefClient {
             +(query.isEmpty()?"":"&query="+encode(query))+(mailto.isEmpty()?"":"&mailto="+encode(mailto)));
     }
     private static long rowsFor(CrawlStore.Lease lease) {return Math.min(CrawlStore.num(lease.task(),"pageSize"),CrawlStore.num(lease.task(),"maxRecords")-CrawlStore.num(lease.task(),"received"));}
-    Page fetch(CrawlStore.Lease lease) {
+    CrawlPage fetch(CrawlStore.Lease lease) {
         URI uri=requestUri(lease);checkRobots(lease,uri.getRawPath());
         var cached=store.cached(uri.toString());var headers=headers();
         if(cached!=null) {
@@ -131,7 +129,7 @@ public class CrossrefClient {
         }
         return allowed;
     }
-    private Page parse(CrawlStore.Lease lease,String url,String body,CrossrefTransport.Response response) {
+    private CrawlPage parse(CrawlStore.Lease lease,String url,String body,CrossrefTransport.Response response) {
         JsonNode root;
         try {root=json.readTree(body);} catch(RuntimeException e) {throw new CrawlFailure("INVALID_RESPONSE","来源 JSON 无法解析，未推进断点或水位",false);}
         boolean single=!CrawlStore.str(lease.task(),"doi").isEmpty();
@@ -156,7 +154,7 @@ public class CrossrefClient {
         }
         boolean finished=single||items.size()<rowsFor(lease);String next=single?"":message.path("next-cursor").asText("");
         if(!finished&&next.isBlank()) throw new CrawlFailure("INVALID_RESPONSE","非末页缺少可前进游标，不能报告完成",false);
-        return new Page(url,body,response.status(),response.header("ETag"),response.header("Last-Modified"),items.size(),works,exclusions,next,finished);
+        return new CrawlPage(url,body,response.status(),response.header("ETag"),response.header("Last-Modified"),items.size(),works,exclusions,next,finished);
     }
     @SuppressWarnings("unchecked")
     private ImportService.WorkInput map(JsonNode item) {

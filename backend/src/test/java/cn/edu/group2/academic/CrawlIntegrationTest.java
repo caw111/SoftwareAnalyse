@@ -31,7 +31,7 @@ class CrawlIntegrationTest {
     record Reply(int status,String type,String body,Map<String,String> headers) {}
     @BeforeEach void setup() throws Exception {
         // An isolated test database only. A few sequential fixture pages exercise correctness, never load.
-        db.update("DELETE FROM crawl_page");db.update("DELETE FROM crawl_task_log");db.update("DELETE FROM crawl_checkpoint");db.update("DELETE FROM crawl_task");db.update("DELETE FROM crawl_http_cache");
+        db.update("DELETE FROM crawl_document");db.update("DELETE FROM crawl_page");db.update("DELETE FROM crawl_task_log");db.update("DELETE FROM crawl_checkpoint");db.update("DELETE FROM crawl_task");db.update("DELETE FROM crawl_http_cache");
         db.update("UPDATE crawl_source SET enabled=TRUE,config_version=0,min_interval_ms=1,next_request_at=0,lease_token=NULL,lease_until=NULL,schedule_enabled=FALSE,schedule_user_id=NULL");
         var user=db.one("SELECT * FROM app_user WHERE username='admin'");admin=new AuthService.Actor(user.get("id").toString(),"admin","Admin","ADMIN");
         replies.clear();requests.clear();requestHeaders.clear();reset(transport);

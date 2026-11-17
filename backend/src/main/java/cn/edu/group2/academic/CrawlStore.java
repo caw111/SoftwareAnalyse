@@ -15,7 +15,12 @@ public class CrawlStore {
     public record Create(@NotBlank String sourceId,@Size(max=9) String issn,@Size(max=200) String query,
         @Size(max=300) String doi,String fromDate,String untilDate,@Min(1) @Max(100) int pageSize,
         @Min(1) @Max(100) int maxPages,String parentTaskId,String mode,@Min(1) @Max(10000) Integer maxRecords,
-        @Min(1000) @Max(2200) Integer fromPublicationYear,@Min(1000) @Max(2200) Integer toPublicationYear) {}
+        @Min(1000) @Max(2200) Integer fromPublicationYear,@Min(1000) @Max(2200) Integer toPublicationYear,@Size(max=80) String batchId) {
+        public Create(String sourceId,String issn,String query,String doi,String fromDate,String untilDate,int pageSize,int maxPages,
+            String parentTaskId,String mode,Integer maxRecords,Integer fromPublicationYear,Integer toPublicationYear) {
+            this(sourceId,issn,query,doi,fromDate,untilDate,pageSize,maxPages,parentTaskId,mode,maxRecords,fromPublicationYear,toPublicationYear,null);
+        }
+    }
     public record Action(@Min(0) int version,@NotBlank String action) {}
     public record Settings(@Min(0) int version,boolean enabled,@Min(1000) @Max(60000) int minIntervalMs,
         boolean scheduleEnabled,@Min(60) @Max(10080) int scheduleEveryMinutes,@NotNull @Size(max=9) String scheduleIssn,
@@ -44,36 +49,49 @@ public class CrawlStore {
     public Object create(Create input,AuthService.Actor actor) {actor.admin();return createLocked(input,actor,sourceLock(input.sourceId()),false);}
     private Object createLocked(Create input,AuthService.Actor actor,Map<String,Object> source,boolean runnable) {
         if(!flag(source,"enabled")) throw ApiException.conflict("来源已停用");
+        var definition=CrawlSourceCatalog.source(input.sourceId());
+        boolean registered=!definition.isCrossref();
+        String batch=blank(input.batchId());
         String issn=blank(input.issn()).toUpperCase(Locale.ROOT),query=blank(input.query()),doi=blank(input.doi());
         if(!issn.isEmpty()&&!issn.matches("[0-9]{4}-[0-9]{3}[0-9X]")) throw ApiException.bad("ISSN 格式不正确");
         if(!doi.isEmpty()) {doi=ImportService.normalizeDoi(doi);if(!issn.isEmpty()||!query.isEmpty()) throw ApiException.bad("DOI 定向采集不能同时设置 ISSN 或关键词");}
-        if(doi.isEmpty()&&issn.isEmpty()&&query.isEmpty()) throw ApiException.bad("请指定 ISSN、关键词或单条 DOI，避免无范围采集");
+        if(!registered&&doi.isEmpty()&&issn.isEmpty()&&query.isEmpty()) throw ApiException.bad("请指定 ISSN、关键词或单条 DOI，避免无范围采集");
         if(input.pageSize()<1||input.pageSize()>100||input.maxPages()<1||input.maxPages()>100) throw ApiException.bad("每页条数和页预算应为 1–100");
         String mode=blank(input.mode()).isEmpty()?"BOUNDED":input.mode();
         int maxRecords=input.maxRecords()==null?input.pageSize()*input.maxPages():input.maxRecords();
         if(!Set.of("BOUNDED","INCREMENTAL").contains(mode)||maxRecords<1||maxRecords>10000) throw ApiException.bad("采集模式或原始记录预算不合法");
         if(input.fromPublicationYear()!=null&&input.toPublicationYear()!=null&&input.fromPublicationYear()>input.toPublicationYear()) throw ApiException.bad("出版起始年不能晚于终止年");
         if(!doi.isEmpty()&&(input.fromPublicationYear()!=null||input.toPublicationYear()!=null)) throw ApiException.bad("单条 DOI 模式不使用出版年筛选");
-        LocalDate from,to;
-        try {
-            from=LocalDate.parse(doi.isEmpty()?input.fromDate():LocalDate.now(ZoneOffset.UTC).toString());
-            to=LocalDate.parse(doi.isEmpty()?input.untilDate():from.toString());
-        } catch(RuntimeException e) {throw ApiException.bad("固定窗口日期须为 YYYY-MM-DD");}
-        if(from.isAfter(to)||from.plusDays(30).isBefore(to)||to.isAfter(LocalDate.now(ZoneOffset.UTC))) throw ApiException.bad("采集窗口须为过去或当前日期内的 1–31 天");
+        String from,to;
+        if(registered) {
+            CrawlSourceCatalog.batch(input.sourceId(),batch);
+            if(!mode.equals("BOUNDED")) throw ApiException.bad("公告批次仅支持限量采集；重新采集按内容哈希去重，不推进索引时间水位");
+            if(!doi.isEmpty()||!issn.isEmpty()||!query.isEmpty()||!blank(input.fromDate()).isEmpty()||!blank(input.untilDate()).isEmpty()
+                ||input.fromPublicationYear()!=null||input.toPublicationYear()!=null) throw ApiException.bad("公告来源使用已登记批次，不使用 DOI、期刊或时间窗口参数");
+            from="";to="";
+        } else {
+            if(!batch.isEmpty()) throw ApiException.bad("Crossref 不使用公告批次");
+            try {
+                LocalDate first=LocalDate.parse(doi.isEmpty()?input.fromDate():LocalDate.now(ZoneOffset.UTC).toString());
+                LocalDate last=LocalDate.parse(doi.isEmpty()?input.untilDate():first.toString());
+                if(first.isAfter(last)||first.plusDays(30).isBefore(last)||last.isAfter(LocalDate.now(ZoneOffset.UTC))) throw ApiException.bad("采集窗口须为过去或当前日期内的 1–31 天");
+                from=first.toString();to=last.toString();
+            } catch(DateTimeException|NullPointerException e) {throw ApiException.bad("固定窗口日期须为 YYYY-MM-DD");}
+        }
         String parent=blank(input.parentTaskId());
         if(!parent.isEmpty()) {
             var old=db.one("SELECT source_id,state FROM crawl_task WHERE id=?",parent);
             if(!old.get("sourceId").equals(input.sourceId())||!Set.of("SUCCESS","STOPPED","FAILED").contains(old.get("state"))) throw ApiException.bad("前序任务须为同来源的已结束任务");
         }
-        String scope=scopeKey(issn,query,doi,input.fromPublicationYear(),input.toPublicationYear()),id=Db.id();long now=Db.now();
+        String scope=registered?AuthService.hash("batch:"+input.sourceId()+":"+batch):scopeKey(issn,query,doi,input.fromPublicationYear(),input.toPublicationYear()),id=Db.id();long now=Db.now();
         db.update("""
-            INSERT INTO crawl_task(id,source_id,created_by,parent_task_id,scope_key,issn,query_text,doi,from_date,until_date,page_size,max_pages,mode,max_records,from_publication_year,to_publication_year,state,runnable,next_cursor,source_config_version,created_at,updated_at)
-            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'PENDING',?,'*',?,?,?)
-            """,id,input.sourceId(),actor.id(),parent.isEmpty()?null:parent,scope,issn,query,doi,from.toString(),to.toString(),input.pageSize(),input.maxPages(),mode,maxRecords,input.fromPublicationYear(),input.toPublicationYear(),runnable,source.get("configVersion"),now,now);
+            INSERT INTO crawl_task(id,source_id,created_by,parent_task_id,scope_key,issn,query_text,doi,from_date,until_date,page_size,max_pages,mode,max_records,from_publication_year,to_publication_year,state,runnable,next_cursor,source_config_version,created_at,updated_at,batch_id)
+            VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,'PENDING',?,'*',?,?,?,?)
+            """,id,input.sourceId(),actor.id(),parent.isEmpty()?null:parent,scope,issn,query,doi,from.toString(),to.toString(),input.pageSize(),input.maxPages(),mode,maxRecords,input.fromPublicationYear(),input.toPublicationYear(),runnable,source.get("configVersion"),now,now,registered?batch:null);
         var result=db.one("SELECT * FROM crawl_task WHERE id=?",id);event(result,"CREATE","PENDING",runnable?"定时计划创建有界任务":"管理员创建任务，等待明确启动");
         return result;
     }
-    public List<Map<String,Object>> sources() {return db.rows("SELECT id,name,enabled,config_version,min_interval_ms,next_request_at,schedule_enabled,schedule_every_minutes,schedule_issn,schedule_page_size,schedule_max_pages,schedule_lookback_days,next_schedule_at FROM crawl_source ORDER BY id");}
+    public List<Map<String,Object>> sources() {var rows=db.rows("SELECT id,name,enabled,config_version,min_interval_ms,next_request_at,schedule_enabled,schedule_every_minutes,schedule_issn,schedule_page_size,schedule_max_pages,schedule_lookback_days,next_schedule_at FROM crawl_source ORDER BY id");rows.forEach(CrawlSourceCatalog::describe);return rows;}
     public Object checkpoints() {return db.rows("SELECT * FROM crawl_checkpoint ORDER BY source_id,scope_key");}
     public Object list(int page,int size) {
         if(page<0||size<1||size>100) throw ApiException.bad("页码或每页数量不合法");
@@ -84,11 +102,21 @@ public class CrawlStore {
         task.put("logs",db.rows("SELECT * FROM crawl_task_log WHERE task_id=? ORDER BY sequence_no",id));
         task.put("pages",db.rows("SELECT task_id,page_no,attempt,http_status,response_checksum,exclusions_json,import_task_id,revision,received,accepted,excluded,created_at FROM crawl_page WHERE task_id=? ORDER BY page_no",id));return task;
     }
-    public Object rawPage(String id,int page) {return db.one("SELECT * FROM crawl_page WHERE task_id=? AND page_no=?",id,page);}
+    public Object rawPage(String id,int page) {
+        var result=db.one("SELECT * FROM crawl_page WHERE task_id=? AND page_no=?",id,page);
+        var document=document(id);
+        if(document!=null) {
+            result.put("sliceMetadata",result.get("rawJson"));result.put("rawJson",document.get("rawBody"));
+            for(String key:List.of("contentType","bodyEncoding","byteChecksum","recordCount","parserVersion","fetchedAt")) result.put(key,document.get(key));
+        } else {result.put("contentType","application/json");result.put("bodyEncoding","utf-8");}
+        return result;
+    }
+    public Map<String,Object> document(String taskId) {var rows=db.rows("SELECT * FROM crawl_document WHERE task_id=?",taskId);return rows.isEmpty()?null:rows.getFirst();}
     @Transactional
     public Object settings(String id,Settings input,AuthService.Actor actor) {
-        actor.admin();var source=sourceLock(id);
+        actor.admin();var definition=CrawlSourceCatalog.source(id);var source=sourceLock(id);
         if(num(source,"configVersion")!=input.version()) throw ApiException.conflict("来源配置已变化，请刷新");
+        if(!definition.isCrossref()&&input.scheduleEnabled()) throw ApiException.bad("公告来源需按登记批次创建任务，暂不支持时间窗口定时计划");
         if(input.scheduleEnabled()&&(!input.enabled()||!input.scheduleIssn().matches("[0-9]{4}-[0-9]{3}[0-9Xx]"))) throw ApiException.bad("启用定时采集前须启用来源并填写有效 ISSN");
         db.update("""
             UPDATE crawl_source SET enabled=?,config_version=config_version+1,min_interval_ms=?,schedule_enabled=?,schedule_every_minutes=?,schedule_issn=?,schedule_page_size=?,schedule_max_pages=?,schedule_lookback_days=?,next_schedule_at=?,schedule_user_id=? WHERE id=?
@@ -114,7 +142,7 @@ public class CrawlStore {
             }
             case "RETRY" -> {
                 if(!state.equals("FAILED")||flag(task,"stopRequested")) throw ApiException.conflict("只能重试未放弃的失败任务");
-                if(num(task,"retryCount")>=3||Set.of("PAGE_LIMIT","LIMIT_REACHED","ACCESS_RESTRICTED","ACCESS_CHALLENGE","ROBOTS_DENIED","NON_JSON","INVALID_RESPONSE","RESPONSE_TOO_LARGE").contains(str(task,"errorCode"))) throw ApiException.conflict("预算耗尽或需要修正访问/范围条件，请创建关联的新任务");
+                if(num(task,"retryCount")>=3||Set.of("PAGE_LIMIT","LIMIT_REACHED","ACCESS_RESTRICTED","ACCESS_CHALLENGE","ROBOTS_DENIED","NON_JSON","NON_HTML","INVALID_RESPONSE","DOCUMENT_CHANGED","RESPONSE_TOO_LARGE").contains(str(task,"errorCode"))) throw ApiException.conflict("预算耗尽或需要修正访问/范围条件，请创建关联的新任务");
                 transition(task,"RETRYING","MANUAL_RETRY","管理员请求从已提交断点重试");
                 db.update("UPDATE crawl_task SET retry_count=retry_count+1,runnable=TRUE,next_run_at=? WHERE id=?",Db.now(),id);
             }
@@ -125,7 +153,7 @@ public class CrawlStore {
     @Transactional
     public void scheduleDue() {
         long now=Db.now();
-        for(var candidate:db.rows("SELECT id FROM crawl_source WHERE enabled=TRUE AND schedule_enabled=TRUE AND next_schedule_at<=?",now)) {
+        for(var candidate:db.rows("SELECT id FROM crawl_source WHERE id='crossref' AND enabled=TRUE AND schedule_enabled=TRUE AND next_schedule_at<=?",now)) {
             var source=sourceLock(str(candidate,"id"));
             if(!flag(source,"enabled")||!flag(source,"scheduleEnabled")||num(source,"nextScheduleAt")>now) continue;
             var admins=db.rows("SELECT * FROM app_user WHERE id=? AND role='ADMIN'",source.get("scheduleUserId"));
@@ -205,18 +233,33 @@ public class CrawlStore {
         db.update("UPDATE crawl_source SET next_request_at=? WHERE id=?",Math.max(num(source,"nextRequestAt"),Db.now()+Math.max(0,interval)),source.get("id"));
     }
     @Transactional
-    public boolean commit(Lease lease,CrossrefClient.Page page) {
+    public boolean commit(Lease lease,CrawlPage page) {
         var source=sourceLock(lease.sourceId());var task=taskLock(lease.id());
         if(!valid(lease,source,task)) return false;
         if(flag(task,"stopRequested")||!flag(source,"enabled")) {stop(task,source,"ADMIN_CANCELLED");return false;}
         var user=db.one("SELECT * FROM app_user WHERE id=?",task.get("createdBy"));
         if(!str(user,"role").equals("ADMIN")) {failLocked(task,source,new CrawlFailure("ADMIN_REVOKED","创建者已无采集管理权限",false));return false;}
         int number=(int)num(task,"committedPages")+1;Map<String,Object> imported=Map.of();
-        if(!page.works().isEmpty()) imported=imports.ingestTrustedCrossref(new ImportService.Batch("crawl:"+lease.id()+":"+number,"Crossref",page.works()),new AuthService.Actor(str(user,"id"),str(user,"username"),str(user,"displayName"),"ADMIN"));
+        var definition=CrawlSourceCatalog.source(lease.sourceId());
+        if(page.received()!=page.works().size()+page.exclusions().size()||page.received()<0||num(task,"received")+page.received()>num(task,"maxRecords")) throw ApiException.bad("采集页计数或预算不一致");
+        if(page.works().stream().anyMatch(w->!w.type().equals(definition.outcomeType())||w.simulated())) throw ApiException.bad("来源适配结果类型与登记不一致");
+        String pageRaw=page.raw();
+        if(!definition.isCrossref()) {
+            var document=page.document();if(document==null) throw ApiException.bad("公告提交必须包含可追溯快照");
+            var previous=document(lease.id());
+            if(previous==null) db.update("INSERT INTO crawl_document VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)",lease.id(),document.url(),document.raw(),document.contentType(),document.bodyEncoding(),AuthService.hash(document.raw()),document.byteChecksum(),document.status(),document.etag().length()<=1000?document.etag():null,document.lastModified().length()<=200?document.lastModified():null,document.recordCount(),document.parserVersion(),document.fetchedAt());
+            else if(!str(previous,"responseChecksum").equals(AuthService.hash(document.raw()))) throw new CrawlFailure("DOCUMENT_CHANGED","同一任务不能混用不同版本的公告原文，请创建新任务",false);
+            pageRaw=json.writeValueAsString(Map.of("documentTaskId",lease.id(),"batchId",str(task,"batchId"),"offset",num(task,"received"),"count",page.received(),"documentChecksum",AuthService.hash(document.raw())));
+        }
+        if(!page.works().isEmpty()) {
+            var batch=new ImportService.Batch("crawl:"+lease.id()+":"+number,definition.sourceName(),page.works());
+            var actor=new AuthService.Actor(str(user,"id"),str(user,"username"),str(user,"displayName"),"ADMIN");
+            imported=definition.isCrossref()?imports.ingestTrustedCrossref(batch,actor):imports.ingest(batch,actor);
+        }
         db.update("""
             INSERT INTO crawl_page(task_id,page_no,attempt,request_url,raw_json,response_checksum,http_status,etag,last_modified,exclusions_json,import_task_id,revision,received,accepted,excluded,created_at)
             VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)
-            """,lease.id(),number,lease.attempt(),page.url(),page.raw(),AuthService.hash(page.raw()),page.status(),page.etag().length()<=1000?page.etag():null,page.lastModified().length()<=200?page.lastModified():null,json.writeValueAsString(page.exclusions()),imported.get("id"),imported.get("revision"),page.received(),page.works().size(),page.exclusions().size(),Db.now());
+            """,lease.id(),number,lease.attempt(),page.url(),pageRaw,AuthService.hash(page.raw()),page.status(),page.etag().length()<=1000?page.etag():null,page.lastModified().length()<=200?page.lastModified():null,json.writeValueAsString(page.exclusions()),imported.get("id"),imported.get("revision"),page.received(),page.works().size(),page.exclusions().size(),Db.now());
         db.update("""
             UPDATE crawl_task SET next_cursor=?,committed_pages=committed_pages+1,received=received+?,inserted=inserted+?,updated=updated+?,unchanged=unchanged+?,excluded=excluded+?,conflicts=conflicts+?,publication_revision=COALESCE(?,publication_revision),error_code='',error_message='' WHERE id=?
             """,page.nextCursor(),page.received(),num(imported,"inserted"),num(imported,"updated"),num(imported,"unchanged"),page.exclusions().size(),num(imported,"conflicts"),imported.get("revision"),lease.id());
@@ -224,7 +267,7 @@ public class CrawlStore {
         if(page.finished()||limited&&str(task,"mode").equals("BOUNDED")) {
             String completion=page.finished()?"SOURCE_EXHAUSTED":"LIMIT_REACHED";
             transition(task,"SUCCESS",completion,page.finished()?"固定范围已耗尽，页面及处理结果已可靠提交":"已达到管理员设置的限量预算，限量采集完成；不推进同步水位");
-            if(str(task,"mode").equals("INCREMENTAL")&&str(task,"doi").isEmpty()) advanceCheckpoint(task);
+            if(definition.isCrossref()&&str(task,"mode").equals("INCREMENTAL")&&str(task,"doi").isEmpty()) advanceCheckpoint(task);
             db.update("UPDATE crawl_task SET completed_at=?,completion_reason=? WHERE id=?",Db.now(),completion,lease.id());
         } else if(limited) {
             failLocked(task,source,new CrawlFailure("LIMIT_REACHED","预算已用尽，增量固定窗口尚未完整扫描；保留已提交数据但不推进成功水位",false));return true;
