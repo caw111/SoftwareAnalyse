@@ -113,7 +113,7 @@ spec:
         seccompProfile: {type: RuntimeDefault}
       containers:
         - name: api
-          image: academic-platform-api:0.3.0
+          image: academic-platform-api:0.4.0
           imagePullPolicy: IfNotPresent
           env:
             - {name: APP_DEMO, value: "false"}

@@ -1,4 +1,4 @@
-%% Generated from Flyway V1-V5; all entities below exist in migrations.
+%% Generated from Flyway V1-V6; all entities below exist in migrations.
 erDiagram
     catalog_release {
         int id PK "INTEGER"
@@ -211,6 +211,7 @@ erDiagram
         bigint created_at "BIGINT"
         bigint updated_at "BIGINT"
         bigint completed_at "BIGINT nullable"
+        string batch_id "VARCHAR(80) nullable"
     }
     crawl_checkpoint {
         string source_id PK,FK "VARCHAR(40)"
@@ -334,7 +335,7 @@ erDiagram
     search_document {
         string work_id PK,FK "VARCHAR(36)"
         bigint revision PK,FK "BIGINT"
-        double token_count "DOUBLE PRECISION"
+        double token_count "DOUBLE"
         boolean text_present "BOOLEAN"
         string rule_version "VARCHAR(50)"
     }
@@ -342,8 +343,23 @@ erDiagram
         string work_id PK,FK "VARCHAR(36)"
         bigint revision PK,FK "BIGINT"
         string term PK "VARCHAR(120)"
-        double weighted_tf "DOUBLE PRECISION"
+        double weighted_tf "DOUBLE"
         boolean text_term "BOOLEAN"
+    }
+    crawl_document {
+        string task_id PK,FK "VARCHAR(36)"
+        string request_url "TEXT"
+        string raw_body "TEXT"
+        string content_type "VARCHAR(100)"
+        string body_encoding "VARCHAR(20)"
+        string response_checksum "VARCHAR(64)"
+        string byte_checksum "VARCHAR(64)"
+        int http_status "INTEGER"
+        string etag "VARCHAR(1000) nullable"
+        string last_modified "VARCHAR(200) nullable"
+        int record_count "INTEGER"
+        string parser_version "VARCHAR(100)"
+        bigint fetched_at "BIGINT"
     }
     app_user ||--o{ auth_session : "user_id"
     institution |o--o{ scholar : "institution_id"
@@ -388,3 +404,4 @@ erDiagram
     source_record ||--o{ source_processing : "source_id"
     work_revision ||--o| search_document : "work_id,revision"
     search_document ||--o{ search_term : "work_id,revision"
+    crawl_task ||--o| crawl_document : "task_id"

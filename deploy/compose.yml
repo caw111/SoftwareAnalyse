@@ -19,7 +19,7 @@ services:
     cpus: 1.0
   api:
     build: ../backend
-    image: academic-platform-api:0.3.0
+    image: academic-platform-api:0.4.0
     environment:
       APP_DEMO: "false"
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Set ADMIN_PASSWORD in .env}

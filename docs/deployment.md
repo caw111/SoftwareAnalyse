@@ -1,6 +1,6 @@
 # 部署与运行
 
-Windows 客户端与服务器独立部署。客户端自带 .NET 运行时的 EXE 在 `artifacts/windows-x64/`；服务器只运行 API 与 PostgreSQL，不托管网页。后台 Dockerfile 在首版已完成 Linux 镜像构建验证，本轮镜像结果另记。
+Windows 客户端与服务器独立部署。客户端自带 .NET 运行时的 EXE 在 `artifacts/windows-x64/`；服务器只运行 API 与 PostgreSQL，不托管网页。后台Dockerfile在历史版本完成过Linux镜像构建；v0.4本轮Docker引擎不可用，镜像/容器与PostgreSQL回归未验证，见 [验证记录](verification/sources-v0.4.md)。
 
 ## 本机开发
 
@@ -53,8 +53,8 @@ academic.example.com {
 
 ```sh
 # 开发机或 CI 构建/导出；也可推送到自己的镜像仓库。
-docker build -t academic-platform-api:0.3.0 backend
-docker save academic-platform-api:0.3.0 -o artifacts/academic-platform-api.tar
+docker build -t academic-platform-api:0.4.0 backend
+docker save academic-platform-api:0.4.0 -o artifacts/academic-platform-api.tar
 # 将 tar 与部署文件复制到服务器；在服务器导入。
 sudo k3s ctr images import academic-platform-api.tar
 kubectl create namespace academic
@@ -98,9 +98,9 @@ docker compose -f deploy/compose.yml exec -T db pg_dump -U academic -d academic 
 
 严格按 [服务器压测说明](../scripts/performance/README.md) 在服务器环境执行。本机未运行压测。当前交付不含低 P95、扩容收益或 4 GB 长期稳定性的实测结论。
 
-## v0.3 采集服务配置
+## v0.4 采集服务配置
 
-采集执行器随 API 运行，只领取管理员明确启动的任务或已启用计划产生的任务。数据库中 Crossref 来源默认启用，**定时计划默认关闭**；不会在服务启动时自动扫描全库。来源设置、任务、租约、水位和日志均持久化于 PostgreSQL，重启不丢已提交页面。
+采集执行器随 API 运行，只领取管理员明确启动的任务或已启用计划产生的任务。数据库中 Crossref 与四个已登记公告来源默认启用；只有Crossref支持定时，且**定时计划默认关闭**。公告必须管理员明确创建固定批次任务再启动，不会在服务启动时自动扫描。来源设置、任务、租约、水位和日志均持久化于 PostgreSQL，重启不丢已提交页面。
 
 | 环境变量 | 默认值 | 用途 |
 | --- | --- | --- |
@@ -108,7 +108,7 @@ docker compose -f deploy/compose.yml exec -T db pg_dump -U academic -d academic 
 | CRAWL_POLL_MS | 2000 | 任务调度检查间隔，单位毫秒；不是对源站请求频率 |
 | CRAWL_CONTACT_EMAIL | 空 | 真实维护者联系邮箱，用于 Crossref User-Agent/mailto；未配置时走公共池，不伪造邮箱 |
 
-手动限制来源频率、启停来源、定时 ISSN、周期、窗口回看和页预算在管理员的“来源采集/来源设置”中配置，修改携带配置 version。单来源默认至少间隔1500ms、最大并发1；响应限流标头和 Retry-After 可以延长等待。定时任务是 INCREMENTAL，限量任务 BOUNDED 不推进完整同步水位。采集范围/数量的解释见 [构件设计](design/component-design.md)。
+手动限制来源频率、启停来源、定时 ISSN、周期、窗口回看和页预算在管理员的“来源采集/来源设置”中配置，修改携带配置 version。Crossref默认至少间隔1500ms，新公告来源默认2000ms，同源最大并发1；响应限流标头和 Retry-After 可以延长等待。Crossref定时任务是 INCREMENTAL；公告只接受固定批次BOUNDED、不写日期水位、不支持定时，所有限量任务不推进完整同步水位。采集范围/数量的解释见 [构件设计](design/component-design.md)。
 
 Compose 模板已将以下三个变量接入 api.environment，deploy/.env.example 已列出默认值。复制为 deploy/.env 后按需要修改；联系邮箱填写真实维护者地址，未配置时保留为空：
 
@@ -118,14 +118,30 @@ CRAWL_POLL_MS: ${CRAWL_POLL_MS:-2000}
 CRAWL_CONTACT_EMAIL: ${CRAWL_CONTACT_EMAIL:-}
 ```
 
-k3s 模板对三个变量均使用 academic-secrets 的同名可选键引用。用 deploy/.env 创建 Secret 时会一起导入；升级旧 Secret 缺少这些键时，应用继续使用 true / 2000 / 空邮箱的默认值。修改 Secret 后需滚动更新 API Pod 才读取新的环境变量。API Pod 需要访问 api.crossref.org 的 HTTPS 和解析 DNS；采集适配器固定域名与路径且不跟随任意重定向，不开放任意 URL 抓取代理。
+k3s 模板对三个变量均使用 academic-secrets 的同名可选键引用。用 deploy/.env 创建 Secret 时会一起导入；升级旧 Secret 缺少这些键时，应用继续使用 true / 2000 / 空邮箱的默认值。修改 Secret 后需滚动更新 API Pod 才读取新的环境变量。API Pod 需要按已启用来源访问 api.crossref.org、sites.lynu.edu.cn、www.nsfc.gov.cn、www.most.gov.cn、www.cnipa.gov.cn 的HTTPS并解析DNS；采集适配器固定域名与路径且不跟随任意重定向，不开放任意 URL 抓取代理。
 
 ### 小服务器与扩缩容边界
 
 每个副本都可以调度，但数据库来源租约和 next_request_at 对所有副本生效，同一来源不会因 HPA 从1扩到2副本而翻倍并发。页提交时再次校验任务 attempt、租约令牌和 stop_requested；被缩容的旧执行器不能通过迟到响应写入数据。已提交页保留，未完成任务由租约恢复路径接续。
 
-采集网络等待在事务外，规范入库、修订与倒排在同一页事务中发布。4核4GB初始保留单来源串行、小页和显式预算；不要同时启用大批采集、索引全量补建和性能验收。监测数据库连接池、发布锁等待、原始页/版本/倒排表体积、JVM内存与前台请求延迟，再调整资源。HPA只增加API计算副本，不提高源站额度、不扩数据库，也不替代机器升级。
+采集网络等待在事务外，规范入库、修订与倒排在同一页事务中发布。4核4GB初始保留单来源串行、小页和显式预算；不要同时启用大批采集、索引全量补建和性能验收。监测数据库连接池、发布锁等待、原始页/冻结文档/版本/倒排表体积、JVM内存与前台请求延迟，再调整资源。HPA只增加API计算副本，不提高源站额度、不扩数据库，也不替代机器升级。
 
 H2/PostgreSQL 功能测试、桌面与单 DOI 接通结果由最终验证记录单列；它们不证明服务器吞吐、P95或HPA收益。部署模板本次仅做静态解析与 Compose 配置检查，不执行远程部署或集群应用。
 
 有效执行尝试遇到来源访问拒绝、robots 拒绝或验证挑战，且来源配置版本仍匹配时，后台会关闭该来源的定时计划并递增 configVersion；来源 enabled 不变，管理员核实条件后仍可显式创建人工任务或恢复计划。旧执行尝试不能关闭已更新的配置。普通 429 只有限退避，不关闭计划。客户端修改旧配置版本会收到冲突，应先刷新来源设置。
+
+### v0.4 公告快照与升级
+
+先备份数据库，使用0.4.0镜像后由Flyway执行V6。迁移新增四个crawl_source记录、crawl_task.batch_id与crawl_document；不修改历史已发布元数据。batchId由应用注册目录验证，不是数据库FK；升级时应保留旧任务需要的批次定义。解析器版本改变后旧任务恢复会明确失败，需新建任务，不能原地把新规则接到旧行断点。
+
+一份注册HTML/PDF最多8MiB原始字节；HTML保存UTF-8正文，PDF以Base64存TEXT会增加约三分之一体积。原文只在首批提交事务保存一次，后续页保存切片定位，恢复复用不可变文档；它与临时HTTP缓存不同，备份须包含crawl_document。文档parser_version和record_count参与恢复核对，response_checksum与byte_checksum分别记录存储文本与下载字节。
+
+maxRecords限制处理行数，不是网络下载长度；小预算仍下载整份公告。4核4GB初始保持小批显式任务，监测原始文档、解析内存、连接池和前台请求延迟。注册地址只允许固定HTTPS URL及robots，不支持管理员任意URL或重定向。扩展批次前需核验访问条件、字段映射和大小预算。
+
+本轮四站robots核验均404，运行时仍检查并缓存规则。固定来源列表与字段缺失见 [接入说明](design/sources-v0.4.md)。原文与附件仅后台审计查看；不额外开放原始文档下载到公共目录。
+
+### NSFC 专用 TLS 信任锚
+
+部署包包含CFCA EV ROOT公有证书，适配当前NSFC站点链。只对注册的www.nsfc.gov.cn固定批次/robots使用独立PKIX客户端；其他来源与系统/JDK默认SSLContext保持不变。主机名、证书路径、算法、有效期和重定向限制继续生效；每次NSFC请求检查补充根有效期。没有trust-all开关，也无需管理员修改系统truststore。
+
+DER SHA-256：5CC3D78E4E1D5E45547A04E6873E64F90CF9536D1CCC2EF800F355C4C5FD70FD。当前公有根有效期截至2029-12-31T03:07:01Z，应在2029-10-01前以及运行时升级、源站链变化或TLS失败时重新核验官方信任状态。证书来源、独立官方核验及替换要求见 [TLS说明](../backend/src/main/resources/tls/README.md)。TLS_VALIDATION_FAILED不可重试；修复后新建任务，不以关闭验证恢复连接。本轮实际验证进度见 [v0.4记录](verification/sources-v0.4.md)。

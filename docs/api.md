@@ -1,4 +1,4 @@
-# API v0.3
+# API v0.4
 
 返回 UTF-8 JSON。公开目录匿名可读；私有操作用 `Authorization: Bearer <token>`。随机会话令牌有效 8 小时，数据库只存 SHA-256 摘要，登出即失效；密码用 PBKDF2。服务端每次核对最新角色和对象授权，客户端显示不是权限依据。远程应使用 TLS。
 
@@ -71,19 +71,19 @@ GET /api/works/{id}?revision=1
 管理端口：`8081/actuator/health/liveness`、`/readiness`、`/prometheus`。默认绑定回环；容器内开放但不通过 Ingress 发布。
 
 
-## 服务器采集任务与质量查看（v0.3）
+## 服务器采集任务与质量查看（v0.4）
 
-以下接口全部要求 ADMIN；列表和详情返回的数据库字段以 camelCase 命名。真实接通的来源为 `crossref`，地址固定为 `https://api.crossref.org`；管理员输入范围，不输入任意抓取 URL。
+以下接口全部要求 ADMIN；列表和详情返回的数据库字段以 camelCase 命名。来源为 `crossref`（论文）和 `lynu-patents`、`cnipa-patents`、`nsfc-projects`、`most-awards` 四个固定公告适配器。管理员选择范围或已登记批次，不输入任意抓取 URL；固定批次与字段边界见 [来源说明](design/sources-v0.4.md)，当前实测范围与未完成项见 [v0.4 验证记录](verification/sources-v0.4.md)。
 
 | 方法与路径 | 说明 |
 | --- | --- |
-| GET `/api/admin/crawl/sources` | 来源状态、配置版本、定时间隔、联系邮箱是否已配置 |
+| GET `/api/admin/crawl/sources` | 来源状态、配置版本、scopeKind/outcomeType、固定 batches、supportsIncremental/supportsSchedule、联系邮箱是否已配置 |
 | POST `/api/admin/crawl/sources/{id}/settings` | 带配置 version 的更新；停用来源请求其活动任务停止 |
 | GET `/api/admin/crawl/checkpoints` | 各来源/范围最近完整扫描的截止日 |
 | GET `/api/admin/crawl/tasks?page=0&size=20` | 分页任务 `{items,total,page,size}`，size 1–100 |
 | POST `/api/admin/crawl/tasks` | 创建 PENDING、不立即执行的任务 |
 | GET `/api/admin/crawl/tasks/{id}` | 任务字段、状态日志 logs、已提交页面 pages |
-| GET `/api/admin/crawl/tasks/{id}/pages/{page}` | 指定页原始响应、校验和、排除原因、发布版本 |
+| GET `/api/admin/crawl/tasks/{id}/pages/{page}` | 指定页原始证据、校验和、排除原因、发布版本；公告解引用整份冻结文档并附切片信息 |
 | POST `/api/admin/crawl/tasks/{id}/actions` | `{version,action:"START|STOP|RETRY"}` |
 | GET `/api/admin/quality?page=0&size=20` | 只读质量队列、未分类/未匹配机构/失败采集等计数 |
 
@@ -99,14 +99,44 @@ GET /api/works/{id}?revision=1
 {"sourceId":"crossref","issn":"1476-4687","query":"quantum","fromDate":"2026-11-01","untilDate":"2026-11-02","fromPublicationYear":2020,"toPublicationYear":2026,"mode":"BOUNDED","maxRecords":40,"pageSize":20,"maxPages":2}
 ```
 
-- DOI 与 ISSN/关键词互斥。非 DOI 请求须至少给出 ISSN 或关键词，固定索引时间窗口为 1–31 天，不能晚于当前 UTC 日期。出版年可选，索引日期与出版日期含义不同。
+- Crossref 的 DOI 与 ISSN/关键词互斥。非 DOI 请求须至少给出 ISSN 或关键词，固定索引时间窗口为 1–31 天，不能晚于当前 UTC 日期。出版年可选，索引日期与出版日期含义不同。
 - pageSize、maxPages 均 1–100；maxRecords 为来源返回的原始记录总预算（1–10,000），包含重复、更新和排除记录，**不承诺等量新增**。返回分别统计 received、inserted、updated、unchanged、excluded、conflicts。
 - BOUNDED 达预算可以 SUCCESS/LIMIT_REACHED，但从不推进完整同步水位。INCREMENTAL 仅在窗口扫尽时 SUCCESS 并推进水位；预算先耗尽则 FAILED/LIMIT_REACHED，已提交页仍可查，可创建 parentTaskId 关联的新任务扩大预算。DOI 定向任务不推进水位。
 - 单页原始响应、增量入库、公开版本、已提交游标在同一事务提交。游标过期允许从窗口起点重扫并依赖幂等去重；预算不会重置。失败不跳过未扫描页。
 - 六状态为 PENDING/RUNNING/SUCCESS/FAILED/RETRYING/STOPPED。STOP 在运行中先置 stopRequested，在提交边界确认，终态不可重新 START；重试受次数限制，终态重跑创建关联新任务。
 - 所有变更使用 version；过期提交返回 409。多实例通过来源数据库租约、任务 attempt/token 和源级 nextRequestAt 协调；网络等待不持有数据库事务。
-- 定时设置字段：version、enabled、minIntervalMs（1,000–60,000）、scheduleEnabled、scheduleEveryMinutes（60–10,080）、scheduleIssn、schedulePageSize、scheduleMaxPages、scheduleLookbackDays（1–31）。启用定时需要有效 ISSN。默认关闭；启用后自动创建 INCREMENTAL 窗口至 UTC 昨日，按已完成水位滚动并保留重叠。配置参考部署说明。
+- 仅 Crossref 支持定时；公告源 scheduleEnabled=true 返回参数错误。定时设置字段：version、enabled、minIntervalMs（1,000–60,000）、scheduleEnabled、scheduleEveryMinutes（60–10,080）、scheduleIssn、schedulePageSize、scheduleMaxPages、scheduleLookbackDays（1–31）。启用定时需要有效 ISSN。默认关闭；启用后自动创建 INCREMENTAL 窗口至 UTC 昨日，按已完成水位滚动并保留重叠。配置参考部署说明。
 - 尊重 robots、Retry-After、HTTP 缓存约束、来源速率/并发头。401/403、挑战页和非法响应可见失败；访问拒绝、robots 拒绝或验证挑战会在有效租约且配置版本仍匹配时暂停定时计划、递增配置版本，等待人工复核。429 只退避；不自动绕过认证或验证码。
 - 质量队列当前只读，不能在此界面批准冲突、合并学者或机构。Crossref ORCID 仅作为学术人物标识，不赋予用户身份或门户权限。
 
 统计 `/api/statistics` 在原类型/年份/机构计数外增加热点 `hotspots`、分母 `hotspotDenominator`、逐年 `hotspotTrend`/`hotspotBuckets`、规则 `hotspotRule` 和覆盖率 `coverage`。热点频次按每篇成果去重，只使用题名/摘要；未知年份单独成桶，不推测未来趋势。完整算法和 ER 见 [构件设计](design/component-design.md)、[数据库设计](design/database-er.md)。
+
+## 固定公告批次 API（v0.4）
+
+来源对象增加 sourceName、outcomeType、scopeKind、endpoint、batches、supportsIncremental、supportsSchedule。batches 每项包含 id、label、year、url、contentType；year 表示注册批次年度，不保证等于每条成果业务年（CNIPA 专利授权年份仍未知）。客户端应按能力切换参数，不能把公告视为 Crossref 期刊窗口。
+
+| sourceId | 唯一已登记 batchId |
+| --- | --- |
+| lynu-patents | lynu-grants-2025 |
+| cnipa-patents | cnipa-25-gold-2025 |
+| nsfc-projects | nsfc-life-key-2019 |
+| most-awards | most-natural-science-2023 |
+
+~~~json
+{"sourceId":"nsfc-projects","batchId":"nsfc-life-key-2019","mode":"BOUNDED","maxRecords":10,"pageSize":5,"maxPages":2}
+~~~
+
+公告任务只接受 BOUNDED；不得附加 DOI、ISSN、query、fromDate/untilDate、fromPublicationYear/toPublicationYear。Crossref 不能带 batchId。未知或不属于该来源的批次返回400，管理员不能用这些字段指定任意地址。创建后仍需 START；所有动作继续带 version，角色继续仅ADMIN。
+
+预算限制的是本任务处理的原始行数，包含排除/未变/冲突，不是新增数或HTTP下载大小。pageSize为事务切片大小；服务读取整份注册文档后从固定顺序取预算内行。LIMIT_REACHED可作为BOUNDED成功原因，但公告任务不写完整同步水位，也不支持定时。重跑可通过parentTaskId关联已结束的同源任务。
+
+GET `/api/admin/crawl/tasks/{id}/pages/{page}`：
+
+- Crossref：rawJson 为原 JSON 文本，contentType=application/json、bodyEncoding=utf-8。
+- 公告：rawJson 为整份冻结正文；HTML使用utf-8文本，PDF使用base64原字节。新增sliceMetadata保存本页documentTaskId/batchId/offset/count/documentChecksum；contentType/bodyEncoding用于选择显示/解码方式，byteChecksum/recordCount/parserVersion/fetchedAt说明原始字节、整份文件行数、冻结解析器版本与抓取时刻。
+- responseChecksum按原始page.raw()计算；公告时为整份冻结正文文本，与sliceMetadata.documentChecksum一致，而不是切片定位字符串的哈希。PDF的Base64文本哈希与原始字节byteChecksum不同。
+- 原文受ADMIN权限保护，不允许客户端执行原HTML脚本。任务冻结parser_version；恢复解析器版本、登记URL或行数变化时返回可见DOCUMENT_CHANGED失败，须新建任务，旧快照不变。
+
+首批冻结文档、成果及修订/倒排、页记录与断点同事务提交。后续页从已冻结文档恢复，不混用源站后来的版本。来源发布日期独立于fetchedAt，也不等同记录修订时间；本轮公告解析器sourceUpdatedAt为null，无可信更晚源时间的内容变化进入质量复核，不依据抓取时间覆盖主值。
+
+NSFC固定来源使用主机限定的PKIX信任配置，详见 [TLS说明](../backend/src/main/resources/tls/README.md)。TLS_VALIDATION_FAILED是不可自动/手动重试的来源失败；管理员应复核证书/运行时配置后创建新任务，不能用RETRY跳过验证。配置不修改全局信任库，源站主机名与标准证书校验继续生效。
