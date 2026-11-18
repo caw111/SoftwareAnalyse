@@ -30,7 +30,7 @@ class RegisteredSourceTransportTest {
             assertSame(nsfc,transport.clientFor(URI.create("https://www.nsfc.gov.cn/robots.txt")));
             for(String url:List.of("https://www.nsfc.gov.cn.evil.example/robots.txt","https://other.nsfc.gov.cn/robots.txt",
                 "http://www.nsfc.gov.cn/robots.txt","https://www.nsfc.gov.cn:444/robots.txt","https://www.nsfc.gov.cn/private",
-                "https://attacker@www.nsfc.gov.cn/robots.txt")) {
+                "https://attacker@www.nsfc.gov.cn/robots.txt","https://sites.lynu.edu.cn/kycx/info/1221/5141.htm","https://sites.lynu.edu.cn/robots.txt")) {
                 URI uri=URI.create(url);assertSame(standard,transport.clientFor(uri));
                 assertEquals("UNREGISTERED_ENDPOINT",assertThrows(CrawlFailure.class,()->transport.get(uri,Map.of())).code);
             }

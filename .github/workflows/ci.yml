@@ -1,0 +1,274 @@
+name: CI and deployment
+
+on:
+  push:
+    branches: [Group2]
+  pull_request:
+    branches: [Group2, main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# PR updates may cancel obsolete checks. Group2 pushes never interrupt deployment.
+concurrency:
+  group: academic-ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+env:
+  CI: 'true'
+  CRAWL_WORKER_ENABLED: 'false'
+  DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+  IMAGE_NAME: ghcr.io/caw111/softwareanalyse-api
+
+jobs:
+  backend-h2:
+    name: Backend / Java 21 / H2
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: backend
+        shell: bash
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880 # v6.3.0
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: gradle/actions/setup-gradle@7296c772c13d12d9871528814b51fb2143c138ef # v6.4.1
+        with:
+          validate-wrappers: true
+          cache-read-only: ${{ github.event_name != 'push' || github.ref != 'refs/heads/Group2' || github.repository != 'caw111/SoftwareAnalyse' }}
+      - name: Run functional tests and build the deployable JAR
+        run: |
+          bash ./gradlew --no-daemon --console=plain test bootJar
+          sha256sum build/libs/academic-platform-api.jar > build/libs/academic-platform-api.jar.sha256
+      - name: Verify deployment failure and rollback behavior without real containers
+        run: sudo python3 ../scripts/test-deployment.py --script ../deploy/server/deploy.sh
+      - name: Preserve H2 test reports
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: backend-h2-tests
+          path: |
+            backend/build/test-results/test/
+            backend/build/reports/tests/test/
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Preserve the tested JAR
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: api-jar-${{ github.sha }}
+          path: |
+            backend/build/libs/academic-platform-api.jar
+            backend/build/libs/academic-platform-api.jar.sha256
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0
+
+  backend-postgres:
+    name: Backend / Java 21 / PostgreSQL 17
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: backend
+        shell: bash
+    services:
+      postgres:
+        image: postgres:17-alpine
+        env:
+          POSTGRES_DB: academic_test
+          POSTGRES_USER: academic_test
+          # Disposable CI database only; never a deployment credential.
+          POSTGRES_PASSWORD: ${{ github.run_id }}-${{ github.run_attempt }}-ci-only
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U academic_test -d academic_test"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 12
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880 # v6.3.0
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: gradle/actions/setup-gradle@7296c772c13d12d9871528814b51fb2143c138ef # v6.4.1
+        with:
+          validate-wrappers: true
+          cache-read-only: ${{ github.event_name != 'push' || github.ref != 'refs/heads/Group2' || github.repository != 'caw111/SoftwareAnalyse' }}
+      - name: Run the same functional suite against isolated PostgreSQL
+        env:
+          TEST_DB_URL: jdbc:postgresql://127.0.0.1:5432/academic_test
+          TEST_DB_USER: academic_test
+          TEST_DB_PASSWORD: ${{ github.run_id }}-${{ github.run_attempt }}-ci-only
+        run: bash ./gradlew --no-daemon --console=plain test
+      - name: Preserve PostgreSQL test reports
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: backend-postgres-tests
+          path: |
+            backend/build/test-results/test/
+            backend/build/reports/tests/test/
+          if-no-files-found: warn
+          retention-days: 14
+
+  windows-desktop:
+    name: Windows / WPF build and self-contained EXE
+    runs-on: windows-2025
+    timeout-minutes: 25
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
+        with:
+          dotnet-version: '9.0.x'
+      - name: Build WPF Release
+        run: |
+          dotnet build frontend/AcademicDesktop/AcademicDesktop.csproj --configuration Release --nologo
+          if ($LASTEXITCODE -ne 0) { throw 'WPF build failed.' }
+      - name: Publish the Windows x64 desktop application
+        run: |
+          ./scripts/publish-desktop.ps1 -IsolateNuGetSettings
+          $exe = Join-Path $PWD 'artifacts/windows-x64/AcademicDesktop.exe'
+          if (!(Test-Path -LiteralPath $exe)) { throw 'The published EXE is missing.' }
+          $checksum = (Get-FileHash -LiteralPath $exe -Algorithm SHA256).Hash
+          [IO.File]::WriteAllText(
+            (Join-Path (Split-Path $exe) 'AcademicDesktop.exe.sha256'),
+            "$checksum  AcademicDesktop.exe" + [Environment]::NewLine,
+            [Text.UTF8Encoding]::new($false))
+      - name: Preserve the Windows application
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: windows-x64-${{ github.sha }}
+          path: artifacts/windows-x64/
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0
+
+  publish:
+    name: Publish the tested API image
+    needs: [backend-h2, backend-postgres, windows-desktop]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/Group2' && github.repository == 'caw111/SoftwareAnalyse'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      digest: ${{ steps.image.outputs.digest }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - name: Download the JAR from this exact CI run
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: api-jar-${{ github.sha }}
+          path: backend/build/libs/
+      - name: Check the JAR checksum
+        working-directory: backend
+        run: sha256sum --check build/libs/academic-platform-api.jar.sha256
+      - name: Authenticate to GHCR with this job's short-lived token
+        env:
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DOCKER_CONFIG: ${{ runner.temp }}/academic-ghcr-auth
+        run: |
+          install -d -m 700 "$DOCKER_CONFIG"
+          printf '%s' "$GHCR_TOKEN" | docker login ghcr.io --username "$GITHUB_ACTOR" --password-stdin
+      - name: Build and push an immutable release
+        id: image
+        env:
+          DOCKER_CONFIG: ${{ runner.temp }}/academic-ghcr-auth
+        shell: bash
+        run: |
+          set -euo pipefail
+          [[ "$GITHUB_SHA" =~ ^[0-9a-f]{40}$ ]]
+          docker buildx create --name academic-ci-builder --driver docker-container --use
+          docker buildx build \
+            --platform linux/amd64 \
+            --file backend/Dockerfile.runtime \
+            --build-arg "REVISION=$GITHUB_SHA" \
+            --label "org.opencontainers.image.revision=$GITHUB_SHA" \
+            --label "org.opencontainers.image.source=https://github.com/$GITHUB_REPOSITORY" \
+            --tag "$IMAGE_NAME:$GITHUB_SHA" \
+            --metadata-file "$RUNNER_TEMP/academic-image-metadata.json" \
+            --push backend
+          digest="$(jq -er '."containerimage.digest"' "$RUNNER_TEMP/academic-image-metadata.json")"
+          [[ "$digest" =~ ^sha256:[0-9a-f]{64}$ ]]
+          printf 'digest=%s\n' "$digest" >> "$GITHUB_OUTPUT"
+          printf 'Published API image: %s@%s\n' "$IMAGE_NAME" "$digest" >> "$GITHUB_STEP_SUMMARY"
+      - name: Remove registry credentials from the runner
+        if: always()
+        env:
+          DOCKER_CONFIG: ${{ runner.temp }}/academic-ghcr-auth
+        run: |
+          docker logout ghcr.io || true
+          rm -f "$DOCKER_CONFIG/config.json"
+
+  deploy:
+    name: Deploy API and verify readiness
+    needs: publish
+    if: github.event_name == 'push' && github.ref == 'refs/heads/Group2' && github.repository == 'caw111/SoftwareAnalyse'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    environment: production
+    concurrency:
+      group: academic-production
+      cancel-in-progress: false
+    permissions:
+      packages: read
+    steps:
+      - name: Pull the exact digest through the restricted SSH gateway
+        shell: bash
+        env:
+          DEPLOY_HOST: ${{ vars.DEPLOY_HOST }}
+          DEPLOY_PORT: ${{ vars.DEPLOY_PORT || '22' }}
+          DEPLOY_USER: ${{ vars.DEPLOY_USER }}
+          DEPLOY_KNOWN_HOSTS: ${{ vars.DEPLOY_KNOWN_HOSTS }}
+          DEPLOY_SSH_KEY: ${{ secrets.DEPLOY_SSH_KEY }}
+          DEPLOY_COMMIT: ${{ github.sha }}
+          IMAGE_DIGEST: ${{ needs.publish.outputs.digest }}
+          REGISTRY_USER: ${{ github.actor }}
+          GHCR_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          [[ "$DEPLOY_HOST" =~ ^[A-Za-z0-9][A-Za-z0-9.-]*$ ]]
+          [[ "$DEPLOY_USER" =~ ^[a-z_][a-z0-9_-]*$ ]]
+          [[ "$DEPLOY_PORT" =~ ^[0-9]{1,5}$ ]]
+          (( 10#$DEPLOY_PORT >= 1 && 10#$DEPLOY_PORT <= 65535 ))
+          [[ "$DEPLOY_COMMIT" =~ ^[0-9a-f]{40}$ ]]
+          [[ "$IMAGE_DIGEST" =~ ^sha256:[0-9a-f]{64}$ ]]
+          [[ "$REGISTRY_USER" =~ ^[A-Za-z0-9-]{1,39}$ ]]
+          [[ -n "$DEPLOY_SSH_KEY" && -n "$DEPLOY_KNOWN_HOSTS" && -n "$GHCR_TOKEN" ]]
+          umask 077
+          ssh_dir="$(mktemp -d "$RUNNER_TEMP/academic-ssh.XXXXXX")"
+          trap 'rm -f "$ssh_dir/key" "$ssh_dir/known_hosts"; rmdir "$ssh_dir"' EXIT
+          printf '%s\n' "$DEPLOY_SSH_KEY" > "$ssh_dir/key"
+          printf '%s\n' "$DEPLOY_KNOWN_HOSTS" > "$ssh_dir/known_hosts"
+          # The forced command reads two bounded lines. Neither token nor private
+          # key is placed in command arguments, a repository file, or the log.
+          printf '%s\n%s\n' "$REGISTRY_USER" "$GHCR_TOKEN" |
+            ssh -F /dev/null -T \
+              -i "$ssh_dir/key" -p "$DEPLOY_PORT" \
+              -o BatchMode=yes -o IdentitiesOnly=yes \
+              -o StrictHostKeyChecking=yes \
+              -o "UserKnownHostsFile=$ssh_dir/known_hosts" \
+              -o ConnectTimeout=15 \
+              -o ServerAliveInterval=15 -o ServerAliveCountMax=4 \
+              "$DEPLOY_USER@$DEPLOY_HOST" \
+              "deploy $DEPLOY_COMMIT $IMAGE_DIGEST"
+          printf 'Deployment accepted after server health checks: %s\n' "$DEPLOY_COMMIT" >> "$GITHUB_STEP_SUMMARY"
+
