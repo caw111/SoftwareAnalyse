@@ -48,8 +48,9 @@ public class CrawlStore {
     @Transactional
     public Object create(Create input,AuthService.Actor actor) {actor.admin();return createLocked(input,actor,sourceLock(input.sourceId()),false);}
     private Object createLocked(Create input,AuthService.Actor actor,Map<String,Object> source,boolean runnable) {
-        if(!flag(source,"enabled")) throw ApiException.conflict("来源已停用");
         var definition=CrawlSourceCatalog.source(input.sourceId());
+        if(!definition.available()) throw ApiException.conflict(definition.deprecationReason());
+        if(!flag(source,"enabled")) throw ApiException.conflict("来源已停用");
         boolean registered=!definition.isCrossref();
         String batch=blank(input.batchId());
         String issn=blank(input.issn()).toUpperCase(Locale.ROOT),query=blank(input.query()),doi=blank(input.doi());
@@ -115,6 +116,7 @@ public class CrawlStore {
     @Transactional
     public Object settings(String id,Settings input,AuthService.Actor actor) {
         actor.admin();var definition=CrawlSourceCatalog.source(id);var source=sourceLock(id);
+        if(!definition.available()) throw ApiException.conflict(definition.deprecationReason());
         if(num(source,"configVersion")!=input.version()) throw ApiException.conflict("来源配置已变化，请刷新");
         if(!definition.isCrossref()&&input.scheduleEnabled()) throw ApiException.bad("公告来源需按登记批次创建任务，暂不支持时间窗口定时计划");
         if(input.scheduleEnabled()&&(!input.enabled()||!input.scheduleIssn().matches("[0-9]{4}-[0-9]{3}[0-9Xx]"))) throw ApiException.bad("启用定时采集前须启用来源并填写有效 ISSN");
@@ -128,6 +130,8 @@ public class CrawlStore {
     public Object action(String id,Action input,AuthService.Actor actor) {
         actor.admin();var task=taskLock(id);String state=str(task,"state");
         if(num(task,"version")!=input.version()) throw ApiException.conflict("采集任务已变化，请刷新");
+        var definition=CrawlSourceCatalog.source(str(task,"sourceId"));
+        if(Set.of("START","RETRY").contains(input.action())&&!definition.available()) throw ApiException.conflict(definition.deprecationReason());
         switch(input.action()) {
             case "START" -> {
                 if(!state.equals("PENDING")||flag(task,"stopRequested")) throw ApiException.conflict("只能启动未取消的等待任务");
@@ -175,6 +179,7 @@ public class CrawlStore {
         for(var candidate:db.rows("SELECT id,source_id FROM crawl_task WHERE (state IN ('PENDING','RETRYING') AND (runnable=TRUE OR stop_requested=TRUE) AND next_run_at<=?) OR (state='RUNNING' AND lease_until<=?) ORDER BY created_at,id LIMIT 20",now,now)) {
             var source=sourceLock(str(candidate,"sourceId"));var task=taskLock(str(candidate,"id"));String state=str(task,"state");
             if(Set.of("SUCCESS","FAILED","STOPPED").contains(state)) continue;
+            if(!CrawlSourceCatalog.source(str(source,"id")).available()) {stop(task,source,"SOURCE_DEPRECATED");continue;}
             if(state.equals("RUNNING")&&num(task,"leaseUntil")>now) continue;
             if(flag(task,"stopRequested")||!flag(source,"enabled")) {stop(task,source,"ADMIN_CANCELLED");continue;}
             if(state.equals("RUNNING")) {failLocked(task,source,new CrawlFailure("LEASE_EXPIRED","执行租约过期，旧执行器已失效",true));continue;}
@@ -197,6 +202,7 @@ public class CrawlStore {
     public long reserveRequest(Lease lease) {
         var source=sourceLock(lease.sourceId());var task=taskLock(lease.id());
         if(!valid(lease,source,task)) throw new CrawlFailure("STALE_ATTEMPT","执行尝试已失效",false);
+        if(!CrawlSourceCatalog.source(lease.sourceId()).available()) throw new CrawlFailure("SOURCE_DEPRECATED","来源已弃用，不能继续请求",false);
         if(flag(task,"stopRequested")||!flag(source,"enabled")) throw new CrawlFailure("STOP_REQUESTED","采集已请求停止",false);
         long start=Math.max(Db.now(),num(source,"nextRequestAt"));
         if(start+25_000>=num(task,"leaseUntil")) throw new CrawlFailure("SOURCE_WAIT","来源要求等待后再请求",true,start,false);
@@ -206,12 +212,13 @@ public class CrawlStore {
     public void assertActive(Lease lease) {
         var source=sourceLock(lease.sourceId());var task=taskLock(lease.id());
         if(!valid(lease,source,task)) throw new CrawlFailure("STALE_ATTEMPT","执行尝试已失效",false);
+        if(!CrawlSourceCatalog.source(lease.sourceId()).available()) throw new CrawlFailure("SOURCE_DEPRECATED","来源已弃用，不能继续执行",false);
         if(flag(task,"stopRequested")||!flag(source,"enabled")) throw new CrawlFailure("STOP_REQUESTED","采集已请求停止",false);
     }
     public Map<String,Object> cached(String url) {var rows=db.rows("SELECT * FROM crawl_http_cache WHERE url_hash=?",AuthService.hash(url));return rows.isEmpty()?null:rows.getFirst();}
     @Transactional
     public void cache(Lease lease,String url,CrossrefTransport.Response response,long expires) {
-        var source=sourceLock(lease.sourceId());var task=taskLock(lease.id());if(!valid(lease,source,task)||flag(task,"stopRequested")) return;
+        var source=sourceLock(lease.sourceId());var task=taskLock(lease.id());if(!valid(lease,source,task)||flag(task,"stopRequested")||!CrawlSourceCatalog.source(lease.sourceId()).available()) return;
         String key=AuthService.hash(url);db.update("DELETE FROM crawl_http_cache WHERE url_hash=?",key);
         String control=response.header("Cache-Control").toLowerCase(Locale.ROOT);
         if(control.contains("no-store")) return;
@@ -229,13 +236,14 @@ public class CrawlStore {
     }
     @Transactional
     public void advertisedRate(Lease lease,long interval) {
-        var source=sourceLock(lease.sourceId());var task=taskLock(lease.id());if(!valid(lease,source,task)) return;
+        var source=sourceLock(lease.sourceId());var task=taskLock(lease.id());if(!valid(lease,source,task)||!CrawlSourceCatalog.source(lease.sourceId()).available()) return;
         db.update("UPDATE crawl_source SET next_request_at=? WHERE id=?",Math.max(num(source,"nextRequestAt"),Db.now()+Math.max(0,interval)),source.get("id"));
     }
     @Transactional
     public boolean commit(Lease lease,CrawlPage page) {
         var source=sourceLock(lease.sourceId());var task=taskLock(lease.id());
         if(!valid(lease,source,task)) return false;
+        if(!CrawlSourceCatalog.source(lease.sourceId()).available()) {stop(task,source,"SOURCE_DEPRECATED");return false;}
         if(flag(task,"stopRequested")||!flag(source,"enabled")) {stop(task,source,"ADMIN_CANCELLED");return false;}
         var user=db.one("SELECT * FROM app_user WHERE id=?",task.get("createdBy"));
         if(!str(user,"role").equals("ADMIN")) {failLocked(task,source,new CrawlFailure("ADMIN_REVOKED","创建者已无采集管理权限",false));return false;}
@@ -283,6 +291,7 @@ public class CrawlStore {
     @Transactional
     public void fail(Lease lease,CrawlFailure failure) {
         var source=sourceLock(lease.sourceId());var task=taskLock(lease.id());if(!valid(lease,source,task)) return;
+        if(!CrawlSourceCatalog.source(lease.sourceId()).available()) {stop(task,source,"SOURCE_DEPRECATED");return;}
         if(flag(task,"stopRequested")||!flag(source,"enabled")||failure.code.equals("STOP_REQUESTED")) {stop(task,source,"ADMIN_CANCELLED");return;}
         failLocked(task,source,failure);
     }
@@ -308,6 +317,7 @@ public class CrawlStore {
     }
     private void stop(Map<String,Object> task,Map<String,Object> source,String reason) {
         transition(task,"STOPPED",reason,"执行器已在安全边界停止，已提交数据保留，成功水位不变");
+        if(reason.equals("SOURCE_DEPRECATED")) db.update("UPDATE crawl_task SET runnable=FALSE,stop_requested=TRUE,completion_reason=?,error_message=? WHERE id=?",reason,CrawlSourceCatalog.source(str(source,"id")).deprecationReason(),task.get("id"));
         db.update("UPDATE crawl_task SET completed_at=?,error_code=? WHERE id=?",Db.now(),reason,task.get("id"));release(task,source);
     }
     private void release(Map<String,Object> task,Map<String,Object> source) {

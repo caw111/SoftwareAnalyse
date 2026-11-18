@@ -5,9 +5,12 @@ import java.util.*;
 
 /** Reviewed fixed source batches. User input never becomes a destination URL. */
 final class CrawlSourceCatalog {
+    private static final Map<String,String> DEPRECATED=Map.of("lynu-patents","该来源已弃用，仅保留既有成果和采集历史。");
     record Batch(String id,String label,int year,String url,String contentType) {}
     record Source(String id,String name,String sourceName,String outcomeType,String scopeKind,String endpoint,List<Batch> batches) {
         boolean isCrossref() {return scopeKind.equals("CROSSREF_WINDOW");}
+        boolean available() {return !DEPRECATED.containsKey(id);}
+        String deprecationReason() {return DEPRECATED.getOrDefault(id,"");}
     }
     static final List<Source> SOURCES=List.of(
         new Source("crossref","Crossref 论文题录","Crossref","PAPER","CROSSREF_WINDOW","https://api.crossref.org/works",List.of()),
@@ -26,10 +29,11 @@ final class CrawlSourceCatalog {
         var s=source(row.get("id").toString());
         row.put("name",s.name());row.put("sourceName",s.sourceName());row.put("outcomeType",s.outcomeType());row.put("scopeKind",s.scopeKind());
         row.put("endpoint",s.endpoint());row.put("batches",s.batches());row.put("supportsIncremental",s.isCrossref());row.put("supportsSchedule",s.isCrossref());
+        row.put("available",s.available());row.put("deprecated",!s.available());row.put("deprecationReason",s.deprecationReason());
     }
     static boolean allows(URI uri) {
         if(!"https".equals(uri.getScheme())||uri.getPort()!=-1||uri.getUserInfo()!=null||uri.getFragment()!=null) return false;
-        return SOURCES.stream().filter(s->!s.isCrossref()).flatMap(s->s.batches().stream()).anyMatch(b->{
+        return SOURCES.stream().filter(s->s.available()&&!s.isCrossref()).flatMap(s->s.batches().stream()).anyMatch(b->{
             URI registered=URI.create(b.url());
             return uri.equals(registered)||Objects.equals(uri.getHost(),registered.getHost())&&uri.getRawPath().equals("/robots.txt")&&uri.getRawQuery()==null;
         });

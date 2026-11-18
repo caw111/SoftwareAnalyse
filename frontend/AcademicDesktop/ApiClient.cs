@@ -119,9 +119,13 @@ public sealed class CrawlSourceVm(JsonNode data)
     public string ScopeKind => Data.Text("scopeKind", Id == "crossref" ? "CROSSREF_WINDOW" : "");
     public bool IsBatch => ScopeKind == "REGISTERED_BATCH";
     public bool IsCrossref => ScopeKind == "CROSSREF_WINDOW";
-    public bool SupportsIncremental => IsCrossref && (Data["supportsIncremental"] == null ? Id == "crossref" : Data.Flag("supportsIncremental"));
-    public bool SupportsSchedule => IsCrossref && (Data["supportsSchedule"] == null ? Id == "crossref" : Data.Flag("supportsSchedule"));
-    public string Label => Name + (OutcomeType.Length > 0 ? " · " + Labels.Type(OutcomeType) : "");
+    public bool Deprecated => Data.Flag("deprecated");
+    public bool Available => !Deprecated && (Data["available"] == null || Data.Flag("available"));
+    public string UnavailableReason => Data.Text("deprecationReason") is { Length: > 0 } reason ? reason
+        : Deprecated ? "该来源已弃用，仅保留既有成果和采集历史。" : "该来源当前不可用于新建任务或修改配置。";
+    public bool SupportsIncremental => Available && IsCrossref && (Data["supportsIncremental"] == null ? Id == "crossref" : Data.Flag("supportsIncremental"));
+    public bool SupportsSchedule => Available && IsCrossref && (Data["supportsSchedule"] == null ? Id == "crossref" : Data.Flag("supportsSchedule"));
+    public string Label => Name + (OutcomeType.Length > 0 ? " · " + Labels.Type(OutcomeType) : "") + (Deprecated ? " · 已弃用" : "");
     public IReadOnlyList<CrawlBatchVm> Batches => Data["batches"] is JsonArray batches ? batches.Items().Select(item => new CrawlBatchVm(item)).ToList() : [];
 }
 public sealed class CrawlBatchVm(JsonNode data)
@@ -176,6 +180,7 @@ public static class CrawlDisplay
     };
     public static string Completion(string reason) => reason switch
     {
+        "SOURCE_DEPRECATED" => "来源已弃用，历史记录保留",
         "LIMIT_REACHED" => "达到设定条数，限量任务结束", "SOURCE_EXHAUSTED" => "来源范围已扫描完成", "DOI_COMPLETED" => "单篇 DOI 已完成",
         "" => "尚未结束", _ => reason
     };

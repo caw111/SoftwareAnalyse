@@ -51,6 +51,38 @@ public partial class MainWindow
             AssertSmoke(originalSource.Flag("enabled") && !originalSource.Flag("scheduleEnabled"),
                 "请在已启用 Crossref、未启用定时计划的本机演示 API 上运行；验收不会开启来源或真实定时计划。");
             checks.Add("administrator-navigation-and-source-entry");
+            var deprecatedSource = FindCrawlSource("lynu-patents");
+            AssertSmoke(deprecatedSource is { Deprecated: true, Available: false } && deprecatedSource.Label.Contains("已弃用"),
+                "服务器没有保留已弃用 LYNU 的历史元信息。");
+            AssertSmoke(CrawlSource.Items.OfType<CrawlSourceVm>().All(source => source.Available && !source.Deprecated) &&
+                !CrawlSource.Items.OfType<CrawlSourceVm>().Any(source => source.Id == "lynu-patents"),
+                "已弃用来源仍出现在新建任务或配置选择列表中。");
+            checks.Add("deprecated-source-hidden-from-create-and-settings");
+            var historicalTask = CrawlTasks.Items.OfType<CrawlTaskVm>().FirstOrDefault(task => task.Data.Text("sourceId") == "lynu-patents");
+            if (historicalTask != null)
+            {
+                busy = true;
+                try
+                {
+                    CrawlTasks.SelectedItem = historicalTask; await LoadCrawlDetail(historicalTask.Id);
+                    AssertSmoke(crawlSelectedDetail?.Text("id") == historicalTask.Id && historicalTask.SourceLabel.Contains("已弃用") &&
+                        CrawlTaskSummary.Text.Contains(deprecatedSource!.UnavailableReason) && !CrawlStart.IsEnabled && !CrawlRetry.IsEnabled && !CrawlFollowup.IsEnabled,
+                        "已弃用来源历史详情不可读，或仍允许启动、重试、续建。");
+                    AssertSmoke(CrawlOpenCatalog.IsEnabled == (crawlSelectedDetail!.Number("publicationRevision") > 0),
+                        "弃用来源已发布的成果目录入口没有保留。");
+                    if (CrawlRawPages.SelectedItem is CrawlPageVm historicalPage)
+                    {
+                        var originalPage = await api.Get($"api/admin/crawl/tasks/{historicalTask.Id}/pages/{historicalPage.Number}");
+                        AssertSmoke(originalPage.Text("taskId") == historicalTask.Id && originalPage.Text("rawJson").Length > 0,
+                            "弃用来源的已存档原始页不可读。");
+                    }
+                    report["deprecatedHistory"] = new JsonObject { ["checked"] = true, ["taskId"] = historicalTask.Id };
+                    checks.Add("deprecated-history-readable-without-restart");
+                }
+                finally { busy = false; }
+            }
+            else report["deprecatedHistory"] = new JsonObject { ["checked"] = false, ["reason"] = "当前任务页没有 LYNU 历史记录；不为验收创建弃用来源任务。" };
+
             AssertSmoke(ContributorAffiliation(new JsonObject { ["rawAffiliationsJson"] = "[\"来源署名大学\"]" }).Contains("来源署名大学（来源署名，未匹配规范机构）") &&
                 ContributorAffiliation(new JsonObject { ["institutionName"] = "规范机构", ["rawAffiliationsJson"] = "[\"原文机构\"]" }) == "规范机构",
                 "来源原署名机构未正确回显，或覆盖了已匹配的规范机构。");
@@ -104,9 +136,10 @@ public partial class MainWindow
             CrawlTaskFormExpander.IsExpanded = false; CrawlTasks.BringIntoView();
             await CaptureWorkspace("tasks", output, screenshots);
 
-            var batchSourceIds = crawlSources.Where(source => source.IsBatch && source.Data.Flag("enabled") && source.Batches.Count > 0).Select(source => source.Id).ToList();
-            AssertSmoke(new[] { "PATENT", "PROJECT", "AWARD" }.All(type => crawlSources.Any(source => batchSourceIds.Contains(source.Id) && source.OutcomeType == type)),
-                "本机 API 未登记专利、项目、获奖的可用公告批次。");
+            var batchSourceIds = crawlSources.Where(source => source.Available && source.IsBatch && source.Data.Flag("enabled") && source.Batches.Count > 0).Select(source => source.Id).ToList();
+            AssertSmoke(batchSourceIds.OrderBy(id => id).SequenceEqual(new[] { "cnipa-patents", "most-awards", "nsfc-projects" }) &&
+                new[] { "PATENT", "PROJECT", "AWARD" }.All(type => crawlSources.Any(source => batchSourceIds.Contains(source.Id) && source.OutcomeType == type)),
+                "本机 API 应启用 CNIPA 专利、MOST 获奖、NSFC 项目三个有效公告来源。");
             foreach (string sourceId in batchSourceIds)
             {
                 await SelectCrawlSmokeSource(sourceId);

@@ -63,17 +63,21 @@ public partial class MainWindow
         string? selectedId = selectSourceId ?? (CrawlSource.SelectedItem as CrawlSourceVm)?.Id;
         var response = await api.Get("api/admin/crawl/sources");
         crawlSources = response.Items().Select(item => new CrawlSourceVm(item)).ToList();
-        var selected = crawlSources.FirstOrDefault(source => source.Id == selectedId)
-            ?? (selectedId == null ? crawlSources.FirstOrDefault(source => source.Id == "crossref") ?? crawlSources.FirstOrDefault() : null);
+        // Keep all metadata for historical task labels; only available sources can create or configure tasks.
+        var selectable = crawlSources.Where(source => source.Available).ToList();
+        var selected = selectable.FirstOrDefault(source => source.Id == selectedId)
+            ?? (selectSourceId == null ? selectable.FirstOrDefault(source => source.Id == "crossref") ?? selectable.FirstOrDefault() : null);
         changingCrawlSource = true;
-        try { CrawlSource.ItemsSource = crawlSources; CrawlSource.SelectedItem = selected; }
+        try { CrawlSource.ItemsSource = selectable; CrawlSource.SelectedItem = selected; }
         finally { changingCrawlSource = false; }
         if (selected == null)
         {
-            crawlSettingsLoaded = false; crawlSettingsSourceId = null;
-            CrawlCreateButton.IsEnabled = CrawlSaveSettingsButton.IsEnabled = false;
-            CrawlSourceSummary.Text = "当前来源不可用，请刷新来源列表。";
-            throw new InvalidOperationException(selectedId == null ? "服务器尚未登记成果来源。" : "所选来源已不可用，请重新选择来源。");
+            crawlSettingsLoaded = false; crawlSettingsSourceId = null; ResetCrawlParent();
+            CrawlCreateButton.IsEnabled = CrawlSaveSettingsButton.IsEnabled = CrawlSourceEnabled.IsEnabled = false;
+            CrawlSourceSummary.Text = selectedId != null && FindCrawlSource(selectedId) is { Available: false } unavailable
+                ? unavailable.UnavailableReason : "当前来源不可用，请刷新来源列表。";
+            SetCrawlActionState();
+            throw new InvalidOperationException(CrawlSourceSummary.Text);
         }
         ApplyCrawlSourceForm(selected);
         var source = selected.Data;
@@ -93,7 +97,8 @@ public partial class MainWindow
             CrawlScheduleLookback.Text = source.Text("scheduleLookbackDays", "1");
             crawlSettingsLoaded = true;
         }
-        CrawlSaveSettingsButton.IsEnabled = crawlSettingsLoaded;
+        CrawlSaveSettingsButton.IsEnabled = crawlSettingsLoaded && selected.Available;
+        SetCrawlActionState();
         CrawlScheduleSummary.Text = !selected.SupportsSchedule ? "本来源按公告 / 清单批次采集，不提供自动定时计划。可重新创建同一批次任务，由服务器依据原文哈希识别未变内容。"
             : source.Flag("scheduleEnabled") ? $"服务器计划已启用 · 下次执行 {CrawlDisplay.Time(source, "nextScheduleAt")}；客户端无需保持开启。"
             : "定时计划未启用。启用后由服务器按指定 ISSN 和成功水位创建增量任务。";
@@ -126,10 +131,11 @@ public partial class MainWindow
             ? "服务器下载固定清单并冻结原文，随后分批提交；以上是入库批次预算，不是网络翻页。达到条数或批次上限不代表整份清单已处理完成。"
             : "窗口增量必须扫描完整窗口才会推进水位；数量或页预算不足时请缩小范围，再创建关联任务。";
         CrawlSourceEnabled.Content = "启用 " + source.Name + " 来源";
+        CrawlSourceEnabled.IsEnabled = source.Available;
         CrawlScheduleEnabled.IsEnabled = source.SupportsSchedule;
         CrawlScheduleFields.Visibility = source.SupportsSchedule ? Visibility.Visible : Visibility.Collapsed;
         if (!source.SupportsSchedule) CrawlScheduleEnabled.IsChecked = false;
-        CrawlCreateButton.IsEnabled = source.Data.Flag("enabled") && (source.IsCrossref || source.IsBatch && batches.Count > 0);
+        CrawlCreateButton.IsEnabled = source.Available && source.Data.Flag("enabled") && (source.IsCrossref || source.IsBatch && batches.Count > 0);
     }
 
     private async void CrawlSourceChanged(object sender, SelectionChangedEventArgs e)
@@ -161,6 +167,7 @@ public partial class MainWindow
         RequireAccount("ADMIN");
         if (CrawlSource.SelectedItem is not CrawlSourceVm source || crawlFormSourceId != source.Id || (!source.IsBatch && !source.IsCrossref))
             throw new InvalidOperationException("请选择服务器支持的成果来源。");
+        if (!source.Available) throw new InvalidOperationException(source.UnavailableReason);
         return source;
     }
     private CrawlSourceVm? FindCrawlSource(string id) => crawlSources.FirstOrDefault(source => source.Id == id);
@@ -189,14 +196,16 @@ public partial class MainWindow
         if (changed) ClearCrawlSelection("正在读取所选任务…");
         var data = await api.Get("api/admin/crawl/tasks/" + Uri.EscapeDataString(id));
         crawlSelectedDetail = data;
-        var task = new CrawlTaskVm(data, FindCrawlSource(data.Text("sourceId")));
+        var source = FindCrawlSource(data.Text("sourceId"));
+        var task = new CrawlTaskVm(data, source);
         bool batchTask = data.Text("batchId").Length > 0;
         CrawlTaskSummary.Text = $"{task.StateLabel} · {task.ModeLabel} · {task.SourceLabel} · 任务 {task.Id}\n{task.ScopeLabel}\n" +
             (batchTask ? $"登记批次 {data.Text("batchId")} · 已提交 {task.Pages} 批" : $"源更新时间 {data.Text("fromDate")} 至 {data.Text("untilDate")} · 已提交 {task.Pages} 页") + $" · 公开版本 {data.Number("publicationRevision")}\n" +
             $"接收 {task.Received} / 最多 {data.Number("maxRecords")} · 新增 {task.Inserted} · 更新 {task.Updated} · 未变 {task.Unchanged} · 冲突 {task.Conflicts} · 隔离 {task.Excluded}\n" +
             $"执行尝试 {data.Number("attempt")} · 重试 {data.Number("retryCount")} · {CrawlDisplay.Completion(data.Text("completionReason"))}" +
             (data.Text("errorCode") == "" ? "" : $"\n错误 {data.Text("errorCode")}：{data.Text("errorMessage")}") +
-            (data.Flag("stopRequested") && data.Text("state") == "RUNNING" ? "\n停止请求已记录，正在等待服务器在安全边界确认；当前尚未停止。" : "");
+            (data.Flag("stopRequested") && data.Text("state") == "RUNNING" ? "\n停止请求已记录，正在等待服务器在安全边界确认；当前尚未停止。" : "") +
+            (source is { Available: false } ? "\n" + source.UnavailableReason : "");
         CrawlTaskLogs.Text = data["logs"] is JsonArray logs
             ? string.Join("\n", logs.Items().Select(log => $"{CrawlDisplay.Time(log, "createdAt")} · {log.Text("action")} · {CrawlDisplay.State(log.Text("beforeState"))} → {CrawlDisplay.State(log.Text("afterState"))}\n{log.Text("message")}"))
             : "暂无执行记录。";
@@ -216,12 +225,13 @@ public partial class MainWindow
     {
         string state = HasSelectedCrawlDetail ? crawlSelectedDetail!.Text("state") : "";
         bool stopped = crawlSelectedDetail?.Flag("stopRequested") == true;
-        CrawlStart.IsEnabled = state == "PENDING" && !stopped && crawlSelectedDetail?.Flag("runnable") != true;
+        bool sourceAvailable = HasSelectedCrawlDetail && FindCrawlSource(crawlSelectedDetail!.Text("sourceId"))?.Available == true;
+        CrawlStart.IsEnabled = sourceAvailable && state == "PENDING" && !stopped && crawlSelectedDetail?.Flag("runnable") != true;
         CrawlStop.IsEnabled = (state is "PENDING" or "RUNNING" or "RETRYING" or "FAILED") && !stopped;
         string code = crawlSelectedDetail?.Text("errorCode") ?? "";
-        CrawlRetry.IsEnabled = state == "FAILED" && !stopped && crawlSelectedDetail!.Number("retryCount") < 3 &&
+        CrawlRetry.IsEnabled = sourceAvailable && state == "FAILED" && !stopped && crawlSelectedDetail!.Number("retryCount") < 3 &&
             !new[] { "PAGE_LIMIT", "LIMIT_REACHED", "ACCESS_RESTRICTED", "ACCESS_CHALLENGE", "TLS_VALIDATION_FAILED", "ROBOTS_DENIED", "NON_JSON", "NON_HTML", "INVALID_RESPONSE", "DOCUMENT_CHANGED", "RESPONSE_TOO_LARGE" }.Contains(code);
-        CrawlFollowup.IsEnabled = state is "SUCCESS" or "STOPPED" or "FAILED";
+        CrawlFollowup.IsEnabled = sourceAvailable && state is ("SUCCESS" or "STOPPED" or "FAILED");
         CrawlOpenCatalog.IsEnabled = HasSelectedCrawlDetail && crawlSelectedDetail!.Number("publicationRevision") > 0;
     }
 
@@ -303,6 +313,8 @@ public partial class MainWindow
         if (crawlSelectedDetail == null || CrawlTasks.SelectedItem is not CrawlTaskVm selected || selected.Id != crawlSelectedDetail.Text("id"))
             throw new InvalidOperationException("请先选择采集任务。");
         string action = ((Button)sender).Tag.ToString()!;
+        if (action != "STOP" && FindCrawlSource(crawlSelectedDetail.Text("sourceId"))?.Available != true)
+            throw new InvalidOperationException("该来源已不可用，仅可查看既有成果与采集历史。");
         await api.Post($"api/admin/crawl/tasks/{selected.Id}/actions", new { version = crawlSelectedDetail.Number("version"), action });
         await LoadCrawlTasks();
         ShowMessage(action == "STOP" ? "停止请求已提交，请以刷新后的任务状态为准；运行中的任务需要服务器确认停止。" : action == "START" ? "启动请求已提交，服务器会按来源频率执行。" : "重试请求已提交，将从已提交的断点继续。");

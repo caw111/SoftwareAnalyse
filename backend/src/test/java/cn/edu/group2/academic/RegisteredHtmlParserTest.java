@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 class RegisteredHtmlParserTest {
     private final RegisteredHtmlParser parser=new RegisteredHtmlParser();
-    @Test void lynuPreservesApplicationGrantDatesAndUnassertedAffiliations() throws Exception {
+    @Test void historicalLynuFixturePreservesApplicationGrantDatesAndUnassertedAffiliations() throws Exception {
         var parsed=parser.parse("lynu-patents",fixture("lynu-2025.html"));
         assertEquals(28,parsed.rows().size());assertAllAccepted(parsed);
         assertEquals("2026-06-10",parsed.publicationDate());

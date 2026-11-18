@@ -2,6 +2,8 @@
 
 These are frozen public official-source documents downloaded once on **2026-11-17** for offline parser correctness tests. Tests do not contact their publishers or run load tests. HTML files are stored as UTF-8 without BOM; the PDF is the original response bytes. Original pages and checksums can be independently checked. A complete document is retained because table headings, nested layout tables, award grades and PDF page boundaries are part of the parsing contract.
 
+**LYNU was retired on 2026-11-18.** Its fixture and pure parser tests are retained solely for historical evidence and compatibility checks. The source cannot create or resume crawler tasks and its business/robots URLs are no longer network-allowlisted; retaining this fixture does not indicate current source availability.
+
 | Fixture | Official source | Expected source rows | SHA-256 |
 |---|---|---:|---|
 | `lynu-2025.html` | [洛阳师范学院：2025年获得授权的专利清单](https://sites.lynu.edu.cn/kycx/info/1221/5141.htm) | 28 | `C2AAA105BAB480F1D31A862FE0FD76FBF82F85A39B9188F57B25F8354F16560E` |

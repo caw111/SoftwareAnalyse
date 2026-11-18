@@ -14,6 +14,7 @@ class RegisteredSourceClient {
 
     CrawlPage fetch(CrawlStore.Lease lease) {
         var source=CrawlSourceCatalog.source(lease.sourceId());
+        if(!source.available()) throw new CrawlFailure("SOURCE_DEPRECATED",source.deprecationReason(),false);
         var batch=CrawlSourceCatalog.batch(lease.sourceId(),CrawlStore.str(lease.task(),"batchId"));
         var saved=store.document(lease.id());CrawlDocument document;
         RegisteredHtmlParser.Result parsed;

@@ -1,12 +1,11 @@
 param([string]$ApiUrl = 'http://127.0.0.1:8080')
 $ErrorActionPreference = 'Stop'
 $uri = [Uri]$ApiUrl
-if (!$uri.IsAbsoluteUri -or !$uri.IsLoopback) { throw 'This four-record functional check only permits a local demo API.' }
+if (!$uri.IsAbsoluteUri -or !$uri.IsLoopback) { throw 'This three-source functional check only permits a local demo API.' }
 $root = Split-Path $PSScriptRoot
-$outputDir = Join-Path $root 'artifacts/verification-v0.4'
+$outputDir = Join-Path $root 'artifacts/verification-v0.5'
 New-Item -ItemType Directory -Force -Path $outputDir | Out-Null
 $cases = @(
-    @{Source='lynu-patents';Identifier='CN202420753596.1';Year=2025;Type='PATENT'},
     @{Source='nsfc-projects';Identifier='3193000529';Year=2019;Type='PROJECT'},
     @{Source='most-awards';Identifier='Z-102-1-01';Year=2023;Type='AWARD'},
     @{Source='cnipa-patents';Identifier='CN202111257655.3';Year=$null;Type='PATENT'}
@@ -18,7 +17,7 @@ try {
     $sources=Invoke-RestMethod "$ApiUrl/api/admin/crawl/sources" -Headers $headers -TimeoutSec 10
     foreach ($case in $cases) {
         $source=$sources | Where-Object id -eq $case.Source
-        if (!$source.enabled -or $source.scheduleEnabled -or $source.batches.Count -lt 1) { throw "Source $($case.Source) must be enabled, registered and not scheduled." }
+        if (!$source.available -or $source.deprecated -or !$source.enabled -or $source.scheduleEnabled -or $source.batches.Count -lt 1) { throw "Source $($case.Source) must be available, enabled, registered and not scheduled." }
         $firstId=$null
         foreach ($run in 1..2) {
             # One processed record per task; two sequential observations prove idempotence. No load test.
@@ -56,7 +55,7 @@ try {
             Write-Host "$($case.Source) observation ${run}: PASS ($($task.completionReason))"
         }
     }
-    $result=[pscustomobject]@{ok=$true;checkedAt=(Get-Date).ToUniversalTime().ToString('o');runs=$summary;note='4 sources, one processed record per task, repeated once sequentially; no load test.'}
+    $result=[pscustomobject]@{ok=$true;checkedAt=(Get-Date).ToUniversalTime().ToString('o');runs=$summary;note='3 active sources (NSFC projects, MOST awards, CNIPA patents), one processed record per task, repeated once sequentially (6 tasks total); deprecated LYNU is not contacted; no load test.'}
     $result | ConvertTo-Json -Depth 10 | Set-Content -Encoding UTF8 -LiteralPath (Join-Path $outputDir 'registered-live.json')
 } finally {
     if ($activeTask -and $headers) {
