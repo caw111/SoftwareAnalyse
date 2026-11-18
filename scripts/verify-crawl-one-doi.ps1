@@ -4,7 +4,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $endpoint = [Uri]$ApiUrl
-if (!$endpoint.IsAbsoluteUri -or !$endpoint.IsLoopback) { throw 'This single-record functional check only permits a local demo API.' }
+if (!$endpoint.IsAbsoluteUri -or !$endpoint.IsLoopback -or $endpoint.Port -eq 18080) { throw 'Functional verification only permits a local demo API; port 18080 is reserved for the production SSH tunnel.' }
 $root = Split-Path $PSScriptRoot
 $outputDir = Join-Path $root 'artifacts/verification-v0.3'
 New-Item -ItemType Directory -Force -Path $outputDir | Out-Null

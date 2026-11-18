@@ -20,8 +20,7 @@ public partial class LoginWindow : Window
     public LoginWindow(string? address = null)
     {
         InitializeComponent();
-        ServerAddress.Text = !string.IsNullOrWhiteSpace(address) ? address
-            : Environment.GetEnvironmentVariable("ACADEMIC_API_URL") ?? "http://127.0.0.1:8080";
+        ServerAddress.Text = ServerEndpoint.Resolve(address);
     }
 
     protected override void OnSourceInitialized(EventArgs e)

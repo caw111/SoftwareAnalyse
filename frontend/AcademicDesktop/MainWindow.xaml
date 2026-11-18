@@ -3,13 +3,13 @@
     <Grid.ColumnDefinitions><ColumnDefinition Width="212"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
     <Border Background="#142F3A"><DockPanel>
       <StackPanel DockPanel.Dock="Top" Margin="26,28,20,26"><StackPanel Orientation="Horizontal"><Image Source="Assets/zhihui.png" Width="40" Height="40" Margin="-4,0,9,0"/><TextBlock Text="知 汇" FontSize="28" FontWeight="Bold" Foreground="White"/></StackPanel><TextBlock Text="ACADEMIC WORKSPACE" FontSize="10" Foreground="#8CA9B6" Margin="0,7,0,0"/><Border Height="3" Width="30" Background="#48B8AB" HorizontalAlignment="Left" Margin="0,18,0,0"/></StackPanel>
-      <StackPanel DockPanel.Dock="Bottom" Margin="25,20"><TextBlock Text="GROUP 02   /   DESKTOP" FontSize="10" Foreground="#88A7B3"/><TextBlock Text="Windows 原生客户端 · v0.5" FontSize="11" Foreground="#88A7B3" Margin="0,8,0,0"/><TextBlock x:Name="SidebarUser" Text="访客模式" Foreground="#D3E0E6" Margin="0,20,0,4" TextWrapping="Wrap"/><Button x:Name="SessionButton" Content="登录 / 注册" Click="ChangeSession" Background="Transparent" Foreground="#9AD6CB" Padding="0,8" HorizontalContentAlignment="Left" Margin="0"/></StackPanel>
+      <StackPanel DockPanel.Dock="Bottom" Margin="25,20"><TextBlock Text="GROUP 02   /   DESKTOP" FontSize="10" Foreground="#88A7B3"/><TextBlock Text="Windows 原生客户端 · v0.5.1" FontSize="11" Foreground="#88A7B3" Margin="0,8,0,0"/><TextBlock x:Name="SidebarUser" Text="访客模式" Foreground="#D3E0E6" Margin="0,20,0,4" TextWrapping="Wrap"/><Button x:Name="SessionButton" Content="登录 / 注册" Click="ChangeSession" Background="Transparent" Foreground="#9AD6CB" Padding="0,8" HorizontalContentAlignment="Left" Margin="0"/></StackPanel>
       <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"><StackPanel x:Name="Navigation"/></ScrollViewer>
     </DockPanel></Border>
     <Grid Grid.Column="1" Margin="28,18,28,14">
       <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
       <DockPanel Margin="0,0,0,18">
-        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal"><TextBlock x:Name="ServerAddress" Text="http://127.0.0.1:8080" Style="{StaticResource Caption}"/><Button Content="重新连接" Style="{StaticResource Secondary}" Click="Connect" Margin="8,0,0,0"/></StackPanel>
+        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal"><TextBlock x:Name="ServerAddress" Text="https://49.233.93.248:8080" Style="{StaticResource Caption}"/><Button Content="重新连接" Style="{StaticResource Secondary}" Click="Connect" Margin="8,0,0,0"/></StackPanel>
         <StackPanel Orientation="Horizontal"><Ellipse x:Name="ConnectionDot" Fill="#9EB0B8" Width="7" Height="7" Margin="0,0,8,0"/><TextBlock x:Name="ConnectionText" Text="等待连接" Style="{StaticResource Caption}"/><TextBlock Text="  /  学术成果检索与分享平台" Style="{StaticResource Caption}"/></StackPanel>
       </DockPanel>
       <Grid Grid.Row="1" Margin="0,0,0,16"><Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>

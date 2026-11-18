@@ -28,7 +28,7 @@ public partial class MainWindow
         var batchSettingsToRestore = new Dictionary<string, JsonNode>();
         try
         {
-            AssertSmoke(Uri.TryCreate(ServerAddress.Text, UriKind.Absolute, out var endpoint) && endpoint.IsLoopback,
+            AssertSmoke(ServerEndpoint.IsLocalDemo(ServerAddress.Text),
                 "采集界面验收只允许本机 API。");
             AssertSmoke(account == null && api.Token == null, "采集界面验收必须从访客入口启动。");
             busy = true;

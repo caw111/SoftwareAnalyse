@@ -41,7 +41,14 @@ if (!$healthy) {
     } until ($healthy -or (Get-Date) -gt $deadline)
     if (!$healthy) { throw 'API readiness timed out. Inspect artifacts/api.stdout.log.' }
 }
-$env:ACADEMIC_API_URL = $ApiUrl
-# The user invokes this script specifically to open the interactive desktop app.
-if (!$NoDesktop) { Start-Process -FilePath $desktop }
+# Keep explicit custom addresses supported, but scope the development override to the launched app.
+$previousApi = $env:ACADEMIC_API_URL
+try {
+    $env:ACADEMIC_API_URL = $ApiUrl
+    # The user invokes this script specifically to open the interactive desktop app.
+    if (!$NoDesktop) { Start-Process -FilePath $desktop }
+} finally {
+    if ($null -eq $previousApi) { Remove-Item Env:ACADEMIC_API_URL -ErrorAction SilentlyContinue }
+    else { $env:ACADEMIC_API_URL = $previousApi }
+}
 Write-Host 'API ready. Local demo: admin / researcher / reader, password DemoPass2026!'

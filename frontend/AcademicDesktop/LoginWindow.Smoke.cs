@@ -31,7 +31,7 @@ public partial class LoginWindow
         LoginWindow? registrationWindow = null;
         try
         {
-            AssertEntrySmoke(Uri.TryCreate(address, UriKind.Absolute, out var endpoint) && endpoint.IsLoopback, "登录验收只允许本机 API。");
+            AssertEntrySmoke(ServerEndpoint.IsLocalDemo(address), "登录验收只允许本机 API。");
             Directory.CreateDirectory(Path.GetDirectoryName(output)!);
             guestWindow = new LoginWindow(address);
             await DriveEntrySmoke(guestWindow, async window =>

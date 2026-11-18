@@ -18,15 +18,24 @@ public sealed class ApiClient : IDisposable
         if (!Uri.TryCreate(address.TrimEnd('/') + "/", UriKind.Absolute, out var uri) ||
             !(uri.Scheme == "https" || (uri.Scheme == "http" && uri.IsLoopback)) || !string.IsNullOrEmpty(uri.UserInfo))
             throw new InvalidOperationException("远程服务器必须使用 HTTPS；本机调试可使用 http://127.0.0.1:8080。");
-        http = new HttpClient(new SocketsHttpHandler { PooledConnectionLifetime = TimeSpan.FromMinutes(5), MaxConnectionsPerServer = 8, AllowAutoRedirect = false })
-        { BaseAddress = uri, Timeout = TimeSpan.FromSeconds(15) };
+        var handler = new SocketsHttpHandler { PooledConnectionLifetime = TimeSpan.FromMinutes(5), MaxConnectionsPerServer = 8, AllowAutoRedirect = false };
+        try
+        {
+            ServerCertificateTrust.Configure(handler, uri);
+            http = new HttpClient(handler) { BaseAddress = uri, Timeout = TimeSpan.FromSeconds(15) };
+        }
+        catch { handler.Dispose(); throw; }
     }
     public Task<JsonNode> Get(string path, CancellationToken cancellation = default) => Send(HttpMethod.Get, path, null, cancellation);
     public Task<JsonNode> Post(string path, object body) => Send(HttpMethod.Post, path, JsonSerializer.Serialize(body), default);
     public Task<JsonNode> PostJson(string path, string json) => Send(HttpMethod.Post, path, json, default);
     private async Task<JsonNode> Send(HttpMethod method, string path, string? body, CancellationToken cancellation)
     {
-        using var request = new HttpRequestMessage(method, path);
+        var target = new Uri(http.BaseAddress!, path);
+        if (target.Scheme != http.BaseAddress!.Scheme || target.Host != http.BaseAddress.Host || target.Port != http.BaseAddress.Port ||
+            !string.IsNullOrEmpty(target.UserInfo))
+            throw new InvalidOperationException("API 请求必须保持当前服务器地址，不能将会话或专用证书信任转交其他服务。");
+        using var request = new HttpRequestMessage(method, target);
         if (Token != null) request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", Token);
         if (body != null) request.Content = new StringContent(body, Encoding.UTF8, "application/json");
         var timer = Stopwatch.StartNew();
@@ -47,6 +56,8 @@ public sealed class ApiClient : IDisposable
         }
         catch (TaskCanceledException) when (!cancellation.IsCancellationRequested)
         { throw new InvalidOperationException(method == HttpMethod.Get ? "服务响应超时，筛选条件已保留。" : "请求超时，结果可能已提交；请先刷新状态，再决定是否重试。"); }
+        catch (HttpRequestException error) when (error.HttpRequestError == HttpRequestError.SecureConnectionError)
+        { throw new InvalidOperationException("无法验证服务器 HTTPS 证书，请检查系统时间、服务器地址和客户端版本。"); }
         catch (HttpRequestException) { throw new InvalidOperationException("无法连接 API，请检查服务器地址和后端运行状态。"); }
     }
     public void Dispose() => http.Dispose();

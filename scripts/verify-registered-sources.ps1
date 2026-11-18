@@ -1,9 +1,9 @@
 param([string]$ApiUrl = 'http://127.0.0.1:8080')
 $ErrorActionPreference = 'Stop'
 $uri = [Uri]$ApiUrl
-if (!$uri.IsAbsoluteUri -or !$uri.IsLoopback) { throw 'This three-source functional check only permits a local demo API.' }
+if (!$uri.IsAbsoluteUri -or !$uri.IsLoopback -or $uri.Port -eq 18080) { throw 'Functional verification only permits a local demo API; port 18080 is reserved for the production SSH tunnel.' }
 $root = Split-Path $PSScriptRoot
-$outputDir = Join-Path $root 'artifacts/verification-v0.5'
+$outputDir = Join-Path $root 'artifacts/verification-v0.5.1'
 New-Item -ItemType Directory -Force -Path $outputDir | Out-Null
 $cases = @(
     @{Source='nsfc-projects';Identifier='3193000529';Year=2019;Type='PROJECT'},

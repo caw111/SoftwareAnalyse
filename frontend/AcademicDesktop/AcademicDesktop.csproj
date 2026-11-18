@@ -8,11 +8,12 @@
     <AssemblyName>AcademicDesktop</AssemblyName>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <ApplicationIcon>Assets\zhihui.ico</ApplicationIcon>
-    <Version>0.5.0</Version>
+    <Version>0.5.1</Version>
     <Product>知汇 · 学术成果工作台</Product>
     <Description>原生 Windows 学术成果检索与分享客户端</Description>
   </PropertyGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Assets\server-ca.pem" LogicalName="AcademicDesktop.ServerCa.pem" />
     <Resource Include="Assets\zhihui.ico" />
     <Resource Include="Assets\zhihui.png" />
     <Resource Include="Assets\Navigation\*.svg" />

@@ -41,7 +41,7 @@ public partial class MainWindow
         busy = true; // Prevent SelectionChanged handlers from starting unrelated API calls.
         try
         {
-            AssertSmoke(Uri.TryCreate(ServerAddress.Text, UriKind.Absolute, out var endpoint) && endpoint.IsLoopback,
+            AssertSmoke(ServerEndpoint.IsLocalDemo(ServerAddress.Text),
                 "功能验收只允许本机演示 API，避免修改远程服务器数据。");
             AssertSmoke(account == null && api.Token == null, "工作区验收须从访客入口启动。");
             AssertSmoke(WindowState == WindowState.Maximized, "启动窗口没有默认最大化。");

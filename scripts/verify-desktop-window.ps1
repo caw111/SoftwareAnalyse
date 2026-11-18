@@ -116,7 +116,9 @@ $oldDpi=[DesktopWindowCheck]::SetThreadDpiAwarenessContext([IntPtr](-4))
 $oldCursor=[DesktopWindowCheck+Point]::new()
 [void][DesktopWindowCheck]::GetCursorPos([ref]$oldCursor)
 $windowProcess=$null
+$previousWindowApi=$env:ACADEMIC_API_URL
 try {
+    $env:ACADEMIC_API_URL="http://127.0.0.1:8080"
     # This explicitly tests a visible interactive app: native title buttons and real mouse dragging.
     $windowProcess=Start-Process -FilePath $Exe -PassThru
     Wait-Until { $windowProcess.Refresh(); $windowProcess.MainWindowHandle -ne [IntPtr]::Zero } 'No main window appeared.'
@@ -188,6 +190,7 @@ try {
     $failure | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath $Output -Encoding utf8
     throw
 } finally {
+    if ($null -eq $previousWindowApi) { Remove-Item Env:ACADEMIC_API_URL -ErrorAction SilentlyContinue } else { $env:ACADEMIC_API_URL=$previousWindowApi }
     [DesktopWindowCheck]::mouse_event(0x0004,0,0,0,[UIntPtr]::Zero)
     [void][DesktopWindowCheck]::SetCursorPos($oldCursor.X,$oldCursor.Y)
     [void][DesktopWindowCheck]::SetThreadDpiAwarenessContext($oldDpi)
