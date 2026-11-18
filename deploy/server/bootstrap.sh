@@ -7,6 +7,12 @@ readonly root=/opt/academic-platform
 install -d -m 750 "$root"
 install -d -m 755 /usr/local/lib/academic-platform
 install -m 644 "$source_dir/compose.yml" "$root/compose.yml"
+install -m 644 "$source_dir/nginx.conf" "$root/nginx.conf"
+install -m 755 "$source_dir/prepare-tls.sh" /usr/local/sbin/academic-prepare-tls
+/usr/local/sbin/academic-prepare-tls --init
+install -m 644 "$source_dir/academic-api-cert.service" "$source_dir/academic-api-cert.timer" /etc/systemd/system/
+systemctl daemon-reload
+systemctl enable --now academic-api-cert.timer
 install -m 755 "$source_dir/deploy.sh" /usr/local/sbin/academic-deploy
 install -m 755 "$source_dir/ssh-deploy-gateway.py" /usr/local/lib/academic-platform/ssh-deploy-gateway
 if [[ ! -f $root/secrets.env ]]; then

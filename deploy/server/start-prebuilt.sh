@@ -12,7 +12,8 @@ flock -w 300 9
 printf 'API_IMAGE=%s\nRELEASE_SHA=%s\n' "$image" "$revision" >release.env
 docker compose --env-file secrets.env --env-file release.env -f compose.yml up -d --no-build --pull missing --wait --wait-timeout 180
 curl --fail --silent --show-error --max-time 10 http://127.0.0.1:8081/actuator/health/readiness
-curl --fail --silent --show-error --max-time 10 http://127.0.0.1:8080/api/reference >/dev/null
+curl --fail --silent --show-error --max-time 10 http://127.0.0.1:18081/api/reference >/dev/null
+curl --fail --silent --show-error --max-time 10 --noproxy '*' --cacert "$root/tls/server-ca.pem" --connect-to 49.233.93.248:8080:127.0.0.1:8080 https://49.233.93.248:8080/api/reference >/dev/null
 mkdir -p releases
 cp release.env "releases/${revision}.env"
 printf '%s %s %s bootstrap\n' "$(date -u +%FT%TZ)" "$revision" "$image" >>deployments.log

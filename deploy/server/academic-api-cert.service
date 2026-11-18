@@ -1,0 +1,7 @@
+[Unit]
+Description=Renew the academic API TLS certificate
+After=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/academic-prepare-tls

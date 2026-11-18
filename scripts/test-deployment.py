@@ -38,8 +38,23 @@ mode = os.environ['FAKE_SCENARIO']
 new = os.environ['FAKE_NEW_DIGEST'] in current
 if command == 'curl':
     url = args[-1]
+    # Keep direct backend health separate from the explicitly verified TLS proxy.
+    if url not in ('http://127.0.0.1:8081/actuator/health/readiness',
+                   'http://127.0.0.1:18081/api/reference',
+                   'https://49.233.93.248:8080/api/reference'):
+        raise SystemExit('Unexpected health endpoint; refusing network access: ' + url)
+    if url.startswith('https://'):
+        for option, expected in (
+                ('--noproxy', '*'),
+                ('--cacert', str(root / 'tls' / 'server-ca.pem')),
+                ('--connect-to', '49.233.93.248:8080:127.0.0.1:8080')):
+            if option not in args or args[args.index(option) + 1] != expected:
+                raise SystemExit('TLS probe must validate its CA and use the loopback proxy')
+        if any(arg in ('-k', '--insecure') for arg in args):
+            raise SystemExit('TLS verification cannot be disabled')
     if new and ((mode == 'readiness_failure' and url.endswith('/health/readiness'))
-                or (mode == 'api_failure' and url.endswith('/api/reference'))):
+                or (mode == 'api_failure' and url == 'http://127.0.0.1:18081/api/reference')
+                or (mode == 'proxy_failure' and url.startswith('https://'))):
         sys.exit(22)
     print('{"status":"UP"}')
     sys.exit(0)
@@ -128,16 +143,24 @@ def run_case(source: str, mode: str, existing: bool) -> dict[str, object]:
                         and event["args"][0] == "compose" and "up" in event["args"]
                         and event["args"][-1] != "db"]
         complete_backups = list((root / "backups").glob("*.dump"))
+        health_urls = [event["args"][-1] for event in events if event["command"] == "curl"]
+        expected_urls = ["http://127.0.0.1:8081/actuator/health/readiness",
+                         "http://127.0.0.1:18081/api/reference",
+                         "https://49.233.93.248:8080/api/reference"]
+        require(set(health_urls).issubset(expected_urls), f"{mode}: probe used an unregistered endpoint")
         if mode == "success":
             require(result.returncode == 0, f"success: unexpected exit {result.returncode}")
+            require(health_urls == expected_urls, "success: readiness, direct API and verified TLS proxy probes must all pass")
             require((root / "release.env").read_text() == release_text(NEW_REVISION, NEW_DIGEST), "success: release pointer was not advanced")
             require((root / "releases" / f"{NEW_REVISION}.env").is_file(), "success: verified release was not recorded")
             require(" success\n" in log.read_text(), "success: missing successful audit entry")
             require(len(complete_backups) == int(existing), "success: pre-upgrade backup count does not match deployment type")
-        elif mode in ("health_failure", "readiness_failure", "api_failure"):
+        elif mode in ("health_failure", "readiness_failure", "api_failure", "proxy_failure"):
             require(result.returncode == 1, f"{mode}: failed deployment must report failure even after rollback")
             require((root / "release.env").read_text() == previous, f"{mode}: old release pointer was not restored")
             require(len(main_updates) == 2, f"{mode}: expected candidate activation and old-image rollback")
+            attempted = {"health_failure": 0, "readiness_failure": 1, "api_failure": 2, "proxy_failure": 3}[mode]
+            require(health_urls == expected_urls[:attempted] + expected_urls, f"{mode}: rollback did not repeat every health gate")
             require(NEW_DIGEST in main_updates[0]["release"] and OLD_DIGEST in main_updates[1]["release"], f"{mode}: rollback image order is wrong")
             require(" failed\n" in log.read_text(), f"{mode}: missing failure audit entry")
             require(not (root / "releases" / f"{NEW_REVISION}.env").exists(), f"{mode}: failed image recorded as verified")
@@ -160,7 +183,7 @@ def main() -> None:
     source = args.script.read_text(encoding="utf-8")
     require("/usr/bin/docker" not in source and "/usr/bin/curl" not in source, "Absolute executable paths require a new mock safety review")
     results = [run_case(source, "success", False)]
-    for scenario in ("success", "health_failure", "readiness_failure", "api_failure", "backup_failure", "label_mismatch", "db_health_failure"):
+    for scenario in ("success", "health_failure", "readiness_failure", "api_failure", "proxy_failure", "backup_failure", "label_mismatch", "db_health_failure"):
         results.append(run_case(source, scenario, True))
     print(json.dumps({"mockOnly": True, "realDockerInvoked": False, "cases": results}, indent=2))
 
