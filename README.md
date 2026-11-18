@@ -2,15 +2,13 @@
 
 《软件系统分析与设计》课程项目。Group2 为实现与协作分支。当前版本：**WPF 原生 Windows 桌面客户端 + Java 21 / Spring Boot 服务**。
 
-## 连接已部署服务器
+## 日常使用：直接打开 EXE
 
-已部署 Ubuntu 服务器上的 API 与 PostgreSQL。客户端通过 SSH 隧道连接，服务器 API 不直接暴露公网。已有 `SoftwareAnalysis` SSH 配置的本机，在仓库根目录执行：
+双击 `artifacts/windows-x64/AcademicDesktop.exe` 即可使用。正式客户端默认直连 `https://49.233.93.248:8080`，不需要启动本机Java、Docker、PowerShell脚本或SSH隧道；这仍是WPF原生桌面软件，服务器只提供API。
 
-```powershell
-.\scripts\connect-server.ps1
-```
+EXE内置该服务专用CA的公有证书，不修改Windows系统信任库。日常无需安装证书；遇到证书错误时检查系统时间和客户端版本，不使用关闭验证的办法。若曾手动设置 `ACADEMIC_API_URL`，它会覆盖默认地址，可在登录页“服务器设置”核对。
 
-脚本建立 `127.0.0.1:18080 → 服务器127.0.0.1:8080` 的隧道并打开桌面端。仅建立隧道使用 `-NoDesktop`，关闭本脚本隧道使用 `-Stop`。生产环境关闭演示数据，演示账号密码不能用于服务器；初始管理员密码只保存在服务器 root 可读配置中。访问、CI/CD 和备份说明见 [部署文档](docs/deployment.md)，结果见 [v0.5 服务器验证记录](docs/verification/server-v0.5.md)。
+生产环境关闭演示数据，下面的本机演示账号密码不能用于服务器。初始管理员密码只保存在服务器root可读配置中。连接、维护和证书轮换见 [部署文档](docs/deployment.md)，本次直连与发布结果见 [v0.5.1验证](docs/verification/direct-v0.5.1.md)。`scripts/connect-server.ps1` 只保留为显式选择的旧SSH兼容入口，普通使用者无需运行。
 
 ## 本机开发
 
@@ -22,9 +20,9 @@
 
 默认使用 `D:\tool\java21`、`D:\tool\gradle\gradle-9.8.0` 和本机 .NET 9 SDK；首次构建需要下载依赖。脚本构建并启动本地 API，再打开 Windows 应用。**没有网页前端，也不使用 WebView。** 已构建后可运行 `./scripts/start-local.ps1 -NoBuild`。
 
-桌面 v0.5.0 默认进入独立登录/注册界面，可点击灰色“以访客模式进入”。登录和主窗口均默认最大化启动，保留 Windows 原生最小化、最大化/还原、关闭按钮；还原大小按当前显示器工作区与 DPI 计算，可拖动和调整尺寸。自绘“书页 + 知识节点”图标已嵌入 EXE、标题栏、任务栏和侧栏。本轮窗口操作验证见 [v0.5记录](docs/verification/server-v0.5.md)。
+桌面 v0.5.1 默认进入独立登录/注册界面，可点击灰色“以访客模式进入”。登录和主窗口均默认最大化启动，保留 Windows 原生最小化、最大化/还原、关闭按钮；还原大小按当前显示器工作区与 DPI 计算，可拖动和调整尺寸。自绘“书页 + 知识节点”图标已嵌入 EXE、标题栏、任务栏和侧栏。窗口操作历史验证见 [v0.5记录](docs/verification/server-v0.5.md)，当前连接结果见 [v0.5.1记录](docs/verification/direct-v0.5.1.md)。
 
-本地默认 H2 文件库保存在 `backend/data/`，首启生成 64 条明确标注的模拟成果。已有数据库不重复初始化。API 默认为 `http://127.0.0.1:8080`，管理端口为 `127.0.0.1:8081`。切换服务器可在登录页展开“服务器设置”输入 HTTPS 地址，或设置环境变量 `ACADEMIC_API_URL`。登录令牌仅驻留内存。
+本地默认 H2 文件库保存在 `backend/data/`，首启生成 64 条明确标注的模拟成果。已有数据库不重复初始化。本机开发 API 默认为 `http://127.0.0.1:8080`，管理端口为 `127.0.0.1:8081`。切换服务器可在登录页展开“服务器设置”输入 HTTPS 地址，或设置环境变量 `ACADEMIC_API_URL`。登录令牌仅驻留内存。
 
 | 演示账号 | 密码 | 能力 |
 | --- | --- | --- |
@@ -60,8 +58,9 @@
 | [构件设计](docs/design/component-design.md) | 调度与反爬应对、增量、BM25、统计、官方来源核验 |
 | [当前来源与弃用策略](docs/design/sources-v0.5.md) | Crossref 与三个有效公告批次；LYNU 历史保留、字段语义与冻结原文 |
 | [数据库 ER](docs/design/database-er.md) | V1–V7 实际迁移与表关系、Mermaid 源图与可编辑 draw.io |
-| [部署说明](docs/deployment.md) | 已部署 Compose、SSH 隧道、GitHub Actions、摘要发布/应用回滚；k3s/HPA 后续模板 |
-| [v0.5 验证记录](docs/verification/server-v0.5.md) | H2/PG 各83项、桌面、生产迁移与健康状态；CI/CD结果单列 |
+| [部署说明](docs/deployment.md) | HTTPS直连、专用CA轮换、Compose、GitHub Actions、摘要发布/应用回滚；k3s/HPA 后续模板 |
+| [v0.5.1 直连验证](docs/verification/direct-v0.5.1.md) | 正式HTTPS连接、证书校验、当前客户端与发布结果 |
+| [v0.5 历史验证](docs/verification/server-v0.5.md) | H2/PG 各83项、桌面、首次服务器部署与SSH入口 |
 | [v0.4 历史记录](docs/verification/sources-v0.4.md) | 2026-11-17 四源8任务与桌面证据；当时本机PG/Docker未验证 |
 | [首版验证记录](docs/verification/first-version.md) | v0.1 历史构建、测试与边界；本轮结果另记 |
 | [验收映射](docs/acceptance.md) | 已完成、部分完成和后续需求 |
@@ -69,7 +68,7 @@
 
 运行 `./scripts/publish-desktop.ps1` 后，成品位于 `artifacts/windows-x64/AcademicDesktop.exe`。API JAR 位于 `backend/build/libs/academic-platform-api.jar`。构建产物不提交 Git。
 
-**按用户要求，本机没有运行压测，也没有 P95 达标声明。** 本地仅运行功能测试和两个请求的竞争正确性检查；10,000 条模拟数据的存在不代表真实性验收或性能达标。v0.5 保留 Crossref、元数据修订、同库 BM25、文本热点和三个官方公告批次，停用 LYNU 新采集但保留已发布成果与审计证据；完成服务器 Compose 与 CI/CD 配置。具体测试和远程发布结果以 [v0.5 验证记录](docs/verification/server-v0.5.md) 为准；任意公告批次、通用专利/项目检索、人工冲突裁决/归并治理、排序质量评测和 P1 推荐仍见后续清单。
+**按用户要求，本机没有运行压测，也没有 P95 达标声明。** 本地仅运行功能测试和两个请求的竞争正确性检查；10,000 条模拟数据的存在不代表真实性验收或性能达标。v0.5 保留 Crossref、元数据修订、同库 BM25、文本热点和三个官方公告批次，停用 LYNU 新采集但保留已发布成果与审计证据；完成服务器 Compose 与 CI/CD 配置；v0.5.1增加默认HTTPS直连。当前直连/发布结果见 [v0.5.1记录](docs/verification/direct-v0.5.1.md)，此前完整功能回归见 [v0.5记录](docs/verification/server-v0.5.md)；任意公告批次、通用专利/项目检索、人工冲突裁决/归并治理、排序质量评测和 P1 推荐仍见后续清单。
 
 ## 文档入口
 

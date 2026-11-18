@@ -10,7 +10,7 @@ cd "$root"
 exec 9>.cert.lock
 flock 9
 stage=$(mktemp -d "$root/.new.XXXXXX")
-trap 'rm -f -- "$stage"/{ca.key,ca.pem,server.key,server.csr,server.pem,ext}; rmdir -- "$stage"' EXIT
+trap 'rm -f -- "$stage"/{ca.key,ca.pem,server.key,server.csr,server.pem,cert.pub,key.pub,ext}; rmdir -- "$stage"' EXIT
 if [[ ! -f server-ca.pem && ! -f ca.key && ${1:-} == --init ]]; then
   openssl req -x509 -newkey ec -pkeyopt ec_paramgen_curve:P-256 -nodes -sha256 -days 3650 \
     -subj '/CN=Academic Platform API Root' -addext 'basicConstraints=critical,CA:TRUE,pathlen:0' \
@@ -20,7 +20,12 @@ if [[ ! -f server-ca.pem && ! -f ca.key && ${1:-} == --init ]]; then
 fi
 [[ -s ca.key && -s server-ca.pem ]] || { echo 'Restore the existing CA or explicitly initialize a new installation.' >&2; exit 1; }
 openssl x509 -in server-ca.pem -noout -checkend 34560000 >/dev/null || { echo 'Rotate the desktop trust anchor before issuing a new leaf.' >&2; exit 1; }
-if [[ -s edge/server.pem && -s edge/server.key ]] &&
+matching_key() {
+  openssl x509 -in edge/server.pem -noout -pubkey >"$stage/cert.pub" &&
+    openssl pkey -in edge/server.key -pubout >"$stage/key.pub" &&
+    cmp -s "$stage/cert.pub" "$stage/key.pub"
+}
+if [[ -s edge/server.pem && -s edge/server.key ]] && matching_key &&
    openssl x509 -in edge/server.pem -noout -checkend 2592000 >/dev/null &&
    openssl verify -CAfile server-ca.pem -purpose sslserver -verify_ip 49.233.93.248 edge/server.pem >/dev/null; then
   exit 0
