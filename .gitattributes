@@ -4,6 +4,8 @@
 *.yml text eol=lf
 *.yaml text eol=lf
 *.sh text eol=lf
+*.py text eol=lf
+Dockerfile* text eol=lf
 *.ps1 text eol=crlf
 gradlew text eol=lf
 *.bat text eol=crlf

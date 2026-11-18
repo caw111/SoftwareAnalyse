@@ -2,7 +2,17 @@
 
 《软件系统分析与设计》课程项目。Group2 为实现与协作分支。当前版本：**WPF 原生 Windows 桌面客户端 + Java 21 / Spring Boot 服务**。
 
-## 运行当前版本
+## 连接已部署服务器
+
+已部署 Ubuntu 服务器上的 API 与 PostgreSQL。客户端通过 SSH 隧道连接，服务器 API 不直接暴露公网。已有 `SoftwareAnalysis` SSH 配置的本机，在仓库根目录执行：
+
+```powershell
+.\scripts\connect-server.ps1
+```
+
+脚本建立 `127.0.0.1:18080 → 服务器127.0.0.1:8080` 的隧道并打开桌面端。仅建立隧道使用 `-NoDesktop`，关闭本脚本隧道使用 `-Stop`。生产环境关闭演示数据，演示账号密码不能用于服务器；初始管理员密码只保存在服务器 root 可读配置中。访问、CI/CD 和备份说明见 [部署文档](docs/deployment.md)，结果见 [v0.5 服务器验证记录](docs/verification/server-v0.5.md)。
+
+## 本机开发
 
 在仓库根目录用 PowerShell 执行：
 
@@ -12,7 +22,7 @@
 
 默认使用 `D:\tool\java21`、`D:\tool\gradle\gradle-9.8.0` 和本机 .NET 9 SDK；首次构建需要下载依赖。脚本构建并启动本地 API，再打开 Windows 应用。**没有网页前端，也不使用 WebView。** 已构建后可运行 `./scripts/start-local.ps1 -NoBuild`。
 
-桌面 v0.4.0 默认进入独立登录/注册界面，可点击灰色“以访客模式进入”。登录和主窗口均默认最大化启动，保留 Windows 原生最小化、最大化/还原、关闭按钮；还原大小按当前显示器工作区与 DPI 计算，可拖动和调整尺寸。自绘“书页 + 知识节点”图标已嵌入 EXE、标题栏、任务栏和侧栏。窗口操作验证见 [v0.1.1 记录](docs/verification/window-v0.1.1.md)。
+桌面 v0.5.0 默认进入独立登录/注册界面，可点击灰色“以访客模式进入”。登录和主窗口均默认最大化启动，保留 Windows 原生最小化、最大化/还原、关闭按钮；还原大小按当前显示器工作区与 DPI 计算，可拖动和调整尺寸。自绘“书页 + 知识节点”图标已嵌入 EXE、标题栏、任务栏和侧栏。本轮窗口操作验证见 [v0.5记录](docs/verification/server-v0.5.md)。
 
 本地默认 H2 文件库保存在 `backend/data/`，首启生成 64 条明确标注的模拟成果。已有数据库不重复初始化。API 默认为 `http://127.0.0.1:8080`，管理端口为 `127.0.0.1:8081`。切换服务器可在登录页展开“服务器设置”输入 HTTPS 地址，或设置环境变量 `ACADEMIC_API_URL`。登录令牌仅驻留内存。
 
@@ -31,7 +41,7 @@
 3. `admin` 登录 → 申请管理 → 选择申请 → 领取审核 → 填写意见 → 通过、驳回或要求补充。管理员另有“成果数据库管理”和“数据统计”页面。
 4. 科研人员从“个人成果”底部点击“申报成果”，在“我的申请”中检索成果并撰写申请。审核通过后进入个人成果；门户通过不会自动认领全部成果。
 5. 两位真实贡献者可分别关联同一成果；撤销本人关联不会删除公共成果。
-6. 管理员进入“成果数据库管理 → 来源采集”，选择 Crossref 后按 DOI 或 ISSN/关键词、索引日期窗、出版年创建任务；选择专利/项目/获奖公告后选固定批次与数量预算，再显式启动；查看新增/更新/重复/排除、原始页与日志，必要时停止或重试。限量采集不推进完整同步水位；JSON 批次导入继续保留。
+6. 管理员进入“成果数据库管理 → 来源采集”，选择 Crossref 后按 DOI 或 ISSN/关键词、索引日期窗、出版年创建任务；选择 CNIPA 专利、NSFC 项目或 MOST 获奖公告后选固定批次与数量预算，再显式启动；查看新增/更新/重复/排除、原始页与日志，必要时停止或重试。限量采集不推进完整同步水位；JSON 批次导入继续保留。
 7. 共著路径选择两位已识别学者，查看最短路径和每条边的论文证据。
 
 ## 工程入口
@@ -48,17 +58,18 @@
 | [个人资料与分页接口](docs/backend-profile-api.md) | V2 迁移、资料版本冲突、本人申请隔离及管理员统计 |
 | [API 契约](docs/api.md) | 接口、授权、状态和版本语义 |
 | [构件设计](docs/design/component-design.md) | 调度与反爬应对、增量、BM25、统计、官方来源核验 |
-| [固定公告来源](docs/design/sources-v0.4.md) | LYNU、NSFC、MOST、CNIPA 四批次、字段语义、冻结原文与恢复 |
-| [数据库 ER](docs/design/database-er.md) | V1–V6 实际表关系、Mermaid 源图与可编辑 draw.io |
-| [部署说明](docs/deployment.md) | Docker Compose / k3s / HPA / 采集配置 / 备份 |
-| [v0.4 验证记录](docs/verification/sources-v0.4.md) | 80项H2、四源8任务、桌面与原生窗口；明确PG/Docker未验证 |
+| [当前来源与弃用策略](docs/design/sources-v0.5.md) | Crossref 与三个有效公告批次；LYNU 历史保留、字段语义与冻结原文 |
+| [数据库 ER](docs/design/database-er.md) | V1–V7 实际迁移与表关系、Mermaid 源图与可编辑 draw.io |
+| [部署说明](docs/deployment.md) | 已部署 Compose、SSH 隧道、GitHub Actions、摘要发布/应用回滚；k3s/HPA 后续模板 |
+| [v0.5 验证记录](docs/verification/server-v0.5.md) | H2/PG 各83项、桌面、生产迁移与健康状态；CI/CD结果单列 |
+| [v0.4 历史记录](docs/verification/sources-v0.4.md) | 2026-11-17 四源8任务与桌面证据；当时本机PG/Docker未验证 |
 | [首版验证记录](docs/verification/first-version.md) | v0.1 历史构建、测试与边界；本轮结果另记 |
 | [验收映射](docs/acceptance.md) | 已完成、部分完成和后续需求 |
 | [服务器压测说明](scripts/performance/README.md) | 待服务器执行的 k6 脚本，默认 20 并发 / 5 分钟 |
 
 运行 `./scripts/publish-desktop.ps1` 后，成品位于 `artifacts/windows-x64/AcademicDesktop.exe`。API JAR 位于 `backend/build/libs/academic-platform-api.jar`。构建产物不提交 Git。
 
-**按用户要求，本机没有运行压测，也没有 P95 达标声明。** 本地仅运行功能测试和两个请求的竞争正确性检查；10,000 条模拟数据的存在不代表真实性验收或性能达标。v0.4 在 Crossref、元数据修订、同库 BM25 与文本热点基础上增加三份官方/高校 HTML 清单及 CNIPA 金奖 PDF 的固定批次采集，预算分批并冻结任务原文。具体测试/真实接通结果以 [v0.4 验证记录](docs/verification/sources-v0.4.md) 为准；任意公告批次、通用专利/项目检索、人工冲突裁决/归并治理、排序质量评测和 P1 推荐仍见后续清单。
+**按用户要求，本机没有运行压测，也没有 P95 达标声明。** 本地仅运行功能测试和两个请求的竞争正确性检查；10,000 条模拟数据的存在不代表真实性验收或性能达标。v0.5 保留 Crossref、元数据修订、同库 BM25、文本热点和三个官方公告批次，停用 LYNU 新采集但保留已发布成果与审计证据；完成服务器 Compose 与 CI/CD 配置。具体测试和远程发布结果以 [v0.5 验证记录](docs/verification/server-v0.5.md) 为准；任意公告批次、通用专利/项目检索、人工冲突裁决/归并治理、排序质量评测和 P1 推荐仍见后续清单。
 
 ## 文档入口
 

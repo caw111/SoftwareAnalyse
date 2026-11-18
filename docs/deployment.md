@@ -1,10 +1,68 @@
-# 部署与运行
+# 部署与运行（v0.5）
 
-Windows 客户端与服务器独立部署。客户端自带 .NET 运行时的 EXE 在 `artifacts/windows-x64/`；服务器只运行 API 与 PostgreSQL，不托管网页。后台Dockerfile在历史版本完成过Linux镜像构建；v0.4本轮Docker引擎不可用，镜像/容器与PostgreSQL回归未验证，见 [验证记录](verification/sources-v0.4.md)。
+Windows客户端和服务器独立部署，无网页前端。2026-11-18已在 `SoftwareAnalysis` 部署单API与PostgreSQL，当前采用SSH隧道访问；GitHub Actions发布过程和精确验证结果见 [v0.5记录](verification/server-v0.5.md)。历史v0.4本机Docker不可用的记录保留，不代表当前远程服务器状态。
 
-## 本机开发
+## 连接服务器
 
-仓库根目录：
+本机已配置并信任 `SoftwareAnalysis` SSH主机别名时，在仓库根目录执行：
+
+```powershell
+.\scripts\connect-server.ps1
+# 只建隧道，不打开客户端：
+.\scripts\connect-server.ps1 -NoDesktop
+# 关闭由本脚本记录且校验过的隧道，不停止服务器：
+.\scripts\connect-server.ps1 -Stop
+```
+
+脚本将 `127.0.0.1:18080` 转发至服务器 `127.0.0.1:8080`，公共API可达后以 `ACADEMIC_API_URL=http://127.0.0.1:18080` 打开 `artifacts/windows-x64/AcademicDesktop.exe`。已有隧道可复用；端口被其他程序占用时拒绝覆盖。支持 `-LocalPort` 指定其他回环端口。SSH验证主机密钥、禁止交互认证并设置保活；后台窗口隐藏。首次配置SSH身份和可信主机指纹属于客户端连接准备，不能使用CI专用受限密钥建立隧道。
+
+服务器生产库为 `APP_DEMO=false` 的新PostgreSQL库，首次仅创建 `admin`，没有演示账号/资料。初始管理员密码保存在服务器root可读的 `/opt/academic-platform/secrets.env`（0600），用户可自行通过已有SSH登录以sudo在服务器查看。密码未导出到仓库、桌面配置或本地文档；本轮未使用它完成生产管理员登录验证。`ADMIN_PASSWORD` 只用于空库初始化，修改该环境变量不会重置既有账号密码。桌面会话令牌仅在内存。
+
+## 当前服务器与目录
+
+| 项目 | 当前部署 |
+| --- | --- |
+| 系统/资源 | Ubuntu24.04，4核，3659MiB内存 |
+| 容器环境 | Docker27.5.1 / Compose2.32.4 |
+| 部署目录 | root所有的 `/opt/academic-platform` |
+| 权威配置 | [server compose](../deploy/server/compose.yml)、服务器 `secrets.env`、`release.env` |
+| API / 管理入口 | 宿主 `127.0.0.1:8080` / `127.0.0.1:8081`，不直接暴露公网 |
+| 数据库 | PostgreSQL17单实例、持久卷，无宿主端口 |
+| 资源预算 | API与PG各768MiB、各1CPU；连接池8、数据库最大40连接 |
+| 采集策略 | Crossref/CNIPA/NSFC/MOST启用，LYNU停用，所有定时关闭 |
+| 实际编排 | 单副本Compose；未启用k3s/HPA |
+
+API镜像非root、只读根文件系统、临时目录64MiB、去除Linux capabilities。可在服务器查看状态：
+
+```sh
+sudo docker compose --env-file /opt/academic-platform/secrets.env --env-file /opt/academic-platform/release.env -f /opt/academic-platform/compose.yml ps
+curl --fail http://127.0.0.1:8081/actuator/health/readiness
+curl --fail http://127.0.0.1:8080/api/reference
+```
+
+不要使用会展开环境变量并打印秘密的完整配置输出做日常日志。`release.env` 只记录镜像摘要与提交号；账号密码留在独立 `secrets.env`。`deploy/server/bootstrap.sh` 安装专用账户、受限公钥及root拥有的部署程序，既有secret和数据卷保留；普通发布不会重新初始化数据库。
+
+## GitHub Actions 与连续部署
+
+[CI工作流](../.github/workflows/ci.yml) 在push Group2、指向Group2/main的PR以及手动触发时执行。全部使用GitHub托管运行器，不允许不可信PR进入服务器runner。
+
+| 作业 | 检查或动作 |
+| --- | --- |
+| backend-h2 | Java21、Gradle wrapper、H2功能测试、bootJar、8项纯mock部署回归；保存JAR及SHA-256 |
+| backend-postgres | 独立PostgreSQL17 service运行同套功能测试；不使用生产凭据/数据库 |
+| windows-desktop | Windows上WPF Release构建、自带运行时win-x64 EXE与SHA-256产物 |
+| publish | 前三项通过后，下载同次运行的测试JAR并核验哈希，用Dockerfile.runtime封装推送GHCR |
+| deploy | 将提交号与不可变manifest digest交给服务器受限命令，等待健康门槛 |
+
+只有仓库 `caw111/SoftwareAnalyse` 的 `push refs/heads/Group2` 执行publish/deploy；PR和手动触发仅CI检查。镜像为 `ghcr.io/caw111/softwareanalyse-api@sha256:<digest>`，服务器不按可漂移tag部署。OCI revision必须等于该次40位提交SHA。Actions依赖固定到完整提交SHA，Gradle wrapper验证开启，PR缓存只读。
+
+仓库已配置Secret `DEPLOY_SSH_KEY` 和4个变量 `DEPLOY_HOST`、`DEPLOY_PORT`、`DEPLOY_USER`、`DEPLOY_KNOWN_HOSTS`；不在Git内保存私钥。workflow声明 `environment: production`；本轮没有将环境审批者或分支保护规则记为已配置，应由仓库owner按需要补充。实际发布仍有事件、分支、仓库三项显式限制。
+
+CI专用Ed25519密钥与用户登录密钥分开。服务器authorized_keys限制为 `restrict` + forced-command，唯一接受 `deploy <commitSHA> sha256:<digest>`；一般shell命令、端口转发被拒绝。SSH严格校验预登记主机指纹。短期 `GITHUB_TOKEN` 和本次actor通过标准输入两行传输，不放在命令参数或日志中；服务器使用临时0600 Docker配置拉取私有GHCR镜像，退出时清理。没有长期registry token留在服务器。
+
+部署同时受Actions串行组和服务器 `flock` 保护；Group2正在执行的发布不会因下一次推送被中断。服务器核验镜像标签，已有部署升级前执行 `pg_dump -Fc`，原子切换release配置，再等待Compose健康、readiness及公共API成功。成功写入 `releases/<SHA>.env` 和 `deployments.log`；失败恢复上一应用镜像并再次检查健康，**不自动回滚数据库**。迁移须保持旧应用兼容；不兼容迁移或回滚仍失败时需人工处理。8项mock验证覆盖失败路径，但不等于真实生产故障演练。
+
+## 本机开发与备用模板
 
 ```powershell
 .\scripts\build.ps1
@@ -13,135 +71,38 @@ Windows 客户端与服务器独立部署。客户端自带 .NET 运行时的 EX
 .\scripts\publish-desktop.ps1
 ```
 
-`build.ps1` 默认跑功能测试。`start-local.ps1` 默认使用 H2/64 条模拟数据，日志在 `artifacts/api.*.log`。运行 JAR 会复制到带哈希的 `artifacts/runtime/`，避免重新构建覆盖运行中 JAR 造成延迟类加载失败。启动脚本检测到已有 API 时直接打开客户端；更新后端代码需先停止旧进程再启动。
+本机默认H2/64条模拟数据。构建跑功能测试，运行JAR复制到带哈希的 `artifacts/runtime/`，避免覆盖运行中JAR。更新后端需先停旧进程；本机PostgreSQL用 `DB_URL/DB_USER/DB_PASSWORD` 加 `-UsePostgres`。这些演示账号不用于生产。
 
-使用本机 PostgreSQL 时先设置 `DB_URL`、`DB_USER`、`DB_PASSWORD`，再加 `-UsePostgres`。会话不在客户端落盘，重新启动需重新登录。服务断开时桌面保留筛选条件并显示错误。
+`deploy/compose.yml` 和 `deploy/.env.example` 是手工部署模板，与已安装服务器的 `deploy/server/compose.yml` 分开。新服务器手动使用前替换数据库/管理员密码、使用空生产卷，并核对镜像版本；本轮权威发布走上面的摘要流程。需要公开域名时再配置有效TLS反向代理到127.0.0.1:8080，不公开数据库或管理端口。本次选择SSH隧道，没有配置公共域名/HTTPS入口。
 
-## Docker Compose（4 核 4 GB 首次部署可先使用）
-
-在 Linux 服务器仓库目录执行；下面是操作说明，本次没有部署到远程服务器。
-
-```sh
-cd deploy
-cp .env.example .env
-# 编辑 .env：替换 DB_PASSWORD 和 ADMIN_PASSWORD，后者至少 16 字符。
-chmod 600 .env
-docker compose up -d --build
-docker compose ps
-curl http://127.0.0.1:8081/actuator/health/readiness
-```
-
-生产使用新的 PostgreSQL 卷；`APP_DEMO=false`，首次只建 admin，不插入演示资料。ADMIN_PASSWORD 只在空库初始化时生效，不是已有账号的密码重置功能。不要复用开发演示库。
-
-API 与 PostgreSQL 各限制 768 MiB；API 非 root、只读根文件系统、临时目录限 64 MiB。数据库未暴露宿主端口。API 8080 和管理端口 8081 只绑定服务器回环。
-
-给域名配置有效 TLS，反向代理到 127.0.0.1:8080；例如已有 Caddy 服务可使用：
-
-```caddyfile
-academic.example.com {
-    reverse_proxy 127.0.0.1:8080
-}
-```
-
-桌面端填 `https://academic.example.com`。不将管理端口或 PostgreSQL 暴露公网。生产防火墙只开放实际需要的入口，域名和证书准备好后再开放服务。
-
-## k3s 与自动扩缩容
-
-[k3s 官方基线](https://docs.k3s.io/installation/requirements) 的 server 最低 2 核/2 GB 不含业务负载。4 核 4 GB 下采用小规格模板：API 每副本最高 512 MiB，数据库最高 512 MiB，最多 2 个 API，余下资源留给系统与控制面。该预算仍需服务器测量；不能把 HPA 当作增加物理资源。若 OOM、频繁 GC 或数据库等待上升，先限制 1 副本，必要时升级机器。不要在 4 GB 服务器同时运行 Gradle 构建和验收负载；在开发机/CI 构建镜像后上传。
-
-准备已安装的 k3s、可用的 local-path StorageClass、metrics-server 与 Traefik。HPA 使用 CPU utilization，需要 resource requests 和 metrics API（见 [Kubernetes HPA 文档](https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/)）。
-
-```sh
-# 开发机或 CI 构建/导出；也可推送到自己的镜像仓库。
-docker build -t academic-platform-api:0.4.0 backend
-docker save academic-platform-api:0.4.0 -o artifacts/academic-platform-api.tar
-# 将 tar 与部署文件复制到服务器；在服务器导入。
-sudo k3s ctr images import academic-platform-api.tar
-kubectl create namespace academic
-kubectl -n academic create secret generic academic-secrets --from-env-file=deploy/.env
-kubectl apply --dry-run=server -f deploy/k3s/app.yaml
-kubectl apply -f deploy/k3s/app.yaml
-kubectl -n academic rollout status deployment/postgres
-kubectl -n academic rollout status deployment/api
-kubectl -n academic get pods,hpa,pvc
-```
-
-如果使用镜像仓库，修改 deployment 的 image 为带版本或摘要的实际地址。k3s 文件目前仅完成 YAML 静态检查，**没有运行集群部署或 HPA 实测**。
-
-HPA：1–2 副本，目标 CPU 为 request 的 70%，扩容稳定窗口 30 秒，每分钟最多加 1 个；缩容稳定窗口 300 秒，每分钟最多减 1 个。每副本数据库连接上限 8，数据库 max_connections=40。令牌在数据库中，事务/唯一约束在数据库中，公共缓存按发布版本分开，因此不要求会话粘滞。
-
-滚动更新 `maxSurge=0,maxUnavailable=1` 防止额外副本挤占内存；只有 1 副本时更新会短暂停机。若要无中断更新，需至少 2 个健康副本并验证资源余量。PostgreSQL 是单实例 PVC，自动扩 API 不会自动扩数据库，也不构成高可用集群。
-
-编辑 `deploy/k3s/ingress.example.yaml` 中的域名，并创建 TLS Secret：
-
-```sh
-kubectl -n academic create secret tls academic-tls --cert=fullchain.pem --key=privkey.pem
-kubectl apply -f deploy/k3s/ingress.example.yaml
-```
-
-Ingress 只转发 `/api`，不发布管理端口。内部集群还应按实际拓扑应用网络隔离策略；模板没有假设用户的监控命名空间或 CNI。
-
-## 监控、备份与恢复
-
-`/actuator/prometheus` 导出 HTTP 延迟直方图、JVM、GC、连接池等指标。k3s 中可临时 `kubectl -n academic port-forward deployment/api 8081:8081`，或配置内部 Prometheus。HPA 依赖 metrics-server 的 CPU 数据，不要求安装完整 Prometheus；4 GB 机器不默认安装重型监控栈。
-
-备份示例（Linux，生成新文件，不覆盖既有备份）：
-
-```sh
-mkdir -p backups
-docker compose -f deploy/compose.yml exec -T db pg_dump -U academic -d academic -Fc > "backups/academic-$(date +%Y%m%d-%H%M%S).dump"
-```
-
-将备份加密复制到不同机器/对象存储，并在独立新数据库中演练 `pg_restore`。PVC 不是备份；不要把 `docker compose down -v` 用作普通停止命令。数据库包含账号摘要、会话与私有证明，备份访问权限应与数据库一致。
-
-## 服务器压测
-
-严格按 [服务器压测说明](../scripts/performance/README.md) 在服务器环境执行。本机未运行压测。当前交付不含低 P95、扩容收益或 4 GB 长期稳定性的实测结论。
-
-## v0.4 采集服务配置
-
-采集执行器随 API 运行，只领取管理员明确启动的任务或已启用计划产生的任务。数据库中 Crossref 与四个已登记公告来源默认启用；只有Crossref支持定时，且**定时计划默认关闭**。公告必须管理员明确创建固定批次任务再启动，不会在服务启动时自动扫描。来源设置、任务、租约、水位和日志均持久化于 PostgreSQL，重启不丢已提交页面。
+## 采集配置与升级
 
 | 环境变量 | 默认值 | 用途 |
 | --- | --- | --- |
-| CRAWL_WORKER_ENABLED | true | 是否运行该 API 副本的采集执行器；false 时仍可管理/查看任务，但该副本不领取 |
-| CRAWL_POLL_MS | 2000 | 任务调度检查间隔，单位毫秒；不是对源站请求频率 |
-| CRAWL_CONTACT_EMAIL | 空 | 真实维护者联系邮箱，用于 Crossref User-Agent/mailto；未配置时走公共池，不伪造邮箱 |
+| CRAWL_WORKER_ENABLED | true | 此API副本是否领取任务，false仍可查看/管理 |
+| CRAWL_POLL_MS | 2000 | 调度检查间隔毫秒，不是源站请求频率 |
+| CRAWL_CONTACT_EMAIL | 空 | Crossref真实维护者邮箱，未填走公共池、不伪造邮箱 |
 
-手动限制来源频率、启停来源、定时 ISSN、周期、窗口回看和页预算在管理员的“来源采集/来源设置”中配置，修改携带配置 version。Crossref默认至少间隔1500ms，新公告来源默认2000ms，同源最大并发1；响应限流标头和 Retry-After 可以延长等待。Crossref定时任务是 INCREMENTAL；公告只接受固定批次BOUNDED、不写日期水位、不支持定时，所有限量任务不推进完整同步水位。采集范围/数量的解释见 [构件设计](design/component-design.md)。
+手工模板 `deploy/compose.yml` 已接入这三个环境变量。当前服务器 `deploy/server/compose.yml` 将worker固定为true、poll固定为2000；如需更改，应由管理员更新root管理的Compose文件并重建API容器。服务器仅联系邮箱使用环境变量插值，可在root的 `secrets.env` 维护。k3s模板使用同名可选Secret键，修改Secret后需滚动更新。只允许启用来源的固定HTTPS域名/路径（api.crossref.org、www.cnipa.gov.cn、www.nsfc.gov.cn、www.most.gov.cn），不跟随任意重定向，不提供任意URL代理。LYNU域名自v0.5起不再接受请求。
 
-Compose 模板已将以下三个变量接入 api.environment，deploy/.env.example 已列出默认值。复制为 deploy/.env 后按需要修改；联系邮箱填写真实维护者地址，未配置时保留为空：
+Crossref默认请求间隔至少1500ms，公告2000ms，同源最大并发1；响应头与Retry-After只能延长等待。来源租约、下一请求时刻、任务attempt和停止标志保存在数据库，多副本不会把来源额度翻倍。网络等待不持有业务事务；规范元数据、修订、倒排、页面与断点同页原子发布。失效执行器回调不能提交。
 
-```yaml
-CRAWL_WORKER_ENABLED: ${CRAWL_WORKER_ENABLED:-true}
-CRAWL_POLL_MS: ${CRAWL_POLL_MS:-2000}
-CRAWL_CONTACT_EMAIL: ${CRAWL_CONTACT_EMAIL:-}
-```
+只有Crossref支持定时INCREMENTAL；必须整窗完成才能推进水位。公告只接受固定批次BOUNDED，无定时/完整同步水位。启用来源不等于启动任务。访问拒绝/robots拒绝/验证挑战在有效执行尝试且配置版本匹配时暂停定时并递增configVersion，管理员复核后再开；普通429仅有限退避。
 
-k3s 模板对三个变量均使用 academic-secrets 的同名可选键引用。用 deploy/.env 创建 Secret 时会一起导入；升级旧 Secret 缺少这些键时，应用继续使用 true / 2000 / 空邮箱的默认值。修改 Secret 后需滚动更新 API Pod 才读取新的环境变量。API Pod 需要按已启用来源访问 api.crossref.org、sites.lynu.edu.cn、www.nsfc.gov.cn、www.most.gov.cn、www.cnipa.gov.cn 的HTTPS并解析DNS；采集适配器固定域名与路径且不跟随任意重定向，不开放任意 URL 抓取代理。
+Flyway V6引入冻结文档和batch_id；V7仅停用LYNU、终止其活动任务并保留已提交历史，不增加表字段。注册HTML/PDF原字节最多8MiB，PDF以Base64存储增加约三分之一体积。首批冻结原文与业务同事务保存，恢复核对URL/行数/parser_version，规则变化需新任务。maxRecords只限制处理行数，不限制全文下载。备份必须包含原文、版本和审计，见 [来源说明](design/sources-v0.5.md) 与 [ER](design/database-er.md)。
 
-### 小服务器与扩缩容边界
+NSFC使用独立主机限定PKIX客户端，补充CFCA EV ROOT公有证书；不改全局SSLContext、系统或JDK truststore。主机名、有效期、链校验和固定路径继续生效，没有trust-all。根指纹 `5CC3D78E4E1D5E45547A04E6873E64F90CF9536D1CCC2EF800F355C4C5FD70FD`，有效期至2029-12-31T03:07:01Z；2029-10-01前或源站链/运行时变化时重新核验，详见 [TLS维护](../backend/src/main/resources/tls/README.md)。TLS_VALIDATION_FAILED不可自动/手动重试，修复后新建任务。
 
-每个副本都可以调度，但数据库来源租约和 next_request_at 对所有副本生效，同一来源不会因 HPA 从1扩到2副本而翻倍并发。页提交时再次校验任务 attempt、租约令牌和 stop_requested；被缩容的旧执行器不能通过迟到响应写入数据。已提交页保留，未完成任务由租约恢复路径接续。
+## 备份、监控与恢复边界
 
-采集网络等待在事务外，规范入库、修订与倒排在同一页事务中发布。4核4GB初始保留单来源串行、小页和显式预算；不要同时启用大批采集、索引全量补建和性能验收。监测数据库连接池、发布锁等待、原始页/冻结文档/版本/倒排表体积、JVM内存与前台请求延迟，再调整资源。HPA只增加API计算副本，不提高源站额度、不扩数据库，也不替代机器升级。
+升级前备份保存在root部署目录 `backups/`，以提交号和UTC时间命名；另将备份加密复制至异机/对象存储，并在独立数据库演练pg_restore。当前尚未完成生产备份恢复演练。数据卷不是备份；普通停机不使用 `docker compose down -v`。数据库含私有申请、会话摘要等，备份权限与数据库一致。
 
-H2/PostgreSQL 功能测试、桌面与单 DOI 接通结果由最终验证记录单列；它们不证明服务器吞吐、P95或HPA收益。部署模板本次仅做静态解析与 Compose 配置检查，不执行远程部署或集群应用。
+`/actuator/prometheus` 提供HTTP延迟直方图、JVM/GC和连接池指标，管理端口只在回环。监测源文档/版本/倒排体积、PG连接与锁等待、JVM内存和前台请求延迟；4GB机器不默认装重型监控栈，也不在服务器执行Gradle构建。
 
-有效执行尝试遇到来源访问拒绝、robots 拒绝或验证挑战，且来源配置版本仍匹配时，后台会关闭该来源的定时计划并递增 configVersion；来源 enabled 不变，管理员核实条件后仍可显式创建人工任务或恢复计划。旧执行尝试不能关闭已更新的配置。普通 429 只有限退避，不关闭计划。客户端修改旧配置版本会收到冲突，应先刷新来源设置。
+## k3s/HPA 与性能验收（后续）
 
-### v0.4 公告快照与升级
+[现有k3s模板](../deploy/k3s/app.yaml) 仅作后续迁移方案，未在当前服务器应用或验证自动扩缩容。模板API1–2副本，每副本上限512MiB，PG上限512MiB；HPA CPU目标70%、扩容窗口30秒、缩容300秒，每分钟最多增减1副本。使用前核对实际镜像digest、Secret、StorageClass、metrics-server、TLS及资源余量，不能将旧模板版本当生产release。
 
-先备份数据库，使用0.4.0镜像后由Flyway执行V6。迁移新增四个crawl_source记录、crawl_task.batch_id与crawl_document；不修改历史已发布元数据。batchId由应用注册目录验证，不是数据库FK；升级时应保留旧任务需要的批次定义。解析器版本改变后旧任务恢复会明确失败，需新建任务，不能原地把新规则接到旧行断点。
+[k3s最低配置](https://docs.k3s.io/installation/requirements) 不包含业务负载；[HPA](https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/) 依赖resource requests与metrics API。HPA只增加API计算副本，不增加物理内存、不扩数据库或来源额度。单实例PG不构成高可用；单副本滚动升级会短暂停机。
 
-一份注册HTML/PDF最多8MiB原始字节；HTML保存UTF-8正文，PDF以Base64存TEXT会增加约三分之一体积。原文只在首批提交事务保存一次，后续页保存切片定位，恢复复用不可变文档；它与临时HTTP缓存不同，备份须包含crawl_document。文档parser_version和record_count参与恢复核对，response_checksum与byte_checksum分别记录存储文本与下载字节。
-
-maxRecords限制处理行数，不是网络下载长度；小预算仍下载整份公告。4核4GB初始保持小批显式任务，监测原始文档、解析内存、连接池和前台请求延迟。注册地址只允许固定HTTPS URL及robots，不支持管理员任意URL或重定向。扩展批次前需核验访问条件、字段映射和大小预算。
-
-本轮四站robots核验均404，运行时仍检查并缓存规则。固定来源列表与字段缺失见 [接入说明](design/sources-v0.4.md)。原文与附件仅后台审计查看；不额外开放原始文档下载到公共目录。
-
-### NSFC 专用 TLS 信任锚
-
-部署包包含CFCA EV ROOT公有证书，适配当前NSFC站点链。只对注册的www.nsfc.gov.cn固定批次/robots使用独立PKIX客户端；其他来源与系统/JDK默认SSLContext保持不变。主机名、证书路径、算法、有效期和重定向限制继续生效；每次NSFC请求检查补充根有效期。没有trust-all开关，也无需管理员修改系统truststore。
-
-DER SHA-256：5CC3D78E4E1D5E45547A04E6873E64F90CF9536D1CCC2EF800F355C4C5FD70FD。当前公有根有效期截至2029-12-31T03:07:01Z，应在2029-10-01前以及运行时升级、源站链变化或TLS失败时重新核验官方信任状态。证书来源、独立官方核验及替换要求见 [TLS说明](../backend/src/main/resources/tls/README.md)。TLS_VALIDATION_FAILED不可重试；修复后新建任务，不以关闭验证恢复连接。本轮实际验证进度见 [v0.4记录](verification/sources-v0.4.md)。
+按用户要求未运行本机压测。本轮也未执行服务器负载测试，没有P95达标、长期稳定或扩容收益结论。后续按 [服务器压测说明](../scripts/performance/README.md) 执行冷/热缓存、基线和扩缩容对照；跨公网SSH的功能测试耗时不能当服务器延迟基准。

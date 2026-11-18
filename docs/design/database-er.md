@@ -1,8 +1,8 @@
 # 数据库 ER 与版本模型
 
-版本：Group2 / v0.4，结构核对日期：2026-11-17。
+版本：Group2 / v0.5，结构核对日期：2026-11-18。
 
-本设计将需求概念映射到实际 Flyway V1–V6 迁移。图中的实体均已在迁移中定义；计划扩展单独列出。生产使用 PostgreSQL，H2 提供兼容的开发和功能测试环境。
+本设计将需求概念映射到实际 Flyway V1–V7 迁移。图中的实体均已在迁移中定义；计划扩展单独列出。生产使用 PostgreSQL，H2 提供兼容的开发和功能测试环境。
 
 ## 1. 图文件
 
@@ -110,7 +110,7 @@ work.metadata_locked 当前为整条规范记录的锁定标志，不是逐字�
 
 ## 6. 采集执行模型
 
-crawl_source 保存来源配置、下一请求时刻、来源租约和可选定时计划。来源目录包含 Crossref 与四个固定公告适配器（LYNU、NSFC、MOST、CNIPA）；固定批次 URL 与能力由 CrawlSourceCatalog 注册。实际范围见 [v0.4 来源说明](sources-v0.4.md)，注册批次不代表通用站点搜索能力。
+crawl_source 保存来源配置、下一请求时刻、来源租约和可选定时计划。来源目录保留 Crossref 与四个公告来源定义；当前可用公告为NSFC、MOST、CNIPA，LYNU已弃用仅用于历史解释。固定批次 URL、能力及弃用策略由 CrawlSourceCatalog 注册。实际范围见 [v0.5 来源说明](sources-v0.5.md)，注册批次不代表通用站点搜索能力。
 
 crawl_task 固定一次任务的来源、可选 batch_id、DOI/ISSN/关键词、索引日期窗、可选出版年过滤、mode、max_records、页预算、执行尝试、停止请求、断点、计数与 completion_reason。parent_task_id 关联重开任务；创建者执行时仍需 ADMIN 权限。
 
@@ -124,11 +124,17 @@ crawl_document 使用 task_id 同时作为 PK 与 crawl_task FK：每个任务�
 
 固定公告首次页提交在同一事务内保存 crawl_document、成果/修订/倒排、crawl_page 与断点；首批事务失败不留下可推进的正文或断点。后续页读取任务已冻结原文，恢复前核对 parser_version、总行数、登记 URL 和行断点；不重新下载并拼接另一版本；内容发生变化时新建任务。crawl_page.raw_json 此时是 documentTaskId/batchId/offset/count/documentChecksum 切片定位；与 crawl_document 的关系由 task_id 关联、由应用校验，**没有额外 FK**。后台原始页接口解引用全文并另返 sliceMetadata/contentType/bodyEncoding。BOUNDED 的 max_records 控制处理行数，不限制固定 HTML/PDF 下载字节数；响应体另有硬上限。
 
-四个公告源不创建 crawl_checkpoint，也不支持 INCREMENTAL 或定时计划。document.record_count 是冻结正文中可解析的原始行数，task.received 是实际处理的预算内行数，inserted 是新增规范成果数；三者应分别展示。业务时间来自授权日期/资助年度/奖励年度，本轮公告 source_updated_at 为空；来源发布日期与修订时间不等价，fetched_at 更不能充当可信更新先后依据。变更无更新时序证据时保留冲突复核，不静默覆盖主值。
+公告源不创建 crawl_checkpoint，也不支持 INCREMENTAL 或定时计划。document.record_count 是冻结正文中可解析的原始行数，task.received 是实际处理的预算内行数，inserted 是新增规范成果数；三者应分别展示。业务时间来自授权日期/资助年度/奖励年度，本轮公告 source_updated_at 为空；来源发布日期与修订时间不等价，fetched_at 更不能充当可信更新先后依据。变更无更新时序证据时保留冲突复核，不静默覆盖主值。
 
 crawl_http_cache 是传输缓存，不是永久证据；URL 哈希为键，受条数、体积、有效期限制。ETag/Last-Modified 与响应体保存以供 304 复用；永久证据以 crawl_document/crawl_page/source_record 为准。缓存没有 task FK，允许来源请求跨任务复用。
 
 来源和任务的 lease_token / attempt 均有效才可提交；lease_until 限定当前尝试的有效时间。锁顺序为来源 → 任务 → 目录发布。页面提交、游标和水位受同一尝试校验保护，迟到的成功回调不能改变任务状态。
+
+### 6.1 V7 来源弃用迁移
+
+V7只修改既有数据，不增加表、字段或外键。它将LYNU的 `enabled/schedule_enabled` 关闭、`config_version` 递增并释放来源租约；将该源PENDING/RUNNING/RETRYING任务转为STOPPED，追加SOURCE_DEPRECATED日志，失效任务租约并设置停止/完成原因。旧终态和已提交成果、修订、原始文档、页及审核关系保留。
+
+`available/deprecated/deprecationReason` 是应用注册目录派生的API字段，不能画成 `crawl_source` 的物理列。弃用来源行和旧批次定义仍存在，用于已有FK及历史解释；不能删除来源行来表达弃用。图结构与V6相同，仍为32表、297字段、44条实际FK；本轮已在H2与PostgreSQL执行V1–V7回归，生产迁移状态见 [v0.5验证](../verification/server-v0.5.md)。
 
 ## 7. 账号、人物、权限与多态关联
 
@@ -161,4 +167,4 @@ claim.target_id 按 kind 指向账号、学者或成果，是多态目标，SQL 
 
 ## 10. 图验证
 
-字段与连线从 Flyway V1–V6 的 CREATE TABLE、ADD COLUMN、PRIMARY KEY、UNIQUE、REFERENCES 生成；每条 FK 目标表和列均校验。draw.io XML 已重新解析；图中声明字段数量与迁移解析数量一致。数据库实际迁移和业务事务测试由后端验证，图的静态检查不能替代数据库运行结果。
+字段与连线从 Flyway V1–V7 的 CREATE TABLE、ADD COLUMN、PRIMARY KEY、UNIQUE、REFERENCES 生成；每条 FK 目标表和列均校验。draw.io XML 已重新解析；图中声明字段数量与迁移解析数量一致。数据库实际迁移和业务事务测试由后端验证，图的静态检查不能替代数据库运行结果。

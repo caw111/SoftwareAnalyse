@@ -1,7 +1,7 @@
 # 采集、增量、检索与统计构件设计
 
-版本：Group2 / v0.4 设计与实现契约
-本轮公告核验日期：2026-11-17；论文 API / 算法文档历史核验日期：2026-11-11
+版本：Group2 / v0.5 设计与实现契约
+来源弃用/部署更新：2026-11-18；公告HTTP历史核验：2026-11-17；论文 API / 算法文档历史核验：2026-11-11
 需求基线：[SRS](../../前期成果/需求调研和建模/docs/系统需求规格说明书_SRS.md)、[SPEC](../../前期成果/需求调研和建模/docs/核心模块开发规范_SPEC.md)、[调研报告](../../前期成果/需求调研和建模/docs/需求调研报告.md)。数据库见 [ER 设计](database-er.md)。
 
 ## 1. 交付范围与设计决定
@@ -10,13 +10,13 @@ Windows WPF 客户端继续负责交互；Java 21 / Spring Boot 模块化单体�
 
 | 构件 | 本轮实现范围 | 尚未实现的扩展 |
 | --- | --- | --- |
-| 采集适配 | Crossref API；LYNU、NSFC、MOST 三个固定 HTML 公告与 CNIPA 专利金奖 PDF | OpenAlex、DBLP、任意站点/年度批次、通用 CNIPA/NSFC 检索 |
+| 采集适配 | Crossref API；NSFC、MOST 两个固定 HTML 公告与 CNIPA 专利金奖 PDF；LYNU仅保留历史 | OpenAlex、DBLP、任意站点/年度批次、通用 CNIPA/NSFC 检索 |
 | 调度与恢复 | 持久化任务、显式启动/停止/重试、定时计划、跨副本来源租约、执行尝试校验、原始页与检查点 | 消息队列、多来源大规模并行、通用网页发现 |
 | 数据修订 | 来源原文版本、稳定映射、变更检测、规范元数据版本、冲突登记 | 弱标识自动合并、治理撤销/合并/软删除完整工作流 |
 | 检索 | 同库倒排、加权词频 BM25、固定公开版本、确定性分页、中英词项 | 独立 Elasticsearch/OpenSearch、语义向量、经过人工评价的学科专属权重 |
 | 统计 | 同版本 SQL 聚合、有界缓存、分类型/年度/机构/领域、引用覆盖、文本热点、共著路径 | 异步预聚合快照、预测、行为个性化推荐 |
 
-“设计完成”不等于全部 SRS 目标已通过验收。本轮固定公告接入范围、字段映射与真实 HTTP 核验见 [v0.4 来源说明](sources-v0.4.md)，端到端/数据库/桌面回归以最终验证记录为准。既有结构化导入保留；未注册来源不能因存在类型枚举而显示已接通。
+“设计完成”不等于全部 SRS 目标已通过验收。当前范围及弃用策略见 [v0.5来源说明](sources-v0.5.md)，字段映射和首次HTTP核验保留在 [v0.4来源说明](sources-v0.4.md)。端到端、数据库、桌面和部署结果见 [v0.5验证记录](../verification/server-v0.5.md)。既有结构化导入保留；未注册来源不能因存在类型枚举而显示已接通。
 
 ### 1.1 构件协作
 
@@ -27,7 +27,7 @@ flowchart LR
     TIMER["持久化定时计划"] --> TASK
     TASK --> WORKER["采集执行器"]
     WORKER --> ADAPTER["Crossref / 已登记公告适配器<br/>固定域名、路径与批次"]
-    ADAPTER --> REMOTE["Crossref API / 三份 HTML / CNIPA PDF"]
+    ADAPTER --> REMOTE["Crossref API / 两份 HTML / CNIPA PDF"]
     ADAPTER --> RAW["原始页 / 任务冻结原文 / 响应证据"]
     RAW --> ETL["类型映射 / 清洗 / 排除说明"]
     ETL --> IMPORT["ImportService<br/>去重、版本、冲突"]
@@ -53,7 +53,7 @@ flowchart LR
 | CNIPA 专利奖公告及附件 | 官方 2025 年授奖公告本次 200；可追溯正式名单 | 已注册第二十五届专利金奖 PDF，共30项；不包含其他附件；缺授权日期/当前法律状态，保持未知 |
 | NSFC 项目清单 | 官方 2019 年生命科学部重点项目清单本次 200；列“科学部编号”、负责人、依托单位 | 已注册2019生命科学部重点项目固定HTML，共115项；科学部编号不改称批准号，2020发布日不替代2019资助年 |
 | MOST 获奖目录 | 官方 2023 年国家自然科学奖目录本次 200；项目编号、主要完成人、提名者 | 已注册2023自然科学奖固定HTML，共49项；完成人/提名者分开，奖励年度2023与发布年2024分开 |
-| 洛阳师范学院专利清单 | “2025 年获得授权的专利清单”本次 200，含申请号、申请日、授权公告日、发明人 | 已注册2025授权清单固定HTML，共28项；来源独立命名，不推断人员机构/当前法律状态；保留版权与用途边界 |
+| 洛阳师范学院专利清单 | “2025 年获得授权的专利清单”本次 200，含申请号、申请日、授权公告日、发明人 | v0.5已弃用；历史28项样本的映射与任务证据保留，不再允许请求、新建、启用或重试；不删除已发布成果 |
 
 核实依据：[Crossref API 使用建议](https://www.crossref.org/documentation/retrieve-metadata/rest-api/tips-for-using-the-crossref-rest-api/)、[OpenAlex 当前访问与限流说明](https://docs.openalex.org/how-to-use-the-api/rate-limits-and-authentication)、[OpenAlex 分页说明](https://docs.openalex.org/how-to-use-the-api/get-lists-of-entities/paging)。OpenAlex 旧的 per_page=200 行为已被官方标为弃用，本项目不将旧配额写死在未来适配器中。
 
@@ -67,7 +67,13 @@ flowchart LR
 | PROJECT | 来源+清单批次+原记录号；可信批准号另与资助机构组合 | 资助年、立项年、计划起止分别保存 | 负责人、依托单位分开 | 科学部编号不冒充批准号；数字标识保留前导零 |
 | AWARD | 奖励体系+年度+项目编号；无编号进入人工复核 | 奖励年度 | 完成人、完成单位、提名者分开 | 单位奖不强造个人；公示/提名不冒充正式获奖 |
 
-HTML/PDF 适配器输出共同规范契约，保存整份冻结正文、原始字节与正文哈希、页码/行定位和解析器版本。网页壳、验证码、登录提示、空白 PDF 不视作有效空数据。管理员选择已登记 batchId；人工导入仍用于未接通但获准使用的来源。完整批次与证据口径见 [来源说明](sources-v0.4.md)。
+HTML/PDF 适配器输出共同规范契约，保存整份冻结正文、原始字节与正文哈希、页码/行定位和解析器版本。网页壳、验证码、登录提示、空白 PDF 不视作有效空数据。管理员选择已登记 batchId；人工导入仍用于未接通但获准使用的来源。当前批次见 [来源说明](sources-v0.5.md)，历史字段与证据口径见 [v0.4设计](sources-v0.4.md)。
+
+### 2.2 来源弃用与部署门槛
+
+v0.5的 `available/deprecated/deprecationReason` 由应用来源目录提供；`enabled` 仍是可调整的运行设置，两者不能混用。V7关闭LYNU和相关活动任务，保留已发布成果、原始页与审计；运行时从领取到提交反复核验可用性。来源不可用后，迟到回调不能继续发布，管理员也不能通过修改设置恢复它。具体状态迁移见 [来源弃用说明](sources-v0.5.md)。
+
+生产采用单API+PostgreSQL Compose；CI先通过H2、独立PG和WPF构建，再发布同次测试JAR的镜像摘要。部署由受限SSH命令与服务器文件锁串行执行；拉取后校验提交标签，升级前备份，readiness与公共API检查成功才登记发布。失败仅恢复旧应用镜像，不自动恢复数据库；新迁移须考虑旧应用兼容。当前未启用k3s/HPA，算法并发约束不依赖它，见 [部署说明](../deployment.md)。
 
 ## 3. 任务调度与反爬应对
 
@@ -83,7 +89,7 @@ Crossref 管理员明确填写来源、DOI 或 ISSN/关键词、固定索引起�
 
 数量预算是源返回的原始记录数，新增数可能小于预算。任务独立展示 received / inserted / updated / unchanged / excluded / conflicts，不能把接收数量或去重数量当新增成果。Crossref 定时任务采用 INCREMENTAL；被停止或成功任务再次执行，创建关联 parent_task_id 的新任务，保留原终态。
 
-公告来源仅接受 REGISTERED_BATCH + BOUNDED。batchId 由服务端注册目录校验，pageSize 是提交切片大小，maxRecords 是待处理原始行数；仍须下载完整 HTML/PDF，不能宣称只请求了预算内若干行。公告不使用索引日期窗、出版年或 DOI/ISSN 条件，不创建全窗 checkpoint，也不开放定时。document.recordCount（冻结文档行数）与 task.received/inserted 分开；详情见 [来源契约](sources-v0.4.md)。
+公告来源仅接受 REGISTERED_BATCH + BOUNDED。batchId 由服务端注册目录校验，pageSize 是提交切片大小，maxRecords 是待处理原始行数；仍须下载完整 HTML/PDF，不能宣称只请求了预算内若干行。公告不使用索引日期窗、出版年或 DOI/ISSN 条件，不创建全窗 checkpoint，也不开放定时。document.recordCount（冻结文档行数）与 task.received/inserted 分开；详情见 [当前来源契约](sources-v0.5.md)。
 
 ### 3.2 六状态和执行尝试
 
@@ -238,7 +244,7 @@ crawl_task.batch_id 保存已登记批次，应用校验来源/批次对应关�
 
 crawl_page.raw_json 对公告保存 documentTaskId/batchId/offset/count/documentChecksum 定位；后台原始页接口解引用全文并另返 sliceMetadata/contentType/bodyEncoding。每条来源记录保留行级原文、来源键和处理版本，原始文档供审计/复现。新增/更新、规范快照、搜索倒排、发布指针与页断点仍同事务提交。
 
-公告来源发布日期与修订时间分开；本轮四个解析器 sourceUpdatedAt 为 null，不能从发布时间或本次 fetchedAt 推定记录更新先后。正文变化而无可信更晚源修订时间时只能作为复核证据，不静默覆盖；重处理继续经过 source_processing。任务完成不代表全站完整，也不表示已核验专利当前法律状态。V6 表和真实外键见 [ER](database-er.md)。
+公告来源发布日期与修订时间分开；当前公告解析器 sourceUpdatedAt 为 null，不能从发布时间或本次 fetchedAt 推定记录更新先后。正文变化而无可信更晚源修订时间时只能作为复核证据，不静默覆盖；重处理继续经过 source_processing。任务完成不代表全站完整，也不表示已核验专利当前法律状态。V6 表和真实外键见 [ER](database-er.md)。
 
 ## 5. 检索排序构件
 
@@ -379,7 +385,7 @@ BFS 计算最少边数路径，邻接节点按学者 ID 稳定遍历；起终点
 | Crossref rows=0 | HTTP 200；公共数组池 1 请求/秒、并发1 | 默认1500ms，运行时尊重更严格等待 |
 | OpenAlex authentication / paging | HTTP 200；文档更新于 2026-11-03，游标后续页须key；100为支持页上限 | 仅适配设计，不申请/使用未知用户凭证 |
 | DBLP 下载 FAQ | HTTP 202 验证挑战，未取到正文 | 不绕过；当前自动接入未启用 |
-| 四个非论文公告（2026-11-17 复核） | 页面及CNIPA金奖附件均HTTP200，四站robots均404；固定行数28/115/49/30 | 注册四个明确批次；仅事实元数据与后台快照，非通用检索或批量许可确认 |
+| 四个非论文公告（2026-11-17 复核） | 页面及CNIPA金奖附件均HTTP200，四站robots均404；固定行数28/115/49/30 | v0.4注册四批次；v0.5停用LYNU、保留三批次；非通用检索或批量许可确认 |
 | Stanford BM25 教材 | TLS 传输失败，未取得本次内容 | 不声称已核验该页；使用 Apache 官方源码核对公式 |
 | Apache Lucene BM25Similarity | 官方 GitHub 源码 HTTP 200 | 核对 IDF、平均长度、k1/b；本项目加权变体另述 |
 

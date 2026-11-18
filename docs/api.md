@@ -1,6 +1,6 @@
-# API v0.4
+# API v0.5
 
-返回 UTF-8 JSON。公开目录匿名可读；私有操作用 `Authorization: Bearer <token>`。随机会话令牌有效 8 小时，数据库只存 SHA-256 摘要，登出即失效；密码用 PBKDF2。服务端每次核对最新角色和对象授权，客户端显示不是权限依据。远程应使用 TLS。
+返回 UTF-8 JSON。公开目录匿名可读；私有操作用 `Authorization: Bearer <token>`。随机会话令牌有效 8 小时，数据库只存 SHA-256 摘要，登出即失效；密码用 PBKDF2。服务端每次核对最新角色和对象授权，客户端显示不是权限依据。远程使用有效 TLS，或本次部署采用的 SSH 加密隧道；本机回环入口为 `http://127.0.0.1:18080`，见 [部署说明](deployment.md)。
 
 ## 接口
 
@@ -71,13 +71,13 @@ GET /api/works/{id}?revision=1
 管理端口：`8081/actuator/health/liveness`、`/readiness`、`/prometheus`。默认绑定回环；容器内开放但不通过 Ingress 发布。
 
 
-## 服务器采集任务与质量查看（v0.4）
+## 服务器采集任务与质量查看（v0.5）
 
-以下接口全部要求 ADMIN；列表和详情返回的数据库字段以 camelCase 命名。来源为 `crossref`（论文）和 `lynu-patents`、`cnipa-patents`、`nsfc-projects`、`most-awards` 四个固定公告适配器。管理员选择范围或已登记批次，不输入任意抓取 URL；固定批次与字段边界见 [来源说明](design/sources-v0.4.md)，当前实测范围与未完成项见 [v0.4 验证记录](verification/sources-v0.4.md)。
+以下接口全部要求 ADMIN；列表和详情返回的数据库字段以 camelCase 命名。当前可用来源为 `crossref`（论文）和 `cnipa-patents`、`nsfc-projects`、`most-awards` 三个固定公告适配器。`lynu-patents` 只保留历史解释，已弃用。管理员选择范围或已登记批次，不输入任意抓取 URL；固定批次与字段边界见 [来源说明](design/sources-v0.5.md)，当前实测范围与未完成项见 [v0.5 验证记录](verification/server-v0.5.md)。
 
 | 方法与路径 | 说明 |
 | --- | --- |
-| GET `/api/admin/crawl/sources` | 来源状态、配置版本、scopeKind/outcomeType、固定 batches、supportsIncremental/supportsSchedule、联系邮箱是否已配置 |
+| GET `/api/admin/crawl/sources` | 来源状态、配置版本、scopeKind/outcomeType、固定 batches、supportsIncremental/supportsSchedule、available/deprecated/deprecationReason、联系邮箱是否已配置 |
 | POST `/api/admin/crawl/sources/{id}/settings` | 带配置 version 的更新；停用来源请求其活动任务停止 |
 | GET `/api/admin/crawl/checkpoints` | 各来源/范围最近完整扫描的截止日 |
 | GET `/api/admin/crawl/tasks?page=0&size=20` | 分页任务 `{items,total,page,size}`，size 1–100 |
@@ -111,16 +111,18 @@ GET /api/works/{id}?revision=1
 
 统计 `/api/statistics` 在原类型/年份/机构计数外增加热点 `hotspots`、分母 `hotspotDenominator`、逐年 `hotspotTrend`/`hotspotBuckets`、规则 `hotspotRule` 和覆盖率 `coverage`。热点频次按每篇成果去重，只使用题名/摘要；未知年份单独成桶，不推测未来趋势。完整算法和 ER 见 [构件设计](design/component-design.md)、[数据库设计](design/database-er.md)。
 
-## 固定公告批次 API（v0.4）
+## 固定公告批次 API（v0.5）
 
 来源对象增加 sourceName、outcomeType、scopeKind、endpoint、batches、supportsIncremental、supportsSchedule。batches 每项包含 id、label、year、url、contentType；year 表示注册批次年度，不保证等于每条成果业务年（CNIPA 专利授权年份仍未知）。客户端应按能力切换参数，不能把公告视为 Crossref 期刊窗口。
 
-| sourceId | 唯一已登记 batchId |
-| --- | --- |
-| lynu-patents | lynu-grants-2025 |
-| cnipa-patents | cnipa-25-gold-2025 |
-| nsfc-projects | nsfc-life-key-2019 |
-| most-awards | most-natural-science-2023 |
+| sourceId | 已登记 batchId | v0.5 状态 |
+| --- | --- | --- |
+| cnipa-patents | cnipa-25-gold-2025 | 可用 |
+| nsfc-projects | nsfc-life-key-2019 | 可用 |
+| most-awards | most-natural-science-2023 | 可用 |
+| lynu-patents | lynu-grants-2025 | 已弃用，仅解释历史任务 |
+
+来源状态新增 `available`、`deprecated`、`deprecationReason`。`available=false` 是应用弃用策略，与管理员临时配置的 `enabled=false` 不同，不能用来源设置重新启用。创建 LYNU 任务、修改其设置、START 或 RETRY 返回409；历史任务、原始页和已发布成果继续可读。内部执行/迁移终止原因是 `SOURCE_DEPRECATED`，不是新增HTTP状态码。客户端隐藏弃用来源的新建/设置入口，历史页显示弃用说明并禁止重启。
 
 ~~~json
 {"sourceId":"nsfc-projects","batchId":"nsfc-life-key-2019","mode":"BOUNDED","maxRecords":10,"pageSize":5,"maxPages":2}
