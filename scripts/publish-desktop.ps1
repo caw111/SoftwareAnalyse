@@ -7,6 +7,7 @@ param(
 $ErrorActionPreference = 'Stop'
 if ($Offline -and $NuGetConfig) { throw 'Use either -Offline or -NuGetConfig.' }
 $projectRoot = Split-Path $PSScriptRoot
+$dotnet = & (Join-Path $PSScriptRoot 'resolve-tool.ps1') -Tool Dotnet
 $projectFile = Join-Path $projectRoot 'frontend\AcademicDesktop\AcademicDesktop.csproj'
 $outputDir = Join-Path $projectRoot 'artifacts\windows-x64'
 $selfContained = if ($FrameworkDependent) { 'false' } else { 'true' }
@@ -42,9 +43,9 @@ try {
   $restoreArguments = @('restore', $projectFile, '-r', 'win-x64', "-p:SelfContained=$selfContained", '-p:PublishSingleFile=true', '--nologo')
   if ($NuGetConfig) { $restoreArguments += @('--configfile', $NuGetConfig) }
   if ($Offline) { $restoreArguments += @('-p:NuGetAudit=false', '--disable-parallel') }
-  & dotnet @restoreArguments
+  & $dotnet @restoreArguments
   if ($LASTEXITCODE -ne 0) { throw 'Desktop restore failed.' }
-  & dotnet publish $projectFile -c Release -r win-x64 --self-contained $selfContained --no-restore -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -o $outputDir --nologo
+  & $dotnet publish $projectFile -c Release -r win-x64 --self-contained $selfContained --no-restore -p:PublishSingleFile=true -p:IncludeNativeLibrariesForSelfExtract=true -o $outputDir --nologo
   if ($LASTEXITCODE -ne 0) { throw 'Desktop publish failed.' }
   Write-Host "Windows build: $outputDir\AcademicDesktop.exe"
 } finally {
