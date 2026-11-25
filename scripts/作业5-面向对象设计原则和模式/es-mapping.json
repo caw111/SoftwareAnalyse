@@ -1,0 +1,107 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 1
+  },
+  "mappings": {
+    "dynamic": "strict",
+    "properties": {
+      "work_id": {
+        "type": "keyword"
+      },
+      "dataset": {
+        "type": "keyword"
+      },
+      "type": {
+        "type": "keyword"
+      },
+      "doi": {
+        "type": "keyword"
+      },
+      "identifier_key": {
+        "type": "keyword"
+      },
+      "discipline_ids": {
+        "type": "keyword"
+      },
+      "institution_ids": {
+        "type": "keyword"
+      },
+      "title": {
+        "type": "text",
+        "analyzer": "cjk",
+        "fields": {
+          "standard": {
+            "type": "text",
+            "analyzer": "standard"
+          },
+          "sort": {
+            "type": "keyword",
+            "ignore_above": 2048
+          }
+        }
+      },
+      "author_names": {
+        "type": "text",
+        "analyzer": "cjk",
+        "fields": {
+          "standard": {
+            "type": "text",
+            "analyzer": "standard"
+          }
+        }
+      },
+      "venue_name": {
+        "type": "text",
+        "analyzer": "cjk",
+        "fields": {
+          "standard": {
+            "type": "text",
+            "analyzer": "standard"
+          }
+        }
+      },
+      "abstract": {
+        "type": "text",
+        "analyzer": "cjk",
+        "fields": {
+          "standard": {
+            "type": "text",
+            "analyzer": "standard"
+          }
+        }
+      },
+      "discipline_labels": {
+        "type": "text",
+        "analyzer": "cjk",
+        "fields": {
+          "standard": {
+            "type": "text",
+            "analyzer": "standard"
+          }
+        }
+      },
+      "contributors": {
+        "type": "nested",
+        "dynamic": "strict",
+        "properties": {
+          "scholar_id": {
+            "type": "keyword"
+          },
+          "institution_id": {
+            "type": "keyword"
+          }
+        }
+      },
+      "release_revision": {
+        "type": "long"
+      },
+      "publish_year": {
+        "type": "integer"
+      },
+      "citation_count": {
+        "type": "integer"
+      }
+    }
+  }
+}
