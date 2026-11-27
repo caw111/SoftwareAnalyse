@@ -19,7 +19,7 @@ Copy-Item -LiteralPath $desktop -Destination $desktopDirectory
 foreach ($name in @('start-local.ps1','stop-local.ps1','resolve-tool.ps1')) {
     Copy-Item -LiteralPath (Join-Path $PSScriptRoot $name) -Destination $scriptsDirectory
 }
-& $jlink --add-modules java.se,jdk.crypto.ec,jdk.unsupported,jdk.charsets,jdk.zipfs --strip-debug --no-header-files --no-man-pages --compress=2 --output (Join-Path $stage 'runtime')
+& $jlink --add-modules java.se,jdk.crypto.ec,jdk.unsupported,jdk.charsets,jdk.zipfs,jdk.management --strip-debug --no-header-files --no-man-pages --compress=2 --output (Join-Path $stage 'runtime')
 if ($LASTEXITCODE -ne 0) { throw 'Bundled Java runtime creation failed.' }
 $start = '@echo off' + "`r`n" + 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\start-local.ps1" -NoBuild -JavaHome "%~dp0runtime" -ApiUrl http://127.0.0.1:18082 -ManagementPort 18083' + "`r`n" + 'if errorlevel 1 pause' + "`r`n"
 $stop = '@echo off' + "`r`n" + 'powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%~dp0scripts\stop-local.ps1"' + "`r`n" + 'if errorlevel 1 pause' + "`r`n"
