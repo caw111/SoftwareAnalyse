@@ -1,6 +1,7 @@
 param(
-    [string]$JavaHome = 'D:\tool\java21',
+    [string]$JavaHome,
     [string]$ApiUrl = 'http://127.0.0.1:8080',
+    [ValidateRange(1, 65535)][int]$ManagementPort = 8081,
     [switch]$UsePostgres,
     [switch]$NoBuild,
     [switch]$NoDesktop
@@ -12,11 +13,19 @@ New-Item -ItemType Directory -Force -Path $artifactDir | Out-Null
 if (!$NoBuild) { & (Join-Path $PSScriptRoot 'build.ps1') -JavaHome $JavaHome -SkipTests }
 $desktop = Join-Path $projectRoot 'frontend\AcademicDesktop\bin\Release\net9.0-windows\AcademicDesktop.exe'
 $jar = Join-Path $projectRoot 'backend\build\libs\academic-platform-api.jar'
-if (!(Test-Path -LiteralPath $desktop) -or !(Test-Path -LiteralPath $jar)) { throw 'Build outputs are missing. Run scripts/build.ps1 first.' }
+if (!(Test-Path -LiteralPath $jar) -or (!$NoDesktop -and !(Test-Path -LiteralPath $desktop))) { throw 'Build outputs are missing. Run scripts/build.ps1 first.' }
 $healthy = $false
 try { $null = Invoke-RestMethod "$ApiUrl/api/reference" -TimeoutSec 3; $healthy = $true } catch { }
 if (!$healthy) {
-    if ($ApiUrl -ne 'http://127.0.0.1:8080') { throw 'Remote API is unavailable. This script only starts a server for the default local address.' }
+    $endpoint = [Uri]$ApiUrl
+    if (!$endpoint.IsAbsoluteUri -or !$endpoint.IsLoopback -or $endpoint.Scheme -ne 'http' -or $endpoint.AbsolutePath -ne '/' -or $endpoint.UserInfo -or $endpoint.Query -or $endpoint.Fragment) { throw 'Remote API is unavailable. Automatic startup requires a loopback HTTP address.' }
+    if ($endpoint.Port -eq $ManagementPort) { throw 'API and management ports must be different.' }
+    foreach ($port in @($endpoint.Port, $ManagementPort)) {
+        if (Get-NetTCPConnection -State Listen -LocalPort $port -ErrorAction SilentlyContinue) { throw "Port $port is already in use. Choose another -ApiUrl port and -ManagementPort." }
+    }
+    $javaArguments = @{ Tool = 'Java' }
+    if ($JavaHome) { $javaArguments.Executable = Join-Path $JavaHome 'bin/java.exe' }
+    $java = & (Join-Path $PSScriptRoot 'resolve-tool.ps1') @javaArguments
     $env:APP_DEMO = 'true'
     $env:DEMO_COUNT = '64'
     if ($UsePostgres) {
@@ -31,13 +40,13 @@ if (!$healthy) {
     $jarHash = (Get-FileHash -LiteralPath $jar -Algorithm SHA256).Hash.Substring(0, 16)
     $runtimeJar = Join-Path $runtimeDir "api-$jarHash.jar"
     if (!(Test-Path -LiteralPath $runtimeJar)) { Copy-Item -LiteralPath $jar -Destination $runtimeJar }
-    $apiProcess = Start-Process -FilePath (Join-Path $JavaHome 'bin\java.exe') -ArgumentList @('-Xms128m','-Xmx512m','-jar', ('"' + $runtimeJar + '"')) -WorkingDirectory (Join-Path $projectRoot 'backend') -RedirectStandardOutput (Join-Path $artifactDir 'api.stdout.log') -RedirectStandardError (Join-Path $artifactDir 'api.stderr.log') -WindowStyle Hidden -PassThru
+    $apiProcess = Start-Process -FilePath $java -ArgumentList @('-Xms128m','-Xmx512m','-jar', ('"' + $runtimeJar + '"'), "--server.address=$($endpoint.DnsSafeHost)", "--server.port=$($endpoint.Port)", '--management.server.address=127.0.0.1', "--management.server.port=$ManagementPort") -WorkingDirectory (Join-Path $projectRoot 'backend') -RedirectStandardOutput (Join-Path $artifactDir 'api.stdout.log') -RedirectStandardError (Join-Path $artifactDir 'api.stderr.log') -WindowStyle Hidden -PassThru
     $apiProcess.Id | Set-Content -LiteralPath (Join-Path $artifactDir 'local-api.pid')
     $deadline = (Get-Date).AddSeconds(90)
     do {
         Start-Sleep -Milliseconds 800
         if ($apiProcess.HasExited) { throw 'API exited. Inspect artifacts/api.stderr.log and artifacts/api.stdout.log.' }
-        try { $health = Invoke-RestMethod 'http://127.0.0.1:8081/actuator/health/readiness' -TimeoutSec 2; $healthy = $health.status -eq 'UP' } catch { }
+        try { $health = Invoke-RestMethod "http://127.0.0.1:$ManagementPort/actuator/health/readiness" -TimeoutSec 2; $healthy = $health.status -eq 'UP' } catch { }
     } until ($healthy -or (Get-Date) -gt $deadline)
     if (!$healthy) { throw 'API readiness timed out. Inspect artifacts/api.stdout.log.' }
 }

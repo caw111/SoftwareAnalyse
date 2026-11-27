@@ -123,6 +123,7 @@ jobs:
 
   windows-desktop:
     name: Windows / WPF build and self-contained EXE
+    needs: backend-h2
     runs-on: windows-2025
     timeout-minutes: 25
     defaults:
@@ -135,6 +136,15 @@ jobs:
       - uses: actions/setup-dotnet@0f4a354dd5547a28c70b7853dbd95d5b67886e73 # v6.1.0
         with:
           dotnet-version: '9.0.x'
+      - uses: actions/setup-java@d1374f8ac74474200d16ef8ecee22c7ae7a51880 # v6.3.0
+        with:
+          distribution: temurin
+          java-version: '21'
+      - name: Download the tested API for desktop integration
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          name: api-jar-${{ github.sha }}
+          path: backend/build/libs/
       - name: Build WPF Release
         run: |
           dotnet build frontend/AcademicDesktop/AcademicDesktop.csproj --configuration Release --nologo
@@ -149,6 +159,31 @@ jobs:
             (Join-Path (Split-Path $exe) 'AcademicDesktop.exe.sha256'),
             "$checksum  AcademicDesktop.exe" + [Environment]::NewLine,
             [Text.UTF8Encoding]::new($false))
+      - name: Verify the packaged desktop against the tested API
+        run: |
+          $env:ACADEMIC_API_URL = 'http://127.0.0.1:8080'
+          $env:ACADEMIC_CONNECTION_OUTPUT = Join-Path $PWD 'artifacts/desktop-api-connection.json'
+          try {
+            ./scripts/start-local.ps1 -NoBuild -NoDesktop
+            $probe = Start-Process -FilePath './artifacts/windows-x64/AcademicDesktop.exe' -ArgumentList '--connection-check' -WindowStyle Hidden -PassThru
+            if (!$probe.WaitForExit(60000)) { Stop-Process -Id $probe.Id; throw 'Desktop/API connection check timed out.' }
+            if ($probe.ExitCode -ne 0) { throw 'Packaged desktop could not connect to the tested API.' }
+            $report = Get-Content -LiteralPath $env:ACADEMIC_CONNECTION_OUTPUT -Raw | ConvertFrom-Json
+            if (!$report.ok -or $report.api -ne $env:ACADEMIC_API_URL) { throw 'Desktop/API connection report failed.' }
+          } finally {
+            ./scripts/stop-local.ps1
+          }
+      - name: Preserve desktop integration evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: desktop-api-integration
+          path: |
+            artifacts/desktop-api-connection.json
+            artifacts/api.stdout.log
+            artifacts/api.stderr.log
+          if-no-files-found: warn
+          retention-days: 14
       - name: Preserve the Windows application
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
