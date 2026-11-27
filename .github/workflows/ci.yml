@@ -184,6 +184,34 @@ jobs:
             artifacts/api.stderr.log
           if-no-files-found: warn
           retention-days: 14
+      - name: Package and verify the standalone local application
+        run: |
+          ./scripts/package-local.ps1
+          $bundle = Join-Path $env:RUNNER_TEMP 'academic-local-check'
+          Expand-Archive -LiteralPath artifacts/AcademicPlatform-local-windows-x64.zip -DestinationPath $bundle
+          $env:ACADEMIC_API_URL = 'http://127.0.0.1:18082'
+          $env:ACADEMIC_CONNECTION_OUTPUT = Join-Path $PWD 'artifacts/local-package-connection.json'
+          try {
+            & "$bundle/scripts/start-local.ps1" -NoBuild -NoDesktop -JavaHome "$bundle/runtime" -ApiUrl $env:ACADEMIC_API_URL -ManagementPort 18083
+            $probe = Start-Process -FilePath "$bundle/frontend/AcademicDesktop/bin/Release/net9.0-windows/AcademicDesktop.exe" -ArgumentList '--connection-check' -WindowStyle Hidden -PassThru
+            if (!$probe.WaitForExit(60000)) { Stop-Process -Id $probe.Id; throw 'Local package connection check timed out.' }
+            if ($probe.ExitCode -ne 0) { throw 'Local package connection check failed.' }
+            $report = Get-Content -LiteralPath $env:ACADEMIC_CONNECTION_OUTPUT -Raw | ConvertFrom-Json
+            if (!$report.ok -or $report.api -ne $env:ACADEMIC_API_URL) { throw 'Local package report failed.' }
+          } finally {
+            & "$bundle/scripts/stop-local.ps1"
+          }
+      - name: Preserve the standalone local package
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: local-windows-x64-${{ github.sha }}
+          path: |
+            artifacts/AcademicPlatform-local-windows-x64.zip
+            artifacts/AcademicPlatform-local-windows-x64.zip.sha256
+            artifacts/local-package-connection.json
+          if-no-files-found: error
+          retention-days: 14
+          compression-level: 0
       - name: Preserve the Windows application
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
@@ -256,7 +284,7 @@ jobs:
   deploy:
     name: Deploy API and verify readiness
     needs: publish
-    if: github.event_name == 'push' && github.ref == 'refs/heads/Group2' && github.repository == 'caw111/SoftwareAnalyse'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/Group2' && github.repository == 'caw111/SoftwareAnalyse' && vars.ENABLE_SERVER_DEPLOYMENT == 'true'
     runs-on: ubuntu-24.04
     timeout-minutes: 25
     environment: production

@@ -2,13 +2,13 @@
 
 《软件系统分析与设计》课程项目。Group2 为实现与协作分支。当前版本：**WPF 原生 Windows 桌面客户端 + Java 21 / Spring Boot 服务**。
 
-## 日常使用：直接打开 EXE
+## 日常使用
 
-双击 `artifacts/windows-x64/AcademicDesktop.exe` 即可使用。正式客户端默认直连 `https://49.233.93.248:8080`，不需要启动本机Java、Docker、PowerShell脚本或SSH隧道；这仍是WPF原生桌面软件，服务器只提供API。
+从 [GitHub Release](https://github.com/caw111/SoftwareAnalyse/releases/tag/v0.5.1-pipeline.1) 下载 `AcademicPlatform-local-windows-x64.zip`，完整解压到可写目录后双击 `Start.cmd`。包内包含桌面客户端、后端和 Java 运行时，可在 Windows x64 上本地运行。
 
-EXE内置该服务专用CA的公有证书，不修改Windows系统信任库。日常无需安装证书；遇到证书错误时检查系统时间和客户端版本，不使用关闭验证的办法。若曾手动设置 `ACADEMIC_API_URL`，它会覆盖默认地址，可在登录页“服务器设置”核对。
+启动器使用本机 API `http://127.0.0.1:18082` 和管理端口 18083。关闭桌面后运行 `Stop.cmd` 停止后端。数据保存在解压目录的 `backend/data`，后续启动会保留数据。初始包含 64 条明确标记的模拟成果，演示账号见下表。
 
-生产环境关闭演示数据，下面的本机演示账号密码不能用于服务器。初始管理员密码只保存在服务器root可读配置中。连接、维护和证书轮换见 [部署文档](docs/deployment.md)，本次直连与发布结果见 [v0.5.1验证](docs/verification/direct-v0.5.1.md)。`scripts/connect-server.ps1` 只保留为显式选择的旧SSH兼容入口，普通使用者无需运行。
+独立 EXE 默认连接本机8080；启动器会为此次运行设置18082地址。已有 `ACADEMIC_API_URL` 或登录页服务器设置仍可显式指定其他 API。当前按用户确认采用本地运行，云服务器部署为后续可选配置。
 
 ## 本机开发
 
@@ -18,7 +18,7 @@ EXE内置该服务专用CA的公有证书，不修改Windows系统信任库。�
 .\scripts\start-local.ps1
 ```
 
-默认使用 `D:\tool\java21`、`D:\tool\gradle\gradle-9.8.0` 和本机 .NET 9 SDK；首次构建需要下载依赖。脚本构建并启动本地 API，再打开 Windows 应用。**没有网页前端，也不使用 WebView。** 已构建后可运行 `./scripts/start-local.ps1 -NoBuild`。
+脚本自动寻找 Java 21 与 .NET 9 SDK，并使用仓库 Gradle Wrapper；首次构建需要下载依赖。脚本构建并启动本地 API，再打开 Windows 应用。**没有网页前端，也不使用 WebView。** 已构建后可运行 `./scripts/start-local.ps1 -NoBuild`。
 
 桌面 v0.5.1 默认进入独立登录/注册界面，可点击灰色“以访客模式进入”。登录和主窗口均默认最大化启动，保留 Windows 原生最小化、最大化/还原、关闭按钮；还原大小按当前显示器工作区与 DPI 计算，可拖动和调整尺寸。自绘“书页 + 知识节点”图标已嵌入 EXE、标题栏、任务栏和侧栏。窗口操作历史验证见 [v0.5记录](docs/verification/server-v0.5.md)，当前连接结果见 [v0.5.1记录](docs/verification/direct-v0.5.1.md)。
 

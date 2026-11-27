@@ -9,7 +9,7 @@ internal static class ServerEndpoint
     {
         if (!string.IsNullOrWhiteSpace(address)) return address.Trim();
         string? configured = Environment.GetEnvironmentVariable("ACADEMIC_API_URL");
-        return string.IsNullOrWhiteSpace(configured) ? PublicApiUrl : configured.Trim();
+        return string.IsNullOrWhiteSpace(configured) ? LocalDemoUrl : configured.Trim();
     }
 
     internal static bool IsLocalDemo(string address) => Uri.TryCreate(address, UriKind.Absolute, out var uri) &&
