@@ -22,8 +22,8 @@ if ($Executable) {
 foreach ($candidate in ($candidates | Select-Object -Unique)) {
     if (!(Test-Path -LiteralPath $candidate -PathType Leaf)) { continue }
     if ($Tool -eq 'Java') {
-        $version = & $candidate -version 2>&1 | Out-String
-        $compatible = $LASTEXITCODE -eq 0 -and $version -match 'version "21\.'
+        $version = & $candidate --version 2>&1 | Out-String
+        $compatible = $LASTEXITCODE -eq 0 -and $version -match '(?m)^(openjdk|java) 21\.'
     } else {
         $version = & $candidate --list-sdks 2>&1 | Out-String
         $compatible = $LASTEXITCODE -eq 0 -and $version -match '(?m)^9\.0\.'
