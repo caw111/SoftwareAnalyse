@@ -84,3 +84,5 @@ Windows 集成探测使用最终 EXE 的实际 `ApiClient`，通过公开接口�
 PR #2 已合入 Group2。首次合并运行的测试、EXE集成和镜像发布通过，远程部署在拉取GHCR镜像层时重试并超时。根据用户确认暂未配置云服务器，已停止远程重试并关闭自动服务器部署；原服务器记录仅作为历史证据。
 
 新增 `scripts/package-local.ps1` 使用 jlink 创建 Java 运行时，将同次测试JAR、最终EXE、运行时和启动/停止脚本打成ZIP。Windows CI会解压实际ZIP、使用包内Java启动API，再用包内EXE读取公开接口，结果保存在 `local-package-connection.json`。测试通过后的制品上传GitHub Release。
+
+[2026年11月27日最终验证](verification/pipeline-2026-11-27.md)记录本地完整包的实际运行结果、制品校验值和[通过的流水线](https://github.com/caw111/SoftwareAnalyse/actions/runs/45956179972)。

@@ -65,6 +65,7 @@
 | [首版验证记录](docs/verification/first-version.md) | v0.1 历史构建、测试与边界；本轮结果另记 |
 | [验收映射](docs/acceptance.md) | 已完成、部分完成和后续需求 |
 | [系统运行流水线](docs/pipeline.md) | 本机构建启动、GitHub 测试、EXE/JAR 产物、镜像发布与自动部署 |
+| [本地运行包验证](docs/verification/pipeline-2026-11-27.md) | 83项H2与83项PostgreSQL测试、ZIP内运行时及客户端连通验证、下载说明 |
 | [需求—设计—实现追踪表](docs/requirements-traceability.md) | 104 条功能需求、设计与代码入口、测试定位、验收场景及剩余工作 |
 | [服务器压测说明](scripts/performance/README.md) | 待服务器执行的 k6 脚本，默认 20 并发 / 5 分钟 |
 
